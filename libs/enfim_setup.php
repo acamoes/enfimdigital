@@ -1,6 +1,8 @@
 <?php
-
+require(ENFIM_DIR . 'config/config.php');
+require(ENFIM_DIR . 'libs/enfim_db.php');
 require(ENFIM_DIR . 'libs/enfim.lib.php');
+require(ENFIM_DIR . 'classes/Users.php');
 require(SMARTY_DIR . 'Smarty.class.php');
 
 // smarty configuration
