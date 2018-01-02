@@ -21,26 +21,20 @@
                                 <th>Estado</th>
                             </tr>
                         </thead>
-                        <?php
-                        $myAgenda = $_SESSION ['user']->getMyAgenda ();									
-                        if (is_array ( $myAgenda ))
-                        {
-                        for($i = 0; $i < count ( $myAgenda ); $i ++)
-                        {
-                        ?>
+                        {foreach from=$myAgenda item=agenda}
                         <tbody>
-                            <tr style="cursor:pointer;" onclick="javascript:location.href = 'formadores.php?id=<?=$myAgenda[$i]['ctIdCourses']?>'">
-                                <td><?=$myAgenda[$i]['ctType']?></td>
-                                <td><?=$myAgenda[$i]['csCourse']?></td>
-                                <td><?=$myAgenda[$i]['csCompleteName']?></td>
-                                <td><?=date_format(date_sub(new DateTime($myAgenda[$i]['csStartDate']),new DateInterval('P30D')),'Y-m-d')?></td>
-                                <td><?=$myAgenda[$i]['csStartDate']?></td>
-                                <td><?=$myAgenda[$i]['csLocal']?></td>
-                                <td><?=$myAgenda[$i]['csVacancy']?></td>
-                                <td><?=$myAgenda[$i]['csStatus']?></td>
+                            <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formadores&id={$agenda.ctIdCourses}'">
+                                <td>{$agenda.ctType}</td>
+                                <td>{$agenda.csCourse}</td>
+                                <td>{$agenda.csCompleteName}</td>
+                                <td>{$agenda.limitDate|date_format:"Y-m-d"}</td>
+                                <td>{$agenda.csStartDate}</td>
+                                <td>{$agenda.csLocal}</td>
+                                <td>{$agenda.csVacancy}</td>
+                                <td>{$agenda.csStatus}</td>
                             </tr>
                         </tbody>
-                        <?php }}?>
+                        {/foreach}
                         <tfoot>
                             <tr>
                                 <td colspan="2"></td>
@@ -66,26 +60,20 @@
                                 <th>Boletim Oficial</th>
                             </tr>
                         </thead>
-                        <?php
-                        $myCourses = $_SESSION ['user']->getMyCourses ();
-                        if (is_array ( $myCourses ))
-                        {
-                        for($i = 0; $i < count ( $myCourses ); $i ++)
-                        {
-                        ?>
+                        {foreach from=$myCourses item=course}
                         <tbody>
-                            <tr style="cursor:pointer;" onclick="javascript:location.href = 'formandos.php?id=<?=$myCourses[$i]['csIdCourses']?>'">
-                                <td><?=$myCourses[$i]['csStartDate']?></td>
-                                <td><?=$myCourses[$i]['csCompleteName']?></td>
-                                <td><?=$myCourses[$i]['csStatus']?></td>
-                                <td><?=$myCourses[$i]['ucAttended']?></td>
-                                <td><?=$myCourses[$i]['ucPassedCourse']?></td>
-                                <td><?=$myCourses[$i]['ucPassedInternship']?></td>
-                                <td><?=$myCourses[$i]['ucPassed']?></td>
-                                <td><?=$myCourses[$i]['ucBoCourse']?></td>
+                            <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formandos&id={$course.csIdCourses}'">
+                                <td>{$course.csStartDate}</td>
+                                <td>{$course.csCompleteName}</td>
+                                <td>{$course.csStatus}</td>
+                                <td>{$course.ucAttended}</td>
+                                <td>{$course.ucPassedCourse}</td>
+                                <td>{$course.ucPassedInternship}</td>
+                                <td>{$course.ucPassed}</td>
+                                <td>{$course.ucBoCourse}</td>
                             </tr>
                         </tbody>
-                        <?php }}?>
+                        {/foreach}
                         <tfoot>
                             <tr>
                                 <td colspan="2"></td>

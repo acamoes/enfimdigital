@@ -8,6 +8,7 @@
 class enfim_db {
 
     public $connection;
+    public $error;
 
     function __construct() {
         try {
@@ -23,19 +24,24 @@ class enfim_db {
         return is_null($string) ? '' : $this->connection->real_escape_string($string);
     }
 
-    public function get($sql,$resultType=MYSQLI_ASSOC) {
-        $str = $this->safeQuery($sql);
-        $result=$this->connection->query($str);
+    public function get($sql, $resultType = MYSQLI_ASSOC) {
+        //$sql = $this->safeQuery($sql);
+        $result = $this->connection->query($sql);
         return $this->fetch_all($result, $resultType);
     }
-    
+
     public function set($sql) {
-        $str = $this->safeQuery($sql);
-        $result=$this->connection->query($str);
+        //$sql = $this->safeQuery($sql);
+        $result = $this->connection->query($sql);
+        if (!$result) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public function fetch_all($result, $resultType) {//MYSQLI_ASSOC, MYSQLI_NUM, or MYSQLI_BOTH
-        if (is_null($result)) {
+        if (is_null($result) || !$result) {
             return false;
         }
         for ($res = array(); $tmp = $result->fetch_array($resultType);) {
