@@ -23,7 +23,7 @@
                         </thead>
                         {foreach from=$myAgenda item=agenda}
                         <tbody>
-                            <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formadores&id={$agenda.ctIdCourses}'">
+                            <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formadores&task=getCourse&idCourses={$agenda.ctIdCourses}'">
                                 <td>{$agenda.ctType}</td>
                                 <td>{$agenda.csCourse}</td>
                                 <td>{$agenda.csCompleteName}</td>
@@ -62,7 +62,7 @@
                         </thead>
                         {foreach from=$myCourses item=course}
                         <tbody>
-                            <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formandos&id={$course.csIdCourses}'">
+                            <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formandos&task=getCourse&idCourses={$course.csIdCourses}'">
                                 <td>{$course.csStartDate}</td>
                                 <td>{$course.csCompleteName}</td>
                                 <td>{$course.csStatus}</td>

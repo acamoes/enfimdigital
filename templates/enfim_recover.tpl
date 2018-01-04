@@ -12,10 +12,12 @@
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <script>
-       function onSubmit(token) {
-         document.getElementById("recoverPassword").submit();
-       }
-     </script>
+        function onSubmit(token) {
+            if (confirm("Confirma que deseja recuperar a sua password?") == true) {
+                document.getElementById("recoverPassword").submit();
+            }
+        }
+    </script>
     <body>
 
         <!-- Page Wrapper -->
@@ -40,7 +42,7 @@
                             <form method="post" action="{$SCRIPT_NAME}?action=recover" id="recoverPassword">
                                 <div class="field">
                                     <label for="username">Username</label> <input type="text"
-                                                                                  name="username" id="username" value="joao.madeira"
+                                                                                  name="username" id="username"
                                                                                   style="width: 50%" />
                                 </div>                                
                                 <ul class="actions">

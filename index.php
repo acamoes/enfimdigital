@@ -6,7 +6,6 @@ define('ENFIM_DIR', "");
 define('SMARTY_DIR', "vendor/smarty/smarty/libs/");
 // include the setup script
 include(ENFIM_DIR . "libs/enfim_setup.php");
-require_once ('vendor/autoload.php');
 
 session_start();
 

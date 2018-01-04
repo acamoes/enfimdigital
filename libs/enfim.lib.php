@@ -12,7 +12,7 @@ class Enfim {
      * class constructor
      */
     function __construct() {
-        $this->db  = new enfim_db();
+        $this->db  = new Database();
         $this->tpl = new Enfim_Smarty;
     }
 
@@ -44,15 +44,47 @@ class Enfim {
     }
 
     function recover($request) {
-        $data = $this->safePost($request);
-        var_dump($data);
-        exit;
-        if (isset($data['recoverPassword'])) {
-            session_destroy();
-            $this->tpl->assign('error', $this->error);
-            $this->tpl->assign('botKey', BOT_KEY);
-            $this->tpl->display('enfim_recover.tpl');
+
+        $data  = $this->safePost($request);
+        $users = new Users();
+        if ($users->userExists($data['username'])) {
+            $email             = $users->getEmailByUsername($data['username']);
+            $password          = $users->generatePassword();
+            $users->setPasswordByUsername($data['username'], $password);
+            $mail              = new PHPMailer\PHPMailer\PHPMailer(true);
+            $mail->isSMTP();
+            $mail->SMTPAuth    = true;
+            $mail->SMTPSecure  = 'ssl';
+            $mail->Host        = 'smtp.gmail.com';
+            $mail->Port        = '465';
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer'       => false,
+                    'verify_peer_name'  => false,
+                    'allow_self_signed' => true
+                )
+            );
+            $mail->isHTML();
+            $mail->Username    = MAIL_USERNAME;
+            $mail->Password    = MAIL_PASSWORD;
+            $mail->SetFrom(MAIL_USERNAME);
+            $mail->Subject     = 'ENFIM DIGITAL - RECUPERACAO de PASSWORD';
+            $mail->Body        = 'ENFIM DIGITAL<br/><br/>Nova password: <strong>' . $password . '</strong><br/>';
+            $mail->AddAddress($email);
+            $mail->Send();
+            /*
+              $mail     = eden('mail')->smtp('aspmx.l.google.com', MAIL_USERNAME, MAIL_PASSWORD, 25, false, false);
+              $mail->setSubject('ENFIM DIGITAL - RECUPERACAO de PASSWORD')
+              ->setBody('<p>Hello you!</p>', true)
+              ->setBody("ENFIM DIGITAL</br></br>Nova password: " . $password . "</br>")
+              ->addTo($email)
+              ->send();
+              $mail->disconnect(); */
         }
+        session_destroy();
+        $this->error = 'Verifique o seu email dos @escoteiros.pt';
+        $this->tpl->assign('error', $this->error);
+        $this->tpl->display('enfim_login.tpl');
     }
 
     function home() {
@@ -67,38 +99,40 @@ class Enfim {
     }
 
     function formandos($request) {
-        $data                  = $this->safePost($request);
-        $_SESSION['formandos'] = new Formandos($data);
-        $this->tpl->assign('users', $_SESSION['users']);
-        if ($_SESSION['formandos']->getCourse($data['id'])) {
-            $this->tpl->assign('modulo', 'formandos');
-            $this->tpl->assign('formandos', $_SESSION['formandos']);
-            $this->tpl->assign('objTabs', $_SESSION['formandos']->tabs);
-            $this->tpl->display('enfim_formandos.tpl');
+        $data      = $this->safePost($request);
+        $formandos = new Formandos($data);
+        if (empty($formandos->course)) {
+            return;
         }
-        else {
-            $this->clearAllAssign();
-            $this->home();
+        switch ($data['task']) {
+            case "getCourse":
+                $this->tpl->assign('users', $_SESSION['users']);
+                $this->tpl->assign('modulo', 'formandos');
+                $this->tpl->assign('formandos', $formandos);
+                $this->tpl->assign('objTabs', $formandos->tabs);
+                $this->tpl->display('enfim_formandos.tpl');
+                break;
+            case "getEvaluation":
+                $html = $formandos->buildEvaluation($data);
+                var_dump($html);
+                break;
+            default:
+                $this->clearAllAssign();
+                $this->home();
+                break;
         }
     }
 
     function formadores($request) {
-        $data                   = $this->safePost($request);
-        $_SESSION['formadores'] = new Formadores($data);
-
+        $data       = $this->safePost($request);
+        $formadores = new Formadores($data);
+        if (empty($formadores->course)) {
+            return;
+        }
         switch ($data['task']) {
             case "getCourse":
                 $this->tpl->assign('users', $_SESSION['users']);
                 if ($_SESSION['formadores']->getEvaluation($data['id'])) {
-                    $this->tpl->assign('modulo', 'formadores');
-                    $this->tpl->assign('formadores', $_SESSION['formadores']);
-                    $this->tpl->assign('objTabs', $_SESSION['formadores']->tabs);
-                    $this->tpl->display('enfim_formadores.tpl');
-                }
-                break;
-            case "getCourse":
-                $this->tpl->assign('users', $_SESSION['users']);
-                if ($_SESSION['formadores']->getCourse($data['id'])) {
                     $this->tpl->assign('modulo', 'formadores');
                     $this->tpl->assign('formadores', $_SESSION['formadores']);
                     $this->tpl->assign('objTabs', $_SESSION['formadores']->tabs);

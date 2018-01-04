@@ -21,7 +21,7 @@ class Files {
     public function getInformations($id) {
         $query  = "SELECT ci.* FROM courses_informations ci INNER JOIN users_courses uc "
                 . "ON ci.idCourses=uc.idCourses AND uc.idUsers=" . $_SESSION['users']->id . " AND ci.status='Ativo' AND ci.idInformations=" . $id . " LIMIT 1";
-        $con    = new enfim_db ();
+        $con    = new Database ();
         $result = $con->get($query);
         if (count($result) > 0) {
             $this->name    = $result[0]['document'];
@@ -50,7 +50,7 @@ class Files {
                 . "SELECT cd.name, cd.type,cd.document1 as doc1,cd.document1Blob as blob1, null as doc2,null as blob2,cd.status "
                 . "FROM courses_documents cd INNER JOIN users_courses uc "
                 . "ON cd.idCourses=uc.idCourses AND cd.public='Sim' AND cd.status='Fechado' AND cd.idDocuments=" . $id . " AND type='Extra'  AND uc.idUsers=" . $_SESSION['users']->id . " ";
-        $con    = new enfim_db ();
+        $con    = new Database ();
         $result = $con->get($query);
         if (count($result) > 0) {
             $this->name    = $result[0]['doc' . $filePos];

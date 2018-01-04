@@ -17,12 +17,12 @@
                     <a
                         class="xlarge icon fa-list-alt"
                         style="cursor: pointer; padding: 0 0 0 5pt"
-                        href="{$SCRIPT_NAME}?action=formandos&task=getEvaluation&id={$evaluations['idEvaluations']}"></a>
+                        href="{$SCRIPT_NAME}?action=formandos&task=getEvaluation&idEvaluation={$evaluations['idEvaluations']}&idCourses={$evaluations['idCourses']}&idCourse={$evaluations['idCourse']}"></a>
                     {elseif !empty($evaluations['evaluation'] && $evaluations['status']=='Fechado')}
                     <a
                         class="button small icon fa-check"
                         style="cursor: pointer; padding: 0 0 0 5pt"
-                        href="{$SCRIPT_NAME}?action=formandos&task=getEvaluation&id={$evaluations['idEvaluations']}"></a>    
+                        href="{$SCRIPT_NAME}?action=formandos&task=getEvaluation&idEvaluation={$evaluations['idEvaluations']}&idCourses={$evaluations['idCourses']}&idCourse={$evaluations['idCourse']}"></a>    
                     {/if}
                 </td>                
             </tr>

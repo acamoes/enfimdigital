@@ -1,7 +1,6 @@
 <?php
 
 class Users {
-
     public $id;
     public $username;
     public $email;
@@ -24,35 +23,36 @@ class Users {
     public $myCourses;
     public $error;
 
-    function login($user, $pass) {
+    function login($user, $pass): bool {
         $query = "SELECT * FROM users WHERE password=MD5('$pass') AND username='$user' AND status='Ativo'";
-        $con = new enfim_db ();
-        $rows = $con->get($query);
+        $con   = new Database ();
+        $rows  = $con->get($query);
         if (count($rows) > 0) {
-            $rows = $rows[0];
-            $this->username = $user;
-            $this->password = $pass;
-            $this->id = $rows ['idUsers'];
-            $this->username = $rows ['username'];
-            $this->email = $rows ['email'];
-            $this->name = $rows ['name'];
-            $this->sigla = $rows ['sigla'];
-            $this->permission = $rows ['permission'];
-            $this->status = $rows ['status'];
-            $this->lastLogin = date("Y-m-d H:i:s");
+            $rows               = $rows[0];
+            $this->username     = $user;
+            $this->password     = $pass;
+            $this->id           = $rows ['idUsers'];
+            $this->username     = $rows ['username'];
+            $this->email        = $rows ['email'];
+            $this->name         = $rows ['name'];
+            $this->sigla        = $rows ['sigla'];
+            $this->permission   = $rows ['permission'];
+            $this->status       = $rows ['status'];
+            $this->lastLogin    = date("Y-m-d H:i:s");
             $this->lastLogin();
-            $this->birthDate = $rows ['birthDate'];
-            $this->address = $rows ['address'];
-            $this->zipCode = $rows ['zipCode'];
-            $this->local = $rows ['local'];
-            $this->mobile = $rows ['mobile'];
-            $this->telephone = $rows ['telephone'];
+            $this->birthDate    = $rows ['birthDate'];
+            $this->address      = $rows ['address'];
+            $this->zipCode      = $rows ['zipCode'];
+            $this->local        = $rows ['local'];
+            $this->mobile       = $rows ['mobile'];
+            $this->telephone    = $rows ['telephone'];
             $this->observations = $rows ['observations'];
-            $this->iban = $rows ['iban'];
-            $this->aepId = $rows ['aepId'];
+            $this->iban         = $rows ['iban'];
+            $this->aepId        = $rows ['aepId'];
             $this->getMyAgendaIds();
             return true;
-        } else {
+        }
+        else {
             $this->error = "Username or Password is invalid";
             return false;
         }
@@ -60,23 +60,43 @@ class Users {
 
     function lastLogin() {
         $query = "UPDATE users SET lastLogin='$this->lastLogin' WHERE idUsers='$this->id'";
-        $con = new enfim_db ();
+        $con   = new Database ();
         $con->set($query);
     }
 
-    function getMyAgendaIds() {
-        $query = "SELECT ct.idCourses as ctIdCourses,ct.type " .
+    function userExists($username): bool {
+        $query  = "SELECT * FROM users WHERE username='" . $username . "' AND status='Ativo' ";
+        $con    = new Database ();
+        $result = $con->get($query);
+        return count($result) > 0 ? true : false;
+    }
+
+    function getEmailByUsername($username): string {
+        $query  = "SELECT email FROM users WHERE username='$username' AND status='Ativo' ";
+        $con    = new Database ();
+        $result = $con->get($query);
+        return count($result) > 0 ? $result[0]['email'] : '';
+    }
+
+    function setPasswordByUsername($username, $password) {
+        $query = "UPDATE users SET password=MD5('$password') WHERE username='$username' AND status='Ativo'";
+        $con   = new Database ();
+        $con->set($query);
+    }
+
+    function getMyAgendaIds(): bool {
+        $query        = "SELECT ct.idCourses as ctIdCourses,ct.type " .
                 "FROM courses_team ct INNER JOIN courses cs ON ct.idCourses=cs.idCourses " .
                 "AND ct.idUsers=$this->id INNER JOIN course c ON cs.idCourse=c.idCourse " .
                 "WHERE cs.status NOT IN ('Cancelado') AND c.status='Ativo' " .
                 "ORDER BY cs.startDate ASC";
-        $con = new enfim_db ();
+        $con          = new Database ();
         $this->agenda = $con->get($query);
         return true;
     }
 
-    function getMyAgenda() {
-        $query = "SELECT ct.idCourses as ctIdCourses,ct.idUsers as ctIdUsers,ct.type as ctType," .
+    function getMyAgenda(): bool {
+        $query          = "SELECT ct.idCourses as ctIdCourses,ct.idUsers as ctIdUsers,ct.type as ctType," .
                 "cs.idCourses as csIdCourses,cs.year as csYear,cs.course as csCourse,cs.completeName as csCompleteName," .
                 "DATE_SUB(cs.startDate, INTERVAL 30 DAY) as limitDate,cs.startDate as csStartDate,cs.endDate as csEndDate," .
                 "cs.local as csLocal,cs.vacancy as csVacancy,cs.idCourse as csIdCourse,cs.internship as csInternship,cs.status as csStatus,cs.observations as csObservations," .
@@ -85,13 +105,13 @@ class Users {
                 "AND ct.idUsers=$this->id INNER JOIN course c ON cs.idCourse=c.idCourse " .
                 "WHERE cs.status NOT IN ('Fechado','Cancelado') AND c.status='Ativo' " .
                 "ORDER BY cs.startDate ASC";
-        $con = new enfim_db ();
+        $con            = new Database ();
         $this->myAgenda = $con->get($query);
         return true;
     }
 
-    function getMyCourses() {
-        $query = "SELECT uc.idUsers as ucIdUsers, uc.idCourses as ucIdCourses, uc.unit as ucUnit, uc.unitType as ucUnitType, uc.rank as ucRank, uc.boRank as ucBoRank, uc.qa as ucQa, " .
+    function getMyCourses(): bool {
+        $query           = "SELECT uc.idUsers as ucIdUsers, uc.idCourses as ucIdCourses, uc.unit as ucUnit, uc.unitType as ucUnitType, uc.rank as ucRank, uc.boRank as ucBoRank, uc.qa as ucQa, " .
                 "uc.value as ucValue,uc.receipt as ucReceipt,uc.observations as ucObervations,uc.attended as ucAttended,uc.passedCourse as ucPassedCourse, " .
                 "uc.passedInternship as ucPassedInternship,uc.passed as ucPassed,uc.boCourse as ucBoCourse," .
                 "cs.idCourses as csIdCourses,cs.year as csYear,cs.course as csCourse,cs.completeName as csCompleteName,cs.startDate as csStartDate,cs.endDate as csEndDate,cs.local as csLocal," .
@@ -101,11 +121,10 @@ class Users {
                 "AND uc.idUsers=$this->id INNER JOIN course c ON cs.idCourse=c.idCourse " .
                 // "WHERE (cs.status='Em espera' OR uc.attended='Sim') AND c.status='ativo' ".
                 "ORDER BY cs.startDate DESC";
-        $con = new enfim_db ();
+        $con             = new Database ();
         $this->myCourses = $con->get($query);
         return true;
     }
-
     /*
       function director($idCourse) {
       if (count($this->myAgenda) > 0) {
@@ -726,10 +745,10 @@ class Users {
       }
      */
 
-    function generatePassword($length = 8) {
+    function generatePassword($length = 8): string {
         $password = "";
         $possible = "0123456789bcdfghjkmnpqrstvwxyz";
-        $i = 0;
+        $i        = 0;
         while ($i < $length) {
             $char = substr($possible, mt_rand(0, strlen($possible) - 1), 1);
             if (!strstr($password, $char)) {
@@ -739,5 +758,4 @@ class Users {
         }
         return $password;
     }
-
 }

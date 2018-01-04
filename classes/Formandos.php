@@ -1,7 +1,7 @@
 <?php
 
 class Formandos {
-    public $id;
+    public $idCourses;
     public $tabs;
     public $idCourse;
     public $course;
@@ -11,7 +11,8 @@ class Formandos {
 
     function __construct($data) {
         $this->getTabs();
-        $this->idCourse = $data['id'];
+        $this->idCourses = $data['idCourses'];
+        $this->getCourse($this->idCourses);
     }
 
     function getTabs() {
@@ -20,12 +21,12 @@ class Formandos {
 
     function getCourse($id) {
         $query        = "SELECT * FROM courses c INNER JOIN users_courses uc ON c.idCourses=uc.idCourses WHERE uc.idCourses=" . $id . " AND uc.idUsers=" . $_SESSION['users']->id . " ";
-        $con          = new enfim_db ();
+        $con          = new Database ();
         $this->course = $con->get($query);
         if (!$this->course) {
             return false;
         }
-
+        $this->idCourse  = $this->course[0]['idCourse'];
         $query           = "SELECT * FROM courses_documents WHERE idCourses=" . $id . " AND status='Fechado' AND public='Sim' ";
         $this->documents = $con->get($query);
 
@@ -35,5 +36,24 @@ class Formandos {
         $query             = "SELECT * FROM courses_evaluations WHERE idCourses=" . $id . " AND idUsers=" . $_SESSION['users']->id . " AND status IN ('Aberto','Fechado') ";
         $this->evaluations = $con->get($query);
         return true;
+    }
+
+    function buildEvaluation($id) {
+        $query            = "SELECT e.idEvaluations,e.idCourse,ce.idCourses,ce.idEvaluations as idEvaluation,e.template,ce.evaluation "
+                . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
+                . "WHERE ce.idUsers=" . $_SESSION['users']->id
+                . " AND ce.status='Aberto' "
+                . " AND e.idEvaluations=" . $id
+                . " AND e.idCourse=" . $this->idCourse
+                . " AND ce.idCourses=" . $this->idCourses
+                . " ";
+        $con              = new Database ();
+        $this->evaluation = $con->get($query);
+        if (!$this->evaluation) {
+            return false;
+        }
+        else {
+            return $this->evaluation;
+        }
     }
 }
