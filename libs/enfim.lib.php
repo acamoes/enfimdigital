@@ -72,14 +72,6 @@ class Enfim {
             $mail->Body        = 'ENFIM DIGITAL<br/><br/>Nova password: <strong>' . $password . '</strong><br/>';
             $mail->AddAddress($email);
             $mail->Send();
-            /*
-              $mail     = eden('mail')->smtp('aspmx.l.google.com', MAIL_USERNAME, MAIL_PASSWORD, 25, false, false);
-              $mail->setSubject('ENFIM DIGITAL - RECUPERACAO de PASSWORD')
-              ->setBody('<p>Hello you!</p>', true)
-              ->setBody("ENFIM DIGITAL</br></br>Nova password: " . $password . "</br>")
-              ->addTo($email)
-              ->send();
-              $mail->disconnect(); */
         }
         session_destroy();
         $this->error = 'Verifique o seu email dos @escoteiros.pt';

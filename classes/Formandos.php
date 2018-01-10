@@ -39,11 +39,11 @@ class Formandos {
     }
 
     function buildEvaluation($id) {
-        $query            = "SELECT e.idEvaluations,e.idCourse,ce.idCourses,ce.idEvaluations as idEvaluation,e.template,ce.evaluation "
+        $query            = "SELECT e.idEvaluations,e.idCourse,ce.idCourses,ce.idEvaluations as idEvaluation,e.template,ce.evaluation,ce.status "
                 . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
                 . "WHERE ce.idUsers=" . $_SESSION['users']->id
                 . " AND ce.status='Aberto' "
-                . " AND e.idEvaluations=" . $id
+                . " AND ce.idEvaluations=" . $id['idEvaluation']
                 . " AND e.idCourse=" . $this->idCourse
                 . " AND ce.idCourses=" . $this->idCourses
                 . " ";
@@ -53,7 +53,8 @@ class Formandos {
             return false;
         }
         else {
-            return $this->evaluation;
+            $evaluationForm = new Evaluation($this->evaluation[0]);
+            return $evaluationForm;
         }
     }
 }
