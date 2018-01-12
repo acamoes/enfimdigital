@@ -11,16 +11,18 @@
  * @author João Madeira
  */
 class Evaluation {
-    private $edit      = false;
-    private $template  = null;
-    private $respostas = null;
-    private $tpl       = "";
+    private $edit       = false;
+    private $template   = null;
+    private $respostas  = null;
+    private $tpl        = "";
+    private $evaluation = null;
 
-    //put your code here
+//put your code here
     function __construct($evaluation) {
-        $this->tpl       = new Enfim_Smarty;
-        $this->template  = json_decode($evaluation['template']);
-        $this->respostas = json_decode($evaluation['evaluation']);
+        $this->evaluation = $evaluation;
+        $this->tpl        = new Enfim_Smarty;
+        $this->template   = json_decode($evaluation['template']);
+        $this->respostas  = json_decode($evaluation['evaluation']);
         if ($evaluation['status'] == 'Aberto') {
             $this->edit = true;
         }
@@ -42,12 +44,67 @@ class Evaluation {
                     if ($template->avaliacao->itens[$i]->itens[$j]->tema != 'name') {
                         if (property_exists($template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
                             if ($template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo == 'range') {
-                                $html .= $this->radio($template->avaliacao->itens[$i]->itens[$j]->tema, $template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo, null);
+                                $html .= $this->radio(
+                                        $template->avaliacao->itens[$i]->itens[$j]->tema . '-avaliacao', $template->avaliacao->itens[$i]->itens[$j]->tema, $template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo, null);
                             }
                         }
                         if (property_exists($template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
                             if ($template->avaliacao->itens[$i]->itens[$j]->observacoes->tipo == 'longText') {
-                                $html .= $this->textArea($template->avaliacao->itens[$i]->itens[$j]->tema, $template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, null);
+                                $html .= $this->textArea(
+                                        $template->avaliacao->itens[$i]->itens[$j]->tema . '-observacoes', $template->avaliacao->itens[$i]->itens[$j]->tema, $template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, null);
+                            }
+                        }
+                    }
+                    else {
+                        if ($template->avaliacao->itens[$i]->tema == 'Formadores') {
+                            $listaFormadores = Formadores::listaFormadores($this->evaluation['idCourses']);
+                            for ($k = 0, $f = count($listaFormadores); $k < $f; $k++) {
+                                $formador                  = $listaFormadores[$k];
+                                $parts                     = explode(' ', $formador['name']);
+                                $formador['firstLastName'] = $parts[0] . ' ' . $parts[count($parts) - 1];
+                                $html                      .= "<h4 class='major'>" . $formador['firstLastName'] . "</h4><div class='field'>";
+                                $html                      .= "<input type='hidden' name='formadores_" . $formador['idUsers'] . "_" . $formador['type'] . "'/>";
+                                $temas                     = ['Clareza na Exposição',
+                                    'Domínio do assunto',
+                                    'Métodos e técnicas utilizadas',
+                                    'Relacionamento com os formandos'];
+                                foreach ($temas as $temas) {
+                                    if (property_exists($template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
+                                        if ($template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo == 'range') {
+                                            $html .= $this->radio(
+                                                    $temas . '-avaliacao-' . $formador['idUsers'], $temas, $template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo, null);
+                                        }
+                                    }
+
+                                    if (property_exists($template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
+                                        if ($template->avaliacao->itens[$i]->itens[$j]->observacoes->tipo == 'longText') {
+                                            $html .= $this->textArea(
+                                                    $temas . '-observacoes-' . $formador['idUsers'], $temas, $template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, null);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        if ($template->avaliacao->itens[$i]->tema == 'Módulos') {
+                            $listaModulos = Cursos::listaModulos($this->evaluation['idCourses']);
+                            for ($k = 0, $f = count($listaModulos); $k < $f; $k++) {
+                                $modulo = $listaModulos[$k];
+                                $html   .= "<h4 class='major'>" . $modulo['name'] . "</h4><div class='field'>";
+                                $html   .= "<input type='hidden' name='modulo_" . $modulo['idModules'] . "'/>";
+                                if (property_exists($template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
+                                    if ($template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo == 'range') {
+                                        $html .= $this->radio(
+                                                'modulo-avaliacao-' . $modulo['idModules'], '', $template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo, null);
+                                    }
+                                }
+
+                                if (property_exists($template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
+                                    if ($template->avaliacao->itens[$i]->itens[$j]->observacoes->tipo == 'longText') {
+                                        $html .= $this->textArea(
+                                                'modulo-observacoes-' . $modulo['idModules'], '', $template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, null);
+                                    }
+                                }
                             }
                         }
                     }
@@ -68,21 +125,21 @@ class Evaluation {
         }
     }
 
-    function radio($nome, $intervalo, $selecionado): string {
-        $tag   = "<div class='row uniform'><div><label for='$nome'>$nome</label>";
+    function radio($id, $nome, $intervalo, $selecionado): string {
+        $tag   = "<div class='row uniform'><div><label for='" . ENFIM::cleanString($id) . "'>$nome</label>";
         $range = explode('-', $intervalo);
         for ($i = $range[0]; $i <= $range[1]; $i++) {
-            $tag .= "<input type='radio' id='$nome-$i' name='$nome' value='$i' " . ($selecionado == $i ? "checked=''" : "") . ">"
-                    . "<label for='$nome-$i'>$i</label>";
+            $tag .= "<input type='radio' id='" . ENFIM::cleanString($id) . "-$i' name='$id' value='$i' " . ($selecionado == $i ? "checked=''" : "") . ">"
+                    . "<label for='" . ENFIM::cleanString($id) . "-$i'>$i</label>";
         }
         $tag .= "</div></div>";
         return $tag;
     }
 
-    function textArea($nome, $intervalo, $selecionado): string {
-        $tag   = "<div class='row uniform'><div><label for='$nome-observacoes'>Observações</label>";
+    function textArea($id, $nome, $intervalo, $selecionado): string {
+        $tag   = "<div class='row uniform'><div><label for='" . ENFIM::cleanString($id) . "'>Observações</label>";
         $range = explode('-', $intervalo);
-        $tag   .= "<textarea cols = '$range[1]' rows = '$range[0]' name = '$nome-observacoes' id = '$nome-observacoes' style = 'width: 630px'></textarea>";
+        $tag   .= "<textarea cols = '$range[1]' rows = '$range[0]' name = '" . ENFIM::cleanString($id) . "' id = '" . ENFIM::cleanString($id) . "' style = 'width: 630px'>$selecionado</textarea>";
         $tag   .= "</div></div>";
         return $tag;
     }

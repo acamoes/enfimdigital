@@ -45,4 +45,14 @@ class Formadores {
         $this->evaluations = $con->get($query);
         return true;
     }
+
+    static function listaFormadores($idCourses) {
+        $query = "SELECT u.idUsers,ct.type,u.name FROM courses_team ct INNER JOIN users u ON ct.idUsers=u.idUsers WHERE ct.idCourses=" . $idCourses . " ";
+        $con   = new Database ();
+        $lista = $con->get($query);
+        if (!$lista) {
+            return false;
+        }
+        return $lista;
+    }
 }

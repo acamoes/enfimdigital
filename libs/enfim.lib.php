@@ -156,6 +156,11 @@ class Enfim {
         return $data;
     }
 
+    static function cleanString($_string) {
+        $string = str_replace(' ', '-', $_string);
+        return preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+    }
+
     function clearAllAssign() {
         $this->tpl->clearAllAssign();
     }
