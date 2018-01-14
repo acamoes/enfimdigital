@@ -11,7 +11,8 @@ class Database {
 
     function __construct() {
         try {
-            $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
+            $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS,
+                                               DB_NAME, DB_PORT);
         }
         catch (mysqli_sql_exception $e) {
             print "Error!: " . $e->getMessage();
@@ -25,13 +26,11 @@ class Database {
     }
 
     public function get($sql, $resultType = MYSQLI_ASSOC) {
-        //$sql = $this->safeQuery($sql);
         $result = $this->connection->query($sql);
         return $this->fetch_all($result, $resultType);
     }
 
     public function set($sql): bool {
-        //$sql = $this->safeQuery($sql);
         $result = $this->connection->query($sql);
         if (!$result) {
             return false;

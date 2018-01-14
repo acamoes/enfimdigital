@@ -20,10 +20,10 @@
             <div class="inner">
                 <div class="content">
                     <h2 class="major">{$title}</h2><h3 class="alert">{$error}</h3>
-                    <form method="post" action="{$SCRIPT_NAME}?action=recover" id="recoverPassword">
+                    <form method="post" action="{$SCRIPT_NAME}?action=formandos&task=saveEvaluation" id="saveEvaluation">
                             {$html}                              
                         <ul class="actions">
-                            <li><button class="g-recaptcha" data-sitekey="{$botKey}" data-callback="onSubmit">Recuperar</button></li>
+                            <li><input type="submit" name="submit" id="submit" value="Submeter"></li>
                         </ul>
                     </form>
                 </div>

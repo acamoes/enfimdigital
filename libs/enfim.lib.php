@@ -81,10 +81,12 @@ class Enfim {
 
     function home() {
         $_SESSION['users']->getMyAgenda() ?
-                        $this->tpl->assign('myAgenda', $_SESSION['users']->myAgenda) :
+                        $this->tpl->assign('myAgenda',
+                                           $_SESSION['users']->myAgenda) :
                         $this->tpl->assign('myAgenda', array());
         $_SESSION['users']->getMyCourses() ?
-                        $this->tpl->assign('myCourses', $_SESSION['users']->myCourses) :
+                        $this->tpl->assign('myCourses',
+                                           $_SESSION['users']->myCourses) :
                         $this->tpl->assign('myCourses', array());
         $this->tpl->assign('users', $_SESSION['users']);
         $this->tpl->display('enfim_home.tpl');
@@ -106,7 +108,14 @@ class Enfim {
                 break;
             case "getEvaluation":
                 $html = $formandos->buildEvaluation($data);
-                var_dump($html);
+                $this->tpl->assign('error', '');
+                $this->tpl->assign('title', 'Questionário');
+                $this->tpl->assign('html', $html);
+                $this->tpl->display('enfim_evaluation.tpl');
+                break;
+            case "saveEvaluation":
+                $formandos->saveEvaluation($data);
+                $this->tpl->display('enfim_close.tpl');
                 break;
             default:
                 $this->clearAllAssign();

@@ -38,12 +38,12 @@ class Formandos {
         return true;
     }
 
-    function buildEvaluation($id) {
-        $query            = "SELECT e.idEvaluations,e.idCourse,ce.idCourses,ce.idEvaluations as idEvaluation,e.template,ce.evaluation,ce.status "
+    function buildEvaluation($data) {
+        $query            = "SELECT e.idEvaluations,e.idCourse,ce.idCourses,e.template,ce.evaluation,ce.status "
                 . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
                 . "WHERE ce.idUsers=" . $_SESSION['users']->id
                 . " AND ce.status='Aberto' "
-                . " AND ce.idEvaluations=" . $id['idEvaluation']
+                . " AND e.idEvaluations=" . $data['idEvaluations']
                 . " AND e.idCourse=" . $this->idCourse
                 . " AND ce.idCourses=" . $this->idCourses
                 . " ";
@@ -53,8 +53,33 @@ class Formandos {
             return false;
         }
         else {
-            $evaluationForm = new Evaluation($this->evaluation[0]);
-            return $evaluationForm;
+            $evaluation = new Evaluation($this->evaluation[0]);
+            return $evaluation->build();
         }
+    }
+
+    function saveEvaluation($data) {
+        $query            = "SELECT e.idEvaluations,e.idCourse,ce.idCourses,e.template,ce.evaluation,ce.status "
+                . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
+                . "WHERE ce.idUsers=" . $_SESSION['users']->id
+                . " AND ce.status='Aberto' "
+                . " AND e.idEvaluations=" . $data['idEvaluations']
+                . " AND e.idCourse=" . $this->idCourse
+                . " AND ce.idCourses=" . $this->idCourses
+                . " ";
+        $con              = new Database ();
+        $this->evaluation = $con->get($query);
+        $evaluation       = new Evaluation($this->evaluation[0]);
+        $responses        = $evaluation->saveEvaluation($this->evaluation[0]['template'],
+                                                        $data);
+        $responsesJson    = json_encode($responses, JSON_UNESCAPED_UNICODE);
+        $query            = "UPDATE courses_evaluations SET "
+                . "evaluation = '" . $responsesJson . "', "
+                . "date = '" . date('Y-m-d H:i:s') . "' "
+                . "WHERE idEvaluations = " . $data['idEvaluations']
+                . " AND idUsers=" . $_SESSION['users']->id
+                . " AND idCourses=" . $this->idCourses
+                . " AND idCourse=" . $this->idCourse . " ";
+        $result           = $con->set($query);
     }
 }
