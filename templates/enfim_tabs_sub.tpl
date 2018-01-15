@@ -15,7 +15,7 @@
                      none
                  {/if}; width: 100%;">
                  {assign var="currentTab" value="{$tab->tab}"}
-                 {include file="enfim_"|cat:{$modulo}|cat:"_"|cat:{$tab->tab}|cat:".tpl"}
+                 {include file="enfim_"|cat:{$action}|cat:"_"|cat:{$tab->tab}|cat:".tpl"}
         </section>
     {/foreach}
 {/foreach}

@@ -7,7 +7,7 @@
                     <script>
                         function submeter() {
                             var datastring = $("#{$currentTab}Novo").serializeArray();
-                            datastring.push({ name: 'action', value: '{$modulo}' });
+                            datastring.push({ name: 'action', value: '{$action}' });
                             datastring.push({ name: 'task', value: 'inserir' });
                             datastring.push({ name: 'tab', value: '{$currentTab}' });
                             $.ajax({
@@ -15,7 +15,7 @@
                                 data: datastring,
                                 success: function (result) {
                                     $('#form').html('');
-                                    $('#{$modulo}Msg').html(result);
+                                    $('#{$action}Msg').html(result);
                                 }
                             });
                         }

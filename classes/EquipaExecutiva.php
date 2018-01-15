@@ -199,7 +199,7 @@ class EquipaExecutiva {
         return $resultado[0];
     }
 
-    function inserirUtilizador($data): array {
+    function inserirUtilizadores($data): array {
         $data ['local']    = substr($data ['zipCode'], 9);
         $data ['zipCode']  = substr($data ['zipCode'], 0, 8);
         $data ['password'] = $_SESSION['users']->generatePassword(8);
@@ -232,7 +232,7 @@ class EquipaExecutiva {
         return ['success' => true, 'message' => 'Registo aceite.'];
     }
 
-    function atualizarUtilizador($data): array {
+    function atualizarUtilizadores($data): array {
         $data ['local']   = substr($data ['zipCode'], 9);
         $data ['zipCode'] = substr($data ['zipCode'], 0, 8);
         // $data['password']=$this->generatePassword(8);
@@ -260,7 +260,7 @@ class EquipaExecutiva {
         return ['success' => true, 'message' => 'Registo atualizado.'];
     }
 
-    function apagarUtilizador($data): array {
+    function apagarUtilizadores($data): array {
         $query     = "UPDATE users SET status=IF(status='Ativo','Inativo','Ativo') WHERE idUsers=" . $data['idUsers'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
@@ -280,7 +280,7 @@ class EquipaExecutiva {
         return $resultado[0];
     }
 
-    function inserirCurso($data): array {
+    function inserirCursos($data): array {
         $query     = "INSERT INTO course " .
                 "(name,sigla,level,internship,status) " .
                 "VALUES " .
@@ -297,7 +297,7 @@ class EquipaExecutiva {
         return ['success' => true, 'message' => 'Registo aceite.'];
     }
 
-    function atualizarCurso($data): array {
+    function atualizarCursos($data): array {
         $query     = "UPDATE course SET " .
                 "name='" . $data ['name'] .
                 "'," . "sigla='" . $data ['sigla'] .
@@ -313,7 +313,7 @@ class EquipaExecutiva {
         return ['success' => true, 'message' => 'Registo aceite.'];
     }
 
-    function apagarCurso($data): array {
+    function apagarCursos($data): array {
         $query     = "UPDATE course SET status=IF(status='Ativo','Inativo','Ativo') WHERE idCourse=" . $data['idCourse'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
@@ -335,7 +335,7 @@ class EquipaExecutiva {
         return $resultado[0];
     }
 
-    function inserirModulo($data) {
+    function inserirModulos($data) {
         $query     = "INSERT INTO modules " .
                 "(idCourse,name,`order`,type,duration,status) " .
                 "VALUES " . "('" .
@@ -353,7 +353,7 @@ class EquipaExecutiva {
         return ['success' => true, 'message' => 'Registo aceite.'];
     }
 
-    function atualizarModulo($data) {
+    function atualizarModulos($data) {
         $query     = "UPDATE modules SET " .
                 "idCourse=" . $data ['idCourse'] . "," .
                 "name='" . $data ['name'] . "'," .
@@ -370,7 +370,7 @@ class EquipaExecutiva {
         return ['success' => true, 'message' => 'Registo aceite.'];
     }
 
-    function apagarModulo($data): array {
+    function apagarModulos($data): array {
         $query     = "UPDATE modules SET status=IF(status='Ativo','Inativo','Ativo') WHERE idModules=" . $data['idModules'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
@@ -425,7 +425,7 @@ class EquipaExecutiva {
         return $resultado[0];
     }
 
-    function inserirDocumento($data) {
+    function inserirDocumentos($data) {
         $query     = "UPDATE documents SET " .
                 "idModules=" . $data ['idModules'] . "," .
                 "idCourse=" . $data ['idCourse'] . "," .
@@ -468,7 +468,7 @@ class EquipaExecutiva {
         return ['success' => true, 'message' => 'Ficheiro aceite.'];
     }
 
-    function atualizarDocumentoFicheiro($data) {
+    function atualizarDocumentosFicheiro($data) {
         $query     = "UPDATE documents "
                 . " SET document" . $data['type'] . "='" . $data['file'] . "'," . "document" . $data['type'] . "Blob='" . $data['content'] . "' "
                 . " WHERE idDocuments=" . $data['idDocuments'];
@@ -481,11 +481,11 @@ class EquipaExecutiva {
         return ['success' => true, 'message' => 'Ficheiro aceite.'];
     }
 
-    function atualizarDocumento($data) {
+    function atualizarDocumentos($data) {
         return $this->inserirDocumento($data);
     }
 
-    function apagarDocumento($data) {
+    function apagarDocumentos($data) {
         $query     = "UPDATE documents SET public='Não',status=IF(status='Ativo','Inativo','Ativo') WHERE idDocuments=" . $data['idDocuments'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);

@@ -9,10 +9,10 @@
                 <div class="inner" style="margin-left: 1em;">
                     <div class="row uniform" style="width: 100%">
                         <div style="float: left; margin-left: -1em">
-                            <label for="name">Dashboard</label> <input required name="{$modulo}"
-                                                                   id="{$modulo}" type="hidden" value="" />
+                            <label for="name">Dashboard</label> <input required name="{$action}"
+                                                                   id="{$action}" type="hidden" value="" />
                         </div>
-                        <div style="float: right; margin-left: -1em; cursor: pointer" id="{$modulo}Msg" onclick="this.innerHTML = '';"></div>
+                        <div style="float: right; margin-left: -1em; cursor: pointer" id="{$action}Msg" onclick="this.innerHTML = '';"></div>
                     </div>
                     <div class="row uniform" style="padding-left: 10px">
                         {foreach $objTabs as $tabs}

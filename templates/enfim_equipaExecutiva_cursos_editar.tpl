@@ -7,7 +7,7 @@
                     <script>
                         function submeter() {
                             var datastring = $("#{$currentTab}Atualizar").serializeArray();
-                            datastring.push({ name: 'action', value: '{$modulo}' });
+                            datastring.push({ name: 'action', value: '{$action}' });
                             datastring.push({ name: 'task', value: 'atualizar' });
                             datastring.push({ name: 'tab', value: '{$currentTab}' });
                             datastring.push({ name:'idCourse', value:'{$curso['idCourse']}' });

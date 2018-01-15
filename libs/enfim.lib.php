@@ -137,7 +137,7 @@ class Enfim {
         $_SESSION['equipaExecutiva'] = new EquipaExecutiva($data);
         $this->tpl->assign('users', $_SESSION['users']);
         $this->tpl->assign('equipaExecutiva', $_SESSION['equipaExecutiva']);
-        $this->tpl->assign('modulo', 'equipaExecutiva');
+        $this->tpl->assign('action', 'equipaExecutiva');
         $this->tpl->assign('objTabs', $_SESSION['equipaExecutiva']->tabs);
         $this->tpl->assign('tabActive', $data['tab']);
         $this->tpl->assign('currentTab', $data['tab']);
@@ -149,32 +149,28 @@ class Enfim {
                 $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '.tpl');
                 break;
             case "novo":
+                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['task'] . '.tpl');
+                break;
             case "ver":
             case "editar":
-                if ($data['task'] != 'novo') {
-                    if ($data['tab'] == 'utilizadores') {
-                        $this->tpl->assign('utilizador', $_SESSION['equipaExecutiva']->getUtilizador($data));
-                    }
-                    elseif ($data['tab'] == 'cursos') {
-                        $this->tpl->assign('curso', $_SESSION['equipaExecutiva']->getCurso($data));
-                    }
+                switch ($data['tab']) {
+                    case "utilizadores": $this->tpl->assign('utilizador', $_SESSION['equipaExecutiva']->getUtilizador($data));
+                        break;
+                    case "cursos": $this->tpl->assign('curso', $_SESSION['equipaExecutiva']->getCurso($data));
+                        break;
+                    case "modulos": $this->tpl->assign('modulo', $_SESSION['equipaExecutiva']->getModulo($data));
+                        break;
+                    case "documentos": $this->tpl->assign('documento', $_SESSION['equipaExecutiva']->getDocumento($data));
+                        break;
+                    default: break;
                 }
                 $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['task'] . '.tpl');
                 break;
             case "inserir":
             case "atualizar":
             case "apagar":
-                if ($data['tab'] == 'utilizadores') {
-                    $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . 'Utilizador'}($data));
-                    $_SESSION['equipaExecutiva']->utilizadores = $_SESSION['equipaExecutiva']->getUtilizadores($data);
-                }
-                elseif ($data['tab'] == 'cursos') {
-                    $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . 'Curso'}($data));
-                    $_SESSION['equipaExecutiva']->cursos = $_SESSION['equipaExecutiva']->getCursos($data);
-                }
-                else {
-                    $this->tpl->assign('error', ['success' => false, 'message' => '']);
-                }
+                $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab'])}($data));
+                $_SESSION['equipaExecutiva']->{$data['tab']} = $_SESSION['equipaExecutiva']->{'get' . ucfirst($data['tab'])}($data);
                 $this->tpl->display('enfim_error.tpl');
                 break;
             default:
