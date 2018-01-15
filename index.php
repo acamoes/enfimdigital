@@ -13,7 +13,7 @@ $enfim   = new Enfim;
 // set the current action
 $enfim->clearAllAssign();
 $_action = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'exit';
-var_dump($_action);
+//var_dump($_action);
 switch ($_action) {
     case 'servicosCentrais':
         break;

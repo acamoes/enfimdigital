@@ -98,10 +98,14 @@ class EquipaExecutiva {
                 "d.type as dTipo, " .
                 "d.public, " .
                 "d.status, " .
-                "d.document1, " .
+                "d.document1," .
+                "RIGHT(d.document1, LOCATE('.', REVERSE(d.document1))-1) as ext1, " .
                 "d.document2, " .
+                "RIGHT(d.document2, LOCATE('.', REVERSE(d.document2))-1) as ext2, " .
                 "d.document3, " .
+                "RIGHT(d.document3, LOCATE('.', REVERSE(d.document3))-1) as ext3, " .
                 "d.document4, " .
+                "RIGHT(d.document4, LOCATE('.', REVERSE(d.document4))-1) as ext4, " .
                 "d.dateAutor, " .
                 "d.idAutor, " .
                 "(SELECT name FROM users WHERE idUsers=d.idAutor) as autor, " .
@@ -195,7 +199,7 @@ class EquipaExecutiva {
         return $resultado[0];
     }
 
-    function inserirUtilizador($data): string {
+    function inserirUtilizador($data): array {
         $data ['local']    = substr($data ['zipCode'], 9);
         $data ['zipCode']  = substr($data ['zipCode'], 0, 8);
         $data ['password'] = $_SESSION['users']->generatePassword(8);
@@ -223,12 +227,12 @@ class EquipaExecutiva {
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
-            return 'Não foi aceite o registo.';
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
-        return 'Registo aceite.';
+        return ['success' => true, 'message' => 'Registo aceite.'];
     }
 
-    function atualizarUtilizador($data): string {
+    function atualizarUtilizador($data): array {
         $data ['local']   = substr($data ['zipCode'], 9);
         $data ['zipCode'] = substr($data ['zipCode'], 0, 8);
         // $data['password']=$this->generatePassword(8);
@@ -251,18 +255,243 @@ class EquipaExecutiva {
         $con              = new Database ();
         $resultado        = $con->set($query);
         if ($con->connection->error != '') {
-            return 'Não foi atualizado o registo.';
+            return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
-        return 'Registo atualizado.';
+        return ['success' => true, 'message' => 'Registo atualizado.'];
     }
 
-    function apagarUtilizador($data): string {
+    function apagarUtilizador($data): array {
         $query     = "UPDATE users SET status=IF(status='Ativo','Inativo','Ativo') WHERE idUsers=" . $data['idUsers'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
-            return 'Não foi apagado o registo.';
+            return ['success' => false, 'message' => 'O registo não foi alterado.'];
         }
-        return 'Registo apagado.';
+        return ['success' => true, 'message' => 'Registo alterado.'];
+    }
+
+    function getCurso($data): array {
+        $query     = "SELECT * FROM course WHERE idCourse=" . $data['idCourse'];
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado[0];
+    }
+
+    function inserirCurso($data): array {
+        $query     = "INSERT INTO course " .
+                "(name,sigla,level,internship,status) " .
+                "VALUES " .
+                "('" . $data ['name'] .
+                "','" . $data ['sigla'] .
+                "','" . $data ['level'] .
+                "','" . $data ['internship'] .
+                "','" . $data ['status'] . "')";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo aceite.'];
+    }
+
+    function atualizarCurso($data): array {
+        $query     = "UPDATE course SET " .
+                "name='" . $data ['name'] .
+                "'," . "sigla='" . $data ['sigla'] .
+                "'," . "level='" . $data ['level'] .
+                "'," . "internship='" . $data ['internship'] .
+                "'," . "status='" . $data ['status'] .
+                "' " . "WHERE idCourse=" . $data ['idCourse'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo aceite.'];
+    }
+
+    function apagarCurso($data): array {
+        $query     = "UPDATE course SET status=IF(status='Ativo','Inativo','Ativo') WHERE idCourse=" . $data['idCourse'] . " ";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'O registo não foi alterado.'];
+        }
+        return ['success' => true, 'message' => 'Registo alterado.'];
+    }
+
+    function getModulo($data) {
+        $query     = "SELECT m.idModules,c.idCourse,c.sigla,c.name as curso,m.order,m.name as modulo,m.type,m.duration,m.status " .
+                "FROM course c INNER JOIN modules m ON c.idCourse=m.idCourse " .
+                "WHERE m.idModules=" . $data['idModules'];
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado[0];
+    }
+
+    function inserirModulo($data) {
+        $query     = "INSERT INTO modules " .
+                "(idCourse,name,`order`,type,duration,status) " .
+                "VALUES " . "('" .
+                $data ['idCourse'] . "','" .
+                $data ['name'] . "'," .
+                $data ['order'] . ",'" .
+                $data ['type'] . "'," .
+                $data ['duration'] . ",'" .
+                $data ['status'] . "')";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo aceite.'];
+    }
+
+    function atualizarModulo($data) {
+        $query     = "UPDATE modules SET " .
+                "idCourse=" . $data ['idCourse'] . "," .
+                "name='" . $data ['name'] . "'," .
+                "`order`=" . $data ['order'] . "," .
+                "type='" . $data ['type'] . "'," .
+                "duration=" . $data ['duration'] . "," .
+                "status='" . $data ['status'] . "' " .
+                "WHERE idModules=" . $data ['idModules'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo aceite.'];
+    }
+
+    function apagarModulo($data): array {
+        $query     = "UPDATE modules SET status=IF(status='Ativo','Inativo','Ativo') WHERE idModules=" . $data['idModules'] . " ";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'O registo não foi alterado.'];
+        }
+        return ['success' => true, 'message' => 'Registo alterado.'];
+    }
+
+    function getDocumento($data) {
+        $query     = "SELECT * FROM (SELECT " .
+                "idDocuments, " .
+                "c.idCourse, " .
+                "c.sigla, " .
+                "c.name as curso, " .
+                "m.idModules, " .
+                "m.name as modulo, " .
+                "m.type as mTipo, " .
+                "d.name as documento, " .
+                "d.observations, " .
+                "d.type as dTipo, " .
+                "d.public, " .
+                "d.status, " .
+                "d.document1," .
+                "RIGHT(d.document1, LOCATE('.', REVERSE(d.document1))-1) as ext1, " .
+                "d.document2, " .
+                "RIGHT(d.document2, LOCATE('.', REVERSE(d.document2))-1) as ext2, " .
+                "d.document3, " .
+                "RIGHT(d.document3, LOCATE('.', REVERSE(d.document3))-1) as ext3, " .
+                "d.document4, " .
+                "RIGHT(d.document4, LOCATE('.', REVERSE(d.document4))-1) as ext4, " .
+                "d.dateAutor, " .
+                "d.idAutor, " .
+                "(SELECT name FROM users WHERE idUsers=d.idAutor) as autor, " .
+                "d.dateDiretor, " .
+                "d.idDiretor, " .
+                "(SELECT name FROM users WHERE idUsers=d.idDiretor) as diretor, " .
+                "d.datePedagogico, " .
+                "d.idPedagogico, " .
+                "(SELECT name FROM users WHERE idUsers=d.idPedagogico) as pedagogico, " .
+                "d.dateExecutiva, " .
+                "d.idExecutiva, " .
+                "(SELECT name FROM users WHERE idUsers=d.idExecutiva) as executiva " .
+                "FROM documents d INNER JOIN modules m ON d.idModules=m.idModules " .
+                "INNER JOIN course c ON m.idCourse=c.idCourse) as t " .
+                "WHERE idDocuments=" . $data['idDocuments'];
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado[0];
+    }
+
+    function inserirDocumento($data) {
+        $query     = "UPDATE documents SET " .
+                "idModules=" . $data ['idModules'] . "," .
+                "idCourse=" . $data ['idCourse'] . "," .
+                "name='" . $data ['name'] . "'," .
+                "type='" . $data ['type'] . "'," .
+                "public='" . $data ['public'] . "'," .
+                "observations='" . $data ['observations'] . "'," .
+                "status='" . (key_exists('status', $data) ?
+                $data ['status'] :
+                ($_SESSION['users']->permission == 'Equipa Executiva' ?
+                "Fechado" :
+                "Pendente")) . "'," .
+                "dateAutor='" . date("Y-m-d H:i:s") . "'," .
+                "idAutor=" . $_SESSION ['users']->id . ", " .
+                "datePedagogico='" . date("Y-m-d H:i:s") . "'," .
+                "idPedagogico=" . $_SESSION ['users']->id . ", " .
+                "dateDiretor='" . date("Y-m-d H:i:s") . "'," .
+                "idDiretor=" . $_SESSION ['users']->id . ", " .
+                "dateExecutiva='" . date("Y-m-d H:i:s") . "'," .
+                "idExecutiva=" . $_SESSION ['users']->id . " " .
+                "WHERE idDocuments=" . $_SESSION ['idDocument'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo aceite.'];
+    }
+
+    function inserirDocumentoFicheiro($data) {
+        $query     = "INSERT INTO documents " .
+                "(idModules,idCourse,document" . $data['type'] . ",document" . $data['type'] . "Blob)" .
+                "VALUES " . "(0,0,'" . $data['file'] . "','" . $data['content'] . "')";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o ficheiro.'];
+        }
+        $_SESSION ['idDocument'] = $con->connection->insert_id;
+        return ['success' => true, 'message' => 'Ficheiro aceite.'];
+    }
+
+    function atualizarDocumentoFicheiro($data) {
+        $query     = "UPDATE documents "
+                . " SET document" . $data['type'] . "='" . $data['file'] . "'," . "document" . $data['type'] . "Blob='" . $data['content'] . "' "
+                . " WHERE idDocuments=" . $data['idDocuments'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o ficheiro.'];
+        }
+        $_SESSION ['idDocument'] = $con->connection->insert_id;
+        return ['success' => true, 'message' => 'Ficheiro aceite.'];
+    }
+
+    function atualizarDocumento($data) {
+        return $this->inserirDocumento($data);
+    }
+
+    function apagarDocumento($data) {
+        $query     = "UPDATE documents SET public='Não',status=IF(status='Ativo','Inativo','Ativo') WHERE idDocuments=" . $data['idDocuments'] . " ";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'O registo não foi alterado.'];
+        }
+        return ['success' => true, 'message' => 'Registo alterado.'];
     }
 }

@@ -63,6 +63,28 @@ class Files {
         $this->display();
     }
 
+    public function getArchiveAll($id, $filePos) {
+        if ($_SESSION['users']->permission == 'Equipa Executiva' ||
+                $_SESSION['users']->permission == 'Formador') {
+            $query  = "SELECT * FROM documents WHERE idDocuments=" . $id;
+            $con    = new Database ();
+            $result = $con->get($query);
+            if (count($result) > 0) {
+                $this->name    = $result[0]['document' . $filePos];
+                $this->content = $result[0]['document' . $filePos . 'Blob'];
+            }
+            else {
+                $this->name    = "invalid.txt";
+                $this->content = "Access denied!!!!";
+            }
+        }
+        else {
+            $this->name    = "invalid.txt";
+            $this->content = "Access denied!!!!";
+        }
+        $this->display();
+    }
+
     private function display() {
         header('Content-type: text/html; charset=UTF-8');
         header('Content-Disposition: attachment; filename="' . $this->name . '"');
