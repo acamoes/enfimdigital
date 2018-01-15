@@ -9,7 +9,32 @@
         <link rel="stylesheet" href="assets/css/w3.css" />
         <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-        <script type="text/javascript" src="assets/js/code.js" language="javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" language="javascript">
+            function openTab(tab, index)
+            {
+                for (i = 0; i < document.getElementsByClassName("subTabs").length; i++)
+                {
+                    document.getElementsByClassName("tabs")[i].style.borderBottom = "6px solid #ccc";
+                    document.getElementsByClassName("tabs")[i].style.color = "#ccc";
+                    document.getElementsByClassName("subTabs")[i].style.display = "none";
+                }
+                document.getElementById(tab).style.borderBottom = "6px solid #77f";
+                document.getElementById(tab).style.color = "#77f";
+                document.getElementById(index + tab).style.display = "block";
+            }
+
+            function request(query = 'action=&', target = 'form')
+            {
+                $.ajax({
+                    url: '{$SCRIPT_NAME}',
+                    data: query,
+                    success: function (data) {
+                        $('#' + target).html(data);
+                    }
+                });
+            }
+        </script>
     </head>
     <body>
 
@@ -34,8 +59,8 @@
                 <div class="inner">
                     <h2>Menu</br>{$users->username}</h2>
                     <ul class="links">
-                        {if $users->permission eq "Equipa Executiva"}<li><a href='{$SCRIPT_NAME}?action=equipaExecutiva'>Equipa Executiva</a></li>{/if}
-                        {if $users->permission eq "Serviços Centrais"}<li><a href='{$SCRIPT_NAME}?action=servicosCentrais'>Equipa Executiva</a></li>{/if}
+                        {if $users->permission eq "Equipa Executiva"}<li><a href='{$SCRIPT_NAME}?action=equipaExecutiva&task=dashboard'>Equipa Executiva</a></li>{/if}
+                        {if $users->permission eq "Serviços Centrais"}<li><a href='{$SCRIPT_NAME}?action=servicosCentrais&task=dashboard'>Serviços Centrais</a></li>{/if}
                         <li><a href="{$SCRIPT_NAME}?action=exit">Sair</a></li>
                     </ul>
                     <a href="#" class="close">Close</a>

@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="assets/css/w3.css" />
         <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-        <script type="text/javascript" src="assets/js/code.js" language="javascript"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <script>

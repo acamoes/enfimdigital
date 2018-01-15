@@ -13,6 +13,7 @@ $loader->add('Formandos', ENFIM_DIR . 'classes/');
 $loader->add('Users', ENFIM_DIR . 'classes/');
 $loader->add('Evaluation', ENFIM_DIR . 'classes/');
 $loader->add('Cursos', ENFIM_DIR . 'classes/');
+$loader->add('EquipaExecutiva', ENFIM_DIR . 'classes/');
 
 // smarty configuration
 class Enfim_Smarty extends Smarty {

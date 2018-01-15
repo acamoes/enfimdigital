@@ -16,8 +16,8 @@ class Enfim {
         $this->tpl = new Enfim_Smarty;
     }
 
-    function login() {
-        $this->tpl->assign('error', '');
+    function login($error = '') {
+        $this->tpl->assign('error', $error);
         $this->tpl->display('enfim_login.tpl');
     }
 
@@ -116,6 +116,69 @@ class Enfim {
             case "saveEvaluation":
                 $formandos->saveEvaluation($data);
                 $this->tpl->display('enfim_close.tpl');
+                break;
+            default:
+                $this->clearAllAssign();
+                $this->home();
+                break;
+        }
+    }
+
+    function equipaExecutiva($request) {
+        if ($_SESSION['users']->permission != 'Equipa Executiva') {
+            $this->login('Acesso negado');
+            exit;
+        }
+        $data = $this->safePost($request);
+        if (!array_key_exists('search', $data)) {
+            $data['search'] = '';
+        }
+        if (!array_key_exists('tab', $data)) {
+            $data['tab'] = 'utilizadores';
+        }
+        $_SESSION['equipaExecutiva'] = new EquipaExecutiva($data);
+        $this->tpl->assign('users', $_SESSION['users']);
+        $this->tpl->assign('equipaExecutiva', $_SESSION['equipaExecutiva']);
+        $this->tpl->assign('modulo', 'equipaExecutiva');
+        $this->tpl->assign('objTabs', $_SESSION['equipaExecutiva']->tabs);
+        $this->tpl->assign('tabActive', $data['tab']);
+        switch ($data['task']) {
+            case "dashboard":
+                $this->tpl->display('enfim_equipaExecutiva.tpl');
+                break;
+            case "search":
+                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '.tpl');
+                break;
+            case "novo":
+                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_novo.tpl');
+                break;
+            case "ver":
+                $this->tpl->assign('utilizador',
+                                   $_SESSION['equipaExecutiva']->getUtilizador($data));
+                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_ver.tpl');
+                break;
+            case "editar":
+                $this->tpl->assign('utilizador',
+                                   $_SESSION['equipaExecutiva']->getUtilizador($data));
+                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_editar.tpl');
+                break;
+            case "inserir":
+                $this->tpl->assign('error',
+                                   $_SESSION['equipaExecutiva']->inserirUtilizador($data));
+                $_SESSION['equipaExecutiva']->utilizadores = $_SESSION['equipaExecutiva']->getUtilizadores($data);
+                $this->tpl->display('enfim_equipaExecutiva_utilizadores.tpl');
+                break;
+            case "atualizar":
+                $this->tpl->assign('error',
+                                   $_SESSION['equipaExecutiva']->atualizarUtilizador($data));
+                $_SESSION['equipaExecutiva']->utilizadores = $_SESSION['equipaExecutiva']->getUtilizadores($data);
+                $this->tpl->display('enfim_equipaExecutiva_utilizadores.tpl');
+                break;
+            case "apagar":
+                $this->tpl->assign('error',
+                                   $_SESSION['equipaExecutiva']->apagarUtilizador($data));
+                $_SESSION['equipaExecutiva']->utilizadores = $_SESSION['equipaExecutiva']->getUtilizadores($data);
+                $this->tpl->display('enfim_equipaExecutiva_utilizadores.tpl');
                 break;
             default:
                 $this->clearAllAssign();

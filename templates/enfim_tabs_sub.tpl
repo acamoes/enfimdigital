@@ -1,8 +1,13 @@
+
 {foreach $objTabs as $tabs}
     {foreach $tabs as $k=>$tab}
-        <section class="features subTabs" id="ST{$tab->tab}"
-                 style="display:
-                 {if $k==0}
+        <section class="features subTabs" id="ST{$tab->tab}"                 
+                 style="display:                 
+                 {if isset($tabActive)}
+                     {if $tabActive=={$tab->tab}}
+                         block
+                         {/if}                     
+                 {elseif !isset($tabActive) && $k==0}
                      block
                  {else}
                      none
