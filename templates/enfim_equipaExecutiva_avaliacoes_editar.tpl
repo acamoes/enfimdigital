@@ -6,22 +6,22 @@
                 <section>
                     <script>
                         function submeter() {
-                            var datastring = $("#{$currentTab}Novo").serializeArray();
+                            var datastring = $("#{$currentTab}Atualizar").serializeArray();
                             datastring.push({ldelim}name: 'action', value: '{$action}'});
-                                    datastring.push({ldelim}name: 'task', value: 'inserir'});
+                                    datastring.push({ldelim}name: 'task', value: 'atualizar'});
                                             datastring.push({ldelim}name: 'tab', value: '{$currentTab}'});
+                                            datastring.push({ldelim}name: 'idEvaluations', value: '{$avaliacao['idEvaluations']}'});
                                                     $.ajax({
                                                         url: '{$SCRIPT_NAME}',
                                                         data: datastring,
                                                         success: function (result) {
-                                                            $('#form').html('');
-                                                            $('#{$action}Msg').html(result);
+                                                            $('#formMsg').html(result);
                                                         }
                                                     });
                                                 }
 
                     </script>
-                    <form id="{$currentTab}Novo" name="{$currentTab}Novo"
+                    <form id="{$currentTab}Atualizar" name="{$currentTab}Atualizar"
                           onSubmit="submeter();
                                   return false;">    
                         <div class="row uniform" style="padding-top: 1.75em">
@@ -36,55 +36,50 @@
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
-                                <label for="name">Curso</label> <select name="idCourse"
-                                                                        id="idCourse" style="width: 400px">
+                                <label for="curso">Curso</label> 
+                                <select required name="idCourse"
+                                        id="idCourse" style="width: 350px">
                                     {foreach $equipaExecutiva->cursos as $curso}
-                                        <option  
+                                        <option 
                                             {if $curso['status'] eq 'Inativo'}style="color: orangered;"{/if}
+                                            {if $curso['idCourse'] eq $avaliacao['idCourse']}selected="selected"{/if}                                            
                                             value="{$curso['idCourse']}">{$curso['name']}</option>
                                     {/foreach}
-                                    ?>
                                 </select>
                             </div>
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
-                                <label for="name">Módulo</label><input required type="text"
-                                                                       name="name" id="name" style="width: 400px" />
-                            </div>
-                            <div style="float: right">
-                                <label for="order">Ordem</label><input required type="text"
-                                                                       name="order" id="order" style="width: 100px" pattern="[0-9]+$" />
+                                <label for="name">Nome</label>
+                                <input required type="text" name="name" id="name" style="width: 300px" maxlength="100"
+                                       value="{$avaliacao['name']}"/>
                             </div>
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
-                                <label for="status">Tipo</label> <select name="type" id="type"
-                                                                         style="width: 200px">
-                                    <option value="base">Base</option>
-                                    <option value="extra">Extra</option>
-                                </select>
-                            </div>
-                            <div style="float: right">
-                                <label for="duration">Duração (m)</label><input required
-                                                                                type="text" name="duration" id="duration" style="width: 100px"
-                                                                                pattern="[0-9]+$" />
+                                <label for="status">Estado</label> 
+                                <input type="radio"
+                                       id="Ativo" name="status" value="Ativo" {if $avaliacao['status'] eq 'Ativo'}checked='checked'{/if}>
+                                <label
+                                       for="Ativo">Ativo</label> 
+                                <input type="radio" id="Inativo" {if $avaliacao['status'] eq 'Inativo'}checked='checked'{/if}
+                                       name="status" value="Inativo"><label for="Inativo">Inativo</label>
                             </div>
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
-                                <label for="status">Estado</label><select  name="status" id="status" style="width: 200px">
-                                    <option value="Pendente">Pendente</option>
-                                    <option value="Revisão">Revisão</option>
-                                    <option value="Fechado">Fechado</option>
-                                    <option value="Ativo">Ativo</option>
-                                    <option value="Inativo">Inativo</option>
-                                </select>					
+                                <label for="template">Observações</label>
+                                <textarea cols="10" rows="5" name="template" id="template" style="width: 630px">{$avaliacao['template']}</textarea>
+                                <a href="#" class="small button" onclick="document.getElementById('templateFormat').innerHTML = JSON.stringify(JSON.parse(document.getElementById('template').value), undefined, 4)">Format</a>
+
                             </div>
-                        </div>
-                        <div class="row uniform">
                             <div style="float: right;">
                                 <button>Submit</button>
+                            </div>
+                        </div>
+                        <div class="row uniform">
+                            <div style="float: left;">
+                                <pre><code id="templateFormat"></code></pre>
                             </div>
                         </div>
                     </form>

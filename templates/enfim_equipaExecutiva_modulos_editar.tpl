@@ -7,19 +7,18 @@
                     <script>
                         function submeter() {
                             var datastring = $("#{$currentTab}Atualizar").serializeArray();
-                            datastring.push({ name: 'action', value: '{$action}'});
-                            datastring.push({ name: 'task', value: 'atualizar'});
-                            datastring.push({ name: 'tab', value: '{$currentTab}'});
-                            datastring.push({ name:'idModules', value:'{$modulo['idModules']}' });
-                            $.ajax({
-                                url: '{$SCRIPT_NAME}',
-                                data: datastring,
-                                success: function (result) {
-                                    $('#form').html('');
-                                    $('#{$action}Msg').html(result);
-                                }
-                            });
-                        }
+                            datastring.push({ldelim}name: 'action', value: '{$action}'});
+                                    datastring.push({ldelim}name: 'task', value: 'atualizar'});
+                                            datastring.push({ldelim}name: 'tab', value: '{$currentTab}'});
+                                                    datastring.push({ldelim}name: 'idModules', value: '{$modulo['idModules']}'});
+                                                            $.ajax({
+                                                                url: '{$SCRIPT_NAME}',
+                                                                data: datastring,
+                                                                success: function (result) {
+                                                                    $('#formMsg').html(result);
+                                                                }
+                                                            });
+                                                        }
 
                     </script>
                     <form id="{$currentTab}Atualizar" name="{$currentTab}Atualizar"
@@ -40,10 +39,10 @@
                                 <label for="name">Curso</label> <select name="idCourse"
                                                                         id="idCourse" style="width: 400px">
                                     {foreach $equipaExecutiva->cursos as $curso}
-                                    <option  
-                                        {if $curso['status'] eq 'Inativo'}style="color: orangered;"{/if}
-                                        value="{$curso['idCourse']}"
-                                        {if $modulo['idCourse'] eq $curso['idCourse']}selected="selected"{/if}>{$curso['name']}</option>
+                                        <option  
+                                            {if $curso['status'] eq 'Inativo'}style="color: orangered;"{/if}
+                                            value="{$curso['idCourse']}"
+                                            {if $modulo['idCourse'] eq $curso['idCourse']}selected="selected"{/if}>{$curso['name']}</option>
                                     {/foreach}
                                     ?>
                                 </select>
@@ -53,7 +52,7 @@
                             <div style="float: left">
                                 <label for="name">Módulo</label><input required type="text"
                                                                        name="name" id="name" 
-                                                                       value="{$modulo['name']}"
+                                                                       value="{$modulo['modulo']}"
                                                                        style="width: 400px" />
                             </div>
                             <div style="float: right">
@@ -66,7 +65,7 @@
                         <div class="row uniform">
                             <div style="float: left">
                                 <label for="type">Tipo</label> <select name="type" id="type"
-                                                                         style="width: 200px">
+                                                                       style="width: 200px">
                                     <option value="Base" {if $modulo['type'] eq "Base"}selected="selected"{/if}>Base</option>
                                     <option value="Extra" {if $modulo['type'] eq "Extra"}selected="selected"{/if}>Extra</option>
                                 </select>

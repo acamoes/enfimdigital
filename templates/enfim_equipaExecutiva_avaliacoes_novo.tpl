@@ -36,45 +36,47 @@
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
-                                <label for="sigla">Sigla</label><input required type="text"
-                                                                       name="sigla" id="sigla" style="width: 150px" maxlength="10" />
-                            </div>
-                        </div>
-                        <div class="row uniform">
-                            <div style="float: left">
-                                <label for="name">Curso</label><input required type="text"
-                                                                      name="name" id="name" style="width: 350px" />
-                            </div>
-                            <div style="float: right">
-                                <label for="level">Nível</label> <select name="level" id="level"
-                                                                         style="width: 200px">
-                                    <option value="Etapa Informativa">Etapa Informativa</option>
-                                    <option value="Etapa Avançada">Etapa Avançada</option>
-                                    <option value="Instrutor">Instrutor</option>
-                                    <option value="Monográfico">Monográfico</option>
-                                    <option value="Extra">Extra</option>
+                                <label for="curso">Curso</label> 
+                                <select required name="idCourse"
+                                        id="idCourse" style="width: 350px">
+                                    <option value="" selected></option>
+                                    {foreach $equipaExecutiva->cursos as $curso}
+                                        <option 
+                                            {if $curso['status'] eq 'Inativo'}style="color: orangered;"{/if}
+                                            value="{$curso['idCourse']}">{$curso['name']}</option>
+                                    {/foreach}
                                 </select>
                             </div>
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
-                                <label for="internship">Tem estágio?</label> <input type="radio"
-                                                                                    id="Sim" name="internship" value="Sim"><label
-                                                                                    for="Sim">Sim</label> <input type="radio"
-                                                                                    id="Não" name="internship" value="Não" checked=""><label
-                                                                                    for="Não">Não</label>
-                            </div>
-                            <div style="float: right">
-                                <label for="status">Estado</label> <input type="radio"
-                                                                          id="Ativo" name="status" value="Ativo" checked=""><label
-                                                                          for="Ativo">Ativo</label> <input type="radio" 
-                                                                          id="Inativo" name="status" value="Inativo">
-                                <label for="Inativo">Inativo</label>
+                                <label for="name">Nome</label>
+                                <input required type="text" name="name" id="name" style="width: 300px" maxlength="100" />
                             </div>
                         </div>
                         <div class="row uniform">
+                            <div style="float: left">
+                                <label for="status">Estado</label> 
+                                <input type="radio"
+                                       id="Ativo" name="status" value="Ativo" checked=""><label
+                                       for="Ativo">Ativo</label> <input type="radio" id="Inativo"
+                                       name="status" value="Inativo"><label for="Inativo">Inativo</label>
+                            </div>
+                        </div>
+                        <div class="row uniform">
+                            <div style="float: left">
+                                <label for="template">Observações</label>
+                                <textarea cols="10" rows="5" name="template" id="template" style="width: 630px"></textarea>
+                                <a href="#" class="small button" onclick="document.getElementById('templateFormat').innerHTML = JSON.stringify(JSON.parse(document.getElementById('template').value), undefined, 4)">Format</a>
+
+                            </div>
                             <div style="float: right;">
                                 <button>Submit</button>
+                            </div>
+                        </div>
+                        <div class="row uniform">
+                            <div style="float: left;">
+                                <pre><code id="templateFormat"></code></pre>
                             </div>
                         </div>
                     </form>

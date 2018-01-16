@@ -34,6 +34,28 @@
                     }
                 });
             }
+
+            function showFiles(val)
+            {
+                if (document.getElementById('idCourse').options[document.getElementById('idCourse').selectedIndex].value != "")
+                {
+                    if (val.name == 'idModules')
+                    {
+                        if (document.getElementById('idModules').options[document.getElementById('idModules').selectedIndex].value != "")
+                        {
+                            document.getElementById('file1').style.display = 'block';
+                            document.getElementById('file2').style.display = 'block';
+                            document.getElementById('file3').style.display = 'block';
+                            document.getElementById('file4').style.display = 'block';
+                            return;
+                        }
+                    }
+                }
+                document.getElementById('file1').style.display = 'none';
+                document.getElementById('file2').style.display = 'none';
+                document.getElementById('file3').style.display = 'none';
+                document.getElementById('file4').style.display = 'none';
+            }
         </script>
     </head>
     <body>

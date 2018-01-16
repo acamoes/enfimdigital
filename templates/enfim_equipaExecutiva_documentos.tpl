@@ -12,17 +12,17 @@
             </a>
         </form>
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&type=Extra&tab={$currentTab}', 'form');"
+    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Extra&tab={$currentTab}', 'form');"
         style="float: right">
         <li class="button small"
             style="cursor: pointer; padding: 0 10pt 0 10pt">Extra</li>
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&type=Texto&tab={$currentTab}', 'form');"
+    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Texto&tab={$currentTab}', 'form');"
         style="float: right">
         <li class="button small"
             style="cursor: pointer; padding: 0 10pt 0 10pt">Texto de apoio</li>
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&type=Apresentação&tab={$currentTab}', 'form');"
+    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Apresentação&tab={$currentTab}', 'form');"
         style="float: right">
         <li class="button small"
             style="cursor: pointer; padding: 0 10pt 0 10pt">Apresentação</li>
@@ -58,7 +58,7 @@
                     -o-text-overflow: ellipsis;">{$documentos['documento']}</td>
                 <td>{$documentos['dTipo']}</td>
                 <td>{$documentos['public']}</td>
-                <td>{$documentos['status']}</td>
+                <td {if $documentos['status'] eq 'Inativo'}style="color: orangered;"{/if}>{$documentos['status']}</td>
                 <td>
                     {if $documentos['ext1']!=''}
                         <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$documentos['idDocuments']}&filePos=1'" 
@@ -88,7 +88,7 @@
                 </td>
                 <td>
                     {if $documentos['ext4']!=''}
-                        <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$documents['idDocuments']}&filePos=4'" 
+                        <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$documentos['idDocuments']}&filePos=4'" 
                            class="icon fa-file{if $documentos['ext4']=='pdf'}-pdf-o{elseif $documentos['ext1']=='zip'}-zip-o{/if}" 
                            title="{$documentos['document4']}" 
                            style="color:#fff;cursor: pointer; padding: 0 0 0 5pt;border-line:none;box-shadow:0 0 0 0">

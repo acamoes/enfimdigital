@@ -7,18 +7,18 @@
                     <script>
                         function submeter() {
                             var datastring = $("#{$currentTab}Novo").serializeArray();
-                            datastring.push({ name: 'action', value: '{$action}' });
-                            datastring.push({ name: 'task', value: 'inserir' });
-                            datastring.push({ name: 'tab', value: '{$currentTab}' });
-                            $.ajax({
-                                url: '{$SCRIPT_NAME}',
-                                data: datastring,
-                                success: function (result) {
-                                    $('#form').html('');
-                                    $('#{$action}Msg').html(result);
-                                }
-                            });
-                        }
+                            datastring.push({ldelim}name: 'action', value: '{$action}'});
+                                    datastring.push({ldelim}name: 'task', value: 'inserir'});
+                                            datastring.push({ldelim}name: 'tab', value: '{$currentTab}'});
+                                                    $.ajax({
+                                                        url: '{$SCRIPT_NAME}',
+                                                        data: datastring,
+                                                        success: function (result) {
+                                                            $('#form').html('');
+                                                            $('#{$action}Msg').html(result);
+                                                        }
+                                                    });
+                                                }
 
                     </script>
                     <form id="{$currentTab}Novo" name="{$currentTab}Novo"
@@ -69,9 +69,9 @@
                             </div>
                             <div style="float: right">
                                 <label for="status">Estado</label> <input type="radio"
-                                                                          id="ativo" name="status" value="Ativo" checked=""><label
-                                                                          for="ativo">Ativo</label> <input type="radio" id="inativo"
-                                                                          name="status" value="Inativo"><label for="inativo">Inativo</label>
+                                                                          id="Ativo" name="status" value="Ativo" checked=""><label
+                                                                          for="Ativo">Ativo</label> <input type="radio" id="Inativo"
+                                                                          name="status" value="Inativo"><label for="Inativo">Inativo</label>
                             </div>
                         </div>
                         <div class="row uniform">

@@ -7,18 +7,18 @@
                     <script>
                         function submeter() {
                             var datastring = $("#{$currentTab}Atualizar").serializeArray();
-                            datastring.push({ name: 'action', value: '{$action}' });
-                            datastring.push({ name: 'task', value: 'atualizar' });
-                            datastring.push({ name: 'tab', value: '{$currentTab}' });
-                            datastring.push({ name:'idCourse', value:'{$curso['idCourse']}' });
-                            $.ajax({
-                                url: '{$SCRIPT_NAME}',
-                                data: datastring,
-                                success: function (result) {
-                                    $('#formMsg').html(result);
-                                }
-                            });
-                        }
+                            datastring.push({ldelim}name: 'action', value: '{$action}'});
+                                    datastring.push({ldelim}name: 'task', value: 'atualizar'});
+                                            datastring.push({ldelim}name: 'tab', value: '{$currentTab}'});
+                                                    datastring.push({ldelim}name: 'idCourse', value: '{$curso['idCourse']}'});
+                                                            $.ajax({
+                                                                url: '{$SCRIPT_NAME}',
+                                                                data: datastring,
+                                                                success: function (result) {
+                                                                    $('#formMsg').html(result);
+                                                                }
+                                                            });
+                                                        }
 
                     </script>
                     <form id="{$currentTab}Atualizar" name="{$currentTab}Atualizar"
@@ -61,22 +61,22 @@
                         <div class="row uniform">
                             <div style="float: left">
                                 <label for="internship">Tem estágio?</label> <input type="radio"
-                                                                                id="Sim" name="internship" value="Sim"
-                                                                                {if $curso['internship'] eq "Sim"}checked="checked"{/if}><label
-                                                                                for="Sim">Sim</label> <input type="radio"
-                                                                                id="Não" name="internship" value="Não"
-                                                                                {if $curso['internship'] eq "Não"}checked="checked"{/if}><label
-                                                                                for="Não">Não</label>
+                                                                                    id="Sim" name="internship" value="Sim"
+                                                                                    {if $curso['internship'] eq "Sim"}checked="checked"{/if}><label
+                                                                                    for="Sim">Sim</label> <input type="radio"
+                                                                                    id="Não" name="internship" value="Não"
+                                                                                    {if $curso['internship'] eq "Não"}checked="checked"{/if}><label
+                                                                                    for="Não">Não</label>
                             </div>
                             <div style="float: right">
                                 <label for="status">Estado</label> <input type="radio"
                                                                           id="Ativo" name="status" value="Ativo"
                                                                           {if $curso['status'] eq "Ativo"}checked="checked"{/if}>
-                                                                          <label
-                                                                          for="Ativo">Ativo</label> <input type="radio" 
-                                                                          id="Inativo" name="status" value="Inativo"
-                                                                          {if $curso['status'] eq "Inativo"}checked="checked"{/if}>
-                                                                          <label for="Inativo">Inativo</label>
+                                <label
+                                    for="Ativo">Ativo</label> <input type="radio" 
+                                    id="Inativo" name="status" value="Inativo"
+                                    {if $curso['status'] eq "Inativo"}checked="checked"{/if}>
+                                <label for="Inativo">Inativo</label>
                             </div>
                         </div>
                         <div class="row uniform">

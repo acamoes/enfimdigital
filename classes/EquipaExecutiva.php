@@ -78,7 +78,7 @@ class EquipaExecutiva {
                 "m.name LIKE '%" . $data['search'] . "%' OR " .
                 "m.type LIKE '%" . $data['search'] . "%' OR " .
                 "m.status LIKE '%" . $data['search'] . "%') " .
-                "AND m.status='Fechado' ORDER BY c.idCourse,m.order,m.idModules";
+                " ORDER BY c.idCourse,m.order,m.idModules";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -120,7 +120,7 @@ class EquipaExecutiva {
                 "(SELECT name FROM users WHERE idUsers=d.idExecutiva) as executiva " .
                 "FROM documents d INNER JOIN modules m ON d.idModules=m.idModules " .
                 "INNER JOIN course c ON m.idCourse=c.idCourse) as t " .
-                "WHERE status<>'Inativo' AND (curso LIKE '%" . $data['search'] . "%' OR " .
+                "WHERE (curso LIKE '%" . $data['search'] . "%' OR " .
                 "modulo LIKE '%" . $data['search'] . "%' OR " .
                 "mTipo LIKE '%" . $data['search'] . "%' OR " .
                 "documento LIKE '%" . $data['search'] . "%' OR " .
@@ -147,7 +147,7 @@ class EquipaExecutiva {
                   "u.birthDate as uBirthDate,u.address as uAddress,u.zipCode as uZipCode,u.local as uLocal,u.mobile as uMobile,u.telephone as uTelephone,u.observations as uObservations,".
                   "u.iban as uIban,u.aepId as uAepId ".
                  */"FROM courses cs " .
-                "INNER JOIN course c ON cs.idCourse=c.idCourse AND cs.status<>'Inativo' " .
+                "INNER JOIN course c ON cs.idCourse=c.idCourse " .
                 /* "INNER JOIN courses_team ct ON ct.idCourses=cs.idCourses " .
                   "INNER JOIN users u ON ct.idUsers=u.idUsers " .
                  */"ORDER BY level";
@@ -180,7 +180,7 @@ class EquipaExecutiva {
     }
 
     function getAvaliacoes($data) {
-        $query     = "SELECT * FROM courses_evaluations ";
+        $query     = "SELECT e.*, (SELECT c.name FROM course c WHERE c.idCourse=e.idCourse ) as 'curso' FROM evaluations e ";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -235,7 +235,7 @@ class EquipaExecutiva {
     function atualizarUtilizadores($data): array {
         $data ['local']   = substr($data ['zipCode'], 9);
         $data ['zipCode'] = substr($data ['zipCode'], 0, 8);
-        // $data['password']=$this->generatePassword(8);
+// $data['password']=$this->generatePassword(8);
         $query            = "UPDATE users SET " .
                 "username='" . $data ['username'] . "'," .
                 "email='" . $data ['email'] . "'," .
@@ -371,7 +371,7 @@ class EquipaExecutiva {
     }
 
     function apagarModulos($data): array {
-        $query     = "UPDATE modules SET status=IF(status='Ativo','Inativo','Ativo') WHERE idModules=" . $data['idModules'] . " ";
+        $query     = "UPDATE modules SET status='Inativo' WHERE idModules=" . $data['idModules'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
@@ -425,7 +425,7 @@ class EquipaExecutiva {
         return $resultado[0];
     }
 
-    function inserirDocumentos($data) {
+    function inserirDocumento($data) {
         $query     = "UPDATE documents SET " .
                 "idModules=" . $data ['idModules'] . "," .
                 "idCourse=" . $data ['idCourse'] . "," .
@@ -477,7 +477,6 @@ class EquipaExecutiva {
         if ($con->connection->error != '') {
             return ['success' => false, 'message' => 'Não foi aceite o ficheiro.'];
         }
-        $_SESSION ['idDocument'] = $con->connection->insert_id;
         return ['success' => true, 'message' => 'Ficheiro aceite.'];
     }
 
@@ -493,5 +492,143 @@ class EquipaExecutiva {
             return ['success' => false, 'message' => 'O registo não foi alterado.'];
         }
         return ['success' => true, 'message' => 'Registo alterado.'];
+    }
+
+    function getModulosCurso($data) {
+        $query     = "SELECT m.idModules,c.idCourse,c.sigla,c.name as curso,m.order,m.name as modulo,m.type,m.duration,m.status " .
+                "FROM course c INNER JOIN modules m ON c.idCourse=m.idCourse " .
+                "WHERE c.idCourse=" . $data['idCourse'];
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    function getCalendario($data) {
+        $query     = "SELECT cs.internship as csInternship,c.internship as cInternship, c.sigla as cSigla, " .
+                "cs.*,c.* FROM courses cs INNER JOIN course c ON cs.idCourse=c.idCourse " .
+                "WHERE idCourses=" . $data['idCourses'];
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado[0];
+    }
+
+    function inserirCalendarios($data) {
+        $data      += ["year" => substr($data ['course'], -4, 4)];
+        $query     = "INSERT INTO courses " .
+                "(year,course,completeName,startDate,endDate,local,vacancy,idCourse,internship,status,observations) " .
+                "VALUES " .
+                "('" . $data ['year'] .
+                "','" . $data ['course'] .
+                "','" . $data ['completeName'] .
+                "','" . $data ['startDate'] .
+                "','" . $data ['endDate'] .
+                "','" . $data ['local'] .
+                "','" . $data ['vacancy'] .
+                "'," . $data ['idCourse'] .
+                ",'" . $data ['internship'] .
+                "','" . $data ['status'] .
+                "','" . $data ['observations'] . "')";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo aceite.'];
+    }
+
+    function atualizarCalendarios($data) {
+        $data      += ["year" => substr($data ['course'], -4, 4)];
+        $query     = "UPDATE courses SET " .
+                "year='" . $data ['year'] . "'," . "course='" . $data ['course'] . "'," . "completeName='" . $data ['completeName'] .
+                "'," . "startDate='" . $data ['startDate'] . "'," . "endDate='" . $data ['endDate'] .
+                "'," . "local='" . $data ['local'] . "'," . "vacancy='" . $data ['vacancy'] .
+                "'," . "idCourse=" . $data ['idCourse'] . "," . "internship='" . $data ['internship'] .
+                "'," . "status='" . $data ['status'] . "'," . "observations='" . $data ['observations'] .
+                "' " . "WHERE idCourses=" . $data ['idCourses'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo aceite.'];
+    }
+
+    function apagarCalendarios($data) {
+        $query     = "UPDATE courses SET status=IF(status='Ativo','Inativo','Ativo') WHERE idCourses=" . $data['idCourses'] . " ";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'O registo não foi alterado.'];
+        }
+        return ['success' => true, 'message' => 'Registo alterado.'];
+    }
+
+    function getAvaliacao($data) {
+        $query     = "SELECT e.*,(SELECT c.name FROM course c WHERE c.idCourse=e.idCourse ) as 'curso' FROM evaluations e WHERE e.idEvaluations = " . $data['idEvaluations'] . " ";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado[0];
+    }
+
+    function inserirAvaliacoes($data) {
+        $query     = "INSERT INTO evaluations " .
+                "(idCourse,name,status,template,dateExecutiva,idExecutiva) " .
+                "VALUES " .
+                "(" . $data ['idCourse'] .
+                ",'" . $data ['name'] .
+                "','" . $data ['status'] .
+                "','" . $data ['template'] .
+                "','" . date("Y-m-d H:i:s") .
+                "'," . $_SESSION['users']->id . ")";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo aceite.'];
+    }
+
+    function atualizarAvaliacoes($data) {
+        $query     = "UPDATE evaluations SET " .
+                "idCourse=" . $data['idCourse'] . ", name='" . $data ['name'] . "'," . "template='" . $data ['template'] . "'," . "status='" . $data ['status'] .
+                "'," . "dateExecutiva='" . date("Y-m-d H:i:s") . "'," . "idExecutiva=" . $_SESSION['users']->id .
+                " " . "WHERE idEvaluations=" . $data ['idEvaluations'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi aceite o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo aceite.'];
+    }
+
+    function apagarAvaliacoes($data) {
+        $query     = "UPDATE evaluations SET status=IF(status='Ativo','Inativo','Ativo') WHERE idEvaluations=" . $data['idEvaluations'] . " ";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'O registo não foi alterado.'];
+        }
+        return ['success' => true, 'message' => 'Registo alterado.'];
+    }
+
+    function getModulosCursoOption($data) {
+        $html         = '<option value="" selected></option>';
+        $modulosCurso = $this->getModulosCurso($data);
+        foreach ($modulosCurso as $modulo) {
+            if ($data['docType'] != "Extra" && $modulo['modulo'] == "DIREÇÃO") {
+                continue;
+            }
+            $html .= '<option value="' . $modulo['idModules'] . '">' . $modulo['modulo'] . '</option>';
+        }
+        return $html;
     }
 }

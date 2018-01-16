@@ -134,6 +134,9 @@ class Enfim {
         if (!array_key_exists('tab', $data)) {
             $data['tab'] = 'utilizadores';
         }
+        if (array_key_exists('docType', $data)) {
+            $this->tpl->assign('docType', $data['docType']);
+        }
         $_SESSION['equipaExecutiva'] = new EquipaExecutiva($data);
         $this->tpl->assign('users', $_SESSION['users']);
         $this->tpl->assign('equipaExecutiva', $_SESSION['equipaExecutiva']);
@@ -149,6 +152,7 @@ class Enfim {
                 $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '.tpl');
                 break;
             case "novo":
+                unset($_SESSION ['idDocument']);
                 $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['task'] . '.tpl');
                 break;
             case "ver":
@@ -160,7 +164,15 @@ class Enfim {
                         break;
                     case "modulos": $this->tpl->assign('modulo', $_SESSION['equipaExecutiva']->getModulo($data));
                         break;
-                    case "documentos": $this->tpl->assign('documento', $_SESSION['equipaExecutiva']->getDocumento($data));
+                    case "calendarios": $this->tpl->assign('calendario', $_SESSION['equipaExecutiva']->getCalendario($data));
+                        break;
+                    case "avaliacoes": $this->tpl->assign('avaliacao', $_SESSION['equipaExecutiva']->getAvaliacao($data));
+                        break;
+                    case "documentos":
+                        $docs                    = $_SESSION['equipaExecutiva']->getDocumento($data);
+                        $_SESSION ['idDocument'] = $docs['idDocuments'];
+                        $this->tpl->assign('docType', $docs['dTipo']);
+                        $this->tpl->assign('documento', $docs);
                         break;
                     default: break;
                 }
@@ -172,6 +184,9 @@ class Enfim {
                 $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab'])}($data));
                 $_SESSION['equipaExecutiva']->{$data['tab']} = $_SESSION['equipaExecutiva']->{'get' . ucfirst($data['tab'])}($data);
                 $this->tpl->display('enfim_error.tpl');
+                break;
+            case "form":
+                echo $_SESSION['equipaExecutiva']->{$data['func']}($data);
                 break;
             default:
                 $this->clearAllAssign();
