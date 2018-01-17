@@ -112,8 +112,8 @@ class EquipaExecutiva {
         return Documentos::getDocumento($data);
     }
 
-    function inserirDocumento($data) {
-        return Documentos::inserirDocumento($data);
+    function inserirDocumentos($data) {
+        return Documentos::inserirDocumentos($data);
     }
 
     function inserirDocumentoFicheiro($data) {

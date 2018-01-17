@@ -114,7 +114,7 @@ class Documentos {
         return $resultado[0];
     }
 
-    static function inserirDocumento($data) {
+    static function inserirDocumentos($data) {
         $query     = "UPDATE documents SET " .
                 "idModules=" . $data ['idModules'] . "," .
                 "idCourse=" . $data ['idCourse'] . "," .
