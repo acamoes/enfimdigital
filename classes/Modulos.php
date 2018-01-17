@@ -106,7 +106,7 @@ class Modulos {
 
     static function getModulosCursoOption($data) {
         $html         = '<option value="" selected></option>';
-        $modulosCurso = $this->getModulosCurso($data);
+        $modulosCurso = self::getModulosCurso($data);
         foreach ($modulosCurso as $modulo) {
             if ($data['docType'] != "Extra" && $modulo['modulo'] == "DIREÇÃO") {
                 continue;
