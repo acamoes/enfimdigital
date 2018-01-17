@@ -130,8 +130,8 @@ class Enfim {
         }
         $data                        = $this->safePost($request);
         !isset($data['search']) && $data['search']              = '';
-        !isset($data['tab']) && $data['tab']                 = 'utilizadores';
-        !isset($data['subTab']) && $data['subTab']              = 'inscritos';
+        !isset($data['tab']) && $data['tab']                 = '';
+        !isset($data['subTab']) && $data['subTab']              = '';
         isset($data['docType']) && $this->tpl->assign('docType', $data['docType']);
         isset($data['equipaExecutivaFormacoesIdCourses']) && $this->tpl->assign('equipaExecutivaFormacoesIdCourses', $data['equipaExecutivaFormacoesIdCourses']);
         isset($data['equipaExecutivaFormacoesIdCourses']) && $data['idCourses']           = $data['equipaExecutivaFormacoesIdCourses'];
@@ -172,7 +172,15 @@ class Enfim {
                 unset($_SESSION ['idDocument']);
                 if ($data['tab'] == 'formacoes') {
                     if (isset($data['searchUtilizadores'])) {
-                        $this->tpl->assign('resultadoInscritos', $_SESSION['equipaExecutiva']->getUtlizadoresNaoInscritos($data));
+                        if ($data['subTab'] == 'inscritos') {
+                            $this->tpl->assign('resultado' . ucfirst($data['subTab']), $_SESSION['equipaExecutiva']->getUtlizadoresNaoInscritos($data));
+                        }
+                        elseif ($data['subTab'] == 'equipa') {
+                            $this->tpl->assign('resultado' . ucfirst($data['subTab']), $_SESSION['equipaExecutiva']->getUtlizadoresSemEquipa($data));
+                        }
+                        else {
+                            $this->tpl->assign('resultado' . ucfirst($data['subTab']), $_SESSION['equipaExecutiva']->{'get' . ucfirst($data['subTab'])}($data));
+                        }
                         $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['subTab'] . '_' . $data['task'] . '_resultado.tpl');
                     }
                     else {
@@ -218,10 +226,8 @@ class Enfim {
             case "atualizar":
             case "apagar":
                 if ($data['tab'] == 'formacoes') {
-                    if ($data['subTab'] == 'inscritos') {
-                        $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab']) . ucfirst($data['subTab'])}($data));
-                        $this->tpl->display('enfim_error.tpl');
-                    }
+                    $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab']) . ucfirst($data['subTab'])}($data));
+                    $this->tpl->display('enfim_error.tpl');
                 }
                 else {
                     $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab'])}($data));

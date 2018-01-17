@@ -3,10 +3,10 @@
         <form>
             <input type="text" id="{$currentTab}search" name="{$currentTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
             <a class="button small icon fa-search"
-               style="box-shadow: 
+               style="box-shadow{ 
                -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
-               box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
+               box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); }
                cursor: pointer; padding: 0 0 0 5pt"
                onclick="request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">
             </a>

@@ -26,8 +26,8 @@ class EquipaExecutiva {
         $this->formacoes                          = $this->getFormacoes($data);
         $this->avaliacoes                         = $this->getAvaliacoes($data);
         $this->contexto['formacoes']['inscritos'] = $this->getInscritos($data);
-        /* $this->contexto['formacoes']['equipa'] = $this->getEquipa($data);
-          $this->contexto['formacoes']['sessoes'] = $this->getSessoes($data);
+        $this->contexto['formacoes']['equipa']    = $this->getEquipa($data);
+        /*  $this->contexto['formacoes']['sessoes'] = $this->getSessoes($data);
           $this->contexto['formacoes']['ficheiros'] = $this->getFicheiros($data);
           $this->contexto['formacoes']['avaliacoes'] = $this->getAvaliacoes($data); */
     }
@@ -213,9 +213,9 @@ class EquipaExecutiva {
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
-            return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
+            return ['success' => false, 'message' => 'Não foi adicionado o registo.'];
         }
-        return ['success' => true, 'message' => 'Registo atualizado.'];
+        return ['success' => true, 'message' => 'Registo adicionado.'];
     }
 
     function apagarFormacoesInscritos($data) {
@@ -275,5 +275,97 @@ class EquipaExecutiva {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
         return ['success' => true, 'message' => 'Registo atualizado.'];
+    }
+
+    function adicionarFormacoesEquipa($data) {
+        $query     = "INSERT INTO courses_team (idUsers,idCourses,type) VALUES (" . $data['idUsers'] . "," . $data['idCourses'] . ",'Formador') ";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi adicionado o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo adicionado.'];
+    }
+
+    function atualizarFormacoesEquipa($data) {
+        $data ['local']   = substr($data ['zipCode'], 9);
+        $data ['zipCode'] = substr($data ['zipCode'], 0, 8);
+        $query            = "UPDATE users SET " . "username='" . $data ['username'] . "'," . "email='" . $data ['email'] . "'," .
+                "name='" . $data ['name'] . "'," . "sigla='" . $data ['sigla'] . "'," . "status='" . $data ['status'] . "'," .
+                "birthDate='" . $data ['birthDate'] . "'," . "address='" . $data ['address'] . "'," .
+                "zipCode='" . $data ['zipCode'] . "'," . "local='" . $data ['local'] . "'," . "mobile='" . $data ['mobile'] . "'," .
+                "telephone='" . $data ['telephone'] . "'," . "observations='" . $data ['observations'] . "'," .
+                "iban='" . $data ['iban'] . "'," . "aepId='" . $data ['aepId'] . "' " . "WHERE idUsers=" . $data ['idUsers'];
+        $con              = new Database ();
+        $resultado        = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
+        }
+        $query     = "UPDATE courses_team SET " . "type='" . $data ['type'] . "' " . "WHERE idUsers=" . $data ['idUsers'] .
+                " AND idCourses=" . $data ['idCourses'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo atualizado.'];
+    }
+
+    function getUtlizadoresSemEquipa($data) {
+        $query     = "SELECT * FROM users u " .
+                "WHERE u.idUsers NOT IN (SELECT idUsers FROM courses_team WHERE idCourses=" . $data['idCourses'] . ") " .
+                "AND (name LIKE '%" . $data['searchUtilizadores'] . "%' " .
+                "OR email LIKE '%" . $data['searchUtilizadores'] . "%' " .
+                "OR aepId LIKE '%" . $data['searchUtilizadores'] . "%' " .
+                "OR permission LIKE '%" . $data['searchUtilizadores'] . "%' ) ORDER BY permission,name";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    function getEquipa1($data) {//just search
+        $query     = "SELECT * FROM users WHERE " .
+                "(username like '%" . $data ['searchEquipa'] . "%' OR " .
+                "name like '%" . $data ['searchEquipa'] . "%' OR " .
+                "aepId like '%" . $data ['searchEquipa'] . "%' OR " .
+                "status like '%" . $data ['searchEquipa'] . "%' OR " .
+                "mobile like '%" . $data ['searchEquipa'] . "%') " .
+                " AND (permission='Formador' OR permission='Equipa Executiva') " .
+                "ORDER BY name ";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    function getEquipa($data) { // var_dump($post);exit();
+        $query     = "SELECT c.idCourses,c.course,c.status as cStatus, " . "ct.*, " . "u.*,u.status as uStatus " .
+                " FROM " . "courses c INNER JOIN courses_team ct ON c.idCourses=ct.idCourses " . "INNER JOIN users u ON ct.idUsers=u.idUsers " .
+                (key_exists("idCourses", $data) ? "AND ct.idCourses=" . $data ['idCourses'] . " " : " ") .
+                (key_exists("idUsers", $data) ? "AND ct.idUsers=" . $data ['idUsers'] . " " : " ") .
+                (key_exists("searchEquipa", $data) ? "AND (u.name LIKE '%" . $data ['searchEquipa'] . "%' OR
+					u.aepId LIKE '%" . $data ['searchEquipa'] . "%' OR
+					u.email LIKE '%" . $data ['searchEquipa'] . "%')" : " ") . " ORDER BY u.aepId";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    function apagarFormacoesEquipa($data) {
+        $query     = "DELETE FROM courses_team WHERE idUsers=" . $data ['idUsers'] . " AND idCourses=" . $data ['idCourses'] . " ";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi apagar o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo apagado.'];
     }
 }

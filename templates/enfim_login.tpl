@@ -35,12 +35,12 @@
                             <form method="post" action="{$SCRIPT_NAME}?action=submit">
                                 <div class="field">
                                     <label for="username">Username</label> <input type="text"
-                                                                                  name="username" id="username" value="joao.madeira"
+                                                                                  name="username" id="username" value=""
                                                                                   style="width: 50%" />
                                 </div>
                                 <div class="field">
                                     <label for="password">Password</label> <input type="password"
-                                                                                  name="password" id="password" value="teste" style="width: 50%" />
+                                                                                  name="password" id="password" value="" style="width: 50%" />
                                 </div>
                                 <ul class="actions">
                                     <li><input type="submit" name="submit" value="Submit" /></li>

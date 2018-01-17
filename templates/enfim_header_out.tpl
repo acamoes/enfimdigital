@@ -31,8 +31,5 @@
                 <h1>
                     <img class="logo icon svg" src="images/logo_2.svg" height="80px" style="cursor:pointer;margin: 10px" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=home'"/>
                 </h1>
-                <nav>
-                    <a href="#menu">Menu</a>
-                </nav>
             </header>
 

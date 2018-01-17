@@ -1,6 +1,6 @@
-<section id="wrapper" style="width: 700px;">
+<section id="wrapper" style="width: 800px;">
     <section id="one" class="wrapper spotlight left style2"
-             style="border-radius: 5px; width: 700px;">
+             style="border-radius: 5px; width: 800px;">
         <div class="inner">
             <div class="content">
                 <section>

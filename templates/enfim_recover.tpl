@@ -1,9 +1,9 @@
 {include file="enfim_header_out.tpl"}
-<section id="wrapper">
+<section id="wrapper" style='padding-top: 150px'>
     <section id="one" class="wrapper spotlight left style2">
         <div class="inner">
             <div class="content">
-                <h2 class="major">Login</h2><h3 class="alert">{$error}</h3>
+                <h2 class="major">Recuperação</h2><h3 class="alert">{$error}</h3>
                 <form method="post" action="{$SCRIPT_NAME}?action=recover" id="recoverPassword">
                     <div class="field">
                         <label for="username">Username</label> <input type="text"
