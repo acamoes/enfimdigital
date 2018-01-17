@@ -14,11 +14,13 @@ class Evaluation {
     private $edit       = false;
     private $template   = null;
     private $tpl        = "";
+    private $target     = "";
     private $evaluation = null;
 
 //put your code here
     function __construct($evaluation) {
         $this->evaluation = $evaluation;
+        $this->target     = $this->evaluation['target'];
         $this->tpl        = new Enfim_Smarty;
         if (strlen($this->evaluation['evaluation']) > strlen($this->evaluation['template'])) {
             $this->template = json_decode($this->evaluation['evaluation']);
@@ -43,24 +45,16 @@ class Evaluation {
             if (property_exists($this->template->avaliacao->itens[$i], 'itens')) {
                 for ($j = 0, $sc = count($this->template->avaliacao->itens[$i]->itens); $j < $sc; $j++) {
                     if ($this->template->avaliacao->itens[$i]->itens[$j]->tema != 'name') {
-                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                            'avaliacao')) {
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
                             if ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo == 'range') {
                                 $html .= $this->radio(
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema . '-avaliacao',
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema,
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo,
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response ?? null);
+                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema . '-avaliacao', $this->template->avaliacao->itens[$i]->itens[$j]->tema, $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo, $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response ?? null);
                             }
                         }
-                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                            'observacoes')) {
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
                             if ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->tipo == 'longText') {
                                 $html .= $this->textArea(
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema . '-observacoes',
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema,
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo,
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response ?? null);
+                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema . '-observacoes', $this->template->avaliacao->itens[$i]->itens[$j]->tema, $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response ?? null);
                             }
                         }
                     }
@@ -69,36 +63,37 @@ class Evaluation {
                             $listaFormadores = Formadores::listaFormadores($this->evaluation['idCourses']);
                             for ($k = 0, $f = count($listaFormadores); $k < $f; $k++) {
                                 $formador                  = $listaFormadores[$k];
-                                $parts                     = explode(' ',
-                                                                     $formador['name']);
+                                $parts                     = explode(' ', $formador['name']);
                                 $formador['firstLastName'] = $parts[0] . ' ' . $parts[count($parts) - 1];
                                 $html                      .= "<br/>";
                                 $html                      .= "<h4 class='major'>" . $formador['firstLastName'] . "</h4><div class='field'>";
                                 $html                      .= "<input type='hidden' name='formadores_" . $formador['idUsers'] . "_" . $formador['type'] . "'/>";
-                                $temas                     = ['Clareza na Exposição',
-                                    'Domínio do assunto',
-                                    'Métodos e técnicas utilizadas',
-                                    'Relacionamento com os formandos'];
+
+                                $temas = "";
+                                if ($this->target == 'Formador') {
+                                    $temas = ['Direção de Curso', 'Participação no Curso',
+                                        'Clareza na Exposição', 'Domínio no assunto',
+                                        'Métodos e técnicas utilizadas', 'Relacionamento com os formandos', 'Acompanhameno de estágios'];
+                                }
+                                else {
+                                    $temas = ['Clareza na Exposição',
+                                        'Domínio do assunto',
+                                        'Métodos e técnicas utilizadas',
+                                        'Relacionamento com os formandos'];
+                                }
+
                                 foreach ($temas as $temas) {
-                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                                        'avaliacao')) {
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
                                         if ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo == 'range') {
                                             $html .= $this->radio(
-                                                    'formador-avaliacao-' . $temas . '-' . $formador['idUsers'],
-                                                    $temas,
-                                                    $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo,
-                                                    ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response->{ENFIM::cleanString('formador-avaliacao-' . $temas . '-' . $formador['idUsers'])} ?? null));
+                                                    'formador-avaliacao-' . $temas . '-' . $formador['idUsers'], $temas, $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response->{ENFIM::cleanString('formador-avaliacao-' . $temas . '-' . $formador['idUsers'])} ?? null));
                                         }
                                     }
 
-                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                                        'observacoes')) {
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
                                         if ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->tipo == 'longText') {
                                             $html .= $this->textArea(
-                                                    'formador-observacoes-' . $temas . '-' . $formador['idUsers'],
-                                                    $temas,
-                                                    $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo,
-                                                    ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers'])} ?? null));
+                                                    'formador-observacoes-' . $temas . '-' . $formador['idUsers'], $temas, $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers'])} ?? null));
                                         }
                                     }
                                 }
@@ -112,25 +107,17 @@ class Evaluation {
                                 $html   .= "<br/>";
                                 $html   .= "<h4 class='major'>" . $modulo['name'] . "</h4><div class='field'>";
                                 $html   .= "<input type='hidden' name='modulo_" . $modulo['idModules'] . "'/>";
-                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                                    'avaliacao')) {
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
                                     if ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo == 'range') {
                                         $html .= $this->radio(
-                                                'modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'],
-                                                '',
-                                                $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo,
-                                                ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response->{ENFIM::cleanString('modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'])} ?? null));
+                                                'modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'], '', $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response->{ENFIM::cleanString('modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'])} ?? null));
                                     }
                                 }
 
-                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                                    'observacoes')) {
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
                                     if ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->tipo == 'longText') {
                                         $html .= $this->textArea(
-                                                'modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'],
-                                                '',
-                                                $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo,
-                                                ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'])} ?? null));
+                                                'modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'], '', $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'])} ?? null));
                                     }
                                 }
                             }
@@ -169,12 +156,10 @@ class Evaluation {
             if (property_exists($this->template->avaliacao->itens[$i], 'itens')) {
                 for ($j = 0, $sc = count($this->template->avaliacao->itens[$i]->itens); $j < $sc; $j++) {
                     if ($this->template->avaliacao->itens[$i]->itens[$j]->tema != 'name') {
-                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                            'avaliacao')) {
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
                             $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response = ($responses[ENFIM::cleanString($this->template->avaliacao->itens[$i]->itens[$j]->tema . '-avaliacao')] ?? "");
                         }
-                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                            'observacoes')) {
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
                             $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response = ($responses[ENFIM::cleanString($this->template->avaliacao->itens[$i]->itens[$j]->tema . '-observacoes')] ?? "");
                         }
                     }
@@ -183,32 +168,33 @@ class Evaluation {
                             $listaFormadores = Formadores::listaFormadores($this->evaluation['idCourses']);
                             for ($k = 0, $f = count($listaFormadores); $k < $f; $k++) {
                                 $formador                  = $listaFormadores[$k];
-                                $parts                     = explode(' ',
-                                                                     $formador['name']);
+                                $parts                     = explode(' ', $formador['name']);
                                 $formador['firstLastName'] = $parts[0] . ' ' . $parts[count($parts) - 1];
-                                $temas                     = ['Clareza na Exposição',
-                                    'Domínio do assunto',
-                                    'Métodos e técnicas utilizadas',
-                                    'Relacionamento com os formandos'];
+                                $temas                     = "";
+                                if ($this->target == 'Formador') {
+                                    $temas = ['Direção de Curso', 'Participação no Curso',
+                                        'Clareza na Exposição', 'Domínio no assunto',
+                                        'Métodos e técnicas utilizadas', 'Relacionamento com os formandos', 'Acompanhameno de estágios'];
+                                }
+                                else {
+                                    $temas = ['Clareza na Exposição',
+                                        'Domínio do assunto',
+                                        'Métodos e técnicas utilizadas',
+                                        'Relacionamento com os formandos'];
+                                }
                                 foreach ($temas as $temas) {
-                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                                        'avaliacao')) {
-                                        if (array_key_exists(ENFIM::cleanString('formador-avaliacao-' . $temas . '-' . $formador['idUsers']),
-                                                                                $responses)) {
-                                            if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao,
-                                                                 'response')) {
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
+                                        if (array_key_exists(ENFIM::cleanString('formador-avaliacao-' . $temas . '-' . $formador['idUsers']), $responses)) {
+                                            if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao, 'response')) {
                                                 $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response = (object) null;
                                             }
                                             $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response->{ENFIM::cleanString('formador-avaliacao-' . $temas . '-' . $formador['idUsers'])} = $responses[ENFIM::cleanString('formador-avaliacao-' . $temas . '-' . $formador['idUsers'])];
                                         }
                                     }
 
-                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                                        'observacoes')) {
-                                        if (array_key_exists(ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers']),
-                                                                                $responses)) {
-                                            if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->observacoes,
-                                                                 'response')) {
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
+                                        if (array_key_exists(ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers']), $responses)) {
+                                            if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->observacoes, 'response')) {
                                                 $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response = (object) null;
                                             }
                                             $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers'])} = $responses[ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers'])];
@@ -222,19 +208,15 @@ class Evaluation {
                             $listaModulos = Cursos::listaModulos($this->evaluation['idCourses']);
                             for ($k = 0, $f = count($listaModulos); $k < $f; $k++) {
                                 $modulo = $listaModulos[$k];
-                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                                    'avaliacao')) {
-                                    if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao,
-                                                         'response')) {
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
+                                    if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao, 'response')) {
                                         $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response = (object) null;
                                     }
                                     $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response->{ENFIM::cleanString('modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'])} = ($responses[ENFIM::cleanString('modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'])] ?? "");
                                 }
 
-                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j],
-                                                    'observacoes')) {
-                                    if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->observacoes,
-                                                         'response')) {
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
+                                    if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->observacoes, 'response')) {
                                         $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response = (object) null;
                                     }
                                     $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'])} = ($responses[ENFIM::cleanString('modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'])] ?? "");

@@ -23,6 +23,7 @@
         <tr>
             <th>Curso</th>
             <th>Nome</th>
+            <th>Alvo</th>
             <th>Estado</th>
             <th>Data</th>
             <th></th>
@@ -33,6 +34,7 @@
             <tr>
                 <td>{$avaliacoes['curso']}</td>
                 <td>{$avaliacoes['name']}</td>
+                <td>{$avaliacoes['target']}</td>
                 <td {if $avaliacoes['status'] eq 'Inativo'}style="color: orangered;"{/if}>{$avaliacoes['status']}</td>
                 <td>{$avaliacoes['dateExecutiva']}</td>
                 <td class="actions" align="right"><a

@@ -1,7 +1,7 @@
 
 {foreach $objTabs as $tabs}
     {foreach $tabs as $k=>$tab}
-        <section class="features subTabs" id="ST{$tab->tab}"                 
+        <section class="features tabsBox" id="ST{$tab->tab}"                 
                  style="display:                 
                  {if isset($tabActive)}
                      {if $tabActive=={$tab->tab}}

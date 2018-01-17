@@ -30,6 +30,13 @@
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
+                                <label for="status">Alvo</label> 
+                                <input required type="text" name="target" id="status" style="width: 300px" maxlength="100"
+                                       value="{$avaliacao['target']}" readonly="readonly"/>
+                            </div>
+                        </div>
+                        <div class="row uniform">
+                            <div style="float: left">
                                 <label for="status">Estado</label>
                                 <input required type="text" name="status" id="status" style="width: 300px" maxlength="100"
                                        value="{$avaliacao['status']}" readonly="readonly"/>

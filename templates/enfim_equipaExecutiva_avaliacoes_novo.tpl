@@ -56,6 +56,15 @@
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
+                                <label for="status">Alvo</label> 
+                                <input type="radio" id="Formador" name="target" value="Formador" checked="">
+                                <label for="Formador">Formador</label> 
+                                <input type="radio" id="Formando" name="target" value="Formando">
+                                <label for="Formando">Formando</label>
+                            </div>
+                        </div>
+                        <div class="row uniform">
+                            <div style="float: left">
                                 <label for="status">Estado</label> 
                                 <input type="radio"
                                        id="Ativo" name="status" value="Ativo" checked=""><label

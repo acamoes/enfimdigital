@@ -14,6 +14,12 @@ $loader->add('Users', ENFIM_DIR . 'classes/');
 $loader->add('Evaluation', ENFIM_DIR . 'classes/');
 $loader->add('Cursos', ENFIM_DIR . 'classes/');
 $loader->add('EquipaExecutiva', ENFIM_DIR . 'classes/');
+$loader->add('Utilizadores', ENFIM_DIR . 'classes/');
+$loader->add('Modulos', ENFIM_DIR . 'classes/');
+$loader->add('Documentos', ENFIM_DIR . 'classes/');
+$loader->add('Calendarios', ENFIM_DIR . 'classes/');
+$loader->add('Avaliacoes', ENFIM_DIR . 'classes/');
+$loader->add('Formacoes', ENFIM_DIR . 'classes/');
 
 // smarty configuration
 class Enfim_Smarty extends Smarty {

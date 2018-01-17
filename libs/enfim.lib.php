@@ -96,6 +96,7 @@ class Enfim {
         if (empty($formandos->course)) {
             return;
         }
+        $this->tpl->assign('action', 'formandos');
         switch ($data['task']) {
             case "getCourse":
                 $this->tpl->assign('users', $_SESSION['users']);
@@ -127,16 +128,13 @@ class Enfim {
             $this->login('Acesso negado');
             exit;
         }
-        $data = $this->safePost($request);
-        if (!array_key_exists('search', $data)) {
-            $data['search'] = '';
-        }
-        if (!array_key_exists('tab', $data)) {
-            $data['tab'] = 'utilizadores';
-        }
-        if (array_key_exists('docType', $data)) {
-            $this->tpl->assign('docType', $data['docType']);
-        }
+        $data                        = $this->safePost($request);
+        !isset($data['search']) && $data['search']              = '';
+        !isset($data['tab']) && $data['tab']                 = 'utilizadores';
+        !isset($data['subTab']) && $data['subTab']              = 'inscritos';
+        isset($data['docType']) && $this->tpl->assign('docType', $data['docType']);
+        isset($data['equipaExecutivaFormacoesIdCourses']) && $this->tpl->assign('equipaExecutivaFormacoesIdCourses', $data['equipaExecutivaFormacoesIdCourses']);
+        isset($data['equipaExecutivaFormacoesIdCourses']) && $data['idCourses']           = $data['equipaExecutivaFormacoesIdCourses'];
         $_SESSION['equipaExecutiva'] = new EquipaExecutiva($data);
         $this->tpl->assign('users', $_SESSION['users']);
         $this->tpl->assign('equipaExecutiva', $_SESSION['equipaExecutiva']);
@@ -144,16 +142,46 @@ class Enfim {
         $this->tpl->assign('objTabs', $_SESSION['equipaExecutiva']->tabs);
         $this->tpl->assign('tabActive', $data['tab']);
         $this->tpl->assign('currentTab', $data['tab']);
+        $this->tpl->assign('objSubTabs', (new Formacoes())->tabs);
+        $this->tpl->assign('subTabActive', $data['subTab']);
+        $this->tpl->assign('currentSubTab', $data['subTab']);
         switch ($data['task']) {
             case "dashboard":
                 $this->tpl->display('enfim_equipaExecutiva.tpl');
                 break;
+            case "contexto":
+                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_contexto.tpl');
+                break;
             case "search":
-                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '.tpl');
+                if ($data['tab'] != 'formacoes') {
+                    $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '.tpl');
+                }
+                else {
+                    $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['subTab'] . '.tpl');
+                }
+                break;
+            case "adicionar":
+                if ($data['tab'] == 'formacoes') {
+                    if (isset($data['searchUtilizadores'])) {
+                        $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab']) . ucfirst($data['subTab'])}($data));
+                        $this->tpl->display('enfim_error.tpl');
+                    }
+                }
                 break;
             case "novo":
                 unset($_SESSION ['idDocument']);
-                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['task'] . '.tpl');
+                if ($data['tab'] == 'formacoes') {
+                    if (isset($data['searchUtilizadores'])) {
+                        $this->tpl->assign('resultadoInscritos', $_SESSION['equipaExecutiva']->getUtlizadoresNaoInscritos($data));
+                        $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['subTab'] . '_' . $data['task'] . '_resultado.tpl');
+                    }
+                    else {
+                        $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['subTab'] . '_' . $data['task'] . '.tpl');
+                    }
+                }
+                else {
+                    $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['task'] . '.tpl');
+                }
                 break;
             case "ver":
             case "editar":
@@ -174,16 +202,32 @@ class Enfim {
                         $this->tpl->assign('docType', $docs['dTipo']);
                         $this->tpl->assign('documento', $docs);
                         break;
+                    case "formacoes":
+                        if ($data['subTab'] == 'inscritos') {
+                            $this->tpl->assign('utilizador', $_SESSION['equipaExecutiva']->getInscrito($data));
+                        }
+                        break;
                     default: break;
                 }
-                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['task'] . '.tpl');
+                ($data['tab'] != 'formacoes') ?
+                                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['task'] . '.tpl') :
+                                $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['subTab'] . '_' . $data['task'] . '.tpl');
+
                 break;
             case "inserir":
             case "atualizar":
             case "apagar":
-                $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab'])}($data));
-                $_SESSION['equipaExecutiva']->{$data['tab']} = $_SESSION['equipaExecutiva']->{'get' . ucfirst($data['tab'])}($data);
-                $this->tpl->display('enfim_error.tpl');
+                if ($data['tab'] == 'formacoes') {
+                    if ($data['subTab'] == 'inscritos') {
+                        $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab']) . ucfirst($data['subTab'])}($data));
+                        $this->tpl->display('enfim_error.tpl');
+                    }
+                }
+                else {
+                    $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab'])}($data));
+                    $_SESSION['equipaExecutiva']->{$data['tab']} = $_SESSION['equipaExecutiva']->{'get' . ucfirst($data['tab'])}($data);
+                    $this->tpl->display('enfim_error.tpl');
+                }
                 break;
             case "form":
                 echo $_SESSION['equipaExecutiva']->{$data['func']}($data);

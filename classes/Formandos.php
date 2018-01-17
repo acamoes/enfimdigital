@@ -39,7 +39,7 @@ class Formandos {
     }
 
     function buildEvaluation($data) {
-        $query            = "SELECT e.idEvaluations,e.idCourse,ce.idCourses,e.template,ce.evaluation,ce.status "
+        $query            = "SELECT e.idEvaluations,e.idCourse,e.target,ce.idCourses,e.template,ce.evaluation,ce.status "
                 . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
                 . "WHERE ce.idUsers=" . $_SESSION['users']->id
                 . " AND ce.status='Aberto' "
@@ -59,7 +59,7 @@ class Formandos {
     }
 
     function saveEvaluation($data) {
-        $query            = "SELECT e.idEvaluations,e.idCourse,ce.idCourses,e.template,ce.evaluation,ce.status "
+        $query            = "SELECT e.idEvaluations,e.idCourse,e.target,ce.idCourses,e.template,ce.evaluation,ce.status "
                 . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
                 . "WHERE ce.idUsers=" . $_SESSION['users']->id
                 . " AND ce.status='Aberto' "
@@ -70,8 +70,7 @@ class Formandos {
         $con              = new Database ();
         $this->evaluation = $con->get($query);
         $evaluation       = new Evaluation($this->evaluation[0]);
-        $responses        = $evaluation->saveEvaluation($this->evaluation[0]['template'],
-                                                        $data);
+        $responses        = $evaluation->saveEvaluation($this->evaluation[0]['template'], $data);
         $responsesJson    = json_encode($responses, JSON_UNESCAPED_UNICODE);
         $query            = "UPDATE courses_evaluations SET "
                 . "evaluation = '" . $responsesJson . "', "
