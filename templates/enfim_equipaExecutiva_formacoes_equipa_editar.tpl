@@ -124,67 +124,99 @@
                                                                               {literal}pattern="[0-9]{9}$" />{/literal}
                             </div>
                         </div>
-                        <div class="row uniform">
-                            <div style="float: left">
-                                <label for="unitType">Nível</label> 
-                                <select name="unitType"
-                                        id="unitType" style="width: 200px"
-                                        onChange="changeField1(this.options[this.selectedIndex].value, '{$utilizador['unitType']}', 'unitDiv'); changeField2(this.options[this.selectedIndex].value, '{$utilizador['unit']}', 'rankDiv');">
-                                    <option selected></option>
-                                    <option value="Nacional"
-                                            {if $utilizador['unitType'] eq "Nacional"}selected='selected'{/if}>Nacional</option>
-                                    <option value="Regional"
-                                            {if $utilizador['unitType'] eq "Regional"}selected='selected'{/if}>Regional</option>
-                                    <option value="Local"
-                                            {if $utilizador['unitType'] eq "Local"}selected='selected'{/if}>Local</option>
-                                </select>
+                        {if $currentSubTab eq 'inscritos'}    
+                            <div class="row uniform">
+                                <div style="float: left">
+                                    <label for="unitType">Nível</label> 
+                                    <select name="unitType"
+                                            id="unitType" style="width: 200px"
+                                            onChange="changeField1(this.options[this.selectedIndex].value, '{$utilizador['unitType']}', 'unitDiv'); changeField2(this.options[this.selectedIndex].value, '{$utilizador['unit']}', 'rankDiv');">
+                                        <option selected></option>
+                                        <option value="Nacional"
+                                                {if $utilizador['unitType'] eq "Nacional"}selected='selected'{/if}>Nacional</option>
+                                        <option value="Regional"
+                                                {if $utilizador['unitType'] eq "Regional"}selected='selected'{/if}>Regional</option>
+                                        <option value="Local"
+                                                {if $utilizador['unitType'] eq "Local"}selected='selected'{/if}>Local</option>
+                                    </select>
+                                </div>
+                                <div style="float: right" id="unitDiv">
+                                    <label for="unit">Unidade</label> <input
+                                        value="{$utilizador['unit']}" type="text" name="unit" id="unit"
+                                        style="width: 200px" />
+                                </div>
                             </div>
-                            <div style="float: right" id="unitDiv">
-                                <label for="unit">Unidade</label> <input
-                                    value="{$utilizador['unit']}" type="text" name="unit" id="unit"
-                                    style="width: 200px" />
+                            <div class="row uniform">
+                                <div style="float: left" id="rankDiv">
+                                    <label for="rank">Cargo/Função</label> <input
+                                        value="{$utilizador['rank']}" type="text" name="rank" id="rank"
+                                        style="width: 200px" />
+                                </div>
+                                <div style="float: right">
+                                    <label for="boRank">BO Cargo/Função</label> <input
+                                        value="{$utilizador['boRank']}" type="text" name="boRank"
+                                        id="boRank" style="width: 200px"
+                                        {literal}pattern="^BO\s[0-9]{1,2}\/[0-9]{4}$" />{/literal}
+                                </div>
                             </div>
-                        </div>
-                        <div class="row uniform">
-                            <div style="float: left" id="rankDiv">
-                                <label for="rank">Cargo/Função</label> <input
-                                    value="{$utilizador['rank']}" type="text" name="rank" id="rank"
-                                    style="width: 200px" />
+                            <div class="row uniform">
+                                <div style="float: left">
+                                    <input type="checkbox" name="qa" id="qa" {if $utilizador['qa'] eq 'on'}checked='checked'{/if} />
+                                    <label for="qa">Quota paga</label> 
+                                    <input type="checkbox" name="payment" id="payment" {if $utilizador['payment'] eq 'on'}checked='checked'{/if} />
+                                    <label for="payment">Pago</label>
+                                </div>
+                                <div style="float: right">
+                                    <label for="value">Valor</label> <input
+                                        value="{$utilizador['value']}" type="text" name="value" id="value"
+                                        style="width: 150px" 
+                                        {literal}pattern="^[0-9]{2,3}$" />{/literal}
+                                </div>
                             </div>
-                            <div style="float: right">
-                                <label for="boRank">BO Cargo/Função</label> <input
-                                    value="{$utilizador['boRank']}" type="text" name="boRank"
-                                    id="boRank" style="width: 200px"
-                                    {literal}pattern="^BO\s[0-9]{1,2}\/[0-9]{4}$" />{/literal}
+                            <div class="row uniform">
+                                <div style="float: left">
+                                    <label for="value">Recibo</label> <input
+                                        value="{$utilizador['receipt']}" type="text" name="receipt"
+                                        id="receipt" style="width: 200px" />
+                                </div>
+                                <div style="float: right">
+                                    <label for="value">BO do curso</label> <input
+                                        value="{$utilizador['boCourse']}" type="text" name="boCourse"
+                                        id="boCourse" style="width: 150px"
+                                        {literal}pattern="^BO\s[0-9]{1,2}\/[0-9]{4}$" />{/literal}
+                                </div>
+                            </div>                        
+                            <div class="row uniform">
+                                <div style="float: left">
+                                    <label for="status">Terminou com aproveitamento:</label> 
+                                    <input type="checkbox" name="attended" id="attended" {if $utilizador['attended'] eq 'on'}checked='checked'{/if} />
+                                    <label for="attended">Participou?</label> 
+                                    <input type="checkbox" name="passedCourse" id="passedCourse" {if $utilizador['passedCourse'] eq 'on'}checked='checked'{/if} />
+                                    <label for="passedCourse">Curso</label> 
+                                    <input type="checkbox" name="passedInternship" id="passedInternship" {if $utilizador['passedInternship'] eq 'on'}checked='checked'{/if}/>
+                                    <label for="passedInternship">Estágio</label> 
+                                    <input type="checkbox" name="passed" id="passed" {if $utilizador['passed'] eq 'on'}checked='checked'{/if} />
+                                    <label for="passed">Etapa</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row uniform">
-                            <div style="float: left">
-                                <input type="checkbox" name="qa" id="qa" {if $utilizador['qa'] eq 'on'}checked='checked'{/if} />
-                                <label for="qa">Quota paga</label> 
-                                <input type="checkbox" name="payment" id="payment" {if $utilizador['payment'] eq 'on'}checked='checked'{/if} />
-                                <label for="payment">Pago</label>
+                        {else}
+                            <div class="row uniform">
+                                <div style="float: left">
+                                    <label for="type">Colaboração no curso</label> <select required
+                                                                                           name="type" id="type" style="width: 200px">
+                                        <option selected></option>
+                                        <option value="Diretor"
+                                                {if $utilizador['type'] eq "Diretor"}selected='selected'{/if}>Diretor</option>
+                                        <option value="Formador"
+                                                {if $utilizador['type'] eq "Formador"}selected='selected'{/if}>Formador</option>
+                                        <option value="Convidado"
+                                                {if $utilizador['type'] eq "Convidado"}selected='selected'{/if}>Convidado</option>
+                                        <option value="Externo"
+                                                {if $utilizador['type'] eq "Externo"}selected='selected'{/if}>Externo</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div style="float: right">
-                                <label for="value">Valor</label> <input
-                                    value="{$utilizador['value']}" type="text" name="value" id="value"
-                                    style="width: 150px" 
-                                    {literal}pattern="^[0-9]{2,3}$" />{/literal}
-                            </div>
-                        </div>
-                        <div class="row uniform">
-                            <div style="float: left">
-                                <label for="value">Recibo</label> <input
-                                    value="{$utilizador['receipt']}" type="text" name="receipt"
-                                    id="receipt" style="width: 200px" />
-                            </div>
-                            <div style="float: right">
-                                <label for="value">BO do curso</label> <input
-                                    value="{$utilizador['boCourse']}" type="text" name="boCourse"
-                                    id="boCourse" style="width: 150px"
-                                    {literal}pattern="^BO\s[0-9]{1,2}\/[0-9]{4}$" />{/literal}
-                            </div>
-                        </div>
+                        {/if}
                         <div class="row uniform">
                             <div style="float: left">
                                 <label for="iban">IBAN</label>
@@ -192,19 +224,6 @@
                                        type="text" name="iban" id="iban" maxlength="25"
                                        style="width: 630px" 
                                        {literal}pattern="([0-9]{21}|[A-Z]{2}[0-9]{23})+$" />{/literal}
-                            </div>
-                        </div>
-                        <div class="row uniform">
-                            <div style="float: left">
-                                <label for="status">Terminou com aproveitamento:</label> 
-                                <input type="checkbox" name="attended" id="attended" {if $utilizador['attended'] eq 'on'}checked='checked'{/if} />
-                                <label for="attended">Participou?</label> 
-                                <input type="checkbox" name="passedCourse" id="passedCourse" {if $utilizador['passedCourse'] eq 'on'}checked='checked'{/if} />
-                                <label for="passedCourse">Curso</label> 
-                                <input type="checkbox" name="passedInternship" id="passedInternship" {if $utilizador['passedInternship'] eq 'on'}checked='checked'{/if}/>
-                                <label for="passedInternship">Estágio</label> 
-                                <input type="checkbox" name="passed" id="passed" {if $utilizador['passed'] eq 'on'}checked='checked'{/if} />
-                                <label for="passed">Etapa</label>
                             </div>
                         </div>
                         <div class="row uniform">

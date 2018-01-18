@@ -181,7 +181,9 @@ class EquipaExecutiva {
     }
 
     function getInscrito($data) {
-        $query     = "SELECT * " . "FROM users_courses uc " . "INNER JOIN users u " . "ON uc.idUsers=u.idUsers " .
+        $query     = "SELECT * " . "FROM " .
+                (key_exists("subTab", $data) ? ($data['subTab'] == 'inscritos' ? " users_courses " : " courses_team ") : " users_courses ") .
+                "uc INNER JOIN users u " . "ON uc.idUsers=u.idUsers " .
                 (key_exists("idCourses", $data) ? "AND uc.idCourses=" . $data ['idCourses'] . " " : " ") .
                 (key_exists("idUsers", $data) ? "AND uc.idUsers=" . $data ['idUsers'] . " " : " ");
         $con       = new Database ();

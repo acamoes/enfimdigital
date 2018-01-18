@@ -130,8 +130,9 @@ class Enfim {
         }
         $data                        = $this->safePost($request);
         !isset($data['search']) && $data['search']              = '';
-        !isset($data['tab']) && $data['tab']                 = '';
-        !isset($data['subTab']) && $data['subTab']              = '';
+        !isset($data['tab']) && $data['tab']                 = 'utilizadores';
+        ($data['tab'] != 'formacoes') && $data['subTab']              = '';
+        (!isset($data['subTab']) && $data['tab'] == 'formacoes') && $data['subTab']              = 'inscritos';
         isset($data['docType']) && $this->tpl->assign('docType', $data['docType']);
         isset($data['equipaExecutivaFormacoesIdCourses']) && $this->tpl->assign('equipaExecutivaFormacoesIdCourses', $data['equipaExecutivaFormacoesIdCourses']);
         isset($data['equipaExecutivaFormacoesIdCourses']) && $data['idCourses']           = $data['equipaExecutivaFormacoesIdCourses'];
@@ -211,7 +212,7 @@ class Enfim {
                         $this->tpl->assign('documento', $docs);
                         break;
                     case "formacoes":
-                        if ($data['subTab'] == 'inscritos') {
+                        if ($data['subTab'] == 'inscritos' || $data['subTab'] == 'equipa') {
                             $this->tpl->assign('utilizador', $_SESSION['equipaExecutiva']->getInscrito($data));
                         }
                         break;
