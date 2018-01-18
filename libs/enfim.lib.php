@@ -179,6 +179,10 @@ class Enfim {
                         elseif ($data['subTab'] == 'equipa') {
                             $this->tpl->assign('resultado' . ucfirst($data['subTab']), $_SESSION['equipaExecutiva']->getUtlizadoresSemEquipa($data));
                         }
+                        elseif ($data['subTab'] == 'sessoes') {
+                            $this->tpl->assign('resultado' . ucfirst($data['subTab']), $_SESSION['equipaExecutiva']->getUtlizadoresEquipa($data));
+                            $this->tpl->assign('data', $data);
+                        }
                         else {
                             $this->tpl->assign('resultado' . ucfirst($data['subTab']), $_SESSION['equipaExecutiva']->{'get' . ucfirst($data['subTab'])}($data));
                         }
@@ -215,6 +219,9 @@ class Enfim {
                         if ($data['subTab'] == 'inscritos' || $data['subTab'] == 'equipa') {
                             $this->tpl->assign('utilizador', $_SESSION['equipaExecutiva']->getInscrito($data));
                         }
+                        elseif ($data['subTab'] == 'sessoes') {
+                            $this->tpl->assign('sessao', $_SESSION['equipaExecutiva']->getSessao($data));
+                        }
                         break;
                     default: break;
                 }
@@ -226,6 +233,7 @@ class Enfim {
             case "inserir":
             case "atualizar":
             case "apagar":
+            case "restaurar":
                 if ($data['tab'] == 'formacoes') {
                     $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab']) . ucfirst($data['subTab'])}($data));
                     $this->tpl->display('enfim_error.tpl');

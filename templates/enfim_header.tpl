@@ -75,104 +75,100 @@
                 document.getElementById('file3').style.display = 'none';
                 document.getElementById('file4').style.display = 'none';
             }
-            
-            function changeField1(tipo,value,id)
-	{
-	var html='';
-	if(tipo=='Nacional')
-		{
-		html='<label for="unit">Unidade</label>';
-		html+='<select  required name="unit" id="unit" style="width: 200px">';
-		html+='<option value="Chefia Nacional" '+(value=='Chefia Nacional'?'selected':'')+'>Chefia Nacional</option>';
-		html+='<option value="Mesa da Conferência" '+(value=='Mesa da Conferência'?'selected':'')+'>Mesa da Conferência</option>';
-		html+='<option value="Conselho Jurisdicional" '+(value=='Conselho Jurisdicional'?'selected':'')+'>Conselho Jurisdicional</option>';
-		html+='<option value="Conselho Fiscal" '+(value=='Conselho Fiscal'?'selected':'')+'>Conselho Fiscal</option>';
-		html+='<option value="ENFIM" '+(value=='ENFIM'?'selected':'')+'>ENFIM</option></select>';
-		}
-	else if(tipo=='Regional')
-		{
-		html='<label for="unit">Unidade</label>';
-		html+='<select  required name="unit" id="unit" style="width: 200px">';
-		html+='<option value="Chefia Regional Norte" '+(value=='Chefia Regional Norte'?'selected':'')+'>Chefia Regional Norte</option>';
-		html+='<option value="Chefia Regional Centro" '+(value=='Chefia Regional Centro'?'selected':'')+'>Chefia Regional Centro</option>';
-		html+='<option value="Chefia Regional Lisboa e Vale do Tejo" '+(value=='Chefia Regional Lisboa e Vale do Tejo'?'selected':'')+'>Chefia Regional Lisboa e Vale do Tejo</option>';
-		html+='<option value="Chefia Regional Além do Tejo" '+(value=='Chefia Regional Além do Tejo'?'selected':'')+'>Chefia Regional Além do Tejo</option>';
-		html+='<option value="Chefia Regional Sul" '+(value=='Chefia Regional Sul'?'selected':'')+'>Chefia Regional Sul</option>';
-		html+='<option value="Chefia Regional Madeira" '+(value=='Chefia Regional Madeira'?'selected':'')+'>Chefia Regional Madeira</option>';
-		html+='<option value="Chefia Regional Açores Central e Ocidental" '+(value=='Chefia Regional Açores Central e Ocidental'?'selected':'')+'>Chefia Regional Açores Central e Ocidental</option>';
-		html+='<option value="Chefia Regional Açores Oriental" '+(value=='Chefia Regional Açores Oriental'?'selected':'')+'>Chefia Regional Açores Oriental</option>';
-		html+='<option value="Mesa do Conselho Regional Norte" '+(value=='Mesa do Conselho Regional Norte'?'selected':'')+'>Mesa do Conselho Regional Norte</option>';
-		html+='<option value="Mesa do Conselho Regional Centro" '+(value=='Mesa do Conselho Regional Centro'?'selected':'')+'>Mesa do Conselho do Conselho Regional Centro</option>';
-		html+='<option value="Mesa do Conselho Regional Lisboa e Vale do Tejo" '+(value=='Mesa do Conselho Regional Lisboa e Vale do Tejo'?'selected':'')+'>Mesa do Conselho Regional Lisboa e Vale do Tejo</option>';
-		html+='<option value="Mesa do Conselho Regional Além do Tejo" '+(value=='Mesa do Conselho Regional Além do Tejo'?'selected':'')+'>Mesa do Conselho Regional Além do Tejo</option>';
-		html+='<option value="Mesa do Conselho Regional Sul" '+(value=='Mesa do Conselho Regional Sul'?'selected':'')+'>Mesa do Conselho Regional Sul</option>';
-		html+='<option value="Mesa do Conselho Regional Madeira" '+(value=='Mesa do Conselho Regional Madeira'?'selected':'')+'>Mesa do Conselho Regional Madeira</option>';
-		html+='<option value="Mesa do Conselho Regional Açores Central e Ocidental" '+(value=='Mesa do Conselho Regional Açores Central e Ocidental'?'selected':'')+'>Mesa do Conselho Regional Açores Central e Ocidental</option>';
-		html+='<option value="Mesa do Conselho Regional Açores Oriental" '+(value=='Mesa do Conselho Regional Açores Oriental'?'selected':'')+'>Mesa do Conselho Regional Açores Oriental</option></select>';
-		}
-	else if(tipo=='Local')
-		{
-		html='<label for="unit">Unidade</label>';
-		html+='<input type="text" required name="unit" id="unit" value="'+value+'" style="width: 200px" pattern="^[0-9]{ldelim}1,3}$"/>';
-		}
-	document.getElementById(id).innerHTML=html;
-	}
-	
-function changeField2(tipo,value,id)
-	{
-	var html='';
-	if(tipo=='Nacional')
-		{
-		html='<label for="rank">Cargo/Função</label>';
-		html+='<select required name="rank" id="rank" style="width: 200px">';
-		html+='<option value="Escoteiro Chefe Nacional" '+(value=='Escoteiro Chefe Nacional'?'selected':'')+'>Escoteiro Chefe Nacional</option>';
-		html+='<option value="Escoteiro Chefe Nacional Adjunto" '+(value=='Escoteiro Chefe Nacional Adjunto'?'selected':'')+'>Escoteiro Chefe Nacional Adjunto</option>';
-		html+='<option value="Escoteiro Chefe Adjunto da Chefia Nacional" '+(value=='Escoteiro Chefe Adjunto da Chefia Nacional'?'selected':'')+'>Escoteiro Chefe Adjunto da Chefia Nacional</option>';
-		html+='<option value="Colaborador da Chefia Nacional" '+(value=='Colaborador da Chefia Nacional'?'selected':'')+'>Colaborador da Chefia Nacional</option>';
-		html+='<option value="Presidente da Mesa da Conferência" '+(value=='Presidente da Mesa da Conferência'?'selected':'')+'>Presidente da Mesa da Conferência</option>';
-		html+='<option value="Secretário da Mesa da Conferência" '+(value=='Secretário da Mesa da Conferência'?'selected':'')+'>Secretário da Mesa da Conferência</option>';
-		html+='<option value="Segundo Secretário da Mesa da Conferência" '+(value=='Segundo Secretário da Mesa da Conferência'?'selected':'')+'>Segundo Secretário da Mesa da Conferência</option>';
-		html+='<option value="Membro do Conselho Jurisdicional" '+(value=='Membro do Conselho Jurisdicional'?'selected':'')+'>Membro do Conselho Jurisdicional</option>';
-		html+='<option value="Membro do Conselho Fiscal" '+(value=='Membro do Conselho Fiscal'?'selected':'')+'>Membro do Conselho Fiscal</option>';
-		html+='<option value="Coordenador da Equipa Executiva" '+(value=='Coordenador da Equipa Executiva'?'selected':'')+'>Coordenador da Equipa Executiva</option>';
-		html+='<option value="Membro da Equipa Executiva" '+(value=='Membro da Equipa Executiva'?'selected':'')+'>Membro da Equipa Executiva</option>';
-		html+='<option value="Formador" '+(value=='Formador'?'selected':'')+'>Formador</option>';
-		html+='<option value="Estagiário de Formador" '+(value=='Estagiário de Formador'?'selected':'')+'>Estagiário de Formador</option></select>';
-		}
-	else if(tipo=='Regional')
-		{
-		html='<label for="rank">Cargo/Função</label>';
-		html+='<select required name="rank" id="rank" style="width: 200px">';
-		html+='<option value="Escoteiro Chefe Regional" '+(value=='Escoteiro Chefe Regional'?'selected':'')+'>Escoteiro Chefe Regional</option>';
-		html+='<option value="Escoteiro Chefe Regional Adjunto" '+(value=='Escoteiro Chefe Regional Adjunto'?'selected':'')+'>Escoteiro Chefe Regional Adjunto</option>';
-		html+='<option value="Escoteiro Chefe Adjunto da Chefia Regional" '+(value=='Escoteiro Chefe Adjunto da Chefia Regional'?'selected':'')+'>Escoteiro Chefe Adjunto da Chefia Regional</option>';
-		html+='<option value="Colaborador da Chefia Regional" '+(value=='Colaborador da Chefia Regional'?'selected':'')+'>Colaborador da Chefia Regional</option>';
-		html+='<option value="Presidente da Mesa do Conselho Regional" '+(value=='Presidente da Mesa do Conselho Regional'?'selected':'')+'>Presidente da Mesa do Conselho Regional</option>';
-		html+='<option value="Secretário da Mesa do Conselho Regional" '+(value=='Secretário da Mesa do Conselho Regional'?'selected':'')+'>Secretário da Mesa do Conselho Regional</option></select>';
-		}
-	else if(tipo=='Local')
-		{
-		html='<label for="rank">Cargo/Função</label>';
-		html+='<select required name="rank" id="rank" style="width: 200px">';
-		html+='<option value="Escoteiro Chefe de Grupo" '+(value=='Escoteiro Chefe de Grupo'?'selected':'')+'>Escoteiro Chefe de Grupo</option>';
-		html+='<option value="Escoteiro SubChefe de Grupo" '+(value=='Escoteiro SubChefe de Grupo'?'selected':'')+'>Escoteiro SubChefe de Grupo</option>';
-		html+='<option value="Escoteiro Chefe Adjunto da Chefia de Grupo" '+(value=='Escoteiro Chefe Adjunto da Chefia de Grupo'?'selected':'')+'>Escoteiro Chefe Adjunto da Chefia de Grupo</option>';
-		html+='<option value="Colaborador de Grupo" '+(value=='Colaborador de Grupo'?'selected':'')+'>Colaborador de Grupo</option>';
-		html+='<option value="Escoteiro Chefe dos Serviços Administrativos" '+(value=='Escoteiro Chefe dos Serviços Administrativos'?'selected':'')+'>Escoteiro Chefe dos Serviços Administrativos</option>';
-		html+='<option value="Escoteiro Chefe de Clã" '+(value=='Escoteiro Chefe de Clã'?'selected':'')+'>Escoteiro Chefe de Clã</option>';
-		html+='<option value="Escoteiro SubChefe de Clã" '+(value=='Escoteiro SubChefe de Clã'?'selected':'')+'>Escoteiro SubChefe de Clã</option>';
-		html+='<option value="Escoteiro Chefe da Tribo de Exploradores" '+(value=='Escoteiro Chefe da Tribo de Exploradores'?'selected':'')+'>Escoteiro Chefe da Tribo de Exploradores</option>';
-		html+='<option value="Escoteiro SubChefe da Tribo de Exploradores" '+(value=='Escoteiro SubChefe da Tribo de Exploradores'?'selected':'')+'>Escoteiro SubChefe da Tribo de Exploradores</option>';
-		html+='<option value="Escoteiro Chefe da Tribo de Escoteiros" '+(value=='Escoteiro Chefe da Tribo de Escoteiros'?'selected':'')+'>Escoteiro Chefe da Tribo de Escoteiros</option>';
-		html+='<option value="Escoteiro SubChefe da Tribo de Escoteiros" '+(value=='Escoteiro SubChefe da Tribo de Escoteiros'?'selected':'')+'>Escoteiro SubChefe da Tribo de Escoteiros</option>';
-		html+='<option value="Escoteiro Chefe de Alcateia" '+(value=='Escoteiro Chefe de Alcateia'?'selected':'')+'>Escoteiro Chefe de Alcateia</option>';
-		html+='<option value="Escoteiro SubChede de Alcateia" '+(value=='Escoteiro SubChede de Alcateia'?'selected':'')+'>Escoteiro SubChede de Alcateia</option>';
-		html+='<option value="Aspirante a Escoteiro Chefe" '+(value=='Aspirante a Escoteiro Chefe'?'selected':'')+'>Aspirante a Escoteiro Chefe</option>';
-		html+='<option value="Caminheiro" '+(value=='Caminheiro'?'selected':'')+'>Caminheiro</option>';
-		html+='<option value="Candidato" '+(value=='Candidato'?'selected':'')+'>Candidato</option></select>';
-		}
-	document.getElementById(id).innerHTML=html;
-	}
+
+            function changeField1(tipo, value, id)
+            {
+                var html = '';
+                if (tipo == 'Nacional')
+                {
+                    html = '<label for="unit">Unidade</label>';
+                    html += '<select  required name="unit" id="unit" style="width: 200px">';
+                    html += '<option value="Chefia Nacional" ' + (value == 'Chefia Nacional' ? 'selected' : '') + '>Chefia Nacional</option>';
+                    html += '<option value="Mesa da Conferência" ' + (value == 'Mesa da Conferência' ? 'selected' : '') + '>Mesa da Conferência</option>';
+                    html += '<option value="Conselho Jurisdicional" ' + (value == 'Conselho Jurisdicional' ? 'selected' : '') + '>Conselho Jurisdicional</option>';
+                    html += '<option value="Conselho Fiscal" ' + (value == 'Conselho Fiscal' ? 'selected' : '') + '>Conselho Fiscal</option>';
+                    html += '<option value="ENFIM" ' + (value == 'ENFIM' ? 'selected' : '') + '>ENFIM</option></select>';
+                } else if (tipo == 'Regional')
+                {
+                    html = '<label for="unit">Unidade</label>';
+                    html += '<select  required name="unit" id="unit" style="width: 200px">';
+                    html += '<option value="Chefia Regional Norte" ' + (value == 'Chefia Regional Norte' ? 'selected' : '') + '>Chefia Regional Norte</option>';
+                    html += '<option value="Chefia Regional Centro" ' + (value == 'Chefia Regional Centro' ? 'selected' : '') + '>Chefia Regional Centro</option>';
+                    html += '<option value="Chefia Regional Lisboa e Vale do Tejo" ' + (value == 'Chefia Regional Lisboa e Vale do Tejo' ? 'selected' : '') + '>Chefia Regional Lisboa e Vale do Tejo</option>';
+                    html += '<option value="Chefia Regional Além do Tejo" ' + (value == 'Chefia Regional Além do Tejo' ? 'selected' : '') + '>Chefia Regional Além do Tejo</option>';
+                    html += '<option value="Chefia Regional Sul" ' + (value == 'Chefia Regional Sul' ? 'selected' : '') + '>Chefia Regional Sul</option>';
+                    html += '<option value="Chefia Regional Madeira" ' + (value == 'Chefia Regional Madeira' ? 'selected' : '') + '>Chefia Regional Madeira</option>';
+                    html += '<option value="Chefia Regional Açores Central e Ocidental" ' + (value == 'Chefia Regional Açores Central e Ocidental' ? 'selected' : '') + '>Chefia Regional Açores Central e Ocidental</option>';
+                    html += '<option value="Chefia Regional Açores Oriental" ' + (value == 'Chefia Regional Açores Oriental' ? 'selected' : '') + '>Chefia Regional Açores Oriental</option>';
+                    html += '<option value="Mesa do Conselho Regional Norte" ' + (value == 'Mesa do Conselho Regional Norte' ? 'selected' : '') + '>Mesa do Conselho Regional Norte</option>';
+                    html += '<option value="Mesa do Conselho Regional Centro" ' + (value == 'Mesa do Conselho Regional Centro' ? 'selected' : '') + '>Mesa do Conselho do Conselho Regional Centro</option>';
+                    html += '<option value="Mesa do Conselho Regional Lisboa e Vale do Tejo" ' + (value == 'Mesa do Conselho Regional Lisboa e Vale do Tejo' ? 'selected' : '') + '>Mesa do Conselho Regional Lisboa e Vale do Tejo</option>';
+                    html += '<option value="Mesa do Conselho Regional Além do Tejo" ' + (value == 'Mesa do Conselho Regional Além do Tejo' ? 'selected' : '') + '>Mesa do Conselho Regional Além do Tejo</option>';
+                    html += '<option value="Mesa do Conselho Regional Sul" ' + (value == 'Mesa do Conselho Regional Sul' ? 'selected' : '') + '>Mesa do Conselho Regional Sul</option>';
+                    html += '<option value="Mesa do Conselho Regional Madeira" ' + (value == 'Mesa do Conselho Regional Madeira' ? 'selected' : '') + '>Mesa do Conselho Regional Madeira</option>';
+                    html += '<option value="Mesa do Conselho Regional Açores Central e Ocidental" ' + (value == 'Mesa do Conselho Regional Açores Central e Ocidental' ? 'selected' : '') + '>Mesa do Conselho Regional Açores Central e Ocidental</option>';
+                    html += '<option value="Mesa do Conselho Regional Açores Oriental" ' + (value == 'Mesa do Conselho Regional Açores Oriental' ? 'selected' : '') + '>Mesa do Conselho Regional Açores Oriental</option></select>';
+                } else if (tipo == 'Local')
+                {
+                    html = '<label for="unit">Unidade</label>';
+                    html += '<input type="text" required name="unit" id="unit" value="' + value + '" style="width: 200px" pattern="^[0-9]{ldelim}1,3}$"/>';
+                }
+                document.getElementById(id).innerHTML = html;
+            }
+
+            function changeField2(tipo, value, id)
+            {
+                var html = '';
+                if (tipo == 'Nacional')
+                {
+                    html = '<label for="rank">Cargo/Função</label>';
+                    html += '<select required name="rank" id="rank" style="width: 200px">';
+                    html += '<option value="Escoteiro Chefe Nacional" ' + (value == 'Escoteiro Chefe Nacional' ? 'selected' : '') + '>Escoteiro Chefe Nacional</option>';
+                    html += '<option value="Escoteiro Chefe Nacional Adjunto" ' + (value == 'Escoteiro Chefe Nacional Adjunto' ? 'selected' : '') + '>Escoteiro Chefe Nacional Adjunto</option>';
+                    html += '<option value="Escoteiro Chefe Adjunto da Chefia Nacional" ' + (value == 'Escoteiro Chefe Adjunto da Chefia Nacional' ? 'selected' : '') + '>Escoteiro Chefe Adjunto da Chefia Nacional</option>';
+                    html += '<option value="Colaborador da Chefia Nacional" ' + (value == 'Colaborador da Chefia Nacional' ? 'selected' : '') + '>Colaborador da Chefia Nacional</option>';
+                    html += '<option value="Presidente da Mesa da Conferência" ' + (value == 'Presidente da Mesa da Conferência' ? 'selected' : '') + '>Presidente da Mesa da Conferência</option>';
+                    html += '<option value="Secretário da Mesa da Conferência" ' + (value == 'Secretário da Mesa da Conferência' ? 'selected' : '') + '>Secretário da Mesa da Conferência</option>';
+                    html += '<option value="Segundo Secretário da Mesa da Conferência" ' + (value == 'Segundo Secretário da Mesa da Conferência' ? 'selected' : '') + '>Segundo Secretário da Mesa da Conferência</option>';
+                    html += '<option value="Membro do Conselho Jurisdicional" ' + (value == 'Membro do Conselho Jurisdicional' ? 'selected' : '') + '>Membro do Conselho Jurisdicional</option>';
+                    html += '<option value="Membro do Conselho Fiscal" ' + (value == 'Membro do Conselho Fiscal' ? 'selected' : '') + '>Membro do Conselho Fiscal</option>';
+                    html += '<option value="Coordenador da Equipa Executiva" ' + (value == 'Coordenador da Equipa Executiva' ? 'selected' : '') + '>Coordenador da Equipa Executiva</option>';
+                    html += '<option value="Membro da Equipa Executiva" ' + (value == 'Membro da Equipa Executiva' ? 'selected' : '') + '>Membro da Equipa Executiva</option>';
+                    html += '<option value="Formador" ' + (value == 'Formador' ? 'selected' : '') + '>Formador</option>';
+                    html += '<option value="Estagiário de Formador" ' + (value == 'Estagiário de Formador' ? 'selected' : '') + '>Estagiário de Formador</option></select>';
+                } else if (tipo == 'Regional')
+                {
+                    html = '<label for="rank">Cargo/Função</label>';
+                    html += '<select required name="rank" id="rank" style="width: 200px">';
+                    html += '<option value="Escoteiro Chefe Regional" ' + (value == 'Escoteiro Chefe Regional' ? 'selected' : '') + '>Escoteiro Chefe Regional</option>';
+                    html += '<option value="Escoteiro Chefe Regional Adjunto" ' + (value == 'Escoteiro Chefe Regional Adjunto' ? 'selected' : '') + '>Escoteiro Chefe Regional Adjunto</option>';
+                    html += '<option value="Escoteiro Chefe Adjunto da Chefia Regional" ' + (value == 'Escoteiro Chefe Adjunto da Chefia Regional' ? 'selected' : '') + '>Escoteiro Chefe Adjunto da Chefia Regional</option>';
+                    html += '<option value="Colaborador da Chefia Regional" ' + (value == 'Colaborador da Chefia Regional' ? 'selected' : '') + '>Colaborador da Chefia Regional</option>';
+                    html += '<option value="Presidente da Mesa do Conselho Regional" ' + (value == 'Presidente da Mesa do Conselho Regional' ? 'selected' : '') + '>Presidente da Mesa do Conselho Regional</option>';
+                    html += '<option value="Secretário da Mesa do Conselho Regional" ' + (value == 'Secretário da Mesa do Conselho Regional' ? 'selected' : '') + '>Secretário da Mesa do Conselho Regional</option></select>';
+                } else if (tipo == 'Local')
+                {
+                    html = '<label for="rank">Cargo/Função</label>';
+                    html += '<select required name="rank" id="rank" style="width: 200px">';
+                    html += '<option value="Escoteiro Chefe de Grupo" ' + (value == 'Escoteiro Chefe de Grupo' ? 'selected' : '') + '>Escoteiro Chefe de Grupo</option>';
+                    html += '<option value="Escoteiro SubChefe de Grupo" ' + (value == 'Escoteiro SubChefe de Grupo' ? 'selected' : '') + '>Escoteiro SubChefe de Grupo</option>';
+                    html += '<option value="Escoteiro Chefe Adjunto da Chefia de Grupo" ' + (value == 'Escoteiro Chefe Adjunto da Chefia de Grupo' ? 'selected' : '') + '>Escoteiro Chefe Adjunto da Chefia de Grupo</option>';
+                    html += '<option value="Colaborador de Grupo" ' + (value == 'Colaborador de Grupo' ? 'selected' : '') + '>Colaborador de Grupo</option>';
+                    html += '<option value="Escoteiro Chefe dos Serviços Administrativos" ' + (value == 'Escoteiro Chefe dos Serviços Administrativos' ? 'selected' : '') + '>Escoteiro Chefe dos Serviços Administrativos</option>';
+                    html += '<option value="Escoteiro Chefe de Clã" ' + (value == 'Escoteiro Chefe de Clã' ? 'selected' : '') + '>Escoteiro Chefe de Clã</option>';
+                    html += '<option value="Escoteiro SubChefe de Clã" ' + (value == 'Escoteiro SubChefe de Clã' ? 'selected' : '') + '>Escoteiro SubChefe de Clã</option>';
+                    html += '<option value="Escoteiro Chefe da Tribo de Exploradores" ' + (value == 'Escoteiro Chefe da Tribo de Exploradores' ? 'selected' : '') + '>Escoteiro Chefe da Tribo de Exploradores</option>';
+                    html += '<option value="Escoteiro SubChefe da Tribo de Exploradores" ' + (value == 'Escoteiro SubChefe da Tribo de Exploradores' ? 'selected' : '') + '>Escoteiro SubChefe da Tribo de Exploradores</option>';
+                    html += '<option value="Escoteiro Chefe da Tribo de Escoteiros" ' + (value == 'Escoteiro Chefe da Tribo de Escoteiros' ? 'selected' : '') + '>Escoteiro Chefe da Tribo de Escoteiros</option>';
+                    html += '<option value="Escoteiro SubChefe da Tribo de Escoteiros" ' + (value == 'Escoteiro SubChefe da Tribo de Escoteiros' ? 'selected' : '') + '>Escoteiro SubChefe da Tribo de Escoteiros</option>';
+                    html += '<option value="Escoteiro Chefe de Alcateia" ' + (value == 'Escoteiro Chefe de Alcateia' ? 'selected' : '') + '>Escoteiro Chefe de Alcateia</option>';
+                    html += '<option value="Escoteiro SubChede de Alcateia" ' + (value == 'Escoteiro SubChede de Alcateia' ? 'selected' : '') + '>Escoteiro SubChede de Alcateia</option>';
+                    html += '<option value="Aspirante a Escoteiro Chefe" ' + (value == 'Aspirante a Escoteiro Chefe' ? 'selected' : '') + '>Aspirante a Escoteiro Chefe</option>';
+                    html += '<option value="Caminheiro" ' + (value == 'Caminheiro' ? 'selected' : '') + '>Caminheiro</option>';
+                    html += '<option value="Candidato" ' + (value == 'Candidato' ? 'selected' : '') + '>Candidato</option></select>';
+                }
+                document.getElementById(id).innerHTML = html;
+            }
         </script>
     </head>
     <body>
@@ -181,6 +177,8 @@ function changeField2(tipo,value,id)
         <div id="loader"
              style="position: absolute; top: 30%; left: 40%; z-index: 50; cursor: auto;"></div>
         <div id="form"
+             style="position: fixed; top: 0; left: 2%; z-index: 2147483647; cursor: auto;"></div>
+        <div id="smallForm"
              style="position: fixed; top: 0; left: 2%; z-index: 2147483647; cursor: auto;"></div>
         <div id="page-wrapper">
             <!-- Header -->

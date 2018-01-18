@@ -95,7 +95,7 @@
                         </i>
                     {/if}
                 </td>
-               <td>
+                <td>
                     <img style="width:15px;height:15px" 
                          src="images/star{if $documentos['idAutor']==''}_vazio{/if}.svg" 
                          title="Carregado: {$documentos['dateAutor']}&#013;Autor: {$documentos['autor']}"/>
@@ -105,7 +105,7 @@
                     <img style="width:15px;height:15px" 
                          src="images/star{if $documentos['idExecutiva']==''}_vazio{/if}.svg" 
                          title="Carregado: {$documentos['dateExecutiva']}&#013;Autor: {$documentos['executiva']}"/>
-               </td>
+                </td>
                 <td class="actions" align="right"><a
                         class="button small icon fa-file"
                         style="cursor: pointer; padding: 0 0 0 5pt"
@@ -115,8 +115,9 @@
                        onclick="request('action={$action}&task=editar&tab={$currentTab}&idDocuments={$documentos['idDocuments']}', 'form');"></a>
                     <a class="button small icon fa-eraser"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
-                       onclick="request('action={$action}&task=apagar&tab={$currentTab}&idDocuments={$documentos['idDocuments']}', '{$action}Msg');
-                                       request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');"> </a></td>
+                       onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
+                                   request('action={$action}&task=apagar&tab={$currentTab}&idDocuments={$documentos['idDocuments']}', '{$action}Msg');
+                                   request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');}"> </a></td>
 
 
 

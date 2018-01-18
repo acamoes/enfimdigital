@@ -27,8 +27,8 @@ class EquipaExecutiva {
         $this->avaliacoes                         = $this->getAvaliacoes($data);
         $this->contexto['formacoes']['inscritos'] = $this->getInscritos($data);
         $this->contexto['formacoes']['equipa']    = $this->getEquipa($data);
-        /*  $this->contexto['formacoes']['sessoes'] = $this->getSessoes($data);
-          $this->contexto['formacoes']['ficheiros'] = $this->getFicheiros($data);
+        $this->contexto['formacoes']['sessoes']   = $this->getSessoes($data);
+        /*  $this->contexto['formacoes']['ficheiros'] = $this->getFicheiros($data);
           $this->contexto['formacoes']['avaliacoes'] = $this->getAvaliacoes($data); */
     }
 
@@ -369,5 +369,130 @@ class EquipaExecutiva {
             return ['success' => false, 'message' => 'Não foi apagar o registo.'];
         }
         return ['success' => true, 'message' => 'Registo apagado.'];
+    }
+
+    function getSessoes($data) {
+        $query     = "SELECT * FROM (SELECT cm.*, (SELECT a.name FROM users a WHERE a.idUsers=cm.idUsers) as formador " .
+                " FROM " .
+                " courses_modules cm " .
+                //" INNER JOIN modules m ON cm.idModules=m.idModules " .
+                //" INNER JOIN course c ON cm.idCourse=c.idCourse INNER JOIN courses cs ON cm.idCourses=cs.idCourses " .
+                ") as t WHERE true " .
+                (key_exists("search", $data) ?
+                " AND (t.name LIKE '%" . $data ['search'] . "%' " .
+                "OR t.type LIKE '%" . $data ['search'] . "%' OR t.formador LIKE '%" . $data ['search'] . "%')" : "") .
+                (key_exists("idCourses", $data) ? " AND t.idCourses=" . $data ['idCourses'] . " " : " ") .
+                (key_exists("idCourse", $data) ? " AND t.idCourse=" . $data ['idCourse'] . " " : " ") .
+                (key_exists("idModules", $data) ? " AND t.idModules=" . $data ['idModules'] . " " : " ") .
+                /* (key_exists ( "searchInscritos", $post ) ? "AND (u.name LIKE '%" . $post ['searchInscritos'] . "%' OR
+                  u.aepId LIKE '%" . $post ['searchInscritos'] . "%' OR
+                  u.email LIKE '%" . $post ['searchInscritos'] . "%')" : " ") . */
+                "ORDER BY t.order";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    function inserirFormacoesSessoes($data) {
+        $con       = new Database ();
+        $resultado = $con->set('START TRANSACTION');
+
+        $query     = "SELECT "
+                . "(SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'] . ") as idCourse, "
+                . "(SELECT max(idModules) FROM courses_modules WHERE idCourses=" . $data['idCourses'] . ")+1 as idModules, "
+                . "(SELECT max(`order`) FROM courses_modules WHERE idCourses=" . $data['idCourses'] . ")+1 as ordem ";
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            $resultado = $con->set('ROLLBACK');
+            return ['success' => false, 'message' => 'Não foi inserido o registo.'];
+        }
+        $row       = $resultado[0];
+        $query     = "INSERT INTO courses_modules (idModules,idCourse,idCourses,`order`,name,duration,type,status,observations) " .
+                " VALUES (" . $row['idModules'] . "," . $row['idCourse'] . "," . $data['idCourses'] . "," . $row['ordem'] .
+                ",'" . $data['name'] . "'," . $data['duration'] . ",'Proposto','Pendente','" . $data['observations'] . "') ";
+        $resultado = $con->set($query);
+        $resultado = $con->set('COMMIT');
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi adicionado o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo adicionado.'];
+    }
+
+    function restaurarFormacoesSessoes($data) {
+        $con       = new Database ();
+        $resultado = $con->set('START TRANSACTION');
+        $query     = "DELETE FROM courses_modules WHERE idCourses=" . $data['idCourses'];
+        $resultado = $con->set($query);
+        if (!$resultado) {
+            $resultado = $con->set('ROLLBACK');
+            return ['success' => false, 'message' => 'Não foi restaurado.'];
+        }
+        $query     = "INSERT INTO courses_modules (idModules,idCourse,idCourses,`order`,name,duration,type,status) " .
+                " SELECT m.idModules,m.idCourse," . $data['idCourses'] . ",m.order,m.name,m.duration,m.type,m.status " .
+                " FROM modules m " . "INNER JOIN course c ON m.idCourse=c.idCourse " .
+                "AND m.status='Fechado' AND m.idCourse=(SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'] . ") ";
+        $resultado = $con->set($query);
+        $resultado = $con->set('COMMIT');
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi restaurado.'];
+        }
+        return ['success' => true, 'message' => 'Restauração concluída'];
+    }
+
+    function apagarFormacoesSessoes($data) {
+        $query     = "DELETE FROM courses_modules WHERE idCourses=" . $data['idCourses'] . " AND idCourse=" . $data['idCourse'] . " AND idModules= " . $data['idModules'] . " ";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi apagar o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo apagado.'];
+    }
+
+    function getUtlizadoresEquipa($data) {
+        $query     = "SELECT * FROM users u " .
+                "WHERE u.idUsers IN (SELECT idUsers FROM courses_team WHERE idCourses=" . $data['idCourses'] . ") " .
+                " ORDER BY permission,name";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    function adicionarFormacoesSessoes($data) {
+        $query     = "UPDATE courses_modules SET idUsers=" . $data['formador'] .
+                " WHERE idCourses=" . $data['idCourses'] . " AND idCourse=" . $data['idCourse'] . " AND idModules=" . $data['idModules'] . " ";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi adicionado o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo adicionado.'];
+    }
+
+    function getSessao($data) {
+        $query     = "SELECT * FROM (SELECT cm.*, (SELECT a.name FROM users a WHERE a.idUsers=cm.idUsers) as formador " .
+                " FROM " .
+                " courses_modules cm " .
+                //" INNER JOIN modules m ON cm.idModules=m.idModules " .
+                //" INNER JOIN course c ON cm.idCourse=c.idCourse INNER JOIN courses cs ON cm.idCourses=cs.idCourses " .
+                ") as t WHERE t.idCourses=" . $data ['idCourses'] .
+                " AND t.idCourse=" . $data ['idCourse'] .
+                " AND t.idModules=" . $data ['idModules'] . " " .
+                /* (key_exists ( "searchInscritos", $post ) ? "AND (u.name LIKE '%" . $post ['searchInscritos'] . "%' OR
+                  u.aepId LIKE '%" . $post ['searchInscritos'] . "%' OR
+                  u.email LIKE '%" . $post ['searchInscritos'] . "%')" : " ") . */
+                "ORDER BY t.order";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado[0];
     }
 }

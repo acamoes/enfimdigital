@@ -13,7 +13,7 @@
 	{foreach $resultadoEquipa as $equipa}
 			<tr>
 			<td>{$equipa['aepId']}</td>
-			<td>{$equipa['name']}</td>
+			<td style="word-wrap: break-word">{$equipa['name']}</td>
                         <td>{$equipa['permission']}</td>
 			<td class="actions" align="right"><a
 				class="button big icon fa-envelope"

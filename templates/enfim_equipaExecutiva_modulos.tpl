@@ -48,8 +48,9 @@
                        onclick="request('action={$action}&task=editar&tab={$currentTab}&idModules={$modulos['idModules']}','form');"></a>
                     <a class="button small icon fa-eraser"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
-                       onclick="request('action={$action}&task=apagar&tab={$currentTab}&idModules={$modulos['idModules']}','{$action}Msg');
-                                request('action={$action}&task=search&tab={$currentTab}&search='+document.getElementById('{$currentTab}search').value,'ST{$currentTab}');"> </a></td>
+                       onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
+                           request('action={$action}&task=apagar&tab={$currentTab}&idModules={$modulos['idModules']}','{$action}Msg');
+                                request('action={$action}&task=search&tab={$currentTab}&search='+document.getElementById('{$currentTab}search').value,'ST{$currentTab}');}"> </a></td>
 
             </tr>
         {/foreach}
