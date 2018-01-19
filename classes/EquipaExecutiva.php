@@ -18,18 +18,27 @@ class EquipaExecutiva {
 
     function __construct($data) {
         $this->getTabs();
-        $this->utilizadores                        = $this->getUtilizadores($data);
-        $this->cursos                              = $this->getCursos($data);
-        $this->modulos                             = $this->getModulos($data);
-        $this->documentos                          = $this->getDocumentos($data);
-        $this->calendarios                         = $this->getCalendarios($data);
-        $this->formacoes                           = $this->getFormacoes($data);
-        $this->avaliacoes                          = $this->getAvaliacoes($data);
-        $this->contexto['formacoes']['inscritos']  = $this->getInscritos($data);
-        $this->contexto['formacoes']['equipa']     = $this->getEquipa($data);
-        $this->contexto['formacoes']['sessoes']    = $this->getSessoes($data);
-        //  $this->contexto['formacoes']['ficheiros'] = $this->getFicheiros($data);
-        $this->contexto['formacoes']['avaliacoes'] = $this->getFormacoesAvaliacoes($data);
+        $this->utilizadores = $this->getUtilizadores($data);
+        $this->cursos       = $this->getCursos($data);
+        $this->modulos      = $this->getModulos($data);
+        $this->documentos   = $this->getDocumentos($data);
+        $this->calendarios  = $this->getCalendarios($data);
+        $this->formacoes    = $this->getFormacoes($data);
+        $this->avaliacoes   = $this->getAvaliacoes($data);
+        if (key_exists("idCourses", $data)) {
+            $this->contexto['formacoes']['inscritos']  = $this->getInscritos($data);
+            $this->contexto['formacoes']['equipa']     = $this->getEquipa($data);
+            $this->contexto['formacoes']['sessoes']    = $this->getSessoes($data);
+            $this->contexto['formacoes']['ficheiros']  = $this->getFicheiros($data);
+            $this->contexto['formacoes']['avaliacoes'] = $this->getFormacoesAvaliacoes($data);
+        }
+        else {
+            $this->contexto['formacoes']['inscritos']  = array();
+            $this->contexto['formacoes']['equipa']     = array();
+            $this->contexto['formacoes']['sessoes']    = array();
+            $this->contexto['formacoes']['ficheiros']  = array();
+            $this->contexto['formacoes']['avaliacoes'] = array();
+        }
     }
 
     function getTabs() {
@@ -258,5 +267,143 @@ class EquipaExecutiva {
 
     function fecharAvaliacoesFormacoesAvaliacoes($data) {
         return Formacoes::fecharAvaliacoesFormacoesAvaliacoes($data);
+    }
+
+    function getFicheiros($data) {
+        $query = "SELECT * FROM (SELECT " .
+                "d.idDocuments, " .
+                "d.idCourse, " .
+                "d.idCourses, " .
+                "d.idModules, " .
+                "m.name as modulo, " .
+                "m.type as mTipo, " .
+                "d.name as documento, " .
+                "d.observations, " .
+                "d.type as dTipo, " .
+                "d.public, " .
+                "d.status, " .
+                "d.document1, " .
+                "RIGHT(d.document1, LOCATE('.', REVERSE(d.document1))-1) as ext1, " .
+                "d.document2, " .
+                "RIGHT(d.document2, LOCATE('.', REVERSE(d.document2))-1) as ext2, " .
+                "d.document3, " .
+                "RIGHT(d.document3, LOCATE('.', REVERSE(d.document3))-1) as ext3, " .
+                "d.document4, " .
+                "RIGHT(d.document4, LOCATE('.', REVERSE(d.document4))-1) as ext4, " .
+                "d.dateAutor, " .
+                "d.idAutor, " .
+                "(SELECT name FROM users WHERE idUsers=d.idAutor) as autor, " .
+                "d.dateDiretor, " .
+                "d.idDiretor, " .
+                "(SELECT name FROM users WHERE idUsers=d.idDiretor) as diretor, " .
+                "d.datePedagogico, " .
+                "d.idPedagogico, " .
+                "(SELECT name FROM users WHERE idUsers=d.idPedagogico) as pedagogico, " .
+                "d.dateExecutiva, " .
+                "d.idExecutiva, " .
+                "(SELECT name FROM users WHERE idUsers=d.idExecutiva) as executiva " .
+                " FROM courses_documents d INNER JOIN courses_modules m ON d.idModules=m.idModules AND m.status<>'Inativo' AND d.status<>'Inativo'  " .
+                " AND  d.idCourses=" . $data['idCourses'] . " AND m.idCourses=" . $data['idCourses'] . " ORDER BY m.order) t WHERE true " .
+                (key_exists("search", $data) ?
+                " AND (modulo LIKE '%" . $data['search'] . "%' OR mTipo LIKE '%" . $data['search'] . "%' OR " .
+                "document1 LIKE '%" . $data['search'] . "%' OR document2 LIKE '%" . $data['search'] . "%' OR document3 LIKE '%" . $data['search'] . "%' OR document4 LIKE '%" . $data['search'] . "%' OR " .
+                "documento LIKE '%" . $data['search'] . "%' OR dTipo LIKE '%" . $data['search'] . "%' )" : "");
+
+        if (key_exists("idCourses", $data) && key_exists("idCourse", $data) && key_exists("idModules", $data) && key_exists("idModules", $data)) {
+            $query .= " AND (idCourse=" . $data['idCourse'] . " AND idCourses=" . $data['idCourses'] . " AND idModules=" . $data['idModules'] . " AND idDocuments=" . $data['idDocuments'] . " ) ";
+        }
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    function restaurarFormacoesFicheiros($data) {
+        $con       = new Database ();
+        $resultado = $con->set('START TRANSACTION');
+        $query     = "DELETE FROM courses_documents WHERE status='Fechado' AND idCourses=" . $data['idCourses'];
+        $resultado = $con->set($query);
+        if (!$resultado) {
+            $resultado = $con->set('ROLLBACK');
+            return ['success' => false, 'message' => 'Não foi restaurado.'];
+        }
+        $query     = "INSERT IGNORE INTO courses_documents "
+                . "(idCourses,idDocuments,idModules,idCourse,name,type,public,observations,status,"
+                . "document1,document1Blob,document2,document2Blob,document3,document3Blob,document4,document4Blob,"
+                . "dateAutor,idAutor,dateDiretor,idDiretor,datePedagogico,idPedagogico,dateExecutiva,idExecutiva) "
+                . " SELECT " . $data['idCourses'] . ",d.idDocuments,d.idModules,d.idCourse,d.name,d.type,d.public,d.observations,d.status,"
+                . "d.document1,d.document1Blob,d.document2,d.document2Blob,d.document3,d.document3Blob,d.document4,d.document4Blob,"
+                . "d.dateAutor,d.idAutor,d.dateDiretor,d.idDiretor,d.datePedagogico,d.idPedagogico,d.dateExecutiva,d.idExecutiva "
+                . " FROM documents d INNER JOIN courses_modules cm ON d.idCourse=cm.idCourse AND d.idModules=cm.idModules "
+                . " AND cm.idCourses=" . $data['idCourses'] . " AND d.status='Fechado' ";
+        $resultado = $con->set($query);
+        $resultado = $con->set('COMMIT');
+        if ($con->connection->error != '') {
+            return ['success' => false, 'message' => 'Não foi restaurado.'];
+        }
+        return ['success' => true, 'message' => 'Restauração concluída'];
+    }
+
+    function getFormacoesModulos($data) {
+        $query     = "SELECT * FROM courses_modules WHERE status<>'Inativo' AND idCourses=" . $data['idCourses'] . " ORDER BY `order` ";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    function inserirFormacoesFicheiro($post, $file, $content, $type) {
+        $query                                = "INSERT INTO documents (idModules,idCourse) VALUES (0,0) ";
+        $con                                  = new Connection ();
+        $con->connect();
+        $result                               = $con->connection->query($query);
+        $_SESSION ['idDocument']              = $con->connection->insert_id;
+        $query                                = "DELETE FROM documents WHERE idDocuments=" . $_SESSION ['idDocument'];
+        $result                               = $con->connection->query($query);
+        $query                                = "SELECT idCourse FROM courses WHERE idCourses=" . $post['idCourses'];
+        $result                               = $con->connection->query($query);
+        $row                                  = $con->fetch_all($result, MYSQLI_ASSOC);
+        $_SESSION['ficheiros']['idDocuments'] = $_SESSION ['idDocument'];
+        $_SESSION['ficheiros']['idCourse']    = $row[0]['idCourse'];
+        $_SESSION['ficheiros']['type']        = $type;
+
+        $query  = "INSERT INTO courses_documents " .
+                "(idCourses, idDocuments, idModules, idCourse, " .
+                "status, document" . $type . ", document" . $type . "Blob, idAutor, dateAutor)" .
+                "VALUES " . "(" . $post['idCourses'] . "," . $_SESSION['ficheiros']['idDocuments'] . ",0," . $_SESSION['ficheiros']['idCourse'] . ",'Pendente'," .
+                "'" . $file . "','" . $content . "'," .
+                "dateAutor='" . date("Y-m-d H:i:s") . "', idAutor=" . $_SESSION ['user']->id . ") ";
+        $result = $con->connection->query($query);
+        if ($con->connection->error) {
+            return $con->connection->error;
+        }
+        else {
+            $_SESSION ['idDocument'] = $con->connection->insert_id;
+            return "Ficheiro carregado com sucesso.";
+        }
+    }
+
+    function atualizarFormacoesFicheiro($post, $file, $content, $type) {
+        $query  = "UPDATE courses_documents "
+                . " SET document" . $type . "='" . $file . "'," . "document" . $type . "Blob='" . $content
+                . "', status='Pendente', "
+                . "dateAutor='" . date("Y-m-d H:i:s") . "', idAutor=" . $_SESSION ['user']->id . ", "
+                . "dateDiretor=NULL, idDiretor=NULL, "
+                . "datePedagogico=NULL, idPedagogico=NULL, "
+                . "dateExecutiva=NULL, idExecutiva=NULL "
+                . " WHERE idCourse=" . $post['idCourse'] . " AND idCourses=" . $post['idCourses'] . " AND idDocuments=" . $post['idDocuments'];
+        $con    = new Connection ();
+        $con->connect();
+        $result = $con->connection->query($query);
+        if ($con->connection->error) {
+            return $con->connection->error;
+        }
+        else {
+            return "Carregado com sucesso.";
+        }
     }
 }

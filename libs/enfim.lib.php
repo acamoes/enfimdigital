@@ -189,6 +189,9 @@ class Enfim {
                         $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['subTab'] . '_' . $data['task'] . '_resultado.tpl');
                     }
                     else {
+                        if ($data['subTab'] == 'ficheiros') { //JM
+                            $this->tpl->assign('modulos' . ucfirst($data['subTab']), $_SESSION['equipaExecutiva']->getFormacoesModulos($data));
+                        }
                         $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['subTab'] . '_' . $data['task'] . '.tpl');
                     }
                 }

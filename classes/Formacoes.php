@@ -266,7 +266,7 @@ class Formacoes {
         return $resultado;
     }
 
-    static function getEquipa($data) { // var_dump($post);exit();
+    static function getEquipa($data) { // var_dump($data);exit();
         $query     = "SELECT c.idCourses,c.course,c.status as cStatus, " . "ct.*, " . "u.*,u.status as uStatus " .
                 " FROM " . "courses c INNER JOIN courses_team ct ON c.idCourses=ct.idCourses " . "INNER JOIN users u ON ct.idUsers=u.idUsers " .
                 (key_exists("idCourses", $data) ? "AND ct.idCourses=" . $data ['idCourses'] . " " : " ") .
@@ -305,9 +305,9 @@ class Formacoes {
                 (key_exists("idCourses", $data) ? " AND t.idCourses=" . $data ['idCourses'] . " " : " ") .
                 (key_exists("idCourse", $data) ? " AND t.idCourse=" . $data ['idCourse'] . " " : " ") .
                 (key_exists("idModules", $data) ? " AND t.idModules=" . $data ['idModules'] . " " : " ") .
-                /* (key_exists ( "searchInscritos", $post ) ? "AND (u.name LIKE '%" . $post ['searchInscritos'] . "%' OR
-                  u.aepId LIKE '%" . $post ['searchInscritos'] . "%' OR
-                  u.email LIKE '%" . $post ['searchInscritos'] . "%')" : " ") . */
+                /* (key_exists ( "searchInscritos", $data ) ? "AND (u.name LIKE '%" . $data ['searchInscritos'] . "%' OR
+                  u.aepId LIKE '%" . $data ['searchInscritos'] . "%' OR
+                  u.email LIKE '%" . $data ['searchInscritos'] . "%')" : " ") . */
                 "ORDER BY t.order";
         $con       = new Database ();
         $resultado = $con->get($query);
@@ -405,9 +405,9 @@ class Formacoes {
                 ") as t WHERE t.idCourses=" . $data ['idCourses'] .
                 " AND t.idCourse=" . $data ['idCourse'] .
                 " AND t.idModules=" . $data ['idModules'] . " " .
-                /* (key_exists ( "searchInscritos", $post ) ? "AND (u.name LIKE '%" . $post ['searchInscritos'] . "%' OR
-                  u.aepId LIKE '%" . $post ['searchInscritos'] . "%' OR
-                  u.email LIKE '%" . $post ['searchInscritos'] . "%')" : " ") . */
+                /* (key_exists ( "searchInscritos", $data ) ? "AND (u.name LIKE '%" . $data ['searchInscritos'] . "%' OR
+                  u.aepId LIKE '%" . $data ['searchInscritos'] . "%' OR
+                  u.email LIKE '%" . $data ['searchInscritos'] . "%')" : " ") . */
                 "ORDER BY t.order";
         $con       = new Database ();
         $resultado = $con->get($query);
