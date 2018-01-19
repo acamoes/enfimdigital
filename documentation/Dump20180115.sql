@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `enfim_digital` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `enfim_digital`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: enfim_digital
@@ -58,7 +56,7 @@ CREATE TABLE `courses` (
   `observations` longtext,
   PRIMARY KEY (`idCourses`),
   UNIQUE KEY `course_UNIQUE` (`course`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +109,7 @@ CREATE TABLE `courses_evaluations` (
   `idCourses` int(11) NOT NULL,
   `idCourse` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
-  `evaluation` json DEFAULT NULL,
+  `evaluation` longtext,
   `status` varchar(20) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   PRIMARY KEY (`idEvaluations`,`idUsers`,`idCourses`,`idCourse`),
@@ -213,7 +211,7 @@ CREATE TABLE `documents` (
   `dateExecutiva` datetime DEFAULT NULL,
   `idExecutiva` int(11) DEFAULT NULL,
   PRIMARY KEY (`idDocuments`,`idModules`,`idCourse`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,12 +225,13 @@ CREATE TABLE `evaluations` (
   `idEvaluations` int(11) NOT NULL AUTO_INCREMENT,
   `idCourse` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
+  `target` varchar(45) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
-  `template` json DEFAULT NULL,
+  `template` longtext,
   `dateExecutiva` datetime DEFAULT NULL,
   `idExecutiva` int(11) DEFAULT NULL,
   PRIMARY KEY (`idEvaluations`,`idCourse`)
-) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +251,7 @@ CREATE TABLE `modules` (
   `status` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`idModules`),
   UNIQUE KEY `name_UNIQUE` (`name`,`idCourse`,`idModules`)
-) ENGINE=InnoDB AUTO_INCREMENT=276 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -324,4 +323,4 @@ CREATE TABLE `users_courses` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-15 19:05:24
+-- Dump completed on 2018-01-19  2:00:31
