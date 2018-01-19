@@ -244,6 +244,12 @@ class Enfim {
                     $this->tpl->display('enfim_error.tpl');
                 }
                 break;
+            case "fecharAvaliacoes":
+                if ($data['tab'] == 'formacoes' && $data['subTab'] == 'avaliacoes') {
+                    $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab']) . ucfirst($data['subTab'])}($data));
+                    $this->tpl->display('enfim_error.tpl');
+                }
+                break;
             case "form":
                 echo $_SESSION['equipaExecutiva']->{$data['func']}($data);
                 break;

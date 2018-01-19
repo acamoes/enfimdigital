@@ -1,6 +1,5 @@
 <div class="table-wrapper">
     <ul style="float: left">
-        <label for="name" style="padding-top: 10px">{$currentSubTabText}</label>
         <form>
             <input type="text" id="{$currentTab}{$currentSubTab}search" name="{$currentTab}{$currentSubTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
             <a class="button small icon fa-search"
@@ -9,30 +8,34 @@
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                cursor: pointer; padding: 0 0 0 5pt"
-               onclick="request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search='+document.getElementById('{$currentTab}{$currentSubTab}search').value,'SST{$currentTab}{$currentSubTab}');">
+               onclick="request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search='+document.getElementById('{$currentTab}{$currentSubTab}search').value+'&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value,'SST{$currentTab}{$currentSubTab}');">
             </a>
         </form>
+            
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&tab={$currentTab}&subTab={$currentSubTab}','form');"
+    <ul class="actions" onclick="if (confirm('Tem a certeza que pretende alterar o estado das avaliações?')) {
+        request('action={$action}&task=fecharAvaliacoes&tab={$currentTab}&subTab={$currentSubTab}&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value,'form');
+        request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search='+document.getElementById('{$currentTab}{$currentSubTab}search').value+'&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value,'SST{$currentTab}{$currentSubTab}');}"
         style="float: right">
         <li class="button small"
-            style="cursor: pointer; padding: 0 10pt 0 10pt">novo</li>
+            style="cursor: pointer; padding: 0 10pt 0 10pt">Alterar estado das avaliações</li>
     </ul>
 </div>
 <table>
     <thead>
         <tr>
-            <th>NrAssoc</th>
             <th>Nome</th>
-            <th>Tipo</th>
+            <th>Respondido</th>
             <th>Estado</th>
-            <th>Contato</th>
-            <th>Idade</th>
-            <th>IBAN</th>
-            <th>AVALIACOES</th>
         </tr>
     </thead>		
     <tbody>
-        
+        {foreach $equipaExecutiva->contexto['formacoes']['avaliacoes'] as $avaliacoes}
+            <tr>
+                <td>{$avaliacoes['name']}</td>
+                <td>{$avaliacoes['response']}</td>
+                <td>{$avaliacoes['status']}</td>                
+            </tr>
+        {/foreach}
     </tbody>
 </table>

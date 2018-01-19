@@ -7,6 +7,8 @@ class Users {
     public $name;
     public $sigla;
     public $permission;
+    public $diretor;
+    public $formador;
     public $status = "Inactive";
     public $lastLogin;
     public $birthDate;
@@ -37,6 +39,8 @@ class Users {
             $this->name         = $rows ['name'];
             $this->sigla        = $rows ['sigla'];
             $this->permission   = $rows ['permission'];
+            $this->diretor      = $this->getDiretor($rows ['idUsers']);
+            $this->formador     = $this->getFormador($rows ['idUsers']);
             $this->status       = $rows ['status'];
             $this->lastLogin    = date("Y-m-d H:i:s");
             $this->lastLogin();
@@ -62,6 +66,26 @@ class Users {
         $query = "UPDATE users SET lastLogin='$this->lastLogin' WHERE idUsers='$this->id'";
         $con   = new Database ();
         $con->set($query);
+    }
+
+    function getDiretor($id): array {
+        $query     = "select idCourses from courses_team where idUsers=" . $id . " and type='Diretor' ";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return array();
+        }
+        return $resultado;
+    }
+
+    function getFormador($id): array {
+        $query     = "select idCourses from courses_team where idUsers=" . $id . " and type='Formador' ";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return array();
+        }
+        return $resultado;
     }
 
     function userExists($username): bool {
