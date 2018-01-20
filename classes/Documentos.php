@@ -128,14 +128,14 @@ class Documentos {
                 "Fechado" :
                 "Pendente")) . "'," .
                 "dateAutor='" . date("Y-m-d H:i:s") . "'," .
-                "idAutor=" . $_SESSION ['users']->id . ", " .
-                "datePedagogico='" . date("Y-m-d H:i:s") . "'," .
-                "idPedagogico=" . $_SESSION ['users']->id . ", " .
-                "dateDiretor='" . date("Y-m-d H:i:s") . "'," .
-                "idDiretor=" . $_SESSION ['users']->id . ", " .
-                "dateExecutiva='" . date("Y-m-d H:i:s") . "'," .
-                "idExecutiva=" . $_SESSION ['users']->id . " " .
-                "WHERE idDocuments=" . $_SESSION ['idDocument'];
+                "idAutor=" . $_SESSION ['users']->id . " " .
+                //"datePedagogico='" . date("Y-m-d H:i:s") . "'," .
+                //"idPedagogico=" . $_SESSION ['users']->id . ", " .
+                //",dateDiretor='" . date("Y-m-d H:i:s") . "',idDiretor=" . $_SESSION ['users']->id . " "
+                (($data['action'] == 'equipaExecutiva') ?
+                ",dateExecutiva='" . date("Y-m-d H:i:s") . "',idExecutiva=" . $_SESSION ['users']->id . " " :
+                " ") .
+                "WHERE idDocuments=" . $_SESSION['ficheiros']['idDocuments'];
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
@@ -146,31 +146,53 @@ class Documentos {
 
     static function inserirDocumentoFicheiro($data) {
         $query     = "INSERT INTO documents " .
-                "(idModules,idCourse,document" . $data['type'] . ",document" . $data['type'] . "Blob)" .
-                "VALUES " . "(0,0,'" . $data['file'] . "','" . $data['content'] . "')";
+                "(idModules,idCourse,type,document" . $data['filePos'] . ",document" . $data['filePos'] . "Blob,dateAutor,idAutor" .
+                (($data['action'] == 'equipaExecutiva') ?
+                ",dateExecutiva,idExecutiva " :
+                " ") .
+                ")" .
+                "VALUES " . "(0,0,'" . $data['type'] . "','" . $data['file'] . "','" . $data['content'] . "','" . date("Y-m-d H:i:s") . "'," . $_SESSION['users']->id . " " .
+                (($data['action'] == 'equipaExecutiva') ?
+                ",'" . date("Y-m-d H:i:s") . "'," . $_SESSION ['users']->id . " " :
+                " ") .
+                ")";
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
             return ['success' => false, 'message' => 'Não foi aceite o ficheiro.'];
         }
-        $_SESSION ['idDocument'] = $con->connection->insert_id;
+        $_SESSION ['ficheiros']['idDocuments']                          = $con->connection->insert_id;
+        $_SESSION ['ficheiros']['type']                                 = $data['type'];
+        $_SESSION ['ficheiros']['filePos'][$data['filePos']]['file']    = $data['file']; //APAGAR
+        $_SESSION ['ficheiros']['filePos'][$data['filePos']]['content'] = $data['content'];
+
         return ['success' => true, 'message' => 'Ficheiro aceite.'];
     }
 
     static function atualizarDocumentosFicheiro($data) {
         $query     = "UPDATE documents "
-                . " SET document" . $data['type'] . "='" . $data['file'] . "'," . "document" . $data['type'] . "Blob='" . $data['content'] . "' "
+                . " SET document" . $data['filePos'] . "='" . $data['file'] . "'," . "document" . $data['filePos'] . "Blob='" . $data['content'] . "' "
+                . (($data['action'] == 'equipaExecutiva') ?
+                ",dateExecutiva='" . date("Y-m-d H:i:s") . "',idExecutiva=" . $_SESSION ['users']->id . " " :
+                " ")
                 . " WHERE idDocuments=" . $data['idDocuments'];
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
             return ['success' => false, 'message' => 'Não foi aceite o ficheiro.'];
         }
+        $_SESSION ['ficheiros']['type']                                 = $data['type'];
+        $_SESSION ['ficheiros']['filePos'][$data['filePos']]['file']    = $data['file']; //APAGAR
+        $_SESSION ['ficheiros']['filePos'][$data['filePos']]['content'] = $data['content'];
         return ['success' => true, 'message' => 'Ficheiro aceite.'];
     }
 
     static function apagarDocumentos($data) {
-        $query     = "UPDATE documents SET public='Não',status=IF(status='Ativo','Inativo','Ativo') WHERE idDocuments=" . $data['idDocuments'] . " ";
+        $query     = "UPDATE documents SET public='Não',status=IF(status='Ativo','Inativo','Ativo')" .
+                (($data['action'] == 'equipaExecutiva') ?
+                ",dateExecutiva='" . date("Y-m-d H:i:s") . "',idExecutiva=" . $_SESSION ['users']->id . " " :
+                " ")
+                . " WHERE idDocuments=" . $data['idDocuments'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {

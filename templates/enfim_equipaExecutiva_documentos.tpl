@@ -101,10 +101,10 @@
                          title="Carregado: {$documentos['dateAutor']}&#013;Autor: {$documentos['autor']}"/>
                     <img style="width:15px;height:15px" 
                          src="images/star{if $documentos['idDiretor']==''}_vazio{/if}.svg" 
-                         title="Carregado: {$documentos['dateDiretor']}&#013;Autor: {$documentos['diretor']}"/>
+                         title="Carregado: {$documentos['dateDiretor']}&#013;Diretor: {$documentos['diretor']}"/>
                     <img style="width:15px;height:15px" 
                          src="images/star{if $documentos['idExecutiva']==''}_vazio{/if}.svg" 
-                         title="Carregado: {$documentos['dateExecutiva']}&#013;Autor: {$documentos['executiva']}"/>
+                         title="Carregado: {$documentos['dateExecutiva']}&#013;EE: {$documentos['executiva']}"/>
                 </td>
                 <td class="actions" align="right"><a
                         class="button small icon fa-file"

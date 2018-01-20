@@ -64,9 +64,8 @@
                     text-overflow: ellipsis;
                     -o-text-overflow: ellipsis;">{$ficheiros['documento']}</td>
                 <td>{$ficheiros['dTipo']}</td>
-                <td>{$ficheiros['status']}</td>
+                <td {if $ficheiros['status'] neq 'Fechado'}style="color: orangered;"{/if}>{$ficheiros['status']}</td>
                 <td>{$ficheiros['public']}</td>
-                <td {if $ficheiros['status'] eq 'Inativo'}style="color: orangered;"{/if}>{$ficheiros['status']}</td>
                 <td>
                     {if $ficheiros['ext1']!=''}
                         <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$ficheiros['idDocuments']}&filePos=1'" 
@@ -109,10 +108,10 @@
                          title="Carregado: {$ficheiros['dateAutor']}&#013;Autor: {$ficheiros['autor']}"/>
                     <img style="width:15px;height:15px" 
                          src="images/star{if $ficheiros['idDiretor']==''}_vazio{/if}.svg" 
-                         title="Carregado: {$ficheiros['dateDiretor']}&#013;Autor: {$ficheiros['diretor']}"/>
+                         title="Carregado: {$ficheiros['dateDiretor']}&#013;Diretor: {$ficheiros['diretor']}"/>
                     <img style="width:15px;height:15px" 
                          src="images/star{if $ficheiros['idExecutiva']==''}_vazio{/if}.svg" 
-                         title="Carregado: {$ficheiros['dateExecutiva']}&#013;Autor: {$ficheiros['executiva']}"/>
+                         title="Carregado: {$ficheiros['dateExecutiva']}&#013;EE: {$ficheiros['executiva']}"/>
                 </td>
                 <td class="actions" align="right"><a
                         class="button small icon fa-file"

@@ -17,7 +17,6 @@
                     </div>
 
                     <div class="row uniform">
-                        <input type="hidden" name="idDocumento" id="idDocument" readonly value="{$documento['idDocuments']}" />
                         <input type="hidden" name="type" id="type" readonly value="{$documento['dTipo']}"/>
                         <div style="float: left">
                             <label for="name">Curso</label> 

@@ -11,8 +11,7 @@ class Database {
 
     function __construct() {
         try {
-            $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS,
-                                               DB_NAME, DB_PORT);
+            $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
         }
         catch (mysqli_sql_exception $e) {
             print "Error!: " . $e->getMessage();

@@ -37,7 +37,6 @@
                         </div>
 
                         <div class="row uniform">
-                            <input type="hidden" name="idDocumento" id="idDocument" />
                             <input type="hidden" name="type" id="type" value="{$docType}"/>
                             <div style="float: left">
                                 <label for="name">Curso</label> 
@@ -90,28 +89,28 @@
                             <div class="row uniform" style="display:none" id="file1">
                                 <div style="float: left">
                                     <label for="ficheiro">Apresentação editável:</label>
-                                    <iframe src="{$current_dir}upload.php?type=1&tab={$currentTab}"
+                                    <iframe src="{$current_dir}upload.php?action={$action}&type={$docType}&filePos=1&tab={$currentTab}"
                                             style="width: 630px; height: 44px; line-height: 0; padding: 0; border-radius: 0.5em"></iframe>
                                 </div>
                             </div>
                             <div class="row uniform" style="display:none" id="file4">
                                 <div style="float: left">
                                     <label for="ficheiro">Apresentação para os formandos (PDF):</label>
-                                    <iframe src="{$current_dir}upload.php?type=4&tab={$currentTab}"
+                                    <iframe src="{$current_dir}upload.php?action={$action}&type={$docType}&filePos=4&tab={$currentTab}"
                                             style="width: 630px; height: 44px; line-height: 0; padding: 0; border-radius: 0.5em"></iframe>
                                 </div>
                             </div>
                             <div class="row uniform" style="display:none" id="file2">
                                 <div style="float: left">
                                     <label for="ficheiro">Plano de Sessão editável:</label>
-                                    <iframe src="{$current_dir}upload.php?type=2&tab={$currentTab}"
+                                    <iframe src="{$current_dir}upload.php?action={$action}&type={$docType}&filePos=2&tab={$currentTab}"
                                             style="width: 630px; height: 44px; line-height: 0; padding: 0; border-radius: 0.5em"></iframe>
                                 </div>
                             </div>
                             <div class="row uniform" style="display:none" id="file3">
                                 <div style="float: left">
                                     <label for="ficheiro">Documentos de apoio ao Plano de Sessão (ZIP):</label>
-                                    <iframe src="{$current_dir}upload.php?type=3&tab={$currentTab}"
+                                    <iframe src="{$current_dir}upload.php?action={$action}&type={$docType}&filePos=3&tab={$currentTab}"
                                             style="width: 630px; height: 44px; line-height: 0; padding: 0; border-radius: 0.5em"></iframe>
                                 </div>
                             </div>
@@ -119,28 +118,28 @@
                             <div class="row uniform" style="display:none" id="file1">
                                 <div style="float: left">
                                     <label for="ficheiro">Texto de apoio editável:</label>
-                                    <iframe src="{$current_dir}upload.php?type=1&tab={$currentTab}"
+                                    <iframe src="{$current_dir}upload.php?action={$action}&type={$docType}&filePos=1&tab={$currentTab}"
                                             style="width: 630px; height: 44px; line-height: 0; padding: 0; border-radius: 0.5em"></iframe>
                                 </div>
                             </div>
                             <div class="row uniform" style="display:none" id="file2">
                                 <div style="float: left">
                                     <label for="ficheiro">Documentos anexos editáveis (ZIP):</label>
-                                    <iframe src="{$current_dir}upload.php?type=2&tab={$currentTab}"
+                                    <iframe src="{$current_dir}upload.php?action={$action}&type={$docType}&filePos=2&tab={$currentTab}"
                                             style="width: 630px; height: 44px; line-height: 0; padding: 0; border-radius: 0.5em"></iframe>
                                 </div>
                             </div>
                             <div class="row uniform" style="display:none" id="file3">
                                 <div style="float: left">
                                     <label for="ficheiro">Texto de apoio para os formandos (PDF):</label>
-                                    <iframe src="{$current_dir}upload.php?type=3&tab={$currentTab}"
+                                    <iframe src="{$current_dir}upload.php?action={$action}&type={$docType}&filePos=3&tab={$currentTab}"
                                             style="width: 630px; height: 44px; line-height: 0; padding: 0; border-radius: 0.5em"></iframe>
                                 </div>
                             </div>
                             <div class="row uniform" style="display:none" id="file4">
                                 <div style="float: left">
                                     <label for="ficheiro">Documentos anexos para os formandos em PDF (ZIP):</label>
-                                    <iframe src="{$current_dir}upload.php?type=4&tab={$currentTab}"
+                                    <iframe src="{$current_dir}upload.php?action={$action}&type={$docType}&filePos=4&tab={$currentTab}"
                                             style="width: 630px; height: 44px; line-height: 0; padding: 0; border-radius: 0.5em"></iframe>
                                 </div>
                             </div>
@@ -148,7 +147,7 @@
                             <div class="row uniform" style="display:none" id="file1">
                                 <div style="float: left">
                                     <label for="ficheiro">Documento:</label>
-                                    <iframe src="{$current_dir}upload.php?type=1&tab={$currentTab}"
+                                    <iframe src="{$current_dir}upload.php?action={$action}&type={$docType}&filePos=1&tab={$currentTab}"
                                             style="width: 630px; height: 44px; line-height: 0; padding: 0; border-radius: 0.5em"></iframe>
                                 </div>
                             </div>

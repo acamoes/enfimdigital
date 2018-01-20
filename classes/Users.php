@@ -41,6 +41,7 @@ class Users {
             $this->permission   = $rows ['permission'];
             $this->diretor      = $this->getDiretor($rows ['idUsers']);
             $this->formador     = $this->getFormador($rows ['idUsers']);
+            $this->formando     = $this->getFormando($rows ['idUsers']);
             $this->status       = $rows ['status'];
             $this->lastLogin    = date("Y-m-d H:i:s");
             $this->lastLogin();
@@ -75,7 +76,15 @@ class Users {
         if (!$resultado) {
             return array();
         }
-        return $resultado;
+        $idCourses = array();
+        foreach ($resultado as $diretor) {
+            $idCourses[] = $diretor['idCourses'];
+        }
+        return $idCourses;
+    }
+
+    function isDiretor($id) {
+        return in_array($id, array_values($this->diretor));
     }
 
     function getFormador($id): array {
@@ -85,7 +94,33 @@ class Users {
         if (!$resultado) {
             return array();
         }
-        return $resultado;
+        $idCourses = array();
+        foreach ($resultado as $formador) {
+            $idCourses[] = $formador['idCourses'];
+        }
+        return $idCourses;
+    }
+
+    function isFormador($id) {
+        return in_array($id, array_values($this->formador));
+    }
+
+    function getFormando($id): array {
+        $query     = "select idCourses from users_courses where idUsers=" . $id . " ";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return array();
+        }
+        $idCourses = array();
+        foreach ($resultado as $formando) {
+            $idCourses[] = $formando['idCourses'];
+        }
+        return $idCourses;
+    }
+
+    function isFormando($id) {
+        return in_array($id, array_values($this->formando));
     }
 
     function userExists($username): bool {

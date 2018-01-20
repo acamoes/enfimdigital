@@ -335,10 +335,11 @@ class Formacoes {
                 " VALUES (" . $row['idModules'] . "," . $row['idCourse'] . "," . $data['idCourses'] . "," . $row['ordem'] .
                 ",'" . $data['name'] . "'," . $data['duration'] . ",'Proposto','Pendente','" . $data['observations'] . "') ";
         $resultado = $con->set($query);
-        $resultado = $con->set('COMMIT');
         if ($con->connection->error != '') {
+            $resultado = $con->set('ROLLBACK');
             return ['success' => false, 'message' => 'Não foi adicionado o registo.'];
         }
+        $resultado = $con->set('COMMIT');
         return ['success' => true, 'message' => 'Registo adicionado.'];
     }
 
@@ -356,10 +357,11 @@ class Formacoes {
                 " FROM modules m " . "INNER JOIN course c ON m.idCourse=c.idCourse " .
                 "AND m.status='Fechado' AND m.idCourse=(SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'] . ") ";
         $resultado = $con->set($query);
-        $resultado = $con->set('COMMIT');
         if ($con->connection->error != '') {
+            $resultado = $con->set('ROLLBACK');
             return ['success' => false, 'message' => 'Não foi restaurado.'];
         }
+        $resultado = $con->set('COMMIT');
         return ['success' => true, 'message' => 'Restauração concluída'];
     }
 

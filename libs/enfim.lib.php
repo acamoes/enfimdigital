@@ -17,6 +17,7 @@ class Enfim {
     }
 
     function login($error = '') {
+        $this->log($error);
         $this->tpl->assign('error', $error);
         $this->tpl->display('enfim_login.tpl');
     }
@@ -91,7 +92,11 @@ class Enfim {
     }
 
     function formandos($request) {
-        $data      = $this->safePost($request);
+        $data = $this->safePost($request);
+        if (!$_SESSION['users']->isFormando($request['idCourses'])) {
+            $this->login('Acesso negado');
+            exit;
+        }
         $formandos = new Formandos($data);
         if (empty($formandos->course)) {
             return;
@@ -124,18 +129,22 @@ class Enfim {
     }
 
     function equipaExecutiva($request) {
+
         if ($_SESSION['users']->permission != 'Equipa Executiva') {
             $this->login('Acesso negado');
             exit;
         }
-        $data                        = $this->safePost($request);
-        !isset($data['search']) && $data['search']              = '';
-        !isset($data['tab']) && $data['tab']                 = 'utilizadores';
-        ($data['tab'] != 'formacoes') && $data['subTab']              = '';
-        (!isset($data['subTab']) && $data['tab'] == 'formacoes') && $data['subTab']              = 'inscritos';
+        $data              = $this->safePost($request);
+        !isset($data['search']) && $data['search']    = '';
+        !isset($data['tab']) && $data['tab']       = 'utilizadores';
+        ($data['tab'] != 'formacoes') && $data['subTab']    = '';
+        (!isset($data['subTab']) && $data['tab'] == 'formacoes') && $data['subTab']    = 'inscritos';
         isset($data['docType']) && $this->tpl->assign('docType', $data['docType']);
         isset($data['equipaExecutivaFormacoesIdCourses']) && $this->tpl->assign('equipaExecutivaFormacoesIdCourses', $data['equipaExecutivaFormacoesIdCourses']);
-        isset($data['equipaExecutivaFormacoesIdCourses']) && $data['idCourses']           = $data['equipaExecutivaFormacoesIdCourses'];
+        isset($data['equipaExecutivaFormacoesIdCourses']) && $data['idCourses'] = $data['equipaExecutivaFormacoesIdCourses'];
+
+        $this->log($data);
+
         $_SESSION['equipaExecutiva'] = new EquipaExecutiva($data);
         $this->tpl->assign('users', $_SESSION['users']);
         $this->tpl->assign('equipaExecutiva', $_SESSION['equipaExecutiva']);
@@ -170,7 +179,7 @@ class Enfim {
                 }
                 break;
             case "novo":
-                unset($_SESSION ['idDocument']);
+                unset($_SESSION ['ficheiros']);
                 if ($data['tab'] == 'formacoes') {
                     if (isset($data['searchUtilizadores'])) {
                         if ($data['subTab'] == 'inscritos') {
@@ -201,6 +210,7 @@ class Enfim {
                 break;
             case "ver":
             case "editar":
+                unset($_SESSION ['ficheiros']);
                 switch ($data['tab']) {
                     case "utilizadores": $this->tpl->assign('utilizador', $_SESSION['equipaExecutiva']->getUtilizador($data));
                         break;
@@ -213,8 +223,8 @@ class Enfim {
                     case "avaliacoes": $this->tpl->assign('avaliacao', $_SESSION['equipaExecutiva']->getAvaliacao($data));
                         break;
                     case "documentos":
-                        $docs                    = $_SESSION['equipaExecutiva']->getDocumento($data);
-                        $_SESSION ['idDocument'] = $docs['idDocuments'];
+                        $docs                                 = $_SESSION['equipaExecutiva']->getDocumento($data);
+                        $_SESSION['ficheiros']['idDocuments'] = $docs['idDocuments'];
                         $this->tpl->assign('docType', $docs['dTipo']);
                         $this->tpl->assign('documento', $docs);
                         break;
@@ -225,6 +235,13 @@ class Enfim {
                         elseif ($data['subTab'] == 'sessoes') {
                             $this->tpl->assign('sessao', $_SESSION['equipaExecutiva']->getSessao($data));
                         }
+                        elseif ($data['subTab'] == 'ficheiros') {
+                            $this->tpl->assign('modulos' . ucfirst($data['subTab']), $_SESSION['equipaExecutiva']->getFormacoesModulos($data));
+                            $docs                                 = $_SESSION['equipaExecutiva']->getFicheiro($data);
+                            $_SESSION['ficheiros']['idDocuments'] = $docs['idDocuments'];
+                            $this->tpl->assign('docType', $docs['dTipo']);
+                            $this->tpl->assign('ficheiros', $docs);
+                        }
                         break;
                     default: break;
                 }
@@ -233,6 +250,7 @@ class Enfim {
                                 $this->tpl->display('enfim_equipaExecutiva_' . $data['tab'] . '_' . $data['subTab'] . '_' . $data['task'] . '.tpl');
 
                 break;
+            case "aprovar":
             case "inserir":
             case "atualizar":
             case "apagar":
@@ -264,9 +282,12 @@ class Enfim {
     }
 
     function formadores($request) {
-        $data       = $this->safePost($request);
-        $formadores = new Formadores($data);
-        if (empty($formadores->course)) {
+        $data = $this->safePost($request);
+        if (!$_SESSION['users']->isFormador($request['idCourses']) && !$_SESSION['users']->isDiretor($request['idCourses'])) {
+            return;
+        }
+        $_SESSION['formadores'] = new Formadores($data);
+        if (empty($_SESSION['formadores']->course)) {
             return;
         }
         switch ($data['task']) {
@@ -298,6 +319,20 @@ class Enfim {
         elseif ($data['task'] == "getArchiveAll") {
             $files->getArchiveAll($data['id'], $data['filePos']);
         }
+        elseif ($data['task'] == "getFormacoesArchiveAll") {
+            $files->getFormacoesArchiveAll($data['id'], $data['filePos']);
+        }
+    }
+
+    function log($data) {
+        $query     = "INSERT INTO log (idUser,session,data,trace,date) VALUES (" .
+                $_SESSION['users']->id . ",'" . session_id() . "','" .
+                json_encode($data) . "','" .
+                json_encode(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 0)) . "','" .
+                date("Y-m-d H:i:s") . "')";
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        return $resultado;
     }
 
     function safePost($data) {
