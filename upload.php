@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/html; charset=UTF-8');
-define('PROD', true);
+define('PROD', false);
 // define our application directory
 define('ENFIM_DIR', "");
 // define smarty lib directory
@@ -16,14 +16,21 @@ if (!isset($_SESSION['users'])) {
 if ($_SESSION['users']->permission == '') {
     header('Location: index.php');
 }
-
 $type = 'normal';
-if (isset($_GET['type'])) {
-    $type = $_GET['type'];
+$data = array();
+$data = $_REQUEST;
+if (!array_key_exists('action', $data)) {
+    header('Location: index.php');
 }
-if (isset($_POST['type'])) {
-    $type = $_POST['type'];
+else {
+    if ($data['action'] == "equipaExecutiva" && $_SESSION['users']->permission != 'Equipa Executiva') {
+        header('Location: index.php');
+    }
+    if ($data['action'] == "formadores" && (!$_SESSION['users']->isFormador($data['idCourses']) || !$_SESSION['users']->isDiretor($data['idCourses']))) {
+        header('Location: index.php');
+    }
 }
+
 $errors['success'] = true;
 $errors['message'] = "";
 if (isset($_FILES['ficheiro'])) {
@@ -48,17 +55,44 @@ if (isset($_FILES['ficheiro'])) {
     }
 
     if ($errors['success']) {
-        $fp      = fopen($file_tmp, 'r');
-        $content = fread($fp, filesize($file_tmp));
-        $content = addslashes($content);
+        $fp              = fopen($file_tmp, 'r');
+        $content         = fread($fp, filesize($file_tmp));
+        $content         = addslashes($content);
         fclose($fp);
-        if (array_key_exists('idDocument', $_SESSION)) {
-            $errors = $_SESSION['equipaExecutiva']->atualizarDocumentosFicheiro
-                    (['idDocuments' => $_SESSION['idDocument'], 'file' => $file_name, 'content' => $content, 'type' => $type]);
+        $data['file']    = $file_name;
+        $data['content'] = $content;
+
+        // $_SESSION['ficheiros'][$data['type']]['idDocuments']
+        $set = true;
+        if (!array_key_exists('ficheiros', $_SESSION)) {
+            $set = false;
         }
         else {
-            $errors = $_SESSION['equipaExecutiva']->inserirDocumentoFicheiro
-                    (['file' => $file_name, 'content' => $content, 'type' => $type]);
+            if (!array_key_exists('idDocuments', $_SESSION['ficheiros'])) {
+                $set = false;
+            }
+        }
+
+        if ($set) {
+            $data['idDocuments'] = $_SESSION['ficheiros']['idDocuments'];
+            if ($data['tab'] != 'formacoes') {
+                $errors = $_SESSION['equipaExecutiva']->atualizarDocumentosFicheiro
+                        ($data);
+            }
+            else {
+                $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesFicheiro
+                        ($data);
+            }
+        }
+        else {
+            if ($data['tab'] != 'formacoes') {
+                $errors = $_SESSION['equipaExecutiva']->inserirDocumentoFicheiro
+                        ($data);
+            }
+            else {
+                $errors = $_SESSION['equipaExecutiva']->inserirFormacoesFicheiro
+                        ($data);
+            }
         }
     }
 }
@@ -81,12 +115,30 @@ if (isset($_FILES['ficheiro'])) {
             <?php
             if ($errors['message'] != '') {
                 ?>
-                <div class="row uniform" id="texto"><div style="background-color:#45558d;float: left"><label for="texto"><br><?= $errors['message'] ?></label></div></div>
+                <div class="row uniform" id="texto"><div style="background-color:#45558d;float: left">
+                        <label for="texto"><br><?= $errors['message'] ?></label></div></div>
                 <?php
             }
             else {
                 ?>
-                <input type = "hidden" name="type" id="type" value="<?= $type ?>">
+                <?php if (key_exists('action', $data)) { ?>
+                    <input type = "hidden" name="action" id="action" value="<?= $data['action'] ?>">
+                <?php } ?>
+                <?php if (key_exists('tab', $data)) { ?>
+                    <input type = "hidden" name="tab" id="tab" value="<?= $data['tab'] ?>">
+                <?php } ?>
+                <?php if (key_exists('subTab', $data)) { ?>
+                    <input type = "hidden" name="subTab" id="subTab" value="<?= $data['subTab'] ?>">
+                <?php } ?>
+                <?php if (key_exists('idCourses', $data)) { ?>
+                    <input type = "hidden" name="idCourses" id="idCourses" value="<?= $data['idCourses'] ?>">
+                <?php } ?>
+                <?php if (key_exists('filePos', $data)) { ?>
+                    <input type = "hidden" name="filePos" id="type" value="<?= $data['filePos'] ?>">
+                <?php } ?>
+                <?php if (key_exists('type', $data)) { ?>
+                    <input type = "hidden" name="type" id="type" value="<?= $data['type'] ?>">
+                <?php } ?>
                 <input type = "file" name="ficheiro" id="ficheiro" style="background-color:#45558d; width: 250px;line-height: 0;padding:0;" onChange="this.form.submit()">
             <?php }
             ?>
