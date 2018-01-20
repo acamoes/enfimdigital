@@ -60,7 +60,7 @@ class Documentos {
                 "document1 LIKE '%" . $data['search'] . "%' OR " .
                 "document2 LIKE '%" . $data['search'] . "%' OR " .
                 "document3 LIKE '%" . $data['search'] . "%' OR " .
-                "document4 LIKE '%" . $data['search'] . "%') ";
+                "document4 LIKE '%" . $data['search'] . "%') ORDER BY c.sigla,m.order ";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
