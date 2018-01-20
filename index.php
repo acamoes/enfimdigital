@@ -1,5 +1,5 @@
 <?php
-define('PROD', false);
+define('PROD', true);
 // define our application directory
 define('ENFIM_DIR', "");
 // define smarty lib directory
