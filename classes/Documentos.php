@@ -22,6 +22,7 @@ class Documentos {
         $query     = "SELECT * FROM (SELECT " .
                 "idDocuments, " .
                 "c.sigla, " .
+                "m.`order`, " .
                 "c.name as curso, " .
                 "m.name as modulo, " .
                 "m.type as mTipo, " .
@@ -60,7 +61,7 @@ class Documentos {
                 "document1 LIKE '%" . $data['search'] . "%' OR " .
                 "document2 LIKE '%" . $data['search'] . "%' OR " .
                 "document3 LIKE '%" . $data['search'] . "%' OR " .
-                "document4 LIKE '%" . $data['search'] . "%') ORDER BY c.sigla,m.order ";
+                "document4 LIKE '%" . $data['search'] . "%') ORDER BY sigla , `order` ";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
