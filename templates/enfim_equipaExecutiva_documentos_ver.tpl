@@ -8,7 +8,7 @@
                     <div class="row uniform" style="padding-top: 1.75em">
                         <div style="float: right">
                             <label style="float: right; cursor: pointer"
-                                   onclick="$('#form').html('');">X
+                                   onclick="$('#form').html('');request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
                                 Close</label>
                         </div>
                     </div>

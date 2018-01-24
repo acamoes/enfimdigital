@@ -266,6 +266,7 @@ class Enfim {
                 }
                 break;
             case "fecharAvaliacoes":
+            case "distribuirAvaliacoes";
                 if ($data['tab'] == 'formacoes' && $data['subTab'] == 'avaliacoes') {
                     $this->tpl->assign('error', $_SESSION['equipaExecutiva']->{$data['task'] . ucfirst($data['tab']) . ucfirst($data['subTab'])}($data));
                     $this->tpl->display('enfim_error.tpl');
@@ -325,6 +326,9 @@ class Enfim {
     }
 
     function log($data) {
+        if (!array_key_exists('users', $_SESSION)) {
+            return;
+        }
         $query     = "INSERT INTO log (idUser,session,data,trace,date) VALUES (" .
                 $_SESSION['users']->id . ",'" . session_id() . "','" .
                 json_encode($data) . "','" .

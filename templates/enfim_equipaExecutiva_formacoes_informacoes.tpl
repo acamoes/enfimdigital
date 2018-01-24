@@ -12,25 +12,6 @@
             </a>
         </form>
     </ul>
-    <ul class="actions"
-        onclick="if (confirm('Tem a certeza que pretende restaurar?\nTodo o conteúdo será apagado e reposto.')) {
-            request('action={$action}&task=restaurar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}', '{$action}Msg');
-            request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}');
-            }"
-        style="float: right; padding-left:10px;padding-right:10px;">
-        <li class="button small"
-            style="cursor: pointer; padding: 0 10px 0 10px">restaurar</li>
-    </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Extra&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}', 'form');"
-        style="float: right">
-        <li class="button small"
-            style="cursor: pointer; padding: 0 10pt 0 10pt">Extra</li>
-    </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Texto&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}', 'form');"
-        style="float: right">
-        <li class="button small"
-            style="cursor: pointer; padding: 0 10pt 0 10pt">Texto de apoio</li>
-    </ul>
     <ul class="actions" onclick="request('action={$action}&task=novo&docType=Apresentação&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}', 'form');"
         style="float: right">
         <li class="button small"
@@ -55,17 +36,16 @@
         </tr>
     </thead>		
     <tbody>
-        {foreach $equipaExecutiva->contexto['formacoes']['ficheiros'] as $ficheiros}
+        {foreach $equipaExecutiva->contexto['formacoes']['informacoes'] as $informacoes}
             <tr>
-                <td>{$ficheiros['modulo']}</td>
-                <td>{$ficheiros['mTipo']}</td>
+                <td>{$informacoes['modulo']}</td>
+                <td>{$informacoes['mTipo']}</td>
                 <td style="overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
-                    -o-text-overflow: ellipsis;">{$ficheiros['documento']}</td>
-                <td>{$ficheiros['dTipo']}</td>
-                <td {if $ficheiros['status'] neq 'Fechado'}style="color: orangered;"{/if}>{$ficheiros['status']}</td>
-                <td>{$ficheiros['public']}</td>
+                    -o-text-overflow: ellipsis;">{$informacoes['documento']}</td>
+                <td>{$informacoes['dTipo']}</td>
+                <td {if $informacoes['status'] neq 'Fechado'}style="color: orangered;"{/if}>{$informacoes['status']}</td>
                 <td>
                     {if $ficheiros['ext1']!=''}
                         <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$ficheiros['idDocuments']}&filePos=1'" 

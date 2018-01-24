@@ -2,7 +2,7 @@
     <ul style="float: left">
         <form>
             <input type="text" id="{$currentTab}search" name="{$currentTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
-            <a class="button small icon fa-search"
+            <a class="button small icon fa-search" 
                style="box-shadow: 
                -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
@@ -47,8 +47,8 @@
                     <a class="button small icon fa-eraser"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
-                                   request('action={$action}&task=apagar&tab={$currentTab}&idEvaluations={$avaliacoes['idEvaluations']}', '{$action}Msg');
-                                   request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');}"> </a></td>
+                                   $.when(request('action={$action}&task=apagar&tab={$currentTab}&idEvaluations={$avaliacoes['idEvaluations']}', '{$action}Msg')).
+                                           then(request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"> </a></td>
             </tr>
         {/foreach}
     </tbody>

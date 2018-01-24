@@ -636,4 +636,35 @@ class EquipaExecutiva {
         $result = $con->set('COMMIT');
         return ['success' => true, 'message' => 'Aprovado.'];
     }
+
+    function distribuirAvaliacoesFormacoesAvaliacoes($data) {
+        $con           = new Database ();
+        $query         = "SELECT c.idCourse,e.idEvaluations,e.name " .
+                "FROM courses c " .
+                "INNER JOIN evaluations e ON c.idCourse=e.idCourse " .
+                "WHERE c.idCourses=" . $data['idCourses'] . " AND e.target='Formando' AND e.status='Ativo'";
+        $resultado     = $con->get($query);
+        $idCourse      = $resultado[0]['idCourse'];
+        $idEvaluations = $resultado[0]['idEvaluations'];
+        $name          = $resultado[0]['name'];
+
+        $query        = "SELECT uc.idUsers " .
+                "FROM users_courses uc " .
+                "WHERE uc.idCourses=" . $data['idCourses'] . " " .
+                "AND uc.idUsers NOT IN (SELECT idUsers FROM courses_evaluations WHERE idCourses=" . $data['idCourses'] . ")";
+        $utilizadores = $con->get($query);
+        foreach ($utilizadores as $utilizador) {
+            $query     = "INSERT INTO courses_evaluations " .
+                    "(idEvaluations,idUsers,idCourses," .
+                    "idCourse,name,status) " .
+                    "VALUES (" . $idEvaluations . "," .
+                    $utilizador['idUsers'] . "," . $idCourses . "," .
+                    $idCourse . ",'" . $name . "','Aberto')";
+            $resultado = $con->set($query);
+            if (!$result) {
+                return ['success' => false, 'message' => 'Não ficou aprovado.'];
+            }
+        }
+        return ['success' => true, 'message' => 'Aprovado.'];
+    }
 }
