@@ -8,7 +8,7 @@
                         function submeter() {
                             var datastring = $("#{$currentTab}{$currentSubTab}Atualizar").serializeArray();
                             datastring.push({ldelim}name: 'action', value: '{$action}'});
-                                    datastring.push({ldelim}name: 'task', value: 'inserir'});
+                                    datastring.push({ldelim}name: 'task', value: 'atualizar'});
                                             datastring.push({ldelim}name: 'tab', value: '{$currentTab}'});
                                                     datastring.push({ldelim}name: 'subTab', value: '{$currentSubTab}'});
                                                             datastring.push({ldelim}name: 'idCourses', value: '{$equipaExecutivaFormacoesIdCourses}'});

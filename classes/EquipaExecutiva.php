@@ -26,18 +26,20 @@ class EquipaExecutiva {
         $this->formacoes    = $this->getFormacoes($data);
         $this->avaliacoes   = $this->getAvaliacoes($data);
         if (key_exists("idCourses", $data)) {
-            $this->contexto['formacoes']['inscritos']  = $this->getInscritos($data);
-            $this->contexto['formacoes']['equipa']     = $this->getEquipa($data);
-            $this->contexto['formacoes']['sessoes']    = $this->getSessoes($data);
-            $this->contexto['formacoes']['ficheiros']  = $this->getFicheiros($data);
-            $this->contexto['formacoes']['avaliacoes'] = $this->getFormacoesAvaliacoes($data);
+            $this->contexto['formacoes']['inscritos']   = $this->getInscritos($data);
+            $this->contexto['formacoes']['equipa']      = $this->getEquipa($data);
+            $this->contexto['formacoes']['sessoes']     = $this->getSessoes($data);
+            $this->contexto['formacoes']['ficheiros']   = $this->getFicheiros($data);
+            $this->contexto['formacoes']['avaliacoes']  = $this->getFormacoesAvaliacoes($data);
+            $this->contexto['formacoes']['informacoes'] = $this->getFormacoesInformacoes($data);
         }
         else {
-            $this->contexto['formacoes']['inscritos']  = array();
-            $this->contexto['formacoes']['equipa']     = array();
-            $this->contexto['formacoes']['sessoes']    = array();
-            $this->contexto['formacoes']['ficheiros']  = array();
-            $this->contexto['formacoes']['avaliacoes'] = array();
+            $this->contexto['formacoes']['inscritos']   = array();
+            $this->contexto['formacoes']['equipa']      = array();
+            $this->contexto['formacoes']['sessoes']     = array();
+            $this->contexto['formacoes']['ficheiros']   = array();
+            $this->contexto['formacoes']['avaliacoes']  = array();
+            $this->contexto['formacoes']['informacoes'] = array();
         }
     }
 
@@ -404,6 +406,90 @@ class EquipaExecutiva {
         return $resultado;
     }
 
+    function inserirFormacoesInformacao($data) {//vem do upload.php
+        $con       = new Database ();
+        $query     = "SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'];
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return ['success' => false, 'message' => 'Ficheiro não aceite.'];
+        }
+        $_SESSION['ficheiros']['idCourse']                              = $resultado[0]['idCourse'];
+        $_SESSION ['ficheiros']['type']                                 = $data['type'];
+        $_SESSION ['ficheiros']['filePos'][$data['filePos']]['file']    = $data['file']; //APAGAR
+        $_SESSION ['ficheiros']['filePos'][$data['filePos']]['content'] = $data['content'];
+
+        $query     = "INSERT INTO courses_informations (idCourses,idCourse,name,observations,status,document,documentBlob,date) VALUES (" .
+                $data['idCourses'] . "," . $resultado[0]['idCourse'] . ",'" . (key_exists('name', $data) ? $data['name'] : '') . "','" .
+                (key_exists('observations', $data) ? $data['observations'] : '') . "','Inativo','" . $_SESSION ['ficheiros']['filePos'][$data['filePos']]['file'] . "'," .
+                "'" . $_SESSION ['ficheiros']['filePos'][$data['filePos']]['content'] . "','" . date('Y-m-d H:i:s') . "')";
+        $resultado = $con->set($query);
+        if (!$resultado) {
+            return ['success' => false, 'message' => 'Ficheiro não aceite.'];
+        }
+        $_SESSION ['ficheiros']['idInformations'] = $con->connection->insert_id;
+        return ['success' => true, 'message' => 'Ficheiro aceite.'];
+    }
+
+    function inserirFormacoesInformacoes($data) {
+        return $this->atualizarFormacoesInformacao($data);
+    }
+
+    function atualizarFormacoesInformacoes($data) {
+        return $this->atualizarFormacoesInformacao($data);
+    }
+
+    function atualizarFormacoesInformacao($data) {//vem do upload.php
+        $con       = new Database ();
+        $query     = "SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'];
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return ['success' => false, 'message' => 'Ficheiro não aceite.'];
+        }
+        $_SESSION['ficheiros']['idCourse'] = $resultado[0]['idCourse'];
+        if (key_exists('file', $data)) {
+            $_SESSION ['ficheiros']['type']                                 = $data['type'];
+            $_SESSION ['ficheiros']['filePos'][$data['filePos']]['file']    = $data['file']; //APAGAR
+            $_SESSION ['ficheiros']['filePos'][$data['filePos']]['content'] = $data['content'];
+        }
+
+        $query     = "UPDATE courses_informations SET idCourse=" . $resultado[0]['idCourse'] . "," .
+                (key_exists('name', $data) ? "name='" . $data['name'] . "'," : "") .
+                (key_exists('observations', $data) ? "observations='" . $data['observations'] . "'," : "") .
+                (key_exists('status', $data) ? "status='" . $data['status'] . "'," : "status='Inativo',") .
+                (key_exists('file', $data) ?
+                "document='" . $_SESSION ['ficheiros']['filePos']['5']['file'] . "'," .
+                "documentBlob='" . $_SESSION ['ficheiros']['filePos']['5']['content'] . "'," : "") .
+                "date='" . date('Y-m-d H:i:s') . "' WHERE " .
+                "idCourses=" . $data['idCourses'] . " AND idInformations=" . $_SESSION ['ficheiros']['idInformations'];
+        $resultado = $con->set($query);
+        if (!$resultado) {
+            return ['success' => false, 'message' => 'Não foi atualizado.'];
+        }
+        return ['success' => true, 'message' => 'Foi atualizado.'];
+    }
+
+    function getInformacao($data) {
+        $query = "SELECT " .
+                "idInformations, " .
+                "idCourse, " .
+                "idCourses, " .
+                "name, " .
+                "observations, " .
+                "status, " .
+                "document, " .
+                "documentBlob, " .
+                "RIGHT(document, LOCATE('.', REVERSE(document))-1) as ext " .
+                "FROM courses_informations " .
+                " WHERE idCourses=" . $data['idCourses'] . " AND idInformations= " . $data['idInformations'];
+
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado[0];
+    }
+
     function inserirFormacoesFicheiro($data) {//vem do upload.php
         $con       = new Database ();
         $resultado = $con->set('START TRANSACTION');
@@ -446,6 +532,10 @@ class EquipaExecutiva {
         return ['success' => true, 'message' => 'Ficheiro inserido.'];
     }
 
+    function atualizarFormacoesFicheiros($data) {
+        return $this->atualizarFormacoesFicheiro($data);
+    }
+
     function atualizarFormacoesFicheiro($data) {//vem do upload.php
         $con       = new Database ();
         $query     = "SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'];
@@ -454,15 +544,19 @@ class EquipaExecutiva {
             return ['success' => false, 'message' => 'Não foi inserido o registo.'];
         }
 
-        $_SESSION['ficheiros']['idCourse']                              = $resultado[0]['idCourse'];
-        $_SESSION ['ficheiros']['type']                                 = $data['type'];
-        $_SESSION ['ficheiros']['filePos'][$data['filePos']]['file']    = $data['file']; //APAGAR
-        $_SESSION ['ficheiros']['filePos'][$data['filePos']]['content'] = $data['content'];
+        $_SESSION['ficheiros']['idCourse'] = $resultado[0]['idCourse'];
+        if (key_exists('file', $data)) {
+            $_SESSION ['ficheiros']['type']                                 = $data['type'];
+            $_SESSION ['ficheiros']['filePos'][$data['filePos']]['file']    = $data['file']; //APAGAR
+            $_SESSION ['ficheiros']['filePos'][$data['filePos']]['content'] = $data['content'];
+        }
 
         $query = "UPDATE courses_documents "
-                . " SET document" . $data['filePos'] . "='" . $data['file'] . "'," . "document" . $data['filePos'] . "Blob='" . $data['content']
-                . "', status='Pendente', "
-                . "dateAutor='" . date("Y-m-d H:i:s") . "', idAutor=" . $_SESSION ['users']->id . ", "
+                . " SET "
+                . (key_exists('file', $data) ? "document" . $data['filePos'] . "='" . $data['file'] . "'," . "document" . $data['filePos'] . "Blob='" . $data['content'] . "', " : "")
+                . "status='Pendente', "
+                . (key_exists('public', $data) ? "public='" . $data['public'] . "', " : "public='Não', ")
+                . (key_exists('file', $data) ? "dateAutor='" . date("Y-m-d H:i:s") . "', idAutor=" . $_SESSION ['users']->id . ", " : "")
                 . "dateDiretor=NULL, idDiretor=NULL, "
                 . "datePedagogico=NULL, idPedagogico=NULL, "
                 . "dateExecutiva=NULL, idExecutiva=NULL "
@@ -517,7 +611,8 @@ class EquipaExecutiva {
         $resultado   = $resultado[0];
         $newModuleId = 0;
         $newId       = 0;
-        if ($resultado['equipa'] == 0 && $_SESSION['users']->permission == 'Equipa Executiva') { //Não pertence à equipa de curso, mas é equipa executiva
+        if (($resultado['equipa'] == 0 && $_SESSION['users']->permission == 'Equipa Executiva') ||
+                ($data['action'] == 'equipaExecutiva' && $_SESSION['users']->permission == 'Equipa Executiva')) { //Não pertence à equipa de curso, mas é equipa executiva
             $query          = "SELECT * FROM courses_documents WHERE idCourses=" . $data['idCourses'] . " AND idDocuments=" . $data['idDocuments'];
             $rowData        = $con->get($query);
             $rowData        = $rowData[0];
@@ -580,17 +675,18 @@ class EquipaExecutiva {
             }
             $newId  = $con->connection->insert_id;
             $query  = "UPDATE courses_documents " .
-                    "SET idDocuments=" . $newId . ", status='Fechado',name='" . $rowData['name'] . "',type='" . $rowData['type'] . "',public='" . $rowData['public'] . "', " .
-                    "observations='" . $rowData['observations'] . "', " .
-                    "document1='" . $rowData['document1'] . "',document1Blob='" . $rowData['document1Blob'] . "', " .
-                    "document2='" . $rowData['document2'] . "',document2Blob='" . $rowData['document2Blob'] . "', " .
-                    "document3='" . $rowData['document3'] . "',document3Blob='" . $rowData['document3Blob'] . "', " .
-                    "document4='" . $rowData['document4'] . "',document4Blob='" . $rowData['document4Blob'] . "', " .
-                    "dateAutor='" . $rowData['dateAutor'] . "',idAutor='" . $rowData['idAutor'] . "', " .
-                    "dateDiretor='" . $rowData['dateDiretor'] . "',idDiretor='" . $rowData['idDiretor'] . "', " .
-                    "datePedagogico='" . $rowData['datePedagogico'] . "',idPedagogico='" . $rowData['idPedagogico'] . "', " .
-                    "dateExecutiva='" . $rowData['dateExecutiva'] . "',idExecutiva='" . $rowData['idExecutiva'] . "' " .
-                    "WHERE idDocuments=" . $data['idDocuments'] . " AND idModules=" . $idModules . " AND idCourse=" . $idCourse . " ";
+                    "SET idDocuments=" . $newId . ", status='Fechado'" .
+//                    ",name='" . $rowData['name'] . "',type='" . $rowData['type'] . "',public='" . $rowData['public'] . "', " .
+//                    "document1='" . $rowData['document1'] . "',document1Blob='" . $rowData['document1Blob'] . "', " .
+//                    "document2='" . $rowData['document2'] . "',document2Blob='" . $rowData['document2Blob'] . "', " .
+//                    "document3='" . $rowData['document3'] . "',document3Blob='" . $rowData['document3Blob'] . "', " .
+//                    "document4='" . $rowData['document4'] . "',document4Blob='" . $rowData['document4Blob'] . "', " .
+//                    "dateAutor='" . $rowData['dateAutor'] . "',idAutor='" . $rowData['idAutor'] . "', " .
+//                    (($rowData['dateDiretor'] != '') ? "dateDiretor='" . $rowData['dateDiretor'] . "',idDiretor='" . $rowData['idDiretor'] . "', " : "") .
+//                    (($rowData['datePedagogico'] != '') ? "datePedagogico='" . $rowData['datePedagogico'] . "',idPedagogico='" . $rowData['idPedagogico'] . "', " : "") .
+//                    (($rowData['dateExecutiva'] != '') ? "dateExecutiva='" . $rowData['dateExecutiva'] . "',idExecutiva='" . $rowData['idExecutiva'] . "', " : "") .
+//                    "observations='" . $rowData['observations'] . "' " .
+                    " WHERE idDocuments=" . $data['idDocuments'] . " AND idModules=" . $idModules . " AND idCourse=" . $idCourse . " ";
             $result = $con->set($query);
             if (!$result) {
                 $result = $con->set('ROLLBACK');
@@ -654,17 +750,37 @@ class EquipaExecutiva {
                 "AND uc.idUsers NOT IN (SELECT idUsers FROM courses_evaluations WHERE idCourses=" . $data['idCourses'] . ")";
         $utilizadores = $con->get($query);
         foreach ($utilizadores as $utilizador) {
-            $query     = "INSERT INTO courses_evaluations " .
+            $query  = "INSERT INTO courses_evaluations " .
                     "(idEvaluations,idUsers,idCourses," .
                     "idCourse,name,status) " .
                     "VALUES (" . $idEvaluations . "," .
-                    $utilizador['idUsers'] . "," . $idCourses . "," .
+                    $utilizador['idUsers'] . "," . $data['idCourses'] . "," .
                     $idCourse . ",'" . $name . "','Aberto')";
-            $resultado = $con->set($query);
+            $result = $con->set($query);
             if (!$result) {
                 return ['success' => false, 'message' => 'Não ficou aprovado.'];
             }
         }
         return ['success' => true, 'message' => 'Aprovado.'];
+    }
+
+    function getFormacoesInformacoes($data) {
+        $query     = "SELECT ci.*,RIGHT(document, LOCATE('.', REVERSE(document))-1) as ext FROM courses_informations ci WHERE idCourses=" . $data['idCourses'];
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    function apagarFormacoesInformacoes($data) {
+        $query     = "DELETE FROM courses_informations WHERE idCourses=" . $data['idCourses'] . " AND idInformations=" . $data['idInformations'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if (!$resultado) {
+            return ['success' => false, 'message' => 'Não ficou apagado.'];
+        }
+        return ['success' => true, 'message' => 'Foi apagado.'];
     }
 }

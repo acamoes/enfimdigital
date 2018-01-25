@@ -66,7 +66,13 @@ class Files {
     public function getArchiveAll($id, $filePos) {
         if ($_SESSION['users']->permission == 'Equipa Executiva' ||
                 $_SESSION['users']->permission == 'Formador') {
-            $query  = "SELECT * FROM documents WHERE idDocuments=" . $id;
+            if ($filePos != '5') {
+                $query = "SELECT * FROM documents WHERE idDocuments=" . $id;
+            }
+            else {
+                $query   = "SELECT * FROM courses_informations WHERE idInformations=" . $id;
+                $filePos = '';
+            }
             $con    = new Database ();
             $result = $con->get($query);
             if (count($result) > 0) {
@@ -77,6 +83,9 @@ class Files {
                 $this->name    = "invalid.txt";
                 $this->content = "Access denied!!!!";
             }
+        }
+        elseif ($_SESSION['users']->permission == 'Formando') {
+
         }
         else {
             $this->name    = "invalid.txt";

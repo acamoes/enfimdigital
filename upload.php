@@ -68,20 +68,36 @@ if (isset($_FILES['ficheiro'])) {
             $set = false;
         }
         else {
-            if (!array_key_exists('idDocuments', $_SESSION['ficheiros'])) {
+            if (!array_key_exists('idDocuments', $_SESSION['ficheiros']) && $data['type'] != 'Informações') {
                 $set = false;
+            }
+            elseif (array_key_exists('idDocuments', $_SESSION['ficheiros']) && $data['type'] != 'Informações') {
+                $set                 = true;
+                $data['idDocuments'] = $_SESSION['ficheiros']['idDocuments'];
+            }
+            elseif (!array_key_exists('idInformations', $_SESSION['ficheiros']) && $data['type'] == 'Informações') {
+                $set = false;
+            }
+            elseif (array_key_exists('idInformations', $_SESSION['ficheiros']) && $data['type'] == 'Informações') {
+                $set                    = true;
+                $data['idInformations'] = $_SESSION['ficheiros']['idInformations'];
             }
         }
 
         if ($set) {
-            $data['idDocuments'] = $_SESSION['ficheiros']['idDocuments'];
             if ($data['tab'] != 'formacoes') {
                 $errors = $_SESSION['equipaExecutiva']->atualizarDocumentosFicheiro
                         ($data);
             }
             else {
-                $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesFicheiro
-                        ($data);
+                if ($data['type'] != 'Informações') {
+                    $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesFicheiro
+                            ($data);
+                }
+                else {
+                    $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesInformacao
+                            ($data);
+                }
             }
         }
         else {
@@ -90,8 +106,14 @@ if (isset($_FILES['ficheiro'])) {
                         ($data);
             }
             else {
-                $errors = $_SESSION['equipaExecutiva']->inserirFormacoesFicheiro
-                        ($data);
+                if ($data['type'] != 'Informações') {
+                    $errors = $_SESSION['equipaExecutiva']->inserirFormacoesFicheiro
+                            ($data);
+                }
+                else {
+                    $errors = $_SESSION['equipaExecutiva']->inserirFormacoesInformacao
+                            ($data);
+                }
             }
         }
     }

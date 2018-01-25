@@ -440,7 +440,20 @@ class Formacoes {
     }
 
     static function fecharAvaliacoesFormacoesAvaliacoes($data) {
-        $query     = "UPDATE courses_evaluations SET status=IF(status='Aberto','Fechado','Aberto') WHERE idCourses=" . $data ['idCourses'] . " ";
+        $query     = "SELECT status FROM courses_evaluations WHERE idCourse=" . $data ['idCourses'] . " LIMIT 1 ";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (empty($resultado)) {
+            return false;
+        }
+        $resultado = $resultado[0];
+        if ($resultado['status'] == 'Aberto') {
+            $resultado['status'] = 'Fechado';
+        }
+        else {
+            $resultado['status'] = 'Aberto';
+        }
+        $query     = "UPDATE courses_evaluations SET status='" . $resultado['status'] . "' WHERE idCourses=" . $data ['idCourses'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {

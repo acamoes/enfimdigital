@@ -12,104 +12,52 @@
             </a>
         </form>
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Apresentação&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}', 'form');"
+    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Informações&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}', 'form');"
         style="float: right">
         <li class="button small"
-            style="cursor: pointer; padding: 0 10pt 0 10pt">Apresentação</li>
+            style="cursor: pointer; padding: 0 10pt 0 10pt">Novo</li>
     </ul>
 </div>
 <table>
     <thead>
         <tr>
-            <th>Módulo</th>
-            <th>Tipo</th>
-            <th>Nome</th>
-            <th>Tipo</th>
+            <th>Documento</th>
+            <th>Ficheiro</th>
             <th>Estado</th>
-            <th>Público</th>
-            <th>Fich1</th>
-            <th>Fich2</th>
-            <th>Fich3</th>
-            <th>Fich4</th>
-            <th>Autorizações</th>
+            <th>Informações</th>
             <th></th>
         </tr>
     </thead>		
     <tbody>
         {foreach $equipaExecutiva->contexto['formacoes']['informacoes'] as $informacoes}
             <tr>
-                <td>{$informacoes['modulo']}</td>
-                <td>{$informacoes['mTipo']}</td>
+                <td>{$informacoes['name']}</td>
                 <td style="overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
-                    -o-text-overflow: ellipsis;">{$informacoes['documento']}</td>
-                <td>{$informacoes['dTipo']}</td>
-                <td {if $informacoes['status'] neq 'Fechado'}style="color: orangered;"{/if}>{$informacoes['status']}</td>
+                    -o-text-overflow: ellipsis;">{$informacoes['document']}</td>
+                <td {if $informacoes['status'] neq 'Ativo'}style="color: orangered;"{/if}>{$informacoes['status']}</td>
                 <td>
-                    {if $ficheiros['ext1']!=''}
-                        <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$ficheiros['idDocuments']}&filePos=1'" 
-                           class="icon fa-file{if $ficheiros['ext1']=='pdf'}-pdf-o{elseif $ficheiros['ext1']=='zip'}-zip-o{/if}" 
-                           title="{$ficheiros['document1']}" 
+                    {if $informacoes['ext']!=''}
+                        <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$informacoes['idInformations']}&filePos=5'" 
+                           class="icon fa-file{if $informacoes['ext']=='pdf'}-pdf-o{elseif $informacoes['ext']=='zip'}-zip-o{/if}" 
+                           title="{$informacoes['document']}" 
                            style="color:#fff;cursor: pointer; padding: 0 0 0 5pt;border-line:none;box-shadow:0 0 0 0">
                         </i>
                     {/if}
-                </td>
-                <td>
-                    {if $ficheiros['ext2']!=''}
-                        <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$ficheiros['idDocuments']}&filePos=2'" 
-                           class="icon fa-file{if $ficheiros['ext2']=='pdf'}-pdf-o{elseif $ficheiros['ext2']=='zip'}-zip-o{/if}" 
-                           title="{$ficheiros['document2']}" 
-                           style="color:#fff;cursor: pointer; padding: 0 0 0 5pt;border-line:none;box-shadow:0 0 0 0">
-                        </i>
-                    {/if}
-                </td>
-                <td>
-                    {if $ficheiros['ext3']!=''}
-                        <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$ficheiros['idDocuments']}&filePos=3'" 
-                           class="icon fa-file{if $ficheiros['ext3']=='pdf'}-pdf-o{elseif $ficheiros['ext3']=='zip'}-zip-o{/if}" 
-                           title="{$ficheiros['document3']}" 
-                           style="color:#fff;cursor: pointer; padding: 0 0 0 5pt;border-line:none;box-shadow:0 0 0 0">
-                        </i>
-                    {/if}
-                </td>
-                <td>
-                    {if $ficheiros['ext4']!=''}
-                        <i onclick="location.href = '{$SCRIPT_NAME}?action=files&task=getArchiveAll&id={$ficheiros['idDocuments']}&filePos=4'" 
-                           class="icon fa-file{if $ficheiros['ext4']=='pdf'}-pdf-o{elseif $ficheiros['ext1']=='zip'}-zip-o{/if}" 
-                           title="{$ficheiros['document4']}" 
-                           style="color:#fff;cursor: pointer; padding: 0 0 0 5pt;border-line:none;box-shadow:0 0 0 0">
-                        </i>
-                    {/if}
-                </td>
-                <td>
-                    <img style="width:15px;height:15px" 
-                         src="images/star{if $ficheiros['idAutor']==''}_vazio{/if}.svg" 
-                         title="Carregado: {$ficheiros['dateAutor']}&#013;Autor: {$ficheiros['autor']}"/>
-                    <img style="width:15px;height:15px" 
-                         src="images/star{if $ficheiros['idDiretor']==''}_vazio{/if}.svg" 
-                         title="Carregado: {$ficheiros['dateDiretor']}&#013;Diretor: {$ficheiros['diretor']}"/>
-                    <img style="width:15px;height:15px" 
-                         src="images/star{if $ficheiros['idExecutiva']==''}_vazio{/if}.svg" 
-                         title="Carregado: {$ficheiros['dateExecutiva']}&#013;EE: {$ficheiros['executiva']}"/>
                 </td>
                 <td class="actions" align="right"><a
                         class="button small icon fa-file"
                         style="cursor: pointer; padding: 0 0 0 5pt"
-                        onclick="request('action={$action}&task=ver&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idDocuments={$ficheiros['idDocuments']}', 'form');"></a>
+                        onclick="request('action={$action}&task=ver&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idInformations={$informacoes['idInformations']}', 'form');"></a>
                     <a class="button small icon fa-edit"
                        style="cursor: pointer; padding: 0 0 0 5pt"
-                       onclick="request('action={$action}&task=editar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idDocuments={$ficheiros['idDocuments']}', 'form');"></a>
+                       onclick="request('action={$action}&task=editar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idInformations={$informacoes['idInformations']}', 'form');"></a>
                     <a class="button small icon fa-eraser"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
-                           $.when(request('action={$action}&task=apagar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idDocuments={$ficheiros['idDocuments']}', '{$action}Msg')).
-                           then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value, 'SST{$currentTab}{$currentSubTab}'));}"> </a>
-                    <a class="button small icon fa-check-circle-o"
-                       style="cursor: pointer; padding: 0 0 0 5pt"
-                       onclick="if (confirm('Tem a certeza que pretende aprovar')) {ldelim}
-                           $.when(request('action={$action}&task=aprovar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idDocuments={$ficheiros['idDocuments']}', '{$action}Msg')).
-                           then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value, 'SST{$currentTab}{$currentSubTab}'));}"></a>
+                           $.when(request('action={$action}&task=apagar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idInformations={$informacoes['idInformations']}', '{$action}Msg')).
+                           then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value, 'SST{$currentTab}{$currentSubTab}'));}"> </a>                   
                 </td>
             </tr>
         {/foreach}

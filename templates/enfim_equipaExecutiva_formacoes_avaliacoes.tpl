@@ -18,14 +18,14 @@
         then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search='+document.getElementById('{$currentTab}{$currentSubTab}search').value+'&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value,'SST{$currentTab}{$currentSubTab}'));}"
         style="float: right">
         <li class="button small"
-            style="cursor: pointer; padding: 0 10pt 0 10pt">Distribuir avaliações</li>&nbsp;
+            style="cursor: pointer; padding: 0 10pt 0 10pt">Alterar estado das avaliações</li>&nbsp;
     </ul>
     <ul class="actions" onclick="if (confirm('Pretende distribuir as avaliações para todos os formandos?')) {
         $.when(request('action={$action}&task=distribuirAvaliacoes&tab={$currentTab}&subTab={$currentSubTab}&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value,'form')).
         then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search='+document.getElementById('{$currentTab}{$currentSubTab}search').value+'&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value,'SST{$currentTab}{$currentSubTab}'));}"
         style="float: right">
         <li class="button small"
-            style="cursor: pointer; padding: 0 10pt 0 10pt">Alterar estado das avaliações</li>
+            style="cursor: pointer; padding: 0 10pt 0 10pt">Distribuir avaliações</li>
     </ul>
 </div>
 <table>

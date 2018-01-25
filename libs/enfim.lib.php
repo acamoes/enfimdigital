@@ -242,6 +242,13 @@ class Enfim {
                             $this->tpl->assign('docType', $docs['dTipo']);
                             $this->tpl->assign('ficheiros', $docs);
                         }
+                        elseif ($data['subTab'] == 'informacoes') {
+                            $docs                                    = $_SESSION['equipaExecutiva']->getInformacao($data);
+                            $docs['dTipo']                           = 'Informações';
+                            $_SESSION['ficheiros']['idInformations'] = $docs['idInformations'];
+                            $this->tpl->assign('docType', $docs['dTipo']);
+                            $this->tpl->assign('informacoes', $docs);
+                        }
                         break;
                     default: break;
                 }
