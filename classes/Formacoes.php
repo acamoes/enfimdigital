@@ -44,15 +44,17 @@ class Formacoes {
     }
 
     static function getFormacoesInscritos($data) {
-        $query     = "SELECT c.idCourses,c.course,c.status as cStatus, " . "uc.*, " .
-                "u.aepId,u.name,u.birthDate,u.mobile,u.email,u.status as uStatus " .
+        $query     = "SELECT c.idCourses,c.course,c.status as cStatus,c.vacancy,c.internship as cInternship, " . "uc.*, " .
+                "TIMESTAMPDIFF(YEAR, u.birthDate, NOW()) as age, " .
+                (key_exists("idCourses", $data) ? "(SELECT count(*) FROM users_courses WHERE idCourses = " . $data ['idCourses'] . ") as inscritos," : " ") .
+                "u.aepId,u.name,u.birthDate,u.mobile,u.telephone,u.email,u.status as uStatus " .
                 "FROM " . "courses c INNER JOIN users_courses uc ON c.idCourses=uc.idCourses " .
                 "INNER JOIN users u ON uc.idUsers=u.idUsers " .
                 (key_exists("idCourses", $data) ? "AND uc.idCourses=" . $data ['idCourses'] . " " : " ") .
-                (key_exists("searchInscritos", $data) ?
-                "AND (u.name LIKE '%" . $data ['searchInscritos'] . "%' OR
-			u.aepId LIKE '%" . $data ['searchInscritos'] . "%' OR
-			u.email LIKE '%" . $data ['searchInscritos'] . "%')" :
+                (key_exists("search", $data) ?
+                "AND (u.name LIKE '%" . $data ['search'] . "%' OR
+			u.aepId LIKE '%" . $data ['search'] . "%' OR
+			u.email LIKE '%" . $data ['search'] . "%')" :
                 " ") . "ORDER BY u.aepId";
         $con       = new Database ();
         $resultado = $con->get($query);
@@ -267,13 +269,15 @@ class Formacoes {
     }
 
     static function getEquipa($data) { // var_dump($data);exit();
-        $query     = "SELECT c.idCourses,c.course,c.status as cStatus, " . "ct.*, " . "u.*,u.status as uStatus " .
+        $query     = "SELECT c.idCourses,c.course,c.status as cStatus, " . "ct.*, " .
+                "u.aepId,u.name,u.birthDate,u.mobile,u.email,u.status as uStatus " .
                 " FROM " . "courses c INNER JOIN courses_team ct ON c.idCourses=ct.idCourses " . "INNER JOIN users u ON ct.idUsers=u.idUsers " .
+                (key_exists("idCourse", $data) ? "AND c.idCourse=" . $data ['idCourse'] . " " : " ") .
                 (key_exists("idCourses", $data) ? "AND ct.idCourses=" . $data ['idCourses'] . " " : " ") .
                 (key_exists("idUsers", $data) ? "AND ct.idUsers=" . $data ['idUsers'] . " " : " ") .
-                (key_exists("searchEquipa", $data) ? "AND (u.name LIKE '%" . $data ['searchEquipa'] . "%' OR
-					u.aepId LIKE '%" . $data ['searchEquipa'] . "%' OR
-					u.email LIKE '%" . $data ['searchEquipa'] . "%')" : " ") . " ORDER BY u.aepId";
+                (key_exists("search", $data) ? "AND (u.name LIKE '%" . $data ['search'] . "%' OR
+					u.aepId LIKE '%" . $data ['search'] . "%' OR
+					u.email LIKE '%" . $data ['search'] . "%')" : " ") . " ORDER BY u.aepId";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -420,7 +424,7 @@ class Formacoes {
     }
 
     static function getFormacoesAvaliacoes($data) {
-        $query     = "SELECT u.name,IFNULL(target,'Formando') as target,if(length(evaluation)>10,'Respondido','Não respondido') as response,IFNULL(ce.status,'Aberto') as status " .
+        $query     = "SELECT * FROM (SELECT u.name,IFNULL(target,'Formando') as target,if(length(evaluation)>10,'Respondido','Não respondido') as response,IFNULL(ce.status,'Aberto') as status " .
                 "FROM users_courses uc INNER JOIN users u ON uc.idUsers=u.idUsers " .
                 (key_exists("idCourses", $data) ? " AND uc.idCourses=" . $data ['idCourses'] . " " : " ") .
                 "LEFT JOIN courses_evaluations ce ON u.idUsers=ce.idUsers " .
@@ -430,7 +434,10 @@ class Formacoes {
                 "FROM courses_team uc INNER JOIN users u ON uc.idUsers=u.idUsers " .
                 (key_exists("idCourses", $data) ? " AND uc.idCourses=" . $data ['idCourses'] . " " : " ") .
                 "LEFT JOIN courses_evaluations ce ON u.idUsers=ce.idUsers " .
-                "LEFT JOIN evaluations e ON ce.idEvaluations=e.idEvaluations ";
+                "LEFT JOIN evaluations e ON ce.idEvaluations=e.idEvaluations) as t " .
+                (key_exists("search", $data) ? "WHERE name LIKE '%" . $data['search'] . "%' " .
+                "OR status LIKE '%" . $data['search'] . "%' " .
+                "OR response LIKE '%" . $data['search'] . "%'" : "");
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -944,7 +951,10 @@ class Formacoes {
     }
 
     static function getFormacoesInformacoes($data) {
-        $query     = "SELECT ci.*,RIGHT(document, LOCATE('.', REVERSE(document))-1) as ext FROM courses_informations ci WHERE idCourses=" . $data['idCourses'];
+        $query     = "SELECT * FROM (SELECT ci.*,RIGHT(document, LOCATE('.', REVERSE(document))-1) as ext FROM courses_informations ci WHERE idCourses=" . $data['idCourses'] . ") as t " .
+                (key_exists('search', $data) ? "WHERE name LIKE '%" . $data['search'] . "%' " .
+                "OR document LIKE '%" . $data['search'] . "%' " .
+                "OR status LIKE '%" . $data['search'] . "%'" : "");
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {

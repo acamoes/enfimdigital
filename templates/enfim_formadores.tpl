@@ -1,7 +1,7 @@
 {include file="enfim_header.tpl"}
 <section id="wrapper">
     <header>
-        <h2>Curso</h2>
+        <h2>{$formadores->curso}</h2>
     </header>
     <div class="wrapper">
         <div class="inner">

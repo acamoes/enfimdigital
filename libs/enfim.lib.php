@@ -291,22 +291,35 @@ class Enfim {
 
     function formadores($request) {
         $data = $this->safePost($request);
-        if (!$_SESSION['users']->isFormador($request['idCourses']) && !$_SESSION['users']->isDiretor($request['idCourses'])) {
-            return;
+        if (!$_SESSION['users']->isFormador($data['idCourses']) && !$_SESSION['users']->isDiretor($data['idCourses'])) {
+            $this->login('Acesso negado');
+            exit;
         }
         $_SESSION['formadores'] = new Formadores($data);
-        if (empty($_SESSION['formadores']->course)) {
-            return;
+        if (empty($_SESSION['formadores']->idCourse)) {
+            $this->login('Acesso negado');
+            exit;
         }
+        $data['idCourse']  = $_SESSION['formadores']->idCourse;
+        !isset($data['search']) && $data['search']    = '';
+        !isset($data['tab']) && $data['tab']       = 'inscritos';
+        $data['subTab']    = '';
+        isset($data['docType']) && $this->tpl->assign('docType', $data['docType']);
+        isset($data['formadoresIdCourses']) && $this->tpl->assign('formadoresIdCourses', $data['formadoresIdCourses']);
+        isset($data['formadoresIdCourses']) && $data['idCourses'] = $data['formadoresIdCourses'];
+
+        $this->log($data);
+
+        $this->tpl->assign('users', $_SESSION['users']);
+        $this->tpl->assign('formadores', $_SESSION['formadores']);
+        $this->tpl->assign('action', 'formadores');
+        $this->tpl->assign('objTabs', $_SESSION['formadores']->tabs);
+        $this->tpl->assign('tabActive', $data['tab']);
+        $this->tpl->assign('currentTab', $data['tab']);
+
         switch ($data['task']) {
             case "getCourse":
-                $this->tpl->assign('users', $_SESSION['users']);
-                if ($_SESSION['formadores']->getEvaluation($data['id'])) {
-                    $this->tpl->assign('modulo', 'formadores');
-                    $this->tpl->assign('formadores', $_SESSION['formadores']);
-                    $this->tpl->assign('objTabs', $_SESSION['formadores']->tabs);
-                    $this->tpl->display('enfim_formadores.tpl');
-                }
+                $this->tpl->display('enfim_formadores.tpl');
                 break;
             default:
                 $this->clearAllAssign();

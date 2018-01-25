@@ -18,7 +18,7 @@ class Calendarios {
     }
 
     static function getCalendarios($data) {
-        $query     = "SELECT cs.idCourses AS csIdCourses,cs.year AS csYear,cs.course AS csCourse,cs.completeName AS csCompleteName,cs.startDate AS csStartDate,cs.endDate AS csEndDate," .
+        $query = "SELECT * FROM (SELECT cs.idCourses AS csIdCourses,cs.year AS csYear,cs.course AS csCourse,cs.completeName AS csCompleteName,cs.startDate AS csStartDate,cs.endDate AS csEndDate," .
                 "cs.local AS csLocal,cs.vacancy AS csVacancy,cs.idCourse AS csIdCourse,cs.internship AS csInternship,cs.status AS csStatus,cs.observations AS csObservations, " .
                 "c.idCourse AS cIdCourse,c.name AS cName,c.sigla as cSigla,c.level AS cLevel,c.internship AS cInternship,c.status AS cStatus " .
                 /* ",ct.idCourses as ctIdCourses,ct.idUsers as ctIdUsers,ct.type as ctType,".
@@ -29,7 +29,14 @@ class Calendarios {
                 "INNER JOIN course c ON cs.idCourse=c.idCourse " .
                 /* "INNER JOIN courses_team ct ON ct.idCourses=cs.idCourses " .
                   "INNER JOIN users u ON ct.idUsers=u.idUsers " .
-                 */"ORDER BY level";
+                 */"ORDER BY level) as t " .
+                (key_exists('search', $data) ? "WHERE csYear LIKE '%" . $data['search'] . "%' " .
+                "OR csCompleteName LIKE '%" . $data['search'] . "%' " .
+                "OR csLocal LIKE '%" . $data['search'] . "%' " .
+                "OR csStatus LIKE '%" . $data['search'] . "%' " .
+                "OR cName LIKE '%" . $data['search'] . "%' " .
+                "OR cSigla LIKE '%" . $data['search'] . "%' " : "");
+
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {

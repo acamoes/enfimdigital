@@ -21,6 +21,7 @@ class Documentos {
     static function getDocumentos($data) {
         $query     = "SELECT * FROM (SELECT " .
                 "idDocuments, " .
+                "c.idCourse, " .
                 "c.sigla, " .
                 "m.`order`, " .
                 "c.name as curso, " .
@@ -51,8 +52,9 @@ class Documentos {
                 "d.idExecutiva, " .
                 "(SELECT name FROM users WHERE idUsers=d.idExecutiva) as executiva " .
                 "FROM documents d INNER JOIN modules m ON d.idModules=m.idModules " .
-                "INNER JOIN course c ON m.idCourse=c.idCourse) as t " .
-                "WHERE (curso LIKE '%" . $data['search'] . "%' OR " .
+                "INNER JOIN course c ON m.idCourse=c.idCourse) as t WHERE true " .
+                (key_exists('idCourse', $data) ? "AND (idCourse=" . $data['idCourse'] . ") " : "") .
+                (key_exists('search', $data) ? "AND (curso LIKE '%" . $data['search'] . "%' OR " .
                 "modulo LIKE '%" . $data['search'] . "%' OR " .
                 "mTipo LIKE '%" . $data['search'] . "%' OR " .
                 "documento LIKE '%" . $data['search'] . "%' OR " .
@@ -61,7 +63,8 @@ class Documentos {
                 "document1 LIKE '%" . $data['search'] . "%' OR " .
                 "document2 LIKE '%" . $data['search'] . "%' OR " .
                 "document3 LIKE '%" . $data['search'] . "%' OR " .
-                "document4 LIKE '%" . $data['search'] . "%') ORDER BY sigla , `order` ";
+                "document4 LIKE '%" . $data['search'] . "%') " : " ") .
+                "ORDER BY sigla , `order` ";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
