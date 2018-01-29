@@ -61,6 +61,8 @@
                                 <label for="Formador">Formador</label> 
                                 <input type="radio" id="Formando" name="target" value="Formando">
                                 <label for="Formando">Formando</label>
+                                <input type="radio" id="Curso" name="target" value="Curso">
+                                <label for="Curso">Curso</label>
                             </div>
                         </div>
                         <div class="row uniform">

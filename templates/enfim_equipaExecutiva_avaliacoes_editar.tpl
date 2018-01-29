@@ -64,6 +64,9 @@
                                 <input type="radio" id="Formando" name="target" value="Formando"
                                        {if $avaliacao['target'] eq 'Formando'}checked='checked'{/if}>
                                 <label for="Formando">Formando</label>
+                                <input type="radio" id="Curso" name="target" value="Curso"
+                                       {if $avaliacao['target'] eq 'Curso'}checked='checked'{/if}>
+                                <label for="Curso">Curso</label>
                             </div>
                         </div>
                         <div class="row uniform">
