@@ -37,6 +37,7 @@ class Utilizadores {
                 "name='" . $data ['name'] . "'," .
                 "sigla='" . $data ['sigla'] . "'," .
                 "status='" . $data ['status'] . "'," .
+                "permission='" . $data ['permission'] . "'," .
                 "birthDate='" . $data ['birthDate'] . "'," .
                 "address='" . $data ['address'] . "'," .
                 "zipCode='" . $data ['zipCode'] . "'," .
