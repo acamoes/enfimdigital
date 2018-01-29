@@ -205,7 +205,7 @@ class Formacoes {
 
     static function adicionarFormacoesEquipa($data) {
         $query     = "INSERT INTO courses_team (idUsers,idCourses,type) VALUES (" . $data['idUsers'] . "," . $data['idCourses'] . "," .
-                ($_SESSION['users']->permission == 'Equipa Executiva' ? 'Formador' : 'Externo') .
+                ($_SESSION['users']->permission == 'Equipa Executiva' ? "'Formador'" : "'Externo'") .
                 ") ";
         $con       = new Database ();
         $resultado = $con->set($query);
