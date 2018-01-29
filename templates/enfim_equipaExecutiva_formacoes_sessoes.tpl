@@ -2,7 +2,7 @@
     <ul style="float: left">
         <form>
             <input type="text" id="{$currentTab}{$currentSubTab}search" name="{$currentTab}{$currentSubTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
-            <a class="button small icon fa-search"
+            <a class="button small icon fa-search" title="pesquisar"
                style="box-shadow: 
                -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
@@ -45,17 +45,17 @@
                 <td class="actions" align="left">{$sessoes['type']}</td>
                 <td class="actions" align="left">{$sessoes['formador']}</td>
                 <td class="actions" align="right">
-                    <a  class="button small icon fa-user"
+                    <a  class="button small icon fa-user" title="adicionar formador"
                         style="cursor: pointer; padding: 0 0 0 5pt"
                         onclick="
                                 document.getElementById('smallForm').style.top = event.screenY + 'px';
                                 document.getElementById('smallForm').style.left = (event.screenX - 150) + 'px';
                                 request('action={$action}&task=novo&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idModules={$sessoes['idModules']}&idCourse={$sessoes['idCourse']}&searchUtilizadores=1', 'smallForm');"></a>
                     {if $sessoes['name'] eq 'DIREÇÃO' || $users->permission eq 'Equipa Executiva'}
-                        <a class="button small icon fa-edit"
+                        <a class="button small icon fa-edit" title="editar"
                            style="cursor: pointer; padding: 0 0 0 5pt"
                            onclick="request('action={$action}&task=editar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idModules={$sessoes['idModules']}&idCourse={$sessoes['idCourse']}', 'form');"></a>
-                        <a class="button small icon fa-eraser"
+                        <a class="button small icon fa-eraser" title="apagar"
                            style="cursor: pointer; padding: 0 0 0 5pt"                       
                            onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
                                        $.when(request('action={$action}&task=apagar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idModules={$sessoes['idModules']}&idCourse={$sessoes['idCourse']}', '{$action}Msg')).

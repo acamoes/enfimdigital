@@ -53,6 +53,7 @@ class Documentos {
                 "(SELECT name FROM users WHERE idUsers=d.idExecutiva) as executiva " .
                 "FROM documents d INNER JOIN modules m ON d.idModules=m.idModules " .
                 "INNER JOIN course c ON m.idCourse=c.idCourse) as t WHERE true " .
+                (key_exists('documentosEstado', $data) ? "AND (status<>'Inativo') " : " ") .
                 (key_exists('idCourse', $data) ? "AND (idCourse=" . $data['idCourse'] . ") " : "") .
                 (key_exists('search', $data) ? "AND (curso LIKE '%" . $data['search'] . "%' OR " .
                 "modulo LIKE '%" . $data['search'] . "%' OR " .

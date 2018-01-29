@@ -8,6 +8,7 @@ class Formandos {
     public $documents;
     public $informations;
     public $evaluations;
+    public $evaluationStatus = 'Fechado';
 
     function __construct($data) {
         $this->getTabs();
@@ -42,7 +43,6 @@ class Formandos {
         $query            = "SELECT e.idEvaluations,e.idCourse,e.target,ce.idCourses,e.template,ce.evaluation,ce.status "
                 . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
                 . "WHERE ce.idUsers=" . $_SESSION['users']->id
-                . " AND ce.status='Aberto' "
                 . " AND e.idEvaluations=" . $data['idEvaluations']
                 . " AND e.idCourse=" . $this->idCourse
                 . " AND ce.idCourses=" . $this->idCourses
@@ -53,7 +53,8 @@ class Formandos {
             return false;
         }
         else {
-            $evaluation = new Evaluation($this->evaluation[0]);
+            $this->evaluationStatus = $this->evaluation[0]['status'];
+            $evaluation             = new Evaluation($this->evaluation[0]);
             return $evaluation->build();
         }
     }
@@ -78,7 +79,7 @@ class Formandos {
                 . "WHERE idEvaluations = " . $data['idEvaluations']
                 . " AND idUsers=" . $_SESSION['users']->id
                 . " AND idCourses=" . $this->idCourses
-                . " AND idCourse=" . $this->idCourse . " ";
+                . " AND idCourse=" . $this->idCourse . " AND status<>'Fechado' ";
         $result           = $con->set($query);
     }
 }

@@ -66,12 +66,11 @@ class Formacoes {
 
     static function getFormacoesEquipa($data) {
         $query     = "SELECT c.idCourses,c.course,c.status as cStatus, " . "ct.*, " .
-                "u.aepId,u.name,u.birthDate,u.mobile,u.email,u.status as uStatus " .
+                "u.aepId,u.sigla,u.name,u.iban,u.observations,u.birthDate,u.mobile,u.email,u.status as uStatus " .
                 " FROM " . "courses c INNER JOIN courses_team ct ON c.idCourses=ct.idCourses " . "INNER JOIN users u ON ct.idUsers=u.idUsers " .
                 (key_exists("idCourses", $data) ? "AND ct.idCourses=" . $data ['idCourses'] . " " : " ") .
-                (key_exists("searchInscritos", $data) ? "AND (u.name LIKE '%" . $data ['searchInscritos'] . "%' OR
-		u.aepId LIKE '%" . $data ['searchInscritos'] . "%' OR
-		u.email LIKE '%" . $data ['searchInscritos'] . "%')" : " ") . "ORDER BY u.aepId";
+                (key_exists("idUsers", $data) ? "AND ct.idUsers=" . $data ['idUsers'] . " " : " ") .
+                " ORDER BY u.aepId";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -154,48 +153,50 @@ class Formacoes {
     }
 
     static function atualizarFormacoesInscritos($data) {
-        $data ['local']   = substr($data ['zipCode'], 9);
-        $data ['zipCode'] = substr($data ['zipCode'], 0, 8);
+        $data ['local']                = substr($data ['zipCode'], 9);
+        $data ['zipCode']              = substr($data ['zipCode'], 0, 8);
 // $data['password']=$this->generatePassword(8);
-        $query            = "UPDATE users SET " .
+        $query                         = "UPDATE users SET " .
+                (($_SESSION['users']->permission = 'Equipa Executiva' || $_SESSION['users']->permission = 'Serviços Centrais') ?
                 "username='" . $data ['username'] . "'," .
-                "email='" . $data ['email'] . "'," .
-                "name='" . $data ['name'] . "'," .
-                "sigla='" . $data ['sigla'] . "'," .
-                "status='" . $data ['status'] . "'," .
-                "birthDate='" . $data ['birthDate'] . "'," .
-                "address='" . $data ['address'] . "'," .
-                "zipCode='" . $data ['zipCode'] . "'," .
-                "local='" . $data ['local'] . "'," .
-                "mobile='" . $data ['mobile'] . "'," .
-                "telephone='" . $data ['telephone'] . "'," .
-                "observations='" . $data ['observations'] . "'," .
-                "iban='" . $data ['iban'] . "'," .
-                "aepId='" . $data ['aepId'] . "' " .
+                "name='" . $data ['name'] . "', " .
+                "sigla='" . $data ['sigla'] . "', " .
+                "status='" . $data ['status'] . "', " .
+                "iban='" . $data ['iban'] . "', " .
+                "aepId='" . $data ['aepId'] . "', " .
+                "birthDate='" . $data ['birthDate'] . "', " : "") .
+                "email='" . $data ['email'] . "', " .
+                "address='" . $data ['address'] . "', " .
+                "zipCode='" . $data ['zipCode'] . "', " .
+                "local='" . $data ['local'] . "', " .
+                "mobile='" . $data ['mobile'] . "', " .
+                "telephone='" . $data ['telephone'] . "', " .
+                "observations='" . $data ['observations'] . "' " .
                 "WHERE idUsers=" . $data ['idUsers'];
-        $con              = new Database ();
-        $resultado        = $con->set($query);
+        $con                           = new Database ();
+        $resultado                     = $con->set($query);
         if ($con->connection->error != '') {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
-        $query     = "UPDATE users_courses SET " .
-                "unit='" . $data ['unit'] . "'," .
-                "unitType='" . $data ['unitType'] . "'," .
-                "observations='" . $data ['observations'] . "', " .
-                "rank='" . $data ['rank'] . "'," .
-                "boRank='" . $data ['boRank'] . "'," .
-                "qa='" . (key_exists('qa', $data) ? 'on' : '') . "'," .
-                "payment='" . (key_exists('payment', $data) ? 'on' : '') . "'," .
+        $query                         = "UPDATE users_courses SET " .
+                (($_SESSION['users']->permission = 'Equipa Executiva' || $_SESSION['users']->permission = 'Serviços Centrais') ?
+                "unit='" . $data ['unit'] . "', " .
+                "unitType='" . $data ['unitType'] . "', " .
+                "rank='" . $data ['rank'] . "', " .
+                "boRank='" . $data ['boRank'] . "', " .
+                "qa='" . (key_exists('qa', $data) ? 'on' : '') . "', " .
+                "payment='" . (key_exists('payment', $data) ? 'on' : '') . "', " .
                 "value=" . ($data ['value'] == '' ? 0 : $data ['value']) . " , " .
-                "receipt='" . $data ['receipt'] . "'," .
-                "boCourse='" . $data ['boCourse'] . "', " .
+                "receipt='" . $data ['receipt'] . "', " .
+                "boCourse='" . $data ['boCourse'] . "', " : " ") .
+                "observations='" . $data ['observations'] . "', " .
                 "attended='" . (key_exists('attended', $data) ? 'on' : '') . "', " .
                 "passedCourse='" . (key_exists('passedCourse', $data) ? 'on' : '') . "', " .
                 "passedInternship='" . (key_exists('passedInternship', $data) ? 'on' : '') . "', " .
                 "passed='" . (key_exists('passed', $data) ? 'on' : '') . "' " .
                 "WHERE idUsers=" . $data ['idUsers'] . " AND idCourses=" . $data ['idCourses'];
-        $con       = new Database ();
-        $resultado = $con->set($query);
+        $con                           = new Database ();
+        $resultado                     = $con->set($query);
         if ($con->connection->error != '') {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
@@ -203,7 +204,9 @@ class Formacoes {
     }
 
     static function adicionarFormacoesEquipa($data) {
-        $query     = "INSERT INTO courses_team (idUsers,idCourses,type) VALUES (" . $data['idUsers'] . "," . $data['idCourses'] . ",'Formador') ";
+        $query     = "INSERT INTO courses_team (idUsers,idCourses,type) VALUES (" . $data['idUsers'] . "," . $data['idCourses'] . "," .
+                ($_SESSION['users']->permission == 'Equipa Executiva' ? 'Formador' : 'Externo') .
+                ") ";
         $con       = new Database ();
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
@@ -213,16 +216,32 @@ class Formacoes {
     }
 
     static function atualizarFormacoesEquipa($data) {
-        $data ['local']   = substr($data ['zipCode'], 9);
-        $data ['zipCode'] = substr($data ['zipCode'], 0, 8);
-        $query            = "UPDATE users SET " . "username='" . $data ['username'] . "'," . "email='" . $data ['email'] . "'," .
-                "name='" . $data ['name'] . "'," . "sigla='" . $data ['sigla'] . "'," . "status='" . $data ['status'] . "'," .
-                "birthDate='" . $data ['birthDate'] . "'," . "address='" . $data ['address'] . "'," .
-                "zipCode='" . $data ['zipCode'] . "'," . "local='" . $data ['local'] . "'," . "mobile='" . $data ['mobile'] . "'," .
-                "telephone='" . $data ['telephone'] . "'," . "observations='" . $data ['observations'] . "'," .
-                "iban='" . $data ['iban'] . "'," . "aepId='" . $data ['aepId'] . "' " . "WHERE idUsers=" . $data ['idUsers'];
-        $con              = new Database ();
-        $resultado        = $con->set($query);
+        if (key_exists('zipCode', $data)) {
+            $data ['local']   = substr($data ['zipCode'], 9);
+            $data ['zipCode'] = substr($data ['zipCode'], 0, 8);
+        }
+        $query = "UPDATE users SET ";
+        if ($_SESSION['users']->permission == 'Equipa Executiva') {
+            $query .= (key_exists('username', $data) ? "username='" . $data ['username'] . "'," : "") .
+                    (key_exists('email', $data) ? "email='" . $data ['email'] . "'," : "") .
+                    (key_exists('status', $data) ? "status='" . $data ['status'] . "'," : "") .
+                    (key_exists('birthDate', $data) ? "birthDate='" . $data ['birthDate'] . "'," : "") .
+                    (key_exists('address', $data) ? "address='" . $data ['address'] . "'," : "") .
+                    (key_exists('zipCode', $data) ? "zipCode='" . $data ['zipCode'] . "'," : "") .
+                    (key_exists('mobile', $data) ? "mobile='" . $data ['mobile'] . "'," : "") .
+                    (key_exists('telephone', $data) ? "telephone='" . $data ['telephone'] . "'," : "") .
+                    (key_exists('local', $data) ? "local='" . $data ['local'] . "'," : "") .
+                    (key_exists('aepId', $data) ? "aepId='" . $data ['aepId'] . "', " : "")
+            ;
+        }
+
+        $query     .= "name='" . $data ['name'] . "'," .
+                "sigla='" . $data ['sigla'] . "'," .
+                "observations='" . $data ['observations'] . "'," .
+                "iban='" . $data ['iban'] . "' " .
+                " WHERE idUsers=" . $data ['idUsers'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
         if ($con->connection->error != '') {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
@@ -239,10 +258,11 @@ class Formacoes {
     static function getUtlizadoresSemEquipa($data) {
         $query     = "SELECT * FROM users u " .
                 "WHERE u.idUsers NOT IN (SELECT idUsers FROM courses_team WHERE idCourses=" . $data['idCourses'] . ") " .
-                "AND (name LIKE '%" . $data['searchUtilizadores'] . "%' " .
-                "OR email LIKE '%" . $data['searchUtilizadores'] . "%' " .
-                "OR aepId LIKE '%" . $data['searchUtilizadores'] . "%' " .
-                "OR permission LIKE '%" . $data['searchUtilizadores'] . "%' ) ORDER BY permission,name";
+                ($_SESSION['users']->permission != 'Equipa Executiva' ? " AND permission='Formador' " : "") .
+                " AND (name LIKE '%" . $data['searchUtilizadores'] . "%' " .
+                " OR email LIKE '%" . $data['searchUtilizadores'] . "%' " .
+                " OR aepId LIKE '%" . $data['searchUtilizadores'] . "%' " .
+                " OR permission LIKE '%" . $data['searchUtilizadores'] . "%' ) ORDER BY permission,name";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -321,22 +341,75 @@ class Formacoes {
         return $resultado;
     }
 
+    static function atualizarFormacoesSessoes($data) {
+        $con = new Database ();
+        if ($_SESSION['users']->permission == 'Equipa Executiva' && key_exists('type', $data) && key_exists('status', $data)) {
+            $resultado = $con->set('START TRANSACTION');
+            $query     = "UPDATE courses_modules SET " .
+                    "`order`=" . $data['order'] . ", " .
+                    "name='" . $data['name'] . "', " .
+                    "duration=" . $data['duration'] . ", " .
+                    "type='" . $data['type'] . "', " .
+                    "status='" . $data['status'] . "', " .
+                    "observations='" . $data['observations'] . "' " .
+                    "WHERE " .
+                    "idModules=" . $data['idModules'] . " AND idCourse=" . $data['idCourse'] . " AND idCourses=" . $data['idCourses'];
+            $resultado = $con->set($query);
+            if (!$resultado) {
+                $resultado = $con->set('ROLLBACK');
+                return ['success' => false, 'message' => 'Não foi inserido o registo.'];
+            }
+            $query     = "INSERT INTO modules (idModules,idCourse,`order`,name,duration,type,status) " .
+                    "(SELECT idModules,idCourse,`order`,name,duration,type,status " .
+                    "FROM courses_modules cm " .
+                    "WHERE idModules=" . $data['idModules'] . " AND idCourse=" . $data['idCourse'] . " AND idCourses=" . $data['idCourses'] . ") " .
+                    "ON DUPLICATE KEY UPDATE `order`= cm.`order`,name=cm.name,duration=cm.duration,type=cm.type,status=cm.status";
+            $resultado = $con->set($query);
+            if (!$resultado) {
+                $resultado = $con->set('ROLLBACK');
+                return ['success' => false, 'message' => 'Não foi inserido o registo.'];
+            }
+        }
+        else {
+            $resultado = $con->set('START TRANSACTION');
+            $query     = "UPDATE courses_modules SET " .
+                    "name='" . $data['name'] . "', " .
+                    "duration=" . $data['name'] . ", " .
+                    "observations='" . $data['observations'] . "' " .
+                    "WHERE " .
+                    "idModules=" . $data['idModules'] . " AND idCourse=" . $data['idCourse'] . " AND idCourses=" . $data['idCourses'];
+            $resultado = $con->set($query);
+            if (!$resultado) {
+                $resultado = $con->set('ROLLBACK');
+                return ['success' => false, 'message' => 'Não foi inserido o registo.'];
+            }
+        }
+        $resultado = $con->set('COMMIT');
+        return ['success' => true, 'message' => 'Registo adicionado.'];
+    }
+
     static function inserirFormacoesSessoes($data) {
         $con       = new Database ();
         $resultado = $con->set('START TRANSACTION');
 
         $query     = "SELECT "
                 . "(SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'] . ") as idCourse, "
-                . "(SELECT max(idModules) FROM courses_modules WHERE idCourses=" . $data['idCourses'] . ")+1 as idModules, "
                 . "(SELECT max(`order`) FROM courses_modules WHERE idCourses=" . $data['idCourses'] . ")+1 as ordem ";
         $resultado = $con->get($query);
         if (!$resultado) {
             $resultado = $con->set('ROLLBACK');
             return ['success' => false, 'message' => 'Não foi inserido o registo.'];
         }
-        $row       = $resultado[0];
+        $row = $resultado[0];
+
+        $query             = "INSERT INTO modules (idCourse,duration) values (" . $row['idCourse'] . ",0)";
+        $resultado         = $con->set($query);
+        $data['idModules'] = $con->connection->insert_id;
+        $query             = "DELETE FROM modules WHERE idCourse=" . $row['idCourse'] . " AND idModules=" . $data['idModules'];
+        $resultado         = $con->set($query);
+
         $query     = "INSERT INTO courses_modules (idModules,idCourse,idCourses,`order`,name,duration,type,status,observations) " .
-                " VALUES (" . $row['idModules'] . "," . $row['idCourse'] . "," . $data['idCourses'] . "," . $row['ordem'] .
+                " VALUES (" . $data['idModules'] . "," . $row['idCourse'] . "," . $data['idCourses'] . "," . $row['ordem'] .
                 ",'" . $data['name'] . "'," . $data['duration'] . ",'Proposto','Pendente','" . $data['observations'] . "') ";
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
@@ -436,8 +509,38 @@ class Formacoes {
                 "LEFT JOIN courses_evaluations ce ON u.idUsers=ce.idUsers " .
                 "LEFT JOIN evaluations e ON ce.idEvaluations=e.idEvaluations) as t " .
                 (key_exists("search", $data) ? "WHERE name LIKE '%" . $data['search'] . "%' " .
+                "OR target LIKE '%" . $data['search'] . "%' " .
                 "OR status LIKE '%" . $data['search'] . "%' " .
-                "OR response LIKE '%" . $data['search'] . "%'" : "");
+                "OR response LIKE '%" . $data['search'] . "%'" : "") .
+                " ORDER BY target";
+        $con       = new Database ();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return false;
+        }
+        return $resultado;
+    }
+
+    static function getFormacoesAvaliacoesFormadores($data) {
+        $query     = "(SELECT (SELECT course FROM courses WHERE idCourses = ce.idCourses) AS curso, " .
+                "ce.idEvaluations,u.idUsers,u.name,target,if(length(evaluation)>10,'Respondido','Não respondido') as response," .
+                "ce.status as status " .
+                "FROM courses_team uc INNER JOIN users u ON uc.idUsers=u.idUsers " .
+                (key_exists("idCourses", $data) ? " AND uc.idCourses=" . $data ['idCourses'] . " " : " ") .
+                "LEFT JOIN courses_evaluations ce ON u.idUsers=ce.idUsers " .
+                "LEFT JOIN evaluations e ON ce.idEvaluations=e.idEvaluations " .
+                "WHERE u.idUsers=" . $_SESSION['users']->id . " " .
+                "ORDER BY target) " .
+                "UNION " .
+                "(SELECT (SELECT course FROM courses WHERE idCourses = ce.idCourses) AS curso, " .
+                "ce.idEvaluations,u.idUsers,u.name,target,IF(LENGTH(evaluation) > 10,'Respondido','Não respondido') AS response," .
+                "ce.status AS status " .
+                "FROM courses_team uc INNER JOIN users u ON uc.idUsers = u.idUsers " .
+                (key_exists("idCourses", $data) ? " AND uc.idCourses<>" . $data ['idCourses'] . " " : " ") .
+                "LEFT JOIN courses_evaluations ce ON u.idUsers = ce.idUsers " .
+                "LEFT JOIN evaluations e ON ce.idEvaluations = e.idEvaluations " .
+                "WHERE u.idUsers =" . $_SESSION['users']->id . " " .
+                "AND target = 'Curso' ORDER BY date DESC LIMIT 2,6) ";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -584,7 +687,7 @@ class Formacoes {
                 . "d.document1,d.document1Blob,d.document2,d.document2Blob,d.document3,d.document3Blob,d.document4,d.document4Blob,"
                 . "d.dateAutor,d.idAutor,d.dateDiretor,d.idDiretor,d.datePedagogico,d.idPedagogico,d.dateExecutiva,d.idExecutiva "
                 . " FROM documents d INNER JOIN courses_modules cm ON d.idCourse=cm.idCourse AND d.idModules=cm.idModules "
-                . " AND cm.idCourses=" . $data['idCourses'] . " AND d.status='Fechado' ";
+                . " AND d.idCourse IN (SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'] . ") AND d.status='Fechado' GROUP BY d.idDocuments";
         $resultado = $con->set($query);
         if ($con->connection->error != '') {
             $resultado = $con->set('ROLLBACK');
@@ -920,31 +1023,36 @@ class Formacoes {
     }
 
     static function distribuirAvaliacoesFormacoesAvaliacoes($data) {
-        $con           = new Database ();
-        $query         = "SELECT c.idCourse,e.idEvaluations,e.name " .
+        $con       = new Database ();
+        $query     = "SELECT c.idCourse,e.idEvaluations,e.name,e.target " .
                 "FROM courses c " .
                 "INNER JOIN evaluations e ON c.idCourse=e.idCourse " .
-                "WHERE c.idCourses=" . $data['idCourses'] . " AND e.target='Formando' AND e.status='Ativo'";
-        $resultado     = $con->get($query);
-        $idCourse      = $resultado[0]['idCourse'];
-        $idEvaluations = $resultado[0]['idEvaluations'];
-        $name          = $resultado[0]['name'];
+                "WHERE c.idCourses=" . $data['idCourses'] . " AND target IN ('Formador','Formando','Curso') AND e.status='Ativo' ORDER BY target";
+        $resultado = $con->get($query);
 
-        $query        = "SELECT uc.idUsers " .
-                "FROM users_courses uc " .
-                "WHERE uc.idCourses=" . $data['idCourses'] . " " .
-                "AND uc.idUsers NOT IN (SELECT idUsers FROM courses_evaluations WHERE idCourses=" . $data['idCourses'] . ")";
-        $utilizadores = $con->get($query);
-        foreach ($utilizadores as $utilizador) {
-            $query  = "INSERT INTO courses_evaluations " .
-                    "(idEvaluations,idUsers,idCourses," .
-                    "idCourse,name,status) " .
-                    "VALUES (" . $idEvaluations . "," .
-                    $utilizador['idUsers'] . "," . $data['idCourses'] . "," .
-                    $idCourse . ",'" . $name . "','Aberto')";
-            $result = $con->set($query);
-            if (!$result) {
-                return ['success' => false, 'message' => 'Não ficou aprovado.'];
+        foreach ($resultado as $teste) {
+            $idCourse      = $teste['idCourse'];
+            $idEvaluations = $teste['idEvaluations'];
+            $name          = $teste['name'];
+            $target        = $teste['target'];
+
+            $query        = "SELECT uc.idUsers " .
+                    ($target == 'Formando' ? "FROM users_courses uc " : "FROM courses_team uc ") .
+                    "WHERE uc.idCourses=" . $data['idCourses'] . " " .
+                    ($target == 'Curso' ? "AND uc.type='Diretor' " : " " ) .
+                    "AND uc.idUsers NOT IN (SELECT idUsers FROM courses_evaluations WHERE idCourses=" . $data['idCourses'] . ")";
+            $utilizadores = $con->get($query);
+            foreach ($utilizadores as $utilizador) {
+                $query  = "INSERT IGNORE INTO courses_evaluations " .
+                        "(idEvaluations,idUsers,idCourses," .
+                        "idCourse,name,status) " .
+                        "VALUES (" . $idEvaluations . "," .
+                        $utilizador['idUsers'] . "," . $data['idCourses'] . "," .
+                        $idCourse . ",'" . $name . " - " . $target . "','Aberto')";
+                $result = $con->set($query);
+                if (!$result) {
+                    return ['success' => false, 'message' => 'Não ficou aprovado.'];
+                }
             }
         }
         return ['success' => true, 'message' => 'Aprovado.'];
@@ -971,5 +1079,31 @@ class Formacoes {
             return ['success' => false, 'message' => 'Não ficou apagado.'];
         }
         return ['success' => true, 'message' => 'Foi apagado.'];
+    }
+
+    static function avaliacaoInscritos($data) {
+        $query = "UPDATE users_courses SET ";
+        if ($data['task'] == 'participou') {
+            $query .= " attended='on' ";
+        }
+        elseif ($data['task'] == 'passouCurso') {
+            $query .= " attended='on', passedCourse='on' ";
+        }
+        elseif ($data['task'] == 'passouEstagio') {
+            $query .= " attended='on', passedCourse='on', passedInternship='on' ";
+        }
+        elseif ($data['task'] == 'passouEtapa') {
+            $query .= " attended='on', passedCourse='on',passed='on' ";
+        }
+        else {
+            $query .= " attended=null, passedCourse=null, passedInternship=null,passed=null ";
+        }
+        $query     .= " WHERE idCourses=" . $data['idCourses'] . " AND idUsers=" . $data['idUsers'];
+        $con       = new Database ();
+        $resultado = $con->set($query);
+        if (!$resultado) {
+            return ['success' => false, 'message' => 'Estado não foi alterado.'];
+        }
+        return ['success' => true, 'message' => 'estado alterado.'];
     }
 }

@@ -2,7 +2,7 @@
     <ul style="float: left">
         <form>
             <input type="text" id="{$currentTab}search" name="{$currentTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
-            <a class="button small icon fa-search"
+            <a class="button small icon fa-search" title="pesquisar"
                style="box-shadow: 
                -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
@@ -107,13 +107,13 @@
                          title="Carregado: {$documentos['dateExecutiva']}&#013;EE: {$documentos['executiva']}"/>
                 </td>
                 <td class="actions" align="right"><a
-                        class="button small icon fa-file"
+                        class="button small icon fa-file" title="ver"
                         style="cursor: pointer; padding: 0 0 0 5pt"
                         onclick="request('action={$action}&task=ver&tab={$currentTab}&idDocuments={$documentos['idDocuments']}', 'form');"></a>
-                    <a class="button small icon fa-edit"
+                    <a class="button small icon fa-edit" title="editar"
                        style="cursor: pointer; padding: 0 0 0 5pt"
                        onclick="request('action={$action}&task=editar&tab={$currentTab}&idDocuments={$documentos['idDocuments']}', 'form');"></a>
-                    <a class="button small icon fa-eraser"
+                    <a class="button small icon fa-eraser" title="apagar"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
                                    $.when(request('action={$action}&task=apagar&tab={$currentTab}&idDocuments={$documentos['idDocuments']}', '{$action}Msg')).

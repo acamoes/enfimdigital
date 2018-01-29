@@ -2,7 +2,7 @@
     <ul style="float: left">
         <form>
             <input type="text" id="{$currentTab}{$currentSubTab}search" name="{$currentTab}{$currentSubTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
-            <a class="button small icon fa-search"
+            <a class="button small icon fa-search" title="pesquisar"
                style="box-shadow: 
                -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
@@ -44,13 +44,13 @@
                         style="cursor: help; padding: 0 0 0 5pt; box-shadow: none"
                         title="{$equipa['mobile']}"></a>{$equipa['mobile']}</td>
                 <td class="actions" align="right"><a
-                        class="button small icon fa-file"
+                        class="button small icon fa-file" title="ver"
                         style="cursor: pointer; padding: 0 0 0 5pt"
                         onclick="request('action={$action}&task=ver&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idUsers={$equipa['idUsers']}', 'form');"></a>
-                    <a class="button small icon fa-edit"
+                    <a class="button small icon fa-edit" title="editar"
                        style="cursor: pointer; padding: 0 0 0 5pt"
                        onclick="request('action={$action}&task=editar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idUsers={$equipa['idUsers']}', 'form');"></a>
-                    <a class="button small icon fa-eraser"
+                    <a class="button small icon fa-eraser" title="apagar"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
                                    $.when(request('action={$action}&task=apagar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idUsers={$equipa['idUsers']}', '{$action}Msg')).

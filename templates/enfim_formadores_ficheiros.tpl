@@ -2,36 +2,36 @@
     <ul style="float: left">
         <form>
             <input type="text" id="{$currentTab}search" name="{$currentTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
-            <a class="button small icon fa-search"
+            <a class="button small icon fa-search" title="pesquisar"
                style="box-shadow: 
                -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                cursor: pointer; padding: 0 0 0 5pt"
-               onclick="request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">
+               onclick="request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">
             </a>
         </form>
     </ul>
     <ul class="actions"
         onclick="if (confirm('Tem a certeza que pretende restaurar?\nTodo o conteúdo será apagado e reposto.')) {
-            request('action={$action}&task=restaurar&tab={$currentTab}', '{$action}Msg');
-            request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');
+            request('action={$action}&task=restaurar&tab={$currentTab}&idCourses={$idCourses}', '{$action}Msg');
+            request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');
             }"
         style="float: right; padding-left:10px;padding-right:10px;">
         <li class="button small"
             style="cursor: pointer; padding: 0 10px 0 10px">restaurar</li>
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Extra&tab={$currentTab}', 'form');"
+    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Extra&tab={$currentTab}&idCourses={$idCourses}', 'form');"
         style="float: right">
         <li class="button small"
             style="cursor: pointer; padding: 0 10pt 0 10pt">Extra</li>
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Texto&tab={$currentTab}', 'form');"
+    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Texto&tab={$currentTab}&idCourses={$idCourses}', 'form');"
         style="float: right">
         <li class="button small"
             style="cursor: pointer; padding: 0 10pt 0 10pt">Texto de apoio</li>
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Apresentação&tab={$currentTab}', 'form');"
+    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Apresentação&tab={$currentTab}&idCourses={$idCourses}', 'form');"
         style="float: right">
         <li class="button small"
             style="cursor: pointer; padding: 0 10pt 0 10pt">Apresentação</li>
@@ -114,22 +114,24 @@
                          title="Carregado: {$ficheiros['dateExecutiva']}&#013;EE: {$ficheiros['executiva']}"/>
                 </td>
                 <td class="actions" align="right"><a
-                        class="button small icon fa-file"
+                        class="button small icon fa-file" title="ver"
                         style="cursor: pointer; padding: 0 0 0 5pt"
-                        onclick="request('action={$action}&task=ver&tab={$currentTab}&idDocuments={$ficheiros['idDocuments']}', 'form');"></a>
-                    <a class="button small icon fa-edit"
+                        onclick="request('action={$action}&task=ver&tab={$currentTab}&idCourses={$idCourses}&idDocuments={$ficheiros['idDocuments']}', 'form');"></a>
+                    <a class="button small icon fa-edit" title="editar"
                        style="cursor: pointer; padding: 0 0 0 5pt"
-                       onclick="request('action={$action}&task=editar&tab={$currentTab}&idDocuments={$ficheiros['idDocuments']}', 'form');"></a>
-                    <a class="button small icon fa-eraser"
+                       onclick="request('action={$action}&task=editar&tab={$currentTab}&idCourses={$idCourses}&idDocuments={$ficheiros['idDocuments']}', 'form');"></a>
+                    <a class="button small icon fa-eraser" title="apagar"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
-                           $.when(request('action={$action}&task=apagar&tab={$currentTab}&idDocuments={$ficheiros['idDocuments']}', '{$action}Msg')).
-                           then(request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"> </a>
-                    <a class="button small icon fa-check-circle-o"
+                           $.when(request('action={$action}&task=apagar&tab={$currentTab}&idCourses={$idCourses}&idDocuments={$ficheiros['idDocuments']}', '{$action}Msg')).
+                           then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"> </a>
+                    {if $users->isDiretor($idCourses) && $ficheiros['idDiretor']==''}
+                           <a class="button small icon fa-check-circle-o"
                        style="cursor: pointer; padding: 0 0 0 5pt"
                        onclick="if (confirm('Tem a certeza que pretende aprovar')) {ldelim}
-                           $.when(request('action={$action}&task=aprovar&tab={$currentTab}&idDocuments={$ficheiros['idDocuments']}', '{$action}Msg')).
-                           then(request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"></a>
+                           $.when(request('action={$action}&task=aprovar&tab={$currentTab}&idCourses={$idCourses}&idDocuments={$ficheiros['idDocuments']}', '{$action}Msg')).
+                           then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"></a>
+                   {/if}
                 </td>
             </tr>
         {/foreach}

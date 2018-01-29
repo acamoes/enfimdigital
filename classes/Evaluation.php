@@ -51,10 +51,22 @@ class Evaluation {
                                         $this->template->avaliacao->itens[$i]->itens[$j]->tema . '-avaliacao', $this->template->avaliacao->itens[$i]->itens[$j]->tema, $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo, $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response ?? null);
                             }
                         }
-                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
-                            if ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->tipo == 'longText') {
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_positivos')) {
+                            if ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->tipo == 'longText') {
                                 $html .= $this->textArea(
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema . '-observacoes', $this->template->avaliacao->itens[$i]->itens[$j]->tema, $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response ?? null);
+                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema . '-pontos_positivos', $this->template->avaliacao->itens[$i]->itens[$j]->tema, $this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->intervalo, $this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->response ?? null);
+                            }
+                        }
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_a_melhorar')) {
+                            if ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->tipo == 'longText') {
+                                $html .= $this->textArea(
+                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema . '-pontos_a_melhorar', $this->template->avaliacao->itens[$i]->itens[$j]->tema, $this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->intervalo, $this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->response ?? null);
+                            }
+                        }
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'recomendacoes')) {
+                            if ($this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->tipo == 'longText') {
+                                $html .= $this->textArea(
+                                        $this->template->avaliacao->itens[$i]->itens[$j]->tema . '-recomendacoes', $this->template->avaliacao->itens[$i]->itens[$j]->tema, $this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->intervalo, $this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->response ?? null);
                             }
                         }
                     }
@@ -90,10 +102,22 @@ class Evaluation {
                                         }
                                     }
 
-                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
-                                        if ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->tipo == 'longText') {
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_positivos')) {
+                                        if ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->tipo == 'longText') {
                                             $html .= $this->textArea(
-                                                    'formador-observacoes-' . $temas . '-' . $formador['idUsers'], $temas, $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers'])} ?? null));
+                                                    'formador-pontos_positivos-' . $temas . '-' . $formador['idUsers'], $temas, $this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->response->{ENFIM::cleanString('formador-pontos_positivos-' . $temas . '-' . $formador['idUsers'])} ?? null));
+                                        }
+                                    }
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_a_melhorar')) {
+                                        if ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->tipo == 'longText') {
+                                            $html .= $this->textArea(
+                                                    'formador-pontos_a_melhorar-' . $temas . '-' . $formador['idUsers'], $temas, $this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->response->{ENFIM::cleanString('formador-pontos_a_melhorar-' . $temas . '-' . $formador['idUsers'])} ?? null));
+                                        }
+                                    }
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'recomendacoes')) {
+                                        if ($this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->tipo == 'longText') {
+                                            $html .= $this->textArea(
+                                                    'formador-recomendacoes-' . $temas . '-' . $formador['idUsers'], $temas, $this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->response->{ENFIM::cleanString('formador-recomendacoes-' . $temas . '-' . $formador['idUsers'])} ?? null));
                                         }
                                     }
                                 }
@@ -113,11 +137,22 @@ class Evaluation {
                                                 'modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'], '', $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response->{ENFIM::cleanString('modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'])} ?? null));
                                     }
                                 }
-
-                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
-                                    if ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->tipo == 'longText') {
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_positivos')) {
+                                    if ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->tipo == 'longText') {
                                         $html .= $this->textArea(
-                                                'modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'], '', $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'])} ?? null));
+                                                'modulo-pontos_positivos-' . $modulo['name'] . '-' . $modulo['idModules'], '', $this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->response->{ENFIM::cleanString('modulo-pontos_positivos-' . $modulo['name'] . '-' . $modulo['idModules'])} ?? null));
+                                    }
+                                }
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_a_melhorar')) {
+                                    if ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->tipo == 'longText') {
+                                        $html .= $this->textArea(
+                                                'modulo-pontos_a_melhorar-' . $modulo['name'] . '-' . $modulo['idModules'], '', $this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->response->{ENFIM::cleanString('modulo-pontos_a_melhorar-' . $modulo['name'] . '-' . $modulo['idModules'])} ?? null));
+                                    }
+                                }
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'recomendacoes')) {
+                                    if ($this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->tipo == 'longText') {
+                                        $html .= $this->textArea(
+                                                'modulo-recomendacoes-' . $modulo['name'] . '-' . $modulo['idModules'], '', $this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->intervalo, ($this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->response->{ENFIM::cleanString('modulo-recomendacoes-' . $modulo['name'] . '-' . $modulo['idModules'])} ?? null));
                                     }
                                 }
                             }
@@ -142,7 +177,16 @@ class Evaluation {
     }
 
     function textArea($id, $nome, $intervalo, $selecionado): string {
-        $tag   = "<div class='row uniform'><div><label for='" . ENFIM::cleanString($id) . "'>Observações</label>";
+        if (strpos($id, 'pontos_positivos') !== false) {
+            $nome = "Pontos positivos";
+        }
+        elseif (strpos($id, 'pontos_a_melhorar') !== false) {
+            $nome = "Pontos a melhorar";
+        }
+        else {
+            $nome = "Recomendações";
+        }
+        $tag   = "<div class='row uniform'><div><label for='" . ENFIM::cleanString($id) . "'>$nome</label>";
         $range = explode('-', $intervalo);
         $tag   .= "<textarea cols = '$range[1]' rows = '$range[0]' name = '" . ENFIM::cleanString($id) . "' id = '" . ENFIM::cleanString($id) . "' style = 'width: 630px'>$selecionado</textarea>";
         $tag   .= "</div></div>";
@@ -159,8 +203,14 @@ class Evaluation {
                         if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'avaliacao')) {
                             $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response = ($responses[ENFIM::cleanString($this->template->avaliacao->itens[$i]->itens[$j]->tema . '-avaliacao')] ?? "");
                         }
-                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
-                            $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response = ($responses[ENFIM::cleanString($this->template->avaliacao->itens[$i]->itens[$j]->tema . '-observacoes')] ?? "");
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_positivos')) {
+                            $this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->response = ($responses[ENFIM::cleanString($this->template->avaliacao->itens[$i]->itens[$j]->tema . '-pontos_positivos')] ?? "");
+                        }
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_a_melhorar')) {
+                            $this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->response = ($responses[ENFIM::cleanString($this->template->avaliacao->itens[$i]->itens[$j]->tema . '-pontos_a_melhorar')] ?? "");
+                        }
+                        if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'recomendacoes')) {
+                            $this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->response = ($responses[ENFIM::cleanString($this->template->avaliacao->itens[$i]->itens[$j]->tema . '-recomendacoes')] ?? "");
                         }
                     }
                     else {
@@ -192,12 +242,28 @@ class Evaluation {
                                         }
                                     }
 
-                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
-                                        if (array_key_exists(ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers']), $responses)) {
-                                            if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->observacoes, 'response')) {
-                                                $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response = (object) null;
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_positivos')) {
+                                        if (array_key_exists(ENFIM::cleanString('formador-pontos_positivos-' . $temas . '-' . $formador['idUsers']), $responses)) {
+                                            if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos, 'response')) {
+                                                $this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->response = (object) null;
                                             }
-                                            $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers'])} = $responses[ENFIM::cleanString('formador-observacoes-' . $temas . '-' . $formador['idUsers'])];
+                                            $this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->response->{ENFIM::cleanString('formador-pontos_positivos-' . $temas . '-' . $formador['idUsers'])} = $responses[ENFIM::cleanString('formador-pontos_positivos-' . $temas . '-' . $formador['idUsers'])];
+                                        }
+                                    }
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_a_melhorar')) {
+                                        if (array_key_exists(ENFIM::cleanString('formador-pontos_a_melhorar-' . $temas . '-' . $formador['idUsers']), $responses)) {
+                                            if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar, 'response')) {
+                                                $this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->response = (object) null;
+                                            }
+                                            $this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->response->{ENFIM::cleanString('formador-pontos_a_melhorar-' . $temas . '-' . $formador['idUsers'])} = $responses[ENFIM::cleanString('formador-pontos_a_melhorar-' . $temas . '-' . $formador['idUsers'])];
+                                        }
+                                    }
+                                    if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'recomendacoes')) {
+                                        if (array_key_exists(ENFIM::cleanString('formador-recomendacoes-' . $temas . '-' . $formador['idUsers']), $responses)) {
+                                            if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes, 'response')) {
+                                                $this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->response = (object) null;
+                                            }
+                                            $this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->response->{ENFIM::cleanString('formador-recomendacoes-' . $temas . '-' . $formador['idUsers'])} = $responses[ENFIM::cleanString('formador-recomendacoes-' . $temas . '-' . $formador['idUsers'])];
                                         }
                                     }
                                 }
@@ -215,11 +281,24 @@ class Evaluation {
                                     $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response->{ENFIM::cleanString('modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'])} = ($responses[ENFIM::cleanString('modulo-avaliacao-' . $modulo['name'] . '-' . $modulo['idModules'])] ?? "");
                                 }
 
-                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'observacoes')) {
-                                    if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->observacoes, 'response')) {
-                                        $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response = (object) null;
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_positivos')) {
+                                    if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos, 'response')) {
+                                        $this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->response = (object) null;
                                     }
-                                    $this->template->avaliacao->itens[$i]->itens[$j]->observacoes->response->{ENFIM::cleanString('modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'])} = ($responses[ENFIM::cleanString('modulo-observacoes-' . $modulo['name'] . '-' . $modulo['idModules'])] ?? "");
+                                    $this->template->avaliacao->itens[$i]->itens[$j]->pontos_positivos->response->{ENFIM::cleanString('modulo-pontos_positivos-' . $modulo['name'] . '-' . $modulo['idModules'])} = ($responses[ENFIM::cleanString('modulo-pontos_positivos-' . $modulo['name'] . '-' . $modulo['idModules'])] ?? "");
+                                }
+
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'pontos_a_melhorar')) {
+                                    if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar, 'response')) {
+                                        $this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->response = (object) null;
+                                    }
+                                    $this->template->avaliacao->itens[$i]->itens[$j]->pontos_a_melhorar->response->{ENFIM::cleanString('modulo-pontos_a_melhorar-' . $modulo['name'] . '-' . $modulo['idModules'])} = ($responses[ENFIM::cleanString('modulo-pontos_a_melhorar-' . $modulo['name'] . '-' . $modulo['idModules'])] ?? "");
+                                }
+                                if (property_exists($this->template->avaliacao->itens[$i]->itens[$j], 'recomendacoes')) {
+                                    if (!property_exists($this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes, 'response')) {
+                                        $this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->response = (object) null;
+                                    }
+                                    $this->template->avaliacao->itens[$i]->itens[$j]->recomendacoes->response->{ENFIM::cleanString('modulo-recomendacoes-' . $modulo['name'] . '-' . $modulo['idModules'])} = ($responses[ENFIM::cleanString('modulo-recomendacoes-' . $modulo['name'] . '-' . $modulo['idModules'])] ?? "");
                                 }
                             }
                         }

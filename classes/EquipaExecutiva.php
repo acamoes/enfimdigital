@@ -243,6 +243,10 @@ class EquipaExecutiva {
         return Formacoes::inserirFormacoesSessoes($data);
     }
 
+    function atualizarFormacoesSessoes($data) {
+        return Formacoes::atualizarFormacoesSessoes($data);
+    }
+
     function restaurarFormacoesSessoes($data) {
         return Formacoes::restaurarFormacoesSessoes($data);
     }

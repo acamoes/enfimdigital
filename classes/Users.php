@@ -303,7 +303,7 @@ class Users {
       class="button small icon fa-file"
       style="cursor: pointer; padding: 0 0 0 5pt"
       onclick="vRequest('user_ver_<?= $usersList[$i]['idUsers'] ?>', 'form');"></a>
-      <a class="button small icon fa-edit"
+      <a class="button small icon fa-edit" title="editar"
       style="cursor: pointer; padding: 0 0 0 5pt"
       onclick="vRequest('user_editar_<?= $usersList[$i]['idUsers'] ?>', 'form');"></a>
       <a class="button small icon fa-eraser"

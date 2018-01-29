@@ -2,7 +2,7 @@
     <ul style="float: left">
         <form>
             <input type="text" id="{$currentTab}{$currentSubTab}search" name="{$currentTab}{$currentSubTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
-            <a class="button small icon fa-search"
+            <a class="button small icon fa-search" title="pesquisar"
                style="box-shadow: 
                -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
@@ -31,6 +31,7 @@
 <table>
     <thead>
         <tr>
+            <th>Alvo</th>
             <th>Nome</th>
             <th>Respondido</th>
             <th>Estado</th>
@@ -39,6 +40,7 @@
     <tbody>
         {foreach $equipaExecutiva->contexto['formacoes']['avaliacoes'] as $avaliacoes}
             <tr>
+                <td {if $avaliacoes['target'] eq 'Formador'}style='background-color: yellowgreen;color: black;font-weight: bold '{/if}>{$avaliacoes['target']}</td>
                 <td>{$avaliacoes['name']}</td>
                 <td>{$avaliacoes['response']}</td>
                 <td>{$avaliacoes['status']}</td>                

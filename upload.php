@@ -26,7 +26,7 @@ else {
     if ($data['action'] == "equipaExecutiva" && $_SESSION['users']->permission != 'Equipa Executiva') {
         header('Location: index.php');
     }
-    if ($data['action'] == "formadores" && (!$_SESSION['users']->isFormador($data['idCourses']) || !$_SESSION['users']->isDiretor($data['idCourses']))) {
+    if ($data['action'] == "formadores" && !($_SESSION['users']->isFormador($data['idCourses']) || $_SESSION['users']->isDiretor($data['idCourses']))) {
         header('Location: index.php');
     }
 }
@@ -85,34 +85,48 @@ if (isset($_FILES['ficheiro'])) {
         }
 
         if ($set) {
-            if ($data['tab'] != 'formacoes') {
-                $errors = $_SESSION['equipaExecutiva']->atualizarDocumentosFicheiro
-                        ($data);
-            }
-            else {
-                if ($data['type'] != 'Informações') {
-                    $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesFicheiro
-                            ($data);
+            if ($data['action'] == 'equipaExecutiva') {
+                if ($data['tab'] != 'formacoes') {
+                    $errors = $_SESSION['equipaExecutiva']->atualizarDocumentosFicheiro($data);
                 }
                 else {
-                    $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesInformacao
-                            ($data);
+                    if ($data['type'] != 'Informações') {
+                        $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesFicheiro($data);
+                    }
+                    else {
+                        $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesInformacao($data);
+                    }
+                }
+            }
+            else {
+                if ($data['tab'] == 'ficheiros') {
+                    $errors = $_SESSION['formadores']->atualizarFicheiro($data);
+                }
+                else {
+                    $errors = $_SESSION['formadores']->atualizarInformacao($data);
                 }
             }
         }
         else {
-            if ($data['tab'] != 'formacoes') {
-                $errors = $_SESSION['equipaExecutiva']->inserirDocumentoFicheiro
-                        ($data);
-            }
-            else {
-                if ($data['type'] != 'Informações') {
-                    $errors = $_SESSION['equipaExecutiva']->inserirFormacoesFicheiro
-                            ($data);
+            if ($data['action'] == 'equipaExecutiva') {
+                if ($data['tab'] != 'formacoes') {
+                    $errors = $_SESSION['equipaExecutiva']->inserirDocumentoFicheiro($data);
                 }
                 else {
-                    $errors = $_SESSION['equipaExecutiva']->inserirFormacoesInformacao
-                            ($data);
+                    if ($data['type'] != 'Informações') {
+                        $errors = $_SESSION['equipaExecutiva']->inserirFormacoesFicheiro($data);
+                    }
+                    else {
+                        $errors = $_SESSION['equipaExecutiva']->inserirFormacoesInformacao($data);
+                    }
+                }
+            }
+            else {
+                if ($data['tab'] == 'ficheiros') {
+                    $errors = $_SESSION['formadores']->inserirFicheiro($data);
+                }
+                else {
+                    $errors = $_SESSION['formadores']->inserirInformacao($data);
                 }
             }
         }

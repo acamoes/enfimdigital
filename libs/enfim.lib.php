@@ -112,6 +112,7 @@ class Enfim {
                 break;
             case "getEvaluation":
                 $html = $formandos->buildEvaluation($data);
+                $this->tpl->assign('estado', $formandos->evaluationStatus);
                 $this->tpl->assign('error', '');
                 $this->tpl->assign('title', 'Questionário');
                 $this->tpl->assign('html', $html);
@@ -300,13 +301,12 @@ class Enfim {
             $this->login('Acesso negado');
             exit;
         }
-        $data['idCourse']  = $_SESSION['formadores']->idCourse;
-        !isset($data['search']) && $data['search']    = '';
-        !isset($data['tab']) && $data['tab']       = 'inscritos';
-        $data['subTab']    = '';
+        $data['idCourse'] = $_SESSION['formadores']->idCourse;
+        !isset($data['search']) && $data['search']   = '';
+        !isset($data['tab']) && $data['tab']      = 'inscritos';
+        unset($data['subTab']);
         isset($data['docType']) && $this->tpl->assign('docType', $data['docType']);
-        isset($data['formadoresIdCourses']) && $this->tpl->assign('formadoresIdCourses', $data['formadoresIdCourses']);
-        isset($data['formadoresIdCourses']) && $data['idCourses'] = $data['formadoresIdCourses'];
+        $this->tpl->assign('idCourses', $data['idCourses']);
 
         $this->log($data);
 
@@ -320,6 +320,118 @@ class Enfim {
         switch ($data['task']) {
             case "getCourse":
                 $this->tpl->display('enfim_formadores.tpl');
+                break;
+            case "ver":
+            case "editar":
+                unset($_SESSION ['ficheiros']);
+                switch ($data['tab']) {
+                    case "inscritos":
+                        $this->tpl->assign('utilizador', $_SESSION['formadores']->getInscrito($data));
+                        break;
+                    case "equipa":
+                        $this->tpl->assign('utilizador', $_SESSION['formadores']->getEquipa($data));
+                        break;
+                    case "sessoes":
+                        $this->tpl->assign('sessao', $_SESSION['formadores']->getSessao($data));
+                        break;
+                    case "ficheiros":
+                        $this->tpl->assign('modulos' . ucfirst($data['tab']), $_SESSION['formadores']->getModulos($data));
+                        $docs                                    = $_SESSION['formadores']->getFicheiro($data);
+                        $_SESSION['ficheiros']['idDocuments']    = $docs['idDocuments'];
+                        $this->tpl->assign('docType', $docs['dTipo']);
+                        $this->tpl->assign('ficheiros', $docs);
+                        break;
+                    case "informacoes":
+                        $docs                                    = $_SESSION['formadores']->getInformacao($data);
+                        $docs['dTipo']                           = 'Informações';
+                        $_SESSION['ficheiros']['idInformations'] = $docs['idInformations'];
+                        $this->tpl->assign('docType', $docs['dTipo']);
+                        $this->tpl->assign('informacoes', $docs);
+                        break;
+                    case "avaliacoes":
+                        $this->tpl->assign('avaliacoesFormandos', $_SESSION['formadores']->getAvaliacaoFormandos($data));
+                        break;
+                    case "avaliacoesFormadores":
+                        $this->tpl->assign('avaliacoesFormandos', $_SESSION['formadores']->getAvaliacaoFormadores($data));
+                        break;
+                    case "documentos":
+                        $docs                                    = $_SESSION['formadores']->getDocumento($data);
+                        $_SESSION['ficheiros']['idDocuments']    = $docs['idDocuments'];
+                        $this->tpl->assign('docType', $docs['dTipo']);
+                        $this->tpl->assign('documento', $docs);
+                        break;
+                    default:
+                        break;
+                }
+                $this->tpl->display('enfim_formadores_' . $data['tab'] . '_' . $data['task'] . '.tpl');
+                break;
+            case "novo":
+                unset($_SESSION ['ficheiros']);
+                if (isset($data['searchUtilizadores'])) {
+                    if ($data['tab'] == 'equipa') {
+                        $this->tpl->assign('resultado' . ucfirst($data['tab']), $_SESSION['formadores']->getUtilizadoresSemEquipa($data));
+                    }
+                    elseif ($data['tab'] == 'sessoes') {
+                        $this->tpl->assign('resultado' . ucfirst($data['tab']), $_SESSION['formadores']->getUtlizadoresEquipa($data));
+                        $this->tpl->assign('data', $data);
+                    }
+                    else {
+                        $this->tpl->assign('resultado' . ucfirst($data['tab']), $_SESSION['formadores']->{'get' . ucfirst($data['tab'])}($data));
+                    }
+                    $this->tpl->display('enfim_formadores_' . $data['tab'] . '_' . $data['task'] . '_resultado.tpl');
+                }
+                else {
+                    if ($data['tab'] == 'ficheiros') {
+                        $this->tpl->assign('modulos' . ucfirst($data['tab']), $_SESSION['formadores']->getModulos($data));
+                    }
+                    $this->tpl->display('enfim_formadores_' . $data['tab'] . '_' . $data['task'] . '.tpl');
+                }
+
+                break;
+            case "participou":
+            case "passouCurso":
+            case "passouEstagio":
+            case "passouEtapa":
+            case "reset":
+                $this->tpl->assign('error', $_SESSION['formadores']->{$data['task'] . ucfirst($data['tab'])}($data));
+                $this->tpl->display('enfim_error.tpl');
+                break;
+            case "aprovar":
+            case "inserir":
+            case "atualizar":
+            case "apagar":
+            case "restaurar":
+                $this->tpl->assign('error', $_SESSION['formadores']->{$data['task'] . ucfirst($data['tab'])}($data));
+                $_SESSION['formadores']->{$data['tab']} = $_SESSION['formadores']->{'get' . ucfirst($data['tab'])}($data);
+                $this->tpl->display('enfim_error.tpl');
+                break;
+            case "adicionar":
+                if (isset($data['searchUtilizadores'])) {
+                    $this->tpl->assign('error', $_SESSION['formadores']->{$data['task'] . ucfirst($data['tab'])}($data));
+                    $this->tpl->display('enfim_error.tpl');
+                }
+                break;
+            case "search":
+                $this->tpl->display('enfim_formadores_' . $data['tab'] . '.tpl');
+                break;
+            case "fecharAvaliacoes":
+            case "distribuirAvaliacoes":
+                if ($data['tab'] == 'avaliacoes') {
+                    $this->tpl->assign('error', $_SESSION['formadores']->{$data['task'] . ucfirst($data['tab'])}($data));
+                    $this->tpl->display('enfim_error.tpl');
+                }
+                break;
+            case "getEvaluation":
+                $html = $_SESSION['formadores']->buildEvaluation($data);
+                $this->tpl->assign('error', '');
+                $this->tpl->assign('estado', $_SESSION['formadores']->avaliacoesFormandoresStatus);
+                $this->tpl->assign('title', 'Questionário');
+                $this->tpl->assign('html', $html);
+                $this->tpl->display('enfim_evaluation.tpl');
+                break;
+            case "saveEvaluation":
+                $_SESSION['formadores']->saveEvaluation($data);
+                $this->tpl->display('enfim_close.tpl');
                 break;
             default:
                 $this->clearAllAssign();

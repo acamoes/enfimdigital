@@ -24,7 +24,7 @@
                                 <input type="text"
                                        name="searchUtilizadores" id="searchUtilizadores"
                                        style="height: 2em; padding: 0 0; display: inline-block;" /> <a
-                                       class="button small icon fa-search"
+                                       class="button small icon fa-search" title="novo inscrito"
                                        style="box-shadow: -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); cursor: pointer; padding: 0 0 0 5pt"
                                        onclick="request('action={$action}&task=novo&tab={$currentTab}&subTab={$currentSubTab}&idCourses='+document.getElementById('idCourses').value+'&searchUtilizadores=' + document.getElementById('searchUtilizadores').value, 'resultado{$currentSubTab|ucfirst}');"></a>
                                 

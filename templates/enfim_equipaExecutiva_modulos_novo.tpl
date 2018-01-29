@@ -61,8 +61,8 @@
                             <div style="float: left">
                                 <label for="status">Tipo</label> <select name="type" id="type"
                                                                          style="width: 200px">
-                                    <option value="base">Base</option>
-                                    <option value="extra">Extra</option>
+                                    <option value="Base">Base</option>
+                                    <option value="Extra">Extra</option>
                                 </select>
                             </div>
                             <div style="float: right">

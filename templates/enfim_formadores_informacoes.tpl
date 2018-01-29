@@ -2,17 +2,17 @@
     <ul style="float: left">
         <form>
             <input type="text" id="{$currentTab}search" name="{$currentTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
-            <a class="button small icon fa-search"
+            <a class="button small icon fa-search" title="pesquisar"
                style="box-shadow: 
                -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                cursor: pointer; padding: 0 0 0 5pt"
-               onclick="request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">
+               onclick="request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">
             </a>
         </form>
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&tab={$currentTab}', 'form');"
+    <ul class="actions" onclick="request('action={$action}&task=novo&docType=Informações&tab={$currentTab}&idCourses={$idCourses}', 'form');"
         style="float: right">
         <li class="button small"
             style="cursor: pointer; padding: 0 10pt 0 10pt">Novo</li>
@@ -47,17 +47,17 @@
                     {/if}
                 </td>
                 <td class="actions" align="right"><a
-                        class="button small icon fa-file"
+                        class="button small icon fa-file" title="ver"
                         style="cursor: pointer; padding: 0 0 0 5pt"
-                        onclick="request('action={$action}&task=ver&tab={$currentTab}&idInformations={$informacoes['idInformations']}', 'form');"></a>
-                    <a class="button small icon fa-edit"
+                        onclick="request('action={$action}&task=ver&tab={$currentTab}&idCourses={$idCourses}&idInformations={$informacoes['idInformations']}', 'form');"></a>
+                    <a class="button small icon fa-edit" title="editar"
                        style="cursor: pointer; padding: 0 0 0 5pt"
-                       onclick="request('action={$action}&task=editar&tab={$currentTab}&idInformations={$informacoes['idInformations']}', 'form');"></a>
-                    <a class="button small icon fa-eraser"
+                       onclick="request('action={$action}&task=editar&tab={$currentTab}&idCourses={$idCourses}&idInformations={$informacoes['idInformations']}', 'form');"></a>
+                    <a class="button small icon fa-eraser" title="apagar"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
-                                   $.when(request('action={$action}&task=apagar&tab={$currentTab}&idInformations={$informacoes['idInformations']}', '{$action}Msg')).
-                                           then(request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"> </a>                   
+                                   $.when(request('action={$action}&task=apagar&tab={$currentTab}&idCourses={$idCourses}&idInformations={$informacoes['idInformations']}', '{$action}Msg')).
+                                           then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"> </a>                   
                 </td>
             </tr>
         {/foreach}

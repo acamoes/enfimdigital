@@ -2,17 +2,17 @@
     <ul style="float: left">
         <form>
             <input type="text" id="{$currentTab}search" name="{$currentTab}search" style="height: 2em; padding: 0 0; display: inline-block;" />
-            <a class="button small icon fa-search"
+            <a class="button small icon fa-search" title="pesquisar"
                style="box-shadow: 
                -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0); 
                cursor: pointer; padding: 0 0 0 5pt"
-               onclick="request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">
+               onclick="request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">
             </a>
         </form>
     </ul>
-    <ul class="actions" onclick="request('action={$action}&task=novo&tab={$currentTab}', 'form');"
+    <ul class="actions" onclick="request('action={$action}&task=novo&tab={$currentTab}&idCourses={$idCourses}', 'form');"
         style="float: right">
         <li class="button small"
             style="cursor: pointer; padding: 0 10pt 0 10pt">novo</li>
@@ -43,13 +43,10 @@
                         class="button big icon fa-mobile-phone"
                         style="cursor: help; padding: 0 0 0 5pt; box-shadow: none"
                         title="{$equipa['mobile']}"></a>{$equipa['mobile']}</td>
-                <td class="actions" align="right"><a
-                        class="button small icon fa-file"
-                        style="cursor: pointer; padding: 0 0 0 5pt"
-                        onclick="request('action={$action}&task=ver&tab={$currentTab}&idUsers={$equipa['idUsers']}', 'form');"></a>
-                    <a class="button small icon fa-edit"
+                <td class="actions" align="right">
+                    <a class="button small icon fa-edit" title="editar"
                        style="cursor: pointer; padding: 0 0 0 5pt"
-                       onclick="request('action={$action}&task=editar&tab={$currentTab}&idUsers={$equipa['idUsers']}', 'form');"></a>                    
+                       onclick="request('action={$action}&task=editar&tab={$currentTab}&idCourses={$idCourses}&idUsers={$equipa['idUsers']}', 'form');"></a>                    
                 </td>
             </tr>
         {/foreach}

@@ -15,14 +15,14 @@
                     {if $documents['type']=='Apresentação'}
                         {if $documents['document4']!=Null}
                             <a
-                                class="button small icon fa-file"
+                                class="button small icon fa-file" title="Apresentação"
                                 style="cursor: pointer; padding: 0 0 0 5pt"
                                 target="_BLANK" title="{$documents['document4']}" href="{$SCRIPT_NAME}?action=files&task=getArchive&id={$documents['idDocuments']}&filePos=1"></a>
                         {/if}
                     {elseif $documents['type']=='Texto'}
                         {if $documents['document3']!=Null}
                             <a
-                                class="button small icon fa-file"
+                                class="button small icon fa-file" title="Texto"
                                 style="cursor: pointer; padding: 0 0 0 5pt"
                                 target="_BLANK" title="{$documents['document3']}" href="{$SCRIPT_NAME}?action=files&task=getArchive&id={$documents['idDocuments']}&filePos=1"></a>
                         {/if}
@@ -35,7 +35,7 @@
                     {elseif $documents['type']=='Extra'}
                         {if $documents['document1']!=Null}
                             <a
-                                class="button small icon fa-file"
+                                class="button small icon fa-file" title="Extra"
                                 style="cursor: pointer; padding: 0 0 0 5pt"
                                 target="_BLANK" title="{$documents['document1']}" href="{$SCRIPT_NAME}?action=files&task=getArchive&id={$documents['idDocuments']}&filePos=1"></a>
                         {/if}

@@ -95,7 +95,7 @@ class Modulos {
     static function getModulosCurso($data) {
         $query     = "SELECT m.idModules,c.idCourse,c.sigla,c.name as curso,m.order,m.name as modulo,m.type,m.duration,m.status " .
                 "FROM course c INNER JOIN modules m ON c.idCourse=m.idCourse " .
-                "WHERE c.idCourse=" . $data['idCourse'];
+                "WHERE c.idCourse=" . $data['idCourse'] . " AND m.status<>'Inativo' ";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
