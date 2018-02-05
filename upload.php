@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/html; charset=UTF-8');
-define('PROD', true);
+define('PROD', false);
 // define our application directory
 define('ENFIM_DIR', "");
 // define smarty lib directory

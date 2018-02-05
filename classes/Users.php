@@ -9,7 +9,7 @@ class Users {
     public $permission;
     public $diretor;
     public $formador;
-    public $status = "Inactive";
+    public $status = "Inativo";
     public $lastLogin;
     public $birthDate;
     public $address;
@@ -24,6 +24,10 @@ class Users {
     public $myAgenda;
     public $myCourses;
     public $error;
+
+    function __construct() {
+
+    }
 
     function login($user, $pass): bool {
         $query = "SELECT * FROM users WHERE password=MD5('$pass') AND username='$user' AND status='Ativo'";
@@ -816,5 +820,42 @@ class Users {
             }
         }
         return $password;
+    }
+
+    function getEAEP($data) {
+        if ($_SESSION['users']->permission == 'Equipa Executiva' || $_SESSION['users']->permission == 'Serviços Centrais') {
+
+            $headers = array('Content-Type: application/json', sprintf('Authorization: Bearer %s', EAEP_KEY));
+            $url     = EAEP_GETURL . $data['aepId'];
+            $curl    = curl_init($url);
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $result  = curl_exec($curl);
+            $result  = json_decode($result);
+            if (property_exists($result, 'message')) {
+                return '{"success":"false", "message" : "' . $result->message . '"}';
+            }
+            curl_close($curl);
+            return $this->mappingEAEP($result);
+        }
+        else
+            return '{"success":"false", "message" : "Acesso negado."}';
+    }
+
+    function mappingEAEP($utilizador) {
+        $escoteiro               = (object) [];
+        $escoteiro->message      = "Dados sincronizados com sucesso (" . $utilizador->id_associativo . ")";
+        $escoteiro->username     = str_replace('@escoteiros.pt', '', $utilizador->email);
+        $escoteiro->aepId        = $utilizador->id_associativo;
+        $escoteiro->email        = $utilizador->email;
+        $escoteiro->name         = $utilizador->nome_completo;
+        $escoteiro->birthDate    = $utilizador->data_nascimento;
+        $escoteiro->mobile       = $utilizador->telemovel;
+        $escoteiro->telephone    = $utilizador->contacto_emergencia;
+        $escoteiro->address      = $utilizador->morada;
+        $escoteiro->zipCode      = $utilizador->codigo_postal . " " . $utilizador->localidade;
+        $escoteiro->observations = strip_tags($utilizador->notas);
+        $escoteiro->status       = ($utilizador->estado == 1 ? 'Ativo' : 'Inativo');
+        return json_encode($escoteiro);
     }
 }

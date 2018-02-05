@@ -42,7 +42,7 @@
                                 <label for="username">Username</label><input required
                                                                              type="text" name="username" id="username" style="width: 200px"
                                                                              value="{$utilizador['username']}"
-                                                                             {literal}pattern="[a-z0-9._%+-]{6,}$" />{/literal}
+                                                                             {literal}pattern="[a-z0-9._@%+-]{6,}$" />{/literal}
                             </div>
                             <div style="float: right">
                                 <label for="email">Email</label><input required type="text"
@@ -90,7 +90,15 @@
                                                                                 {literal}pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$" />{/literal}
                             </div>
                             <div style="float: right">
-                                <label for="aepId">NrAssoc</label><input required type="text"
+                                <label for="aepId">NrAssoc</label>
+                                <ul class="actions" onclick="
+                        if(isPositiveInteger(document.getElementById('aepId').value))
+                                            {ldelim}requestAPI('action={$action}&task=getEAEP&tab={$currentTab}&tab={$currentSubTab}&aepId='+document.getElementById('aepId').value, 'formMsg');}"
+                                    style="float: right">
+                                    <li class="button small"
+                                        style="cursor: pointer; padding: 0 10pt 0 10pt; line-height: 3em; height: 3em;background-color: darkgreen;">e-aep</li>
+                                </ul>
+                                <input required type="text"
                                                                          name="aepId" id="aepId" maxlength="6" style="width: 150px"
                                                                          value="{$utilizador['aepId']}"
                                                                          {literal}pattern="[0-9]{5,}$" />{/literal}

@@ -54,6 +54,37 @@
                 });
             }
 
+            function requestAPI(query = 'action=&', target = 'form')
+            {
+                $.ajax({
+                    url: '{$SCRIPT_NAME}',
+                    data: query,
+                    success: function (data) {
+                        obj = JSON.parse(data);
+                        if (typeof obj.success !== 'undefined') {
+                            $('#' + target).html("<div id='errorForThreeSecond'><h3 class='alert'>" + obj.message + "</h3></div>");
+                        } else {
+                            $('#username').val([obj.username]);
+                            $('#name').val(obj.name);
+                            $('#email').val(obj.email);                            
+                            $('#birthDate').val(obj.birthDate);
+                            $('#address').val(obj.address);
+                            $('#zipCode').val(obj.zipCode);
+                            $('#mobile').val(obj.mobile);
+                            $('#telephone').val(obj.telephone);
+                            $('#observations').val(obj.observations);
+                            $('[name="status"]').val([obj.status]);
+                            $('#' + target).html("<div id='errorForThreeSecond'><h3 class='success'>" + obj.message + "</h3></div>");
+                        }
+                        //$('#' + target).html(data);
+                    }
+                });
+            }
+
+            function isPositiveInteger(n) {
+                return 0 === n % (!isNaN(parseFloat(n)) && 0 <= ~~n);
+            }
+
             function showFiles(val)
             {
                 if (document.getElementById('idCourse').options[document.getElementById('idCourse').selectedIndex].value != "")

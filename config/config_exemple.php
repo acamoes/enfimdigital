@@ -13,6 +13,10 @@ if (PROD) { //Production
     define('BOT_KEY', ""); //google BOT KEY PROD
     define('MAIL_USERNAME', ""); //gmail accout
     define('MAIL_PASSWORD', ""); //gmail password
+    define('EAEP_GETURL', ""); //API endpoint
+    define('EAEP_CLIENT', ""); //API client
+    define('EAEP_SECRET', ""); //API secret key
+    define('EAEP_KEY', ""); //API Bearer authorization
 }
 else { //Development
     $_SERVER['HTTP_HOST'] = ''; //domain
@@ -23,9 +27,13 @@ else { //Development
     define('DB_USER', "");
     define('DB_PASS', "");
     define('DB_PORT', "");
-    define('BOT_KEY', ""); //google BOT KEY DEV
+    define('BOT_KEY', ""); //google BOT KEY PROD
     define('MAIL_USERNAME', ""); //gmail accout
     define('MAIL_PASSWORD', ""); //gmail password
+    define('EAEP_GETURL', ""); //API endpoint
+    define('EAEP_CLIENT', ""); //API client
+    define('EAEP_SECRET', ""); //API secret key
+    define('EAEP_KEY', ""); //API Bearer authorization
 }
 
 

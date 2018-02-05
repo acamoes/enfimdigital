@@ -283,6 +283,9 @@ class Enfim {
             case "form":
                 echo $_SESSION['equipaExecutiva']->{$data['func']}($data);
                 break;
+            case "getEAEP":
+                echo $_SESSION['equipaExecutiva']->getUtilizadoresEAEP($data);
+                break;
             default:
                 $this->clearAllAssign();
                 $this->home();

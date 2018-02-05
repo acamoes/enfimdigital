@@ -41,7 +41,7 @@
                                 <label for="username">Username</label><input readonly
                                                                              type="text" name="username" id="username" style="width: 200px"
                                                                              value="{$utilizador['username']}"
-                                                                             {literal}pattern="[a-z0-9._%+-]{6,}$" />{/literal}
+                                                                             {literal}pattern="[a-z0-9._@%+-]{6,}$" />{/literal}
                             </div>
                             <div style="float: right">
                                 <label for="email">Email</label><input required type="text"

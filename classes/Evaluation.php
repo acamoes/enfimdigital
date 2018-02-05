@@ -308,4 +308,8 @@ class Evaluation {
         }
         return $this->template;
     }
+
+    function evaluationReport($data) {
+        //TODO
+    }
 }

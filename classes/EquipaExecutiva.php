@@ -346,4 +346,9 @@ class EquipaExecutiva {
     function apagarFormacoesInformacoes($data) {
         return Formacoes::apagarFormacoesInformacoes($data);
     }
+
+    function getUtilizadoresEAEP($data) {
+        $eaep = new Users();
+        return $eaep->getEAEP($data);
+    }
 }
