@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Vault_ListHeldAccountsResponse extends Google_Collection
-{
-  protected $collection_key = 'accounts';
-  protected $accountsType = 'Google_Service_Vault_HeldAccount';
-  protected $accountsDataType = 'array';
+class Google_Service_Vault_ListHeldAccountsResponse extends Google_Collection {
+    protected $collection_key   = 'accounts';
+    protected $accountsType     = 'Google_Service_Vault_HeldAccount';
+    protected $accountsDataType = 'array';
 
-  /**
-   * @param Google_Service_Vault_HeldAccount
-   */
-  public function setAccounts($accounts)
-  {
-    $this->accounts = $accounts;
-  }
-  /**
-   * @return Google_Service_Vault_HeldAccount
-   */
-  public function getAccounts()
-  {
-    return $this->accounts;
-  }
+    /**
+     * @param Google_Service_Vault_HeldAccount
+     */
+    public function setAccounts($accounts) {
+        $this->accounts = $accounts;
+    }
+
+    /**
+     * @return Google_Service_Vault_HeldAccount
+     */
+    public function getAccounts() {
+        return $this->accounts;
+    }
 }

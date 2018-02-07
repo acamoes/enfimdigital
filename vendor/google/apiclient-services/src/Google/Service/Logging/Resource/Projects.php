@@ -23,6 +23,6 @@
  *   $projects = $loggingService->projects;
  *  </code>
  */
-class Google_Service_Logging_Resource_Projects extends Google_Service_Resource
-{
+class Google_Service_Logging_Resource_Projects extends Google_Service_Resource {
+
 }

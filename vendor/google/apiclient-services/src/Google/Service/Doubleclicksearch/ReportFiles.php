@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Doubleclicksearch_ReportFiles extends Google_Model
-{
-  public $byteCount;
-  public $url;
+class Google_Service_Doubleclicksearch_ReportFiles extends Google_Model {
+    public $byteCount;
+    public $url;
 
-  public function setByteCount($byteCount)
-  {
-    $this->byteCount = $byteCount;
-  }
-  public function getByteCount()
-  {
-    return $this->byteCount;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setByteCount($byteCount) {
+        $this->byteCount = $byteCount;
+    }
+
+    public function getByteCount() {
+        return $this->byteCount;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_CloudDebugger_ListDebuggeesResponse extends Google_Collection
-{
-  protected $collection_key = 'debuggees';
-  protected $debuggeesType = 'Google_Service_CloudDebugger_Debuggee';
-  protected $debuggeesDataType = 'array';
+class Google_Service_CloudDebugger_ListDebuggeesResponse extends Google_Collection {
+    protected $collection_key    = 'debuggees';
+    protected $debuggeesType     = 'Google_Service_CloudDebugger_Debuggee';
+    protected $debuggeesDataType = 'array';
 
-  /**
-   * @param Google_Service_CloudDebugger_Debuggee
-   */
-  public function setDebuggees($debuggees)
-  {
-    $this->debuggees = $debuggees;
-  }
-  /**
-   * @return Google_Service_CloudDebugger_Debuggee
-   */
-  public function getDebuggees()
-  {
-    return $this->debuggees;
-  }
+    /**
+     * @param Google_Service_CloudDebugger_Debuggee
+     */
+    public function setDebuggees($debuggees) {
+        $this->debuggees = $debuggees;
+    }
+
+    /**
+     * @return Google_Service_CloudDebugger_Debuggee
+     */
+    public function getDebuggees() {
+        return $this->debuggees;
+    }
 }

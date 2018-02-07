@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Directory_RoleRolePrivileges extends Google_Model
-{
-  public $privilegeName;
-  public $serviceId;
+class Google_Service_Directory_RoleRolePrivileges extends Google_Model {
+    public $privilegeName;
+    public $serviceId;
 
-  public function setPrivilegeName($privilegeName)
-  {
-    $this->privilegeName = $privilegeName;
-  }
-  public function getPrivilegeName()
-  {
-    return $this->privilegeName;
-  }
-  public function setServiceId($serviceId)
-  {
-    $this->serviceId = $serviceId;
-  }
-  public function getServiceId()
-  {
-    return $this->serviceId;
-  }
+    public function setPrivilegeName($privilegeName) {
+        $this->privilegeName = $privilegeName;
+    }
+
+    public function getPrivilegeName() {
+        return $this->privilegeName;
+    }
+
+    public function setServiceId($serviceId) {
+        $this->serviceId = $serviceId;
+    }
+
+    public function getServiceId() {
+        return $this->serviceId;
+    }
 }

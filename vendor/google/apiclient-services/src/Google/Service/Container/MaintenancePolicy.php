@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Container_MaintenancePolicy extends Google_Model
-{
-  protected $windowType = 'Google_Service_Container_MaintenanceWindow';
-  protected $windowDataType = '';
+class Google_Service_Container_MaintenancePolicy extends Google_Model {
+    protected $windowType     = 'Google_Service_Container_MaintenanceWindow';
+    protected $windowDataType = '';
 
-  /**
-   * @param Google_Service_Container_MaintenanceWindow
-   */
-  public function setWindow(Google_Service_Container_MaintenanceWindow $window)
-  {
-    $this->window = $window;
-  }
-  /**
-   * @return Google_Service_Container_MaintenanceWindow
-   */
-  public function getWindow()
-  {
-    return $this->window;
-  }
+    /**
+     * @param Google_Service_Container_MaintenanceWindow
+     */
+    public function setWindow(Google_Service_Container_MaintenanceWindow $window) {
+        $this->window = $window;
+    }
+
+    /**
+     * @return Google_Service_Container_MaintenanceWindow
+     */
+    public function getWindow() {
+        return $this->window;
+    }
 }

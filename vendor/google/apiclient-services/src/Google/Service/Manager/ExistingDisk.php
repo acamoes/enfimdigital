@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Manager_ExistingDisk extends Google_Model
-{
-  protected $attachmentType = 'Google_Service_Manager_DiskAttachment';
-  protected $attachmentDataType = '';
-  public $source;
+class Google_Service_Manager_ExistingDisk extends Google_Model {
+    protected $attachmentType     = 'Google_Service_Manager_DiskAttachment';
+    protected $attachmentDataType = '';
+    public $source;
 
-  public function setAttachment(Google_Service_Manager_DiskAttachment $attachment)
-  {
-    $this->attachment = $attachment;
-  }
-  public function getAttachment()
-  {
-    return $this->attachment;
-  }
-  public function setSource($source)
-  {
-    $this->source = $source;
-  }
-  public function getSource()
-  {
-    return $this->source;
-  }
+    public function setAttachment(Google_Service_Manager_DiskAttachment $attachment) {
+        $this->attachment = $attachment;
+    }
+
+    public function getAttachment() {
+        return $this->attachment;
+    }
+
+    public function setSource($source) {
+        $this->source = $source;
+    }
+
+    public function getSource() {
+        return $this->source;
+    }
 }

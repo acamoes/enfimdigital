@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Container_UpdateMasterRequest extends Google_Model
-{
-  public $masterVersion;
+class Google_Service_Container_UpdateMasterRequest extends Google_Model {
+    public $masterVersion;
 
-  public function setMasterVersion($masterVersion)
-  {
-    $this->masterVersion = $masterVersion;
-  }
-  public function getMasterVersion()
-  {
-    return $this->masterVersion;
-  }
+    public function setMasterVersion($masterVersion) {
+        $this->masterVersion = $masterVersion;
+    }
+
+    public function getMasterVersion() {
+        return $this->masterVersion;
+    }
 }

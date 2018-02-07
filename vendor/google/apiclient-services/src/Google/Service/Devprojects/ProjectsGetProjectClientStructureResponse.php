@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Devprojects_ProjectsGetProjectClientStructureResponse extends Google_Model
-{
-  public $kind;
-  protected $projectType = 'Google_Service_Devprojects_ProjectClientStructure';
-  protected $projectDataType = '';
+class Google_Service_Devprojects_ProjectsGetProjectClientStructureResponse extends Google_Model {
+    public $kind;
+    protected $projectType     = 'Google_Service_Devprojects_ProjectClientStructure';
+    protected $projectDataType = '';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setProject(Google_Service_Devprojects_ProjectClientStructure $project)
-  {
-    $this->project = $project;
-  }
-  public function getProject()
-  {
-    return $this->project;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setProject(Google_Service_Devprojects_ProjectClientStructure $project) {
+        $this->project = $project;
+    }
+
+    public function getProject() {
+        return $this->project;
+    }
 }

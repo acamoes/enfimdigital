@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Plus_PersonAgeRange extends Google_Model
-{
-  public $max;
-  public $min;
+class Google_Service_Plus_PersonAgeRange extends Google_Model {
+    public $max;
+    public $min;
 
-  public function setMax($max)
-  {
-    $this->max = $max;
-  }
-  public function getMax()
-  {
-    return $this->max;
-  }
-  public function setMin($min)
-  {
-    $this->min = $min;
-  }
-  public function getMin()
-  {
-    return $this->min;
-  }
+    public function setMax($max) {
+        $this->max = $max;
+    }
+
+    public function getMax() {
+        return $this->max;
+    }
+
+    public function setMin($min) {
+        $this->min = $min;
+    }
+
+    public function getMin() {
+        return $this->min;
+    }
 }

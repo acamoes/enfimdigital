@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_QPXExpress_TripsSearchRequest extends Google_Model
-{
-  protected $requestType = 'Google_Service_QPXExpress_TripOptionsRequest';
-  protected $requestDataType = '';
+class Google_Service_QPXExpress_TripsSearchRequest extends Google_Model {
+    protected $requestType     = 'Google_Service_QPXExpress_TripOptionsRequest';
+    protected $requestDataType = '';
 
-  /**
-   * @param Google_Service_QPXExpress_TripOptionsRequest
-   */
-  public function setRequest(Google_Service_QPXExpress_TripOptionsRequest $request)
-  {
-    $this->request = $request;
-  }
-  /**
-   * @return Google_Service_QPXExpress_TripOptionsRequest
-   */
-  public function getRequest()
-  {
-    return $this->request;
-  }
+    /**
+     * @param Google_Service_QPXExpress_TripOptionsRequest
+     */
+    public function setRequest(Google_Service_QPXExpress_TripOptionsRequest $request) {
+        $this->request = $request;
+    }
+
+    /**
+     * @return Google_Service_QPXExpress_TripOptionsRequest
+     */
+    public function getRequest() {
+        return $this->request;
+    }
 }

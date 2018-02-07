@@ -15,6 +15,6 @@
  * the License.
  */
 
-class Google_Service_Appengine_AppengineEmpty extends Google_Model
-{
+class Google_Service_Appengine_AppengineEmpty extends Google_Model {
+
 }

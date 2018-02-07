@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_AndroidManagement_PowerManagementEvent extends Google_Model
-{
-  public $batteryLevel;
-  public $createTime;
-  public $eventType;
+class Google_Service_AndroidManagement_PowerManagementEvent extends Google_Model {
+    public $batteryLevel;
+    public $createTime;
+    public $eventType;
 
-  public function setBatteryLevel($batteryLevel)
-  {
-    $this->batteryLevel = $batteryLevel;
-  }
-  public function getBatteryLevel()
-  {
-    return $this->batteryLevel;
-  }
-  public function setCreateTime($createTime)
-  {
-    $this->createTime = $createTime;
-  }
-  public function getCreateTime()
-  {
-    return $this->createTime;
-  }
-  public function setEventType($eventType)
-  {
-    $this->eventType = $eventType;
-  }
-  public function getEventType()
-  {
-    return $this->eventType;
-  }
+    public function setBatteryLevel($batteryLevel) {
+        $this->batteryLevel = $batteryLevel;
+    }
+
+    public function getBatteryLevel() {
+        return $this->batteryLevel;
+    }
+
+    public function setCreateTime($createTime) {
+        $this->createTime = $createTime;
+    }
+
+    public function getCreateTime() {
+        return $this->createTime;
+    }
+
+    public function setEventType($eventType) {
+        $this->eventType = $eventType;
+    }
+
+    public function getEventType() {
+        return $this->eventType;
+    }
 }

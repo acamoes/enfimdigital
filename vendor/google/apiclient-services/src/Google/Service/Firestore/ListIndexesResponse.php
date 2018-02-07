@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Firestore_ListIndexesResponse extends Google_Collection
-{
-  protected $collection_key = 'indexes';
-  protected $indexesType = 'Google_Service_Firestore_Index';
-  protected $indexesDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Firestore_ListIndexesResponse extends Google_Collection {
+    protected $collection_key  = 'indexes';
+    protected $indexesType     = 'Google_Service_Firestore_Index';
+    protected $indexesDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Firestore_Index
-   */
-  public function setIndexes($indexes)
-  {
-    $this->indexes = $indexes;
-  }
-  /**
-   * @return Google_Service_Firestore_Index
-   */
-  public function getIndexes()
-  {
-    return $this->indexes;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Firestore_Index
+     */
+    public function setIndexes($indexes) {
+        $this->indexes = $indexes;
+    }
+
+    /**
+     * @return Google_Service_Firestore_Index
+     */
+    public function getIndexes() {
+        return $this->indexes;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

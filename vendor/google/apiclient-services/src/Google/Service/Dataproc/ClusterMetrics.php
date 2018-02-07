@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataproc_ClusterMetrics extends Google_Model
-{
-  public $hdfsMetrics;
-  public $yarnMetrics;
+class Google_Service_Dataproc_ClusterMetrics extends Google_Model {
+    public $hdfsMetrics;
+    public $yarnMetrics;
 
-  public function setHdfsMetrics($hdfsMetrics)
-  {
-    $this->hdfsMetrics = $hdfsMetrics;
-  }
-  public function getHdfsMetrics()
-  {
-    return $this->hdfsMetrics;
-  }
-  public function setYarnMetrics($yarnMetrics)
-  {
-    $this->yarnMetrics = $yarnMetrics;
-  }
-  public function getYarnMetrics()
-  {
-    return $this->yarnMetrics;
-  }
+    public function setHdfsMetrics($hdfsMetrics) {
+        $this->hdfsMetrics = $hdfsMetrics;
+    }
+
+    public function getHdfsMetrics() {
+        return $this->hdfsMetrics;
+    }
+
+    public function setYarnMetrics($yarnMetrics) {
+        $this->yarnMetrics = $yarnMetrics;
+    }
+
+    public function getYarnMetrics() {
+        return $this->yarnMetrics;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataproc_JobPlacement extends Google_Model
-{
-  public $clusterName;
-  public $clusterUuid;
+class Google_Service_Dataproc_JobPlacement extends Google_Model {
+    public $clusterName;
+    public $clusterUuid;
 
-  public function setClusterName($clusterName)
-  {
-    $this->clusterName = $clusterName;
-  }
-  public function getClusterName()
-  {
-    return $this->clusterName;
-  }
-  public function setClusterUuid($clusterUuid)
-  {
-    $this->clusterUuid = $clusterUuid;
-  }
-  public function getClusterUuid()
-  {
-    return $this->clusterUuid;
-  }
+    public function setClusterName($clusterName) {
+        $this->clusterName = $clusterName;
+    }
+
+    public function getClusterName() {
+        return $this->clusterName;
+    }
+
+    public function setClusterUuid($clusterUuid) {
+        $this->clusterUuid = $clusterUuid;
+    }
+
+    public function getClusterUuid() {
+        return $this->clusterUuid;
+    }
 }

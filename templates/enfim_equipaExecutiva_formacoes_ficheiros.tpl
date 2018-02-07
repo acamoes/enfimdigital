@@ -124,7 +124,8 @@
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
                                    $.when(request('action={$action}&task=apagar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idDocuments={$ficheiros['idDocuments']}', '{$action}Msg')).
-                                           then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value, 'SST{$currentTab}{$currentSubTab}'));}"> </a>
+                                           then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value, 'SST{$currentTab}{$currentSubTab}'));
+                               }"> </a>
                     <a class="button small icon fa-check-circle-o"
                        style="cursor: pointer; padding: 0 0 0 5pt"
                        onclick="if (confirm('Tem a certeza que pretende aprovar')) {ldelim}

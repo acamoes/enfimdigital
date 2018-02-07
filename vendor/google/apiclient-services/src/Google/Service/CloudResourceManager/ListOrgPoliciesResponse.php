@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_ListOrgPoliciesResponse extends Google_Collection
-{
-  protected $collection_key = 'policies';
-  public $nextPageToken;
-  protected $policiesType = 'Google_Service_CloudResourceManager_OrgPolicy';
-  protected $policiesDataType = 'array';
+class Google_Service_CloudResourceManager_ListOrgPoliciesResponse extends Google_Collection {
+    protected $collection_key   = 'policies';
+    public $nextPageToken;
+    protected $policiesType     = 'Google_Service_CloudResourceManager_OrgPolicy';
+    protected $policiesDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_CloudResourceManager_OrgPolicy
-   */
-  public function setPolicies($policies)
-  {
-    $this->policies = $policies;
-  }
-  /**
-   * @return Google_Service_CloudResourceManager_OrgPolicy
-   */
-  public function getPolicies()
-  {
-    return $this->policies;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_CloudResourceManager_OrgPolicy
+     */
+    public function setPolicies($policies) {
+        $this->policies = $policies;
+    }
+
+    /**
+     * @return Google_Service_CloudResourceManager_OrgPolicy
+     */
+    public function getPolicies() {
+        return $this->policies;
+    }
 }

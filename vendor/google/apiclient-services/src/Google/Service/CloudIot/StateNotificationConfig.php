@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudIot_StateNotificationConfig extends Google_Model
-{
-  public $pubsubTopicName;
+class Google_Service_CloudIot_StateNotificationConfig extends Google_Model {
+    public $pubsubTopicName;
 
-  public function setPubsubTopicName($pubsubTopicName)
-  {
-    $this->pubsubTopicName = $pubsubTopicName;
-  }
-  public function getPubsubTopicName()
-  {
-    return $this->pubsubTopicName;
-  }
+    public function setPubsubTopicName($pubsubTopicName) {
+        $this->pubsubTopicName = $pubsubTopicName;
+    }
+
+    public function getPubsubTopicName() {
+        return $this->pubsubTopicName;
+    }
 }

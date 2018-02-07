@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_TagManager_ZoneChildContainer extends Google_Model
-{
-  public $nickname;
-  public $publicId;
+class Google_Service_TagManager_ZoneChildContainer extends Google_Model {
+    public $nickname;
+    public $publicId;
 
-  public function setNickname($nickname)
-  {
-    $this->nickname = $nickname;
-  }
-  public function getNickname()
-  {
-    return $this->nickname;
-  }
-  public function setPublicId($publicId)
-  {
-    $this->publicId = $publicId;
-  }
-  public function getPublicId()
-  {
-    return $this->publicId;
-  }
+    public function setNickname($nickname) {
+        $this->nickname = $nickname;
+    }
+
+    public function getNickname() {
+        return $this->nickname;
+    }
+
+    public function setPublicId($publicId) {
+        $this->publicId = $publicId;
+    }
+
+    public function getPublicId() {
+        return $this->publicId;
+    }
 }

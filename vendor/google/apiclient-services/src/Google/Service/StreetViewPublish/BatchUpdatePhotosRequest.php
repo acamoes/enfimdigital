@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_StreetViewPublish_BatchUpdatePhotosRequest extends Google_Collection
-{
-  protected $collection_key = 'updatePhotoRequests';
-  protected $updatePhotoRequestsType = 'Google_Service_StreetViewPublish_UpdatePhotoRequest';
-  protected $updatePhotoRequestsDataType = 'array';
+class Google_Service_StreetViewPublish_BatchUpdatePhotosRequest extends Google_Collection {
+    protected $collection_key              = 'updatePhotoRequests';
+    protected $updatePhotoRequestsType     = 'Google_Service_StreetViewPublish_UpdatePhotoRequest';
+    protected $updatePhotoRequestsDataType = 'array';
 
-  /**
-   * @param Google_Service_StreetViewPublish_UpdatePhotoRequest
-   */
-  public function setUpdatePhotoRequests($updatePhotoRequests)
-  {
-    $this->updatePhotoRequests = $updatePhotoRequests;
-  }
-  /**
-   * @return Google_Service_StreetViewPublish_UpdatePhotoRequest
-   */
-  public function getUpdatePhotoRequests()
-  {
-    return $this->updatePhotoRequests;
-  }
+    /**
+     * @param Google_Service_StreetViewPublish_UpdatePhotoRequest
+     */
+    public function setUpdatePhotoRequests($updatePhotoRequests) {
+        $this->updatePhotoRequests = $updatePhotoRequests;
+    }
+
+    /**
+     * @return Google_Service_StreetViewPublish_UpdatePhotoRequest
+     */
+    public function getUpdatePhotoRequests() {
+        return $this->updatePhotoRequests;
+    }
 }

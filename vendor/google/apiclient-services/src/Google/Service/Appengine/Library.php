@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Appengine_Library extends Google_Model
-{
-  public $name;
-  public $version;
+class Google_Service_Appengine_Library extends Google_Model {
+    public $name;
+    public $version;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setVersion($version)
-  {
-    $this->version = $version;
-  }
-  public function getVersion()
-  {
-    return $this->version;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setVersion($version) {
+        $this->version = $version;
+    }
+
+    public function getVersion() {
+        return $this->version;
+    }
 }

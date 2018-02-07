@@ -23,22 +23,21 @@
  *   $customers = $androiddeviceprovisioningService->customers;
  *  </code>
  */
-class Google_Service_AndroidProvisioningPartner_Resource_Customers extends Google_Service_Resource
-{
-  /**
-   * List the user's customer accounts. (customers.listCustomers)
-   *
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param int pageSize The maximum number of items to return.
-   * @opt_param string pageToken The next_page_token value returned from a
-   * previous List request, if any.
-   * @return Google_Service_AndroidProvisioningPartner_CustomerListCustomersResponse
-   */
-  public function listCustomers($optParams = array())
-  {
-    $params = array();
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_AndroidProvisioningPartner_CustomerListCustomersResponse");
-  }
+class Google_Service_AndroidProvisioningPartner_Resource_Customers extends Google_Service_Resource {
+
+    /**
+     * List the user's customer accounts. (customers.listCustomers)
+     *
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param int pageSize The maximum number of items to return.
+     * @opt_param string pageToken The next_page_token value returned from a
+     * previous List request, if any.
+     * @return Google_Service_AndroidProvisioningPartner_CustomerListCustomersResponse
+     */
+    public function listCustomers($optParams = array()) {
+        $params = array();
+        $params = array_merge($params, $optParams);
+        return $this->call('list', array($params), "Google_Service_AndroidProvisioningPartner_CustomerListCustomersResponse");
+    }
 }

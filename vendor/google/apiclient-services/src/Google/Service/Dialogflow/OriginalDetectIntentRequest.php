@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_OriginalDetectIntentRequest extends Google_Model
-{
-  public $payload;
-  public $source;
+class Google_Service_Dialogflow_OriginalDetectIntentRequest extends Google_Model {
+    public $payload;
+    public $source;
 
-  public function setPayload($payload)
-  {
-    $this->payload = $payload;
-  }
-  public function getPayload()
-  {
-    return $this->payload;
-  }
-  public function setSource($source)
-  {
-    $this->source = $source;
-  }
-  public function getSource()
-  {
-    return $this->source;
-  }
+    public function setPayload($payload) {
+        $this->payload = $payload;
+    }
+
+    public function getPayload() {
+        return $this->payload;
+    }
+
+    public function setSource($source) {
+        $this->source = $source;
+    }
+
+    public function getSource() {
+        return $this->source;
+    }
 }

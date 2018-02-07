@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidManagement_ExternalData extends Google_Model
-{
-  public $sha256Hash;
-  public $url;
+class Google_Service_AndroidManagement_ExternalData extends Google_Model {
+    public $sha256Hash;
+    public $url;
 
-  public function setSha256Hash($sha256Hash)
-  {
-    $this->sha256Hash = $sha256Hash;
-  }
-  public function getSha256Hash()
-  {
-    return $this->sha256Hash;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setSha256Hash($sha256Hash) {
+        $this->sha256Hash = $sha256Hash;
+    }
+
+    public function getSha256Hash() {
+        return $this->sha256Hash;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

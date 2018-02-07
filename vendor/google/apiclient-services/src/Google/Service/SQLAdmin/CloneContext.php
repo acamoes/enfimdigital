@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_CloneContext extends Google_Model
-{
-  protected $binLogCoordinatesType = 'Google_Service_SQLAdmin_BinLogCoordinates';
-  protected $binLogCoordinatesDataType = '';
-  public $destinationInstanceName;
-  public $kind;
+class Google_Service_SQLAdmin_CloneContext extends Google_Model {
+    protected $binLogCoordinatesType     = 'Google_Service_SQLAdmin_BinLogCoordinates';
+    protected $binLogCoordinatesDataType = '';
+    public $destinationInstanceName;
+    public $kind;
 
-  /**
-   * @param Google_Service_SQLAdmin_BinLogCoordinates
-   */
-  public function setBinLogCoordinates(Google_Service_SQLAdmin_BinLogCoordinates $binLogCoordinates)
-  {
-    $this->binLogCoordinates = $binLogCoordinates;
-  }
-  /**
-   * @return Google_Service_SQLAdmin_BinLogCoordinates
-   */
-  public function getBinLogCoordinates()
-  {
-    return $this->binLogCoordinates;
-  }
-  public function setDestinationInstanceName($destinationInstanceName)
-  {
-    $this->destinationInstanceName = $destinationInstanceName;
-  }
-  public function getDestinationInstanceName()
-  {
-    return $this->destinationInstanceName;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_SQLAdmin_BinLogCoordinates
+     */
+    public function setBinLogCoordinates(Google_Service_SQLAdmin_BinLogCoordinates $binLogCoordinates) {
+        $this->binLogCoordinates = $binLogCoordinates;
+    }
+
+    /**
+     * @return Google_Service_SQLAdmin_BinLogCoordinates
+     */
+    public function getBinLogCoordinates() {
+        return $this->binLogCoordinates;
+    }
+
+    public function setDestinationInstanceName($destinationInstanceName) {
+        $this->destinationInstanceName = $destinationInstanceName;
+    }
+
+    public function getDestinationInstanceName() {
+        return $this->destinationInstanceName;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

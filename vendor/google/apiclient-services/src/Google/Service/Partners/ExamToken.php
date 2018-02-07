@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Partners_ExamToken extends Google_Model
-{
-  public $examId;
-  public $examType;
-  public $token;
+class Google_Service_Partners_ExamToken extends Google_Model {
+    public $examId;
+    public $examType;
+    public $token;
 
-  public function setExamId($examId)
-  {
-    $this->examId = $examId;
-  }
-  public function getExamId()
-  {
-    return $this->examId;
-  }
-  public function setExamType($examType)
-  {
-    $this->examType = $examType;
-  }
-  public function getExamType()
-  {
-    return $this->examType;
-  }
-  public function setToken($token)
-  {
-    $this->token = $token;
-  }
-  public function getToken()
-  {
-    return $this->token;
-  }
+    public function setExamId($examId) {
+        $this->examId = $examId;
+    }
+
+    public function getExamId() {
+        return $this->examId;
+    }
+
+    public function setExamType($examType) {
+        $this->examType = $examType;
+    }
+
+    public function getExamType() {
+        return $this->examType;
+    }
+
+    public function setToken($token) {
+        $this->token = $token;
+    }
+
+    public function getToken() {
+        return $this->token;
+    }
 }

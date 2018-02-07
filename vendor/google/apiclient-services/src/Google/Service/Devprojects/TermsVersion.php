@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Devprojects_TermsVersion extends Google_Model
-{
-  public $id;
-  public $kind;
-  public $version;
+class Google_Service_Devprojects_TermsVersion extends Google_Model {
+    public $id;
+    public $kind;
+    public $version;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setVersion($version)
-  {
-    $this->version = $version;
-  }
-  public function getVersion()
-  {
-    return $this->version;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setVersion($version) {
+        $this->version = $version;
+    }
+
+    public function getVersion() {
+        return $this->version;
+    }
 }

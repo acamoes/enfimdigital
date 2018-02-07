@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_TagManager_CreateBuiltInVariableResponse extends Google_Collection
-{
-  protected $collection_key = 'builtInVariable';
-  protected $builtInVariableType = 'Google_Service_TagManager_BuiltInVariable';
-  protected $builtInVariableDataType = 'array';
+class Google_Service_TagManager_CreateBuiltInVariableResponse extends Google_Collection {
+    protected $collection_key          = 'builtInVariable';
+    protected $builtInVariableType     = 'Google_Service_TagManager_BuiltInVariable';
+    protected $builtInVariableDataType = 'array';
 
-  /**
-   * @param Google_Service_TagManager_BuiltInVariable
-   */
-  public function setBuiltInVariable($builtInVariable)
-  {
-    $this->builtInVariable = $builtInVariable;
-  }
-  /**
-   * @return Google_Service_TagManager_BuiltInVariable
-   */
-  public function getBuiltInVariable()
-  {
-    return $this->builtInVariable;
-  }
+    /**
+     * @param Google_Service_TagManager_BuiltInVariable
+     */
+    public function setBuiltInVariable($builtInVariable) {
+        $this->builtInVariable = $builtInVariable;
+    }
+
+    /**
+     * @return Google_Service_TagManager_BuiltInVariable
+     */
+    public function getBuiltInVariable() {
+        return $this->builtInVariable;
+    }
 }

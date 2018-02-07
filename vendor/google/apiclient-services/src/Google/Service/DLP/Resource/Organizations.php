@@ -23,6 +23,6 @@
  *   $organizations = $dlpService->organizations;
  *  </code>
  */
-class Google_Service_DLP_Resource_Organizations extends Google_Service_Resource
-{
+class Google_Service_DLP_Resource_Organizations extends Google_Service_Resource {
+
 }

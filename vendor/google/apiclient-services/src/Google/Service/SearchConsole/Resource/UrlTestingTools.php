@@ -23,6 +23,6 @@
  *   $urlTestingTools = $searchconsoleService->urlTestingTools;
  *  </code>
  */
-class Google_Service_SearchConsole_Resource_UrlTestingTools extends Google_Service_Resource
-{
+class Google_Service_SearchConsole_Resource_UrlTestingTools extends Google_Service_Resource {
+
 }

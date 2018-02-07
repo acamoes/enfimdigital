@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_GetPublisherProfilesByAccountIdResponse extends Google_Collection
-{
-  protected $collection_key = 'profiles';
-  protected $profilesType = 'Google_Service_AdExchangeBuyer_PublisherProfileApiProto';
-  protected $profilesDataType = 'array';
+class Google_Service_AdExchangeBuyer_GetPublisherProfilesByAccountIdResponse extends Google_Collection {
+    protected $collection_key   = 'profiles';
+    protected $profilesType     = 'Google_Service_AdExchangeBuyer_PublisherProfileApiProto';
+    protected $profilesDataType = 'array';
 
-  /**
-   * @param Google_Service_AdExchangeBuyer_PublisherProfileApiProto
-   */
-  public function setProfiles($profiles)
-  {
-    $this->profiles = $profiles;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyer_PublisherProfileApiProto
-   */
-  public function getProfiles()
-  {
-    return $this->profiles;
-  }
+    /**
+     * @param Google_Service_AdExchangeBuyer_PublisherProfileApiProto
+     */
+    public function setProfiles($profiles) {
+        $this->profiles = $profiles;
+    }
+
+    /**
+     * @return Google_Service_AdExchangeBuyer_PublisherProfileApiProto
+     */
+    public function getProfiles() {
+        return $this->profiles;
+    }
 }

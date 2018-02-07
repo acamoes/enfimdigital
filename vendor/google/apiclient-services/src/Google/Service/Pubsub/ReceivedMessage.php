@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Pubsub_ReceivedMessage extends Google_Model
-{
-  public $ackId;
-  protected $messageType = 'Google_Service_Pubsub_PubsubMessage';
-  protected $messageDataType = '';
+class Google_Service_Pubsub_ReceivedMessage extends Google_Model {
+    public $ackId;
+    protected $messageType     = 'Google_Service_Pubsub_PubsubMessage';
+    protected $messageDataType = '';
 
-  public function setAckId($ackId)
-  {
-    $this->ackId = $ackId;
-  }
-  public function getAckId()
-  {
-    return $this->ackId;
-  }
-  /**
-   * @param Google_Service_Pubsub_PubsubMessage
-   */
-  public function setMessage(Google_Service_Pubsub_PubsubMessage $message)
-  {
-    $this->message = $message;
-  }
-  /**
-   * @return Google_Service_Pubsub_PubsubMessage
-   */
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    public function setAckId($ackId) {
+        $this->ackId = $ackId;
+    }
+
+    public function getAckId() {
+        return $this->ackId;
+    }
+
+    /**
+     * @param Google_Service_Pubsub_PubsubMessage
+     */
+    public function setMessage(Google_Service_Pubsub_PubsubMessage $message) {
+        $this->message = $message;
+    }
+
+    /**
+     * @return Google_Service_Pubsub_PubsubMessage
+     */
+    public function getMessage() {
+        return $this->message;
+    }
 }

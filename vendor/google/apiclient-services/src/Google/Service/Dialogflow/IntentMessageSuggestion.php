@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageSuggestion extends Google_Model
-{
-  public $title;
+class Google_Service_Dialogflow_IntentMessageSuggestion extends Google_Model {
+    public $title;
 
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  public function getTitle()
-  {
-    return $this->title;
-  }
+    public function setTitle($title) {
+        $this->title = $title;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
 }

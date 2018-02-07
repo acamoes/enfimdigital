@@ -15,62 +15,60 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchAnnotationSetsRequest extends Google_Collection
-{
-  protected $collection_key = 'types';
-  public $datasetIds;
-  public $name;
-  public $pageSize;
-  public $pageToken;
-  public $referenceSetId;
-  public $types;
+class Google_Service_Genomics_SearchAnnotationSetsRequest extends Google_Collection {
+    protected $collection_key = 'types';
+    public $datasetIds;
+    public $name;
+    public $pageSize;
+    public $pageToken;
+    public $referenceSetId;
+    public $types;
 
-  public function setDatasetIds($datasetIds)
-  {
-    $this->datasetIds = $datasetIds;
-  }
-  public function getDatasetIds()
-  {
-    return $this->datasetIds;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setPageSize($pageSize)
-  {
-    $this->pageSize = $pageSize;
-  }
-  public function getPageSize()
-  {
-    return $this->pageSize;
-  }
-  public function setPageToken($pageToken)
-  {
-    $this->pageToken = $pageToken;
-  }
-  public function getPageToken()
-  {
-    return $this->pageToken;
-  }
-  public function setReferenceSetId($referenceSetId)
-  {
-    $this->referenceSetId = $referenceSetId;
-  }
-  public function getReferenceSetId()
-  {
-    return $this->referenceSetId;
-  }
-  public function setTypes($types)
-  {
-    $this->types = $types;
-  }
-  public function getTypes()
-  {
-    return $this->types;
-  }
+    public function setDatasetIds($datasetIds) {
+        $this->datasetIds = $datasetIds;
+    }
+
+    public function getDatasetIds() {
+        return $this->datasetIds;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setPageSize($pageSize) {
+        $this->pageSize = $pageSize;
+    }
+
+    public function getPageSize() {
+        return $this->pageSize;
+    }
+
+    public function setPageToken($pageToken) {
+        $this->pageToken = $pageToken;
+    }
+
+    public function getPageToken() {
+        return $this->pageToken;
+    }
+
+    public function setReferenceSetId($referenceSetId) {
+        $this->referenceSetId = $referenceSetId;
+    }
+
+    public function getReferenceSetId() {
+        return $this->referenceSetId;
+    }
+
+    public function setTypes($types) {
+        $this->types = $types;
+    }
+
+    public function getTypes() {
+        return $this->types;
+    }
 }

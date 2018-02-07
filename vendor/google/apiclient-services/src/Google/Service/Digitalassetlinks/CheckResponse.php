@@ -15,44 +15,42 @@
  * the License.
  */
 
-class Google_Service_Digitalassetlinks_CheckResponse extends Google_Collection
-{
-  protected $collection_key = 'errorCode';
-  public $debugString;
-  public $errorCode;
-  public $linked;
-  public $maxAge;
+class Google_Service_Digitalassetlinks_CheckResponse extends Google_Collection {
+    protected $collection_key = 'errorCode';
+    public $debugString;
+    public $errorCode;
+    public $linked;
+    public $maxAge;
 
-  public function setDebugString($debugString)
-  {
-    $this->debugString = $debugString;
-  }
-  public function getDebugString()
-  {
-    return $this->debugString;
-  }
-  public function setErrorCode($errorCode)
-  {
-    $this->errorCode = $errorCode;
-  }
-  public function getErrorCode()
-  {
-    return $this->errorCode;
-  }
-  public function setLinked($linked)
-  {
-    $this->linked = $linked;
-  }
-  public function getLinked()
-  {
-    return $this->linked;
-  }
-  public function setMaxAge($maxAge)
-  {
-    $this->maxAge = $maxAge;
-  }
-  public function getMaxAge()
-  {
-    return $this->maxAge;
-  }
+    public function setDebugString($debugString) {
+        $this->debugString = $debugString;
+    }
+
+    public function getDebugString() {
+        return $this->debugString;
+    }
+
+    public function setErrorCode($errorCode) {
+        $this->errorCode = $errorCode;
+    }
+
+    public function getErrorCode() {
+        return $this->errorCode;
+    }
+
+    public function setLinked($linked) {
+        $this->linked = $linked;
+    }
+
+    public function getLinked() {
+        return $this->linked;
+    }
+
+    public function setMaxAge($maxAge) {
+        $this->maxAge = $maxAge;
+    }
+
+    public function getMaxAge() {
+        return $this->maxAge;
+    }
 }

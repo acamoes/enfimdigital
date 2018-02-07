@@ -15,57 +15,55 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageCarouselSelectItem extends Google_Model
-{
-  public $description;
-  protected $imageType = 'Google_Service_Dialogflow_IntentMessageImage';
-  protected $imageDataType = '';
-  protected $infoType = 'Google_Service_Dialogflow_IntentMessageSelectItemInfo';
-  protected $infoDataType = '';
-  public $title;
+class Google_Service_Dialogflow_IntentMessageCarouselSelectItem extends Google_Model {
+    public $description;
+    protected $imageType     = 'Google_Service_Dialogflow_IntentMessageImage';
+    protected $imageDataType = '';
+    protected $infoType      = 'Google_Service_Dialogflow_IntentMessageSelectItemInfo';
+    protected $infoDataType  = '';
+    public $title;
 
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  /**
-   * @param Google_Service_Dialogflow_IntentMessageImage
-   */
-  public function setImage(Google_Service_Dialogflow_IntentMessageImage $image)
-  {
-    $this->image = $image;
-  }
-  /**
-   * @return Google_Service_Dialogflow_IntentMessageImage
-   */
-  public function getImage()
-  {
-    return $this->image;
-  }
-  /**
-   * @param Google_Service_Dialogflow_IntentMessageSelectItemInfo
-   */
-  public function setInfo(Google_Service_Dialogflow_IntentMessageSelectItemInfo $info)
-  {
-    $this->info = $info;
-  }
-  /**
-   * @return Google_Service_Dialogflow_IntentMessageSelectItemInfo
-   */
-  public function getInfo()
-  {
-    return $this->info;
-  }
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  public function getTitle()
-  {
-    return $this->title;
-  }
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_IntentMessageImage
+     */
+    public function setImage(Google_Service_Dialogflow_IntentMessageImage $image) {
+        $this->image = $image;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_IntentMessageImage
+     */
+    public function getImage() {
+        return $this->image;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_IntentMessageSelectItemInfo
+     */
+    public function setInfo(Google_Service_Dialogflow_IntentMessageSelectItemInfo $info) {
+        $this->info = $info;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_IntentMessageSelectItemInfo
+     */
+    public function getInfo() {
+        return $this->info;
+    }
+
+    public function setTitle($title) {
+        $this->title = $title;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
 }

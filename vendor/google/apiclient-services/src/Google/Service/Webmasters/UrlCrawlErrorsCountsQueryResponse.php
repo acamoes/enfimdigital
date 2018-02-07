@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Webmasters_UrlCrawlErrorsCountsQueryResponse extends Google_Collection
-{
-  protected $collection_key = 'countPerTypes';
-  protected $countPerTypesType = 'Google_Service_Webmasters_UrlCrawlErrorCountsPerType';
-  protected $countPerTypesDataType = 'array';
+class Google_Service_Webmasters_UrlCrawlErrorsCountsQueryResponse extends Google_Collection {
+    protected $collection_key        = 'countPerTypes';
+    protected $countPerTypesType     = 'Google_Service_Webmasters_UrlCrawlErrorCountsPerType';
+    protected $countPerTypesDataType = 'array';
 
-  /**
-   * @param Google_Service_Webmasters_UrlCrawlErrorCountsPerType
-   */
-  public function setCountPerTypes($countPerTypes)
-  {
-    $this->countPerTypes = $countPerTypes;
-  }
-  /**
-   * @return Google_Service_Webmasters_UrlCrawlErrorCountsPerType
-   */
-  public function getCountPerTypes()
-  {
-    return $this->countPerTypes;
-  }
+    /**
+     * @param Google_Service_Webmasters_UrlCrawlErrorCountsPerType
+     */
+    public function setCountPerTypes($countPerTypes) {
+        $this->countPerTypes = $countPerTypes;
+    }
+
+    /**
+     * @return Google_Service_Webmasters_UrlCrawlErrorCountsPerType
+     */
+    public function getCountPerTypes() {
+        return $this->countPerTypes;
+    }
 }

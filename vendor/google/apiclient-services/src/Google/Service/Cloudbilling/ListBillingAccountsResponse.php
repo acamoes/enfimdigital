@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Cloudbilling_ListBillingAccountsResponse extends Google_Collection
-{
-  protected $collection_key = 'billingAccounts';
-  protected $billingAccountsType = 'Google_Service_Cloudbilling_BillingAccount';
-  protected $billingAccountsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Cloudbilling_ListBillingAccountsResponse extends Google_Collection {
+    protected $collection_key          = 'billingAccounts';
+    protected $billingAccountsType     = 'Google_Service_Cloudbilling_BillingAccount';
+    protected $billingAccountsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Cloudbilling_BillingAccount
-   */
-  public function setBillingAccounts($billingAccounts)
-  {
-    $this->billingAccounts = $billingAccounts;
-  }
-  /**
-   * @return Google_Service_Cloudbilling_BillingAccount
-   */
-  public function getBillingAccounts()
-  {
-    return $this->billingAccounts;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Cloudbilling_BillingAccount
+     */
+    public function setBillingAccounts($billingAccounts) {
+        $this->billingAccounts = $billingAccounts;
+    }
+
+    /**
+     * @return Google_Service_Cloudbilling_BillingAccount
+     */
+    public function getBillingAccounts() {
+        return $this->billingAccounts;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

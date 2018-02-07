@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_ManufacturerCenter_Issue extends Google_Model
-{
-  public $attribute;
-  public $description;
-  public $severity;
-  public $timestamp;
-  public $type;
+class Google_Service_ManufacturerCenter_Issue extends Google_Model {
+    public $attribute;
+    public $description;
+    public $severity;
+    public $timestamp;
+    public $type;
 
-  public function setAttribute($attribute)
-  {
-    $this->attribute = $attribute;
-  }
-  public function getAttribute()
-  {
-    return $this->attribute;
-  }
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setSeverity($severity)
-  {
-    $this->severity = $severity;
-  }
-  public function getSeverity()
-  {
-    return $this->severity;
-  }
-  public function setTimestamp($timestamp)
-  {
-    $this->timestamp = $timestamp;
-  }
-  public function getTimestamp()
-  {
-    return $this->timestamp;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setAttribute($attribute) {
+        $this->attribute = $attribute;
+    }
+
+    public function getAttribute() {
+        return $this->attribute;
+    }
+
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setSeverity($severity) {
+        $this->severity = $severity;
+    }
+
+    public function getSeverity() {
+        return $this->severity;
+    }
+
+    public function setTimestamp($timestamp) {
+        $this->timestamp = $timestamp;
+    }
+
+    public function getTimestamp() {
+        return $this->timestamp;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

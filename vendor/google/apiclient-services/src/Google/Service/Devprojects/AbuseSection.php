@@ -15,27 +15,25 @@
  * the License.
  */
 
-class Google_Service_Devprojects_AbuseSection extends Google_Collection
-{
-  protected $collection_key = 'componentAbuseStatus';
-  protected $componentAbuseStatusType = 'Google_Service_Devprojects_ComponentAbuseStatus';
-  protected $componentAbuseStatusDataType = 'array';
-  public $kind;
+class Google_Service_Devprojects_AbuseSection extends Google_Collection {
+    protected $collection_key               = 'componentAbuseStatus';
+    protected $componentAbuseStatusType     = 'Google_Service_Devprojects_ComponentAbuseStatus';
+    protected $componentAbuseStatusDataType = 'array';
+    public $kind;
 
-  public function setComponentAbuseStatus($componentAbuseStatus)
-  {
-    $this->componentAbuseStatus = $componentAbuseStatus;
-  }
-  public function getComponentAbuseStatus()
-  {
-    return $this->componentAbuseStatus;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setComponentAbuseStatus($componentAbuseStatus) {
+        $this->componentAbuseStatus = $componentAbuseStatus;
+    }
+
+    public function getComponentAbuseStatus() {
+        return $this->componentAbuseStatus;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

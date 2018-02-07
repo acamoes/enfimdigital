@@ -15,27 +15,25 @@
  * the License.
  */
 
-class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1ListModelsResponse extends Google_Collection
-{
-  protected $collection_key = 'models';
-  protected $modelsType = 'Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1Model';
-  protected $modelsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1ListModelsResponse extends Google_Collection {
+    protected $collection_key = 'models';
+    protected $modelsType     = 'Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1Model';
+    protected $modelsDataType = 'array';
+    public $nextPageToken;
 
-  public function setModels($models)
-  {
-    $this->models = $models;
-  }
-  public function getModels()
-  {
-    return $this->models;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    public function setModels($models) {
+        $this->models = $models;
+    }
+
+    public function getModels() {
+        return $this->models;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

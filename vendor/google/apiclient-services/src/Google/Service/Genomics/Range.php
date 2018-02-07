@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Genomics_Range extends Google_Model
-{
-  public $end;
-  public $referenceName;
-  public $start;
+class Google_Service_Genomics_Range extends Google_Model {
+    public $end;
+    public $referenceName;
+    public $start;
 
-  public function setEnd($end)
-  {
-    $this->end = $end;
-  }
-  public function getEnd()
-  {
-    return $this->end;
-  }
-  public function setReferenceName($referenceName)
-  {
-    $this->referenceName = $referenceName;
-  }
-  public function getReferenceName()
-  {
-    return $this->referenceName;
-  }
-  public function setStart($start)
-  {
-    $this->start = $start;
-  }
-  public function getStart()
-  {
-    return $this->start;
-  }
+    public function setEnd($end) {
+        $this->end = $end;
+    }
+
+    public function getEnd() {
+        return $this->end;
+    }
+
+    public function setReferenceName($referenceName) {
+        $this->referenceName = $referenceName;
+    }
+
+    public function getReferenceName() {
+        return $this->referenceName;
+    }
+
+    public function setStart($start) {
+        $this->start = $start;
+    }
+
+    public function getStart() {
+        return $this->start;
+    }
 }

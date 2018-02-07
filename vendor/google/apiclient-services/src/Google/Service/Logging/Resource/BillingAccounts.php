@@ -23,6 +23,6 @@
  *   $billingAccounts = $loggingService->billingAccounts;
  *  </code>
  */
-class Google_Service_Logging_Resource_BillingAccounts extends Google_Service_Resource
-{
+class Google_Service_Logging_Resource_BillingAccounts extends Google_Service_Resource {
+
 }

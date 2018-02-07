@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_KeyValueTargetingExpression extends Google_Model
-{
-  public $expression;
+class Google_Service_Dfareporting_KeyValueTargetingExpression extends Google_Model {
+    public $expression;
 
-  public function setExpression($expression)
-  {
-    $this->expression = $expression;
-  }
-  public function getExpression()
-  {
-    return $this->expression;
-  }
+    public function setExpression($expression) {
+        $this->expression = $expression;
+    }
+
+    public function getExpression() {
+        return $this->expression;
+    }
 }

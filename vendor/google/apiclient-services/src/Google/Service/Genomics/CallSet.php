@@ -15,62 +15,60 @@
  * the License.
  */
 
-class Google_Service_Genomics_CallSet extends Google_Collection
-{
-  protected $collection_key = 'variantSetIds';
-  public $created;
-  public $id;
-  public $info;
-  public $name;
-  public $sampleId;
-  public $variantSetIds;
+class Google_Service_Genomics_CallSet extends Google_Collection {
+    protected $collection_key = 'variantSetIds';
+    public $created;
+    public $id;
+    public $info;
+    public $name;
+    public $sampleId;
+    public $variantSetIds;
 
-  public function setCreated($created)
-  {
-    $this->created = $created;
-  }
-  public function getCreated()
-  {
-    return $this->created;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setInfo($info)
-  {
-    $this->info = $info;
-  }
-  public function getInfo()
-  {
-    return $this->info;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setSampleId($sampleId)
-  {
-    $this->sampleId = $sampleId;
-  }
-  public function getSampleId()
-  {
-    return $this->sampleId;
-  }
-  public function setVariantSetIds($variantSetIds)
-  {
-    $this->variantSetIds = $variantSetIds;
-  }
-  public function getVariantSetIds()
-  {
-    return $this->variantSetIds;
-  }
+    public function setCreated($created) {
+        $this->created = $created;
+    }
+
+    public function getCreated() {
+        return $this->created;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setInfo($info) {
+        $this->info = $info;
+    }
+
+    public function getInfo() {
+        return $this->info;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setSampleId($sampleId) {
+        $this->sampleId = $sampleId;
+    }
+
+    public function getSampleId() {
+        return $this->sampleId;
+    }
+
+    public function setVariantSetIds($variantSetIds) {
+        $this->variantSetIds = $variantSetIds;
+    }
+
+    public function getVariantSetIds() {
+        return $this->variantSetIds;
+    }
 }

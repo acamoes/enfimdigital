@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ServiceConsumerManagement_BillingConfig extends Google_Model
-{
-  public $billingAccount;
+class Google_Service_ServiceConsumerManagement_BillingConfig extends Google_Model {
+    public $billingAccount;
 
-  public function setBillingAccount($billingAccount)
-  {
-    $this->billingAccount = $billingAccount;
-  }
-  public function getBillingAccount()
-  {
-    return $this->billingAccount;
-  }
+    public function setBillingAccount($billingAccount) {
+        $this->billingAccount = $billingAccount;
+    }
+
+    public function getBillingAccount() {
+        return $this->billingAccount;
+    }
 }

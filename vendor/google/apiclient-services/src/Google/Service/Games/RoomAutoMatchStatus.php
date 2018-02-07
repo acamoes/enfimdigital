@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Games_RoomAutoMatchStatus extends Google_Model
-{
-  public $kind;
-  public $waitEstimateSeconds;
+class Google_Service_Games_RoomAutoMatchStatus extends Google_Model {
+    public $kind;
+    public $waitEstimateSeconds;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setWaitEstimateSeconds($waitEstimateSeconds)
-  {
-    $this->waitEstimateSeconds = $waitEstimateSeconds;
-  }
-  public function getWaitEstimateSeconds()
-  {
-    return $this->waitEstimateSeconds;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setWaitEstimateSeconds($waitEstimateSeconds) {
+        $this->waitEstimateSeconds = $waitEstimateSeconds;
+    }
+
+    public function getWaitEstimateSeconds() {
+        return $this->waitEstimateSeconds;
+    }
 }

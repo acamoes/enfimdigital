@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Gmail_ListForwardingAddressesResponse extends Google_Collection
-{
-  protected $collection_key = 'forwardingAddresses';
-  protected $forwardingAddressesType = 'Google_Service_Gmail_ForwardingAddress';
-  protected $forwardingAddressesDataType = 'array';
+class Google_Service_Gmail_ListForwardingAddressesResponse extends Google_Collection {
+    protected $collection_key              = 'forwardingAddresses';
+    protected $forwardingAddressesType     = 'Google_Service_Gmail_ForwardingAddress';
+    protected $forwardingAddressesDataType = 'array';
 
-  /**
-   * @param Google_Service_Gmail_ForwardingAddress
-   */
-  public function setForwardingAddresses($forwardingAddresses)
-  {
-    $this->forwardingAddresses = $forwardingAddresses;
-  }
-  /**
-   * @return Google_Service_Gmail_ForwardingAddress
-   */
-  public function getForwardingAddresses()
-  {
-    return $this->forwardingAddresses;
-  }
+    /**
+     * @param Google_Service_Gmail_ForwardingAddress
+     */
+    public function setForwardingAddresses($forwardingAddresses) {
+        $this->forwardingAddresses = $forwardingAddresses;
+    }
+
+    /**
+     * @return Google_Service_Gmail_ForwardingAddress
+     */
+    public function getForwardingAddresses() {
+        return $this->forwardingAddresses;
+    }
 }

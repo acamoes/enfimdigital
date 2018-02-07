@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Firestore_DocumentMask extends Google_Collection
-{
-  protected $collection_key = 'fieldPaths';
-  public $fieldPaths;
+class Google_Service_Firestore_DocumentMask extends Google_Collection {
+    protected $collection_key = 'fieldPaths';
+    public $fieldPaths;
 
-  public function setFieldPaths($fieldPaths)
-  {
-    $this->fieldPaths = $fieldPaths;
-  }
-  public function getFieldPaths()
-  {
-    return $this->fieldPaths;
-  }
+    public function setFieldPaths($fieldPaths) {
+        $this->fieldPaths = $fieldPaths;
+    }
+
+    public function getFieldPaths() {
+        return $this->fieldPaths;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidManagement_AlwaysOnVpnPackage extends Google_Model
-{
-  public $lockdownEnabled;
-  public $packageName;
+class Google_Service_AndroidManagement_AlwaysOnVpnPackage extends Google_Model {
+    public $lockdownEnabled;
+    public $packageName;
 
-  public function setLockdownEnabled($lockdownEnabled)
-  {
-    $this->lockdownEnabled = $lockdownEnabled;
-  }
-  public function getLockdownEnabled()
-  {
-    return $this->lockdownEnabled;
-  }
-  public function setPackageName($packageName)
-  {
-    $this->packageName = $packageName;
-  }
-  public function getPackageName()
-  {
-    return $this->packageName;
-  }
+    public function setLockdownEnabled($lockdownEnabled) {
+        $this->lockdownEnabled = $lockdownEnabled;
+    }
+
+    public function getLockdownEnabled() {
+        return $this->lockdownEnabled;
+    }
+
+    public function setPackageName($packageName) {
+        $this->packageName = $packageName;
+    }
+
+    public function getPackageName() {
+        return $this->packageName;
+    }
 }

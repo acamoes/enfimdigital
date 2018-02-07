@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_TestOrderPaymentMethod extends Google_Model
-{
-  public $expirationMonth;
-  public $expirationYear;
-  public $lastFourDigits;
-  public $predefinedBillingAddress;
-  public $type;
+class Google_Service_ShoppingContent_TestOrderPaymentMethod extends Google_Model {
+    public $expirationMonth;
+    public $expirationYear;
+    public $lastFourDigits;
+    public $predefinedBillingAddress;
+    public $type;
 
-  public function setExpirationMonth($expirationMonth)
-  {
-    $this->expirationMonth = $expirationMonth;
-  }
-  public function getExpirationMonth()
-  {
-    return $this->expirationMonth;
-  }
-  public function setExpirationYear($expirationYear)
-  {
-    $this->expirationYear = $expirationYear;
-  }
-  public function getExpirationYear()
-  {
-    return $this->expirationYear;
-  }
-  public function setLastFourDigits($lastFourDigits)
-  {
-    $this->lastFourDigits = $lastFourDigits;
-  }
-  public function getLastFourDigits()
-  {
-    return $this->lastFourDigits;
-  }
-  public function setPredefinedBillingAddress($predefinedBillingAddress)
-  {
-    $this->predefinedBillingAddress = $predefinedBillingAddress;
-  }
-  public function getPredefinedBillingAddress()
-  {
-    return $this->predefinedBillingAddress;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setExpirationMonth($expirationMonth) {
+        $this->expirationMonth = $expirationMonth;
+    }
+
+    public function getExpirationMonth() {
+        return $this->expirationMonth;
+    }
+
+    public function setExpirationYear($expirationYear) {
+        $this->expirationYear = $expirationYear;
+    }
+
+    public function getExpirationYear() {
+        return $this->expirationYear;
+    }
+
+    public function setLastFourDigits($lastFourDigits) {
+        $this->lastFourDigits = $lastFourDigits;
+    }
+
+    public function getLastFourDigits() {
+        return $this->lastFourDigits;
+    }
+
+    public function setPredefinedBillingAddress($predefinedBillingAddress) {
+        $this->predefinedBillingAddress = $predefinedBillingAddress;
+    }
+
+    public function getPredefinedBillingAddress() {
+        return $this->predefinedBillingAddress;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

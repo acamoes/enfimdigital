@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_FirebaseDynamicLinks_DesktopInfo extends Google_Model
-{
-  public $desktopFallbackLink;
+class Google_Service_FirebaseDynamicLinks_DesktopInfo extends Google_Model {
+    public $desktopFallbackLink;
 
-  public function setDesktopFallbackLink($desktopFallbackLink)
-  {
-    $this->desktopFallbackLink = $desktopFallbackLink;
-  }
-  public function getDesktopFallbackLink()
-  {
-    return $this->desktopFallbackLink;
-  }
+    public function setDesktopFallbackLink($desktopFallbackLink) {
+        $this->desktopFallbackLink = $desktopFallbackLink;
+    }
+
+    public function getDesktopFallbackLink() {
+        return $this->desktopFallbackLink;
+    }
 }

@@ -15,56 +15,54 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_Season extends Google_Collection
-{
-  protected $collection_key = 'prorations';
-  protected $endType = 'Google_Service_AndroidPublisher_MonthDay';
-  protected $endDataType = '';
-  protected $prorationsType = 'Google_Service_AndroidPublisher_Prorate';
-  protected $prorationsDataType = 'array';
-  protected $startType = 'Google_Service_AndroidPublisher_MonthDay';
-  protected $startDataType = '';
+class Google_Service_AndroidPublisher_Season extends Google_Collection {
+    protected $collection_key     = 'prorations';
+    protected $endType            = 'Google_Service_AndroidPublisher_MonthDay';
+    protected $endDataType        = '';
+    protected $prorationsType     = 'Google_Service_AndroidPublisher_Prorate';
+    protected $prorationsDataType = 'array';
+    protected $startType          = 'Google_Service_AndroidPublisher_MonthDay';
+    protected $startDataType      = '';
 
-  /**
-   * @param Google_Service_AndroidPublisher_MonthDay
-   */
-  public function setEnd(Google_Service_AndroidPublisher_MonthDay $end)
-  {
-    $this->end = $end;
-  }
-  /**
-   * @return Google_Service_AndroidPublisher_MonthDay
-   */
-  public function getEnd()
-  {
-    return $this->end;
-  }
-  /**
-   * @param Google_Service_AndroidPublisher_Prorate
-   */
-  public function setProrations($prorations)
-  {
-    $this->prorations = $prorations;
-  }
-  /**
-   * @return Google_Service_AndroidPublisher_Prorate
-   */
-  public function getProrations()
-  {
-    return $this->prorations;
-  }
-  /**
-   * @param Google_Service_AndroidPublisher_MonthDay
-   */
-  public function setStart(Google_Service_AndroidPublisher_MonthDay $start)
-  {
-    $this->start = $start;
-  }
-  /**
-   * @return Google_Service_AndroidPublisher_MonthDay
-   */
-  public function getStart()
-  {
-    return $this->start;
-  }
+    /**
+     * @param Google_Service_AndroidPublisher_MonthDay
+     */
+    public function setEnd(Google_Service_AndroidPublisher_MonthDay $end) {
+        $this->end = $end;
+    }
+
+    /**
+     * @return Google_Service_AndroidPublisher_MonthDay
+     */
+    public function getEnd() {
+        return $this->end;
+    }
+
+    /**
+     * @param Google_Service_AndroidPublisher_Prorate
+     */
+    public function setProrations($prorations) {
+        $this->prorations = $prorations;
+    }
+
+    /**
+     * @return Google_Service_AndroidPublisher_Prorate
+     */
+    public function getProrations() {
+        return $this->prorations;
+    }
+
+    /**
+     * @param Google_Service_AndroidPublisher_MonthDay
+     */
+    public function setStart(Google_Service_AndroidPublisher_MonthDay $start) {
+        $this->start = $start;
+    }
+
+    /**
+     * @return Google_Service_AndroidPublisher_MonthDay
+     */
+    public function getStart() {
+        return $this->start;
+    }
 }

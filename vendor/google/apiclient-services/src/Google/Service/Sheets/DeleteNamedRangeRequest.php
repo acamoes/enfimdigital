@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Sheets_DeleteNamedRangeRequest extends Google_Model
-{
-  public $namedRangeId;
+class Google_Service_Sheets_DeleteNamedRangeRequest extends Google_Model {
+    public $namedRangeId;
 
-  public function setNamedRangeId($namedRangeId)
-  {
-    $this->namedRangeId = $namedRangeId;
-  }
-  public function getNamedRangeId()
-  {
-    return $this->namedRangeId;
-  }
+    public function setNamedRangeId($namedRangeId) {
+        $this->namedRangeId = $namedRangeId;
+    }
+
+    public function getNamedRangeId() {
+        return $this->namedRangeId;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Testing_Distribution extends Google_Model
-{
-  public $marketShare;
-  public $measurementTime;
+class Google_Service_Testing_Distribution extends Google_Model {
+    public $marketShare;
+    public $measurementTime;
 
-  public function setMarketShare($marketShare)
-  {
-    $this->marketShare = $marketShare;
-  }
-  public function getMarketShare()
-  {
-    return $this->marketShare;
-  }
-  public function setMeasurementTime($measurementTime)
-  {
-    $this->measurementTime = $measurementTime;
-  }
-  public function getMeasurementTime()
-  {
-    return $this->measurementTime;
-  }
+    public function setMarketShare($marketShare) {
+        $this->marketShare = $marketShare;
+    }
+
+    public function getMarketShare() {
+        return $this->marketShare;
+    }
+
+    public function setMeasurementTime($measurementTime) {
+        $this->measurementTime = $measurementTime;
+    }
+
+    public function getMeasurementTime() {
+        return $this->measurementTime;
+    }
 }

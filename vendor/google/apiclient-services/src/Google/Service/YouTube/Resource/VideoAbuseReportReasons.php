@@ -23,25 +23,24 @@
  *   $videoAbuseReportReasons = $youtubeService->videoAbuseReportReasons;
  *  </code>
  */
-class Google_Service_YouTube_Resource_VideoAbuseReportReasons extends Google_Service_Resource
-{
-  /**
-   * Returns a list of abuse reasons that can be used for reporting abusive
-   * videos. (videoAbuseReportReasons.listVideoAbuseReportReasons)
-   *
-   * @param string $part The part parameter specifies the videoCategory resource
-   * parts that the API response will include. Supported values are id and
-   * snippet.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string hl The hl parameter specifies the language that should be
-   * used for text values in the API response.
-   * @return Google_Service_YouTube_VideoAbuseReportReasonListResponse
-   */
-  public function listVideoAbuseReportReasons($part, $optParams = array())
-  {
-    $params = array('part' => $part);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_YouTube_VideoAbuseReportReasonListResponse");
-  }
+class Google_Service_YouTube_Resource_VideoAbuseReportReasons extends Google_Service_Resource {
+
+    /**
+     * Returns a list of abuse reasons that can be used for reporting abusive
+     * videos. (videoAbuseReportReasons.listVideoAbuseReportReasons)
+     *
+     * @param string $part The part parameter specifies the videoCategory resource
+     * parts that the API response will include. Supported values are id and
+     * snippet.
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param string hl The hl parameter specifies the language that should be
+     * used for text values in the API response.
+     * @return Google_Service_YouTube_VideoAbuseReportReasonListResponse
+     */
+    public function listVideoAbuseReportReasons($part, $optParams = array()) {
+        $params = array('part' => $part);
+        $params = array_merge($params, $optParams);
+        return $this->call('list', array($params), "Google_Service_YouTube_VideoAbuseReportReasonListResponse");
+    }
 }

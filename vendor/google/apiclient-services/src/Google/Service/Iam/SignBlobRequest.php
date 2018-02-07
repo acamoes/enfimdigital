@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Iam_SignBlobRequest extends Google_Model
-{
-  public $bytesToSign;
+class Google_Service_Iam_SignBlobRequest extends Google_Model {
+    public $bytesToSign;
 
-  public function setBytesToSign($bytesToSign)
-  {
-    $this->bytesToSign = $bytesToSign;
-  }
-  public function getBytesToSign()
-  {
-    return $this->bytesToSign;
-  }
+    public function setBytesToSign($bytesToSign) {
+        $this->bytesToSign = $bytesToSign;
+    }
+
+    public function getBytesToSign() {
+        return $this->bytesToSign;
+    }
 }

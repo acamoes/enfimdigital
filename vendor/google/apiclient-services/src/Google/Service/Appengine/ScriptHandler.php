@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Appengine_ScriptHandler extends Google_Model
-{
-  public $scriptPath;
+class Google_Service_Appengine_ScriptHandler extends Google_Model {
+    public $scriptPath;
 
-  public function setScriptPath($scriptPath)
-  {
-    $this->scriptPath = $scriptPath;
-  }
-  public function getScriptPath()
-  {
-    return $this->scriptPath;
-  }
+    public function setScriptPath($scriptPath) {
+        $this->scriptPath = $scriptPath;
+    }
+
+    public function getScriptPath() {
+        return $this->scriptPath;
+    }
 }

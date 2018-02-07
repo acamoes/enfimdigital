@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_CreativeFilteringReasonsReasons extends Google_Model
-{
-  public $filteringCount;
-  public $filteringStatus;
+class Google_Service_AdExchangeBuyer_CreativeFilteringReasonsReasons extends Google_Model {
+    public $filteringCount;
+    public $filteringStatus;
 
-  public function setFilteringCount($filteringCount)
-  {
-    $this->filteringCount = $filteringCount;
-  }
-  public function getFilteringCount()
-  {
-    return $this->filteringCount;
-  }
-  public function setFilteringStatus($filteringStatus)
-  {
-    $this->filteringStatus = $filteringStatus;
-  }
-  public function getFilteringStatus()
-  {
-    return $this->filteringStatus;
-  }
+    public function setFilteringCount($filteringCount) {
+        $this->filteringCount = $filteringCount;
+    }
+
+    public function getFilteringCount() {
+        return $this->filteringCount;
+    }
+
+    public function setFilteringStatus($filteringStatus) {
+        $this->filteringStatus = $filteringStatus;
+    }
+
+    public function getFilteringStatus() {
+        return $this->filteringStatus;
+    }
 }

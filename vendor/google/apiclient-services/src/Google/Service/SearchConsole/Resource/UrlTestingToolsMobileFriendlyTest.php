@@ -23,19 +23,18 @@
  *   $mobileFriendlyTest = $searchconsoleService->mobileFriendlyTest;
  *  </code>
  */
-class Google_Service_SearchConsole_Resource_UrlTestingToolsMobileFriendlyTest extends Google_Service_Resource
-{
-  /**
-   * Runs Mobile-Friendly Test for a given URL. (mobileFriendlyTest.run)
-   *
-   * @param Google_Service_SearchConsole_RunMobileFriendlyTestRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_SearchConsole_RunMobileFriendlyTestResponse
-   */
-  public function run(Google_Service_SearchConsole_RunMobileFriendlyTestRequest $postBody, $optParams = array())
-  {
-    $params = array('postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('run', array($params), "Google_Service_SearchConsole_RunMobileFriendlyTestResponse");
-  }
+class Google_Service_SearchConsole_Resource_UrlTestingToolsMobileFriendlyTest extends Google_Service_Resource {
+
+    /**
+     * Runs Mobile-Friendly Test for a given URL. (mobileFriendlyTest.run)
+     *
+     * @param Google_Service_SearchConsole_RunMobileFriendlyTestRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_SearchConsole_RunMobileFriendlyTestResponse
+     */
+    public function run(Google_Service_SearchConsole_RunMobileFriendlyTestRequest $postBody, $optParams = array()) {
+        $params = array('postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('run', array($params), "Google_Service_SearchConsole_RunMobileFriendlyTestResponse");
+    }
 }

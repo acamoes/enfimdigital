@@ -23,6 +23,6 @@
  *   $projects = $tpuService->projects;
  *  </code>
  */
-class Google_Service_TPU_Resource_Projects extends Google_Service_Resource
-{
+class Google_Service_TPU_Resource_Projects extends Google_Service_Resource {
+
 }

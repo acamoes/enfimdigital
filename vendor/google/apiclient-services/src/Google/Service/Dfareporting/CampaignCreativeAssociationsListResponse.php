@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_CampaignCreativeAssociationsListResponse extends Google_Collection
-{
-  protected $collection_key = 'campaignCreativeAssociations';
-  protected $campaignCreativeAssociationsType = 'Google_Service_Dfareporting_CampaignCreativeAssociation';
-  protected $campaignCreativeAssociationsDataType = 'array';
-  public $kind;
-  public $nextPageToken;
+class Google_Service_Dfareporting_CampaignCreativeAssociationsListResponse extends Google_Collection {
+    protected $collection_key                       = 'campaignCreativeAssociations';
+    protected $campaignCreativeAssociationsType     = 'Google_Service_Dfareporting_CampaignCreativeAssociation';
+    protected $campaignCreativeAssociationsDataType = 'array';
+    public $kind;
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Dfareporting_CampaignCreativeAssociation
-   */
-  public function setCampaignCreativeAssociations($campaignCreativeAssociations)
-  {
-    $this->campaignCreativeAssociations = $campaignCreativeAssociations;
-  }
-  /**
-   * @return Google_Service_Dfareporting_CampaignCreativeAssociation
-   */
-  public function getCampaignCreativeAssociations()
-  {
-    return $this->campaignCreativeAssociations;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Dfareporting_CampaignCreativeAssociation
+     */
+    public function setCampaignCreativeAssociations($campaignCreativeAssociations) {
+        $this->campaignCreativeAssociations = $campaignCreativeAssociations;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_CampaignCreativeAssociation
+     */
+    public function getCampaignCreativeAssociations() {
+        return $this->campaignCreativeAssociations;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

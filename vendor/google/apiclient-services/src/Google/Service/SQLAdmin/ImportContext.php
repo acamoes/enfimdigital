@@ -15,68 +15,66 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_ImportContext extends Google_Model
-{
-  protected $csvImportOptionsType = 'Google_Service_SQLAdmin_ImportContextCsvImportOptions';
-  protected $csvImportOptionsDataType = '';
-  public $database;
-  public $fileType;
-  public $importUser;
-  public $kind;
-  public $uri;
+class Google_Service_SQLAdmin_ImportContext extends Google_Model {
+    protected $csvImportOptionsType     = 'Google_Service_SQLAdmin_ImportContextCsvImportOptions';
+    protected $csvImportOptionsDataType = '';
+    public $database;
+    public $fileType;
+    public $importUser;
+    public $kind;
+    public $uri;
 
-  /**
-   * @param Google_Service_SQLAdmin_ImportContextCsvImportOptions
-   */
-  public function setCsvImportOptions(Google_Service_SQLAdmin_ImportContextCsvImportOptions $csvImportOptions)
-  {
-    $this->csvImportOptions = $csvImportOptions;
-  }
-  /**
-   * @return Google_Service_SQLAdmin_ImportContextCsvImportOptions
-   */
-  public function getCsvImportOptions()
-  {
-    return $this->csvImportOptions;
-  }
-  public function setDatabase($database)
-  {
-    $this->database = $database;
-  }
-  public function getDatabase()
-  {
-    return $this->database;
-  }
-  public function setFileType($fileType)
-  {
-    $this->fileType = $fileType;
-  }
-  public function getFileType()
-  {
-    return $this->fileType;
-  }
-  public function setImportUser($importUser)
-  {
-    $this->importUser = $importUser;
-  }
-  public function getImportUser()
-  {
-    return $this->importUser;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setUri($uri)
-  {
-    $this->uri = $uri;
-  }
-  public function getUri()
-  {
-    return $this->uri;
-  }
+    /**
+     * @param Google_Service_SQLAdmin_ImportContextCsvImportOptions
+     */
+    public function setCsvImportOptions(Google_Service_SQLAdmin_ImportContextCsvImportOptions $csvImportOptions) {
+        $this->csvImportOptions = $csvImportOptions;
+    }
+
+    /**
+     * @return Google_Service_SQLAdmin_ImportContextCsvImportOptions
+     */
+    public function getCsvImportOptions() {
+        return $this->csvImportOptions;
+    }
+
+    public function setDatabase($database) {
+        $this->database = $database;
+    }
+
+    public function getDatabase() {
+        return $this->database;
+    }
+
+    public function setFileType($fileType) {
+        $this->fileType = $fileType;
+    }
+
+    public function getFileType() {
+        return $this->fileType;
+    }
+
+    public function setImportUser($importUser) {
+        $this->importUser = $importUser;
+    }
+
+    public function getImportUser() {
+        return $this->importUser;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setUri($uri) {
+        $this->uri = $uri;
+    }
+
+    public function getUri() {
+        return $this->uri;
+    }
 }

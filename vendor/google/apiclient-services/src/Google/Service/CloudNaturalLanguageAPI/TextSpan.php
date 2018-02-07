@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudNaturalLanguageAPI_TextSpan extends Google_Model
-{
-  public $beginOffset;
-  public $content;
+class Google_Service_CloudNaturalLanguageAPI_TextSpan extends Google_Model {
+    public $beginOffset;
+    public $content;
 
-  public function setBeginOffset($beginOffset)
-  {
-    $this->beginOffset = $beginOffset;
-  }
-  public function getBeginOffset()
-  {
-    return $this->beginOffset;
-  }
-  public function setContent($content)
-  {
-    $this->content = $content;
-  }
-  public function getContent()
-  {
-    return $this->content;
-  }
+    public function setBeginOffset($beginOffset) {
+        $this->beginOffset = $beginOffset;
+    }
+
+    public function getBeginOffset() {
+        return $this->beginOffset;
+    }
+
+    public function setContent($content) {
+        $this->content = $content;
+    }
+
+    public function getContent() {
+        return $this->content;
+    }
 }

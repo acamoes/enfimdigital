@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AndroidProvisioningPartner_ClaimDevicesRequest extends Google_Collection
-{
-  protected $collection_key = 'claims';
-  protected $claimsType = 'Google_Service_AndroidProvisioningPartner_PartnerClaim';
-  protected $claimsDataType = 'array';
+class Google_Service_AndroidProvisioningPartner_ClaimDevicesRequest extends Google_Collection {
+    protected $collection_key = 'claims';
+    protected $claimsType     = 'Google_Service_AndroidProvisioningPartner_PartnerClaim';
+    protected $claimsDataType = 'array';
 
-  /**
-   * @param Google_Service_AndroidProvisioningPartner_PartnerClaim
-   */
-  public function setClaims($claims)
-  {
-    $this->claims = $claims;
-  }
-  /**
-   * @return Google_Service_AndroidProvisioningPartner_PartnerClaim
-   */
-  public function getClaims()
-  {
-    return $this->claims;
-  }
+    /**
+     * @param Google_Service_AndroidProvisioningPartner_PartnerClaim
+     */
+    public function setClaims($claims) {
+        $this->claims = $claims;
+    }
+
+    /**
+     * @return Google_Service_AndroidProvisioningPartner_PartnerClaim
+     */
+    public function getClaims() {
+        return $this->claims;
+    }
 }

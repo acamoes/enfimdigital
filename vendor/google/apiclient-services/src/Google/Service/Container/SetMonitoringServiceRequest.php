@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Container_SetMonitoringServiceRequest extends Google_Model
-{
-  public $monitoringService;
+class Google_Service_Container_SetMonitoringServiceRequest extends Google_Model {
+    public $monitoringService;
 
-  public function setMonitoringService($monitoringService)
-  {
-    $this->monitoringService = $monitoringService;
-  }
-  public function getMonitoringService()
-  {
-    return $this->monitoringService;
-  }
+    public function setMonitoringService($monitoringService) {
+        $this->monitoringService = $monitoringService;
+    }
+
+    public function getMonitoringService() {
+        return $this->monitoringService;
+    }
 }

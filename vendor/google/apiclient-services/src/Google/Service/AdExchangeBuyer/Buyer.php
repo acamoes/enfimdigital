@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_Buyer extends Google_Model
-{
-  public $accountId;
+class Google_Service_AdExchangeBuyer_Buyer extends Google_Model {
+    public $accountId;
 
-  public function setAccountId($accountId)
-  {
-    $this->accountId = $accountId;
-  }
-  public function getAccountId()
-  {
-    return $this->accountId;
-  }
+    public function setAccountId($accountId) {
+        $this->accountId = $accountId;
+    }
+
+    public function getAccountId() {
+        return $this->accountId;
+    }
 }

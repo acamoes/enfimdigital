@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Classroom_ModifyIndividualStudentsOptions extends Google_Collection
-{
-  protected $collection_key = 'removeStudentIds';
-  public $addStudentIds;
-  public $removeStudentIds;
+class Google_Service_Classroom_ModifyIndividualStudentsOptions extends Google_Collection {
+    protected $collection_key = 'removeStudentIds';
+    public $addStudentIds;
+    public $removeStudentIds;
 
-  public function setAddStudentIds($addStudentIds)
-  {
-    $this->addStudentIds = $addStudentIds;
-  }
-  public function getAddStudentIds()
-  {
-    return $this->addStudentIds;
-  }
-  public function setRemoveStudentIds($removeStudentIds)
-  {
-    $this->removeStudentIds = $removeStudentIds;
-  }
-  public function getRemoveStudentIds()
-  {
-    return $this->removeStudentIds;
-  }
+    public function setAddStudentIds($addStudentIds) {
+        $this->addStudentIds = $addStudentIds;
+    }
+
+    public function getAddStudentIds() {
+        return $this->addStudentIds;
+    }
+
+    public function setRemoveStudentIds($removeStudentIds) {
+        $this->removeStudentIds = $removeStudentIds;
+    }
+
+    public function getRemoveStudentIds() {
+        return $this->removeStudentIds;
+    }
 }

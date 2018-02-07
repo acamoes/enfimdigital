@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Classroom_CourseRosterChangesInfo extends Google_Model
-{
-  public $courseId;
+class Google_Service_Classroom_CourseRosterChangesInfo extends Google_Model {
+    public $courseId;
 
-  public function setCourseId($courseId)
-  {
-    $this->courseId = $courseId;
-  }
-  public function getCourseId()
-  {
-    return $this->courseId;
-  }
+    public function setCourseId($courseId) {
+        $this->courseId = $courseId;
+    }
+
+    public function getCourseId() {
+        return $this->courseId;
+    }
 }

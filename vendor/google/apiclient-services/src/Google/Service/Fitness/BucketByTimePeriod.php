@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Fitness_BucketByTimePeriod extends Google_Model
-{
-  public $timeZoneId;
-  public $type;
-  public $value;
+class Google_Service_Fitness_BucketByTimePeriod extends Google_Model {
+    public $timeZoneId;
+    public $type;
+    public $value;
 
-  public function setTimeZoneId($timeZoneId)
-  {
-    $this->timeZoneId = $timeZoneId;
-  }
-  public function getTimeZoneId()
-  {
-    return $this->timeZoneId;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setTimeZoneId($timeZoneId) {
+        $this->timeZoneId = $timeZoneId;
+    }
+
+    public function getTimeZoneId() {
+        return $this->timeZoneId;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

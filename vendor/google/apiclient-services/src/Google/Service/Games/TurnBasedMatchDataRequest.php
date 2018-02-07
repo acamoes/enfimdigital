@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Games_TurnBasedMatchDataRequest extends Google_Model
-{
-  public $data;
-  public $kind;
+class Google_Service_Games_TurnBasedMatchDataRequest extends Google_Model {
+    public $data;
+    public $kind;
 
-  public function setData($data)
-  {
-    $this->data = $data;
-  }
-  public function getData()
-  {
-    return $this->data;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setData($data) {
+        $this->data = $data;
+    }
+
+    public function getData() {
+        return $this->data;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

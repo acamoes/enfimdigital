@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_PeopleService_CreateContactGroupRequest extends Google_Model
-{
-  protected $contactGroupType = 'Google_Service_PeopleService_ContactGroup';
-  protected $contactGroupDataType = '';
+class Google_Service_PeopleService_CreateContactGroupRequest extends Google_Model {
+    protected $contactGroupType     = 'Google_Service_PeopleService_ContactGroup';
+    protected $contactGroupDataType = '';
 
-  /**
-   * @param Google_Service_PeopleService_ContactGroup
-   */
-  public function setContactGroup(Google_Service_PeopleService_ContactGroup $contactGroup)
-  {
-    $this->contactGroup = $contactGroup;
-  }
-  /**
-   * @return Google_Service_PeopleService_ContactGroup
-   */
-  public function getContactGroup()
-  {
-    return $this->contactGroup;
-  }
+    /**
+     * @param Google_Service_PeopleService_ContactGroup
+     */
+    public function setContactGroup(Google_Service_PeopleService_ContactGroup $contactGroup) {
+        $this->contactGroup = $contactGroup;
+    }
+
+    /**
+     * @return Google_Service_PeopleService_ContactGroup
+     */
+    public function getContactGroup() {
+        return $this->contactGroup;
+    }
 }

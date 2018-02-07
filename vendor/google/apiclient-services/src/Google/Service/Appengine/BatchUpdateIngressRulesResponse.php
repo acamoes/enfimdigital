@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Appengine_BatchUpdateIngressRulesResponse extends Google_Collection
-{
-  protected $collection_key = 'ingressRules';
-  protected $ingressRulesType = 'Google_Service_Appengine_FirewallRule';
-  protected $ingressRulesDataType = 'array';
+class Google_Service_Appengine_BatchUpdateIngressRulesResponse extends Google_Collection {
+    protected $collection_key       = 'ingressRules';
+    protected $ingressRulesType     = 'Google_Service_Appengine_FirewallRule';
+    protected $ingressRulesDataType = 'array';
 
-  /**
-   * @param Google_Service_Appengine_FirewallRule
-   */
-  public function setIngressRules($ingressRules)
-  {
-    $this->ingressRules = $ingressRules;
-  }
-  /**
-   * @return Google_Service_Appengine_FirewallRule
-   */
-  public function getIngressRules()
-  {
-    return $this->ingressRules;
-  }
+    /**
+     * @param Google_Service_Appengine_FirewallRule
+     */
+    public function setIngressRules($ingressRules) {
+        $this->ingressRules = $ingressRules;
+    }
+
+    /**
+     * @return Google_Service_Appengine_FirewallRule
+     */
+    public function getIngressRules() {
+        return $this->ingressRules;
+    }
 }

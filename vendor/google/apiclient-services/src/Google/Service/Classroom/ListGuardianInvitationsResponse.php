@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Classroom_ListGuardianInvitationsResponse extends Google_Collection
-{
-  protected $collection_key = 'guardianInvitations';
-  protected $guardianInvitationsType = 'Google_Service_Classroom_GuardianInvitation';
-  protected $guardianInvitationsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Classroom_ListGuardianInvitationsResponse extends Google_Collection {
+    protected $collection_key              = 'guardianInvitations';
+    protected $guardianInvitationsType     = 'Google_Service_Classroom_GuardianInvitation';
+    protected $guardianInvitationsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Classroom_GuardianInvitation
-   */
-  public function setGuardianInvitations($guardianInvitations)
-  {
-    $this->guardianInvitations = $guardianInvitations;
-  }
-  /**
-   * @return Google_Service_Classroom_GuardianInvitation
-   */
-  public function getGuardianInvitations()
-  {
-    return $this->guardianInvitations;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Classroom_GuardianInvitation
+     */
+    public function setGuardianInvitations($guardianInvitations) {
+        $this->guardianInvitations = $guardianInvitations;
+    }
+
+    /**
+     * @return Google_Service_Classroom_GuardianInvitation
+     */
+    public function getGuardianInvitations() {
+        return $this->guardianInvitations;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

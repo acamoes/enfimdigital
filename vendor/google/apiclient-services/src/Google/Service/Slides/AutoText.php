@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Slides_AutoText extends Google_Model
-{
-  public $content;
-  protected $styleType = 'Google_Service_Slides_TextStyle';
-  protected $styleDataType = '';
-  public $type;
+class Google_Service_Slides_AutoText extends Google_Model {
+    public $content;
+    protected $styleType     = 'Google_Service_Slides_TextStyle';
+    protected $styleDataType = '';
+    public $type;
 
-  public function setContent($content)
-  {
-    $this->content = $content;
-  }
-  public function getContent()
-  {
-    return $this->content;
-  }
-  /**
-   * @param Google_Service_Slides_TextStyle
-   */
-  public function setStyle(Google_Service_Slides_TextStyle $style)
-  {
-    $this->style = $style;
-  }
-  /**
-   * @return Google_Service_Slides_TextStyle
-   */
-  public function getStyle()
-  {
-    return $this->style;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setContent($content) {
+        $this->content = $content;
+    }
+
+    public function getContent() {
+        return $this->content;
+    }
+
+    /**
+     * @param Google_Service_Slides_TextStyle
+     */
+    public function setStyle(Google_Service_Slides_TextStyle $style) {
+        $this->style = $style;
+    }
+
+    /**
+     * @return Google_Service_Slides_TextStyle
+     */
+    public function getStyle() {
+        return $this->style;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

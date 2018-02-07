@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ServiceControl_ConsumerInfo extends Google_Model
-{
-  public $projectNumber;
+class Google_Service_ServiceControl_ConsumerInfo extends Google_Model {
+    public $projectNumber;
 
-  public function setProjectNumber($projectNumber)
-  {
-    $this->projectNumber = $projectNumber;
-  }
-  public function getProjectNumber()
-  {
-    return $this->projectNumber;
-  }
+    public function setProjectNumber($projectNumber) {
+        $this->projectNumber = $projectNumber;
+    }
+
+    public function getProjectNumber() {
+        return $this->projectNumber;
+    }
 }

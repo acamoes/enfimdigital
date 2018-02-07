@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Partners_AnalyticsDataPoint extends Google_Collection
-{
-  protected $collection_key = 'eventLocations';
-  public $eventCount;
-  protected $eventLocationsType = 'Google_Service_Partners_LatLng';
-  protected $eventLocationsDataType = 'array';
+class Google_Service_Partners_AnalyticsDataPoint extends Google_Collection {
+    protected $collection_key         = 'eventLocations';
+    public $eventCount;
+    protected $eventLocationsType     = 'Google_Service_Partners_LatLng';
+    protected $eventLocationsDataType = 'array';
 
-  public function setEventCount($eventCount)
-  {
-    $this->eventCount = $eventCount;
-  }
-  public function getEventCount()
-  {
-    return $this->eventCount;
-  }
-  /**
-   * @param Google_Service_Partners_LatLng
-   */
-  public function setEventLocations($eventLocations)
-  {
-    $this->eventLocations = $eventLocations;
-  }
-  /**
-   * @return Google_Service_Partners_LatLng
-   */
-  public function getEventLocations()
-  {
-    return $this->eventLocations;
-  }
+    public function setEventCount($eventCount) {
+        $this->eventCount = $eventCount;
+    }
+
+    public function getEventCount() {
+        return $this->eventCount;
+    }
+
+    /**
+     * @param Google_Service_Partners_LatLng
+     */
+    public function setEventLocations($eventLocations) {
+        $this->eventLocations = $eventLocations;
+    }
+
+    /**
+     * @return Google_Service_Partners_LatLng
+     */
+    public function getEventLocations() {
+        return $this->eventLocations;
+    }
 }

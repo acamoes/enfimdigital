@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_DeliveryTime extends Google_Model
-{
-  public $maxTransitTimeInDays;
-  public $minTransitTimeInDays;
+class Google_Service_ShoppingContent_DeliveryTime extends Google_Model {
+    public $maxTransitTimeInDays;
+    public $minTransitTimeInDays;
 
-  public function setMaxTransitTimeInDays($maxTransitTimeInDays)
-  {
-    $this->maxTransitTimeInDays = $maxTransitTimeInDays;
-  }
-  public function getMaxTransitTimeInDays()
-  {
-    return $this->maxTransitTimeInDays;
-  }
-  public function setMinTransitTimeInDays($minTransitTimeInDays)
-  {
-    $this->minTransitTimeInDays = $minTransitTimeInDays;
-  }
-  public function getMinTransitTimeInDays()
-  {
-    return $this->minTransitTimeInDays;
-  }
+    public function setMaxTransitTimeInDays($maxTransitTimeInDays) {
+        $this->maxTransitTimeInDays = $maxTransitTimeInDays;
+    }
+
+    public function getMaxTransitTimeInDays() {
+        return $this->maxTransitTimeInDays;
+    }
+
+    public function setMinTransitTimeInDays($minTransitTimeInDays) {
+        $this->minTransitTimeInDays = $minTransitTimeInDays;
+    }
+
+    public function getMinTransitTimeInDays() {
+        return $this->minTransitTimeInDays;
+    }
 }

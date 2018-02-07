@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchAnnotationSetsResponse extends Google_Collection
-{
-  protected $collection_key = 'annotationSets';
-  protected $annotationSetsType = 'Google_Service_Genomics_AnnotationSet';
-  protected $annotationSetsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Genomics_SearchAnnotationSetsResponse extends Google_Collection {
+    protected $collection_key         = 'annotationSets';
+    protected $annotationSetsType     = 'Google_Service_Genomics_AnnotationSet';
+    protected $annotationSetsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Genomics_AnnotationSet
-   */
-  public function setAnnotationSets($annotationSets)
-  {
-    $this->annotationSets = $annotationSets;
-  }
-  /**
-   * @return Google_Service_Genomics_AnnotationSet
-   */
-  public function getAnnotationSets()
-  {
-    return $this->annotationSets;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Genomics_AnnotationSet
+     */
+    public function setAnnotationSets($annotationSets) {
+        $this->annotationSets = $annotationSets;
+    }
+
+    /**
+     * @return Google_Service_Genomics_AnnotationSet
+     */
+    public function getAnnotationSets() {
+        return $this->annotationSets;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

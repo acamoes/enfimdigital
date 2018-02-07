@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_AndroidProvisioningPartner_CreateCustomerRequest extends Google_Model
-{
-  protected $customerType = 'Google_Service_AndroidProvisioningPartner_Company';
-  protected $customerDataType = '';
+class Google_Service_AndroidProvisioningPartner_CreateCustomerRequest extends Google_Model {
+    protected $customerType     = 'Google_Service_AndroidProvisioningPartner_Company';
+    protected $customerDataType = '';
 
-  /**
-   * @param Google_Service_AndroidProvisioningPartner_Company
-   */
-  public function setCustomer(Google_Service_AndroidProvisioningPartner_Company $customer)
-  {
-    $this->customer = $customer;
-  }
-  /**
-   * @return Google_Service_AndroidProvisioningPartner_Company
-   */
-  public function getCustomer()
-  {
-    return $this->customer;
-  }
+    /**
+     * @param Google_Service_AndroidProvisioningPartner_Company
+     */
+    public function setCustomer(Google_Service_AndroidProvisioningPartner_Company $customer) {
+        $this->customer = $customer;
+    }
+
+    /**
+     * @return Google_Service_AndroidProvisioningPartner_Company
+     */
+    public function getCustomer() {
+        return $this->customer;
+    }
 }

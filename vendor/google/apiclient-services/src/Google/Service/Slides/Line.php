@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Slides_Line extends Google_Model
-{
-  protected $linePropertiesType = 'Google_Service_Slides_LineProperties';
-  protected $linePropertiesDataType = '';
-  public $lineType;
+class Google_Service_Slides_Line extends Google_Model {
+    protected $linePropertiesType     = 'Google_Service_Slides_LineProperties';
+    protected $linePropertiesDataType = '';
+    public $lineType;
 
-  /**
-   * @param Google_Service_Slides_LineProperties
-   */
-  public function setLineProperties(Google_Service_Slides_LineProperties $lineProperties)
-  {
-    $this->lineProperties = $lineProperties;
-  }
-  /**
-   * @return Google_Service_Slides_LineProperties
-   */
-  public function getLineProperties()
-  {
-    return $this->lineProperties;
-  }
-  public function setLineType($lineType)
-  {
-    $this->lineType = $lineType;
-  }
-  public function getLineType()
-  {
-    return $this->lineType;
-  }
+    /**
+     * @param Google_Service_Slides_LineProperties
+     */
+    public function setLineProperties(Google_Service_Slides_LineProperties $lineProperties) {
+        $this->lineProperties = $lineProperties;
+    }
+
+    /**
+     * @return Google_Service_Slides_LineProperties
+     */
+    public function getLineProperties() {
+        return $this->lineProperties;
+    }
+
+    public function setLineType($lineType) {
+        $this->lineType = $lineType;
+    }
+
+    public function getLineType() {
+        return $this->lineType;
+    }
 }

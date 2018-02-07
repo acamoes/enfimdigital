@@ -23,6 +23,6 @@
  *   $users = $polyService->users;
  *  </code>
  */
-class Google_Service_PolyService_Resource_Users extends Google_Service_Resource
-{
+class Google_Service_PolyService_Resource_Users extends Google_Service_Resource {
+
 }

@@ -15,27 +15,25 @@
  * the License.
  */
 
-class Google_Service_Tracing_ListSpansResponse extends Google_Collection
-{
-  protected $collection_key = 'spans';
-  public $nextPageToken;
-  protected $spansType = 'Google_Service_Tracing_Span';
-  protected $spansDataType = 'array';
+class Google_Service_Tracing_ListSpansResponse extends Google_Collection {
+    protected $collection_key = 'spans';
+    public $nextPageToken;
+    protected $spansType      = 'Google_Service_Tracing_Span';
+    protected $spansDataType  = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setSpans($spans)
-  {
-    $this->spans = $spans;
-  }
-  public function getSpans()
-  {
-    return $this->spans;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    public function setSpans($spans) {
+        $this->spans = $spans;
+    }
+
+    public function getSpans() {
+        return $this->spans;
+    }
 }

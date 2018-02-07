@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_YouTube_PropertyValue extends Google_Model
-{
-  public $property;
-  public $value;
+class Google_Service_YouTube_PropertyValue extends Google_Model {
+    public $property;
+    public $value;
 
-  public function setProperty($property)
-  {
-    $this->property = $property;
-  }
-  public function getProperty()
-  {
-    return $this->property;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setProperty($property) {
+        $this->property = $property;
+    }
+
+    public function getProperty() {
+        return $this->property;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

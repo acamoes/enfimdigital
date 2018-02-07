@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_ObjectFilter extends Google_Collection
-{
-  protected $collection_key = 'objectIds';
-  public $kind;
-  public $objectIds;
-  public $status;
+class Google_Service_Dfareporting_ObjectFilter extends Google_Collection {
+    protected $collection_key = 'objectIds';
+    public $kind;
+    public $objectIds;
+    public $status;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setObjectIds($objectIds)
-  {
-    $this->objectIds = $objectIds;
-  }
-  public function getObjectIds()
-  {
-    return $this->objectIds;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setObjectIds($objectIds) {
+        $this->objectIds = $objectIds;
+    }
+
+    public function getObjectIds() {
+        return $this->objectIds;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductAspect extends Google_Model
-{
-  public $aspectName;
-  public $destinationName;
-  public $intention;
+class Google_Service_ShoppingContent_ProductAspect extends Google_Model {
+    public $aspectName;
+    public $destinationName;
+    public $intention;
 
-  public function setAspectName($aspectName)
-  {
-    $this->aspectName = $aspectName;
-  }
-  public function getAspectName()
-  {
-    return $this->aspectName;
-  }
-  public function setDestinationName($destinationName)
-  {
-    $this->destinationName = $destinationName;
-  }
-  public function getDestinationName()
-  {
-    return $this->destinationName;
-  }
-  public function setIntention($intention)
-  {
-    $this->intention = $intention;
-  }
-  public function getIntention()
-  {
-    return $this->intention;
-  }
+    public function setAspectName($aspectName) {
+        $this->aspectName = $aspectName;
+    }
+
+    public function getAspectName() {
+        return $this->aspectName;
+    }
+
+    public function setDestinationName($destinationName) {
+        $this->destinationName = $destinationName;
+    }
+
+    public function getDestinationName() {
+        return $this->destinationName;
+    }
+
+    public function setIntention($intention) {
+        $this->intention = $intention;
+    }
+
+    public function getIntention() {
+        return $this->intention;
+    }
 }

@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Pagespeedonline_PagespeedApiFormatStringV2 extends Google_Collection
-{
-  protected $collection_key = 'args';
-  protected $argsType = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2Args';
-  protected $argsDataType = 'array';
-  public $format;
+class Google_Service_Pagespeedonline_PagespeedApiFormatStringV2 extends Google_Collection {
+    protected $collection_key = 'args';
+    protected $argsType       = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2Args';
+    protected $argsDataType   = 'array';
+    public $format;
 
-  /**
-   * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2Args
-   */
-  public function setArgs($args)
-  {
-    $this->args = $args;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2Args
-   */
-  public function getArgs()
-  {
-    return $this->args;
-  }
-  public function setFormat($format)
-  {
-    $this->format = $format;
-  }
-  public function getFormat()
-  {
-    return $this->format;
-  }
+    /**
+     * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2Args
+     */
+    public function setArgs($args) {
+        $this->args = $args;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2Args
+     */
+    public function getArgs() {
+        return $this->args;
+    }
+
+    public function setFormat($format) {
+        $this->format = $format;
+    }
+
+    public function getFormat() {
+        return $this->format;
+    }
 }

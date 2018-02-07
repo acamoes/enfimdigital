@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Digitalassetlinks_CertificateInfo extends Google_Model
-{
-  public $sha256Fingerprint;
+class Google_Service_Digitalassetlinks_CertificateInfo extends Google_Model {
+    public $sha256Fingerprint;
 
-  public function setSha256Fingerprint($sha256Fingerprint)
-  {
-    $this->sha256Fingerprint = $sha256Fingerprint;
-  }
-  public function getSha256Fingerprint()
-  {
-    return $this->sha256Fingerprint;
-  }
+    public function setSha256Fingerprint($sha256Fingerprint) {
+        $this->sha256Fingerprint = $sha256Fingerprint;
+    }
+
+    public function getSha256Fingerprint() {
+        return $this->sha256Fingerprint;
+    }
 }

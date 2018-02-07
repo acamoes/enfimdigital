@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_DoubleClickBidManager_ListReportsResponse extends Google_Collection
-{
-  protected $collection_key = 'reports';
-  public $kind;
-  protected $reportsType = 'Google_Service_DoubleClickBidManager_Report';
-  protected $reportsDataType = 'array';
+class Google_Service_DoubleClickBidManager_ListReportsResponse extends Google_Collection {
+    protected $collection_key  = 'reports';
+    public $kind;
+    protected $reportsType     = 'Google_Service_DoubleClickBidManager_Report';
+    protected $reportsDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_DoubleClickBidManager_Report
-   */
-  public function setReports($reports)
-  {
-    $this->reports = $reports;
-  }
-  /**
-   * @return Google_Service_DoubleClickBidManager_Report
-   */
-  public function getReports()
-  {
-    return $this->reports;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_DoubleClickBidManager_Report
+     */
+    public function setReports($reports) {
+        $this->reports = $reports;
+    }
+
+    /**
+     * @return Google_Service_DoubleClickBidManager_Report
+     */
+    public function getReports() {
+        return $this->reports;
+    }
 }

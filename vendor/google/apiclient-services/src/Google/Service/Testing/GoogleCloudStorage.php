@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Testing_GoogleCloudStorage extends Google_Model
-{
-  public $gcsPath;
+class Google_Service_Testing_GoogleCloudStorage extends Google_Model {
+    public $gcsPath;
 
-  public function setGcsPath($gcsPath)
-  {
-    $this->gcsPath = $gcsPath;
-  }
-  public function getGcsPath()
-  {
-    return $this->gcsPath;
-  }
+    public function setGcsPath($gcsPath) {
+        $this->gcsPath = $gcsPath;
+    }
+
+    public function getGcsPath() {
+        return $this->gcsPath;
+    }
 }

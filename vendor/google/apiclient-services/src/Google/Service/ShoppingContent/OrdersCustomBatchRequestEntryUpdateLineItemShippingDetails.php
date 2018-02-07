@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails extends Google_Model
-{
-  public $deliverByDate;
-  public $lineItemId;
-  public $productId;
-  public $shipByDate;
+class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails extends Google_Model {
+    public $deliverByDate;
+    public $lineItemId;
+    public $productId;
+    public $shipByDate;
 
-  public function setDeliverByDate($deliverByDate)
-  {
-    $this->deliverByDate = $deliverByDate;
-  }
-  public function getDeliverByDate()
-  {
-    return $this->deliverByDate;
-  }
-  public function setLineItemId($lineItemId)
-  {
-    $this->lineItemId = $lineItemId;
-  }
-  public function getLineItemId()
-  {
-    return $this->lineItemId;
-  }
-  public function setProductId($productId)
-  {
-    $this->productId = $productId;
-  }
-  public function getProductId()
-  {
-    return $this->productId;
-  }
-  public function setShipByDate($shipByDate)
-  {
-    $this->shipByDate = $shipByDate;
-  }
-  public function getShipByDate()
-  {
-    return $this->shipByDate;
-  }
+    public function setDeliverByDate($deliverByDate) {
+        $this->deliverByDate = $deliverByDate;
+    }
+
+    public function getDeliverByDate() {
+        return $this->deliverByDate;
+    }
+
+    public function setLineItemId($lineItemId) {
+        $this->lineItemId = $lineItemId;
+    }
+
+    public function getLineItemId() {
+        return $this->lineItemId;
+    }
+
+    public function setProductId($productId) {
+        $this->productId = $productId;
+    }
+
+    public function getProductId() {
+        return $this->productId;
+    }
+
+    public function setShipByDate($shipByDate) {
+        $this->shipByDate = $shipByDate;
+    }
+
+    public function getShipByDate() {
+        return $this->shipByDate;
+    }
 }

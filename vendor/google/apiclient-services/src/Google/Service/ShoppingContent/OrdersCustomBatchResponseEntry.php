@@ -15,66 +15,64 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrdersCustomBatchResponseEntry extends Google_Model
-{
-  public $batchId;
-  protected $errorsType = 'Google_Service_ShoppingContent_Errors';
-  protected $errorsDataType = '';
-  public $executionStatus;
-  public $kind;
-  protected $orderType = 'Google_Service_ShoppingContent_Order';
-  protected $orderDataType = '';
+class Google_Service_ShoppingContent_OrdersCustomBatchResponseEntry extends Google_Model {
+    public $batchId;
+    protected $errorsType     = 'Google_Service_ShoppingContent_Errors';
+    protected $errorsDataType = '';
+    public $executionStatus;
+    public $kind;
+    protected $orderType      = 'Google_Service_ShoppingContent_Order';
+    protected $orderDataType  = '';
 
-  public function setBatchId($batchId)
-  {
-    $this->batchId = $batchId;
-  }
-  public function getBatchId()
-  {
-    return $this->batchId;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_Errors
-   */
-  public function setErrors(Google_Service_ShoppingContent_Errors $errors)
-  {
-    $this->errors = $errors;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_Errors
-   */
-  public function getErrors()
-  {
-    return $this->errors;
-  }
-  public function setExecutionStatus($executionStatus)
-  {
-    $this->executionStatus = $executionStatus;
-  }
-  public function getExecutionStatus()
-  {
-    return $this->executionStatus;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_Order
-   */
-  public function setOrder(Google_Service_ShoppingContent_Order $order)
-  {
-    $this->order = $order;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_Order
-   */
-  public function getOrder()
-  {
-    return $this->order;
-  }
+    public function setBatchId($batchId) {
+        $this->batchId = $batchId;
+    }
+
+    public function getBatchId() {
+        return $this->batchId;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_Errors
+     */
+    public function setErrors(Google_Service_ShoppingContent_Errors $errors) {
+        $this->errors = $errors;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_Errors
+     */
+    public function getErrors() {
+        return $this->errors;
+    }
+
+    public function setExecutionStatus($executionStatus) {
+        $this->executionStatus = $executionStatus;
+    }
+
+    public function getExecutionStatus() {
+        return $this->executionStatus;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_Order
+     */
+    public function setOrder(Google_Service_ShoppingContent_Order $order) {
+        $this->order = $order;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_Order
+     */
+    public function getOrder() {
+        return $this->order;
+    }
 }

@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Prediction_PredictionList extends Google_Collection
-{
-  protected $collection_key = 'items';
-  protected $itemsType = 'Google_Service_Prediction_Insert2';
-  protected $itemsDataType = 'array';
-  public $kind;
-  public $nextPageToken;
-  public $selfLink;
+class Google_Service_Prediction_PredictionList extends Google_Collection {
+    protected $collection_key = 'items';
+    protected $itemsType      = 'Google_Service_Prediction_Insert2';
+    protected $itemsDataType  = 'array';
+    public $kind;
+    public $nextPageToken;
+    public $selfLink;
 
-  /**
-   * @param Google_Service_Prediction_Insert2
-   */
-  public function setItems($items)
-  {
-    $this->items = $items;
-  }
-  /**
-   * @return Google_Service_Prediction_Insert2
-   */
-  public function getItems()
-  {
-    return $this->items;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setSelfLink($selfLink)
-  {
-    $this->selfLink = $selfLink;
-  }
-  public function getSelfLink()
-  {
-    return $this->selfLink;
-  }
+    /**
+     * @param Google_Service_Prediction_Insert2
+     */
+    public function setItems($items) {
+        $this->items = $items;
+    }
+
+    /**
+     * @return Google_Service_Prediction_Insert2
+     */
+    public function getItems() {
+        return $this->items;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    public function setSelfLink($selfLink) {
+        $this->selfLink = $selfLink;
+    }
+
+    public function getSelfLink() {
+        return $this->selfLink;
+    }
 }

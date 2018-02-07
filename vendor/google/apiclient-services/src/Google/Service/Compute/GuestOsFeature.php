@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Compute_GuestOsFeature extends Google_Model
-{
-  public $type;
+class Google_Service_Compute_GuestOsFeature extends Google_Model {
+    public $type;
 
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

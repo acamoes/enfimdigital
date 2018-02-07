@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Partners_AnalyticsSummary extends Google_Model
-{
-  public $contactsCount;
-  public $profileViewsCount;
-  public $searchViewsCount;
+class Google_Service_Partners_AnalyticsSummary extends Google_Model {
+    public $contactsCount;
+    public $profileViewsCount;
+    public $searchViewsCount;
 
-  public function setContactsCount($contactsCount)
-  {
-    $this->contactsCount = $contactsCount;
-  }
-  public function getContactsCount()
-  {
-    return $this->contactsCount;
-  }
-  public function setProfileViewsCount($profileViewsCount)
-  {
-    $this->profileViewsCount = $profileViewsCount;
-  }
-  public function getProfileViewsCount()
-  {
-    return $this->profileViewsCount;
-  }
-  public function setSearchViewsCount($searchViewsCount)
-  {
-    $this->searchViewsCount = $searchViewsCount;
-  }
-  public function getSearchViewsCount()
-  {
-    return $this->searchViewsCount;
-  }
+    public function setContactsCount($contactsCount) {
+        $this->contactsCount = $contactsCount;
+    }
+
+    public function getContactsCount() {
+        return $this->contactsCount;
+    }
+
+    public function setProfileViewsCount($profileViewsCount) {
+        $this->profileViewsCount = $profileViewsCount;
+    }
+
+    public function getProfileViewsCount() {
+        return $this->profileViewsCount;
+    }
+
+    public function setSearchViewsCount($searchViewsCount) {
+        $this->searchViewsCount = $searchViewsCount;
+    }
+
+    public function getSearchViewsCount() {
+        return $this->searchViewsCount;
+    }
 }

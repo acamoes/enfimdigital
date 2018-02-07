@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Gmail_ListSmimeInfoResponse extends Google_Collection
-{
-  protected $collection_key = 'smimeInfo';
-  protected $smimeInfoType = 'Google_Service_Gmail_SmimeInfo';
-  protected $smimeInfoDataType = 'array';
+class Google_Service_Gmail_ListSmimeInfoResponse extends Google_Collection {
+    protected $collection_key    = 'smimeInfo';
+    protected $smimeInfoType     = 'Google_Service_Gmail_SmimeInfo';
+    protected $smimeInfoDataType = 'array';
 
-  /**
-   * @param Google_Service_Gmail_SmimeInfo
-   */
-  public function setSmimeInfo($smimeInfo)
-  {
-    $this->smimeInfo = $smimeInfo;
-  }
-  /**
-   * @return Google_Service_Gmail_SmimeInfo
-   */
-  public function getSmimeInfo()
-  {
-    return $this->smimeInfo;
-  }
+    /**
+     * @param Google_Service_Gmail_SmimeInfo
+     */
+    public function setSmimeInfo($smimeInfo) {
+        $this->smimeInfo = $smimeInfo;
+    }
+
+    /**
+     * @return Google_Service_Gmail_SmimeInfo
+     */
+    public function getSmimeInfo() {
+        return $this->smimeInfo;
+    }
 }

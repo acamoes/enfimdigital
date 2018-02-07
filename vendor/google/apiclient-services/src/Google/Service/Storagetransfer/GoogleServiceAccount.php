@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Storagetransfer_GoogleServiceAccount extends Google_Model
-{
-  public $accountEmail;
+class Google_Service_Storagetransfer_GoogleServiceAccount extends Google_Model {
+    public $accountEmail;
 
-  public function setAccountEmail($accountEmail)
-  {
-    $this->accountEmail = $accountEmail;
-  }
-  public function getAccountEmail()
-  {
-    return $this->accountEmail;
-  }
+    public function setAccountEmail($accountEmail) {
+        $this->accountEmail = $accountEmail;
+    }
+
+    public function getAccountEmail() {
+        return $this->accountEmail;
+    }
 }

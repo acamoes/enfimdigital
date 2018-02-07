@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_AndroidDevicePolicyConfig extends Google_Model
-{
-  public $kind;
-  public $state;
+class Google_Service_AndroidEnterprise_AndroidDevicePolicyConfig extends Google_Model {
+    public $kind;
+    public $state;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setState($state)
-  {
-    $this->state = $state;
-  }
-  public function getState()
-  {
-    return $this->state;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setState($state) {
+        $this->state = $state;
+    }
+
+    public function getState() {
+        return $this->state;
+    }
 }

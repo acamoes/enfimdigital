@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Sheets_PivotFilterCriteria extends Google_Collection
-{
-  protected $collection_key = 'visibleValues';
-  public $visibleValues;
+class Google_Service_Sheets_PivotFilterCriteria extends Google_Collection {
+    protected $collection_key = 'visibleValues';
+    public $visibleValues;
 
-  public function setVisibleValues($visibleValues)
-  {
-    $this->visibleValues = $visibleValues;
-  }
-  public function getVisibleValues()
-  {
-    return $this->visibleValues;
-  }
+    public function setVisibleValues($visibleValues) {
+        $this->visibleValues = $visibleValues;
+    }
+
+    public function getVisibleValues() {
+        return $this->visibleValues;
+    }
 }

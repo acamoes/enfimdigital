@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Classroom_MultipleChoiceSubmission extends Google_Model
-{
-  public $answer;
+class Google_Service_Classroom_MultipleChoiceSubmission extends Google_Model {
+    public $answer;
 
-  public function setAnswer($answer)
-  {
-    $this->answer = $answer;
-  }
-  public function getAnswer()
-  {
-    return $this->answer;
-  }
+    public function setAnswer($answer) {
+        $this->answer = $answer;
+    }
+
+    public function getAnswer() {
+        return $this->answer;
+    }
 }

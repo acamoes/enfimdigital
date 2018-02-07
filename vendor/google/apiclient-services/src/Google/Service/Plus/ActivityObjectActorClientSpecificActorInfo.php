@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Plus_ActivityObjectActorClientSpecificActorInfo extends Google_Model
-{
-  protected $youtubeActorInfoType = 'Google_Service_Plus_ActivityObjectActorClientSpecificActorInfoYoutubeActorInfo';
-  protected $youtubeActorInfoDataType = '';
+class Google_Service_Plus_ActivityObjectActorClientSpecificActorInfo extends Google_Model {
+    protected $youtubeActorInfoType     = 'Google_Service_Plus_ActivityObjectActorClientSpecificActorInfoYoutubeActorInfo';
+    protected $youtubeActorInfoDataType = '';
 
-  /**
-   * @param Google_Service_Plus_ActivityObjectActorClientSpecificActorInfoYoutubeActorInfo
-   */
-  public function setYoutubeActorInfo(Google_Service_Plus_ActivityObjectActorClientSpecificActorInfoYoutubeActorInfo $youtubeActorInfo)
-  {
-    $this->youtubeActorInfo = $youtubeActorInfo;
-  }
-  /**
-   * @return Google_Service_Plus_ActivityObjectActorClientSpecificActorInfoYoutubeActorInfo
-   */
-  public function getYoutubeActorInfo()
-  {
-    return $this->youtubeActorInfo;
-  }
+    /**
+     * @param Google_Service_Plus_ActivityObjectActorClientSpecificActorInfoYoutubeActorInfo
+     */
+    public function setYoutubeActorInfo(Google_Service_Plus_ActivityObjectActorClientSpecificActorInfoYoutubeActorInfo $youtubeActorInfo) {
+        $this->youtubeActorInfo = $youtubeActorInfo;
+    }
+
+    /**
+     * @return Google_Service_Plus_ActivityObjectActorClientSpecificActorInfoYoutubeActorInfo
+     */
+    public function getYoutubeActorInfo() {
+        return $this->youtubeActorInfo;
+    }
 }

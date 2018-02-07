@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Genomics_Experiment extends Google_Model
-{
-  public $instrumentModel;
-  public $libraryId;
-  public $platformUnit;
-  public $sequencingCenter;
+class Google_Service_Genomics_Experiment extends Google_Model {
+    public $instrumentModel;
+    public $libraryId;
+    public $platformUnit;
+    public $sequencingCenter;
 
-  public function setInstrumentModel($instrumentModel)
-  {
-    $this->instrumentModel = $instrumentModel;
-  }
-  public function getInstrumentModel()
-  {
-    return $this->instrumentModel;
-  }
-  public function setLibraryId($libraryId)
-  {
-    $this->libraryId = $libraryId;
-  }
-  public function getLibraryId()
-  {
-    return $this->libraryId;
-  }
-  public function setPlatformUnit($platformUnit)
-  {
-    $this->platformUnit = $platformUnit;
-  }
-  public function getPlatformUnit()
-  {
-    return $this->platformUnit;
-  }
-  public function setSequencingCenter($sequencingCenter)
-  {
-    $this->sequencingCenter = $sequencingCenter;
-  }
-  public function getSequencingCenter()
-  {
-    return $this->sequencingCenter;
-  }
+    public function setInstrumentModel($instrumentModel) {
+        $this->instrumentModel = $instrumentModel;
+    }
+
+    public function getInstrumentModel() {
+        return $this->instrumentModel;
+    }
+
+    public function setLibraryId($libraryId) {
+        $this->libraryId = $libraryId;
+    }
+
+    public function getLibraryId() {
+        return $this->libraryId;
+    }
+
+    public function setPlatformUnit($platformUnit) {
+        $this->platformUnit = $platformUnit;
+    }
+
+    public function getPlatformUnit() {
+        return $this->platformUnit;
+    }
+
+    public function setSequencingCenter($sequencingCenter) {
+        $this->sequencingCenter = $sequencingCenter;
+    }
+
+    public function getSequencingCenter() {
+        return $this->sequencingCenter;
+    }
 }

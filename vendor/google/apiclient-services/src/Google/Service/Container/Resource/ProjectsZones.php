@@ -23,23 +23,22 @@
  *   $zones = $containerService->zones;
  *  </code>
  */
-class Google_Service_Container_Resource_ProjectsZones extends Google_Service_Resource
-{
-  /**
-   * Returns configuration info about the Kubernetes Engine service.
-   * (zones.getServerconfig)
-   *
-   * @param string $projectId The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
-   * @param string $zone The name of the Google Compute Engine
-   * [zone](/compute/docs/zones#available) to return operations for.
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Container_ServerConfig
-   */
-  public function getServerconfig($projectId, $zone, $optParams = array())
-  {
-    $params = array('projectId' => $projectId, 'zone' => $zone);
-    $params = array_merge($params, $optParams);
-    return $this->call('getServerconfig', array($params), "Google_Service_Container_ServerConfig");
-  }
+class Google_Service_Container_Resource_ProjectsZones extends Google_Service_Resource {
+
+    /**
+     * Returns configuration info about the Kubernetes Engine service.
+     * (zones.getServerconfig)
+     *
+     * @param string $projectId The Google Developers Console [project ID or project
+     * number](https://support.google.com/cloud/answer/6158840).
+     * @param string $zone The name of the Google Compute Engine
+     * [zone](/compute/docs/zones#available) to return operations for.
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Container_ServerConfig
+     */
+    public function getServerconfig($projectId, $zone, $optParams = array()) {
+        $params = array('projectId' => $projectId, 'zone' => $zone);
+        $params = array_merge($params, $optParams);
+        return $this->call('getServerconfig', array($params), "Google_Service_Container_ServerConfig");
+    }
 }

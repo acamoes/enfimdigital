@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Container_SetLocationsRequest extends Google_Collection
-{
-  protected $collection_key = 'locations';
-  public $locations;
+class Google_Service_Container_SetLocationsRequest extends Google_Collection {
+    protected $collection_key = 'locations';
+    public $locations;
 
-  public function setLocations($locations)
-  {
-    $this->locations = $locations;
-  }
-  public function getLocations()
-  {
-    return $this->locations;
-  }
+    public function setLocations($locations) {
+        $this->locations = $locations;
+    }
+
+    public function getLocations() {
+        return $this->locations;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_CreativeGroupAssignment extends Google_Model
-{
-  public $creativeGroupId;
-  public $creativeGroupNumber;
+class Google_Service_Dfareporting_CreativeGroupAssignment extends Google_Model {
+    public $creativeGroupId;
+    public $creativeGroupNumber;
 
-  public function setCreativeGroupId($creativeGroupId)
-  {
-    $this->creativeGroupId = $creativeGroupId;
-  }
-  public function getCreativeGroupId()
-  {
-    return $this->creativeGroupId;
-  }
-  public function setCreativeGroupNumber($creativeGroupNumber)
-  {
-    $this->creativeGroupNumber = $creativeGroupNumber;
-  }
-  public function getCreativeGroupNumber()
-  {
-    return $this->creativeGroupNumber;
-  }
+    public function setCreativeGroupId($creativeGroupId) {
+        $this->creativeGroupId = $creativeGroupId;
+    }
+
+    public function getCreativeGroupId() {
+        return $this->creativeGroupId;
+    }
+
+    public function setCreativeGroupNumber($creativeGroupNumber) {
+        $this->creativeGroupNumber = $creativeGroupNumber;
+    }
+
+    public function getCreativeGroupNumber() {
+        return $this->creativeGroupNumber;
+    }
 }

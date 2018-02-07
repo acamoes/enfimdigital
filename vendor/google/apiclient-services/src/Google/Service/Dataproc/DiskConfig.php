@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataproc_DiskConfig extends Google_Model
-{
-  public $bootDiskSizeGb;
-  public $numLocalSsds;
+class Google_Service_Dataproc_DiskConfig extends Google_Model {
+    public $bootDiskSizeGb;
+    public $numLocalSsds;
 
-  public function setBootDiskSizeGb($bootDiskSizeGb)
-  {
-    $this->bootDiskSizeGb = $bootDiskSizeGb;
-  }
-  public function getBootDiskSizeGb()
-  {
-    return $this->bootDiskSizeGb;
-  }
-  public function setNumLocalSsds($numLocalSsds)
-  {
-    $this->numLocalSsds = $numLocalSsds;
-  }
-  public function getNumLocalSsds()
-  {
-    return $this->numLocalSsds;
-  }
+    public function setBootDiskSizeGb($bootDiskSizeGb) {
+        $this->bootDiskSizeGb = $bootDiskSizeGb;
+    }
+
+    public function getBootDiskSizeGb() {
+        return $this->bootDiskSizeGb;
+    }
+
+    public function setNumLocalSsds($numLocalSsds) {
+        $this->numLocalSsds = $numLocalSsds;
+    }
+
+    public function getNumLocalSsds() {
+        return $this->numLocalSsds;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Slides_TableCellLocation extends Google_Model
-{
-  public $columnIndex;
-  public $rowIndex;
+class Google_Service_Slides_TableCellLocation extends Google_Model {
+    public $columnIndex;
+    public $rowIndex;
 
-  public function setColumnIndex($columnIndex)
-  {
-    $this->columnIndex = $columnIndex;
-  }
-  public function getColumnIndex()
-  {
-    return $this->columnIndex;
-  }
-  public function setRowIndex($rowIndex)
-  {
-    $this->rowIndex = $rowIndex;
-  }
-  public function getRowIndex()
-  {
-    return $this->rowIndex;
-  }
+    public function setColumnIndex($columnIndex) {
+        $this->columnIndex = $columnIndex;
+    }
+
+    public function getColumnIndex() {
+        return $this->columnIndex;
+    }
+
+    public function setRowIndex($rowIndex) {
+        $this->rowIndex = $rowIndex;
+    }
+
+    public function getRowIndex() {
+        return $this->rowIndex;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1PredictionOutput extends Google_Model
-{
-  public $errorCount;
-  public $outputPath;
-  public $predictionCount;
+class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1PredictionOutput extends Google_Model {
+    public $errorCount;
+    public $outputPath;
+    public $predictionCount;
 
-  public function setErrorCount($errorCount)
-  {
-    $this->errorCount = $errorCount;
-  }
-  public function getErrorCount()
-  {
-    return $this->errorCount;
-  }
-  public function setOutputPath($outputPath)
-  {
-    $this->outputPath = $outputPath;
-  }
-  public function getOutputPath()
-  {
-    return $this->outputPath;
-  }
-  public function setPredictionCount($predictionCount)
-  {
-    $this->predictionCount = $predictionCount;
-  }
-  public function getPredictionCount()
-  {
-    return $this->predictionCount;
-  }
+    public function setErrorCount($errorCount) {
+        $this->errorCount = $errorCount;
+    }
+
+    public function getErrorCount() {
+        return $this->errorCount;
+    }
+
+    public function setOutputPath($outputPath) {
+        $this->outputPath = $outputPath;
+    }
+
+    public function getOutputPath() {
+        return $this->outputPath;
+    }
+
+    public function setPredictionCount($predictionCount) {
+        $this->predictionCount = $predictionCount;
+    }
+
+    public function getPredictionCount() {
+        return $this->predictionCount;
+    }
 }

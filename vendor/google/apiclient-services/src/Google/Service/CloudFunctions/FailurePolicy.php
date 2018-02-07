@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_CloudFunctions_FailurePolicy extends Google_Model
-{
-  protected $retryType = 'Google_Service_CloudFunctions_Retry';
-  protected $retryDataType = '';
+class Google_Service_CloudFunctions_FailurePolicy extends Google_Model {
+    protected $retryType     = 'Google_Service_CloudFunctions_Retry';
+    protected $retryDataType = '';
 
-  /**
-   * @param Google_Service_CloudFunctions_Retry
-   */
-  public function setRetry(Google_Service_CloudFunctions_Retry $retry)
-  {
-    $this->retry = $retry;
-  }
-  /**
-   * @return Google_Service_CloudFunctions_Retry
-   */
-  public function getRetry()
-  {
-    return $this->retry;
-  }
+    /**
+     * @param Google_Service_CloudFunctions_Retry
+     */
+    public function setRetry(Google_Service_CloudFunctions_Retry $retry) {
+        $this->retry = $retry;
+    }
+
+    /**
+     * @return Google_Service_CloudFunctions_Retry
+     */
+    public function getRetry() {
+        return $this->retry;
+    }
 }

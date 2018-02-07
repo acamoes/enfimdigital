@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_ServiceControl_RequestMetadata extends Google_Model
-{
-  public $callerIp;
-  public $callerNetwork;
-  public $callerSuppliedUserAgent;
+class Google_Service_ServiceControl_RequestMetadata extends Google_Model {
+    public $callerIp;
+    public $callerNetwork;
+    public $callerSuppliedUserAgent;
 
-  public function setCallerIp($callerIp)
-  {
-    $this->callerIp = $callerIp;
-  }
-  public function getCallerIp()
-  {
-    return $this->callerIp;
-  }
-  public function setCallerNetwork($callerNetwork)
-  {
-    $this->callerNetwork = $callerNetwork;
-  }
-  public function getCallerNetwork()
-  {
-    return $this->callerNetwork;
-  }
-  public function setCallerSuppliedUserAgent($callerSuppliedUserAgent)
-  {
-    $this->callerSuppliedUserAgent = $callerSuppliedUserAgent;
-  }
-  public function getCallerSuppliedUserAgent()
-  {
-    return $this->callerSuppliedUserAgent;
-  }
+    public function setCallerIp($callerIp) {
+        $this->callerIp = $callerIp;
+    }
+
+    public function getCallerIp() {
+        return $this->callerIp;
+    }
+
+    public function setCallerNetwork($callerNetwork) {
+        $this->callerNetwork = $callerNetwork;
+    }
+
+    public function getCallerNetwork() {
+        return $this->callerNetwork;
+    }
+
+    public function setCallerSuppliedUserAgent($callerSuppliedUserAgent) {
+        $this->callerSuppliedUserAgent = $callerSuppliedUserAgent;
+    }
+
+    public function getCallerSuppliedUserAgent() {
+        return $this->callerSuppliedUserAgent;
+    }
 }

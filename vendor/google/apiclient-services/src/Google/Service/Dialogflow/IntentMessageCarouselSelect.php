@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageCarouselSelect extends Google_Collection
-{
-  protected $collection_key = 'items';
-  protected $itemsType = 'Google_Service_Dialogflow_IntentMessageCarouselSelectItem';
-  protected $itemsDataType = 'array';
+class Google_Service_Dialogflow_IntentMessageCarouselSelect extends Google_Collection {
+    protected $collection_key = 'items';
+    protected $itemsType      = 'Google_Service_Dialogflow_IntentMessageCarouselSelectItem';
+    protected $itemsDataType  = 'array';
 
-  /**
-   * @param Google_Service_Dialogflow_IntentMessageCarouselSelectItem
-   */
-  public function setItems($items)
-  {
-    $this->items = $items;
-  }
-  /**
-   * @return Google_Service_Dialogflow_IntentMessageCarouselSelectItem
-   */
-  public function getItems()
-  {
-    return $this->items;
-  }
+    /**
+     * @param Google_Service_Dialogflow_IntentMessageCarouselSelectItem
+     */
+    public function setItems($items) {
+        $this->items = $items;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_IntentMessageCarouselSelectItem
+     */
+    public function getItems() {
+        return $this->items;
+    }
 }

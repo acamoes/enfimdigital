@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_FirebaseDynamicLinks_DynamicLinkWarning extends Google_Model
-{
-  public $warningCode;
-  public $warningDocumentLink;
-  public $warningMessage;
+class Google_Service_FirebaseDynamicLinks_DynamicLinkWarning extends Google_Model {
+    public $warningCode;
+    public $warningDocumentLink;
+    public $warningMessage;
 
-  public function setWarningCode($warningCode)
-  {
-    $this->warningCode = $warningCode;
-  }
-  public function getWarningCode()
-  {
-    return $this->warningCode;
-  }
-  public function setWarningDocumentLink($warningDocumentLink)
-  {
-    $this->warningDocumentLink = $warningDocumentLink;
-  }
-  public function getWarningDocumentLink()
-  {
-    return $this->warningDocumentLink;
-  }
-  public function setWarningMessage($warningMessage)
-  {
-    $this->warningMessage = $warningMessage;
-  }
-  public function getWarningMessage()
-  {
-    return $this->warningMessage;
-  }
+    public function setWarningCode($warningCode) {
+        $this->warningCode = $warningCode;
+    }
+
+    public function getWarningCode() {
+        return $this->warningCode;
+    }
+
+    public function setWarningDocumentLink($warningDocumentLink) {
+        $this->warningDocumentLink = $warningDocumentLink;
+    }
+
+    public function getWarningDocumentLink() {
+        return $this->warningDocumentLink;
+    }
+
+    public function setWarningMessage($warningMessage) {
+        $this->warningMessage = $warningMessage;
+    }
+
+    public function getWarningMessage() {
+        return $this->warningMessage;
+    }
 }

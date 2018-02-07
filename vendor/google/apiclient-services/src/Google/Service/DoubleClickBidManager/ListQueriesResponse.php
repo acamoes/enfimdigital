@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_DoubleClickBidManager_ListQueriesResponse extends Google_Collection
-{
-  protected $collection_key = 'queries';
-  public $kind;
-  protected $queriesType = 'Google_Service_DoubleClickBidManager_Query';
-  protected $queriesDataType = 'array';
+class Google_Service_DoubleClickBidManager_ListQueriesResponse extends Google_Collection {
+    protected $collection_key  = 'queries';
+    public $kind;
+    protected $queriesType     = 'Google_Service_DoubleClickBidManager_Query';
+    protected $queriesDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_DoubleClickBidManager_Query
-   */
-  public function setQueries($queries)
-  {
-    $this->queries = $queries;
-  }
-  /**
-   * @return Google_Service_DoubleClickBidManager_Query
-   */
-  public function getQueries()
-  {
-    return $this->queries;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_DoubleClickBidManager_Query
+     */
+    public function setQueries($queries) {
+        $this->queries = $queries;
+    }
+
+    /**
+     * @return Google_Service_DoubleClickBidManager_Query
+     */
+    public function getQueries() {
+        return $this->queries;
+    }
 }

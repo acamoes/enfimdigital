@@ -23,6 +23,6 @@
  *   $bidders = $adexchangebuyer2Service->bidders;
  *  </code>
  */
-class Google_Service_AdExchangeBuyerII_Resource_Bidders extends Google_Service_Resource
-{
+class Google_Service_AdExchangeBuyerII_Resource_Bidders extends Google_Service_Resource {
+
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Plus_PersonPlacesLived extends Google_Model
-{
-  public $primary;
-  public $value;
+class Google_Service_Plus_PersonPlacesLived extends Google_Model {
+    public $primary;
+    public $value;
 
-  public function setPrimary($primary)
-  {
-    $this->primary = $primary;
-  }
-  public function getPrimary()
-  {
-    return $this->primary;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setPrimary($primary) {
+        $this->primary = $primary;
+    }
+
+    public function getPrimary() {
+        return $this->primary;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

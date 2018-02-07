@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ServiceConsumerManagement_AuthorizationRule extends Google_Model
-{
-  public $permissions;
-  public $selector;
+class Google_Service_ServiceConsumerManagement_AuthorizationRule extends Google_Model {
+    public $permissions;
+    public $selector;
 
-  public function setPermissions($permissions)
-  {
-    $this->permissions = $permissions;
-  }
-  public function getPermissions()
-  {
-    return $this->permissions;
-  }
-  public function setSelector($selector)
-  {
-    $this->selector = $selector;
-  }
-  public function getSelector()
-  {
-    return $this->selector;
-  }
+    public function setPermissions($permissions) {
+        $this->permissions = $permissions;
+    }
+
+    public function getPermissions() {
+        return $this->permissions;
+    }
+
+    public function setSelector($selector) {
+        $this->selector = $selector;
+    }
+
+    public function getSelector() {
+        return $this->selector;
+    }
 }

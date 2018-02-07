@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Firestore_Index extends Google_Collection
-{
-  protected $collection_key = 'fields';
-  public $collectionId;
-  protected $fieldsType = 'Google_Service_Firestore_IndexField';
-  protected $fieldsDataType = 'array';
-  public $name;
-  public $state;
+class Google_Service_Firestore_Index extends Google_Collection {
+    protected $collection_key = 'fields';
+    public $collectionId;
+    protected $fieldsType     = 'Google_Service_Firestore_IndexField';
+    protected $fieldsDataType = 'array';
+    public $name;
+    public $state;
 
-  public function setCollectionId($collectionId)
-  {
-    $this->collectionId = $collectionId;
-  }
-  public function getCollectionId()
-  {
-    return $this->collectionId;
-  }
-  /**
-   * @param Google_Service_Firestore_IndexField
-   */
-  public function setFields($fields)
-  {
-    $this->fields = $fields;
-  }
-  /**
-   * @return Google_Service_Firestore_IndexField
-   */
-  public function getFields()
-  {
-    return $this->fields;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setState($state)
-  {
-    $this->state = $state;
-  }
-  public function getState()
-  {
-    return $this->state;
-  }
+    public function setCollectionId($collectionId) {
+        $this->collectionId = $collectionId;
+    }
+
+    public function getCollectionId() {
+        return $this->collectionId;
+    }
+
+    /**
+     * @param Google_Service_Firestore_IndexField
+     */
+    public function setFields($fields) {
+        $this->fields = $fields;
+    }
+
+    /**
+     * @return Google_Service_Firestore_IndexField
+     */
+    public function getFields() {
+        return $this->fields;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setState($state) {
+        $this->state = $state;
+    }
+
+    public function getState() {
+        return $this->state;
+    }
 }

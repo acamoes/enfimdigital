@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_StreetViewPublish_Level extends Google_Model
-{
-  public $name;
-  public $number;
+class Google_Service_StreetViewPublish_Level extends Google_Model {
+    public $name;
+    public $number;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setNumber($number)
-  {
-    $this->number = $number;
-  }
-  public function getNumber()
-  {
-    return $this->number;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setNumber($number) {
+        $this->number = $number;
+    }
+
+    public function getNumber() {
+        return $this->number;
+    }
 }

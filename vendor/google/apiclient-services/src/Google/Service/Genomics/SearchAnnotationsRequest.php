@@ -15,71 +15,69 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchAnnotationsRequest extends Google_Collection
-{
-  protected $collection_key = 'annotationSetIds';
-  public $annotationSetIds;
-  public $end;
-  public $pageSize;
-  public $pageToken;
-  public $referenceId;
-  public $referenceName;
-  public $start;
+class Google_Service_Genomics_SearchAnnotationsRequest extends Google_Collection {
+    protected $collection_key = 'annotationSetIds';
+    public $annotationSetIds;
+    public $end;
+    public $pageSize;
+    public $pageToken;
+    public $referenceId;
+    public $referenceName;
+    public $start;
 
-  public function setAnnotationSetIds($annotationSetIds)
-  {
-    $this->annotationSetIds = $annotationSetIds;
-  }
-  public function getAnnotationSetIds()
-  {
-    return $this->annotationSetIds;
-  }
-  public function setEnd($end)
-  {
-    $this->end = $end;
-  }
-  public function getEnd()
-  {
-    return $this->end;
-  }
-  public function setPageSize($pageSize)
-  {
-    $this->pageSize = $pageSize;
-  }
-  public function getPageSize()
-  {
-    return $this->pageSize;
-  }
-  public function setPageToken($pageToken)
-  {
-    $this->pageToken = $pageToken;
-  }
-  public function getPageToken()
-  {
-    return $this->pageToken;
-  }
-  public function setReferenceId($referenceId)
-  {
-    $this->referenceId = $referenceId;
-  }
-  public function getReferenceId()
-  {
-    return $this->referenceId;
-  }
-  public function setReferenceName($referenceName)
-  {
-    $this->referenceName = $referenceName;
-  }
-  public function getReferenceName()
-  {
-    return $this->referenceName;
-  }
-  public function setStart($start)
-  {
-    $this->start = $start;
-  }
-  public function getStart()
-  {
-    return $this->start;
-  }
+    public function setAnnotationSetIds($annotationSetIds) {
+        $this->annotationSetIds = $annotationSetIds;
+    }
+
+    public function getAnnotationSetIds() {
+        return $this->annotationSetIds;
+    }
+
+    public function setEnd($end) {
+        $this->end = $end;
+    }
+
+    public function getEnd() {
+        return $this->end;
+    }
+
+    public function setPageSize($pageSize) {
+        $this->pageSize = $pageSize;
+    }
+
+    public function getPageSize() {
+        return $this->pageSize;
+    }
+
+    public function setPageToken($pageToken) {
+        $this->pageToken = $pageToken;
+    }
+
+    public function getPageToken() {
+        return $this->pageToken;
+    }
+
+    public function setReferenceId($referenceId) {
+        $this->referenceId = $referenceId;
+    }
+
+    public function getReferenceId() {
+        return $this->referenceId;
+    }
+
+    public function setReferenceName($referenceName) {
+        $this->referenceName = $referenceName;
+    }
+
+    public function getReferenceName() {
+        return $this->referenceName;
+    }
+
+    public function setStart($start) {
+        $this->start = $start;
+    }
+
+    public function getStart() {
+        return $this->start;
+    }
 }

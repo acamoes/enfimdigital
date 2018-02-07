@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudFunctions_SourceRepository extends Google_Model
-{
-  public $deployedUrl;
-  public $url;
+class Google_Service_CloudFunctions_SourceRepository extends Google_Model {
+    public $deployedUrl;
+    public $url;
 
-  public function setDeployedUrl($deployedUrl)
-  {
-    $this->deployedUrl = $deployedUrl;
-  }
-  public function getDeployedUrl()
-  {
-    return $this->deployedUrl;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setDeployedUrl($deployedUrl) {
+        $this->deployedUrl = $deployedUrl;
+    }
+
+    public function getDeployedUrl() {
+        return $this->deployedUrl;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_PeopleService_ModifyContactGroupMembersResponse extends Google_Collection
-{
-  protected $collection_key = 'notFoundResourceNames';
-  public $notFoundResourceNames;
+class Google_Service_PeopleService_ModifyContactGroupMembersResponse extends Google_Collection {
+    protected $collection_key = 'notFoundResourceNames';
+    public $notFoundResourceNames;
 
-  public function setNotFoundResourceNames($notFoundResourceNames)
-  {
-    $this->notFoundResourceNames = $notFoundResourceNames;
-  }
-  public function getNotFoundResourceNames()
-  {
-    return $this->notFoundResourceNames;
-  }
+    public function setNotFoundResourceNames($notFoundResourceNames) {
+        $this->notFoundResourceNames = $notFoundResourceNames;
+    }
+
+    public function getNotFoundResourceNames() {
+        return $this->notFoundResourceNames;
+    }
 }

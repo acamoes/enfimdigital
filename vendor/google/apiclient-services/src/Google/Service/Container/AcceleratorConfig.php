@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Container_AcceleratorConfig extends Google_Model
-{
-  public $acceleratorCount;
-  public $acceleratorType;
+class Google_Service_Container_AcceleratorConfig extends Google_Model {
+    public $acceleratorCount;
+    public $acceleratorType;
 
-  public function setAcceleratorCount($acceleratorCount)
-  {
-    $this->acceleratorCount = $acceleratorCount;
-  }
-  public function getAcceleratorCount()
-  {
-    return $this->acceleratorCount;
-  }
-  public function setAcceleratorType($acceleratorType)
-  {
-    $this->acceleratorType = $acceleratorType;
-  }
-  public function getAcceleratorType()
-  {
-    return $this->acceleratorType;
-  }
+    public function setAcceleratorCount($acceleratorCount) {
+        $this->acceleratorCount = $acceleratorCount;
+    }
+
+    public function getAcceleratorCount() {
+        return $this->acceleratorCount;
+    }
+
+    public function setAcceleratorType($acceleratorType) {
+        $this->acceleratorType = $acceleratorType;
+    }
+
+    public function getAcceleratorType() {
+        return $this->acceleratorType;
+    }
 }

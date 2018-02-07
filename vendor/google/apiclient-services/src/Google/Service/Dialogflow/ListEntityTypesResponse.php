@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_ListEntityTypesResponse extends Google_Collection
-{
-  protected $collection_key = 'entityTypes';
-  protected $entityTypesType = 'Google_Service_Dialogflow_EntityType';
-  protected $entityTypesDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Dialogflow_ListEntityTypesResponse extends Google_Collection {
+    protected $collection_key      = 'entityTypes';
+    protected $entityTypesType     = 'Google_Service_Dialogflow_EntityType';
+    protected $entityTypesDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Dialogflow_EntityType
-   */
-  public function setEntityTypes($entityTypes)
-  {
-    $this->entityTypes = $entityTypes;
-  }
-  /**
-   * @return Google_Service_Dialogflow_EntityType
-   */
-  public function getEntityTypes()
-  {
-    return $this->entityTypes;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Dialogflow_EntityType
+     */
+    public function setEntityTypes($entityTypes) {
+        $this->entityTypes = $entityTypes;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_EntityType
+     */
+    public function getEntityTypes() {
+        return $this->entityTypes;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

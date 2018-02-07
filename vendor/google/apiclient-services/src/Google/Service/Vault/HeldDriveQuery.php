@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Vault_HeldDriveQuery extends Google_Model
-{
-  public $includeTeamDriveFiles;
+class Google_Service_Vault_HeldDriveQuery extends Google_Model {
+    public $includeTeamDriveFiles;
 
-  public function setIncludeTeamDriveFiles($includeTeamDriveFiles)
-  {
-    $this->includeTeamDriveFiles = $includeTeamDriveFiles;
-  }
-  public function getIncludeTeamDriveFiles()
-  {
-    return $this->includeTeamDriveFiles;
-  }
+    public function setIncludeTeamDriveFiles($includeTeamDriveFiles) {
+        $this->includeTeamDriveFiles = $includeTeamDriveFiles;
+    }
+
+    public function getIncludeTeamDriveFiles() {
+        return $this->includeTeamDriveFiles;
+    }
 }

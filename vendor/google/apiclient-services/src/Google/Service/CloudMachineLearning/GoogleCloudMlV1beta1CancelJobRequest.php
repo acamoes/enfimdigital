@@ -15,6 +15,6 @@
  * the License.
  */
 
-class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1CancelJobRequest extends Google_Model
-{
+class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1CancelJobRequest extends Google_Model {
+
 }

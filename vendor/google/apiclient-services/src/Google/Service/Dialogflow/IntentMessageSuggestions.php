@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageSuggestions extends Google_Collection
-{
-  protected $collection_key = 'suggestions';
-  protected $suggestionsType = 'Google_Service_Dialogflow_IntentMessageSuggestion';
-  protected $suggestionsDataType = 'array';
+class Google_Service_Dialogflow_IntentMessageSuggestions extends Google_Collection {
+    protected $collection_key      = 'suggestions';
+    protected $suggestionsType     = 'Google_Service_Dialogflow_IntentMessageSuggestion';
+    protected $suggestionsDataType = 'array';
 
-  /**
-   * @param Google_Service_Dialogflow_IntentMessageSuggestion
-   */
-  public function setSuggestions($suggestions)
-  {
-    $this->suggestions = $suggestions;
-  }
-  /**
-   * @return Google_Service_Dialogflow_IntentMessageSuggestion
-   */
-  public function getSuggestions()
-  {
-    return $this->suggestions;
-  }
+    /**
+     * @param Google_Service_Dialogflow_IntentMessageSuggestion
+     */
+    public function setSuggestions($suggestions) {
+        $this->suggestions = $suggestions;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_IntentMessageSuggestion
+     */
+    public function getSuggestions() {
+        return $this->suggestions;
+    }
 }

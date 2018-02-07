@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_TagManager_ZoneTypeRestriction extends Google_Collection
-{
-  protected $collection_key = 'whitelistedTypeId';
-  public $enable;
-  public $whitelistedTypeId;
+class Google_Service_TagManager_ZoneTypeRestriction extends Google_Collection {
+    protected $collection_key = 'whitelistedTypeId';
+    public $enable;
+    public $whitelistedTypeId;
 
-  public function setEnable($enable)
-  {
-    $this->enable = $enable;
-  }
-  public function getEnable()
-  {
-    return $this->enable;
-  }
-  public function setWhitelistedTypeId($whitelistedTypeId)
-  {
-    $this->whitelistedTypeId = $whitelistedTypeId;
-  }
-  public function getWhitelistedTypeId()
-  {
-    return $this->whitelistedTypeId;
-  }
+    public function setEnable($enable) {
+        $this->enable = $enable;
+    }
+
+    public function getEnable() {
+        return $this->enable;
+    }
+
+    public function setWhitelistedTypeId($whitelistedTypeId) {
+        $this->whitelistedTypeId = $whitelistedTypeId;
+    }
+
+    public function getWhitelistedTypeId() {
+        return $this->whitelistedTypeId;
+    }
 }

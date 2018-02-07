@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Analytics_WebpropertyPermissions extends Google_Collection
-{
-  protected $collection_key = 'effective';
-  public $effective;
+class Google_Service_Analytics_WebpropertyPermissions extends Google_Collection {
+    protected $collection_key = 'effective';
+    public $effective;
 
-  public function setEffective($effective)
-  {
-    $this->effective = $effective;
-  }
-  public function getEffective()
-  {
-    return $this->effective;
-  }
+    public function setEffective($effective) {
+        $this->effective = $effective;
+    }
+
+    public function getEffective() {
+        return $this->effective;
+    }
 }

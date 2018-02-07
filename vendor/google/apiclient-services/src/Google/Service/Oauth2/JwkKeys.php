@@ -15,61 +15,59 @@
  * the License.
  */
 
-class Google_Service_Oauth2_JwkKeys extends Google_Model
-{
-  public $alg;
-  public $e;
-  public $kid;
-  public $kty;
-  public $n;
-  public $use;
+class Google_Service_Oauth2_JwkKeys extends Google_Model {
+    public $alg;
+    public $e;
+    public $kid;
+    public $kty;
+    public $n;
+    public $use;
 
-  public function setAlg($alg)
-  {
-    $this->alg = $alg;
-  }
-  public function getAlg()
-  {
-    return $this->alg;
-  }
-  public function setE($e)
-  {
-    $this->e = $e;
-  }
-  public function getE()
-  {
-    return $this->e;
-  }
-  public function setKid($kid)
-  {
-    $this->kid = $kid;
-  }
-  public function getKid()
-  {
-    return $this->kid;
-  }
-  public function setKty($kty)
-  {
-    $this->kty = $kty;
-  }
-  public function getKty()
-  {
-    return $this->kty;
-  }
-  public function setN($n)
-  {
-    $this->n = $n;
-  }
-  public function getN()
-  {
-    return $this->n;
-  }
-  public function setUse($use)
-  {
-    $this->use = $use;
-  }
-  public function getUse()
-  {
-    return $this->use;
-  }
+    public function setAlg($alg) {
+        $this->alg = $alg;
+    }
+
+    public function getAlg() {
+        return $this->alg;
+    }
+
+    public function setE($e) {
+        $this->e = $e;
+    }
+
+    public function getE() {
+        return $this->e;
+    }
+
+    public function setKid($kid) {
+        $this->kid = $kid;
+    }
+
+    public function getKid() {
+        return $this->kid;
+    }
+
+    public function setKty($kty) {
+        $this->kty = $kty;
+    }
+
+    public function getKty() {
+        return $this->kty;
+    }
+
+    public function setN($n) {
+        $this->n = $n;
+    }
+
+    public function getN() {
+        return $this->n;
+    }
+
+    public function setUse($use) {
+        $this->use = $use;
+    }
+
+    public function getUse() {
+        return $this->use;
+    }
 }

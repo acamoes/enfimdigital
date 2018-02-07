@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_CloudUserAccounts_GroupsAddMemberRequest extends Google_Collection
-{
-  protected $collection_key = 'users';
-  public $users;
+class Google_Service_CloudUserAccounts_GroupsAddMemberRequest extends Google_Collection {
+    protected $collection_key = 'users';
+    public $users;
 
-  public function setUsers($users)
-  {
-    $this->users = $users;
-  }
-  public function getUsers()
-  {
-    return $this->users;
-  }
+    public function setUsers($users) {
+        $this->users = $users;
+    }
+
+    public function getUsers() {
+        return $this->users;
+    }
 }

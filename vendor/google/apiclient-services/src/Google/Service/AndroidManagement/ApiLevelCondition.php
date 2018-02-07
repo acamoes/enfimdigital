@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_AndroidManagement_ApiLevelCondition extends Google_Model
-{
-  public $minApiLevel;
+class Google_Service_AndroidManagement_ApiLevelCondition extends Google_Model {
+    public $minApiLevel;
 
-  public function setMinApiLevel($minApiLevel)
-  {
-    $this->minApiLevel = $minApiLevel;
-  }
-  public function getMinApiLevel()
-  {
-    return $this->minApiLevel;
-  }
+    public function setMinApiLevel($minApiLevel) {
+        $this->minApiLevel = $minApiLevel;
+    }
+
+    public function getMinApiLevel() {
+        return $this->minApiLevel;
+    }
 }

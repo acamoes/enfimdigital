@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageSimpleResponse extends Google_Model
-{
-  public $displayText;
-  public $ssml;
-  public $textToSpeech;
+class Google_Service_Dialogflow_IntentMessageSimpleResponse extends Google_Model {
+    public $displayText;
+    public $ssml;
+    public $textToSpeech;
 
-  public function setDisplayText($displayText)
-  {
-    $this->displayText = $displayText;
-  }
-  public function getDisplayText()
-  {
-    return $this->displayText;
-  }
-  public function setSsml($ssml)
-  {
-    $this->ssml = $ssml;
-  }
-  public function getSsml()
-  {
-    return $this->ssml;
-  }
-  public function setTextToSpeech($textToSpeech)
-  {
-    $this->textToSpeech = $textToSpeech;
-  }
-  public function getTextToSpeech()
-  {
-    return $this->textToSpeech;
-  }
+    public function setDisplayText($displayText) {
+        $this->displayText = $displayText;
+    }
+
+    public function getDisplayText() {
+        return $this->displayText;
+    }
+
+    public function setSsml($ssml) {
+        $this->ssml = $ssml;
+    }
+
+    public function getSsml() {
+        return $this->ssml;
+    }
+
+    public function setTextToSpeech($textToSpeech) {
+        $this->textToSpeech = $textToSpeech;
+    }
+
+    public function getTextToSpeech() {
+        return $this->textToSpeech;
+    }
 }

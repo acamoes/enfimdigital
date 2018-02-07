@@ -15,68 +15,66 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrderPaymentMethod extends Google_Model
-{
-  protected $billingAddressType = 'Google_Service_ShoppingContent_OrderAddress';
-  protected $billingAddressDataType = '';
-  public $expirationMonth;
-  public $expirationYear;
-  public $lastFourDigits;
-  public $phoneNumber;
-  public $type;
+class Google_Service_ShoppingContent_OrderPaymentMethod extends Google_Model {
+    protected $billingAddressType     = 'Google_Service_ShoppingContent_OrderAddress';
+    protected $billingAddressDataType = '';
+    public $expirationMonth;
+    public $expirationYear;
+    public $lastFourDigits;
+    public $phoneNumber;
+    public $type;
 
-  /**
-   * @param Google_Service_ShoppingContent_OrderAddress
-   */
-  public function setBillingAddress(Google_Service_ShoppingContent_OrderAddress $billingAddress)
-  {
-    $this->billingAddress = $billingAddress;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_OrderAddress
-   */
-  public function getBillingAddress()
-  {
-    return $this->billingAddress;
-  }
-  public function setExpirationMonth($expirationMonth)
-  {
-    $this->expirationMonth = $expirationMonth;
-  }
-  public function getExpirationMonth()
-  {
-    return $this->expirationMonth;
-  }
-  public function setExpirationYear($expirationYear)
-  {
-    $this->expirationYear = $expirationYear;
-  }
-  public function getExpirationYear()
-  {
-    return $this->expirationYear;
-  }
-  public function setLastFourDigits($lastFourDigits)
-  {
-    $this->lastFourDigits = $lastFourDigits;
-  }
-  public function getLastFourDigits()
-  {
-    return $this->lastFourDigits;
-  }
-  public function setPhoneNumber($phoneNumber)
-  {
-    $this->phoneNumber = $phoneNumber;
-  }
-  public function getPhoneNumber()
-  {
-    return $this->phoneNumber;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    /**
+     * @param Google_Service_ShoppingContent_OrderAddress
+     */
+    public function setBillingAddress(Google_Service_ShoppingContent_OrderAddress $billingAddress) {
+        $this->billingAddress = $billingAddress;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_OrderAddress
+     */
+    public function getBillingAddress() {
+        return $this->billingAddress;
+    }
+
+    public function setExpirationMonth($expirationMonth) {
+        $this->expirationMonth = $expirationMonth;
+    }
+
+    public function getExpirationMonth() {
+        return $this->expirationMonth;
+    }
+
+    public function setExpirationYear($expirationYear) {
+        $this->expirationYear = $expirationYear;
+    }
+
+    public function getExpirationYear() {
+        return $this->expirationYear;
+    }
+
+    public function setLastFourDigits($lastFourDigits) {
+        $this->lastFourDigits = $lastFourDigits;
+    }
+
+    public function getLastFourDigits() {
+        return $this->lastFourDigits;
+    }
+
+    public function setPhoneNumber($phoneNumber) {
+        $this->phoneNumber = $phoneNumber;
+    }
+
+    public function getPhoneNumber() {
+        return $this->phoneNumber;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

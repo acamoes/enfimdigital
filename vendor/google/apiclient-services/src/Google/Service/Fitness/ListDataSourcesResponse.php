@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Fitness_ListDataSourcesResponse extends Google_Collection
-{
-  protected $collection_key = 'dataSource';
-  protected $dataSourceType = 'Google_Service_Fitness_DataSource';
-  protected $dataSourceDataType = 'array';
+class Google_Service_Fitness_ListDataSourcesResponse extends Google_Collection {
+    protected $collection_key     = 'dataSource';
+    protected $dataSourceType     = 'Google_Service_Fitness_DataSource';
+    protected $dataSourceDataType = 'array';
 
-  /**
-   * @param Google_Service_Fitness_DataSource
-   */
-  public function setDataSource($dataSource)
-  {
-    $this->dataSource = $dataSource;
-  }
-  /**
-   * @return Google_Service_Fitness_DataSource
-   */
-  public function getDataSource()
-  {
-    return $this->dataSource;
-  }
+    /**
+     * @param Google_Service_Fitness_DataSource
+     */
+    public function setDataSource($dataSource) {
+        $this->dataSource = $dataSource;
+    }
+
+    /**
+     * @return Google_Service_Fitness_DataSource
+     */
+    public function getDataSource() {
+        return $this->dataSource;
+    }
 }

@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Slides_TableRange extends Google_Model
-{
-  public $columnSpan;
-  protected $locationType = 'Google_Service_Slides_TableCellLocation';
-  protected $locationDataType = '';
-  public $rowSpan;
+class Google_Service_Slides_TableRange extends Google_Model {
+    public $columnSpan;
+    protected $locationType     = 'Google_Service_Slides_TableCellLocation';
+    protected $locationDataType = '';
+    public $rowSpan;
 
-  public function setColumnSpan($columnSpan)
-  {
-    $this->columnSpan = $columnSpan;
-  }
-  public function getColumnSpan()
-  {
-    return $this->columnSpan;
-  }
-  /**
-   * @param Google_Service_Slides_TableCellLocation
-   */
-  public function setLocation(Google_Service_Slides_TableCellLocation $location)
-  {
-    $this->location = $location;
-  }
-  /**
-   * @return Google_Service_Slides_TableCellLocation
-   */
-  public function getLocation()
-  {
-    return $this->location;
-  }
-  public function setRowSpan($rowSpan)
-  {
-    $this->rowSpan = $rowSpan;
-  }
-  public function getRowSpan()
-  {
-    return $this->rowSpan;
-  }
+    public function setColumnSpan($columnSpan) {
+        $this->columnSpan = $columnSpan;
+    }
+
+    public function getColumnSpan() {
+        return $this->columnSpan;
+    }
+
+    /**
+     * @param Google_Service_Slides_TableCellLocation
+     */
+    public function setLocation(Google_Service_Slides_TableCellLocation $location) {
+        $this->location = $location;
+    }
+
+    /**
+     * @return Google_Service_Slides_TableCellLocation
+     */
+    public function getLocation() {
+        return $this->location;
+    }
+
+    public function setRowSpan($rowSpan) {
+        $this->rowSpan = $rowSpan;
+    }
+
+    public function getRowSpan() {
+        return $this->rowSpan;
+    }
 }

@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_InstancesImportRequest extends Google_Model
-{
-  protected $importContextType = 'Google_Service_SQLAdmin_ImportContext';
-  protected $importContextDataType = '';
+class Google_Service_SQLAdmin_InstancesImportRequest extends Google_Model {
+    protected $importContextType     = 'Google_Service_SQLAdmin_ImportContext';
+    protected $importContextDataType = '';
 
-  /**
-   * @param Google_Service_SQLAdmin_ImportContext
-   */
-  public function setImportContext(Google_Service_SQLAdmin_ImportContext $importContext)
-  {
-    $this->importContext = $importContext;
-  }
-  /**
-   * @return Google_Service_SQLAdmin_ImportContext
-   */
-  public function getImportContext()
-  {
-    return $this->importContext;
-  }
+    /**
+     * @param Google_Service_SQLAdmin_ImportContext
+     */
+    public function setImportContext(Google_Service_SQLAdmin_ImportContext $importContext) {
+        $this->importContext = $importContext;
+    }
+
+    /**
+     * @return Google_Service_SQLAdmin_ImportContext
+     */
+    public function getImportContext() {
+        return $this->importContext;
+    }
 }

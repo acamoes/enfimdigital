@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_RestoreAgentRequest extends Google_Model
-{
-  public $agentContent;
-  public $agentUri;
+class Google_Service_Dialogflow_RestoreAgentRequest extends Google_Model {
+    public $agentContent;
+    public $agentUri;
 
-  public function setAgentContent($agentContent)
-  {
-    $this->agentContent = $agentContent;
-  }
-  public function getAgentContent()
-  {
-    return $this->agentContent;
-  }
-  public function setAgentUri($agentUri)
-  {
-    $this->agentUri = $agentUri;
-  }
-  public function getAgentUri()
-  {
-    return $this->agentUri;
-  }
+    public function setAgentContent($agentContent) {
+        $this->agentContent = $agentContent;
+    }
+
+    public function getAgentContent() {
+        return $this->agentContent;
+    }
+
+    public function setAgentUri($agentUri) {
+        $this->agentUri = $agentUri;
+    }
+
+    public function getAgentUri() {
+        return $this->agentUri;
+    }
 }

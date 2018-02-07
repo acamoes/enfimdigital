@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Games_RoomLeaveRequest extends Google_Model
-{
-  public $kind;
-  protected $leaveDiagnosticsType = 'Google_Service_Games_RoomLeaveDiagnostics';
-  protected $leaveDiagnosticsDataType = '';
-  public $reason;
+class Google_Service_Games_RoomLeaveRequest extends Google_Model {
+    public $kind;
+    protected $leaveDiagnosticsType     = 'Google_Service_Games_RoomLeaveDiagnostics';
+    protected $leaveDiagnosticsDataType = '';
+    public $reason;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_Games_RoomLeaveDiagnostics
-   */
-  public function setLeaveDiagnostics(Google_Service_Games_RoomLeaveDiagnostics $leaveDiagnostics)
-  {
-    $this->leaveDiagnostics = $leaveDiagnostics;
-  }
-  /**
-   * @return Google_Service_Games_RoomLeaveDiagnostics
-   */
-  public function getLeaveDiagnostics()
-  {
-    return $this->leaveDiagnostics;
-  }
-  public function setReason($reason)
-  {
-    $this->reason = $reason;
-  }
-  public function getReason()
-  {
-    return $this->reason;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_Games_RoomLeaveDiagnostics
+     */
+    public function setLeaveDiagnostics(Google_Service_Games_RoomLeaveDiagnostics $leaveDiagnostics) {
+        $this->leaveDiagnostics = $leaveDiagnostics;
+    }
+
+    /**
+     * @return Google_Service_Games_RoomLeaveDiagnostics
+     */
+    public function getLeaveDiagnostics() {
+        return $this->leaveDiagnostics;
+    }
+
+    public function setReason($reason) {
+        $this->reason = $reason;
+    }
+
+    public function getReason() {
+        return $this->reason;
+    }
 }

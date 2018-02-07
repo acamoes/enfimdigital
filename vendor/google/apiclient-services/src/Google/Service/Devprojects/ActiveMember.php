@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Devprojects_ActiveMember extends Google_Model
-{
-  public $email;
-  public $id;
-  public $kind;
-  public $role;
+class Google_Service_Devprojects_ActiveMember extends Google_Model {
+    public $email;
+    public $id;
+    public $kind;
+    public $role;
 
-  public function setEmail($email)
-  {
-    $this->email = $email;
-  }
-  public function getEmail()
-  {
-    return $this->email;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setRole($role)
-  {
-    $this->role = $role;
-  }
-  public function getRole()
-  {
-    return $this->role;
-  }
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setRole($role) {
+        $this->role = $role;
+    }
+
+    public function getRole() {
+        return $this->role;
+    }
 }

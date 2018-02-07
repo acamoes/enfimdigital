@@ -23,59 +23,58 @@
  *   $entities = $dialogflowService->entities;
  *  </code>
  */
-class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypesEntities extends Google_Service_Resource
-{
-  /**
-   * Creates multiple new entities in the specified entity type (extends the
-   * existing collection of entries).
-   *
-   * Operation  (entities.batchCreate)
-   *
-   * @param string $parent Required. The name of the entity type to create
-   * entities in. Format: `projects//agent/entityTypes/`.
-   * @param Google_Service_Dialogflow_BatchCreateEntitiesRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Dialogflow_Operation
-   */
-  public function batchCreate($parent, Google_Service_Dialogflow_BatchCreateEntitiesRequest $postBody, $optParams = array())
-  {
-    $params = array('parent' => $parent, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('batchCreate', array($params), "Google_Service_Dialogflow_Operation");
-  }
-  /**
-   * Deletes entities in the specified entity type.
-   *
-   * Operation  (entities.batchDelete)
-   *
-   * @param string $parent Required. The name of the entity type to delete entries
-   * for. Format: `projects//agent/entityTypes/`.
-   * @param Google_Service_Dialogflow_BatchDeleteEntitiesRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Dialogflow_Operation
-   */
-  public function batchDelete($parent, Google_Service_Dialogflow_BatchDeleteEntitiesRequest $postBody, $optParams = array())
-  {
-    $params = array('parent' => $parent, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('batchDelete', array($params), "Google_Service_Dialogflow_Operation");
-  }
-  /**
-   * Updates entities in the specified entity type (replaces the existing
-   * collection of entries).
-   *
-   * Operation  (entities.batchUpdate)
-   *
-   * @param string $parent Required. The name of the entity type to update the
-   * entities in. Format: `projects//agent/entityTypes/`.
-   * @param Google_Service_Dialogflow_BatchUpdateEntitiesRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Dialogflow_Operation
-   */
-  public function batchUpdate($parent, Google_Service_Dialogflow_BatchUpdateEntitiesRequest $postBody, $optParams = array())
-  {
-    $params = array('parent' => $parent, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('batchUpdate', array($params), "Google_Service_Dialogflow_Operation");
-  }
+class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypesEntities extends Google_Service_Resource {
+
+    /**
+     * Creates multiple new entities in the specified entity type (extends the
+     * existing collection of entries).
+     *
+     * Operation  (entities.batchCreate)
+     *
+     * @param string $parent Required. The name of the entity type to create
+     * entities in. Format: `projects//agent/entityTypes/`.
+     * @param Google_Service_Dialogflow_BatchCreateEntitiesRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Dialogflow_Operation
+     */
+    public function batchCreate($parent, Google_Service_Dialogflow_BatchCreateEntitiesRequest $postBody, $optParams = array()) {
+        $params = array('parent' => $parent, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('batchCreate', array($params), "Google_Service_Dialogflow_Operation");
+    }
+
+    /**
+     * Deletes entities in the specified entity type.
+     *
+     * Operation  (entities.batchDelete)
+     *
+     * @param string $parent Required. The name of the entity type to delete entries
+     * for. Format: `projects//agent/entityTypes/`.
+     * @param Google_Service_Dialogflow_BatchDeleteEntitiesRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Dialogflow_Operation
+     */
+    public function batchDelete($parent, Google_Service_Dialogflow_BatchDeleteEntitiesRequest $postBody, $optParams = array()) {
+        $params = array('parent' => $parent, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('batchDelete', array($params), "Google_Service_Dialogflow_Operation");
+    }
+
+    /**
+     * Updates entities in the specified entity type (replaces the existing
+     * collection of entries).
+     *
+     * Operation  (entities.batchUpdate)
+     *
+     * @param string $parent Required. The name of the entity type to update the
+     * entities in. Format: `projects//agent/entityTypes/`.
+     * @param Google_Service_Dialogflow_BatchUpdateEntitiesRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Dialogflow_Operation
+     */
+    public function batchUpdate($parent, Google_Service_Dialogflow_BatchUpdateEntitiesRequest $postBody, $optParams = array()) {
+        $params = array('parent' => $parent, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('batchUpdate', array($params), "Google_Service_Dialogflow_Operation");
+    }
 }

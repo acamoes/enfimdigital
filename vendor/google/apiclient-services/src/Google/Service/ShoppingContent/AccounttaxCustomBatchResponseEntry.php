@@ -15,57 +15,55 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_AccounttaxCustomBatchResponseEntry extends Google_Model
-{
-  protected $accountTaxType = 'Google_Service_ShoppingContent_AccountTax';
-  protected $accountTaxDataType = '';
-  public $batchId;
-  protected $errorsType = 'Google_Service_ShoppingContent_Errors';
-  protected $errorsDataType = '';
-  public $kind;
+class Google_Service_ShoppingContent_AccounttaxCustomBatchResponseEntry extends Google_Model {
+    protected $accountTaxType     = 'Google_Service_ShoppingContent_AccountTax';
+    protected $accountTaxDataType = '';
+    public $batchId;
+    protected $errorsType         = 'Google_Service_ShoppingContent_Errors';
+    protected $errorsDataType     = '';
+    public $kind;
 
-  /**
-   * @param Google_Service_ShoppingContent_AccountTax
-   */
-  public function setAccountTax(Google_Service_ShoppingContent_AccountTax $accountTax)
-  {
-    $this->accountTax = $accountTax;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_AccountTax
-   */
-  public function getAccountTax()
-  {
-    return $this->accountTax;
-  }
-  public function setBatchId($batchId)
-  {
-    $this->batchId = $batchId;
-  }
-  public function getBatchId()
-  {
-    return $this->batchId;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_Errors
-   */
-  public function setErrors(Google_Service_ShoppingContent_Errors $errors)
-  {
-    $this->errors = $errors;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_Errors
-   */
-  public function getErrors()
-  {
-    return $this->errors;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_ShoppingContent_AccountTax
+     */
+    public function setAccountTax(Google_Service_ShoppingContent_AccountTax $accountTax) {
+        $this->accountTax = $accountTax;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_AccountTax
+     */
+    public function getAccountTax() {
+        return $this->accountTax;
+    }
+
+    public function setBatchId($batchId) {
+        $this->batchId = $batchId;
+    }
+
+    public function getBatchId() {
+        return $this->batchId;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_Errors
+     */
+    public function setErrors(Google_Service_ShoppingContent_Errors $errors) {
+        $this->errors = $errors;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_Errors
+     */
+    public function getErrors() {
+        return $this->errors;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

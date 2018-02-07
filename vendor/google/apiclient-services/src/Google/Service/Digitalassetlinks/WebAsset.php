@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Digitalassetlinks_WebAsset extends Google_Model
-{
-  public $site;
+class Google_Service_Digitalassetlinks_WebAsset extends Google_Model {
+    public $site;
 
-  public function setSite($site)
-  {
-    $this->site = $site;
-  }
-  public function getSite()
-  {
-    return $this->site;
-  }
+    public function setSite($site) {
+        $this->site = $site;
+    }
+
+    public function getSite() {
+        return $this->site;
+    }
 }

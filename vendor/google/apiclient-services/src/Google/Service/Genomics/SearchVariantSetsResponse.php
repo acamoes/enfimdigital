@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchVariantSetsResponse extends Google_Collection
-{
-  protected $collection_key = 'variantSets';
-  public $nextPageToken;
-  protected $variantSetsType = 'Google_Service_Genomics_VariantSet';
-  protected $variantSetsDataType = 'array';
+class Google_Service_Genomics_SearchVariantSetsResponse extends Google_Collection {
+    protected $collection_key      = 'variantSets';
+    public $nextPageToken;
+    protected $variantSetsType     = 'Google_Service_Genomics_VariantSet';
+    protected $variantSetsDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Genomics_VariantSet
-   */
-  public function setVariantSets($variantSets)
-  {
-    $this->variantSets = $variantSets;
-  }
-  /**
-   * @return Google_Service_Genomics_VariantSet
-   */
-  public function getVariantSets()
-  {
-    return $this->variantSets;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Genomics_VariantSet
+     */
+    public function setVariantSets($variantSets) {
+        $this->variantSets = $variantSets;
+    }
+
+    /**
+     * @return Google_Service_Genomics_VariantSet
+     */
+    public function getVariantSets() {
+        return $this->variantSets;
+    }
 }

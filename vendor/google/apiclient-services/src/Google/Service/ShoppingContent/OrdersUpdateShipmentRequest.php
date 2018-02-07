@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrdersUpdateShipmentRequest extends Google_Model
-{
-  public $carrier;
-  public $operationId;
-  public $shipmentId;
-  public $status;
-  public $trackingId;
+class Google_Service_ShoppingContent_OrdersUpdateShipmentRequest extends Google_Model {
+    public $carrier;
+    public $operationId;
+    public $shipmentId;
+    public $status;
+    public $trackingId;
 
-  public function setCarrier($carrier)
-  {
-    $this->carrier = $carrier;
-  }
-  public function getCarrier()
-  {
-    return $this->carrier;
-  }
-  public function setOperationId($operationId)
-  {
-    $this->operationId = $operationId;
-  }
-  public function getOperationId()
-  {
-    return $this->operationId;
-  }
-  public function setShipmentId($shipmentId)
-  {
-    $this->shipmentId = $shipmentId;
-  }
-  public function getShipmentId()
-  {
-    return $this->shipmentId;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
-  public function setTrackingId($trackingId)
-  {
-    $this->trackingId = $trackingId;
-  }
-  public function getTrackingId()
-  {
-    return $this->trackingId;
-  }
+    public function setCarrier($carrier) {
+        $this->carrier = $carrier;
+    }
+
+    public function getCarrier() {
+        return $this->carrier;
+    }
+
+    public function setOperationId($operationId) {
+        $this->operationId = $operationId;
+    }
+
+    public function getOperationId() {
+        return $this->operationId;
+    }
+
+    public function setShipmentId($shipmentId) {
+        $this->shipmentId = $shipmentId;
+    }
+
+    public function getShipmentId() {
+        return $this->shipmentId;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
+
+    public function setTrackingId($trackingId) {
+        $this->trackingId = $trackingId;
+    }
+
+    public function getTrackingId() {
+        return $this->trackingId;
+    }
 }

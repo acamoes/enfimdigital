@@ -15,45 +15,43 @@
  * the License.
  */
 
-class Google_Service_Devprojects_QueryUrl extends Google_Collection
-{
-  protected $collection_key = 'queryParameters';
-  public $fragment;
-  public $kind;
-  protected $queryParametersType = 'Google_Service_Devprojects_TypedKeyValuePair';
-  protected $queryParametersDataType = 'array';
-  public $urlBase;
+class Google_Service_Devprojects_QueryUrl extends Google_Collection {
+    protected $collection_key          = 'queryParameters';
+    public $fragment;
+    public $kind;
+    protected $queryParametersType     = 'Google_Service_Devprojects_TypedKeyValuePair';
+    protected $queryParametersDataType = 'array';
+    public $urlBase;
 
-  public function setFragment($fragment)
-  {
-    $this->fragment = $fragment;
-  }
-  public function getFragment()
-  {
-    return $this->fragment;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setQueryParameters($queryParameters)
-  {
-    $this->queryParameters = $queryParameters;
-  }
-  public function getQueryParameters()
-  {
-    return $this->queryParameters;
-  }
-  public function setUrlBase($urlBase)
-  {
-    $this->urlBase = $urlBase;
-  }
-  public function getUrlBase()
-  {
-    return $this->urlBase;
-  }
+    public function setFragment($fragment) {
+        $this->fragment = $fragment;
+    }
+
+    public function getFragment() {
+        return $this->fragment;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setQueryParameters($queryParameters) {
+        $this->queryParameters = $queryParameters;
+    }
+
+    public function getQueryParameters() {
+        return $this->queryParameters;
+    }
+
+    public function setUrlBase($urlBase) {
+        $this->urlBase = $urlBase;
+    }
+
+    public function getUrlBase() {
+        return $this->urlBase;
+    }
 }

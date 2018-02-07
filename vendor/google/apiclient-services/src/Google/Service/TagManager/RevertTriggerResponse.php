@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_TagManager_RevertTriggerResponse extends Google_Model
-{
-  protected $triggerType = 'Google_Service_TagManager_Trigger';
-  protected $triggerDataType = '';
+class Google_Service_TagManager_RevertTriggerResponse extends Google_Model {
+    protected $triggerType     = 'Google_Service_TagManager_Trigger';
+    protected $triggerDataType = '';
 
-  /**
-   * @param Google_Service_TagManager_Trigger
-   */
-  public function setTrigger(Google_Service_TagManager_Trigger $trigger)
-  {
-    $this->trigger = $trigger;
-  }
-  /**
-   * @return Google_Service_TagManager_Trigger
-   */
-  public function getTrigger()
-  {
-    return $this->trigger;
-  }
+    /**
+     * @param Google_Service_TagManager_Trigger
+     */
+    public function setTrigger(Google_Service_TagManager_Trigger $trigger) {
+        $this->trigger = $trigger;
+    }
+
+    /**
+     * @return Google_Service_TagManager_Trigger
+     */
+    public function getTrigger() {
+        return $this->trigger;
+    }
 }

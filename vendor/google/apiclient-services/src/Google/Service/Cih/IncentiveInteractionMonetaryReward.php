@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Cih_IncentiveInteractionMonetaryReward extends Google_Model
-{
-  public $amountMicros;
-  public $currencyCode;
+class Google_Service_Cih_IncentiveInteractionMonetaryReward extends Google_Model {
+    public $amountMicros;
+    public $currencyCode;
 
-  public function setAmountMicros($amountMicros)
-  {
-    $this->amountMicros = $amountMicros;
-  }
-  public function getAmountMicros()
-  {
-    return $this->amountMicros;
-  }
-  public function setCurrencyCode($currencyCode)
-  {
-    $this->currencyCode = $currencyCode;
-  }
-  public function getCurrencyCode()
-  {
-    return $this->currencyCode;
-  }
+    public function setAmountMicros($amountMicros) {
+        $this->amountMicros = $amountMicros;
+    }
+
+    public function getAmountMicros() {
+        return $this->amountMicros;
+    }
+
+    public function setCurrencyCode($currencyCode) {
+        $this->currencyCode = $currencyCode;
+    }
+
+    public function getCurrencyCode() {
+        return $this->currencyCode;
+    }
 }

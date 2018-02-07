@@ -15,27 +15,25 @@
  * the License.
  */
 
-class Google_Service_Tracing_Annotation extends Google_Model
-{
-  protected $attributesType = 'Google_Service_Tracing_Attributes';
-  protected $attributesDataType = '';
-  protected $descriptionType = 'Google_Service_Tracing_TruncatableString';
-  protected $descriptionDataType = '';
+class Google_Service_Tracing_Annotation extends Google_Model {
+    protected $attributesType      = 'Google_Service_Tracing_Attributes';
+    protected $attributesDataType  = '';
+    protected $descriptionType     = 'Google_Service_Tracing_TruncatableString';
+    protected $descriptionDataType = '';
 
-  public function setAttributes(Google_Service_Tracing_Attributes $attributes)
-  {
-    $this->attributes = $attributes;
-  }
-  public function getAttributes()
-  {
-    return $this->attributes;
-  }
-  public function setDescription(Google_Service_Tracing_TruncatableString $description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
+    public function setAttributes(Google_Service_Tracing_Attributes $attributes) {
+        $this->attributes = $attributes;
+    }
+
+    public function getAttributes() {
+        return $this->attributes;
+    }
+
+    public function setDescription(Google_Service_Tracing_TruncatableString $description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
 }

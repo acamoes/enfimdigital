@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_ServiceControl_AllocateInfo extends Google_Collection
-{
-  protected $collection_key = 'unusedArguments';
-  public $unusedArguments;
+class Google_Service_ServiceControl_AllocateInfo extends Google_Collection {
+    protected $collection_key = 'unusedArguments';
+    public $unusedArguments;
 
-  public function setUnusedArguments($unusedArguments)
-  {
-    $this->unusedArguments = $unusedArguments;
-  }
-  public function getUnusedArguments()
-  {
-    return $this->unusedArguments;
-  }
+    public function setUnusedArguments($unusedArguments) {
+        $this->unusedArguments = $unusedArguments;
+    }
+
+    public function getUnusedArguments() {
+        return $this->unusedArguments;
+    }
 }

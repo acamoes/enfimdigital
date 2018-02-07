@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Directory_TrustedApps extends Google_Collection
-{
-  protected $collection_key = 'trustedApps';
-  public $etag;
-  public $kind;
-  public $nextPageToken;
-  protected $trustedAppsType = 'Google_Service_Directory_TrustedAppId';
-  protected $trustedAppsDataType = 'array';
+class Google_Service_Directory_TrustedApps extends Google_Collection {
+    protected $collection_key      = 'trustedApps';
+    public $etag;
+    public $kind;
+    public $nextPageToken;
+    protected $trustedAppsType     = 'Google_Service_Directory_TrustedAppId';
+    protected $trustedAppsDataType = 'array';
 
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Directory_TrustedAppId
-   */
-  public function setTrustedApps($trustedApps)
-  {
-    $this->trustedApps = $trustedApps;
-  }
-  /**
-   * @return Google_Service_Directory_TrustedAppId
-   */
-  public function getTrustedApps()
-  {
-    return $this->trustedApps;
-  }
+    public function setEtag($etag) {
+        $this->etag = $etag;
+    }
+
+    public function getEtag() {
+        return $this->etag;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Directory_TrustedAppId
+     */
+    public function setTrustedApps($trustedApps) {
+        $this->trustedApps = $trustedApps;
+    }
+
+    /**
+     * @return Google_Service_Directory_TrustedAppId
+     */
+    public function getTrustedApps() {
+        return $this->trustedApps;
+    }
 }

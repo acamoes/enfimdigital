@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_AndroidProvisioningPartner_DevicesLongRunningOperationMetadata extends Google_Model
-{
-  public $devicesCount;
-  public $processingStatus;
-  public $progress;
+class Google_Service_AndroidProvisioningPartner_DevicesLongRunningOperationMetadata extends Google_Model {
+    public $devicesCount;
+    public $processingStatus;
+    public $progress;
 
-  public function setDevicesCount($devicesCount)
-  {
-    $this->devicesCount = $devicesCount;
-  }
-  public function getDevicesCount()
-  {
-    return $this->devicesCount;
-  }
-  public function setProcessingStatus($processingStatus)
-  {
-    $this->processingStatus = $processingStatus;
-  }
-  public function getProcessingStatus()
-  {
-    return $this->processingStatus;
-  }
-  public function setProgress($progress)
-  {
-    $this->progress = $progress;
-  }
-  public function getProgress()
-  {
-    return $this->progress;
-  }
+    public function setDevicesCount($devicesCount) {
+        $this->devicesCount = $devicesCount;
+    }
+
+    public function getDevicesCount() {
+        return $this->devicesCount;
+    }
+
+    public function setProcessingStatus($processingStatus) {
+        $this->processingStatus = $processingStatus;
+    }
+
+    public function getProcessingStatus() {
+        return $this->processingStatus;
+    }
+
+    public function setProgress($progress) {
+        $this->progress = $progress;
+    }
+
+    public function getProgress() {
+        return $this->progress;
+    }
 }

@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Vault_ListMattersResponse extends Google_Collection
-{
-  protected $collection_key = 'matters';
-  protected $mattersType = 'Google_Service_Vault_Matter';
-  protected $mattersDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Vault_ListMattersResponse extends Google_Collection {
+    protected $collection_key  = 'matters';
+    protected $mattersType     = 'Google_Service_Vault_Matter';
+    protected $mattersDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Vault_Matter
-   */
-  public function setMatters($matters)
-  {
-    $this->matters = $matters;
-  }
-  /**
-   * @return Google_Service_Vault_Matter
-   */
-  public function getMatters()
-  {
-    return $this->matters;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Vault_Matter
+     */
+    public function setMatters($matters) {
+        $this->matters = $matters;
+    }
+
+    /**
+     * @return Google_Service_Vault_Matter
+     */
+    public function getMatters() {
+        return $this->matters;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

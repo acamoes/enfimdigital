@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidManagement_SignupUrl extends Google_Model
-{
-  public $name;
-  public $url;
+class Google_Service_AndroidManagement_SignupUrl extends Google_Model {
+    public $name;
+    public $url;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

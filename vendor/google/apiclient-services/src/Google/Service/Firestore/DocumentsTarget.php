@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Firestore_DocumentsTarget extends Google_Collection
-{
-  protected $collection_key = 'documents';
-  public $documents;
+class Google_Service_Firestore_DocumentsTarget extends Google_Collection {
+    protected $collection_key = 'documents';
+    public $documents;
 
-  public function setDocuments($documents)
-  {
-    $this->documents = $documents;
-  }
-  public function getDocuments()
-  {
-    return $this->documents;
-  }
+    public function setDocuments($documents) {
+        $this->documents = $documents;
+    }
+
+    public function getDocuments() {
+        return $this->documents;
+    }
 }

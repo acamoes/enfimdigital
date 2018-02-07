@@ -100,28 +100,28 @@
                                         {literal} onChange="if (document.getElementById('internshipNao').checked && this.options[this.selectedIndex].value == 'Estágio') {
                                                     this.selectedIndex = 0;
                                                 }"> {/literal}
-                                    <option value="Aberto" selected>Aberto</option>
-                                    <option value="A decorrer">A decorrer</option>
-                                    <option value="Terminado">Terminado</option>
-                                    <option value="Estágio">Estágio (opção inválida)</option>
-                                    <option value="Fechado">Fechado</option>
-                                </select>
-                            </div>								
-                        </div>
-                        <div class="row uniform">
-                            <div style="float: left">
-                                <label for="observations">Observações</label>
-                                <textarea cols="5" rows="3" name="observations" id="observations" style="width: 630px"></textarea>
+                                            <option value="Aberto" selected>Aberto</option>
+                                            <option value="A decorrer">A decorrer</option>
+                                            <option value="Terminado">Terminado</option>
+                                            <option value="Estágio">Estágio (opção inválida)</option>
+                                            <option value="Fechado">Fechado</option>
+                                        </select>
+                                </div>								
                             </div>
-                        </div>
-                        <div class="row uniform">
-                            <div style="float: right;">
-                                <button>Submit</button>
+                            <div class="row uniform">
+                                <div style="float: left">
+                                    <label for="observations">Observações</label>
+                                    <textarea cols="5" rows="3" name="observations" id="observations" style="width: 630px"></textarea>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </section>
+                            <div class="row uniform">
+                                <div style="float: right;">
+                                    <button>Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
             </div>
-        </div>
+        </section>
     </section>
-</section>

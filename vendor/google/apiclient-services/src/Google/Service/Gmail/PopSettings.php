@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Gmail_PopSettings extends Google_Model
-{
-  public $accessWindow;
-  public $disposition;
+class Google_Service_Gmail_PopSettings extends Google_Model {
+    public $accessWindow;
+    public $disposition;
 
-  public function setAccessWindow($accessWindow)
-  {
-    $this->accessWindow = $accessWindow;
-  }
-  public function getAccessWindow()
-  {
-    return $this->accessWindow;
-  }
-  public function setDisposition($disposition)
-  {
-    $this->disposition = $disposition;
-  }
-  public function getDisposition()
-  {
-    return $this->disposition;
-  }
+    public function setAccessWindow($accessWindow) {
+        $this->accessWindow = $accessWindow;
+    }
+
+    public function getAccessWindow() {
+        return $this->accessWindow;
+    }
+
+    public function setDisposition($disposition) {
+        $this->disposition = $disposition;
+    }
+
+    public function getDisposition() {
+        return $this->disposition;
+    }
 }

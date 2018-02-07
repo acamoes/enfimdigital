@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Books_DictlayerdataDictWordsSensesDefinitions extends Google_Collection
-{
-  protected $collection_key = 'examples';
-  public $definition;
-  protected $examplesType = 'Google_Service_Books_DictlayerdataDictWordsSensesDefinitionsExamples';
-  protected $examplesDataType = 'array';
+class Google_Service_Books_DictlayerdataDictWordsSensesDefinitions extends Google_Collection {
+    protected $collection_key   = 'examples';
+    public $definition;
+    protected $examplesType     = 'Google_Service_Books_DictlayerdataDictWordsSensesDefinitionsExamples';
+    protected $examplesDataType = 'array';
 
-  public function setDefinition($definition)
-  {
-    $this->definition = $definition;
-  }
-  public function getDefinition()
-  {
-    return $this->definition;
-  }
-  /**
-   * @param Google_Service_Books_DictlayerdataDictWordsSensesDefinitionsExamples
-   */
-  public function setExamples($examples)
-  {
-    $this->examples = $examples;
-  }
-  /**
-   * @return Google_Service_Books_DictlayerdataDictWordsSensesDefinitionsExamples
-   */
-  public function getExamples()
-  {
-    return $this->examples;
-  }
+    public function setDefinition($definition) {
+        $this->definition = $definition;
+    }
+
+    public function getDefinition() {
+        return $this->definition;
+    }
+
+    /**
+     * @param Google_Service_Books_DictlayerdataDictWordsSensesDefinitionsExamples
+     */
+    public function setExamples($examples) {
+        $this->examples = $examples;
+    }
+
+    /**
+     * @return Google_Service_Books_DictlayerdataDictWordsSensesDefinitionsExamples
+     */
+    public function getExamples() {
+        return $this->examples;
+    }
 }

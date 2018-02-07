@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_DeviceState extends Google_Model
-{
-  public $accountState;
-  public $kind;
+class Google_Service_AndroidEnterprise_DeviceState extends Google_Model {
+    public $accountState;
+    public $kind;
 
-  public function setAccountState($accountState)
-  {
-    $this->accountState = $accountState;
-  }
-  public function getAccountState()
-  {
-    return $this->accountState;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setAccountState($accountState) {
+        $this->accountState = $accountState;
+    }
+
+    public function getAccountState() {
+        return $this->accountState;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

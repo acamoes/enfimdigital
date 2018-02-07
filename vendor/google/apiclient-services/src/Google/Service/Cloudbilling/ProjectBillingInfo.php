@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Cloudbilling_ProjectBillingInfo extends Google_Model
-{
-  public $billingAccountName;
-  public $billingEnabled;
-  public $name;
-  public $projectId;
+class Google_Service_Cloudbilling_ProjectBillingInfo extends Google_Model {
+    public $billingAccountName;
+    public $billingEnabled;
+    public $name;
+    public $projectId;
 
-  public function setBillingAccountName($billingAccountName)
-  {
-    $this->billingAccountName = $billingAccountName;
-  }
-  public function getBillingAccountName()
-  {
-    return $this->billingAccountName;
-  }
-  public function setBillingEnabled($billingEnabled)
-  {
-    $this->billingEnabled = $billingEnabled;
-  }
-  public function getBillingEnabled()
-  {
-    return $this->billingEnabled;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
-  }
+    public function setBillingAccountName($billingAccountName) {
+        $this->billingAccountName = $billingAccountName;
+    }
+
+    public function getBillingAccountName() {
+        return $this->billingAccountName;
+    }
+
+    public function setBillingEnabled($billingEnabled) {
+        $this->billingEnabled = $billingEnabled;
+    }
+
+    public function getBillingEnabled() {
+        return $this->billingEnabled;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setProjectId($projectId) {
+        $this->projectId = $projectId;
+    }
+
+    public function getProjectId() {
+        return $this->projectId;
+    }
 }

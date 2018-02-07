@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Devprojects_SpecialRestriction extends Google_Model
-{
-  public $kind;
-  public $type;
+class Google_Service_Devprojects_SpecialRestriction extends Google_Model {
+    public $kind;
+    public $type;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Slides_MasterProperties extends Google_Model
-{
-  public $displayName;
+class Google_Service_Slides_MasterProperties extends Google_Model {
+    public $displayName;
 
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
 }

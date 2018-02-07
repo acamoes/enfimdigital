@@ -23,6 +23,6 @@
  *   $projects = $spannerService->projects;
  *  </code>
  */
-class Google_Service_Spanner_Resource_Projects extends Google_Service_Resource
-{
+class Google_Service_Spanner_Resource_Projects extends Google_Service_Resource {
+
 }

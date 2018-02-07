@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_Install extends Google_Model
-{
-  public $installState;
-  public $kind;
-  public $productId;
-  public $versionCode;
+class Google_Service_AndroidEnterprise_Install extends Google_Model {
+    public $installState;
+    public $kind;
+    public $productId;
+    public $versionCode;
 
-  public function setInstallState($installState)
-  {
-    $this->installState = $installState;
-  }
-  public function getInstallState()
-  {
-    return $this->installState;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setProductId($productId)
-  {
-    $this->productId = $productId;
-  }
-  public function getProductId()
-  {
-    return $this->productId;
-  }
-  public function setVersionCode($versionCode)
-  {
-    $this->versionCode = $versionCode;
-  }
-  public function getVersionCode()
-  {
-    return $this->versionCode;
-  }
+    public function setInstallState($installState) {
+        $this->installState = $installState;
+    }
+
+    public function getInstallState() {
+        return $this->installState;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setProductId($productId) {
+        $this->productId = $productId;
+    }
+
+    public function getProductId() {
+        return $this->productId;
+    }
+
+    public function setVersionCode($versionCode) {
+        $this->versionCode = $versionCode;
+    }
+
+    public function getVersionCode() {
+        return $this->versionCode;
+    }
 }

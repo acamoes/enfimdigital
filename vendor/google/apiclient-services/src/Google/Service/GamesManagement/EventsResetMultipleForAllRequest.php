@@ -15,29 +15,27 @@
  * the License.
  */
 
-class Google_Service_GamesManagement_EventsResetMultipleForAllRequest extends Google_Collection
-{
-  protected $collection_key = 'event_ids';
-  protected $internal_gapi_mappings = array(
+class Google_Service_GamesManagement_EventsResetMultipleForAllRequest extends Google_Collection {
+    protected $collection_key         = 'event_ids';
+    protected $internal_gapi_mappings = array(
         "eventIds" => "event_ids",
-  );
-  public $eventIds;
-  public $kind;
+    );
+    public $eventIds;
+    public $kind;
 
-  public function setEventIds($eventIds)
-  {
-    $this->eventIds = $eventIds;
-  }
-  public function getEventIds()
-  {
-    return $this->eventIds;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setEventIds($eventIds) {
+        $this->eventIds = $eventIds;
+    }
+
+    public function getEventIds() {
+        return $this->eventIds;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

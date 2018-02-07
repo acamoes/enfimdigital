@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Slides_Image extends Google_Model
-{
-  public $contentUrl;
-  protected $imagePropertiesType = 'Google_Service_Slides_ImageProperties';
-  protected $imagePropertiesDataType = '';
+class Google_Service_Slides_Image extends Google_Model {
+    public $contentUrl;
+    protected $imagePropertiesType     = 'Google_Service_Slides_ImageProperties';
+    protected $imagePropertiesDataType = '';
 
-  public function setContentUrl($contentUrl)
-  {
-    $this->contentUrl = $contentUrl;
-  }
-  public function getContentUrl()
-  {
-    return $this->contentUrl;
-  }
-  /**
-   * @param Google_Service_Slides_ImageProperties
-   */
-  public function setImageProperties(Google_Service_Slides_ImageProperties $imageProperties)
-  {
-    $this->imageProperties = $imageProperties;
-  }
-  /**
-   * @return Google_Service_Slides_ImageProperties
-   */
-  public function getImageProperties()
-  {
-    return $this->imageProperties;
-  }
+    public function setContentUrl($contentUrl) {
+        $this->contentUrl = $contentUrl;
+    }
+
+    public function getContentUrl() {
+        return $this->contentUrl;
+    }
+
+    /**
+     * @param Google_Service_Slides_ImageProperties
+     */
+    public function setImageProperties(Google_Service_Slides_ImageProperties $imageProperties) {
+        $this->imageProperties = $imageProperties;
+    }
+
+    /**
+     * @return Google_Service_Slides_ImageProperties
+     */
+    public function getImageProperties() {
+        return $this->imageProperties;
+    }
 }

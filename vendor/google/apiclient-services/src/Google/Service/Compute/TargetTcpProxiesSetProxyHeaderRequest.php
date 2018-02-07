@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Compute_TargetTcpProxiesSetProxyHeaderRequest extends Google_Model
-{
-  public $proxyHeader;
+class Google_Service_Compute_TargetTcpProxiesSetProxyHeaderRequest extends Google_Model {
+    public $proxyHeader;
 
-  public function setProxyHeader($proxyHeader)
-  {
-    $this->proxyHeader = $proxyHeader;
-  }
-  public function getProxyHeader()
-  {
-    return $this->proxyHeader;
-  }
+    public function setProxyHeader($proxyHeader) {
+        $this->proxyHeader = $proxyHeader;
+    }
+
+    public function getProxyHeader() {
+        return $this->proxyHeader;
+    }
 }

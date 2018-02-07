@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Digitalassetlinks_ListResponse extends Google_Collection
-{
-  protected $collection_key = 'statements';
-  public $debugString;
-  public $errorCode;
-  public $maxAge;
-  protected $statementsType = 'Google_Service_Digitalassetlinks_Statement';
-  protected $statementsDataType = 'array';
+class Google_Service_Digitalassetlinks_ListResponse extends Google_Collection {
+    protected $collection_key     = 'statements';
+    public $debugString;
+    public $errorCode;
+    public $maxAge;
+    protected $statementsType     = 'Google_Service_Digitalassetlinks_Statement';
+    protected $statementsDataType = 'array';
 
-  public function setDebugString($debugString)
-  {
-    $this->debugString = $debugString;
-  }
-  public function getDebugString()
-  {
-    return $this->debugString;
-  }
-  public function setErrorCode($errorCode)
-  {
-    $this->errorCode = $errorCode;
-  }
-  public function getErrorCode()
-  {
-    return $this->errorCode;
-  }
-  public function setMaxAge($maxAge)
-  {
-    $this->maxAge = $maxAge;
-  }
-  public function getMaxAge()
-  {
-    return $this->maxAge;
-  }
-  /**
-   * @param Google_Service_Digitalassetlinks_Statement
-   */
-  public function setStatements($statements)
-  {
-    $this->statements = $statements;
-  }
-  /**
-   * @return Google_Service_Digitalassetlinks_Statement
-   */
-  public function getStatements()
-  {
-    return $this->statements;
-  }
+    public function setDebugString($debugString) {
+        $this->debugString = $debugString;
+    }
+
+    public function getDebugString() {
+        return $this->debugString;
+    }
+
+    public function setErrorCode($errorCode) {
+        $this->errorCode = $errorCode;
+    }
+
+    public function getErrorCode() {
+        return $this->errorCode;
+    }
+
+    public function setMaxAge($maxAge) {
+        $this->maxAge = $maxAge;
+    }
+
+    public function getMaxAge() {
+        return $this->maxAge;
+    }
+
+    /**
+     * @param Google_Service_Digitalassetlinks_Statement
+     */
+    public function setStatements($statements) {
+        $this->statements = $statements;
+    }
+
+    /**
+     * @return Google_Service_Digitalassetlinks_Statement
+     */
+    public function getStatements() {
+        return $this->statements;
+    }
 }

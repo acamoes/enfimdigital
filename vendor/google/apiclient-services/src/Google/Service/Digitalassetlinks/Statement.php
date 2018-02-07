@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_Digitalassetlinks_Statement extends Google_Model
-{
-  public $relation;
-  protected $sourceType = 'Google_Service_Digitalassetlinks_Asset';
-  protected $sourceDataType = '';
-  protected $targetType = 'Google_Service_Digitalassetlinks_Asset';
-  protected $targetDataType = '';
+class Google_Service_Digitalassetlinks_Statement extends Google_Model {
+    public $relation;
+    protected $sourceType     = 'Google_Service_Digitalassetlinks_Asset';
+    protected $sourceDataType = '';
+    protected $targetType     = 'Google_Service_Digitalassetlinks_Asset';
+    protected $targetDataType = '';
 
-  public function setRelation($relation)
-  {
-    $this->relation = $relation;
-  }
-  public function getRelation()
-  {
-    return $this->relation;
-  }
-  /**
-   * @param Google_Service_Digitalassetlinks_Asset
-   */
-  public function setSource(Google_Service_Digitalassetlinks_Asset $source)
-  {
-    $this->source = $source;
-  }
-  /**
-   * @return Google_Service_Digitalassetlinks_Asset
-   */
-  public function getSource()
-  {
-    return $this->source;
-  }
-  /**
-   * @param Google_Service_Digitalassetlinks_Asset
-   */
-  public function setTarget(Google_Service_Digitalassetlinks_Asset $target)
-  {
-    $this->target = $target;
-  }
-  /**
-   * @return Google_Service_Digitalassetlinks_Asset
-   */
-  public function getTarget()
-  {
-    return $this->target;
-  }
+    public function setRelation($relation) {
+        $this->relation = $relation;
+    }
+
+    public function getRelation() {
+        return $this->relation;
+    }
+
+    /**
+     * @param Google_Service_Digitalassetlinks_Asset
+     */
+    public function setSource(Google_Service_Digitalassetlinks_Asset $source) {
+        $this->source = $source;
+    }
+
+    /**
+     * @return Google_Service_Digitalassetlinks_Asset
+     */
+    public function getSource() {
+        return $this->source;
+    }
+
+    /**
+     * @param Google_Service_Digitalassetlinks_Asset
+     */
+    public function setTarget(Google_Service_Digitalassetlinks_Asset $target) {
+        $this->target = $target;
+    }
+
+    /**
+     * @return Google_Service_Digitalassetlinks_Asset
+     */
+    public function getTarget() {
+        return $this->target;
+    }
 }

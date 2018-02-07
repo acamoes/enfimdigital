@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_DoubleClickBidManager_ReportFailure extends Google_Model
-{
-  public $errorCode;
+class Google_Service_DoubleClickBidManager_ReportFailure extends Google_Model {
+    public $errorCode;
 
-  public function setErrorCode($errorCode)
-  {
-    $this->errorCode = $errorCode;
-  }
-  public function getErrorCode()
-  {
-    return $this->errorCode;
-  }
+    public function setErrorCode($errorCode) {
+        $this->errorCode = $errorCode;
+    }
+
+    public function getErrorCode() {
+        return $this->errorCode;
+    }
 }

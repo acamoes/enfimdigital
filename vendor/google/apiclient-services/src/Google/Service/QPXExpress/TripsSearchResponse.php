@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_QPXExpress_TripsSearchResponse extends Google_Model
-{
-  public $kind;
-  protected $tripsType = 'Google_Service_QPXExpress_TripOptionsResponse';
-  protected $tripsDataType = '';
+class Google_Service_QPXExpress_TripsSearchResponse extends Google_Model {
+    public $kind;
+    protected $tripsType     = 'Google_Service_QPXExpress_TripOptionsResponse';
+    protected $tripsDataType = '';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_QPXExpress_TripOptionsResponse
-   */
-  public function setTrips(Google_Service_QPXExpress_TripOptionsResponse $trips)
-  {
-    $this->trips = $trips;
-  }
-  /**
-   * @return Google_Service_QPXExpress_TripOptionsResponse
-   */
-  public function getTrips()
-  {
-    return $this->trips;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_QPXExpress_TripOptionsResponse
+     */
+    public function setTrips(Google_Service_QPXExpress_TripOptionsResponse $trips) {
+        $this->trips = $trips;
+    }
+
+    /**
+     * @return Google_Service_QPXExpress_TripOptionsResponse
+     */
+    public function getTrips() {
+        return $this->trips;
+    }
 }

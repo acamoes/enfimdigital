@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_FirebaseDynamicLinks_CreateShortDynamicLinkRequest extends Google_Model
-{
-  protected $dynamicLinkInfoType = 'Google_Service_FirebaseDynamicLinks_DynamicLinkInfo';
-  protected $dynamicLinkInfoDataType = '';
-  public $longDynamicLink;
-  protected $suffixType = 'Google_Service_FirebaseDynamicLinks_Suffix';
-  protected $suffixDataType = '';
+class Google_Service_FirebaseDynamicLinks_CreateShortDynamicLinkRequest extends Google_Model {
+    protected $dynamicLinkInfoType     = 'Google_Service_FirebaseDynamicLinks_DynamicLinkInfo';
+    protected $dynamicLinkInfoDataType = '';
+    public $longDynamicLink;
+    protected $suffixType              = 'Google_Service_FirebaseDynamicLinks_Suffix';
+    protected $suffixDataType          = '';
 
-  /**
-   * @param Google_Service_FirebaseDynamicLinks_DynamicLinkInfo
-   */
-  public function setDynamicLinkInfo(Google_Service_FirebaseDynamicLinks_DynamicLinkInfo $dynamicLinkInfo)
-  {
-    $this->dynamicLinkInfo = $dynamicLinkInfo;
-  }
-  /**
-   * @return Google_Service_FirebaseDynamicLinks_DynamicLinkInfo
-   */
-  public function getDynamicLinkInfo()
-  {
-    return $this->dynamicLinkInfo;
-  }
-  public function setLongDynamicLink($longDynamicLink)
-  {
-    $this->longDynamicLink = $longDynamicLink;
-  }
-  public function getLongDynamicLink()
-  {
-    return $this->longDynamicLink;
-  }
-  /**
-   * @param Google_Service_FirebaseDynamicLinks_Suffix
-   */
-  public function setSuffix(Google_Service_FirebaseDynamicLinks_Suffix $suffix)
-  {
-    $this->suffix = $suffix;
-  }
-  /**
-   * @return Google_Service_FirebaseDynamicLinks_Suffix
-   */
-  public function getSuffix()
-  {
-    return $this->suffix;
-  }
+    /**
+     * @param Google_Service_FirebaseDynamicLinks_DynamicLinkInfo
+     */
+    public function setDynamicLinkInfo(Google_Service_FirebaseDynamicLinks_DynamicLinkInfo $dynamicLinkInfo) {
+        $this->dynamicLinkInfo = $dynamicLinkInfo;
+    }
+
+    /**
+     * @return Google_Service_FirebaseDynamicLinks_DynamicLinkInfo
+     */
+    public function getDynamicLinkInfo() {
+        return $this->dynamicLinkInfo;
+    }
+
+    public function setLongDynamicLink($longDynamicLink) {
+        $this->longDynamicLink = $longDynamicLink;
+    }
+
+    public function getLongDynamicLink() {
+        return $this->longDynamicLink;
+    }
+
+    /**
+     * @param Google_Service_FirebaseDynamicLinks_Suffix
+     */
+    public function setSuffix(Google_Service_FirebaseDynamicLinks_Suffix $suffix) {
+        $this->suffix = $suffix;
+    }
+
+    /**
+     * @return Google_Service_FirebaseDynamicLinks_Suffix
+     */
+    public function getSuffix() {
+        return $this->suffix;
+    }
 }

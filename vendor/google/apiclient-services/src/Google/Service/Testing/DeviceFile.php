@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Testing_DeviceFile extends Google_Model
-{
-  protected $obbFileType = 'Google_Service_Testing_ObbFile';
-  protected $obbFileDataType = '';
+class Google_Service_Testing_DeviceFile extends Google_Model {
+    protected $obbFileType     = 'Google_Service_Testing_ObbFile';
+    protected $obbFileDataType = '';
 
-  /**
-   * @param Google_Service_Testing_ObbFile
-   */
-  public function setObbFile(Google_Service_Testing_ObbFile $obbFile)
-  {
-    $this->obbFile = $obbFile;
-  }
-  /**
-   * @return Google_Service_Testing_ObbFile
-   */
-  public function getObbFile()
-  {
-    return $this->obbFile;
-  }
+    /**
+     * @param Google_Service_Testing_ObbFile
+     */
+    public function setObbFile(Google_Service_Testing_ObbFile $obbFile) {
+        $this->obbFile = $obbFile;
+    }
+
+    /**
+     * @return Google_Service_Testing_ObbFile
+     */
+    public function getObbFile() {
+        return $this->obbFile;
+    }
 }

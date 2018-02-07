@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Translate_DetectionsListResponse extends Google_Collection
-{
-  protected $collection_key = 'detections';
-  protected $detectionsType = 'Google_Service_Translate_DetectionsResourceItems';
-  protected $detectionsDataType = 'array';
+class Google_Service_Translate_DetectionsListResponse extends Google_Collection {
+    protected $collection_key     = 'detections';
+    protected $detectionsType     = 'Google_Service_Translate_DetectionsResourceItems';
+    protected $detectionsDataType = 'array';
 
-  /**
-   * @param Google_Service_Translate_DetectionsResourceItems
-   */
-  public function setDetections($detections)
-  {
-    $this->detections = $detections;
-  }
-  /**
-   * @return Google_Service_Translate_DetectionsResourceItems
-   */
-  public function getDetections()
-  {
-    return $this->detections;
-  }
+    /**
+     * @param Google_Service_Translate_DetectionsResourceItems
+     */
+    public function setDetections($detections) {
+        $this->detections = $detections;
+    }
+
+    /**
+     * @return Google_Service_Translate_DetectionsResourceItems
+     */
+    public function getDetections() {
+        return $this->detections;
+    }
 }

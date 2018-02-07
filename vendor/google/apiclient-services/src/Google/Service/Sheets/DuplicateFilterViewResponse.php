@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Sheets_DuplicateFilterViewResponse extends Google_Model
-{
-  protected $filterType = 'Google_Service_Sheets_FilterView';
-  protected $filterDataType = '';
+class Google_Service_Sheets_DuplicateFilterViewResponse extends Google_Model {
+    protected $filterType     = 'Google_Service_Sheets_FilterView';
+    protected $filterDataType = '';
 
-  /**
-   * @param Google_Service_Sheets_FilterView
-   */
-  public function setFilter(Google_Service_Sheets_FilterView $filter)
-  {
-    $this->filter = $filter;
-  }
-  /**
-   * @return Google_Service_Sheets_FilterView
-   */
-  public function getFilter()
-  {
-    return $this->filter;
-  }
+    /**
+     * @param Google_Service_Sheets_FilterView
+     */
+    public function setFilter(Google_Service_Sheets_FilterView $filter) {
+        $this->filter = $filter;
+    }
+
+    /**
+     * @return Google_Service_Sheets_FilterView
+     */
+    public function getFilter() {
+        return $this->filter;
+    }
 }

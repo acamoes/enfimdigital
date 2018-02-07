@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_Devprojects_ApiConsumerId extends Google_Model
-{
-  public $apiIdToken;
-  public $consumerAssignedId;
-  public $consumerProjectId;
-  public $kind;
-  public $producerProjectId;
+class Google_Service_Devprojects_ApiConsumerId extends Google_Model {
+    public $apiIdToken;
+    public $consumerAssignedId;
+    public $consumerProjectId;
+    public $kind;
+    public $producerProjectId;
 
-  public function setApiIdToken($apiIdToken)
-  {
-    $this->apiIdToken = $apiIdToken;
-  }
-  public function getApiIdToken()
-  {
-    return $this->apiIdToken;
-  }
-  public function setConsumerAssignedId($consumerAssignedId)
-  {
-    $this->consumerAssignedId = $consumerAssignedId;
-  }
-  public function getConsumerAssignedId()
-  {
-    return $this->consumerAssignedId;
-  }
-  public function setConsumerProjectId($consumerProjectId)
-  {
-    $this->consumerProjectId = $consumerProjectId;
-  }
-  public function getConsumerProjectId()
-  {
-    return $this->consumerProjectId;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setProducerProjectId($producerProjectId)
-  {
-    $this->producerProjectId = $producerProjectId;
-  }
-  public function getProducerProjectId()
-  {
-    return $this->producerProjectId;
-  }
+    public function setApiIdToken($apiIdToken) {
+        $this->apiIdToken = $apiIdToken;
+    }
+
+    public function getApiIdToken() {
+        return $this->apiIdToken;
+    }
+
+    public function setConsumerAssignedId($consumerAssignedId) {
+        $this->consumerAssignedId = $consumerAssignedId;
+    }
+
+    public function getConsumerAssignedId() {
+        return $this->consumerAssignedId;
+    }
+
+    public function setConsumerProjectId($consumerProjectId) {
+        $this->consumerProjectId = $consumerProjectId;
+    }
+
+    public function getConsumerProjectId() {
+        return $this->consumerProjectId;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setProducerProjectId($producerProjectId) {
+        $this->producerProjectId = $producerProjectId;
+    }
+
+    public function getProducerProjectId() {
+        return $this->producerProjectId;
+    }
 }

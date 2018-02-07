@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Sheets_DeleteDeveloperMetadataRequest extends Google_Model
-{
-  protected $dataFilterType = 'Google_Service_Sheets_DataFilter';
-  protected $dataFilterDataType = '';
+class Google_Service_Sheets_DeleteDeveloperMetadataRequest extends Google_Model {
+    protected $dataFilterType     = 'Google_Service_Sheets_DataFilter';
+    protected $dataFilterDataType = '';
 
-  /**
-   * @param Google_Service_Sheets_DataFilter
-   */
-  public function setDataFilter(Google_Service_Sheets_DataFilter $dataFilter)
-  {
-    $this->dataFilter = $dataFilter;
-  }
-  /**
-   * @return Google_Service_Sheets_DataFilter
-   */
-  public function getDataFilter()
-  {
-    return $this->dataFilter;
-  }
+    /**
+     * @param Google_Service_Sheets_DataFilter
+     */
+    public function setDataFilter(Google_Service_Sheets_DataFilter $dataFilter) {
+        $this->dataFilter = $dataFilter;
+    }
+
+    /**
+     * @return Google_Service_Sheets_DataFilter
+     */
+    public function getDataFilter() {
+        return $this->dataFilter;
+    }
 }

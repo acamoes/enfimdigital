@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartyEmailLinkSigninRequest extends Google_Model
-{
-  public $email;
-  public $idToken;
-  public $oobCode;
+class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartyEmailLinkSigninRequest extends Google_Model {
+    public $email;
+    public $idToken;
+    public $oobCode;
 
-  public function setEmail($email)
-  {
-    $this->email = $email;
-  }
-  public function getEmail()
-  {
-    return $this->email;
-  }
-  public function setIdToken($idToken)
-  {
-    $this->idToken = $idToken;
-  }
-  public function getIdToken()
-  {
-    return $this->idToken;
-  }
-  public function setOobCode($oobCode)
-  {
-    $this->oobCode = $oobCode;
-  }
-  public function getOobCode()
-  {
-    return $this->oobCode;
-  }
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setIdToken($idToken) {
+        $this->idToken = $idToken;
+    }
+
+    public function getIdToken() {
+        return $this->idToken;
+    }
+
+    public function setOobCode($oobCode) {
+        $this->oobCode = $oobCode;
+    }
+
+    public function getOobCode() {
+        return $this->oobCode;
+    }
 }

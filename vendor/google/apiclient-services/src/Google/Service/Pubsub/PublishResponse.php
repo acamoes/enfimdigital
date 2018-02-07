@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Pubsub_PublishResponse extends Google_Collection
-{
-  protected $collection_key = 'messageIds';
-  public $messageIds;
+class Google_Service_Pubsub_PublishResponse extends Google_Collection {
+    protected $collection_key = 'messageIds';
+    public $messageIds;
 
-  public function setMessageIds($messageIds)
-  {
-    $this->messageIds = $messageIds;
-  }
-  public function getMessageIds()
-  {
-    return $this->messageIds;
-  }
+    public function setMessageIds($messageIds) {
+        $this->messageIds = $messageIds;
+    }
+
+    public function getMessageIds() {
+        return $this->messageIds;
+    }
 }

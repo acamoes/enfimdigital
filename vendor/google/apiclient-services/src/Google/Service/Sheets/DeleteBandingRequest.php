@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Sheets_DeleteBandingRequest extends Google_Model
-{
-  public $bandedRangeId;
+class Google_Service_Sheets_DeleteBandingRequest extends Google_Model {
+    public $bandedRangeId;
 
-  public function setBandedRangeId($bandedRangeId)
-  {
-    $this->bandedRangeId = $bandedRangeId;
-  }
-  public function getBandedRangeId()
-  {
-    return $this->bandedRangeId;
-  }
+    public function setBandedRangeId($bandedRangeId) {
+        $this->bandedRangeId = $bandedRangeId;
+    }
+
+    public function getBandedRangeId() {
+        return $this->bandedRangeId;
+    }
 }

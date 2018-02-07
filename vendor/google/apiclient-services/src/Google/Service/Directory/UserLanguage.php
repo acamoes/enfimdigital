@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Directory_UserLanguage extends Google_Model
-{
-  public $customLanguage;
-  public $languageCode;
+class Google_Service_Directory_UserLanguage extends Google_Model {
+    public $customLanguage;
+    public $languageCode;
 
-  public function setCustomLanguage($customLanguage)
-  {
-    $this->customLanguage = $customLanguage;
-  }
-  public function getCustomLanguage()
-  {
-    return $this->customLanguage;
-  }
-  public function setLanguageCode($languageCode)
-  {
-    $this->languageCode = $languageCode;
-  }
-  public function getLanguageCode()
-  {
-    return $this->languageCode;
-  }
+    public function setCustomLanguage($customLanguage) {
+        $this->customLanguage = $customLanguage;
+    }
+
+    public function getCustomLanguage() {
+        return $this->customLanguage;
+    }
+
+    public function setLanguageCode($languageCode) {
+        $this->languageCode = $languageCode;
+    }
+
+    public function getLanguageCode() {
+        return $this->languageCode;
+    }
 }

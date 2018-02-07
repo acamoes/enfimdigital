@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_GetEffectiveOrgPolicyRequest extends Google_Model
-{
-  public $constraint;
+class Google_Service_CloudResourceManager_GetEffectiveOrgPolicyRequest extends Google_Model {
+    public $constraint;
 
-  public function setConstraint($constraint)
-  {
-    $this->constraint = $constraint;
-  }
-  public function getConstraint()
-  {
-    return $this->constraint;
-  }
+    public function setConstraint($constraint) {
+        $this->constraint = $constraint;
+    }
+
+    public function getConstraint() {
+        return $this->constraint;
+    }
 }

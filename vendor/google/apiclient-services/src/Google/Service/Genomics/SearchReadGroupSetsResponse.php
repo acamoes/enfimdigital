@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchReadGroupSetsResponse extends Google_Collection
-{
-  protected $collection_key = 'readGroupSets';
-  public $nextPageToken;
-  protected $readGroupSetsType = 'Google_Service_Genomics_ReadGroupSet';
-  protected $readGroupSetsDataType = 'array';
+class Google_Service_Genomics_SearchReadGroupSetsResponse extends Google_Collection {
+    protected $collection_key        = 'readGroupSets';
+    public $nextPageToken;
+    protected $readGroupSetsType     = 'Google_Service_Genomics_ReadGroupSet';
+    protected $readGroupSetsDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Genomics_ReadGroupSet
-   */
-  public function setReadGroupSets($readGroupSets)
-  {
-    $this->readGroupSets = $readGroupSets;
-  }
-  /**
-   * @return Google_Service_Genomics_ReadGroupSet
-   */
-  public function getReadGroupSets()
-  {
-    return $this->readGroupSets;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Genomics_ReadGroupSet
+     */
+    public function setReadGroupSets($readGroupSets) {
+        $this->readGroupSets = $readGroupSets;
+    }
+
+    /**
+     * @return Google_Service_Genomics_ReadGroupSet
+     */
+    public function getReadGroupSets() {
+        return $this->readGroupSets;
+    }
 }

@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_Vision_Symbol extends Google_Model
-{
-  protected $boundingBoxType = 'Google_Service_Vision_BoundingPoly';
-  protected $boundingBoxDataType = '';
-  protected $propertyType = 'Google_Service_Vision_TextProperty';
-  protected $propertyDataType = '';
-  public $text;
+class Google_Service_Vision_Symbol extends Google_Model {
+    protected $boundingBoxType     = 'Google_Service_Vision_BoundingPoly';
+    protected $boundingBoxDataType = '';
+    protected $propertyType        = 'Google_Service_Vision_TextProperty';
+    protected $propertyDataType    = '';
+    public $text;
 
-  /**
-   * @param Google_Service_Vision_BoundingPoly
-   */
-  public function setBoundingBox(Google_Service_Vision_BoundingPoly $boundingBox)
-  {
-    $this->boundingBox = $boundingBox;
-  }
-  /**
-   * @return Google_Service_Vision_BoundingPoly
-   */
-  public function getBoundingBox()
-  {
-    return $this->boundingBox;
-  }
-  /**
-   * @param Google_Service_Vision_TextProperty
-   */
-  public function setProperty(Google_Service_Vision_TextProperty $property)
-  {
-    $this->property = $property;
-  }
-  /**
-   * @return Google_Service_Vision_TextProperty
-   */
-  public function getProperty()
-  {
-    return $this->property;
-  }
-  public function setText($text)
-  {
-    $this->text = $text;
-  }
-  public function getText()
-  {
-    return $this->text;
-  }
+    /**
+     * @param Google_Service_Vision_BoundingPoly
+     */
+    public function setBoundingBox(Google_Service_Vision_BoundingPoly $boundingBox) {
+        $this->boundingBox = $boundingBox;
+    }
+
+    /**
+     * @return Google_Service_Vision_BoundingPoly
+     */
+    public function getBoundingBox() {
+        return $this->boundingBox;
+    }
+
+    /**
+     * @param Google_Service_Vision_TextProperty
+     */
+    public function setProperty(Google_Service_Vision_TextProperty $property) {
+        $this->property = $property;
+    }
+
+    /**
+     * @return Google_Service_Vision_TextProperty
+     */
+    public function getProperty() {
+        return $this->property;
+    }
+
+    public function setText($text) {
+        $this->text = $text;
+    }
+
+    public function getText() {
+        return $this->text;
+    }
 }

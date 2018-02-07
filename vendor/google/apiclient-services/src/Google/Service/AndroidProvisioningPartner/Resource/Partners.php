@@ -23,6 +23,6 @@
  *   $partners = $androiddeviceprovisioningService->partners;
  *  </code>
  */
-class Google_Service_AndroidProvisioningPartner_Resource_Partners extends Google_Service_Resource
-{
+class Google_Service_AndroidProvisioningPartner_Resource_Partners extends Google_Service_Resource {
+
 }

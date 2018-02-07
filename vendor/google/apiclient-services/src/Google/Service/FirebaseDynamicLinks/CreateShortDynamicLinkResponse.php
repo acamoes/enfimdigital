@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_FirebaseDynamicLinks_CreateShortDynamicLinkResponse extends Google_Collection
-{
-  protected $collection_key = 'warning';
-  public $previewLink;
-  public $shortLink;
-  protected $warningType = 'Google_Service_FirebaseDynamicLinks_DynamicLinkWarning';
-  protected $warningDataType = 'array';
+class Google_Service_FirebaseDynamicLinks_CreateShortDynamicLinkResponse extends Google_Collection {
+    protected $collection_key  = 'warning';
+    public $previewLink;
+    public $shortLink;
+    protected $warningType     = 'Google_Service_FirebaseDynamicLinks_DynamicLinkWarning';
+    protected $warningDataType = 'array';
 
-  public function setPreviewLink($previewLink)
-  {
-    $this->previewLink = $previewLink;
-  }
-  public function getPreviewLink()
-  {
-    return $this->previewLink;
-  }
-  public function setShortLink($shortLink)
-  {
-    $this->shortLink = $shortLink;
-  }
-  public function getShortLink()
-  {
-    return $this->shortLink;
-  }
-  /**
-   * @param Google_Service_FirebaseDynamicLinks_DynamicLinkWarning
-   */
-  public function setWarning($warning)
-  {
-    $this->warning = $warning;
-  }
-  /**
-   * @return Google_Service_FirebaseDynamicLinks_DynamicLinkWarning
-   */
-  public function getWarning()
-  {
-    return $this->warning;
-  }
+    public function setPreviewLink($previewLink) {
+        $this->previewLink = $previewLink;
+    }
+
+    public function getPreviewLink() {
+        return $this->previewLink;
+    }
+
+    public function setShortLink($shortLink) {
+        $this->shortLink = $shortLink;
+    }
+
+    public function getShortLink() {
+        return $this->shortLink;
+    }
+
+    /**
+     * @param Google_Service_FirebaseDynamicLinks_DynamicLinkWarning
+     */
+    public function setWarning($warning) {
+        $this->warning = $warning;
+    }
+
+    /**
+     * @return Google_Service_FirebaseDynamicLinks_DynamicLinkWarning
+     */
+    public function getWarning() {
+        return $this->warning;
+    }
 }

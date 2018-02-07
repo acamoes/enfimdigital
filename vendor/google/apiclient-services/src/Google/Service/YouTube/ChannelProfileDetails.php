@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_YouTube_ChannelProfileDetails extends Google_Model
-{
-  public $channelId;
-  public $channelUrl;
-  public $displayName;
-  public $profileImageUrl;
+class Google_Service_YouTube_ChannelProfileDetails extends Google_Model {
+    public $channelId;
+    public $channelUrl;
+    public $displayName;
+    public $profileImageUrl;
 
-  public function setChannelId($channelId)
-  {
-    $this->channelId = $channelId;
-  }
-  public function getChannelId()
-  {
-    return $this->channelId;
-  }
-  public function setChannelUrl($channelUrl)
-  {
-    $this->channelUrl = $channelUrl;
-  }
-  public function getChannelUrl()
-  {
-    return $this->channelUrl;
-  }
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
-  public function setProfileImageUrl($profileImageUrl)
-  {
-    $this->profileImageUrl = $profileImageUrl;
-  }
-  public function getProfileImageUrl()
-  {
-    return $this->profileImageUrl;
-  }
+    public function setChannelId($channelId) {
+        $this->channelId = $channelId;
+    }
+
+    public function getChannelId() {
+        return $this->channelId;
+    }
+
+    public function setChannelUrl($channelUrl) {
+        $this->channelUrl = $channelUrl;
+    }
+
+    public function getChannelUrl() {
+        return $this->channelUrl;
+    }
+
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
+
+    public function setProfileImageUrl($profileImageUrl) {
+        $this->profileImageUrl = $profileImageUrl;
+    }
+
+    public function getProfileImageUrl() {
+        return $this->profileImageUrl;
+    }
 }

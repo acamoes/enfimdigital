@@ -15,27 +15,25 @@
  * the License.
  */
 
-class Google_Service_Devprojects_GeoRestriction extends Google_Collection
-{
-  protected $collection_key = 'locale';
-  public $kind;
-  protected $localeType = 'Google_Service_Devprojects_Locale';
-  protected $localeDataType = 'array';
+class Google_Service_Devprojects_GeoRestriction extends Google_Collection {
+    protected $collection_key = 'locale';
+    public $kind;
+    protected $localeType     = 'Google_Service_Devprojects_Locale';
+    protected $localeDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setLocale($locale)
-  {
-    $this->locale = $locale;
-  }
-  public function getLocale()
-  {
-    return $this->locale;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setLocale($locale) {
+        $this->locale = $locale;
+    }
+
+    public function getLocale() {
+        return $this->locale;
+    }
 }

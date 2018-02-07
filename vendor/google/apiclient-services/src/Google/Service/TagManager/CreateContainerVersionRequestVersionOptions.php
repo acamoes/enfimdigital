@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_TagManager_CreateContainerVersionRequestVersionOptions extends Google_Model
-{
-  public $name;
-  public $notes;
+class Google_Service_TagManager_CreateContainerVersionRequestVersionOptions extends Google_Model {
+    public $name;
+    public $notes;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setNotes($notes)
-  {
-    $this->notes = $notes;
-  }
-  public function getNotes()
-  {
-    return $this->notes;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setNotes($notes) {
+        $this->notes = $notes;
+    }
+
+    public function getNotes() {
+        return $this->notes;
+    }
 }

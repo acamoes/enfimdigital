@@ -23,6 +23,6 @@
  *   $accounts = $playcustomappService->accounts;
  *  </code>
  */
-class Google_Service_Playcustomapp_Resource_Accounts extends Google_Service_Resource
-{
+class Google_Service_Playcustomapp_Resource_Accounts extends Google_Service_Resource {
+
 }

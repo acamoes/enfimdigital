@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Compute_AutoscalingPolicyLoadBalancingUtilization extends Google_Model
-{
-  public $utilizationTarget;
+class Google_Service_Compute_AutoscalingPolicyLoadBalancingUtilization extends Google_Model {
+    public $utilizationTarget;
 
-  public function setUtilizationTarget($utilizationTarget)
-  {
-    $this->utilizationTarget = $utilizationTarget;
-  }
-  public function getUtilizationTarget()
-  {
-    return $this->utilizationTarget;
-  }
+    public function setUtilizationTarget($utilizationTarget) {
+        $this->utilizationTarget = $utilizationTarget;
+    }
+
+    public function getUtilizationTarget() {
+        return $this->utilizationTarget;
+    }
 }

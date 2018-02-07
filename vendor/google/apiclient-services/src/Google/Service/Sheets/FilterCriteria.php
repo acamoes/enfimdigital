@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Sheets_FilterCriteria extends Google_Collection
-{
-  protected $collection_key = 'hiddenValues';
-  protected $conditionType = 'Google_Service_Sheets_BooleanCondition';
-  protected $conditionDataType = '';
-  public $hiddenValues;
+class Google_Service_Sheets_FilterCriteria extends Google_Collection {
+    protected $collection_key    = 'hiddenValues';
+    protected $conditionType     = 'Google_Service_Sheets_BooleanCondition';
+    protected $conditionDataType = '';
+    public $hiddenValues;
 
-  /**
-   * @param Google_Service_Sheets_BooleanCondition
-   */
-  public function setCondition(Google_Service_Sheets_BooleanCondition $condition)
-  {
-    $this->condition = $condition;
-  }
-  /**
-   * @return Google_Service_Sheets_BooleanCondition
-   */
-  public function getCondition()
-  {
-    return $this->condition;
-  }
-  public function setHiddenValues($hiddenValues)
-  {
-    $this->hiddenValues = $hiddenValues;
-  }
-  public function getHiddenValues()
-  {
-    return $this->hiddenValues;
-  }
+    /**
+     * @param Google_Service_Sheets_BooleanCondition
+     */
+    public function setCondition(Google_Service_Sheets_BooleanCondition $condition) {
+        $this->condition = $condition;
+    }
+
+    /**
+     * @return Google_Service_Sheets_BooleanCondition
+     */
+    public function getCondition() {
+        return $this->condition;
+    }
+
+    public function setHiddenValues($hiddenValues) {
+        $this->hiddenValues = $hiddenValues;
+    }
+
+    public function getHiddenValues() {
+        return $this->hiddenValues;
+    }
 }

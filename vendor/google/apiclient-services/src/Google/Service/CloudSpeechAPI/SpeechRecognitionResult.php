@@ -15,18 +15,16 @@
  * the License.
  */
 
-class Google_Service_CloudSpeechAPI_SpeechRecognitionResult extends Google_Collection
-{
-  protected $collection_key = 'alternatives';
-  protected $alternativesType = 'Google_Service_CloudSpeechAPI_SpeechRecognitionAlternative';
-  protected $alternativesDataType = 'array';
+class Google_Service_CloudSpeechAPI_SpeechRecognitionResult extends Google_Collection {
+    protected $collection_key       = 'alternatives';
+    protected $alternativesType     = 'Google_Service_CloudSpeechAPI_SpeechRecognitionAlternative';
+    protected $alternativesDataType = 'array';
 
-  public function setAlternatives($alternatives)
-  {
-    $this->alternatives = $alternatives;
-  }
-  public function getAlternatives()
-  {
-    return $this->alternatives;
-  }
+    public function setAlternatives($alternatives) {
+        $this->alternatives = $alternatives;
+    }
+
+    public function getAlternatives() {
+        return $this->alternatives;
+    }
 }

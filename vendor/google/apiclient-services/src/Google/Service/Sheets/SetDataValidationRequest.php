@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_Sheets_SetDataValidationRequest extends Google_Model
-{
-  protected $rangeType = 'Google_Service_Sheets_GridRange';
-  protected $rangeDataType = '';
-  protected $ruleType = 'Google_Service_Sheets_DataValidationRule';
-  protected $ruleDataType = '';
+class Google_Service_Sheets_SetDataValidationRequest extends Google_Model {
+    protected $rangeType     = 'Google_Service_Sheets_GridRange';
+    protected $rangeDataType = '';
+    protected $ruleType      = 'Google_Service_Sheets_DataValidationRule';
+    protected $ruleDataType  = '';
 
-  /**
-   * @param Google_Service_Sheets_GridRange
-   */
-  public function setRange(Google_Service_Sheets_GridRange $range)
-  {
-    $this->range = $range;
-  }
-  /**
-   * @return Google_Service_Sheets_GridRange
-   */
-  public function getRange()
-  {
-    return $this->range;
-  }
-  /**
-   * @param Google_Service_Sheets_DataValidationRule
-   */
-  public function setRule(Google_Service_Sheets_DataValidationRule $rule)
-  {
-    $this->rule = $rule;
-  }
-  /**
-   * @return Google_Service_Sheets_DataValidationRule
-   */
-  public function getRule()
-  {
-    return $this->rule;
-  }
+    /**
+     * @param Google_Service_Sheets_GridRange
+     */
+    public function setRange(Google_Service_Sheets_GridRange $range) {
+        $this->range = $range;
+    }
+
+    /**
+     * @return Google_Service_Sheets_GridRange
+     */
+    public function getRange() {
+        return $this->range;
+    }
+
+    /**
+     * @param Google_Service_Sheets_DataValidationRule
+     */
+    public function setRule(Google_Service_Sheets_DataValidationRule $rule) {
+        $this->rule = $rule;
+    }
+
+    /**
+     * @return Google_Service_Sheets_DataValidationRule
+     */
+    public function getRule() {
+        return $this->rule;
+    }
 }

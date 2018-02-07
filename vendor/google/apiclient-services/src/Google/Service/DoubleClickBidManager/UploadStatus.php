@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_DoubleClickBidManager_UploadStatus extends Google_Collection
-{
-  protected $collection_key = 'rowStatus';
-  public $errors;
-  protected $rowStatusType = 'Google_Service_DoubleClickBidManager_RowStatus';
-  protected $rowStatusDataType = 'array';
+class Google_Service_DoubleClickBidManager_UploadStatus extends Google_Collection {
+    protected $collection_key    = 'rowStatus';
+    public $errors;
+    protected $rowStatusType     = 'Google_Service_DoubleClickBidManager_RowStatus';
+    protected $rowStatusDataType = 'array';
 
-  public function setErrors($errors)
-  {
-    $this->errors = $errors;
-  }
-  public function getErrors()
-  {
-    return $this->errors;
-  }
-  /**
-   * @param Google_Service_DoubleClickBidManager_RowStatus
-   */
-  public function setRowStatus($rowStatus)
-  {
-    $this->rowStatus = $rowStatus;
-  }
-  /**
-   * @return Google_Service_DoubleClickBidManager_RowStatus
-   */
-  public function getRowStatus()
-  {
-    return $this->rowStatus;
-  }
+    public function setErrors($errors) {
+        $this->errors = $errors;
+    }
+
+    public function getErrors() {
+        return $this->errors;
+    }
+
+    /**
+     * @param Google_Service_DoubleClickBidManager_RowStatus
+     */
+    public function setRowStatus($rowStatus) {
+        $this->rowStatus = $rowStatus;
+    }
+
+    /**
+     * @return Google_Service_DoubleClickBidManager_RowStatus
+     */
+    public function getRowStatus() {
+        return $this->rowStatus;
+    }
 }

@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Container_SetAddonsConfigRequest extends Google_Model
-{
-  protected $addonsConfigType = 'Google_Service_Container_AddonsConfig';
-  protected $addonsConfigDataType = '';
+class Google_Service_Container_SetAddonsConfigRequest extends Google_Model {
+    protected $addonsConfigType     = 'Google_Service_Container_AddonsConfig';
+    protected $addonsConfigDataType = '';
 
-  /**
-   * @param Google_Service_Container_AddonsConfig
-   */
-  public function setAddonsConfig(Google_Service_Container_AddonsConfig $addonsConfig)
-  {
-    $this->addonsConfig = $addonsConfig;
-  }
-  /**
-   * @return Google_Service_Container_AddonsConfig
-   */
-  public function getAddonsConfig()
-  {
-    return $this->addonsConfig;
-  }
+    /**
+     * @param Google_Service_Container_AddonsConfig
+     */
+    public function setAddonsConfig(Google_Service_Container_AddonsConfig $addonsConfig) {
+        $this->addonsConfig = $addonsConfig;
+    }
+
+    /**
+     * @return Google_Service_Container_AddonsConfig
+     */
+    public function getAddonsConfig() {
+        return $this->addonsConfig;
+    }
 }

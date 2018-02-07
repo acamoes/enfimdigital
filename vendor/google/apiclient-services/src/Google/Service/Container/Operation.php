@@ -15,97 +15,95 @@
  * the License.
  */
 
-class Google_Service_Container_Operation extends Google_Model
-{
-  public $detail;
-  public $endTime;
-  public $name;
-  public $operationType;
-  public $selfLink;
-  public $startTime;
-  public $status;
-  public $statusMessage;
-  public $targetLink;
-  public $zone;
+class Google_Service_Container_Operation extends Google_Model {
+    public $detail;
+    public $endTime;
+    public $name;
+    public $operationType;
+    public $selfLink;
+    public $startTime;
+    public $status;
+    public $statusMessage;
+    public $targetLink;
+    public $zone;
 
-  public function setDetail($detail)
-  {
-    $this->detail = $detail;
-  }
-  public function getDetail()
-  {
-    return $this->detail;
-  }
-  public function setEndTime($endTime)
-  {
-    $this->endTime = $endTime;
-  }
-  public function getEndTime()
-  {
-    return $this->endTime;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setOperationType($operationType)
-  {
-    $this->operationType = $operationType;
-  }
-  public function getOperationType()
-  {
-    return $this->operationType;
-  }
-  public function setSelfLink($selfLink)
-  {
-    $this->selfLink = $selfLink;
-  }
-  public function getSelfLink()
-  {
-    return $this->selfLink;
-  }
-  public function setStartTime($startTime)
-  {
-    $this->startTime = $startTime;
-  }
-  public function getStartTime()
-  {
-    return $this->startTime;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
-  public function setStatusMessage($statusMessage)
-  {
-    $this->statusMessage = $statusMessage;
-  }
-  public function getStatusMessage()
-  {
-    return $this->statusMessage;
-  }
-  public function setTargetLink($targetLink)
-  {
-    $this->targetLink = $targetLink;
-  }
-  public function getTargetLink()
-  {
-    return $this->targetLink;
-  }
-  public function setZone($zone)
-  {
-    $this->zone = $zone;
-  }
-  public function getZone()
-  {
-    return $this->zone;
-  }
+    public function setDetail($detail) {
+        $this->detail = $detail;
+    }
+
+    public function getDetail() {
+        return $this->detail;
+    }
+
+    public function setEndTime($endTime) {
+        $this->endTime = $endTime;
+    }
+
+    public function getEndTime() {
+        return $this->endTime;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setOperationType($operationType) {
+        $this->operationType = $operationType;
+    }
+
+    public function getOperationType() {
+        return $this->operationType;
+    }
+
+    public function setSelfLink($selfLink) {
+        $this->selfLink = $selfLink;
+    }
+
+    public function getSelfLink() {
+        return $this->selfLink;
+    }
+
+    public function setStartTime($startTime) {
+        $this->startTime = $startTime;
+    }
+
+    public function getStartTime() {
+        return $this->startTime;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
+
+    public function setStatusMessage($statusMessage) {
+        $this->statusMessage = $statusMessage;
+    }
+
+    public function getStatusMessage() {
+        return $this->statusMessage;
+    }
+
+    public function setTargetLink($targetLink) {
+        $this->targetLink = $targetLink;
+    }
+
+    public function getTargetLink() {
+        return $this->targetLink;
+    }
+
+    public function setZone($zone) {
+        $this->zone = $zone;
+    }
+
+    public function getZone() {
+        return $this->zone;
+    }
 }

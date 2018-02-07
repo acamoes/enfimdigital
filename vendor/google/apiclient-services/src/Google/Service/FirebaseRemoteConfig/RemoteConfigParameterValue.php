@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_FirebaseRemoteConfig_RemoteConfigParameterValue extends Google_Model
-{
-  public $useInAppDefault;
-  public $value;
+class Google_Service_FirebaseRemoteConfig_RemoteConfigParameterValue extends Google_Model {
+    public $useInAppDefault;
+    public $value;
 
-  public function setUseInAppDefault($useInAppDefault)
-  {
-    $this->useInAppDefault = $useInAppDefault;
-  }
-  public function getUseInAppDefault()
-  {
-    return $this->useInAppDefault;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setUseInAppDefault($useInAppDefault) {
+        $this->useInAppDefault = $useInAppDefault;
+    }
+
+    public function getUseInAppDefault() {
+        return $this->useInAppDefault;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

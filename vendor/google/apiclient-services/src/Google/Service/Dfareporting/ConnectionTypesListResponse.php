@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_ConnectionTypesListResponse extends Google_Collection
-{
-  protected $collection_key = 'connectionTypes';
-  protected $connectionTypesType = 'Google_Service_Dfareporting_ConnectionType';
-  protected $connectionTypesDataType = 'array';
-  public $kind;
+class Google_Service_Dfareporting_ConnectionTypesListResponse extends Google_Collection {
+    protected $collection_key          = 'connectionTypes';
+    protected $connectionTypesType     = 'Google_Service_Dfareporting_ConnectionType';
+    protected $connectionTypesDataType = 'array';
+    public $kind;
 
-  /**
-   * @param Google_Service_Dfareporting_ConnectionType
-   */
-  public function setConnectionTypes($connectionTypes)
-  {
-    $this->connectionTypes = $connectionTypes;
-  }
-  /**
-   * @return Google_Service_Dfareporting_ConnectionType
-   */
-  public function getConnectionTypes()
-  {
-    return $this->connectionTypes;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_Dfareporting_ConnectionType
+     */
+    public function setConnectionTypes($connectionTypes) {
+        $this->connectionTypes = $connectionTypes;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_ConnectionType
+     */
+    public function getConnectionTypes() {
+        return $this->connectionTypes;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

@@ -15,59 +15,57 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_Value extends Google_Model
-{
-  public $carrierRateName;
-  protected $flatRateType = 'Google_Service_ShoppingContent_Price';
-  protected $flatRateDataType = '';
-  public $noShipping;
-  public $pricePercentage;
-  public $subtableName;
+class Google_Service_ShoppingContent_Value extends Google_Model {
+    public $carrierRateName;
+    protected $flatRateType     = 'Google_Service_ShoppingContent_Price';
+    protected $flatRateDataType = '';
+    public $noShipping;
+    public $pricePercentage;
+    public $subtableName;
 
-  public function setCarrierRateName($carrierRateName)
-  {
-    $this->carrierRateName = $carrierRateName;
-  }
-  public function getCarrierRateName()
-  {
-    return $this->carrierRateName;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_Price
-   */
-  public function setFlatRate(Google_Service_ShoppingContent_Price $flatRate)
-  {
-    $this->flatRate = $flatRate;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_Price
-   */
-  public function getFlatRate()
-  {
-    return $this->flatRate;
-  }
-  public function setNoShipping($noShipping)
-  {
-    $this->noShipping = $noShipping;
-  }
-  public function getNoShipping()
-  {
-    return $this->noShipping;
-  }
-  public function setPricePercentage($pricePercentage)
-  {
-    $this->pricePercentage = $pricePercentage;
-  }
-  public function getPricePercentage()
-  {
-    return $this->pricePercentage;
-  }
-  public function setSubtableName($subtableName)
-  {
-    $this->subtableName = $subtableName;
-  }
-  public function getSubtableName()
-  {
-    return $this->subtableName;
-  }
+    public function setCarrierRateName($carrierRateName) {
+        $this->carrierRateName = $carrierRateName;
+    }
+
+    public function getCarrierRateName() {
+        return $this->carrierRateName;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_Price
+     */
+    public function setFlatRate(Google_Service_ShoppingContent_Price $flatRate) {
+        $this->flatRate = $flatRate;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_Price
+     */
+    public function getFlatRate() {
+        return $this->flatRate;
+    }
+
+    public function setNoShipping($noShipping) {
+        $this->noShipping = $noShipping;
+    }
+
+    public function getNoShipping() {
+        return $this->noShipping;
+    }
+
+    public function setPricePercentage($pricePercentage) {
+        $this->pricePercentage = $pricePercentage;
+    }
+
+    public function getPricePercentage() {
+        return $this->pricePercentage;
+    }
+
+    public function setSubtableName($subtableName) {
+        $this->subtableName = $subtableName;
+    }
+
+    public function getSubtableName() {
+        return $this->subtableName;
+    }
 }

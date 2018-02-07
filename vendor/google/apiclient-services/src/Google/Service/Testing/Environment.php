@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Testing_Environment extends Google_Model
-{
-  protected $androidDeviceType = 'Google_Service_Testing_AndroidDevice';
-  protected $androidDeviceDataType = '';
+class Google_Service_Testing_Environment extends Google_Model {
+    protected $androidDeviceType     = 'Google_Service_Testing_AndroidDevice';
+    protected $androidDeviceDataType = '';
 
-  /**
-   * @param Google_Service_Testing_AndroidDevice
-   */
-  public function setAndroidDevice(Google_Service_Testing_AndroidDevice $androidDevice)
-  {
-    $this->androidDevice = $androidDevice;
-  }
-  /**
-   * @return Google_Service_Testing_AndroidDevice
-   */
-  public function getAndroidDevice()
-  {
-    return $this->androidDevice;
-  }
+    /**
+     * @param Google_Service_Testing_AndroidDevice
+     */
+    public function setAndroidDevice(Google_Service_Testing_AndroidDevice $androidDevice) {
+        $this->androidDevice = $androidDevice;
+    }
+
+    /**
+     * @return Google_Service_Testing_AndroidDevice
+     */
+    public function getAndroidDevice() {
+        return $this->androidDevice;
+    }
 }

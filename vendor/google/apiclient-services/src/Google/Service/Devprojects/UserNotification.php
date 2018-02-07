@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Devprojects_UserNotification extends Google_Model
-{
-  public $channel;
-  public $kind;
+class Google_Service_Devprojects_UserNotification extends Google_Model {
+    public $channel;
+    public $kind;
 
-  public function setChannel($channel)
-  {
-    $this->channel = $channel;
-  }
-  public function getChannel()
-  {
-    return $this->channel;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setChannel($channel) {
+        $this->channel = $channel;
+    }
+
+    public function getChannel() {
+        return $this->channel;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

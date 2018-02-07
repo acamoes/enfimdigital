@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Slides_BatchUpdatePresentationResponse extends Google_Collection
-{
-  protected $collection_key = 'replies';
-  public $presentationId;
-  protected $repliesType = 'Google_Service_Slides_Response';
-  protected $repliesDataType = 'array';
+class Google_Service_Slides_BatchUpdatePresentationResponse extends Google_Collection {
+    protected $collection_key  = 'replies';
+    public $presentationId;
+    protected $repliesType     = 'Google_Service_Slides_Response';
+    protected $repliesDataType = 'array';
 
-  public function setPresentationId($presentationId)
-  {
-    $this->presentationId = $presentationId;
-  }
-  public function getPresentationId()
-  {
-    return $this->presentationId;
-  }
-  /**
-   * @param Google_Service_Slides_Response
-   */
-  public function setReplies($replies)
-  {
-    $this->replies = $replies;
-  }
-  /**
-   * @return Google_Service_Slides_Response
-   */
-  public function getReplies()
-  {
-    return $this->replies;
-  }
+    public function setPresentationId($presentationId) {
+        $this->presentationId = $presentationId;
+    }
+
+    public function getPresentationId() {
+        return $this->presentationId;
+    }
+
+    /**
+     * @param Google_Service_Slides_Response
+     */
+    public function setReplies($replies) {
+        $this->replies = $replies;
+    }
+
+    /**
+     * @return Google_Service_Slides_Response
+     */
+    public function getReplies() {
+        return $this->replies;
+    }
 }

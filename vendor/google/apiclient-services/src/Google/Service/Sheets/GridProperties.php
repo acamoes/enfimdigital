@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_Sheets_GridProperties extends Google_Model
-{
-  public $columnCount;
-  public $frozenColumnCount;
-  public $frozenRowCount;
-  public $hideGridlines;
-  public $rowCount;
+class Google_Service_Sheets_GridProperties extends Google_Model {
+    public $columnCount;
+    public $frozenColumnCount;
+    public $frozenRowCount;
+    public $hideGridlines;
+    public $rowCount;
 
-  public function setColumnCount($columnCount)
-  {
-    $this->columnCount = $columnCount;
-  }
-  public function getColumnCount()
-  {
-    return $this->columnCount;
-  }
-  public function setFrozenColumnCount($frozenColumnCount)
-  {
-    $this->frozenColumnCount = $frozenColumnCount;
-  }
-  public function getFrozenColumnCount()
-  {
-    return $this->frozenColumnCount;
-  }
-  public function setFrozenRowCount($frozenRowCount)
-  {
-    $this->frozenRowCount = $frozenRowCount;
-  }
-  public function getFrozenRowCount()
-  {
-    return $this->frozenRowCount;
-  }
-  public function setHideGridlines($hideGridlines)
-  {
-    $this->hideGridlines = $hideGridlines;
-  }
-  public function getHideGridlines()
-  {
-    return $this->hideGridlines;
-  }
-  public function setRowCount($rowCount)
-  {
-    $this->rowCount = $rowCount;
-  }
-  public function getRowCount()
-  {
-    return $this->rowCount;
-  }
+    public function setColumnCount($columnCount) {
+        $this->columnCount = $columnCount;
+    }
+
+    public function getColumnCount() {
+        return $this->columnCount;
+    }
+
+    public function setFrozenColumnCount($frozenColumnCount) {
+        $this->frozenColumnCount = $frozenColumnCount;
+    }
+
+    public function getFrozenColumnCount() {
+        return $this->frozenColumnCount;
+    }
+
+    public function setFrozenRowCount($frozenRowCount) {
+        $this->frozenRowCount = $frozenRowCount;
+    }
+
+    public function getFrozenRowCount() {
+        return $this->frozenRowCount;
+    }
+
+    public function setHideGridlines($hideGridlines) {
+        $this->hideGridlines = $hideGridlines;
+    }
+
+    public function getHideGridlines() {
+        return $this->hideGridlines;
+    }
+
+    public function setRowCount($rowCount) {
+        $this->rowCount = $rowCount;
+    }
+
+    public function getRowCount() {
+        return $this->rowCount;
+    }
 }

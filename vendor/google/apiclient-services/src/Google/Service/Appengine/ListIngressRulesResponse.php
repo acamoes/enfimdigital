@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Appengine_ListIngressRulesResponse extends Google_Collection
-{
-  protected $collection_key = 'ingressRules';
-  protected $ingressRulesType = 'Google_Service_Appengine_FirewallRule';
-  protected $ingressRulesDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Appengine_ListIngressRulesResponse extends Google_Collection {
+    protected $collection_key       = 'ingressRules';
+    protected $ingressRulesType     = 'Google_Service_Appengine_FirewallRule';
+    protected $ingressRulesDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Appengine_FirewallRule
-   */
-  public function setIngressRules($ingressRules)
-  {
-    $this->ingressRules = $ingressRules;
-  }
-  /**
-   * @return Google_Service_Appengine_FirewallRule
-   */
-  public function getIngressRules()
-  {
-    return $this->ingressRules;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Appengine_FirewallRule
+     */
+    public function setIngressRules($ingressRules) {
+        $this->ingressRules = $ingressRules;
+    }
+
+    /**
+     * @return Google_Service_Appengine_FirewallRule
+     */
+    public function getIngressRules() {
+        return $this->ingressRules;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

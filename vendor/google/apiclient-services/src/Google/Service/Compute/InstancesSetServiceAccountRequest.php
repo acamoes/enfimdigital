@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Compute_InstancesSetServiceAccountRequest extends Google_Collection
-{
-  protected $collection_key = 'scopes';
-  public $email;
-  public $scopes;
+class Google_Service_Compute_InstancesSetServiceAccountRequest extends Google_Collection {
+    protected $collection_key = 'scopes';
+    public $email;
+    public $scopes;
 
-  public function setEmail($email)
-  {
-    $this->email = $email;
-  }
-  public function getEmail()
-  {
-    return $this->email;
-  }
-  public function setScopes($scopes)
-  {
-    $this->scopes = $scopes;
-  }
-  public function getScopes()
-  {
-    return $this->scopes;
-  }
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setScopes($scopes) {
+        $this->scopes = $scopes;
+    }
+
+    public function getScopes() {
+        return $this->scopes;
+    }
 }

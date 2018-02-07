@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_Apk extends Google_Model
-{
-  protected $binaryType = 'Google_Service_AndroidPublisher_ApkBinary';
-  protected $binaryDataType = '';
-  public $versionCode;
+class Google_Service_AndroidPublisher_Apk extends Google_Model {
+    protected $binaryType     = 'Google_Service_AndroidPublisher_ApkBinary';
+    protected $binaryDataType = '';
+    public $versionCode;
 
-  /**
-   * @param Google_Service_AndroidPublisher_ApkBinary
-   */
-  public function setBinary(Google_Service_AndroidPublisher_ApkBinary $binary)
-  {
-    $this->binary = $binary;
-  }
-  /**
-   * @return Google_Service_AndroidPublisher_ApkBinary
-   */
-  public function getBinary()
-  {
-    return $this->binary;
-  }
-  public function setVersionCode($versionCode)
-  {
-    $this->versionCode = $versionCode;
-  }
-  public function getVersionCode()
-  {
-    return $this->versionCode;
-  }
+    /**
+     * @param Google_Service_AndroidPublisher_ApkBinary
+     */
+    public function setBinary(Google_Service_AndroidPublisher_ApkBinary $binary) {
+        $this->binary = $binary;
+    }
+
+    /**
+     * @return Google_Service_AndroidPublisher_ApkBinary
+     */
+    public function getBinary() {
+        return $this->binary;
+    }
+
+    public function setVersionCode($versionCode) {
+        $this->versionCode = $versionCode;
+    }
+
+    public function getVersionCode() {
+        return $this->versionCode;
+    }
 }

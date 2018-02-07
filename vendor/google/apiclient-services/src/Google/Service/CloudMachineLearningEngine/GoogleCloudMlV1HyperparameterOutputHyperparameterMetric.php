@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric extends Google_Model
-{
-  public $objectiveValue;
-  public $trainingStep;
+class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric extends Google_Model {
+    public $objectiveValue;
+    public $trainingStep;
 
-  public function setObjectiveValue($objectiveValue)
-  {
-    $this->objectiveValue = $objectiveValue;
-  }
-  public function getObjectiveValue()
-  {
-    return $this->objectiveValue;
-  }
-  public function setTrainingStep($trainingStep)
-  {
-    $this->trainingStep = $trainingStep;
-  }
-  public function getTrainingStep()
-  {
-    return $this->trainingStep;
-  }
+    public function setObjectiveValue($objectiveValue) {
+        $this->objectiveValue = $objectiveValue;
+    }
+
+    public function getObjectiveValue() {
+        return $this->objectiveValue;
+    }
+
+    public function setTrainingStep($trainingStep) {
+        $this->trainingStep = $trainingStep;
+    }
+
+    public function getTrainingStep() {
+        return $this->trainingStep;
+    }
 }

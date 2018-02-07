@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Oauth2_Jwk extends Google_Collection
-{
-  protected $collection_key = 'keys';
-  protected $keysType = 'Google_Service_Oauth2_JwkKeys';
-  protected $keysDataType = 'array';
+class Google_Service_Oauth2_Jwk extends Google_Collection {
+    protected $collection_key = 'keys';
+    protected $keysType       = 'Google_Service_Oauth2_JwkKeys';
+    protected $keysDataType   = 'array';
 
-  /**
-   * @param Google_Service_Oauth2_JwkKeys
-   */
-  public function setKeys($keys)
-  {
-    $this->keys = $keys;
-  }
-  /**
-   * @return Google_Service_Oauth2_JwkKeys
-   */
-  public function getKeys()
-  {
-    return $this->keys;
-  }
+    /**
+     * @param Google_Service_Oauth2_JwkKeys
+     */
+    public function setKeys($keys) {
+        $this->keys = $keys;
+    }
+
+    /**
+     * @return Google_Service_Oauth2_JwkKeys
+     */
+    public function getKeys() {
+        return $this->keys;
+    }
 }

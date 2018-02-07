@@ -15,44 +15,42 @@
  * the License.
  */
 
-class Google_Service_Devprojects_ProducerConfiguration extends Google_Model
-{
-  public $consumerName;
-  public $consumptionStatus;
-  public $kind;
-  protected $quotaConstraintsType = 'Google_Service_Devprojects_QuotaConstraints';
-  protected $quotaConstraintsDataType = '';
+class Google_Service_Devprojects_ProducerConfiguration extends Google_Model {
+    public $consumerName;
+    public $consumptionStatus;
+    public $kind;
+    protected $quotaConstraintsType     = 'Google_Service_Devprojects_QuotaConstraints';
+    protected $quotaConstraintsDataType = '';
 
-  public function setConsumerName($consumerName)
-  {
-    $this->consumerName = $consumerName;
-  }
-  public function getConsumerName()
-  {
-    return $this->consumerName;
-  }
-  public function setConsumptionStatus($consumptionStatus)
-  {
-    $this->consumptionStatus = $consumptionStatus;
-  }
-  public function getConsumptionStatus()
-  {
-    return $this->consumptionStatus;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setQuotaConstraints(Google_Service_Devprojects_QuotaConstraints $quotaConstraints)
-  {
-    $this->quotaConstraints = $quotaConstraints;
-  }
-  public function getQuotaConstraints()
-  {
-    return $this->quotaConstraints;
-  }
+    public function setConsumerName($consumerName) {
+        $this->consumerName = $consumerName;
+    }
+
+    public function getConsumerName() {
+        return $this->consumerName;
+    }
+
+    public function setConsumptionStatus($consumptionStatus) {
+        $this->consumptionStatus = $consumptionStatus;
+    }
+
+    public function getConsumptionStatus() {
+        return $this->consumptionStatus;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setQuotaConstraints(Google_Service_Devprojects_QuotaConstraints $quotaConstraints) {
+        $this->quotaConstraints = $quotaConstraints;
+    }
+
+    public function getQuotaConstraints() {
+        return $this->quotaConstraints;
+    }
 }

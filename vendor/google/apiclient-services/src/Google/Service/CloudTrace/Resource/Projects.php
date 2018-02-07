@@ -23,6 +23,6 @@
  *   $projects = $cloudtraceService->projects;
  *  </code>
  */
-class Google_Service_CloudTrace_Resource_Projects extends Google_Service_Resource
-{
+class Google_Service_CloudTrace_Resource_Projects extends Google_Service_Resource {
+
 }

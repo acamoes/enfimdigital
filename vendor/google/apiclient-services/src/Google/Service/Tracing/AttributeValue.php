@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Tracing_AttributeValue extends Google_Model
-{
-  public $boolValue;
-  public $intValue;
-  protected $stringValueType = 'Google_Service_Tracing_TruncatableString';
-  protected $stringValueDataType = '';
+class Google_Service_Tracing_AttributeValue extends Google_Model {
+    public $boolValue;
+    public $intValue;
+    protected $stringValueType     = 'Google_Service_Tracing_TruncatableString';
+    protected $stringValueDataType = '';
 
-  public function setBoolValue($boolValue)
-  {
-    $this->boolValue = $boolValue;
-  }
-  public function getBoolValue()
-  {
-    return $this->boolValue;
-  }
-  public function setIntValue($intValue)
-  {
-    $this->intValue = $intValue;
-  }
-  public function getIntValue()
-  {
-    return $this->intValue;
-  }
-  public function setStringValue(Google_Service_Tracing_TruncatableString $stringValue)
-  {
-    $this->stringValue = $stringValue;
-  }
-  public function getStringValue()
-  {
-    return $this->stringValue;
-  }
+    public function setBoolValue($boolValue) {
+        $this->boolValue = $boolValue;
+    }
+
+    public function getBoolValue() {
+        return $this->boolValue;
+    }
+
+    public function setIntValue($intValue) {
+        $this->intValue = $intValue;
+    }
+
+    public function getIntValue() {
+        return $this->intValue;
+    }
+
+    public function setStringValue(Google_Service_Tracing_TruncatableString $stringValue) {
+        $this->stringValue = $stringValue;
+    }
+
+    public function getStringValue() {
+        return $this->stringValue;
+    }
 }

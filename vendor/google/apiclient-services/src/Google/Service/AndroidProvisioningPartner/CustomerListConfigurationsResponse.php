@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AndroidProvisioningPartner_CustomerListConfigurationsResponse extends Google_Collection
-{
-  protected $collection_key = 'configurations';
-  protected $configurationsType = 'Google_Service_AndroidProvisioningPartner_Configuration';
-  protected $configurationsDataType = 'array';
+class Google_Service_AndroidProvisioningPartner_CustomerListConfigurationsResponse extends Google_Collection {
+    protected $collection_key         = 'configurations';
+    protected $configurationsType     = 'Google_Service_AndroidProvisioningPartner_Configuration';
+    protected $configurationsDataType = 'array';
 
-  /**
-   * @param Google_Service_AndroidProvisioningPartner_Configuration
-   */
-  public function setConfigurations($configurations)
-  {
-    $this->configurations = $configurations;
-  }
-  /**
-   * @return Google_Service_AndroidProvisioningPartner_Configuration
-   */
-  public function getConfigurations()
-  {
-    return $this->configurations;
-  }
+    /**
+     * @param Google_Service_AndroidProvisioningPartner_Configuration
+     */
+    public function setConfigurations($configurations) {
+        $this->configurations = $configurations;
+    }
+
+    /**
+     * @return Google_Service_AndroidProvisioningPartner_Configuration
+     */
+    public function getConfigurations() {
+        return $this->configurations;
+    }
 }

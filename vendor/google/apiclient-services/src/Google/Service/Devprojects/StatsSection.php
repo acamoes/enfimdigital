@@ -15,27 +15,25 @@
  * the License.
  */
 
-class Google_Service_Devprojects_StatsSection extends Google_Collection
-{
-  protected $collection_key = 'apiStatsInfo';
-  protected $apiStatsInfoType = 'Google_Service_Devprojects_ApiStatsInfo';
-  protected $apiStatsInfoDataType = 'array';
-  public $kind;
+class Google_Service_Devprojects_StatsSection extends Google_Collection {
+    protected $collection_key       = 'apiStatsInfo';
+    protected $apiStatsInfoType     = 'Google_Service_Devprojects_ApiStatsInfo';
+    protected $apiStatsInfoDataType = 'array';
+    public $kind;
 
-  public function setApiStatsInfo($apiStatsInfo)
-  {
-    $this->apiStatsInfo = $apiStatsInfo;
-  }
-  public function getApiStatsInfo()
-  {
-    return $this->apiStatsInfo;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setApiStatsInfo($apiStatsInfo) {
+        $this->apiStatsInfo = $apiStatsInfo;
+    }
+
+    public function getApiStatsInfo() {
+        return $this->apiStatsInfo;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Appengine_StandardSchedulerSettings extends Google_Model
-{
-  public $maxInstances;
-  public $minInstances;
-  public $targetCpuUtilization;
-  public $targetThroughputUtilization;
+class Google_Service_Appengine_StandardSchedulerSettings extends Google_Model {
+    public $maxInstances;
+    public $minInstances;
+    public $targetCpuUtilization;
+    public $targetThroughputUtilization;
 
-  public function setMaxInstances($maxInstances)
-  {
-    $this->maxInstances = $maxInstances;
-  }
-  public function getMaxInstances()
-  {
-    return $this->maxInstances;
-  }
-  public function setMinInstances($minInstances)
-  {
-    $this->minInstances = $minInstances;
-  }
-  public function getMinInstances()
-  {
-    return $this->minInstances;
-  }
-  public function setTargetCpuUtilization($targetCpuUtilization)
-  {
-    $this->targetCpuUtilization = $targetCpuUtilization;
-  }
-  public function getTargetCpuUtilization()
-  {
-    return $this->targetCpuUtilization;
-  }
-  public function setTargetThroughputUtilization($targetThroughputUtilization)
-  {
-    $this->targetThroughputUtilization = $targetThroughputUtilization;
-  }
-  public function getTargetThroughputUtilization()
-  {
-    return $this->targetThroughputUtilization;
-  }
+    public function setMaxInstances($maxInstances) {
+        $this->maxInstances = $maxInstances;
+    }
+
+    public function getMaxInstances() {
+        return $this->maxInstances;
+    }
+
+    public function setMinInstances($minInstances) {
+        $this->minInstances = $minInstances;
+    }
+
+    public function getMinInstances() {
+        return $this->minInstances;
+    }
+
+    public function setTargetCpuUtilization($targetCpuUtilization) {
+        $this->targetCpuUtilization = $targetCpuUtilization;
+    }
+
+    public function getTargetCpuUtilization() {
+        return $this->targetCpuUtilization;
+    }
+
+    public function setTargetThroughputUtilization($targetThroughputUtilization) {
+        $this->targetThroughputUtilization = $targetThroughputUtilization;
+    }
+
+    public function getTargetThroughputUtilization() {
+        return $this->targetThroughputUtilization;
+    }
 }

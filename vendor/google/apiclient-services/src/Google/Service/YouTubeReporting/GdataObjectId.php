@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_YouTubeReporting_GdataObjectId extends Google_Model
-{
-  public $bucketName;
-  public $generation;
-  public $objectName;
+class Google_Service_YouTubeReporting_GdataObjectId extends Google_Model {
+    public $bucketName;
+    public $generation;
+    public $objectName;
 
-  public function setBucketName($bucketName)
-  {
-    $this->bucketName = $bucketName;
-  }
-  public function getBucketName()
-  {
-    return $this->bucketName;
-  }
-  public function setGeneration($generation)
-  {
-    $this->generation = $generation;
-  }
-  public function getGeneration()
-  {
-    return $this->generation;
-  }
-  public function setObjectName($objectName)
-  {
-    $this->objectName = $objectName;
-  }
-  public function getObjectName()
-  {
-    return $this->objectName;
-  }
+    public function setBucketName($bucketName) {
+        $this->bucketName = $bucketName;
+    }
+
+    public function getBucketName() {
+        return $this->bucketName;
+    }
+
+    public function setGeneration($generation) {
+        $this->generation = $generation;
+    }
+
+    public function getGeneration() {
+        return $this->generation;
+    }
+
+    public function setObjectName($objectName) {
+        $this->objectName = $objectName;
+    }
+
+    public function getObjectName() {
+        return $this->objectName;
+    }
 }

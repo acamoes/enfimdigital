@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Partners_RecaptchaChallenge extends Google_Model
-{
-  public $id;
-  public $response;
+class Google_Service_Partners_RecaptchaChallenge extends Google_Model {
+    public $id;
+    public $response;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setResponse($response)
-  {
-    $this->response = $response;
-  }
-  public function getResponse()
-  {
-    return $this->response;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setResponse($response) {
+        $this->response = $response;
+    }
+
+    public function getResponse() {
+        return $this->response;
+    }
 }

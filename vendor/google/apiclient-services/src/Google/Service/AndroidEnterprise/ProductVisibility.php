@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductVisibility extends Google_Collection
-{
-  protected $collection_key = 'tracks';
-  public $productId;
-  public $tracks;
+class Google_Service_AndroidEnterprise_ProductVisibility extends Google_Collection {
+    protected $collection_key = 'tracks';
+    public $productId;
+    public $tracks;
 
-  public function setProductId($productId)
-  {
-    $this->productId = $productId;
-  }
-  public function getProductId()
-  {
-    return $this->productId;
-  }
-  public function setTracks($tracks)
-  {
-    $this->tracks = $tracks;
-  }
-  public function getTracks()
-  {
-    return $this->tracks;
-  }
+    public function setProductId($productId) {
+        $this->productId = $productId;
+    }
+
+    public function getProductId() {
+        return $this->productId;
+    }
+
+    public function setTracks($tracks) {
+        $this->tracks = $tracks;
+    }
+
+    public function getTracks() {
+        return $this->tracks;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Devprojects_AgeRestriction extends Google_Model
-{
-  public $ageYears;
-  public $kind;
+class Google_Service_Devprojects_AgeRestriction extends Google_Model {
+    public $ageYears;
+    public $kind;
 
-  public function setAgeYears($ageYears)
-  {
-    $this->ageYears = $ageYears;
-  }
-  public function getAgeYears()
-  {
-    return $this->ageYears;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setAgeYears($ageYears) {
+        $this->ageYears = $ageYears;
+    }
+
+    public function getAgeYears() {
+        return $this->ageYears;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

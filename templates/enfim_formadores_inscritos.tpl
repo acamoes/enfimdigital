@@ -72,7 +72,8 @@
                                 <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Passou no Curso?" 
                                    onclick="if (confirm('Passou no Curso?')) {ldelim}
                                                $.when(request('action={$action}&task=passouCurso&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"></a>
+                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                           }"></a>
                             {elseif $inscritos['passedInternship'] neq 'on' && $inscritos['cInternship'] eq 'Sim'}
                                 <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Passou no Estágio?" 
                                    onclick="if (confirm('Passou no Estágio?')) {ldelim}

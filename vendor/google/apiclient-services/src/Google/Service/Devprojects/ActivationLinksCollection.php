@@ -15,45 +15,43 @@
  * the License.
  */
 
-class Google_Service_Devprojects_ActivationLinksCollection extends Google_Collection
-{
-  protected $collection_key = 'link';
-  public $apiToken;
-  public $kind;
-  protected $linkType = 'Google_Service_Devprojects_ActivationLink';
-  protected $linkDataType = 'array';
-  public $serviceType;
+class Google_Service_Devprojects_ActivationLinksCollection extends Google_Collection {
+    protected $collection_key = 'link';
+    public $apiToken;
+    public $kind;
+    protected $linkType       = 'Google_Service_Devprojects_ActivationLink';
+    protected $linkDataType   = 'array';
+    public $serviceType;
 
-  public function setApiToken($apiToken)
-  {
-    $this->apiToken = $apiToken;
-  }
-  public function getApiToken()
-  {
-    return $this->apiToken;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setLink($link)
-  {
-    $this->link = $link;
-  }
-  public function getLink()
-  {
-    return $this->link;
-  }
-  public function setServiceType($serviceType)
-  {
-    $this->serviceType = $serviceType;
-  }
-  public function getServiceType()
-  {
-    return $this->serviceType;
-  }
+    public function setApiToken($apiToken) {
+        $this->apiToken = $apiToken;
+    }
+
+    public function getApiToken() {
+        return $this->apiToken;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setLink($link) {
+        $this->link = $link;
+    }
+
+    public function getLink() {
+        return $this->link;
+    }
+
+    public function setServiceType($serviceType) {
+        $this->serviceType = $serviceType;
+    }
+
+    public function getServiceType() {
+        return $this->serviceType;
+    }
 }

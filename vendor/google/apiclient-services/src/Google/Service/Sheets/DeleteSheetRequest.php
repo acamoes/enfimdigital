@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Sheets_DeleteSheetRequest extends Google_Model
-{
-  public $sheetId;
+class Google_Service_Sheets_DeleteSheetRequest extends Google_Model {
+    public $sheetId;
 
-  public function setSheetId($sheetId)
-  {
-    $this->sheetId = $sheetId;
-  }
-  public function getSheetId()
-  {
-    return $this->sheetId;
-  }
+    public function setSheetId($sheetId) {
+        $this->sheetId = $sheetId;
+    }
+
+    public function getSheetId() {
+        return $this->sheetId;
+    }
 }

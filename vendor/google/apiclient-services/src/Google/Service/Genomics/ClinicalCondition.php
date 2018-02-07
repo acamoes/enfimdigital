@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Genomics_ClinicalCondition extends Google_Collection
-{
-  protected $collection_key = 'names';
-  public $conceptId;
-  protected $externalIdsType = 'Google_Service_Genomics_ExternalId';
-  protected $externalIdsDataType = 'array';
-  public $names;
-  public $omimId;
+class Google_Service_Genomics_ClinicalCondition extends Google_Collection {
+    protected $collection_key      = 'names';
+    public $conceptId;
+    protected $externalIdsType     = 'Google_Service_Genomics_ExternalId';
+    protected $externalIdsDataType = 'array';
+    public $names;
+    public $omimId;
 
-  public function setConceptId($conceptId)
-  {
-    $this->conceptId = $conceptId;
-  }
-  public function getConceptId()
-  {
-    return $this->conceptId;
-  }
-  /**
-   * @param Google_Service_Genomics_ExternalId
-   */
-  public function setExternalIds($externalIds)
-  {
-    $this->externalIds = $externalIds;
-  }
-  /**
-   * @return Google_Service_Genomics_ExternalId
-   */
-  public function getExternalIds()
-  {
-    return $this->externalIds;
-  }
-  public function setNames($names)
-  {
-    $this->names = $names;
-  }
-  public function getNames()
-  {
-    return $this->names;
-  }
-  public function setOmimId($omimId)
-  {
-    $this->omimId = $omimId;
-  }
-  public function getOmimId()
-  {
-    return $this->omimId;
-  }
+    public function setConceptId($conceptId) {
+        $this->conceptId = $conceptId;
+    }
+
+    public function getConceptId() {
+        return $this->conceptId;
+    }
+
+    /**
+     * @param Google_Service_Genomics_ExternalId
+     */
+    public function setExternalIds($externalIds) {
+        $this->externalIds = $externalIds;
+    }
+
+    /**
+     * @return Google_Service_Genomics_ExternalId
+     */
+    public function getExternalIds() {
+        return $this->externalIds;
+    }
+
+    public function setNames($names) {
+        $this->names = $names;
+    }
+
+    public function getNames() {
+        return $this->names;
+    }
+
+    public function setOmimId($omimId) {
+        $this->omimId = $omimId;
+    }
+
+    public function getOmimId() {
+        return $this->omimId;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_ConversionError extends Google_Model
-{
-  public $code;
-  public $kind;
-  public $message;
+class Google_Service_Dfareporting_ConversionError extends Google_Model {
+    public $code;
+    public $kind;
+    public $message;
 
-  public function setCode($code)
-  {
-    $this->code = $code;
-  }
-  public function getCode()
-  {
-    return $this->code;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setMessage($message)
-  {
-    $this->message = $message;
-  }
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    public function setCode($code) {
+        $this->code = $code;
+    }
+
+    public function getCode() {
+        return $this->code;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setMessage($message) {
+        $this->message = $message;
+    }
+
+    public function getMessage() {
+        return $this->message;
+    }
 }

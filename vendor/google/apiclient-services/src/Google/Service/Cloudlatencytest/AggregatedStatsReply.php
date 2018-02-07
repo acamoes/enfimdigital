@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Cloudlatencytest_AggregatedStatsReply extends Google_Model
-{
-  public $testValue;
+class Google_Service_Cloudlatencytest_AggregatedStatsReply extends Google_Model {
+    public $testValue;
 
-  public function setTestValue($testValue)
-  {
-    $this->testValue = $testValue;
-  }
-  public function getTestValue()
-  {
-    return $this->testValue;
-  }
+    public function setTestValue($testValue) {
+        $this->testValue = $testValue;
+    }
+
+    public function getTestValue() {
+        return $this->testValue;
+    }
 }

@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_MarketplaceDealParty extends Google_Model
-{
-  protected $buyerType = 'Google_Service_AdExchangeBuyer_Buyer';
-  protected $buyerDataType = '';
-  protected $sellerType = 'Google_Service_AdExchangeBuyer_Seller';
-  protected $sellerDataType = '';
+class Google_Service_AdExchangeBuyer_MarketplaceDealParty extends Google_Model {
+    protected $buyerType      = 'Google_Service_AdExchangeBuyer_Buyer';
+    protected $buyerDataType  = '';
+    protected $sellerType     = 'Google_Service_AdExchangeBuyer_Seller';
+    protected $sellerDataType = '';
 
-  /**
-   * @param Google_Service_AdExchangeBuyer_Buyer
-   */
-  public function setBuyer(Google_Service_AdExchangeBuyer_Buyer $buyer)
-  {
-    $this->buyer = $buyer;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyer_Buyer
-   */
-  public function getBuyer()
-  {
-    return $this->buyer;
-  }
-  /**
-   * @param Google_Service_AdExchangeBuyer_Seller
-   */
-  public function setSeller(Google_Service_AdExchangeBuyer_Seller $seller)
-  {
-    $this->seller = $seller;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyer_Seller
-   */
-  public function getSeller()
-  {
-    return $this->seller;
-  }
+    /**
+     * @param Google_Service_AdExchangeBuyer_Buyer
+     */
+    public function setBuyer(Google_Service_AdExchangeBuyer_Buyer $buyer) {
+        $this->buyer = $buyer;
+    }
+
+    /**
+     * @return Google_Service_AdExchangeBuyer_Buyer
+     */
+    public function getBuyer() {
+        return $this->buyer;
+    }
+
+    /**
+     * @param Google_Service_AdExchangeBuyer_Seller
+     */
+    public function setSeller(Google_Service_AdExchangeBuyer_Seller $seller) {
+        $this->seller = $seller;
+    }
+
+    /**
+     * @return Google_Service_AdExchangeBuyer_Seller
+     */
+    public function getSeller() {
+        return $this->seller;
+    }
 }

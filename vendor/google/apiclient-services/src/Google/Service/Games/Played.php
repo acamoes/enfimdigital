@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Games_Played extends Google_Model
-{
-  public $autoMatched;
-  public $kind;
-  public $timeMillis;
+class Google_Service_Games_Played extends Google_Model {
+    public $autoMatched;
+    public $kind;
+    public $timeMillis;
 
-  public function setAutoMatched($autoMatched)
-  {
-    $this->autoMatched = $autoMatched;
-  }
-  public function getAutoMatched()
-  {
-    return $this->autoMatched;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setTimeMillis($timeMillis)
-  {
-    $this->timeMillis = $timeMillis;
-  }
-  public function getTimeMillis()
-  {
-    return $this->timeMillis;
-  }
+    public function setAutoMatched($autoMatched) {
+        $this->autoMatched = $autoMatched;
+    }
+
+    public function getAutoMatched() {
+        return $this->autoMatched;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setTimeMillis($timeMillis) {
+        $this->timeMillis = $timeMillis;
+    }
+
+    public function getTimeMillis() {
+        return $this->timeMillis;
+    }
 }

@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Sheets_AddSheetResponse extends Google_Model
-{
-  protected $propertiesType = 'Google_Service_Sheets_SheetProperties';
-  protected $propertiesDataType = '';
+class Google_Service_Sheets_AddSheetResponse extends Google_Model {
+    protected $propertiesType     = 'Google_Service_Sheets_SheetProperties';
+    protected $propertiesDataType = '';
 
-  /**
-   * @param Google_Service_Sheets_SheetProperties
-   */
-  public function setProperties(Google_Service_Sheets_SheetProperties $properties)
-  {
-    $this->properties = $properties;
-  }
-  /**
-   * @return Google_Service_Sheets_SheetProperties
-   */
-  public function getProperties()
-  {
-    return $this->properties;
-  }
+    /**
+     * @param Google_Service_Sheets_SheetProperties
+     */
+    public function setProperties(Google_Service_Sheets_SheetProperties $properties) {
+        $this->properties = $properties;
+    }
+
+    /**
+     * @return Google_Service_Sheets_SheetProperties
+     */
+    public function getProperties() {
+        return $this->properties;
+    }
 }

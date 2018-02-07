@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Sheets_SortSpec extends Google_Model
-{
-  public $dimensionIndex;
-  public $sortOrder;
+class Google_Service_Sheets_SortSpec extends Google_Model {
+    public $dimensionIndex;
+    public $sortOrder;
 
-  public function setDimensionIndex($dimensionIndex)
-  {
-    $this->dimensionIndex = $dimensionIndex;
-  }
-  public function getDimensionIndex()
-  {
-    return $this->dimensionIndex;
-  }
-  public function setSortOrder($sortOrder)
-  {
-    $this->sortOrder = $sortOrder;
-  }
-  public function getSortOrder()
-  {
-    return $this->sortOrder;
-  }
+    public function setDimensionIndex($dimensionIndex) {
+        $this->dimensionIndex = $dimensionIndex;
+    }
+
+    public function getDimensionIndex() {
+        return $this->dimensionIndex;
+    }
+
+    public function setSortOrder($sortOrder) {
+        $this->sortOrder = $sortOrder;
+    }
+
+    public function getSortOrder() {
+        return $this->sortOrder;
+    }
 }

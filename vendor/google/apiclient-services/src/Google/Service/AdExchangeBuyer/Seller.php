@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_Seller extends Google_Model
-{
-  public $accountId;
-  public $subAccountId;
+class Google_Service_AdExchangeBuyer_Seller extends Google_Model {
+    public $accountId;
+    public $subAccountId;
 
-  public function setAccountId($accountId)
-  {
-    $this->accountId = $accountId;
-  }
-  public function getAccountId()
-  {
-    return $this->accountId;
-  }
-  public function setSubAccountId($subAccountId)
-  {
-    $this->subAccountId = $subAccountId;
-  }
-  public function getSubAccountId()
-  {
-    return $this->subAccountId;
-  }
+    public function setAccountId($accountId) {
+        $this->accountId = $accountId;
+    }
+
+    public function getAccountId() {
+        return $this->accountId;
+    }
+
+    public function setSubAccountId($subAccountId) {
+        $this->subAccountId = $subAccountId;
+    }
+
+    public function getSubAccountId() {
+        return $this->subAccountId;
+    }
 }

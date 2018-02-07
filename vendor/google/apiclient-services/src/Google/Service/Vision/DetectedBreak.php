@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Vision_DetectedBreak extends Google_Model
-{
-  public $isPrefix;
-  public $type;
+class Google_Service_Vision_DetectedBreak extends Google_Model {
+    public $isPrefix;
+    public $type;
 
-  public function setIsPrefix($isPrefix)
-  {
-    $this->isPrefix = $isPrefix;
-  }
-  public function getIsPrefix()
-  {
-    return $this->isPrefix;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setIsPrefix($isPrefix) {
+        $this->isPrefix = $isPrefix;
+    }
+
+    public function getIsPrefix() {
+        return $this->isPrefix;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

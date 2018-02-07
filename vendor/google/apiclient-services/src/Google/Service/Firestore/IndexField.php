@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Firestore_IndexField extends Google_Model
-{
-  public $fieldPath;
-  public $mode;
+class Google_Service_Firestore_IndexField extends Google_Model {
+    public $fieldPath;
+    public $mode;
 
-  public function setFieldPath($fieldPath)
-  {
-    $this->fieldPath = $fieldPath;
-  }
-  public function getFieldPath()
-  {
-    return $this->fieldPath;
-  }
-  public function setMode($mode)
-  {
-    $this->mode = $mode;
-  }
-  public function getMode()
-  {
-    return $this->mode;
-  }
+    public function setFieldPath($fieldPath) {
+        $this->fieldPath = $fieldPath;
+    }
+
+    public function getFieldPath() {
+        return $this->fieldPath;
+    }
+
+    public function setMode($mode) {
+        $this->mode = $mode;
+    }
+
+    public function getMode() {
+        return $this->mode;
+    }
 }

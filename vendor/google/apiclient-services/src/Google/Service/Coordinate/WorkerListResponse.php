@@ -15,27 +15,25 @@
  * the License.
  */
 
-class Google_Service_Coordinate_WorkerListResponse extends Google_Collection
-{
-  protected $collection_key = 'items';
-  protected $itemsType = 'Google_Service_Coordinate_Worker';
-  protected $itemsDataType = 'array';
-  public $kind;
+class Google_Service_Coordinate_WorkerListResponse extends Google_Collection {
+    protected $collection_key = 'items';
+    protected $itemsType      = 'Google_Service_Coordinate_Worker';
+    protected $itemsDataType  = 'array';
+    public $kind;
 
-  public function setItems($items)
-  {
-    $this->items = $items;
-  }
-  public function getItems()
-  {
-    return $this->items;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setItems($items) {
+        $this->items = $items;
+    }
+
+    public function getItems() {
+        return $this->items;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Appengine_Status extends Google_Collection
-{
-  protected $collection_key = 'details';
-  public $code;
-  public $details;
-  public $message;
+class Google_Service_Appengine_Status extends Google_Collection {
+    protected $collection_key = 'details';
+    public $code;
+    public $details;
+    public $message;
 
-  public function setCode($code)
-  {
-    $this->code = $code;
-  }
-  public function getCode()
-  {
-    return $this->code;
-  }
-  public function setDetails($details)
-  {
-    $this->details = $details;
-  }
-  public function getDetails()
-  {
-    return $this->details;
-  }
-  public function setMessage($message)
-  {
-    $this->message = $message;
-  }
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    public function setCode($code) {
+        $this->code = $code;
+    }
+
+    public function getCode() {
+        return $this->code;
+    }
+
+    public function setDetails($details) {
+        $this->details = $details;
+    }
+
+    public function getDetails() {
+        return $this->details;
+    }
+
+    public function setMessage($message) {
+        $this->message = $message;
+    }
+
+    public function getMessage() {
+        return $this->message;
+    }
 }

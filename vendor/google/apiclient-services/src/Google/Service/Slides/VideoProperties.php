@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Slides_VideoProperties extends Google_Model
-{
-  protected $outlineType = 'Google_Service_Slides_Outline';
-  protected $outlineDataType = '';
+class Google_Service_Slides_VideoProperties extends Google_Model {
+    protected $outlineType     = 'Google_Service_Slides_Outline';
+    protected $outlineDataType = '';
 
-  /**
-   * @param Google_Service_Slides_Outline
-   */
-  public function setOutline(Google_Service_Slides_Outline $outline)
-  {
-    $this->outline = $outline;
-  }
-  /**
-   * @return Google_Service_Slides_Outline
-   */
-  public function getOutline()
-  {
-    return $this->outline;
-  }
+    /**
+     * @param Google_Service_Slides_Outline
+     */
+    public function setOutline(Google_Service_Slides_Outline $outline) {
+        $this->outline = $outline;
+    }
+
+    /**
+     * @return Google_Service_Slides_Outline
+     */
+    public function getOutline() {
+        return $this->outline;
+    }
 }

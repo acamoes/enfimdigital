@@ -15,57 +15,55 @@
  * the License.
  */
 
-class Google_Service_CloudTasks_TaskStatus extends Google_Model
-{
-  public $attemptDispatchCount;
-  public $attemptResponseCount;
-  protected $firstAttemptStatusType = 'Google_Service_CloudTasks_AttemptStatus';
-  protected $firstAttemptStatusDataType = '';
-  protected $lastAttemptStatusType = 'Google_Service_CloudTasks_AttemptStatus';
-  protected $lastAttemptStatusDataType = '';
+class Google_Service_CloudTasks_TaskStatus extends Google_Model {
+    public $attemptDispatchCount;
+    public $attemptResponseCount;
+    protected $firstAttemptStatusType     = 'Google_Service_CloudTasks_AttemptStatus';
+    protected $firstAttemptStatusDataType = '';
+    protected $lastAttemptStatusType      = 'Google_Service_CloudTasks_AttemptStatus';
+    protected $lastAttemptStatusDataType  = '';
 
-  public function setAttemptDispatchCount($attemptDispatchCount)
-  {
-    $this->attemptDispatchCount = $attemptDispatchCount;
-  }
-  public function getAttemptDispatchCount()
-  {
-    return $this->attemptDispatchCount;
-  }
-  public function setAttemptResponseCount($attemptResponseCount)
-  {
-    $this->attemptResponseCount = $attemptResponseCount;
-  }
-  public function getAttemptResponseCount()
-  {
-    return $this->attemptResponseCount;
-  }
-  /**
-   * @param Google_Service_CloudTasks_AttemptStatus
-   */
-  public function setFirstAttemptStatus(Google_Service_CloudTasks_AttemptStatus $firstAttemptStatus)
-  {
-    $this->firstAttemptStatus = $firstAttemptStatus;
-  }
-  /**
-   * @return Google_Service_CloudTasks_AttemptStatus
-   */
-  public function getFirstAttemptStatus()
-  {
-    return $this->firstAttemptStatus;
-  }
-  /**
-   * @param Google_Service_CloudTasks_AttemptStatus
-   */
-  public function setLastAttemptStatus(Google_Service_CloudTasks_AttemptStatus $lastAttemptStatus)
-  {
-    $this->lastAttemptStatus = $lastAttemptStatus;
-  }
-  /**
-   * @return Google_Service_CloudTasks_AttemptStatus
-   */
-  public function getLastAttemptStatus()
-  {
-    return $this->lastAttemptStatus;
-  }
+    public function setAttemptDispatchCount($attemptDispatchCount) {
+        $this->attemptDispatchCount = $attemptDispatchCount;
+    }
+
+    public function getAttemptDispatchCount() {
+        return $this->attemptDispatchCount;
+    }
+
+    public function setAttemptResponseCount($attemptResponseCount) {
+        $this->attemptResponseCount = $attemptResponseCount;
+    }
+
+    public function getAttemptResponseCount() {
+        return $this->attemptResponseCount;
+    }
+
+    /**
+     * @param Google_Service_CloudTasks_AttemptStatus
+     */
+    public function setFirstAttemptStatus(Google_Service_CloudTasks_AttemptStatus $firstAttemptStatus) {
+        $this->firstAttemptStatus = $firstAttemptStatus;
+    }
+
+    /**
+     * @return Google_Service_CloudTasks_AttemptStatus
+     */
+    public function getFirstAttemptStatus() {
+        return $this->firstAttemptStatus;
+    }
+
+    /**
+     * @param Google_Service_CloudTasks_AttemptStatus
+     */
+    public function setLastAttemptStatus(Google_Service_CloudTasks_AttemptStatus $lastAttemptStatus) {
+        $this->lastAttemptStatus = $lastAttemptStatus;
+    }
+
+    /**
+     * @return Google_Service_CloudTasks_AttemptStatus
+     */
+    public function getLastAttemptStatus() {
+        return $this->lastAttemptStatus;
+    }
 }

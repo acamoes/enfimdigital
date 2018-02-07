@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_DayPartTargeting extends Google_Collection
-{
-  protected $collection_key = 'hoursOfDay';
-  public $daysOfWeek;
-  public $hoursOfDay;
-  public $userLocalTime;
+class Google_Service_Dfareporting_DayPartTargeting extends Google_Collection {
+    protected $collection_key = 'hoursOfDay';
+    public $daysOfWeek;
+    public $hoursOfDay;
+    public $userLocalTime;
 
-  public function setDaysOfWeek($daysOfWeek)
-  {
-    $this->daysOfWeek = $daysOfWeek;
-  }
-  public function getDaysOfWeek()
-  {
-    return $this->daysOfWeek;
-  }
-  public function setHoursOfDay($hoursOfDay)
-  {
-    $this->hoursOfDay = $hoursOfDay;
-  }
-  public function getHoursOfDay()
-  {
-    return $this->hoursOfDay;
-  }
-  public function setUserLocalTime($userLocalTime)
-  {
-    $this->userLocalTime = $userLocalTime;
-  }
-  public function getUserLocalTime()
-  {
-    return $this->userLocalTime;
-  }
+    public function setDaysOfWeek($daysOfWeek) {
+        $this->daysOfWeek = $daysOfWeek;
+    }
+
+    public function getDaysOfWeek() {
+        return $this->daysOfWeek;
+    }
+
+    public function setHoursOfDay($hoursOfDay) {
+        $this->hoursOfDay = $hoursOfDay;
+    }
+
+    public function getHoursOfDay() {
+        return $this->hoursOfDay;
+    }
+
+    public function setUserLocalTime($userLocalTime) {
+        $this->userLocalTime = $userLocalTime;
+    }
+
+    public function getUserLocalTime() {
+        return $this->userLocalTime;
+    }
 }

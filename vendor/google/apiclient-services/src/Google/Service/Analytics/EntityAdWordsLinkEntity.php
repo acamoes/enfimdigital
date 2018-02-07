@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Analytics_EntityAdWordsLinkEntity extends Google_Model
-{
-  protected $webPropertyRefType = 'Google_Service_Analytics_WebPropertyRef';
-  protected $webPropertyRefDataType = '';
+class Google_Service_Analytics_EntityAdWordsLinkEntity extends Google_Model {
+    protected $webPropertyRefType     = 'Google_Service_Analytics_WebPropertyRef';
+    protected $webPropertyRefDataType = '';
 
-  /**
-   * @param Google_Service_Analytics_WebPropertyRef
-   */
-  public function setWebPropertyRef(Google_Service_Analytics_WebPropertyRef $webPropertyRef)
-  {
-    $this->webPropertyRef = $webPropertyRef;
-  }
-  /**
-   * @return Google_Service_Analytics_WebPropertyRef
-   */
-  public function getWebPropertyRef()
-  {
-    return $this->webPropertyRef;
-  }
+    /**
+     * @param Google_Service_Analytics_WebPropertyRef
+     */
+    public function setWebPropertyRef(Google_Service_Analytics_WebPropertyRef $webPropertyRef) {
+        $this->webPropertyRef = $webPropertyRef;
+    }
+
+    /**
+     * @return Google_Service_Analytics_WebPropertyRef
+     */
+    public function getWebPropertyRef() {
+        return $this->webPropertyRef;
+    }
 }

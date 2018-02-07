@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Testing_Account extends Google_Model
-{
-  protected $googleAutoType = 'Google_Service_Testing_GoogleAuto';
-  protected $googleAutoDataType = '';
+class Google_Service_Testing_Account extends Google_Model {
+    protected $googleAutoType     = 'Google_Service_Testing_GoogleAuto';
+    protected $googleAutoDataType = '';
 
-  /**
-   * @param Google_Service_Testing_GoogleAuto
-   */
-  public function setGoogleAuto(Google_Service_Testing_GoogleAuto $googleAuto)
-  {
-    $this->googleAuto = $googleAuto;
-  }
-  /**
-   * @return Google_Service_Testing_GoogleAuto
-   */
-  public function getGoogleAuto()
-  {
-    return $this->googleAuto;
-  }
+    /**
+     * @param Google_Service_Testing_GoogleAuto
+     */
+    public function setGoogleAuto(Google_Service_Testing_GoogleAuto $googleAuto) {
+        $this->googleAuto = $googleAuto;
+    }
+
+    /**
+     * @return Google_Service_Testing_GoogleAuto
+     */
+    public function getGoogleAuto() {
+        return $this->googleAuto;
+    }
 }

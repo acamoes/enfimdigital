@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_ExpansionFile extends Google_Model
-{
-  public $fileSize;
-  public $referencesVersion;
+class Google_Service_AndroidPublisher_ExpansionFile extends Google_Model {
+    public $fileSize;
+    public $referencesVersion;
 
-  public function setFileSize($fileSize)
-  {
-    $this->fileSize = $fileSize;
-  }
-  public function getFileSize()
-  {
-    return $this->fileSize;
-  }
-  public function setReferencesVersion($referencesVersion)
-  {
-    $this->referencesVersion = $referencesVersion;
-  }
-  public function getReferencesVersion()
-  {
-    return $this->referencesVersion;
-  }
+    public function setFileSize($fileSize) {
+        $this->fileSize = $fileSize;
+    }
+
+    public function getFileSize() {
+        return $this->fileSize;
+    }
+
+    public function setReferencesVersion($referencesVersion) {
+        $this->referencesVersion = $referencesVersion;
+    }
+
+    public function getReferencesVersion() {
+        return $this->referencesVersion;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Sheets_ClearValuesResponse extends Google_Model
-{
-  public $clearedRange;
-  public $spreadsheetId;
+class Google_Service_Sheets_ClearValuesResponse extends Google_Model {
+    public $clearedRange;
+    public $spreadsheetId;
 
-  public function setClearedRange($clearedRange)
-  {
-    $this->clearedRange = $clearedRange;
-  }
-  public function getClearedRange()
-  {
-    return $this->clearedRange;
-  }
-  public function setSpreadsheetId($spreadsheetId)
-  {
-    $this->spreadsheetId = $spreadsheetId;
-  }
-  public function getSpreadsheetId()
-  {
-    return $this->spreadsheetId;
-  }
+    public function setClearedRange($clearedRange) {
+        $this->clearedRange = $clearedRange;
+    }
+
+    public function getClearedRange() {
+        return $this->clearedRange;
+    }
+
+    public function setSpreadsheetId($spreadsheetId) {
+        $this->spreadsheetId = $spreadsheetId;
+    }
+
+    public function getSpreadsheetId() {
+        return $this->spreadsheetId;
+    }
 }

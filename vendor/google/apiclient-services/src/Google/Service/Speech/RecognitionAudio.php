@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Speech_RecognitionAudio extends Google_Model
-{
-  public $content;
-  public $uri;
+class Google_Service_Speech_RecognitionAudio extends Google_Model {
+    public $content;
+    public $uri;
 
-  public function setContent($content)
-  {
-    $this->content = $content;
-  }
-  public function getContent()
-  {
-    return $this->content;
-  }
-  public function setUri($uri)
-  {
-    $this->uri = $uri;
-  }
-  public function getUri()
-  {
-    return $this->uri;
-  }
+    public function setContent($content) {
+        $this->content = $content;
+    }
+
+    public function getContent() {
+        return $this->content;
+    }
+
+    public function setUri($uri) {
+        $this->uri = $uri;
+    }
+
+    public function getUri() {
+        return $this->uri;
+    }
 }

@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Slides_UpdateLinePropertiesRequest extends Google_Model
-{
-  public $fields;
-  protected $linePropertiesType = 'Google_Service_Slides_LineProperties';
-  protected $linePropertiesDataType = '';
-  public $objectId;
+class Google_Service_Slides_UpdateLinePropertiesRequest extends Google_Model {
+    public $fields;
+    protected $linePropertiesType     = 'Google_Service_Slides_LineProperties';
+    protected $linePropertiesDataType = '';
+    public $objectId;
 
-  public function setFields($fields)
-  {
-    $this->fields = $fields;
-  }
-  public function getFields()
-  {
-    return $this->fields;
-  }
-  /**
-   * @param Google_Service_Slides_LineProperties
-   */
-  public function setLineProperties(Google_Service_Slides_LineProperties $lineProperties)
-  {
-    $this->lineProperties = $lineProperties;
-  }
-  /**
-   * @return Google_Service_Slides_LineProperties
-   */
-  public function getLineProperties()
-  {
-    return $this->lineProperties;
-  }
-  public function setObjectId($objectId)
-  {
-    $this->objectId = $objectId;
-  }
-  public function getObjectId()
-  {
-    return $this->objectId;
-  }
+    public function setFields($fields) {
+        $this->fields = $fields;
+    }
+
+    public function getFields() {
+        return $this->fields;
+    }
+
+    /**
+     * @param Google_Service_Slides_LineProperties
+     */
+    public function setLineProperties(Google_Service_Slides_LineProperties $lineProperties) {
+        $this->lineProperties = $lineProperties;
+    }
+
+    /**
+     * @return Google_Service_Slides_LineProperties
+     */
+    public function getLineProperties() {
+        return $this->lineProperties;
+    }
+
+    public function setObjectId($objectId) {
+        $this->objectId = $objectId;
+    }
+
+    public function getObjectId() {
+        return $this->objectId;
+    }
 }

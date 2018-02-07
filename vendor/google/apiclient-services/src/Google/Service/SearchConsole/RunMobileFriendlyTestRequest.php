@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_SearchConsole_RunMobileFriendlyTestRequest extends Google_Model
-{
-  public $requestScreenshot;
-  public $url;
+class Google_Service_SearchConsole_RunMobileFriendlyTestRequest extends Google_Model {
+    public $requestScreenshot;
+    public $url;
 
-  public function setRequestScreenshot($requestScreenshot)
-  {
-    $this->requestScreenshot = $requestScreenshot;
-  }
-  public function getRequestScreenshot()
-  {
-    return $this->requestScreenshot;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setRequestScreenshot($requestScreenshot) {
+        $this->requestScreenshot = $requestScreenshot;
+    }
+
+    public function getRequestScreenshot() {
+        return $this->requestScreenshot;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_SearchAgentsResponse extends Google_Collection
-{
-  protected $collection_key = 'agents';
-  protected $agentsType = 'Google_Service_Dialogflow_Agent';
-  protected $agentsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Dialogflow_SearchAgentsResponse extends Google_Collection {
+    protected $collection_key = 'agents';
+    protected $agentsType     = 'Google_Service_Dialogflow_Agent';
+    protected $agentsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Dialogflow_Agent
-   */
-  public function setAgents($agents)
-  {
-    $this->agents = $agents;
-  }
-  /**
-   * @return Google_Service_Dialogflow_Agent
-   */
-  public function getAgents()
-  {
-    return $this->agents;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Dialogflow_Agent
+     */
+    public function setAgents($agents) {
+        $this->agents = $agents;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_Agent
+     */
+    public function getAgents() {
+        return $this->agents;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

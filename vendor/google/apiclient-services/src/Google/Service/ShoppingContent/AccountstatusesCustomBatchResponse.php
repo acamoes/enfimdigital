@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_AccountstatusesCustomBatchResponse extends Google_Collection
-{
-  protected $collection_key = 'entries';
-  protected $entriesType = 'Google_Service_ShoppingContent_AccountstatusesCustomBatchResponseEntry';
-  protected $entriesDataType = 'array';
-  public $kind;
+class Google_Service_ShoppingContent_AccountstatusesCustomBatchResponse extends Google_Collection {
+    protected $collection_key  = 'entries';
+    protected $entriesType     = 'Google_Service_ShoppingContent_AccountstatusesCustomBatchResponseEntry';
+    protected $entriesDataType = 'array';
+    public $kind;
 
-  /**
-   * @param Google_Service_ShoppingContent_AccountstatusesCustomBatchResponseEntry
-   */
-  public function setEntries($entries)
-  {
-    $this->entries = $entries;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_AccountstatusesCustomBatchResponseEntry
-   */
-  public function getEntries()
-  {
-    return $this->entries;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_ShoppingContent_AccountstatusesCustomBatchResponseEntry
+     */
+    public function setEntries($entries) {
+        $this->entries = $entries;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_AccountstatusesCustomBatchResponseEntry
+     */
+    public function getEntries() {
+        return $this->entries;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

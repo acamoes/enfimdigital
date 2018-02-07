@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_InstancesCloneRequest extends Google_Model
-{
-  protected $cloneContextType = 'Google_Service_SQLAdmin_CloneContext';
-  protected $cloneContextDataType = '';
+class Google_Service_SQLAdmin_InstancesCloneRequest extends Google_Model {
+    protected $cloneContextType     = 'Google_Service_SQLAdmin_CloneContext';
+    protected $cloneContextDataType = '';
 
-  /**
-   * @param Google_Service_SQLAdmin_CloneContext
-   */
-  public function setCloneContext(Google_Service_SQLAdmin_CloneContext $cloneContext)
-  {
-    $this->cloneContext = $cloneContext;
-  }
-  /**
-   * @return Google_Service_SQLAdmin_CloneContext
-   */
-  public function getCloneContext()
-  {
-    return $this->cloneContext;
-  }
+    /**
+     * @param Google_Service_SQLAdmin_CloneContext
+     */
+    public function setCloneContext(Google_Service_SQLAdmin_CloneContext $cloneContext) {
+        $this->cloneContext = $cloneContext;
+    }
+
+    /**
+     * @return Google_Service_SQLAdmin_CloneContext
+     */
+    public function getCloneContext() {
+        return $this->cloneContext;
+    }
 }

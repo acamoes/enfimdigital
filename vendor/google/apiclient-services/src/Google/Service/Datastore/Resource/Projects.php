@@ -23,114 +23,113 @@
  *   $projects = $datastoreService->projects;
  *  </code>
  */
-class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
-{
-  /**
-   * Allocates IDs for the given keys, which is useful for referencing an entity
-   * before it is inserted. (projects.allocateIds)
-   *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
-   * @param Google_Service_Datastore_AllocateIdsRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Datastore_AllocateIdsResponse
-   */
-  public function allocateIds($projectId, Google_Service_Datastore_AllocateIdsRequest $postBody, $optParams = array())
-  {
-    $params = array('projectId' => $projectId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('allocateIds', array($params), "Google_Service_Datastore_AllocateIdsResponse");
-  }
-  /**
-   * Begins a new transaction. (projects.beginTransaction)
-   *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
-   * @param Google_Service_Datastore_BeginTransactionRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Datastore_BeginTransactionResponse
-   */
-  public function beginTransaction($projectId, Google_Service_Datastore_BeginTransactionRequest $postBody, $optParams = array())
-  {
-    $params = array('projectId' => $projectId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('beginTransaction', array($params), "Google_Service_Datastore_BeginTransactionResponse");
-  }
-  /**
-   * Commits a transaction, optionally creating, deleting or modifying some
-   * entities. (projects.commit)
-   *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
-   * @param Google_Service_Datastore_CommitRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Datastore_CommitResponse
-   */
-  public function commit($projectId, Google_Service_Datastore_CommitRequest $postBody, $optParams = array())
-  {
-    $params = array('projectId' => $projectId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('commit', array($params), "Google_Service_Datastore_CommitResponse");
-  }
-  /**
-   * Looks up entities by key. (projects.lookup)
-   *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
-   * @param Google_Service_Datastore_LookupRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Datastore_LookupResponse
-   */
-  public function lookup($projectId, Google_Service_Datastore_LookupRequest $postBody, $optParams = array())
-  {
-    $params = array('projectId' => $projectId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('lookup', array($params), "Google_Service_Datastore_LookupResponse");
-  }
-  /**
-   * Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.
-   * (projects.reserveIds)
-   *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
-   * @param Google_Service_Datastore_ReserveIdsRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Datastore_ReserveIdsResponse
-   */
-  public function reserveIds($projectId, Google_Service_Datastore_ReserveIdsRequest $postBody, $optParams = array())
-  {
-    $params = array('projectId' => $projectId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('reserveIds', array($params), "Google_Service_Datastore_ReserveIdsResponse");
-  }
-  /**
-   * Rolls back a transaction. (projects.rollback)
-   *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
-   * @param Google_Service_Datastore_RollbackRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Datastore_RollbackResponse
-   */
-  public function rollback($projectId, Google_Service_Datastore_RollbackRequest $postBody, $optParams = array())
-  {
-    $params = array('projectId' => $projectId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('rollback', array($params), "Google_Service_Datastore_RollbackResponse");
-  }
-  /**
-   * Queries for entities. (projects.runQuery)
-   *
-   * @param string $projectId The ID of the project against which to make the
-   * request.
-   * @param Google_Service_Datastore_RunQueryRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Datastore_RunQueryResponse
-   */
-  public function runQuery($projectId, Google_Service_Datastore_RunQueryRequest $postBody, $optParams = array())
-  {
-    $params = array('projectId' => $projectId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('runQuery', array($params), "Google_Service_Datastore_RunQueryResponse");
-  }
+class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource {
+
+    /**
+     * Allocates IDs for the given keys, which is useful for referencing an entity
+     * before it is inserted. (projects.allocateIds)
+     *
+     * @param string $projectId The ID of the project against which to make the
+     * request.
+     * @param Google_Service_Datastore_AllocateIdsRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Datastore_AllocateIdsResponse
+     */
+    public function allocateIds($projectId, Google_Service_Datastore_AllocateIdsRequest $postBody, $optParams = array()) {
+        $params = array('projectId' => $projectId, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('allocateIds', array($params), "Google_Service_Datastore_AllocateIdsResponse");
+    }
+
+    /**
+     * Begins a new transaction. (projects.beginTransaction)
+     *
+     * @param string $projectId The ID of the project against which to make the
+     * request.
+     * @param Google_Service_Datastore_BeginTransactionRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Datastore_BeginTransactionResponse
+     */
+    public function beginTransaction($projectId, Google_Service_Datastore_BeginTransactionRequest $postBody, $optParams = array()) {
+        $params = array('projectId' => $projectId, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('beginTransaction', array($params), "Google_Service_Datastore_BeginTransactionResponse");
+    }
+
+    /**
+     * Commits a transaction, optionally creating, deleting or modifying some
+     * entities. (projects.commit)
+     *
+     * @param string $projectId The ID of the project against which to make the
+     * request.
+     * @param Google_Service_Datastore_CommitRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Datastore_CommitResponse
+     */
+    public function commit($projectId, Google_Service_Datastore_CommitRequest $postBody, $optParams = array()) {
+        $params = array('projectId' => $projectId, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('commit', array($params), "Google_Service_Datastore_CommitResponse");
+    }
+
+    /**
+     * Looks up entities by key. (projects.lookup)
+     *
+     * @param string $projectId The ID of the project against which to make the
+     * request.
+     * @param Google_Service_Datastore_LookupRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Datastore_LookupResponse
+     */
+    public function lookup($projectId, Google_Service_Datastore_LookupRequest $postBody, $optParams = array()) {
+        $params = array('projectId' => $projectId, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('lookup', array($params), "Google_Service_Datastore_LookupResponse");
+    }
+
+    /**
+     * Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.
+     * (projects.reserveIds)
+     *
+     * @param string $projectId The ID of the project against which to make the
+     * request.
+     * @param Google_Service_Datastore_ReserveIdsRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Datastore_ReserveIdsResponse
+     */
+    public function reserveIds($projectId, Google_Service_Datastore_ReserveIdsRequest $postBody, $optParams = array()) {
+        $params = array('projectId' => $projectId, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('reserveIds', array($params), "Google_Service_Datastore_ReserveIdsResponse");
+    }
+
+    /**
+     * Rolls back a transaction. (projects.rollback)
+     *
+     * @param string $projectId The ID of the project against which to make the
+     * request.
+     * @param Google_Service_Datastore_RollbackRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Datastore_RollbackResponse
+     */
+    public function rollback($projectId, Google_Service_Datastore_RollbackRequest $postBody, $optParams = array()) {
+        $params = array('projectId' => $projectId, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('rollback', array($params), "Google_Service_Datastore_RollbackResponse");
+    }
+
+    /**
+     * Queries for entities. (projects.runQuery)
+     *
+     * @param string $projectId The ID of the project against which to make the
+     * request.
+     * @param Google_Service_Datastore_RunQueryRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Datastore_RunQueryResponse
+     */
+    public function runQuery($projectId, Google_Service_Datastore_RunQueryRequest $postBody, $optParams = array()) {
+        $params = array('projectId' => $projectId, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('runQuery', array($params), "Google_Service_Datastore_RunQueryResponse");
+    }
 }

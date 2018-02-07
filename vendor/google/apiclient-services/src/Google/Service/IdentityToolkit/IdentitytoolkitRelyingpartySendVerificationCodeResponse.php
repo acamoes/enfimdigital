@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartySendVerificationCodeResponse extends Google_Model
-{
-  public $sessionInfo;
+class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartySendVerificationCodeResponse extends Google_Model {
+    public $sessionInfo;
 
-  public function setSessionInfo($sessionInfo)
-  {
-    $this->sessionInfo = $sessionInfo;
-  }
-  public function getSessionInfo()
-  {
-    return $this->sessionInfo;
-  }
+    public function setSessionInfo($sessionInfo) {
+        $this->sessionInfo = $sessionInfo;
+    }
+
+    public function getSessionInfo() {
+        return $this->sessionInfo;
+    }
 }

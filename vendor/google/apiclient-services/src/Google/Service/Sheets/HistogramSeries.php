@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_Sheets_HistogramSeries extends Google_Model
-{
-  protected $barColorType = 'Google_Service_Sheets_Color';
-  protected $barColorDataType = '';
-  protected $dataType = 'Google_Service_Sheets_ChartData';
-  protected $dataDataType = '';
+class Google_Service_Sheets_HistogramSeries extends Google_Model {
+    protected $barColorType     = 'Google_Service_Sheets_Color';
+    protected $barColorDataType = '';
+    protected $dataType         = 'Google_Service_Sheets_ChartData';
+    protected $dataDataType     = '';
 
-  /**
-   * @param Google_Service_Sheets_Color
-   */
-  public function setBarColor(Google_Service_Sheets_Color $barColor)
-  {
-    $this->barColor = $barColor;
-  }
-  /**
-   * @return Google_Service_Sheets_Color
-   */
-  public function getBarColor()
-  {
-    return $this->barColor;
-  }
-  /**
-   * @param Google_Service_Sheets_ChartData
-   */
-  public function setData(Google_Service_Sheets_ChartData $data)
-  {
-    $this->data = $data;
-  }
-  /**
-   * @return Google_Service_Sheets_ChartData
-   */
-  public function getData()
-  {
-    return $this->data;
-  }
+    /**
+     * @param Google_Service_Sheets_Color
+     */
+    public function setBarColor(Google_Service_Sheets_Color $barColor) {
+        $this->barColor = $barColor;
+    }
+
+    /**
+     * @return Google_Service_Sheets_Color
+     */
+    public function getBarColor() {
+        return $this->barColor;
+    }
+
+    /**
+     * @param Google_Service_Sheets_ChartData
+     */
+    public function setData(Google_Service_Sheets_ChartData $data) {
+        $this->data = $data;
+    }
+
+    /**
+     * @return Google_Service_Sheets_ChartData
+     */
+    public function getData() {
+        return $this->data;
+    }
 }

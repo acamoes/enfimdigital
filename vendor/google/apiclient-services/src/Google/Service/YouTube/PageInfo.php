@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_YouTube_PageInfo extends Google_Model
-{
-  public $resultsPerPage;
-  public $totalResults;
+class Google_Service_YouTube_PageInfo extends Google_Model {
+    public $resultsPerPage;
+    public $totalResults;
 
-  public function setResultsPerPage($resultsPerPage)
-  {
-    $this->resultsPerPage = $resultsPerPage;
-  }
-  public function getResultsPerPage()
-  {
-    return $this->resultsPerPage;
-  }
-  public function setTotalResults($totalResults)
-  {
-    $this->totalResults = $totalResults;
-  }
-  public function getTotalResults()
-  {
-    return $this->totalResults;
-  }
+    public function setResultsPerPage($resultsPerPage) {
+        $this->resultsPerPage = $resultsPerPage;
+    }
+
+    public function getResultsPerPage() {
+        return $this->resultsPerPage;
+    }
+
+    public function setTotalResults($totalResults) {
+        $this->totalResults = $totalResults;
+    }
+
+    public function getTotalResults() {
+        return $this->totalResults;
+    }
 }

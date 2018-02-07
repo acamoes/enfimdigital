@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_AudienceSegment extends Google_Model
-{
-  public $allocation;
-  public $id;
-  public $name;
+class Google_Service_Dfareporting_AudienceSegment extends Google_Model {
+    public $allocation;
+    public $id;
+    public $name;
 
-  public function setAllocation($allocation)
-  {
-    $this->allocation = $allocation;
-  }
-  public function getAllocation()
-  {
-    return $this->allocation;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setAllocation($allocation) {
+        $this->allocation = $allocation;
+    }
+
+    public function getAllocation() {
+        return $this->allocation;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Firestore_ReadOnly extends Google_Model
-{
-  public $readTime;
+class Google_Service_Firestore_ReadOnly extends Google_Model {
+    public $readTime;
 
-  public function setReadTime($readTime)
-  {
-    $this->readTime = $readTime;
-  }
-  public function getReadTime()
-  {
-    return $this->readTime;
-  }
+    public function setReadTime($readTime) {
+        $this->readTime = $readTime;
+    }
+
+    public function getReadTime() {
+        return $this->readTime;
+    }
 }

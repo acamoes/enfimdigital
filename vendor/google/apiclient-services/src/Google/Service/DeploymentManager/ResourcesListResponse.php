@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_DeploymentManager_ResourcesListResponse extends Google_Collection
-{
-  protected $collection_key = 'resources';
-  public $nextPageToken;
-  protected $resourcesType = 'Google_Service_DeploymentManager_DeploymentmanagerResource';
-  protected $resourcesDataType = 'array';
+class Google_Service_DeploymentManager_ResourcesListResponse extends Google_Collection {
+    protected $collection_key    = 'resources';
+    public $nextPageToken;
+    protected $resourcesType     = 'Google_Service_DeploymentManager_DeploymentmanagerResource';
+    protected $resourcesDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_DeploymentManager_DeploymentmanagerResource
-   */
-  public function setResources($resources)
-  {
-    $this->resources = $resources;
-  }
-  /**
-   * @return Google_Service_DeploymentManager_DeploymentmanagerResource
-   */
-  public function getResources()
-  {
-    return $this->resources;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_DeploymentManager_DeploymentmanagerResource
+     */
+    public function setResources($resources) {
+        $this->resources = $resources;
+    }
+
+    /**
+     * @return Google_Service_DeploymentManager_DeploymentmanagerResource
+     */
+    public function getResources() {
+        return $this->resources;
+    }
 }

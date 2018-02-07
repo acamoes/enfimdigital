@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Books_VolumeSaleInfoOffersListPrice extends Google_Model
-{
-  public $amountInMicros;
-  public $currencyCode;
+class Google_Service_Books_VolumeSaleInfoOffersListPrice extends Google_Model {
+    public $amountInMicros;
+    public $currencyCode;
 
-  public function setAmountInMicros($amountInMicros)
-  {
-    $this->amountInMicros = $amountInMicros;
-  }
-  public function getAmountInMicros()
-  {
-    return $this->amountInMicros;
-  }
-  public function setCurrencyCode($currencyCode)
-  {
-    $this->currencyCode = $currencyCode;
-  }
-  public function getCurrencyCode()
-  {
-    return $this->currencyCode;
-  }
+    public function setAmountInMicros($amountInMicros) {
+        $this->amountInMicros = $amountInMicros;
+    }
+
+    public function getAmountInMicros() {
+        return $this->amountInMicros;
+    }
+
+    public function setCurrencyCode($currencyCode) {
+        $this->currencyCode = $currencyCode;
+    }
+
+    public function getCurrencyCode() {
+        return $this->currencyCode;
+    }
 }

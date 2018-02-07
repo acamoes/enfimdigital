@@ -23,6 +23,6 @@
  *   $resources = $adminService->resources;
  *  </code>
  */
-class Google_Service_Directory_Resource_Resources extends Google_Service_Resource
-{
+class Google_Service_Directory_Resource_Resources extends Google_Service_Resource {
+
 }

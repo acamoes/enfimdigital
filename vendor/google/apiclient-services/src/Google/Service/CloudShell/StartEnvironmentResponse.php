@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_CloudShell_StartEnvironmentResponse extends Google_Model
-{
-  protected $environmentType = 'Google_Service_CloudShell_Environment';
-  protected $environmentDataType = '';
+class Google_Service_CloudShell_StartEnvironmentResponse extends Google_Model {
+    protected $environmentType     = 'Google_Service_CloudShell_Environment';
+    protected $environmentDataType = '';
 
-  /**
-   * @param Google_Service_CloudShell_Environment
-   */
-  public function setEnvironment(Google_Service_CloudShell_Environment $environment)
-  {
-    $this->environment = $environment;
-  }
-  /**
-   * @return Google_Service_CloudShell_Environment
-   */
-  public function getEnvironment()
-  {
-    return $this->environment;
-  }
+    /**
+     * @param Google_Service_CloudShell_Environment
+     */
+    public function setEnvironment(Google_Service_CloudShell_Environment $environment) {
+        $this->environment = $environment;
+    }
+
+    /**
+     * @return Google_Service_CloudShell_Environment
+     */
+    public function getEnvironment() {
+        return $this->environment;
+    }
 }

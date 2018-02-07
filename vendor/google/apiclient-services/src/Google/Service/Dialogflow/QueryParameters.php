@@ -15,83 +15,81 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_QueryParameters extends Google_Collection
-{
-  protected $collection_key = 'sessionEntityTypes';
-  protected $contextsType = 'Google_Service_Dialogflow_Context';
-  protected $contextsDataType = 'array';
-  protected $geoLocationType = 'Google_Service_Dialogflow_LatLng';
-  protected $geoLocationDataType = '';
-  public $payload;
-  public $resetContexts;
-  protected $sessionEntityTypesType = 'Google_Service_Dialogflow_SessionEntityType';
-  protected $sessionEntityTypesDataType = 'array';
-  public $timeZone;
+class Google_Service_Dialogflow_QueryParameters extends Google_Collection {
+    protected $collection_key             = 'sessionEntityTypes';
+    protected $contextsType               = 'Google_Service_Dialogflow_Context';
+    protected $contextsDataType           = 'array';
+    protected $geoLocationType            = 'Google_Service_Dialogflow_LatLng';
+    protected $geoLocationDataType        = '';
+    public $payload;
+    public $resetContexts;
+    protected $sessionEntityTypesType     = 'Google_Service_Dialogflow_SessionEntityType';
+    protected $sessionEntityTypesDataType = 'array';
+    public $timeZone;
 
-  /**
-   * @param Google_Service_Dialogflow_Context
-   */
-  public function setContexts($contexts)
-  {
-    $this->contexts = $contexts;
-  }
-  /**
-   * @return Google_Service_Dialogflow_Context
-   */
-  public function getContexts()
-  {
-    return $this->contexts;
-  }
-  /**
-   * @param Google_Service_Dialogflow_LatLng
-   */
-  public function setGeoLocation(Google_Service_Dialogflow_LatLng $geoLocation)
-  {
-    $this->geoLocation = $geoLocation;
-  }
-  /**
-   * @return Google_Service_Dialogflow_LatLng
-   */
-  public function getGeoLocation()
-  {
-    return $this->geoLocation;
-  }
-  public function setPayload($payload)
-  {
-    $this->payload = $payload;
-  }
-  public function getPayload()
-  {
-    return $this->payload;
-  }
-  public function setResetContexts($resetContexts)
-  {
-    $this->resetContexts = $resetContexts;
-  }
-  public function getResetContexts()
-  {
-    return $this->resetContexts;
-  }
-  /**
-   * @param Google_Service_Dialogflow_SessionEntityType
-   */
-  public function setSessionEntityTypes($sessionEntityTypes)
-  {
-    $this->sessionEntityTypes = $sessionEntityTypes;
-  }
-  /**
-   * @return Google_Service_Dialogflow_SessionEntityType
-   */
-  public function getSessionEntityTypes()
-  {
-    return $this->sessionEntityTypes;
-  }
-  public function setTimeZone($timeZone)
-  {
-    $this->timeZone = $timeZone;
-  }
-  public function getTimeZone()
-  {
-    return $this->timeZone;
-  }
+    /**
+     * @param Google_Service_Dialogflow_Context
+     */
+    public function setContexts($contexts) {
+        $this->contexts = $contexts;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_Context
+     */
+    public function getContexts() {
+        return $this->contexts;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_LatLng
+     */
+    public function setGeoLocation(Google_Service_Dialogflow_LatLng $geoLocation) {
+        $this->geoLocation = $geoLocation;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_LatLng
+     */
+    public function getGeoLocation() {
+        return $this->geoLocation;
+    }
+
+    public function setPayload($payload) {
+        $this->payload = $payload;
+    }
+
+    public function getPayload() {
+        return $this->payload;
+    }
+
+    public function setResetContexts($resetContexts) {
+        $this->resetContexts = $resetContexts;
+    }
+
+    public function getResetContexts() {
+        return $this->resetContexts;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_SessionEntityType
+     */
+    public function setSessionEntityTypes($sessionEntityTypes) {
+        $this->sessionEntityTypes = $sessionEntityTypes;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_SessionEntityType
+     */
+    public function getSessionEntityTypes() {
+        return $this->sessionEntityTypes;
+    }
+
+    public function setTimeZone($timeZone) {
+        $this->timeZone = $timeZone;
+    }
+
+    public function getTimeZone() {
+        return $this->timeZone;
+    }
 }

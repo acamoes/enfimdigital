@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_YouTube_I18nRegionSnippet extends Google_Model
-{
-  public $gl;
-  public $name;
+class Google_Service_YouTube_I18nRegionSnippet extends Google_Model {
+    public $gl;
+    public $name;
 
-  public function setGl($gl)
-  {
-    $this->gl = $gl;
-  }
-  public function getGl()
-  {
-    return $this->gl;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setGl($gl) {
+        $this->gl = $gl;
+    }
+
+    public function getGl() {
+        return $this->gl;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Testing_ClientInfo extends Google_Collection
-{
-  protected $collection_key = 'clientInfoDetails';
-  protected $clientInfoDetailsType = 'Google_Service_Testing_ClientInfoDetail';
-  protected $clientInfoDetailsDataType = 'array';
-  public $name;
+class Google_Service_Testing_ClientInfo extends Google_Collection {
+    protected $collection_key            = 'clientInfoDetails';
+    protected $clientInfoDetailsType     = 'Google_Service_Testing_ClientInfoDetail';
+    protected $clientInfoDetailsDataType = 'array';
+    public $name;
 
-  /**
-   * @param Google_Service_Testing_ClientInfoDetail
-   */
-  public function setClientInfoDetails($clientInfoDetails)
-  {
-    $this->clientInfoDetails = $clientInfoDetails;
-  }
-  /**
-   * @return Google_Service_Testing_ClientInfoDetail
-   */
-  public function getClientInfoDetails()
-  {
-    return $this->clientInfoDetails;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    /**
+     * @param Google_Service_Testing_ClientInfoDetail
+     */
+    public function setClientInfoDetails($clientInfoDetails) {
+        $this->clientInfoDetails = $clientInfoDetails;
+    }
+
+    /**
+     * @return Google_Service_Testing_ClientInfoDetail
+     */
+    public function getClientInfoDetails() {
+        return $this->clientInfoDetails;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

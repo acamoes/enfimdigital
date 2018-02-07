@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudMonitoring_ListMetricDescriptorsRequest extends Google_Model
-{
-  public $kind;
+class Google_Service_CloudMonitoring_ListMetricDescriptorsRequest extends Google_Model {
+    public $kind;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

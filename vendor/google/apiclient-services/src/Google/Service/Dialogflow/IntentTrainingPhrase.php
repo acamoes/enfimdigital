@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentTrainingPhrase extends Google_Collection
-{
-  protected $collection_key = 'parts';
-  public $name;
-  protected $partsType = 'Google_Service_Dialogflow_IntentTrainingPhrasePart';
-  protected $partsDataType = 'array';
-  public $timesAddedCount;
-  public $type;
+class Google_Service_Dialogflow_IntentTrainingPhrase extends Google_Collection {
+    protected $collection_key = 'parts';
+    public $name;
+    protected $partsType      = 'Google_Service_Dialogflow_IntentTrainingPhrasePart';
+    protected $partsDataType  = 'array';
+    public $timesAddedCount;
+    public $type;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  /**
-   * @param Google_Service_Dialogflow_IntentTrainingPhrasePart
-   */
-  public function setParts($parts)
-  {
-    $this->parts = $parts;
-  }
-  /**
-   * @return Google_Service_Dialogflow_IntentTrainingPhrasePart
-   */
-  public function getParts()
-  {
-    return $this->parts;
-  }
-  public function setTimesAddedCount($timesAddedCount)
-  {
-    $this->timesAddedCount = $timesAddedCount;
-  }
-  public function getTimesAddedCount()
-  {
-    return $this->timesAddedCount;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_IntentTrainingPhrasePart
+     */
+    public function setParts($parts) {
+        $this->parts = $parts;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_IntentTrainingPhrasePart
+     */
+    public function getParts() {
+        return $this->parts;
+    }
+
+    public function setTimesAddedCount($timesAddedCount) {
+        $this->timesAddedCount = $timesAddedCount;
+    }
+
+    public function getTimesAddedCount() {
+        return $this->timesAddedCount;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

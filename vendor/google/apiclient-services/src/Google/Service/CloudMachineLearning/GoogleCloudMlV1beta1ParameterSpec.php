@@ -15,71 +15,69 @@
  * the License.
  */
 
-class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1ParameterSpec extends Google_Collection
-{
-  protected $collection_key = 'discreteValues';
-  public $categoricalValues;
-  public $discreteValues;
-  public $maxValue;
-  public $minValue;
-  public $parameterName;
-  public $scaleType;
-  public $type;
+class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1ParameterSpec extends Google_Collection {
+    protected $collection_key = 'discreteValues';
+    public $categoricalValues;
+    public $discreteValues;
+    public $maxValue;
+    public $minValue;
+    public $parameterName;
+    public $scaleType;
+    public $type;
 
-  public function setCategoricalValues($categoricalValues)
-  {
-    $this->categoricalValues = $categoricalValues;
-  }
-  public function getCategoricalValues()
-  {
-    return $this->categoricalValues;
-  }
-  public function setDiscreteValues($discreteValues)
-  {
-    $this->discreteValues = $discreteValues;
-  }
-  public function getDiscreteValues()
-  {
-    return $this->discreteValues;
-  }
-  public function setMaxValue($maxValue)
-  {
-    $this->maxValue = $maxValue;
-  }
-  public function getMaxValue()
-  {
-    return $this->maxValue;
-  }
-  public function setMinValue($minValue)
-  {
-    $this->minValue = $minValue;
-  }
-  public function getMinValue()
-  {
-    return $this->minValue;
-  }
-  public function setParameterName($parameterName)
-  {
-    $this->parameterName = $parameterName;
-  }
-  public function getParameterName()
-  {
-    return $this->parameterName;
-  }
-  public function setScaleType($scaleType)
-  {
-    $this->scaleType = $scaleType;
-  }
-  public function getScaleType()
-  {
-    return $this->scaleType;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setCategoricalValues($categoricalValues) {
+        $this->categoricalValues = $categoricalValues;
+    }
+
+    public function getCategoricalValues() {
+        return $this->categoricalValues;
+    }
+
+    public function setDiscreteValues($discreteValues) {
+        $this->discreteValues = $discreteValues;
+    }
+
+    public function getDiscreteValues() {
+        return $this->discreteValues;
+    }
+
+    public function setMaxValue($maxValue) {
+        $this->maxValue = $maxValue;
+    }
+
+    public function getMaxValue() {
+        return $this->maxValue;
+    }
+
+    public function setMinValue($minValue) {
+        $this->minValue = $minValue;
+    }
+
+    public function getMinValue() {
+        return $this->minValue;
+    }
+
+    public function setParameterName($parameterName) {
+        $this->parameterName = $parameterName;
+    }
+
+    public function getParameterName() {
+        return $this->parameterName;
+    }
+
+    public function setScaleType($scaleType) {
+        $this->scaleType = $scaleType;
+    }
+
+    public function getScaleType() {
+        return $this->scaleType;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

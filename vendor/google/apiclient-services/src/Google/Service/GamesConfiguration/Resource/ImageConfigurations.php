@@ -23,21 +23,20 @@
  *   $imageConfigurations = $gamesConfigurationService->imageConfigurations;
  *  </code>
  */
-class Google_Service_GamesConfiguration_Resource_ImageConfigurations extends Google_Service_Resource
-{
-  /**
-   * Uploads an image for a resource with the given ID and image type.
-   * (imageConfigurations.upload)
-   *
-   * @param string $resourceId The ID of the resource used by this method.
-   * @param string $imageType Selects which image in a resource for this method.
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_GamesConfiguration_ImageConfiguration
-   */
-  public function upload($resourceId, $imageType, $optParams = array())
-  {
-    $params = array('resourceId' => $resourceId, 'imageType' => $imageType);
-    $params = array_merge($params, $optParams);
-    return $this->call('upload', array($params), "Google_Service_GamesConfiguration_ImageConfiguration");
-  }
+class Google_Service_GamesConfiguration_Resource_ImageConfigurations extends Google_Service_Resource {
+
+    /**
+     * Uploads an image for a resource with the given ID and image type.
+     * (imageConfigurations.upload)
+     *
+     * @param string $resourceId The ID of the resource used by this method.
+     * @param string $imageType Selects which image in a resource for this method.
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_GamesConfiguration_ImageConfiguration
+     */
+    public function upload($resourceId, $imageType, $optParams = array()) {
+        $params = array('resourceId' => $resourceId, 'imageType' => $imageType);
+        $params = array_merge($params, $optParams);
+        return $this->call('upload', array($params), "Google_Service_GamesConfiguration_ImageConfiguration");
+    }
 }

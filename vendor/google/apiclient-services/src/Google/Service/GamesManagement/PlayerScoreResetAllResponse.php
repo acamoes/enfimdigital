@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_GamesManagement_PlayerScoreResetAllResponse extends Google_Collection
-{
-  protected $collection_key = 'results';
-  public $kind;
-  protected $resultsType = 'Google_Service_GamesManagement_PlayerScoreResetResponse';
-  protected $resultsDataType = 'array';
+class Google_Service_GamesManagement_PlayerScoreResetAllResponse extends Google_Collection {
+    protected $collection_key  = 'results';
+    public $kind;
+    protected $resultsType     = 'Google_Service_GamesManagement_PlayerScoreResetResponse';
+    protected $resultsDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_GamesManagement_PlayerScoreResetResponse
-   */
-  public function setResults($results)
-  {
-    $this->results = $results;
-  }
-  /**
-   * @return Google_Service_GamesManagement_PlayerScoreResetResponse
-   */
-  public function getResults()
-  {
-    return $this->results;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_GamesManagement_PlayerScoreResetResponse
+     */
+    public function setResults($results) {
+        $this->results = $results;
+    }
+
+    /**
+     * @return Google_Service_GamesManagement_PlayerScoreResetResponse
+     */
+    public function getResults() {
+        return $this->results;
+    }
 }

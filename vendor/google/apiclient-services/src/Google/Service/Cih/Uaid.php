@@ -15,28 +15,26 @@
  * the License.
  */
 
-class Google_Service_Cih_Uaid extends Google_Model
-{
-  protected $internal_gapi_mappings = array(
+class Google_Service_Cih_Uaid extends Google_Model {
+    protected $internal_gapi_mappings = array(
         "accountId" => "account_id",
-  );
-  public $accountId;
-  public $product;
+    );
+    public $accountId;
+    public $product;
 
-  public function setAccountId($accountId)
-  {
-    $this->accountId = $accountId;
-  }
-  public function getAccountId()
-  {
-    return $this->accountId;
-  }
-  public function setProduct($product)
-  {
-    $this->product = $product;
-  }
-  public function getProduct()
-  {
-    return $this->product;
-  }
+    public function setAccountId($accountId) {
+        $this->accountId = $accountId;
+    }
+
+    public function getAccountId() {
+        return $this->accountId;
+    }
+
+    public function setProduct($product) {
+        $this->product = $product;
+    }
+
+    public function getProduct() {
+        return $this->product;
+    }
 }

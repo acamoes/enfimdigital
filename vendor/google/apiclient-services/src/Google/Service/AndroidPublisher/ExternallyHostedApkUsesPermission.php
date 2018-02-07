@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_ExternallyHostedApkUsesPermission extends Google_Model
-{
-  public $maxSdkVersion;
-  public $name;
+class Google_Service_AndroidPublisher_ExternallyHostedApkUsesPermission extends Google_Model {
+    public $maxSdkVersion;
+    public $name;
 
-  public function setMaxSdkVersion($maxSdkVersion)
-  {
-    $this->maxSdkVersion = $maxSdkVersion;
-  }
-  public function getMaxSdkVersion()
-  {
-    return $this->maxSdkVersion;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setMaxSdkVersion($maxSdkVersion) {
+        $this->maxSdkVersion = $maxSdkVersion;
+    }
+
+    public function getMaxSdkVersion() {
+        return $this->maxSdkVersion;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

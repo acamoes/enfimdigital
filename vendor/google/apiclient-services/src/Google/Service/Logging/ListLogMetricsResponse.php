@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Logging_ListLogMetricsResponse extends Google_Collection
-{
-  protected $collection_key = 'metrics';
-  protected $metricsType = 'Google_Service_Logging_LogMetric';
-  protected $metricsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Logging_ListLogMetricsResponse extends Google_Collection {
+    protected $collection_key  = 'metrics';
+    protected $metricsType     = 'Google_Service_Logging_LogMetric';
+    protected $metricsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Logging_LogMetric
-   */
-  public function setMetrics($metrics)
-  {
-    $this->metrics = $metrics;
-  }
-  /**
-   * @return Google_Service_Logging_LogMetric
-   */
-  public function getMetrics()
-  {
-    return $this->metrics;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Logging_LogMetric
+     */
+    public function setMetrics($metrics) {
+        $this->metrics = $metrics;
+    }
+
+    /**
+     * @return Google_Service_Logging_LogMetric
+     */
+    public function getMetrics() {
+        return $this->metrics;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Pagespeedonline_ResultRuleGroupsElement extends Google_Model
-{
-  public $score;
+class Google_Service_Pagespeedonline_ResultRuleGroupsElement extends Google_Model {
+    public $score;
 
-  public function setScore($score)
-  {
-    $this->score = $score;
-  }
-  public function getScore()
-  {
-    return $this->score;
-  }
+    public function setScore($score) {
+        $this->score = $score;
+    }
+
+    public function getScore() {
+        return $this->score;
+    }
 }

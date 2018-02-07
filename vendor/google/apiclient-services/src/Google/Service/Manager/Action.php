@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Manager_Action extends Google_Collection
-{
-  protected $collection_key = 'commands';
-  public $commands;
-  public $timeoutMs;
+class Google_Service_Manager_Action extends Google_Collection {
+    protected $collection_key = 'commands';
+    public $commands;
+    public $timeoutMs;
 
-  public function setCommands($commands)
-  {
-    $this->commands = $commands;
-  }
-  public function getCommands()
-  {
-    return $this->commands;
-  }
-  public function setTimeoutMs($timeoutMs)
-  {
-    $this->timeoutMs = $timeoutMs;
-  }
-  public function getTimeoutMs()
-  {
-    return $this->timeoutMs;
-  }
+    public function setCommands($commands) {
+        $this->commands = $commands;
+    }
+
+    public function getCommands() {
+        return $this->commands;
+    }
+
+    public function setTimeoutMs($timeoutMs) {
+        $this->timeoutMs = $timeoutMs;
+    }
+
+    public function getTimeoutMs() {
+        return $this->timeoutMs;
+    }
 }

@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Gmail_BatchModifyMessagesRequest extends Google_Collection
-{
-  protected $collection_key = 'removeLabelIds';
-  public $addLabelIds;
-  public $ids;
-  public $removeLabelIds;
+class Google_Service_Gmail_BatchModifyMessagesRequest extends Google_Collection {
+    protected $collection_key = 'removeLabelIds';
+    public $addLabelIds;
+    public $ids;
+    public $removeLabelIds;
 
-  public function setAddLabelIds($addLabelIds)
-  {
-    $this->addLabelIds = $addLabelIds;
-  }
-  public function getAddLabelIds()
-  {
-    return $this->addLabelIds;
-  }
-  public function setIds($ids)
-  {
-    $this->ids = $ids;
-  }
-  public function getIds()
-  {
-    return $this->ids;
-  }
-  public function setRemoveLabelIds($removeLabelIds)
-  {
-    $this->removeLabelIds = $removeLabelIds;
-  }
-  public function getRemoveLabelIds()
-  {
-    return $this->removeLabelIds;
-  }
+    public function setAddLabelIds($addLabelIds) {
+        $this->addLabelIds = $addLabelIds;
+    }
+
+    public function getAddLabelIds() {
+        return $this->addLabelIds;
+    }
+
+    public function setIds($ids) {
+        $this->ids = $ids;
+    }
+
+    public function getIds() {
+        return $this->ids;
+    }
+
+    public function setRemoveLabelIds($removeLabelIds) {
+        $this->removeLabelIds = $removeLabelIds;
+    }
+
+    public function getRemoveLabelIds() {
+        return $this->removeLabelIds;
+    }
 }

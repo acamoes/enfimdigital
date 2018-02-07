@@ -15,53 +15,51 @@
  * the License.
  */
 
-class Google_Service_Genomics_ExportVariantSetRequest extends Google_Collection
-{
-  protected $collection_key = 'callSetIds';
-  public $bigqueryDataset;
-  public $bigqueryTable;
-  public $callSetIds;
-  public $format;
-  public $projectId;
+class Google_Service_Genomics_ExportVariantSetRequest extends Google_Collection {
+    protected $collection_key = 'callSetIds';
+    public $bigqueryDataset;
+    public $bigqueryTable;
+    public $callSetIds;
+    public $format;
+    public $projectId;
 
-  public function setBigqueryDataset($bigqueryDataset)
-  {
-    $this->bigqueryDataset = $bigqueryDataset;
-  }
-  public function getBigqueryDataset()
-  {
-    return $this->bigqueryDataset;
-  }
-  public function setBigqueryTable($bigqueryTable)
-  {
-    $this->bigqueryTable = $bigqueryTable;
-  }
-  public function getBigqueryTable()
-  {
-    return $this->bigqueryTable;
-  }
-  public function setCallSetIds($callSetIds)
-  {
-    $this->callSetIds = $callSetIds;
-  }
-  public function getCallSetIds()
-  {
-    return $this->callSetIds;
-  }
-  public function setFormat($format)
-  {
-    $this->format = $format;
-  }
-  public function getFormat()
-  {
-    return $this->format;
-  }
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
-  }
+    public function setBigqueryDataset($bigqueryDataset) {
+        $this->bigqueryDataset = $bigqueryDataset;
+    }
+
+    public function getBigqueryDataset() {
+        return $this->bigqueryDataset;
+    }
+
+    public function setBigqueryTable($bigqueryTable) {
+        $this->bigqueryTable = $bigqueryTable;
+    }
+
+    public function getBigqueryTable() {
+        return $this->bigqueryTable;
+    }
+
+    public function setCallSetIds($callSetIds) {
+        $this->callSetIds = $callSetIds;
+    }
+
+    public function getCallSetIds() {
+        return $this->callSetIds;
+    }
+
+    public function setFormat($format) {
+        $this->format = $format;
+    }
+
+    public function getFormat() {
+        return $this->format;
+    }
+
+    public function setProjectId($projectId) {
+        $this->projectId = $projectId;
+    }
+
+    public function getProjectId() {
+        return $this->projectId;
+    }
 }

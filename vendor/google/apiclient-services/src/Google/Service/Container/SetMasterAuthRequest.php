@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Container_SetMasterAuthRequest extends Google_Model
-{
-  public $action;
-  protected $updateType = 'Google_Service_Container_MasterAuth';
-  protected $updateDataType = '';
+class Google_Service_Container_SetMasterAuthRequest extends Google_Model {
+    public $action;
+    protected $updateType     = 'Google_Service_Container_MasterAuth';
+    protected $updateDataType = '';
 
-  public function setAction($action)
-  {
-    $this->action = $action;
-  }
-  public function getAction()
-  {
-    return $this->action;
-  }
-  /**
-   * @param Google_Service_Container_MasterAuth
-   */
-  public function setUpdate(Google_Service_Container_MasterAuth $update)
-  {
-    $this->update = $update;
-  }
-  /**
-   * @return Google_Service_Container_MasterAuth
-   */
-  public function getUpdate()
-  {
-    return $this->update;
-  }
+    public function setAction($action) {
+        $this->action = $action;
+    }
+
+    public function getAction() {
+        return $this->action;
+    }
+
+    /**
+     * @param Google_Service_Container_MasterAuth
+     */
+    public function setUpdate(Google_Service_Container_MasterAuth $update) {
+        $this->update = $update;
+    }
+
+    /**
+     * @return Google_Service_Container_MasterAuth
+     */
+    public function getUpdate() {
+        return $this->update;
+    }
 }

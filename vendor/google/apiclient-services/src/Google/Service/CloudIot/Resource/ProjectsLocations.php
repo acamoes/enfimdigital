@@ -23,6 +23,6 @@
  *   $locations = $cloudiotService->locations;
  *  </code>
  */
-class Google_Service_CloudIot_Resource_ProjectsLocations extends Google_Service_Resource
-{
+class Google_Service_CloudIot_Resource_ProjectsLocations extends Google_Service_Resource {
+
 }

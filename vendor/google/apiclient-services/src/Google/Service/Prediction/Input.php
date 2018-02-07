@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Prediction_Input extends Google_Model
-{
-  protected $inputType = 'Google_Service_Prediction_InputInput';
-  protected $inputDataType = '';
+class Google_Service_Prediction_Input extends Google_Model {
+    protected $inputType     = 'Google_Service_Prediction_InputInput';
+    protected $inputDataType = '';
 
-  /**
-   * @param Google_Service_Prediction_InputInput
-   */
-  public function setInput(Google_Service_Prediction_InputInput $input)
-  {
-    $this->input = $input;
-  }
-  /**
-   * @return Google_Service_Prediction_InputInput
-   */
-  public function getInput()
-  {
-    return $this->input;
-  }
+    /**
+     * @param Google_Service_Prediction_InputInput
+     */
+    public function setInput(Google_Service_Prediction_InputInput $input) {
+        $this->input = $input;
+    }
+
+    /**
+     * @return Google_Service_Prediction_InputInput
+     */
+    public function getInput() {
+        return $this->input;
+    }
 }

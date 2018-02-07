@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Classroom_Topic extends Google_Model
-{
-  public $courseId;
-  public $name;
-  public $topicId;
-  public $updateTime;
+class Google_Service_Classroom_Topic extends Google_Model {
+    public $courseId;
+    public $name;
+    public $topicId;
+    public $updateTime;
 
-  public function setCourseId($courseId)
-  {
-    $this->courseId = $courseId;
-  }
-  public function getCourseId()
-  {
-    return $this->courseId;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setTopicId($topicId)
-  {
-    $this->topicId = $topicId;
-  }
-  public function getTopicId()
-  {
-    return $this->topicId;
-  }
-  public function setUpdateTime($updateTime)
-  {
-    $this->updateTime = $updateTime;
-  }
-  public function getUpdateTime()
-  {
-    return $this->updateTime;
-  }
+    public function setCourseId($courseId) {
+        $this->courseId = $courseId;
+    }
+
+    public function getCourseId() {
+        return $this->courseId;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setTopicId($topicId) {
+        $this->topicId = $topicId;
+    }
+
+    public function getTopicId() {
+        return $this->topicId;
+    }
+
+    public function setUpdateTime($updateTime) {
+        $this->updateTime = $updateTime;
+    }
+
+    public function getUpdateTime() {
+        return $this->updateTime;
+    }
 }

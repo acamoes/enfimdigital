@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchAnnotationsResponse extends Google_Collection
-{
-  protected $collection_key = 'annotations';
-  protected $annotationsType = 'Google_Service_Genomics_Annotation';
-  protected $annotationsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Genomics_SearchAnnotationsResponse extends Google_Collection {
+    protected $collection_key      = 'annotations';
+    protected $annotationsType     = 'Google_Service_Genomics_Annotation';
+    protected $annotationsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Genomics_Annotation
-   */
-  public function setAnnotations($annotations)
-  {
-    $this->annotations = $annotations;
-  }
-  /**
-   * @return Google_Service_Genomics_Annotation
-   */
-  public function getAnnotations()
-  {
-    return $this->annotations;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Genomics_Annotation
+     */
+    public function setAnnotations($annotations) {
+        $this->annotations = $annotations;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Annotation
+     */
+    public function getAnnotations() {
+        return $this->annotations;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

@@ -15,57 +15,55 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_WebhookRequest extends Google_Model
-{
-  protected $originalDetectIntentRequestType = 'Google_Service_Dialogflow_OriginalDetectIntentRequest';
-  protected $originalDetectIntentRequestDataType = '';
-  protected $queryResultType = 'Google_Service_Dialogflow_QueryResult';
-  protected $queryResultDataType = '';
-  public $responseId;
-  public $session;
+class Google_Service_Dialogflow_WebhookRequest extends Google_Model {
+    protected $originalDetectIntentRequestType     = 'Google_Service_Dialogflow_OriginalDetectIntentRequest';
+    protected $originalDetectIntentRequestDataType = '';
+    protected $queryResultType                     = 'Google_Service_Dialogflow_QueryResult';
+    protected $queryResultDataType                 = '';
+    public $responseId;
+    public $session;
 
-  /**
-   * @param Google_Service_Dialogflow_OriginalDetectIntentRequest
-   */
-  public function setOriginalDetectIntentRequest(Google_Service_Dialogflow_OriginalDetectIntentRequest $originalDetectIntentRequest)
-  {
-    $this->originalDetectIntentRequest = $originalDetectIntentRequest;
-  }
-  /**
-   * @return Google_Service_Dialogflow_OriginalDetectIntentRequest
-   */
-  public function getOriginalDetectIntentRequest()
-  {
-    return $this->originalDetectIntentRequest;
-  }
-  /**
-   * @param Google_Service_Dialogflow_QueryResult
-   */
-  public function setQueryResult(Google_Service_Dialogflow_QueryResult $queryResult)
-  {
-    $this->queryResult = $queryResult;
-  }
-  /**
-   * @return Google_Service_Dialogflow_QueryResult
-   */
-  public function getQueryResult()
-  {
-    return $this->queryResult;
-  }
-  public function setResponseId($responseId)
-  {
-    $this->responseId = $responseId;
-  }
-  public function getResponseId()
-  {
-    return $this->responseId;
-  }
-  public function setSession($session)
-  {
-    $this->session = $session;
-  }
-  public function getSession()
-  {
-    return $this->session;
-  }
+    /**
+     * @param Google_Service_Dialogflow_OriginalDetectIntentRequest
+     */
+    public function setOriginalDetectIntentRequest(Google_Service_Dialogflow_OriginalDetectIntentRequest $originalDetectIntentRequest) {
+        $this->originalDetectIntentRequest = $originalDetectIntentRequest;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_OriginalDetectIntentRequest
+     */
+    public function getOriginalDetectIntentRequest() {
+        return $this->originalDetectIntentRequest;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_QueryResult
+     */
+    public function setQueryResult(Google_Service_Dialogflow_QueryResult $queryResult) {
+        $this->queryResult = $queryResult;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_QueryResult
+     */
+    public function getQueryResult() {
+        return $this->queryResult;
+    }
+
+    public function setResponseId($responseId) {
+        $this->responseId = $responseId;
+    }
+
+    public function getResponseId() {
+        return $this->responseId;
+    }
+
+    public function setSession($session) {
+        $this->session = $session;
+    }
+
+    public function getSession() {
+        return $this->session;
+    }
 }

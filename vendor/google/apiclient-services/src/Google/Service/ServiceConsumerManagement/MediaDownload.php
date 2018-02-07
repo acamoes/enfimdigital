@@ -15,61 +15,59 @@
  * the License.
  */
 
-class Google_Service_ServiceConsumerManagement_MediaDownload extends Google_Model
-{
-  public $completeNotification;
-  public $downloadService;
-  public $dropzone;
-  public $enabled;
-  public $maxDirectDownloadSize;
-  public $useDirectDownload;
+class Google_Service_ServiceConsumerManagement_MediaDownload extends Google_Model {
+    public $completeNotification;
+    public $downloadService;
+    public $dropzone;
+    public $enabled;
+    public $maxDirectDownloadSize;
+    public $useDirectDownload;
 
-  public function setCompleteNotification($completeNotification)
-  {
-    $this->completeNotification = $completeNotification;
-  }
-  public function getCompleteNotification()
-  {
-    return $this->completeNotification;
-  }
-  public function setDownloadService($downloadService)
-  {
-    $this->downloadService = $downloadService;
-  }
-  public function getDownloadService()
-  {
-    return $this->downloadService;
-  }
-  public function setDropzone($dropzone)
-  {
-    $this->dropzone = $dropzone;
-  }
-  public function getDropzone()
-  {
-    return $this->dropzone;
-  }
-  public function setEnabled($enabled)
-  {
-    $this->enabled = $enabled;
-  }
-  public function getEnabled()
-  {
-    return $this->enabled;
-  }
-  public function setMaxDirectDownloadSize($maxDirectDownloadSize)
-  {
-    $this->maxDirectDownloadSize = $maxDirectDownloadSize;
-  }
-  public function getMaxDirectDownloadSize()
-  {
-    return $this->maxDirectDownloadSize;
-  }
-  public function setUseDirectDownload($useDirectDownload)
-  {
-    $this->useDirectDownload = $useDirectDownload;
-  }
-  public function getUseDirectDownload()
-  {
-    return $this->useDirectDownload;
-  }
+    public function setCompleteNotification($completeNotification) {
+        $this->completeNotification = $completeNotification;
+    }
+
+    public function getCompleteNotification() {
+        return $this->completeNotification;
+    }
+
+    public function setDownloadService($downloadService) {
+        $this->downloadService = $downloadService;
+    }
+
+    public function getDownloadService() {
+        return $this->downloadService;
+    }
+
+    public function setDropzone($dropzone) {
+        $this->dropzone = $dropzone;
+    }
+
+    public function getDropzone() {
+        return $this->dropzone;
+    }
+
+    public function setEnabled($enabled) {
+        $this->enabled = $enabled;
+    }
+
+    public function getEnabled() {
+        return $this->enabled;
+    }
+
+    public function setMaxDirectDownloadSize($maxDirectDownloadSize) {
+        $this->maxDirectDownloadSize = $maxDirectDownloadSize;
+    }
+
+    public function getMaxDirectDownloadSize() {
+        return $this->maxDirectDownloadSize;
+    }
+
+    public function setUseDirectDownload($useDirectDownload) {
+        $this->useDirectDownload = $useDirectDownload;
+    }
+
+    public function getUseDirectDownload() {
+        return $this->useDirectDownload;
+    }
 }

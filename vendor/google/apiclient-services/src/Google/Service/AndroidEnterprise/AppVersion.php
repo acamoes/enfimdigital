@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_AppVersion extends Google_Model
-{
-  public $track;
-  public $versionCode;
-  public $versionString;
+class Google_Service_AndroidEnterprise_AppVersion extends Google_Model {
+    public $track;
+    public $versionCode;
+    public $versionString;
 
-  public function setTrack($track)
-  {
-    $this->track = $track;
-  }
-  public function getTrack()
-  {
-    return $this->track;
-  }
-  public function setVersionCode($versionCode)
-  {
-    $this->versionCode = $versionCode;
-  }
-  public function getVersionCode()
-  {
-    return $this->versionCode;
-  }
-  public function setVersionString($versionString)
-  {
-    $this->versionString = $versionString;
-  }
-  public function getVersionString()
-  {
-    return $this->versionString;
-  }
+    public function setTrack($track) {
+        $this->track = $track;
+    }
+
+    public function getTrack() {
+        return $this->track;
+    }
+
+    public function setVersionCode($versionCode) {
+        $this->versionCode = $versionCode;
+    }
+
+    public function getVersionCode() {
+        return $this->versionCode;
+    }
+
+    public function setVersionString($versionString) {
+        $this->versionString = $versionString;
+    }
+
+    public function getVersionString() {
+        return $this->versionString;
+    }
 }

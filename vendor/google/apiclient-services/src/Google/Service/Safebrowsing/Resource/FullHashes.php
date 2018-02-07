@@ -23,20 +23,19 @@
  *   $fullHashes = $safebrowsingService->fullHashes;
  *  </code>
  */
-class Google_Service_Safebrowsing_Resource_FullHashes extends Google_Service_Resource
-{
-  /**
-   * Finds the full hashes that match the requested hash prefixes.
-   * (fullHashes.find)
-   *
-   * @param Google_Service_Safebrowsing_FindFullHashesRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Safebrowsing_FindFullHashesResponse
-   */
-  public function find(Google_Service_Safebrowsing_FindFullHashesRequest $postBody, $optParams = array())
-  {
-    $params = array('postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('find', array($params), "Google_Service_Safebrowsing_FindFullHashesResponse");
-  }
+class Google_Service_Safebrowsing_Resource_FullHashes extends Google_Service_Resource {
+
+    /**
+     * Finds the full hashes that match the requested hash prefixes.
+     * (fullHashes.find)
+     *
+     * @param Google_Service_Safebrowsing_FindFullHashesRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Safebrowsing_FindFullHashesResponse
+     */
+    public function find(Google_Service_Safebrowsing_FindFullHashesRequest $postBody, $optParams = array()) {
+        $params = array('postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('find', array($params), "Google_Service_Safebrowsing_FindFullHashesResponse");
+    }
 }

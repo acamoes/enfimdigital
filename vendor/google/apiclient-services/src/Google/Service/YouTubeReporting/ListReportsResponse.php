@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_YouTubeReporting_ListReportsResponse extends Google_Collection
-{
-  protected $collection_key = 'reports';
-  public $nextPageToken;
-  protected $reportsType = 'Google_Service_YouTubeReporting_Report';
-  protected $reportsDataType = 'array';
+class Google_Service_YouTubeReporting_ListReportsResponse extends Google_Collection {
+    protected $collection_key  = 'reports';
+    public $nextPageToken;
+    protected $reportsType     = 'Google_Service_YouTubeReporting_Report';
+    protected $reportsDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_YouTubeReporting_Report
-   */
-  public function setReports($reports)
-  {
-    $this->reports = $reports;
-  }
-  /**
-   * @return Google_Service_YouTubeReporting_Report
-   */
-  public function getReports()
-  {
-    return $this->reports;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_YouTubeReporting_Report
+     */
+    public function setReports($reports) {
+        $this->reports = $reports;
+    }
+
+    /**
+     * @return Google_Service_YouTubeReporting_Report
+     */
+    public function getReports() {
+        return $this->reports;
+    }
 }

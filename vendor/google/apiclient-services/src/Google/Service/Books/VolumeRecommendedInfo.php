@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Books_VolumeRecommendedInfo extends Google_Model
-{
-  public $explanation;
+class Google_Service_Books_VolumeRecommendedInfo extends Google_Model {
+    public $explanation;
 
-  public function setExplanation($explanation)
-  {
-    $this->explanation = $explanation;
-  }
-  public function getExplanation()
-  {
-    return $this->explanation;
-  }
+    public function setExplanation($explanation) {
+        $this->explanation = $explanation;
+    }
+
+    public function getExplanation() {
+        return $this->explanation;
+    }
 }

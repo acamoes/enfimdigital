@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_FirebaseRules_Arg extends Google_Model
-{
-  protected $anyValueType = 'Google_Service_FirebaseRules_FirebaserulesEmpty';
-  protected $anyValueDataType = '';
-  public $exactValue;
+class Google_Service_FirebaseRules_Arg extends Google_Model {
+    protected $anyValueType     = 'Google_Service_FirebaseRules_FirebaserulesEmpty';
+    protected $anyValueDataType = '';
+    public $exactValue;
 
-  /**
-   * @param Google_Service_FirebaseRules_FirebaserulesEmpty
-   */
-  public function setAnyValue(Google_Service_FirebaseRules_FirebaserulesEmpty $anyValue)
-  {
-    $this->anyValue = $anyValue;
-  }
-  /**
-   * @return Google_Service_FirebaseRules_FirebaserulesEmpty
-   */
-  public function getAnyValue()
-  {
-    return $this->anyValue;
-  }
-  public function setExactValue($exactValue)
-  {
-    $this->exactValue = $exactValue;
-  }
-  public function getExactValue()
-  {
-    return $this->exactValue;
-  }
+    /**
+     * @param Google_Service_FirebaseRules_FirebaserulesEmpty
+     */
+    public function setAnyValue(Google_Service_FirebaseRules_FirebaserulesEmpty $anyValue) {
+        $this->anyValue = $anyValue;
+    }
+
+    /**
+     * @return Google_Service_FirebaseRules_FirebaserulesEmpty
+     */
+    public function getAnyValue() {
+        return $this->anyValue;
+    }
+
+    public function setExactValue($exactValue) {
+        $this->exactValue = $exactValue;
+    }
+
+    public function getExactValue() {
+        return $this->exactValue;
+    }
 }

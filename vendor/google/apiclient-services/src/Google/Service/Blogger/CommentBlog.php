@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Blogger_CommentBlog extends Google_Model
-{
-  public $id;
+class Google_Service_Blogger_CommentBlog extends Google_Model {
+    public $id;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_ManufacturerCenter_Image extends Google_Model
-{
-  public $imageUrl;
-  public $status;
-  public $type;
+class Google_Service_ManufacturerCenter_Image extends Google_Model {
+    public $imageUrl;
+    public $status;
+    public $type;
 
-  public function setImageUrl($imageUrl)
-  {
-    $this->imageUrl = $imageUrl;
-  }
-  public function getImageUrl()
-  {
-    return $this->imageUrl;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setImageUrl($imageUrl) {
+        $this->imageUrl = $imageUrl;
+    }
+
+    public function getImageUrl() {
+        return $this->imageUrl;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

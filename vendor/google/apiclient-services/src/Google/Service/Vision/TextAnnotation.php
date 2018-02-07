@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Vision_TextAnnotation extends Google_Collection
-{
-  protected $collection_key = 'pages';
-  protected $pagesType = 'Google_Service_Vision_Page';
-  protected $pagesDataType = 'array';
-  public $text;
+class Google_Service_Vision_TextAnnotation extends Google_Collection {
+    protected $collection_key = 'pages';
+    protected $pagesType      = 'Google_Service_Vision_Page';
+    protected $pagesDataType  = 'array';
+    public $text;
 
-  /**
-   * @param Google_Service_Vision_Page
-   */
-  public function setPages($pages)
-  {
-    $this->pages = $pages;
-  }
-  /**
-   * @return Google_Service_Vision_Page
-   */
-  public function getPages()
-  {
-    return $this->pages;
-  }
-  public function setText($text)
-  {
-    $this->text = $text;
-  }
-  public function getText()
-  {
-    return $this->text;
-  }
+    /**
+     * @param Google_Service_Vision_Page
+     */
+    public function setPages($pages) {
+        $this->pages = $pages;
+    }
+
+    /**
+     * @return Google_Service_Vision_Page
+     */
+    public function getPages() {
+        return $this->pages;
+    }
+
+    public function setText($text) {
+        $this->text = $text;
+    }
+
+    public function getText() {
+        return $this->text;
+    }
 }

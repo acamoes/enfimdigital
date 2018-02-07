@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_FirebaseRules_GetReleaseExecutableResponse extends Google_Model
-{
-  public $executable;
-  public $executableVersion;
-  public $language;
-  public $rulesetName;
-  public $updateTime;
+class Google_Service_FirebaseRules_GetReleaseExecutableResponse extends Google_Model {
+    public $executable;
+    public $executableVersion;
+    public $language;
+    public $rulesetName;
+    public $updateTime;
 
-  public function setExecutable($executable)
-  {
-    $this->executable = $executable;
-  }
-  public function getExecutable()
-  {
-    return $this->executable;
-  }
-  public function setExecutableVersion($executableVersion)
-  {
-    $this->executableVersion = $executableVersion;
-  }
-  public function getExecutableVersion()
-  {
-    return $this->executableVersion;
-  }
-  public function setLanguage($language)
-  {
-    $this->language = $language;
-  }
-  public function getLanguage()
-  {
-    return $this->language;
-  }
-  public function setRulesetName($rulesetName)
-  {
-    $this->rulesetName = $rulesetName;
-  }
-  public function getRulesetName()
-  {
-    return $this->rulesetName;
-  }
-  public function setUpdateTime($updateTime)
-  {
-    $this->updateTime = $updateTime;
-  }
-  public function getUpdateTime()
-  {
-    return $this->updateTime;
-  }
+    public function setExecutable($executable) {
+        $this->executable = $executable;
+    }
+
+    public function getExecutable() {
+        return $this->executable;
+    }
+
+    public function setExecutableVersion($executableVersion) {
+        $this->executableVersion = $executableVersion;
+    }
+
+    public function getExecutableVersion() {
+        return $this->executableVersion;
+    }
+
+    public function setLanguage($language) {
+        $this->language = $language;
+    }
+
+    public function getLanguage() {
+        return $this->language;
+    }
+
+    public function setRulesetName($rulesetName) {
+        $this->rulesetName = $rulesetName;
+    }
+
+    public function getRulesetName() {
+        return $this->rulesetName;
+    }
+
+    public function setUpdateTime($updateTime) {
+        $this->updateTime = $updateTime;
+    }
+
+    public function getUpdateTime() {
+        return $this->updateTime;
+    }
 }

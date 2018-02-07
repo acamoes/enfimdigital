@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_SubscriptionPurchasesDeferRequest extends Google_Model
-{
-  protected $deferralInfoType = 'Google_Service_AndroidPublisher_SubscriptionDeferralInfo';
-  protected $deferralInfoDataType = '';
+class Google_Service_AndroidPublisher_SubscriptionPurchasesDeferRequest extends Google_Model {
+    protected $deferralInfoType     = 'Google_Service_AndroidPublisher_SubscriptionDeferralInfo';
+    protected $deferralInfoDataType = '';
 
-  /**
-   * @param Google_Service_AndroidPublisher_SubscriptionDeferralInfo
-   */
-  public function setDeferralInfo(Google_Service_AndroidPublisher_SubscriptionDeferralInfo $deferralInfo)
-  {
-    $this->deferralInfo = $deferralInfo;
-  }
-  /**
-   * @return Google_Service_AndroidPublisher_SubscriptionDeferralInfo
-   */
-  public function getDeferralInfo()
-  {
-    return $this->deferralInfo;
-  }
+    /**
+     * @param Google_Service_AndroidPublisher_SubscriptionDeferralInfo
+     */
+    public function setDeferralInfo(Google_Service_AndroidPublisher_SubscriptionDeferralInfo $deferralInfo) {
+        $this->deferralInfo = $deferralInfo;
+    }
+
+    /**
+     * @return Google_Service_AndroidPublisher_SubscriptionDeferralInfo
+     */
+    public function getDeferralInfo() {
+        return $this->deferralInfo;
+    }
 }

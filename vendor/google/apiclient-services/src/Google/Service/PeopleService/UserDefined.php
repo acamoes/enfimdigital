@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_PeopleService_UserDefined extends Google_Model
-{
-  public $key;
-  protected $metadataType = 'Google_Service_PeopleService_FieldMetadata';
-  protected $metadataDataType = '';
-  public $value;
+class Google_Service_PeopleService_UserDefined extends Google_Model {
+    public $key;
+    protected $metadataType     = 'Google_Service_PeopleService_FieldMetadata';
+    protected $metadataDataType = '';
+    public $value;
 
-  public function setKey($key)
-  {
-    $this->key = $key;
-  }
-  public function getKey()
-  {
-    return $this->key;
-  }
-  /**
-   * @param Google_Service_PeopleService_FieldMetadata
-   */
-  public function setMetadata(Google_Service_PeopleService_FieldMetadata $metadata)
-  {
-    $this->metadata = $metadata;
-  }
-  /**
-   * @return Google_Service_PeopleService_FieldMetadata
-   */
-  public function getMetadata()
-  {
-    return $this->metadata;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setKey($key) {
+        $this->key = $key;
+    }
+
+    public function getKey() {
+        return $this->key;
+    }
+
+    /**
+     * @param Google_Service_PeopleService_FieldMetadata
+     */
+    public function setMetadata(Google_Service_PeopleService_FieldMetadata $metadata) {
+        $this->metadata = $metadata;
+    }
+
+    /**
+     * @return Google_Service_PeopleService_FieldMetadata
+     */
+    public function getMetadata() {
+        return $this->metadata;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrdersCreateTestOrderResponse extends Google_Model
-{
-  public $kind;
-  public $orderId;
+class Google_Service_ShoppingContent_OrdersCreateTestOrderResponse extends Google_Model {
+    public $kind;
+    public $orderId;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setOrderId($orderId)
-  {
-    $this->orderId = $orderId;
-  }
-  public function getOrderId()
-  {
-    return $this->orderId;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setOrderId($orderId) {
+        $this->orderId = $orderId;
+    }
+
+    public function getOrderId() {
+        return $this->orderId;
+    }
 }

@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Sheets_InterpolationPoint extends Google_Model
-{
-  protected $colorType = 'Google_Service_Sheets_Color';
-  protected $colorDataType = '';
-  public $type;
-  public $value;
+class Google_Service_Sheets_InterpolationPoint extends Google_Model {
+    protected $colorType     = 'Google_Service_Sheets_Color';
+    protected $colorDataType = '';
+    public $type;
+    public $value;
 
-  /**
-   * @param Google_Service_Sheets_Color
-   */
-  public function setColor(Google_Service_Sheets_Color $color)
-  {
-    $this->color = $color;
-  }
-  /**
-   * @return Google_Service_Sheets_Color
-   */
-  public function getColor()
-  {
-    return $this->color;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    /**
+     * @param Google_Service_Sheets_Color
+     */
+    public function setColor(Google_Service_Sheets_Color $color) {
+        $this->color = $color;
+    }
+
+    /**
+     * @return Google_Service_Sheets_Color
+     */
+    public function getColor() {
+        return $this->color;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

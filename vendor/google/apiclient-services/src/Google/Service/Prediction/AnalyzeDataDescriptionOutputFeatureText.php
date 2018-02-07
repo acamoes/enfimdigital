@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Prediction_AnalyzeDataDescriptionOutputFeatureText extends Google_Model
-{
-  public $count;
-  public $value;
+class Google_Service_Prediction_AnalyzeDataDescriptionOutputFeatureText extends Google_Model {
+    public $count;
+    public $value;
 
-  public function setCount($count)
-  {
-    $this->count = $count;
-  }
-  public function getCount()
-  {
-    return $this->count;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setCount($count) {
+        $this->count = $count;
+    }
+
+    public function getCount() {
+        return $this->count;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

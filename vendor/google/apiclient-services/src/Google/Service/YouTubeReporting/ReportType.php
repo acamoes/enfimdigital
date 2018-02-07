@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_YouTubeReporting_ReportType extends Google_Model
-{
-  public $deprecateTime;
-  public $id;
-  public $name;
-  public $systemManaged;
+class Google_Service_YouTubeReporting_ReportType extends Google_Model {
+    public $deprecateTime;
+    public $id;
+    public $name;
+    public $systemManaged;
 
-  public function setDeprecateTime($deprecateTime)
-  {
-    $this->deprecateTime = $deprecateTime;
-  }
-  public function getDeprecateTime()
-  {
-    return $this->deprecateTime;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setSystemManaged($systemManaged)
-  {
-    $this->systemManaged = $systemManaged;
-  }
-  public function getSystemManaged()
-  {
-    return $this->systemManaged;
-  }
+    public function setDeprecateTime($deprecateTime) {
+        $this->deprecateTime = $deprecateTime;
+    }
+
+    public function getDeprecateTime() {
+        return $this->deprecateTime;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setSystemManaged($systemManaged) {
+        $this->systemManaged = $systemManaged;
+    }
+
+    public function getSystemManaged() {
+        return $this->systemManaged;
+    }
 }

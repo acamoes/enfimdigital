@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Classroom_CourseAlias extends Google_Model
-{
-  public $alias;
+class Google_Service_Classroom_CourseAlias extends Google_Model {
+    public $alias;
 
-  public function setAlias($alias)
-  {
-    $this->alias = $alias;
-  }
-  public function getAlias()
-  {
-    return $this->alias;
-  }
+    public function setAlias($alias) {
+        $this->alias = $alias;
+    }
+
+    public function getAlias() {
+        return $this->alias;
+    }
 }

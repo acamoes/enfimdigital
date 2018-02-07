@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Vision_BoundingPoly extends Google_Collection
-{
-  protected $collection_key = 'vertices';
-  protected $verticesType = 'Google_Service_Vision_Vertex';
-  protected $verticesDataType = 'array';
+class Google_Service_Vision_BoundingPoly extends Google_Collection {
+    protected $collection_key   = 'vertices';
+    protected $verticesType     = 'Google_Service_Vision_Vertex';
+    protected $verticesDataType = 'array';
 
-  /**
-   * @param Google_Service_Vision_Vertex
-   */
-  public function setVertices($vertices)
-  {
-    $this->vertices = $vertices;
-  }
-  /**
-   * @return Google_Service_Vision_Vertex
-   */
-  public function getVertices()
-  {
-    return $this->vertices;
-  }
+    /**
+     * @param Google_Service_Vision_Vertex
+     */
+    public function setVertices($vertices) {
+        $this->vertices = $vertices;
+    }
+
+    /**
+     * @return Google_Service_Vision_Vertex
+     */
+    public function getVertices() {
+        return $this->vertices;
+    }
 }

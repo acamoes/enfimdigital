@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CloudIot_ListDeviceRegistriesResponse extends Google_Collection
-{
-  protected $collection_key = 'deviceRegistries';
-  protected $deviceRegistriesType = 'Google_Service_CloudIot_DeviceRegistry';
-  protected $deviceRegistriesDataType = 'array';
-  public $nextPageToken;
+class Google_Service_CloudIot_ListDeviceRegistriesResponse extends Google_Collection {
+    protected $collection_key           = 'deviceRegistries';
+    protected $deviceRegistriesType     = 'Google_Service_CloudIot_DeviceRegistry';
+    protected $deviceRegistriesDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_CloudIot_DeviceRegistry
-   */
-  public function setDeviceRegistries($deviceRegistries)
-  {
-    $this->deviceRegistries = $deviceRegistries;
-  }
-  /**
-   * @return Google_Service_CloudIot_DeviceRegistry
-   */
-  public function getDeviceRegistries()
-  {
-    return $this->deviceRegistries;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_CloudIot_DeviceRegistry
+     */
+    public function setDeviceRegistries($deviceRegistries) {
+        $this->deviceRegistries = $deviceRegistries;
+    }
+
+    /**
+     * @return Google_Service_CloudIot_DeviceRegistry
+     */
+    public function getDeviceRegistries() {
+        return $this->deviceRegistries;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

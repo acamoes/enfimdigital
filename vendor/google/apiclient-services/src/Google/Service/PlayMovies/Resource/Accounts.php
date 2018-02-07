@@ -23,6 +23,6 @@
  *   $accounts = $playmoviespartnerService->accounts;
  *  </code>
  */
-class Google_Service_PlayMovies_Resource_Accounts extends Google_Service_Resource
-{
+class Google_Service_PlayMovies_Resource_Accounts extends Google_Service_Resource {
+
 }

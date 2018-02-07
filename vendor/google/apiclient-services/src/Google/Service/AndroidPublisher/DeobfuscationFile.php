@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_DeobfuscationFile extends Google_Model
-{
-  public $symbolType;
+class Google_Service_AndroidPublisher_DeobfuscationFile extends Google_Model {
+    public $symbolType;
 
-  public function setSymbolType($symbolType)
-  {
-    $this->symbolType = $symbolType;
-  }
-  public function getSymbolType()
-  {
-    return $this->symbolType;
-  }
+    public function setSymbolType($symbolType) {
+        $this->symbolType = $symbolType;
+    }
+
+    public function getSymbolType() {
+        return $this->symbolType;
+    }
 }

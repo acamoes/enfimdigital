@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_FirebaseRules_Issue extends Google_Model
-{
-  public $description;
-  public $severity;
-  protected $sourcePositionType = 'Google_Service_FirebaseRules_SourcePosition';
-  protected $sourcePositionDataType = '';
+class Google_Service_FirebaseRules_Issue extends Google_Model {
+    public $description;
+    public $severity;
+    protected $sourcePositionType     = 'Google_Service_FirebaseRules_SourcePosition';
+    protected $sourcePositionDataType = '';
 
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setSeverity($severity)
-  {
-    $this->severity = $severity;
-  }
-  public function getSeverity()
-  {
-    return $this->severity;
-  }
-  /**
-   * @param Google_Service_FirebaseRules_SourcePosition
-   */
-  public function setSourcePosition(Google_Service_FirebaseRules_SourcePosition $sourcePosition)
-  {
-    $this->sourcePosition = $sourcePosition;
-  }
-  /**
-   * @return Google_Service_FirebaseRules_SourcePosition
-   */
-  public function getSourcePosition()
-  {
-    return $this->sourcePosition;
-  }
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setSeverity($severity) {
+        $this->severity = $severity;
+    }
+
+    public function getSeverity() {
+        return $this->severity;
+    }
+
+    /**
+     * @param Google_Service_FirebaseRules_SourcePosition
+     */
+    public function setSourcePosition(Google_Service_FirebaseRules_SourcePosition $sourcePosition) {
+        $this->sourcePosition = $sourcePosition;
+    }
+
+    /**
+     * @return Google_Service_FirebaseRules_SourcePosition
+     */
+    public function getSourcePosition() {
+        return $this->sourcePosition;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_UniversalAdId extends Google_Model
-{
-  public $registry;
-  public $value;
+class Google_Service_Dfareporting_UniversalAdId extends Google_Model {
+    public $registry;
+    public $value;
 
-  public function setRegistry($registry)
-  {
-    $this->registry = $registry;
-  }
-  public function getRegistry()
-  {
-    return $this->registry;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setRegistry($registry) {
+        $this->registry = $registry;
+    }
+
+    public function getRegistry() {
+        return $this->registry;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartySetProjectConfigResponse extends Google_Model
-{
-  public $projectId;
+class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartySetProjectConfigResponse extends Google_Model {
+    public $projectId;
 
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
-  }
+    public function setProjectId($projectId) {
+        $this->projectId = $projectId;
+    }
+
+    public function getProjectId() {
+        return $this->projectId;
+    }
 }

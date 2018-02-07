@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_YouTube_AccessPolicy extends Google_Collection
-{
-  protected $collection_key = 'exception';
-  public $allowed;
-  public $exception;
+class Google_Service_YouTube_AccessPolicy extends Google_Collection {
+    protected $collection_key = 'exception';
+    public $allowed;
+    public $exception;
 
-  public function setAllowed($allowed)
-  {
-    $this->allowed = $allowed;
-  }
-  public function getAllowed()
-  {
-    return $this->allowed;
-  }
-  public function setException($exception)
-  {
-    $this->exception = $exception;
-  }
-  public function getException()
-  {
-    return $this->exception;
-  }
+    public function setAllowed($allowed) {
+        $this->allowed = $allowed;
+    }
+
+    public function getAllowed() {
+        return $this->allowed;
+    }
+
+    public function setException($exception) {
+        $this->exception = $exception;
+    }
+
+    public function getException() {
+        return $this->exception;
+    }
 }

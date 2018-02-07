@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Analytics_McfDataRows extends Google_Collection
-{
-  protected $collection_key = 'conversionPathValue';
-  protected $conversionPathValueType = 'Google_Service_Analytics_McfDataRowsConversionPathValue';
-  protected $conversionPathValueDataType = 'array';
-  public $primitiveValue;
+class Google_Service_Analytics_McfDataRows extends Google_Collection {
+    protected $collection_key              = 'conversionPathValue';
+    protected $conversionPathValueType     = 'Google_Service_Analytics_McfDataRowsConversionPathValue';
+    protected $conversionPathValueDataType = 'array';
+    public $primitiveValue;
 
-  /**
-   * @param Google_Service_Analytics_McfDataRowsConversionPathValue
-   */
-  public function setConversionPathValue($conversionPathValue)
-  {
-    $this->conversionPathValue = $conversionPathValue;
-  }
-  /**
-   * @return Google_Service_Analytics_McfDataRowsConversionPathValue
-   */
-  public function getConversionPathValue()
-  {
-    return $this->conversionPathValue;
-  }
-  public function setPrimitiveValue($primitiveValue)
-  {
-    $this->primitiveValue = $primitiveValue;
-  }
-  public function getPrimitiveValue()
-  {
-    return $this->primitiveValue;
-  }
+    /**
+     * @param Google_Service_Analytics_McfDataRowsConversionPathValue
+     */
+    public function setConversionPathValue($conversionPathValue) {
+        $this->conversionPathValue = $conversionPathValue;
+    }
+
+    /**
+     * @return Google_Service_Analytics_McfDataRowsConversionPathValue
+     */
+    public function getConversionPathValue() {
+        return $this->conversionPathValue;
+    }
+
+    public function setPrimitiveValue($primitiveValue) {
+        $this->primitiveValue = $primitiveValue;
+    }
+
+    public function getPrimitiveValue() {
+        return $this->primitiveValue;
+    }
 }

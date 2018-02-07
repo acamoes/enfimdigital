@@ -23,32 +23,31 @@
  *   $resolvedAppAccessSettings = $adminService->resolvedAppAccessSettings;
  *  </code>
  */
-class Google_Service_Directory_Resource_ResolvedAppAccessSettings extends Google_Service_Resource
-{
-  /**
-   * Retrieves resolved app access settings of the logged in user.
-   * (resolvedAppAccessSettings.GetSettings)
-   *
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Directory_AppAccessCollections
-   */
-  public function GetSettings($optParams = array())
-  {
-    $params = array();
-    $params = array_merge($params, $optParams);
-    return $this->call('GetSettings', array($params), "Google_Service_Directory_AppAccessCollections");
-  }
-  /**
-   * Retrieves the list of apps trusted by the admin of the logged in user.
-   * (resolvedAppAccessSettings.ListTrustedApps)
-   *
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Directory_TrustedApps
-   */
-  public function ListTrustedApps($optParams = array())
-  {
-    $params = array();
-    $params = array_merge($params, $optParams);
-    return $this->call('ListTrustedApps', array($params), "Google_Service_Directory_TrustedApps");
-  }
+class Google_Service_Directory_Resource_ResolvedAppAccessSettings extends Google_Service_Resource {
+
+    /**
+     * Retrieves resolved app access settings of the logged in user.
+     * (resolvedAppAccessSettings.GetSettings)
+     *
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Directory_AppAccessCollections
+     */
+    public function GetSettings($optParams = array()) {
+        $params = array();
+        $params = array_merge($params, $optParams);
+        return $this->call('GetSettings', array($params), "Google_Service_Directory_AppAccessCollections");
+    }
+
+    /**
+     * Retrieves the list of apps trusted by the admin of the logged in user.
+     * (resolvedAppAccessSettings.ListTrustedApps)
+     *
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Directory_TrustedApps
+     */
+    public function ListTrustedApps($optParams = array()) {
+        $params = array();
+        $params = array_merge($params, $optParams);
+        return $this->call('ListTrustedApps', array($params), "Google_Service_Directory_TrustedApps");
+    }
 }

@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_YouTubeAnalytics_ResultTable extends Google_Collection
-{
-  protected $collection_key = 'rows';
-  protected $columnHeadersType = 'Google_Service_YouTubeAnalytics_ResultTableColumnHeaders';
-  protected $columnHeadersDataType = 'array';
-  public $kind;
-  public $rows;
+class Google_Service_YouTubeAnalytics_ResultTable extends Google_Collection {
+    protected $collection_key        = 'rows';
+    protected $columnHeadersType     = 'Google_Service_YouTubeAnalytics_ResultTableColumnHeaders';
+    protected $columnHeadersDataType = 'array';
+    public $kind;
+    public $rows;
 
-  /**
-   * @param Google_Service_YouTubeAnalytics_ResultTableColumnHeaders
-   */
-  public function setColumnHeaders($columnHeaders)
-  {
-    $this->columnHeaders = $columnHeaders;
-  }
-  /**
-   * @return Google_Service_YouTubeAnalytics_ResultTableColumnHeaders
-   */
-  public function getColumnHeaders()
-  {
-    return $this->columnHeaders;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setRows($rows)
-  {
-    $this->rows = $rows;
-  }
-  public function getRows()
-  {
-    return $this->rows;
-  }
+    /**
+     * @param Google_Service_YouTubeAnalytics_ResultTableColumnHeaders
+     */
+    public function setColumnHeaders($columnHeaders) {
+        $this->columnHeaders = $columnHeaders;
+    }
+
+    /**
+     * @return Google_Service_YouTubeAnalytics_ResultTableColumnHeaders
+     */
+    public function getColumnHeaders() {
+        return $this->columnHeaders;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setRows($rows) {
+        $this->rows = $rows;
+    }
+
+    public function getRows() {
+        return $this->rows;
+    }
 }

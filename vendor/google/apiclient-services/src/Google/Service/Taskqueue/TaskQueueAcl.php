@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Taskqueue_TaskQueueAcl extends Google_Collection
-{
-  protected $collection_key = 'producerEmails';
-  public $adminEmails;
-  public $consumerEmails;
-  public $producerEmails;
+class Google_Service_Taskqueue_TaskQueueAcl extends Google_Collection {
+    protected $collection_key = 'producerEmails';
+    public $adminEmails;
+    public $consumerEmails;
+    public $producerEmails;
 
-  public function setAdminEmails($adminEmails)
-  {
-    $this->adminEmails = $adminEmails;
-  }
-  public function getAdminEmails()
-  {
-    return $this->adminEmails;
-  }
-  public function setConsumerEmails($consumerEmails)
-  {
-    $this->consumerEmails = $consumerEmails;
-  }
-  public function getConsumerEmails()
-  {
-    return $this->consumerEmails;
-  }
-  public function setProducerEmails($producerEmails)
-  {
-    $this->producerEmails = $producerEmails;
-  }
-  public function getProducerEmails()
-  {
-    return $this->producerEmails;
-  }
+    public function setAdminEmails($adminEmails) {
+        $this->adminEmails = $adminEmails;
+    }
+
+    public function getAdminEmails() {
+        return $this->adminEmails;
+    }
+
+    public function setConsumerEmails($consumerEmails) {
+        $this->consumerEmails = $consumerEmails;
+    }
+
+    public function getConsumerEmails() {
+        return $this->consumerEmails;
+    }
+
+    public function setProducerEmails($producerEmails) {
+        $this->producerEmails = $producerEmails;
+    }
+
+    public function getProducerEmails() {
+        return $this->producerEmails;
+    }
 }

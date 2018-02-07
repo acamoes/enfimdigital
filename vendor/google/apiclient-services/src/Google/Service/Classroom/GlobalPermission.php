@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Classroom_GlobalPermission extends Google_Model
-{
-  public $permission;
+class Google_Service_Classroom_GlobalPermission extends Google_Model {
+    public $permission;
 
-  public function setPermission($permission)
-  {
-    $this->permission = $permission;
-  }
-  public function getPermission()
-  {
-    return $this->permission;
-  }
+    public function setPermission($permission) {
+        $this->permission = $permission;
+    }
+
+    public function getPermission() {
+        return $this->permission;
+    }
 }

@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Sheets_DuplicateSheetRequest extends Google_Model
-{
-  public $insertSheetIndex;
-  public $newSheetId;
-  public $newSheetName;
-  public $sourceSheetId;
+class Google_Service_Sheets_DuplicateSheetRequest extends Google_Model {
+    public $insertSheetIndex;
+    public $newSheetId;
+    public $newSheetName;
+    public $sourceSheetId;
 
-  public function setInsertSheetIndex($insertSheetIndex)
-  {
-    $this->insertSheetIndex = $insertSheetIndex;
-  }
-  public function getInsertSheetIndex()
-  {
-    return $this->insertSheetIndex;
-  }
-  public function setNewSheetId($newSheetId)
-  {
-    $this->newSheetId = $newSheetId;
-  }
-  public function getNewSheetId()
-  {
-    return $this->newSheetId;
-  }
-  public function setNewSheetName($newSheetName)
-  {
-    $this->newSheetName = $newSheetName;
-  }
-  public function getNewSheetName()
-  {
-    return $this->newSheetName;
-  }
-  public function setSourceSheetId($sourceSheetId)
-  {
-    $this->sourceSheetId = $sourceSheetId;
-  }
-  public function getSourceSheetId()
-  {
-    return $this->sourceSheetId;
-  }
+    public function setInsertSheetIndex($insertSheetIndex) {
+        $this->insertSheetIndex = $insertSheetIndex;
+    }
+
+    public function getInsertSheetIndex() {
+        return $this->insertSheetIndex;
+    }
+
+    public function setNewSheetId($newSheetId) {
+        $this->newSheetId = $newSheetId;
+    }
+
+    public function getNewSheetId() {
+        return $this->newSheetId;
+    }
+
+    public function setNewSheetName($newSheetName) {
+        $this->newSheetName = $newSheetName;
+    }
+
+    public function getNewSheetName() {
+        return $this->newSheetName;
+    }
+
+    public function setSourceSheetId($sourceSheetId) {
+        $this->sourceSheetId = $sourceSheetId;
+    }
+
+    public function getSourceSheetId() {
+        return $this->sourceSheetId;
+    }
 }

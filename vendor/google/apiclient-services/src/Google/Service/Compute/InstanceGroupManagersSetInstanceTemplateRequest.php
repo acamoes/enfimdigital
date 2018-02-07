@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Compute_InstanceGroupManagersSetInstanceTemplateRequest extends Google_Model
-{
-  public $instanceTemplate;
+class Google_Service_Compute_InstanceGroupManagersSetInstanceTemplateRequest extends Google_Model {
+    public $instanceTemplate;
 
-  public function setInstanceTemplate($instanceTemplate)
-  {
-    $this->instanceTemplate = $instanceTemplate;
-  }
-  public function getInstanceTemplate()
-  {
-    return $this->instanceTemplate;
-  }
+    public function setInstanceTemplate($instanceTemplate) {
+        $this->instanceTemplate = $instanceTemplate;
+    }
+
+    public function getInstanceTemplate() {
+        return $this->instanceTemplate;
+    }
 }

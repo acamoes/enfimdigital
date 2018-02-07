@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_ImportContextCsvImportOptions extends Google_Collection
-{
-  protected $collection_key = 'columns';
-  public $columns;
-  public $table;
+class Google_Service_SQLAdmin_ImportContextCsvImportOptions extends Google_Collection {
+    protected $collection_key = 'columns';
+    public $columns;
+    public $table;
 
-  public function setColumns($columns)
-  {
-    $this->columns = $columns;
-  }
-  public function getColumns()
-  {
-    return $this->columns;
-  }
-  public function setTable($table)
-  {
-    $this->table = $table;
-  }
-  public function getTable()
-  {
-    return $this->table;
-  }
+    public function setColumns($columns) {
+        $this->columns = $columns;
+    }
+
+    public function getColumns() {
+        return $this->columns;
+    }
+
+    public function setTable($table) {
+        $this->table = $table;
+    }
+
+    public function getTable() {
+        return $this->table;
+    }
 }

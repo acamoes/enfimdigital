@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Compute_NetworksRemovePeeringRequest extends Google_Model
-{
-  public $name;
+class Google_Service_Compute_NetworksRemovePeeringRequest extends Google_Model {
+    public $name;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

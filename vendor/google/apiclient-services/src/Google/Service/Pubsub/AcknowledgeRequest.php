@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Pubsub_AcknowledgeRequest extends Google_Collection
-{
-  protected $collection_key = 'ackIds';
-  public $ackIds;
+class Google_Service_Pubsub_AcknowledgeRequest extends Google_Collection {
+    protected $collection_key = 'ackIds';
+    public $ackIds;
 
-  public function setAckIds($ackIds)
-  {
-    $this->ackIds = $ackIds;
-  }
-  public function getAckIds()
-  {
-    return $this->ackIds;
-  }
+    public function setAckIds($ackIds) {
+        $this->ackIds = $ackIds;
+    }
+
+    public function getAckIds() {
+        return $this->ackIds;
+    }
 }

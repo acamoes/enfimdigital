@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_FirebaseRules_Result extends Google_Model
-{
-  protected $undefinedType = 'Google_Service_FirebaseRules_FirebaserulesEmpty';
-  protected $undefinedDataType = '';
-  public $value;
+class Google_Service_FirebaseRules_Result extends Google_Model {
+    protected $undefinedType     = 'Google_Service_FirebaseRules_FirebaserulesEmpty';
+    protected $undefinedDataType = '';
+    public $value;
 
-  /**
-   * @param Google_Service_FirebaseRules_FirebaserulesEmpty
-   */
-  public function setUndefined(Google_Service_FirebaseRules_FirebaserulesEmpty $undefined)
-  {
-    $this->undefined = $undefined;
-  }
-  /**
-   * @return Google_Service_FirebaseRules_FirebaserulesEmpty
-   */
-  public function getUndefined()
-  {
-    return $this->undefined;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    /**
+     * @param Google_Service_FirebaseRules_FirebaserulesEmpty
+     */
+    public function setUndefined(Google_Service_FirebaseRules_FirebaserulesEmpty $undefined) {
+        $this->undefined = $undefined;
+    }
+
+    /**
+     * @return Google_Service_FirebaseRules_FirebaserulesEmpty
+     */
+    public function getUndefined() {
+        return $this->undefined;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

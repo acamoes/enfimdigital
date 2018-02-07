@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Compute_NamedPort extends Google_Model
-{
-  public $name;
-  public $port;
+class Google_Service_Compute_NamedPort extends Google_Model {
+    public $name;
+    public $port;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setPort($port)
-  {
-    $this->port = $port;
-  }
-  public function getPort()
-  {
-    return $this->port;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setPort($port) {
+        $this->port = $port;
+    }
+
+    public function getPort() {
+        return $this->port;
+    }
 }

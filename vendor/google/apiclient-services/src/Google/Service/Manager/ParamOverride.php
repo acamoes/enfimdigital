@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Manager_ParamOverride extends Google_Model
-{
-  public $path;
-  public $value;
+class Google_Service_Manager_ParamOverride extends Google_Model {
+    public $path;
+    public $value;
 
-  public function setPath($path)
-  {
-    $this->path = $path;
-  }
-  public function getPath()
-  {
-    return $this->path;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setPath($path) {
+        $this->path = $path;
+    }
+
+    public function getPath() {
+        return $this->path;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

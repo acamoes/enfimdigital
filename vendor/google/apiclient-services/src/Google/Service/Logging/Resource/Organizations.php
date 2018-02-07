@@ -23,6 +23,6 @@
  *   $organizations = $loggingService->organizations;
  *  </code>
  */
-class Google_Service_Logging_Resource_Organizations extends Google_Service_Resource
-{
+class Google_Service_Logging_Resource_Organizations extends Google_Service_Resource {
+
 }

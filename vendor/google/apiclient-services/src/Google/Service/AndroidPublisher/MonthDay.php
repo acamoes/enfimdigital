@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_MonthDay extends Google_Model
-{
-  public $day;
-  public $month;
+class Google_Service_AndroidPublisher_MonthDay extends Google_Model {
+    public $day;
+    public $month;
 
-  public function setDay($day)
-  {
-    $this->day = $day;
-  }
-  public function getDay()
-  {
-    return $this->day;
-  }
-  public function setMonth($month)
-  {
-    $this->month = $month;
-  }
-  public function getMonth()
-  {
-    return $this->month;
-  }
+    public function setDay($day) {
+        $this->day = $day;
+    }
+
+    public function getDay() {
+        return $this->day;
+    }
+
+    public function setMonth($month) {
+        $this->month = $month;
+    }
+
+    public function getMonth() {
+        return $this->month;
+    }
 }

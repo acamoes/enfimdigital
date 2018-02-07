@@ -15,6 +15,6 @@
  * the License.
  */
 
-class Google_Service_Clouderrorreporting_DeleteEventsResponse extends Google_Model
-{
+class Google_Service_Clouderrorreporting_DeleteEventsResponse extends Google_Model {
+
 }

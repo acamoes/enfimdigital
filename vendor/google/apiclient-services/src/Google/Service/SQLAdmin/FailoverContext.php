@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_FailoverContext extends Google_Model
-{
-  public $kind;
-  public $settingsVersion;
+class Google_Service_SQLAdmin_FailoverContext extends Google_Model {
+    public $kind;
+    public $settingsVersion;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setSettingsVersion($settingsVersion)
-  {
-    $this->settingsVersion = $settingsVersion;
-  }
-  public function getSettingsVersion()
-  {
-    return $this->settingsVersion;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setSettingsVersion($settingsVersion) {
+        $this->settingsVersion = $settingsVersion;
+    }
+
+    public function getSettingsVersion() {
+        return $this->settingsVersion;
+    }
 }

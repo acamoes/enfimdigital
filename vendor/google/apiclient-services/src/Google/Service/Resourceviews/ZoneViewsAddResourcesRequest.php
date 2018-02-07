@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Resourceviews_ZoneViewsAddResourcesRequest extends Google_Collection
-{
-  protected $collection_key = 'resources';
-  public $resources;
+class Google_Service_Resourceviews_ZoneViewsAddResourcesRequest extends Google_Collection {
+    protected $collection_key = 'resources';
+    public $resources;
 
-  public function setResources($resources)
-  {
-    $this->resources = $resources;
-  }
-  public function getResources()
-  {
-    return $this->resources;
-  }
+    public function setResources($resources) {
+        $this->resources = $resources;
+    }
+
+    public function getResources() {
+        return $this->resources;
+    }
 }

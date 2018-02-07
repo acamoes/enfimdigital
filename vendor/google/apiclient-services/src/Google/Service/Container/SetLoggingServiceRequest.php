@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Container_SetLoggingServiceRequest extends Google_Model
-{
-  public $loggingService;
+class Google_Service_Container_SetLoggingServiceRequest extends Google_Model {
+    public $loggingService;
 
-  public function setLoggingService($loggingService)
-  {
-    $this->loggingService = $loggingService;
-  }
-  public function getLoggingService()
-  {
-    return $this->loggingService;
-  }
+    public function setLoggingService($loggingService) {
+        $this->loggingService = $loggingService;
+    }
+
+    public function getLoggingService() {
+        return $this->loggingService;
+    }
 }

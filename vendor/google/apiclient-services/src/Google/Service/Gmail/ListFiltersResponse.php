@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Gmail_ListFiltersResponse extends Google_Collection
-{
-  protected $collection_key = 'filter';
-  protected $filterType = 'Google_Service_Gmail_Filter';
-  protected $filterDataType = 'array';
+class Google_Service_Gmail_ListFiltersResponse extends Google_Collection {
+    protected $collection_key = 'filter';
+    protected $filterType     = 'Google_Service_Gmail_Filter';
+    protected $filterDataType = 'array';
 
-  /**
-   * @param Google_Service_Gmail_Filter
-   */
-  public function setFilter($filter)
-  {
-    $this->filter = $filter;
-  }
-  /**
-   * @return Google_Service_Gmail_Filter
-   */
-  public function getFilter()
-  {
-    return $this->filter;
-  }
+    /**
+     * @param Google_Service_Gmail_Filter
+     */
+    public function setFilter($filter) {
+        $this->filter = $filter;
+    }
+
+    /**
+     * @return Google_Service_Gmail_Filter
+     */
+    public function getFilter() {
+        return $this->filter;
+    }
 }

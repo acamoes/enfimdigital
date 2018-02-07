@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_YouTubeReporting_GdataDiffUploadResponse extends Google_Model
-{
-  public $objectVersion;
-  protected $originalObjectType = 'Google_Service_YouTubeReporting_GdataCompositeMedia';
-  protected $originalObjectDataType = '';
+class Google_Service_YouTubeReporting_GdataDiffUploadResponse extends Google_Model {
+    public $objectVersion;
+    protected $originalObjectType     = 'Google_Service_YouTubeReporting_GdataCompositeMedia';
+    protected $originalObjectDataType = '';
 
-  public function setObjectVersion($objectVersion)
-  {
-    $this->objectVersion = $objectVersion;
-  }
-  public function getObjectVersion()
-  {
-    return $this->objectVersion;
-  }
-  /**
-   * @param Google_Service_YouTubeReporting_GdataCompositeMedia
-   */
-  public function setOriginalObject(Google_Service_YouTubeReporting_GdataCompositeMedia $originalObject)
-  {
-    $this->originalObject = $originalObject;
-  }
-  /**
-   * @return Google_Service_YouTubeReporting_GdataCompositeMedia
-   */
-  public function getOriginalObject()
-  {
-    return $this->originalObject;
-  }
+    public function setObjectVersion($objectVersion) {
+        $this->objectVersion = $objectVersion;
+    }
+
+    public function getObjectVersion() {
+        return $this->objectVersion;
+    }
+
+    /**
+     * @param Google_Service_YouTubeReporting_GdataCompositeMedia
+     */
+    public function setOriginalObject(Google_Service_YouTubeReporting_GdataCompositeMedia $originalObject) {
+        $this->originalObject = $originalObject;
+    }
+
+    /**
+     * @return Google_Service_YouTubeReporting_GdataCompositeMedia
+     */
+    public function getOriginalObject() {
+        return $this->originalObject;
+    }
 }

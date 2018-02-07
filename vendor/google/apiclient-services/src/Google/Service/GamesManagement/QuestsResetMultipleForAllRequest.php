@@ -15,29 +15,27 @@
  * the License.
  */
 
-class Google_Service_GamesManagement_QuestsResetMultipleForAllRequest extends Google_Collection
-{
-  protected $collection_key = 'quest_ids';
-  protected $internal_gapi_mappings = array(
+class Google_Service_GamesManagement_QuestsResetMultipleForAllRequest extends Google_Collection {
+    protected $collection_key         = 'quest_ids';
+    protected $internal_gapi_mappings = array(
         "questIds" => "quest_ids",
-  );
-  public $kind;
-  public $questIds;
+    );
+    public $kind;
+    public $questIds;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setQuestIds($questIds)
-  {
-    $this->questIds = $questIds;
-  }
-  public function getQuestIds()
-  {
-    return $this->questIds;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setQuestIds($questIds) {
+        $this->questIds = $questIds;
+    }
+
+    public function getQuestIds() {
+        return $this->questIds;
+    }
 }

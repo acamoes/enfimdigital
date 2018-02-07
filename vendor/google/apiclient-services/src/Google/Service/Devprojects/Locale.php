@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Devprojects_Locale extends Google_Model
-{
-  public $kind;
-  public $location;
-  protected $restrictionType = 'Google_Service_Devprojects_UserRestriction';
-  protected $restrictionDataType = '';
+class Google_Service_Devprojects_Locale extends Google_Model {
+    public $kind;
+    public $location;
+    protected $restrictionType     = 'Google_Service_Devprojects_UserRestriction';
+    protected $restrictionDataType = '';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setLocation($location)
-  {
-    $this->location = $location;
-  }
-  public function getLocation()
-  {
-    return $this->location;
-  }
-  public function setRestriction(Google_Service_Devprojects_UserRestriction $restriction)
-  {
-    $this->restriction = $restriction;
-  }
-  public function getRestriction()
-  {
-    return $this->restriction;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setLocation($location) {
+        $this->location = $location;
+    }
+
+    public function getLocation() {
+        return $this->location;
+    }
+
+    public function setRestriction(Google_Service_Devprojects_UserRestriction $restriction) {
+        $this->restriction = $restriction;
+    }
+
+    public function getRestriction() {
+        return $this->restriction;
+    }
 }

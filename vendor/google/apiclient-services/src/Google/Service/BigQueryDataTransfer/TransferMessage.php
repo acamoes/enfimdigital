@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_BigQueryDataTransfer_TransferMessage extends Google_Model
-{
-  public $messageText;
-  public $messageTime;
-  public $severity;
+class Google_Service_BigQueryDataTransfer_TransferMessage extends Google_Model {
+    public $messageText;
+    public $messageTime;
+    public $severity;
 
-  public function setMessageText($messageText)
-  {
-    $this->messageText = $messageText;
-  }
-  public function getMessageText()
-  {
-    return $this->messageText;
-  }
-  public function setMessageTime($messageTime)
-  {
-    $this->messageTime = $messageTime;
-  }
-  public function getMessageTime()
-  {
-    return $this->messageTime;
-  }
-  public function setSeverity($severity)
-  {
-    $this->severity = $severity;
-  }
-  public function getSeverity()
-  {
-    return $this->severity;
-  }
+    public function setMessageText($messageText) {
+        $this->messageText = $messageText;
+    }
+
+    public function getMessageText() {
+        return $this->messageText;
+    }
+
+    public function setMessageTime($messageTime) {
+        $this->messageTime = $messageTime;
+    }
+
+    public function getMessageTime() {
+        return $this->messageTime;
+    }
+
+    public function setSeverity($severity) {
+        $this->severity = $severity;
+    }
+
+    public function getSeverity() {
+        return $this->severity;
+    }
 }

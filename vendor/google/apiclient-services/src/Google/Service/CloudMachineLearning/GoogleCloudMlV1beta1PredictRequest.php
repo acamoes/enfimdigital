@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1PredictRequest extends Google_Model
-{
-  protected $httpBodyType = 'Google_Service_CloudMachineLearning_GoogleApiHttpBody';
-  protected $httpBodyDataType = '';
+class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1PredictRequest extends Google_Model {
+    protected $httpBodyType     = 'Google_Service_CloudMachineLearning_GoogleApiHttpBody';
+    protected $httpBodyDataType = '';
 
-  public function setHttpBody(Google_Service_CloudMachineLearning_GoogleApiHttpBody $httpBody)
-  {
-    $this->httpBody = $httpBody;
-  }
-  public function getHttpBody()
-  {
-    return $this->httpBody;
-  }
+    public function setHttpBody(Google_Service_CloudMachineLearning_GoogleApiHttpBody $httpBody) {
+        $this->httpBody = $httpBody;
+    }
+
+    public function getHttpBody() {
+        return $this->httpBody;
+    }
 }

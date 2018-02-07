@@ -15,55 +15,53 @@
  * the License.
  */
 
-class Google_Service_Appengine_Deployment extends Google_Model
-{
-  protected $containerType = 'Google_Service_Appengine_ContainerInfo';
-  protected $containerDataType = '';
-  protected $filesType = 'Google_Service_Appengine_FileInfo';
-  protected $filesDataType = 'map';
-  protected $zipType = 'Google_Service_Appengine_ZipInfo';
-  protected $zipDataType = '';
+class Google_Service_Appengine_Deployment extends Google_Model {
+    protected $containerType     = 'Google_Service_Appengine_ContainerInfo';
+    protected $containerDataType = '';
+    protected $filesType         = 'Google_Service_Appengine_FileInfo';
+    protected $filesDataType     = 'map';
+    protected $zipType           = 'Google_Service_Appengine_ZipInfo';
+    protected $zipDataType       = '';
 
-  /**
-   * @param Google_Service_Appengine_ContainerInfo
-   */
-  public function setContainer(Google_Service_Appengine_ContainerInfo $container)
-  {
-    $this->container = $container;
-  }
-  /**
-   * @return Google_Service_Appengine_ContainerInfo
-   */
-  public function getContainer()
-  {
-    return $this->container;
-  }
-  /**
-   * @param Google_Service_Appengine_FileInfo
-   */
-  public function setFiles($files)
-  {
-    $this->files = $files;
-  }
-  /**
-   * @return Google_Service_Appengine_FileInfo
-   */
-  public function getFiles()
-  {
-    return $this->files;
-  }
-  /**
-   * @param Google_Service_Appengine_ZipInfo
-   */
-  public function setZip(Google_Service_Appengine_ZipInfo $zip)
-  {
-    $this->zip = $zip;
-  }
-  /**
-   * @return Google_Service_Appengine_ZipInfo
-   */
-  public function getZip()
-  {
-    return $this->zip;
-  }
+    /**
+     * @param Google_Service_Appengine_ContainerInfo
+     */
+    public function setContainer(Google_Service_Appengine_ContainerInfo $container) {
+        $this->container = $container;
+    }
+
+    /**
+     * @return Google_Service_Appengine_ContainerInfo
+     */
+    public function getContainer() {
+        return $this->container;
+    }
+
+    /**
+     * @param Google_Service_Appengine_FileInfo
+     */
+    public function setFiles($files) {
+        $this->files = $files;
+    }
+
+    /**
+     * @return Google_Service_Appengine_FileInfo
+     */
+    public function getFiles() {
+        return $this->files;
+    }
+
+    /**
+     * @param Google_Service_Appengine_ZipInfo
+     */
+    public function setZip(Google_Service_Appengine_ZipInfo $zip) {
+        $this->zip = $zip;
+    }
+
+    /**
+     * @return Google_Service_Appengine_ZipInfo
+     */
+    public function getZip() {
+        return $this->zip;
+    }
 }

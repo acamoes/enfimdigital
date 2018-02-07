@@ -29,7 +29,8 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value + '&idCourses={$idCourses}', 'ST{$currentTab}');">X
+                                       onclick="$('#form').html('');
+                                               request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value + '&idCourses={$idCourses}', 'ST{$currentTab}');">X
                                     Close</label>
                             </div>
                         </div>
@@ -129,7 +130,8 @@
                                 <label for="unitType">Nível</label> 
                                 <select name="unitType" readonly
                                         id="unitType" style="width: 200px"
-                                        onChange="changeField1(this.options[this.selectedIndex].value, '{$utilizador['unitType']}', 'unitDiv'); changeField2(this.options[this.selectedIndex].value, '{$utilizador['unit']}', 'rankDiv');">
+                                        onChange="changeField1(this.options[this.selectedIndex].value, '{$utilizador['unitType']}', 'unitDiv');
+                                                changeField2(this.options[this.selectedIndex].value, '{$utilizador['unit']}', 'rankDiv');">
                                     <option selected></option>
                                     <option value="Nacional"
                                             {if $utilizador['unitType'] eq "Nacional"}selected='selected'{/if}>Nacional</option>

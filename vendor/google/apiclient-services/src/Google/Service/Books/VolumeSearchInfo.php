@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Books_VolumeSearchInfo extends Google_Model
-{
-  public $textSnippet;
+class Google_Service_Books_VolumeSearchInfo extends Google_Model {
+    public $textSnippet;
 
-  public function setTextSnippet($textSnippet)
-  {
-    $this->textSnippet = $textSnippet;
-  }
-  public function getTextSnippet()
-  {
-    return $this->textSnippet;
-  }
+    public function setTextSnippet($textSnippet) {
+        $this->textSnippet = $textSnippet;
+    }
+
+    public function getTextSnippet() {
+        return $this->textSnippet;
+    }
 }

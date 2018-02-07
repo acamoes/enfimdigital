@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_Price extends Google_Model
-{
-  public $amountMicros;
-  public $currencyCode;
-  public $expectedCpmMicros;
-  public $pricingType;
+class Google_Service_AdExchangeBuyer_Price extends Google_Model {
+    public $amountMicros;
+    public $currencyCode;
+    public $expectedCpmMicros;
+    public $pricingType;
 
-  public function setAmountMicros($amountMicros)
-  {
-    $this->amountMicros = $amountMicros;
-  }
-  public function getAmountMicros()
-  {
-    return $this->amountMicros;
-  }
-  public function setCurrencyCode($currencyCode)
-  {
-    $this->currencyCode = $currencyCode;
-  }
-  public function getCurrencyCode()
-  {
-    return $this->currencyCode;
-  }
-  public function setExpectedCpmMicros($expectedCpmMicros)
-  {
-    $this->expectedCpmMicros = $expectedCpmMicros;
-  }
-  public function getExpectedCpmMicros()
-  {
-    return $this->expectedCpmMicros;
-  }
-  public function setPricingType($pricingType)
-  {
-    $this->pricingType = $pricingType;
-  }
-  public function getPricingType()
-  {
-    return $this->pricingType;
-  }
+    public function setAmountMicros($amountMicros) {
+        $this->amountMicros = $amountMicros;
+    }
+
+    public function getAmountMicros() {
+        return $this->amountMicros;
+    }
+
+    public function setCurrencyCode($currencyCode) {
+        $this->currencyCode = $currencyCode;
+    }
+
+    public function getCurrencyCode() {
+        return $this->currencyCode;
+    }
+
+    public function setExpectedCpmMicros($expectedCpmMicros) {
+        $this->expectedCpmMicros = $expectedCpmMicros;
+    }
+
+    public function getExpectedCpmMicros() {
+        return $this->expectedCpmMicros;
+    }
+
+    public function setPricingType($pricingType) {
+        $this->pricingType = $pricingType;
+    }
+
+    public function getPricingType() {
+        return $this->pricingType;
+    }
 }

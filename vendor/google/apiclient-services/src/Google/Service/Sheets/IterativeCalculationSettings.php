@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Sheets_IterativeCalculationSettings extends Google_Model
-{
-  public $convergenceThreshold;
-  public $maxIterations;
+class Google_Service_Sheets_IterativeCalculationSettings extends Google_Model {
+    public $convergenceThreshold;
+    public $maxIterations;
 
-  public function setConvergenceThreshold($convergenceThreshold)
-  {
-    $this->convergenceThreshold = $convergenceThreshold;
-  }
-  public function getConvergenceThreshold()
-  {
-    return $this->convergenceThreshold;
-  }
-  public function setMaxIterations($maxIterations)
-  {
-    $this->maxIterations = $maxIterations;
-  }
-  public function getMaxIterations()
-  {
-    return $this->maxIterations;
-  }
+    public function setConvergenceThreshold($convergenceThreshold) {
+        $this->convergenceThreshold = $convergenceThreshold;
+    }
+
+    public function getConvergenceThreshold() {
+        return $this->convergenceThreshold;
+    }
+
+    public function setMaxIterations($maxIterations) {
+        $this->maxIterations = $maxIterations;
+    }
+
+    public function getMaxIterations() {
+        return $this->maxIterations;
+    }
 }

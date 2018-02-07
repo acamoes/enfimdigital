@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Partners_SpecializationStatus extends Google_Model
-{
-  public $badgeSpecialization;
-  public $badgeSpecializationState;
+class Google_Service_Partners_SpecializationStatus extends Google_Model {
+    public $badgeSpecialization;
+    public $badgeSpecializationState;
 
-  public function setBadgeSpecialization($badgeSpecialization)
-  {
-    $this->badgeSpecialization = $badgeSpecialization;
-  }
-  public function getBadgeSpecialization()
-  {
-    return $this->badgeSpecialization;
-  }
-  public function setBadgeSpecializationState($badgeSpecializationState)
-  {
-    $this->badgeSpecializationState = $badgeSpecializationState;
-  }
-  public function getBadgeSpecializationState()
-  {
-    return $this->badgeSpecializationState;
-  }
+    public function setBadgeSpecialization($badgeSpecialization) {
+        $this->badgeSpecialization = $badgeSpecialization;
+    }
+
+    public function getBadgeSpecialization() {
+        return $this->badgeSpecialization;
+    }
+
+    public function setBadgeSpecializationState($badgeSpecializationState) {
+        $this->badgeSpecializationState = $badgeSpecializationState;
+    }
+
+    public function getBadgeSpecializationState() {
+        return $this->badgeSpecializationState;
+    }
 }

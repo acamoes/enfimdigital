@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidManagement_UserFacingMessage extends Google_Model
-{
-  public $defaultMessage;
-  public $localizedMessages;
+class Google_Service_AndroidManagement_UserFacingMessage extends Google_Model {
+    public $defaultMessage;
+    public $localizedMessages;
 
-  public function setDefaultMessage($defaultMessage)
-  {
-    $this->defaultMessage = $defaultMessage;
-  }
-  public function getDefaultMessage()
-  {
-    return $this->defaultMessage;
-  }
-  public function setLocalizedMessages($localizedMessages)
-  {
-    $this->localizedMessages = $localizedMessages;
-  }
-  public function getLocalizedMessages()
-  {
-    return $this->localizedMessages;
-  }
+    public function setDefaultMessage($defaultMessage) {
+        $this->defaultMessage = $defaultMessage;
+    }
+
+    public function getDefaultMessage() {
+        return $this->defaultMessage;
+    }
+
+    public function setLocalizedMessages($localizedMessages) {
+        $this->localizedMessages = $localizedMessages;
+    }
+
+    public function getLocalizedMessages() {
+        return $this->localizedMessages;
+    }
 }

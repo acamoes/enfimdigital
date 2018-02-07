@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Compute_AliasIpRange extends Google_Model
-{
-  public $ipCidrRange;
-  public $subnetworkRangeName;
+class Google_Service_Compute_AliasIpRange extends Google_Model {
+    public $ipCidrRange;
+    public $subnetworkRangeName;
 
-  public function setIpCidrRange($ipCidrRange)
-  {
-    $this->ipCidrRange = $ipCidrRange;
-  }
-  public function getIpCidrRange()
-  {
-    return $this->ipCidrRange;
-  }
-  public function setSubnetworkRangeName($subnetworkRangeName)
-  {
-    $this->subnetworkRangeName = $subnetworkRangeName;
-  }
-  public function getSubnetworkRangeName()
-  {
-    return $this->subnetworkRangeName;
-  }
+    public function setIpCidrRange($ipCidrRange) {
+        $this->ipCidrRange = $ipCidrRange;
+    }
+
+    public function getIpCidrRange() {
+        return $this->ipCidrRange;
+    }
+
+    public function setSubnetworkRangeName($subnetworkRangeName) {
+        $this->subnetworkRangeName = $subnetworkRangeName;
+    }
+
+    public function getSubnetworkRangeName() {
+        return $this->subnetworkRangeName;
+    }
 }

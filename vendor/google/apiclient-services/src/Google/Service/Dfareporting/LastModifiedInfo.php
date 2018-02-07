@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_LastModifiedInfo extends Google_Model
-{
-  public $time;
+class Google_Service_Dfareporting_LastModifiedInfo extends Google_Model {
+    public $time;
 
-  public function setTime($time)
-  {
-    $this->time = $time;
-  }
-  public function getTime()
-  {
-    return $this->time;
-  }
+    public function setTime($time) {
+        $this->time = $time;
+    }
+
+    public function getTime() {
+        return $this->time;
+    }
 }

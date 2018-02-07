@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageText extends Google_Collection
-{
-  protected $collection_key = 'text';
-  public $text;
+class Google_Service_Dialogflow_IntentMessageText extends Google_Collection {
+    protected $collection_key = 'text';
+    public $text;
 
-  public function setText($text)
-  {
-    $this->text = $text;
-  }
-  public function getText()
-  {
-    return $this->text;
-  }
+    public function setText($text) {
+        $this->text = $text;
+    }
+
+    public function getText() {
+        return $this->text;
+    }
 }

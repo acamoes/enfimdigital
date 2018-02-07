@@ -15,50 +15,48 @@
  * the License.
  */
 
-class Google_Service_Sheets_DataValidationRule extends Google_Model
-{
-  protected $conditionType = 'Google_Service_Sheets_BooleanCondition';
-  protected $conditionDataType = '';
-  public $inputMessage;
-  public $showCustomUi;
-  public $strict;
+class Google_Service_Sheets_DataValidationRule extends Google_Model {
+    protected $conditionType     = 'Google_Service_Sheets_BooleanCondition';
+    protected $conditionDataType = '';
+    public $inputMessage;
+    public $showCustomUi;
+    public $strict;
 
-  /**
-   * @param Google_Service_Sheets_BooleanCondition
-   */
-  public function setCondition(Google_Service_Sheets_BooleanCondition $condition)
-  {
-    $this->condition = $condition;
-  }
-  /**
-   * @return Google_Service_Sheets_BooleanCondition
-   */
-  public function getCondition()
-  {
-    return $this->condition;
-  }
-  public function setInputMessage($inputMessage)
-  {
-    $this->inputMessage = $inputMessage;
-  }
-  public function getInputMessage()
-  {
-    return $this->inputMessage;
-  }
-  public function setShowCustomUi($showCustomUi)
-  {
-    $this->showCustomUi = $showCustomUi;
-  }
-  public function getShowCustomUi()
-  {
-    return $this->showCustomUi;
-  }
-  public function setStrict($strict)
-  {
-    $this->strict = $strict;
-  }
-  public function getStrict()
-  {
-    return $this->strict;
-  }
+    /**
+     * @param Google_Service_Sheets_BooleanCondition
+     */
+    public function setCondition(Google_Service_Sheets_BooleanCondition $condition) {
+        $this->condition = $condition;
+    }
+
+    /**
+     * @return Google_Service_Sheets_BooleanCondition
+     */
+    public function getCondition() {
+        return $this->condition;
+    }
+
+    public function setInputMessage($inputMessage) {
+        $this->inputMessage = $inputMessage;
+    }
+
+    public function getInputMessage() {
+        return $this->inputMessage;
+    }
+
+    public function setShowCustomUi($showCustomUi) {
+        $this->showCustomUi = $showCustomUi;
+    }
+
+    public function getShowCustomUi() {
+        return $this->showCustomUi;
+    }
+
+    public function setStrict($strict) {
+        $this->strict = $strict;
+    }
+
+    public function getStrict() {
+        return $this->strict;
+    }
 }

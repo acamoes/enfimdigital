@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_TagSettings extends Google_Model
-{
-  public $dynamicTagEnabled;
-  public $imageTagEnabled;
+class Google_Service_Dfareporting_TagSettings extends Google_Model {
+    public $dynamicTagEnabled;
+    public $imageTagEnabled;
 
-  public function setDynamicTagEnabled($dynamicTagEnabled)
-  {
-    $this->dynamicTagEnabled = $dynamicTagEnabled;
-  }
-  public function getDynamicTagEnabled()
-  {
-    return $this->dynamicTagEnabled;
-  }
-  public function setImageTagEnabled($imageTagEnabled)
-  {
-    $this->imageTagEnabled = $imageTagEnabled;
-  }
-  public function getImageTagEnabled()
-  {
-    return $this->imageTagEnabled;
-  }
+    public function setDynamicTagEnabled($dynamicTagEnabled) {
+        $this->dynamicTagEnabled = $dynamicTagEnabled;
+    }
+
+    public function getDynamicTagEnabled() {
+        return $this->dynamicTagEnabled;
+    }
+
+    public function setImageTagEnabled($imageTagEnabled) {
+        $this->imageTagEnabled = $imageTagEnabled;
+    }
+
+    public function getImageTagEnabled() {
+        return $this->imageTagEnabled;
+    }
 }

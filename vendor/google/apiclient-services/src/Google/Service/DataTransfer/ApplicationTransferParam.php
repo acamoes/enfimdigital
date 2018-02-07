@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_DataTransfer_ApplicationTransferParam extends Google_Collection
-{
-  protected $collection_key = 'value';
-  public $key;
-  public $value;
+class Google_Service_DataTransfer_ApplicationTransferParam extends Google_Collection {
+    protected $collection_key = 'value';
+    public $key;
+    public $value;
 
-  public function setKey($key)
-  {
-    $this->key = $key;
-  }
-  public function getKey()
-  {
-    return $this->key;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setKey($key) {
+        $this->key = $key;
+    }
+
+    public function getKey() {
+        return $this->key;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

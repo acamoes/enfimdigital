@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Sheets_ConditionValue extends Google_Model
-{
-  public $relativeDate;
-  public $userEnteredValue;
+class Google_Service_Sheets_ConditionValue extends Google_Model {
+    public $relativeDate;
+    public $userEnteredValue;
 
-  public function setRelativeDate($relativeDate)
-  {
-    $this->relativeDate = $relativeDate;
-  }
-  public function getRelativeDate()
-  {
-    return $this->relativeDate;
-  }
-  public function setUserEnteredValue($userEnteredValue)
-  {
-    $this->userEnteredValue = $userEnteredValue;
-  }
-  public function getUserEnteredValue()
-  {
-    return $this->userEnteredValue;
-  }
+    public function setRelativeDate($relativeDate) {
+        $this->relativeDate = $relativeDate;
+    }
+
+    public function getRelativeDate() {
+        return $this->relativeDate;
+    }
+
+    public function setUserEnteredValue($userEnteredValue) {
+        $this->userEnteredValue = $userEnteredValue;
+    }
+
+    public function getUserEnteredValue() {
+        return $this->userEnteredValue;
+    }
 }

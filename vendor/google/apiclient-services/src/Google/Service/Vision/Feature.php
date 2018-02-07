@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Vision_Feature extends Google_Model
-{
-  public $maxResults;
-  public $type;
+class Google_Service_Vision_Feature extends Google_Model {
+    public $maxResults;
+    public $type;
 
-  public function setMaxResults($maxResults)
-  {
-    $this->maxResults = $maxResults;
-  }
-  public function getMaxResults()
-  {
-    return $this->maxResults;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setMaxResults($maxResults) {
+        $this->maxResults = $maxResults;
+    }
+
+    public function getMaxResults() {
+        return $this->maxResults;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

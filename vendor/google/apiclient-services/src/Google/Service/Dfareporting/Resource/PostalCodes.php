@@ -23,33 +23,32 @@
  *   $postalCodes = $dfareportingService->postalCodes;
  *  </code>
  */
-class Google_Service_Dfareporting_Resource_PostalCodes extends Google_Service_Resource
-{
-  /**
-   * Gets one postal code by ID. (postalCodes.get)
-   *
-   * @param string $profileId User profile ID associated with this request.
-   * @param string $code Postal code ID.
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_PostalCode
-   */
-  public function get($profileId, $code, $optParams = array())
-  {
-    $params = array('profileId' => $profileId, 'code' => $code);
-    $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Dfareporting_PostalCode");
-  }
-  /**
-   * Retrieves a list of postal codes. (postalCodes.listPostalCodes)
-   *
-   * @param string $profileId User profile ID associated with this request.
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Dfareporting_PostalCodesListResponse
-   */
-  public function listPostalCodes($profileId, $optParams = array())
-  {
-    $params = array('profileId' => $profileId);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Dfareporting_PostalCodesListResponse");
-  }
+class Google_Service_Dfareporting_Resource_PostalCodes extends Google_Service_Resource {
+
+    /**
+     * Gets one postal code by ID. (postalCodes.get)
+     *
+     * @param string $profileId User profile ID associated with this request.
+     * @param string $code Postal code ID.
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Dfareporting_PostalCode
+     */
+    public function get($profileId, $code, $optParams = array()) {
+        $params = array('profileId' => $profileId, 'code' => $code);
+        $params = array_merge($params, $optParams);
+        return $this->call('get', array($params), "Google_Service_Dfareporting_PostalCode");
+    }
+
+    /**
+     * Retrieves a list of postal codes. (postalCodes.listPostalCodes)
+     *
+     * @param string $profileId User profile ID associated with this request.
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Dfareporting_PostalCodesListResponse
+     */
+    public function listPostalCodes($profileId, $optParams = array()) {
+        $params = array('profileId' => $profileId);
+        $params = array_merge($params, $optParams);
+        return $this->call('list', array($params), "Google_Service_Dfareporting_PostalCodesListResponse");
+    }
 }

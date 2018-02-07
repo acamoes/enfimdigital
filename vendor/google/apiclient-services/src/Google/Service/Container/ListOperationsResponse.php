@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Container_ListOperationsResponse extends Google_Collection
-{
-  protected $collection_key = 'operations';
-  public $missingZones;
-  protected $operationsType = 'Google_Service_Container_Operation';
-  protected $operationsDataType = 'array';
+class Google_Service_Container_ListOperationsResponse extends Google_Collection {
+    protected $collection_key     = 'operations';
+    public $missingZones;
+    protected $operationsType     = 'Google_Service_Container_Operation';
+    protected $operationsDataType = 'array';
 
-  public function setMissingZones($missingZones)
-  {
-    $this->missingZones = $missingZones;
-  }
-  public function getMissingZones()
-  {
-    return $this->missingZones;
-  }
-  /**
-   * @param Google_Service_Container_Operation
-   */
-  public function setOperations($operations)
-  {
-    $this->operations = $operations;
-  }
-  /**
-   * @return Google_Service_Container_Operation
-   */
-  public function getOperations()
-  {
-    return $this->operations;
-  }
+    public function setMissingZones($missingZones) {
+        $this->missingZones = $missingZones;
+    }
+
+    public function getMissingZones() {
+        return $this->missingZones;
+    }
+
+    /**
+     * @param Google_Service_Container_Operation
+     */
+    public function setOperations($operations) {
+        $this->operations = $operations;
+    }
+
+    /**
+     * @return Google_Service_Container_Operation
+     */
+    public function getOperations() {
+        return $this->operations;
+    }
 }

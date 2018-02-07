@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Directory_FeatureInstance extends Google_Model
-{
-  protected $featureType = 'Google_Service_Directory_Feature';
-  protected $featureDataType = '';
+class Google_Service_Directory_FeatureInstance extends Google_Model {
+    protected $featureType     = 'Google_Service_Directory_Feature';
+    protected $featureDataType = '';
 
-  /**
-   * @param Google_Service_Directory_Feature
-   */
-  public function setFeature(Google_Service_Directory_Feature $feature)
-  {
-    $this->feature = $feature;
-  }
-  /**
-   * @return Google_Service_Directory_Feature
-   */
-  public function getFeature()
-  {
-    return $this->feature;
-  }
+    /**
+     * @param Google_Service_Directory_Feature
+     */
+    public function setFeature(Google_Service_Directory_Feature $feature) {
+        $this->feature = $feature;
+    }
+
+    /**
+     * @return Google_Service_Directory_Feature
+     */
+    public function getFeature() {
+        return $this->feature;
+    }
 }

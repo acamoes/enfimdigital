@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Classroom_SharedDriveFile extends Google_Model
-{
-  protected $driveFileType = 'Google_Service_Classroom_DriveFile';
-  protected $driveFileDataType = '';
-  public $shareMode;
+class Google_Service_Classroom_SharedDriveFile extends Google_Model {
+    protected $driveFileType     = 'Google_Service_Classroom_DriveFile';
+    protected $driveFileDataType = '';
+    public $shareMode;
 
-  /**
-   * @param Google_Service_Classroom_DriveFile
-   */
-  public function setDriveFile(Google_Service_Classroom_DriveFile $driveFile)
-  {
-    $this->driveFile = $driveFile;
-  }
-  /**
-   * @return Google_Service_Classroom_DriveFile
-   */
-  public function getDriveFile()
-  {
-    return $this->driveFile;
-  }
-  public function setShareMode($shareMode)
-  {
-    $this->shareMode = $shareMode;
-  }
-  public function getShareMode()
-  {
-    return $this->shareMode;
-  }
+    /**
+     * @param Google_Service_Classroom_DriveFile
+     */
+    public function setDriveFile(Google_Service_Classroom_DriveFile $driveFile) {
+        $this->driveFile = $driveFile;
+    }
+
+    /**
+     * @return Google_Service_Classroom_DriveFile
+     */
+    public function getDriveFile() {
+        return $this->driveFile;
+    }
+
+    public function setShareMode($shareMode) {
+        $this->shareMode = $shareMode;
+    }
+
+    public function getShareMode() {
+        return $this->shareMode;
+    }
 }

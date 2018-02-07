@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Sheets_NamedRange extends Google_Model
-{
-  public $name;
-  public $namedRangeId;
-  protected $rangeType = 'Google_Service_Sheets_GridRange';
-  protected $rangeDataType = '';
+class Google_Service_Sheets_NamedRange extends Google_Model {
+    public $name;
+    public $namedRangeId;
+    protected $rangeType     = 'Google_Service_Sheets_GridRange';
+    protected $rangeDataType = '';
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setNamedRangeId($namedRangeId)
-  {
-    $this->namedRangeId = $namedRangeId;
-  }
-  public function getNamedRangeId()
-  {
-    return $this->namedRangeId;
-  }
-  /**
-   * @param Google_Service_Sheets_GridRange
-   */
-  public function setRange(Google_Service_Sheets_GridRange $range)
-  {
-    $this->range = $range;
-  }
-  /**
-   * @return Google_Service_Sheets_GridRange
-   */
-  public function getRange()
-  {
-    return $this->range;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setNamedRangeId($namedRangeId) {
+        $this->namedRangeId = $namedRangeId;
+    }
+
+    public function getNamedRangeId() {
+        return $this->namedRangeId;
+    }
+
+    /**
+     * @param Google_Service_Sheets_GridRange
+     */
+    public function setRange(Google_Service_Sheets_GridRange $range) {
+        $this->range = $range;
+    }
+
+    /**
+     * @return Google_Service_Sheets_GridRange
+     */
+    public function getRange() {
+        return $this->range;
+    }
 }

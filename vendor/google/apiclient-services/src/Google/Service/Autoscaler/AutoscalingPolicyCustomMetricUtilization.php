@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Autoscaler_AutoscalingPolicyCustomMetricUtilization extends Google_Model
-{
-  public $metric;
-  public $utilizationTarget;
-  public $utilizationTargetType;
+class Google_Service_Autoscaler_AutoscalingPolicyCustomMetricUtilization extends Google_Model {
+    public $metric;
+    public $utilizationTarget;
+    public $utilizationTargetType;
 
-  public function setMetric($metric)
-  {
-    $this->metric = $metric;
-  }
-  public function getMetric()
-  {
-    return $this->metric;
-  }
-  public function setUtilizationTarget($utilizationTarget)
-  {
-    $this->utilizationTarget = $utilizationTarget;
-  }
-  public function getUtilizationTarget()
-  {
-    return $this->utilizationTarget;
-  }
-  public function setUtilizationTargetType($utilizationTargetType)
-  {
-    $this->utilizationTargetType = $utilizationTargetType;
-  }
-  public function getUtilizationTargetType()
-  {
-    return $this->utilizationTargetType;
-  }
+    public function setMetric($metric) {
+        $this->metric = $metric;
+    }
+
+    public function getMetric() {
+        return $this->metric;
+    }
+
+    public function setUtilizationTarget($utilizationTarget) {
+        $this->utilizationTarget = $utilizationTarget;
+    }
+
+    public function getUtilizationTarget() {
+        return $this->utilizationTarget;
+    }
+
+    public function setUtilizationTargetType($utilizationTargetType) {
+        $this->utilizationTargetType = $utilizationTargetType;
+    }
+
+    public function getUtilizationTargetType() {
+        return $this->utilizationTargetType;
+    }
 }

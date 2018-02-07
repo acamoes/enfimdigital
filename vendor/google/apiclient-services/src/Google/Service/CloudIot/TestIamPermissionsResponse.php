@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_CloudIot_TestIamPermissionsResponse extends Google_Collection
-{
-  protected $collection_key = 'permissions';
-  public $permissions;
+class Google_Service_CloudIot_TestIamPermissionsResponse extends Google_Collection {
+    protected $collection_key = 'permissions';
+    public $permissions;
 
-  public function setPermissions($permissions)
-  {
-    $this->permissions = $permissions;
-  }
-  public function getPermissions()
-  {
-    return $this->permissions;
-  }
+    public function setPermissions($permissions) {
+        $this->permissions = $permissions;
+    }
+
+    public function getPermissions() {
+        return $this->permissions;
+    }
 }

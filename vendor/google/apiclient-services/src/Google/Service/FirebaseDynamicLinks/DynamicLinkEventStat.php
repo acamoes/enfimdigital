@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_FirebaseDynamicLinks_DynamicLinkEventStat extends Google_Model
-{
-  public $count;
-  public $event;
-  public $platform;
+class Google_Service_FirebaseDynamicLinks_DynamicLinkEventStat extends Google_Model {
+    public $count;
+    public $event;
+    public $platform;
 
-  public function setCount($count)
-  {
-    $this->count = $count;
-  }
-  public function getCount()
-  {
-    return $this->count;
-  }
-  public function setEvent($event)
-  {
-    $this->event = $event;
-  }
-  public function getEvent()
-  {
-    return $this->event;
-  }
-  public function setPlatform($platform)
-  {
-    $this->platform = $platform;
-  }
-  public function getPlatform()
-  {
-    return $this->platform;
-  }
+    public function setCount($count) {
+        $this->count = $count;
+    }
+
+    public function getCount() {
+        return $this->count;
+    }
+
+    public function setEvent($event) {
+        $this->event = $event;
+    }
+
+    public function getEvent() {
+        return $this->event;
+    }
+
+    public function setPlatform($platform) {
+        $this->platform = $platform;
+    }
+
+    public function getPlatform() {
+        return $this->platform;
+    }
 }

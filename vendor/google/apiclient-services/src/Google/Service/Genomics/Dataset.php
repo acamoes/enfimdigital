@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Genomics_Dataset extends Google_Model
-{
-  public $createTime;
-  public $id;
-  public $name;
-  public $projectId;
+class Google_Service_Genomics_Dataset extends Google_Model {
+    public $createTime;
+    public $id;
+    public $name;
+    public $projectId;
 
-  public function setCreateTime($createTime)
-  {
-    $this->createTime = $createTime;
-  }
-  public function getCreateTime()
-  {
-    return $this->createTime;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
-  }
+    public function setCreateTime($createTime) {
+        $this->createTime = $createTime;
+    }
+
+    public function getCreateTime() {
+        return $this->createTime;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setProjectId($projectId) {
+        $this->projectId = $projectId;
+    }
+
+    public function getProjectId() {
+        return $this->projectId;
+    }
 }

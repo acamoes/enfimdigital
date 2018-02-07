@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Manager_DiskAttachment extends Google_Model
-{
-  public $deviceName;
-  public $index;
+class Google_Service_Manager_DiskAttachment extends Google_Model {
+    public $deviceName;
+    public $index;
 
-  public function setDeviceName($deviceName)
-  {
-    $this->deviceName = $deviceName;
-  }
-  public function getDeviceName()
-  {
-    return $this->deviceName;
-  }
-  public function setIndex($index)
-  {
-    $this->index = $index;
-  }
-  public function getIndex()
-  {
-    return $this->index;
-  }
+    public function setDeviceName($deviceName) {
+        $this->deviceName = $deviceName;
+    }
+
+    public function getDeviceName() {
+        return $this->deviceName;
+    }
+
+    public function setIndex($index) {
+        $this->index = $index;
+    }
+
+    public function getIndex() {
+        return $this->index;
+    }
 }

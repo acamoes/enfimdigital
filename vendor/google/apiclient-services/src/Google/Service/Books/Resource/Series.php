@@ -23,19 +23,18 @@
  *   $series = $booksService->series;
  *  </code>
  */
-class Google_Service_Books_Resource_Series extends Google_Service_Resource
-{
-  /**
-   * Returns Series metadata for the given series ids. (series.get)
-   *
-   * @param string|array $seriesId String that identifies the series
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Books_Series
-   */
-  public function get($seriesId, $optParams = array())
-  {
-    $params = array('series_id' => $seriesId);
-    $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Books_Series");
-  }
+class Google_Service_Books_Resource_Series extends Google_Service_Resource {
+
+    /**
+     * Returns Series metadata for the given series ids. (series.get)
+     *
+     * @param string|array $seriesId String that identifies the series
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Books_Series
+     */
+    public function get($seriesId, $optParams = array()) {
+        $params = array('series_id' => $seriesId);
+        $params = array_merge($params, $optParams);
+        return $this->call('get', array($params), "Google_Service_Books_Series");
+    }
 }

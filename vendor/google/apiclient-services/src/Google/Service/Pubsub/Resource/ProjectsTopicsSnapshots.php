@@ -23,27 +23,26 @@
  *   $snapshots = $pubsubService->snapshots;
  *  </code>
  */
-class Google_Service_Pubsub_Resource_ProjectsTopicsSnapshots extends Google_Service_Resource
-{
-  /**
-   * Lists the names of the snapshots on this topic.
-   * (snapshots.listProjectsTopicsSnapshots)
-   *
-   * @param string $topic The name of the topic that snapshots are attached to.
-   * Format is `projects/{project}/topics/{topic}`.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string pageToken The value returned by the last
-   * `ListTopicSnapshotsResponse`; indicates that this is a continuation of a
-   * prior `ListTopicSnapshots` call, and that the system should return the next
-   * page of data.
-   * @opt_param int pageSize Maximum number of snapshot names to return.
-   * @return Google_Service_Pubsub_ListTopicSnapshotsResponse
-   */
-  public function listProjectsTopicsSnapshots($topic, $optParams = array())
-  {
-    $params = array('topic' => $topic);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Pubsub_ListTopicSnapshotsResponse");
-  }
+class Google_Service_Pubsub_Resource_ProjectsTopicsSnapshots extends Google_Service_Resource {
+
+    /**
+     * Lists the names of the snapshots on this topic.
+     * (snapshots.listProjectsTopicsSnapshots)
+     *
+     * @param string $topic The name of the topic that snapshots are attached to.
+     * Format is `projects/{project}/topics/{topic}`.
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param string pageToken The value returned by the last
+     * `ListTopicSnapshotsResponse`; indicates that this is a continuation of a
+     * prior `ListTopicSnapshots` call, and that the system should return the next
+     * page of data.
+     * @opt_param int pageSize Maximum number of snapshot names to return.
+     * @return Google_Service_Pubsub_ListTopicSnapshotsResponse
+     */
+    public function listProjectsTopicsSnapshots($topic, $optParams = array()) {
+        $params = array('topic' => $topic);
+        $params = array_merge($params, $optParams);
+        return $this->call('list', array($params), "Google_Service_Pubsub_ListTopicSnapshotsResponse");
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudSpeechAPI_SpeechRecognitionAlternative extends Google_Model
-{
-  public $confidence;
-  public $transcript;
+class Google_Service_CloudSpeechAPI_SpeechRecognitionAlternative extends Google_Model {
+    public $confidence;
+    public $transcript;
 
-  public function setConfidence($confidence)
-  {
-    $this->confidence = $confidence;
-  }
-  public function getConfidence()
-  {
-    return $this->confidence;
-  }
-  public function setTranscript($transcript)
-  {
-    $this->transcript = $transcript;
-  }
-  public function getTranscript()
-  {
-    return $this->transcript;
-  }
+    public function setConfidence($confidence) {
+        $this->confidence = $confidence;
+    }
+
+    public function getConfidence() {
+        return $this->confidence;
+    }
+
+    public function setTranscript($transcript) {
+        $this->transcript = $transcript;
+    }
+
+    public function getTranscript() {
+        return $this->transcript;
+    }
 }

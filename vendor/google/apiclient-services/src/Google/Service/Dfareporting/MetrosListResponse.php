@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_MetrosListResponse extends Google_Collection
-{
-  protected $collection_key = 'metros';
-  public $kind;
-  protected $metrosType = 'Google_Service_Dfareporting_Metro';
-  protected $metrosDataType = 'array';
+class Google_Service_Dfareporting_MetrosListResponse extends Google_Collection {
+    protected $collection_key = 'metros';
+    public $kind;
+    protected $metrosType     = 'Google_Service_Dfareporting_Metro';
+    protected $metrosDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_Dfareporting_Metro
-   */
-  public function setMetros($metros)
-  {
-    $this->metros = $metros;
-  }
-  /**
-   * @return Google_Service_Dfareporting_Metro
-   */
-  public function getMetros()
-  {
-    return $this->metros;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_Dfareporting_Metro
+     */
+    public function setMetros($metros) {
+        $this->metros = $metros;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_Metro
+     */
+    public function getMetros() {
+        return $this->metros;
+    }
 }

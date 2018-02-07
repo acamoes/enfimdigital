@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudShell_StartEnvironmentMetadata extends Google_Model
-{
-  public $state;
+class Google_Service_CloudShell_StartEnvironmentMetadata extends Google_Model {
+    public $state;
 
-  public function setState($state)
-  {
-    $this->state = $state;
-  }
-  public function getState()
-  {
-    return $this->state;
-  }
+    public function setState($state) {
+        $this->state = $state;
+    }
+
+    public function getState() {
+        return $this->state;
+    }
 }

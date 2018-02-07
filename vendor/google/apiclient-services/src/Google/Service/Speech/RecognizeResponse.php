@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Speech_RecognizeResponse extends Google_Collection
-{
-  protected $collection_key = 'results';
-  protected $resultsType = 'Google_Service_Speech_SpeechRecognitionResult';
-  protected $resultsDataType = 'array';
+class Google_Service_Speech_RecognizeResponse extends Google_Collection {
+    protected $collection_key  = 'results';
+    protected $resultsType     = 'Google_Service_Speech_SpeechRecognitionResult';
+    protected $resultsDataType = 'array';
 
-  /**
-   * @param Google_Service_Speech_SpeechRecognitionResult
-   */
-  public function setResults($results)
-  {
-    $this->results = $results;
-  }
-  /**
-   * @return Google_Service_Speech_SpeechRecognitionResult
-   */
-  public function getResults()
-  {
-    return $this->results;
-  }
+    /**
+     * @param Google_Service_Speech_SpeechRecognitionResult
+     */
+    public function setResults($results) {
+        $this->results = $results;
+    }
+
+    /**
+     * @return Google_Service_Speech_SpeechRecognitionResult
+     */
+    public function getResults() {
+        return $this->results;
+    }
 }

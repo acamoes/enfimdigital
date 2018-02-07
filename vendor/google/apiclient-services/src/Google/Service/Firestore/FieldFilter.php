@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_Firestore_FieldFilter extends Google_Model
-{
-  protected $fieldType = 'Google_Service_Firestore_FieldReference';
-  protected $fieldDataType = '';
-  public $op;
-  protected $valueType = 'Google_Service_Firestore_Value';
-  protected $valueDataType = '';
+class Google_Service_Firestore_FieldFilter extends Google_Model {
+    protected $fieldType     = 'Google_Service_Firestore_FieldReference';
+    protected $fieldDataType = '';
+    public $op;
+    protected $valueType     = 'Google_Service_Firestore_Value';
+    protected $valueDataType = '';
 
-  /**
-   * @param Google_Service_Firestore_FieldReference
-   */
-  public function setField(Google_Service_Firestore_FieldReference $field)
-  {
-    $this->field = $field;
-  }
-  /**
-   * @return Google_Service_Firestore_FieldReference
-   */
-  public function getField()
-  {
-    return $this->field;
-  }
-  public function setOp($op)
-  {
-    $this->op = $op;
-  }
-  public function getOp()
-  {
-    return $this->op;
-  }
-  /**
-   * @param Google_Service_Firestore_Value
-   */
-  public function setValue(Google_Service_Firestore_Value $value)
-  {
-    $this->value = $value;
-  }
-  /**
-   * @return Google_Service_Firestore_Value
-   */
-  public function getValue()
-  {
-    return $this->value;
-  }
+    /**
+     * @param Google_Service_Firestore_FieldReference
+     */
+    public function setField(Google_Service_Firestore_FieldReference $field) {
+        $this->field = $field;
+    }
+
+    /**
+     * @return Google_Service_Firestore_FieldReference
+     */
+    public function getField() {
+        return $this->field;
+    }
+
+    public function setOp($op) {
+        $this->op = $op;
+    }
+
+    public function getOp() {
+        return $this->op;
+    }
+
+    /**
+     * @param Google_Service_Firestore_Value
+     */
+    public function setValue(Google_Service_Firestore_Value $value) {
+        $this->value = $value;
+    }
+
+    /**
+     * @return Google_Service_Firestore_Value
+     */
+    public function getValue() {
+        return $this->value;
+    }
 }

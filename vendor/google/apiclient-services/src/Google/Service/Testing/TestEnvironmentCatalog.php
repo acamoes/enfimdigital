@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_Testing_TestEnvironmentCatalog extends Google_Model
-{
-  protected $androidDeviceCatalogType = 'Google_Service_Testing_AndroidDeviceCatalog';
-  protected $androidDeviceCatalogDataType = '';
-  protected $networkConfigurationCatalogType = 'Google_Service_Testing_NetworkConfigurationCatalog';
-  protected $networkConfigurationCatalogDataType = '';
+class Google_Service_Testing_TestEnvironmentCatalog extends Google_Model {
+    protected $androidDeviceCatalogType            = 'Google_Service_Testing_AndroidDeviceCatalog';
+    protected $androidDeviceCatalogDataType        = '';
+    protected $networkConfigurationCatalogType     = 'Google_Service_Testing_NetworkConfigurationCatalog';
+    protected $networkConfigurationCatalogDataType = '';
 
-  /**
-   * @param Google_Service_Testing_AndroidDeviceCatalog
-   */
-  public function setAndroidDeviceCatalog(Google_Service_Testing_AndroidDeviceCatalog $androidDeviceCatalog)
-  {
-    $this->androidDeviceCatalog = $androidDeviceCatalog;
-  }
-  /**
-   * @return Google_Service_Testing_AndroidDeviceCatalog
-   */
-  public function getAndroidDeviceCatalog()
-  {
-    return $this->androidDeviceCatalog;
-  }
-  /**
-   * @param Google_Service_Testing_NetworkConfigurationCatalog
-   */
-  public function setNetworkConfigurationCatalog(Google_Service_Testing_NetworkConfigurationCatalog $networkConfigurationCatalog)
-  {
-    $this->networkConfigurationCatalog = $networkConfigurationCatalog;
-  }
-  /**
-   * @return Google_Service_Testing_NetworkConfigurationCatalog
-   */
-  public function getNetworkConfigurationCatalog()
-  {
-    return $this->networkConfigurationCatalog;
-  }
+    /**
+     * @param Google_Service_Testing_AndroidDeviceCatalog
+     */
+    public function setAndroidDeviceCatalog(Google_Service_Testing_AndroidDeviceCatalog $androidDeviceCatalog) {
+        $this->androidDeviceCatalog = $androidDeviceCatalog;
+    }
+
+    /**
+     * @return Google_Service_Testing_AndroidDeviceCatalog
+     */
+    public function getAndroidDeviceCatalog() {
+        return $this->androidDeviceCatalog;
+    }
+
+    /**
+     * @param Google_Service_Testing_NetworkConfigurationCatalog
+     */
+    public function setNetworkConfigurationCatalog(Google_Service_Testing_NetworkConfigurationCatalog $networkConfigurationCatalog) {
+        $this->networkConfigurationCatalog = $networkConfigurationCatalog;
+    }
+
+    /**
+     * @return Google_Service_Testing_NetworkConfigurationCatalog
+     */
+    public function getNetworkConfigurationCatalog() {
+        return $this->networkConfigurationCatalog;
+    }
 }

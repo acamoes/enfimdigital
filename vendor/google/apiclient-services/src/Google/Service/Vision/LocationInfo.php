@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Vision_LocationInfo extends Google_Model
-{
-  protected $latLngType = 'Google_Service_Vision_LatLng';
-  protected $latLngDataType = '';
+class Google_Service_Vision_LocationInfo extends Google_Model {
+    protected $latLngType     = 'Google_Service_Vision_LatLng';
+    protected $latLngDataType = '';
 
-  /**
-   * @param Google_Service_Vision_LatLng
-   */
-  public function setLatLng(Google_Service_Vision_LatLng $latLng)
-  {
-    $this->latLng = $latLng;
-  }
-  /**
-   * @return Google_Service_Vision_LatLng
-   */
-  public function getLatLng()
-  {
-    return $this->latLng;
-  }
+    /**
+     * @param Google_Service_Vision_LatLng
+     */
+    public function setLatLng(Google_Service_Vision_LatLng $latLng) {
+        $this->latLng = $latLng;
+    }
+
+    /**
+     * @return Google_Service_Vision_LatLng
+     */
+    public function getLatLng() {
+        return $this->latLng;
+    }
 }

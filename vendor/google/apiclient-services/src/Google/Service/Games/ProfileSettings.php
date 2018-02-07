@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Games_ProfileSettings extends Google_Model
-{
-  public $kind;
-  public $profileVisible;
+class Google_Service_Games_ProfileSettings extends Google_Model {
+    public $kind;
+    public $profileVisible;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setProfileVisible($profileVisible)
-  {
-    $this->profileVisible = $profileVisible;
-  }
-  public function getProfileVisible()
-  {
-    return $this->profileVisible;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setProfileVisible($profileVisible) {
+        $this->profileVisible = $profileVisible;
+    }
+
+    public function getProfileVisible() {
+        return $this->profileVisible;
+    }
 }

@@ -15,18 +15,16 @@
  * the License.
  */
 
-class Google_Service_Cloudlatencytest_AggregatedStats extends Google_Collection
-{
-  protected $collection_key = 'stats';
-  protected $statsType = 'Google_Service_Cloudlatencytest_Stats';
-  protected $statsDataType = 'array';
+class Google_Service_Cloudlatencytest_AggregatedStats extends Google_Collection {
+    protected $collection_key = 'stats';
+    protected $statsType      = 'Google_Service_Cloudlatencytest_Stats';
+    protected $statsDataType  = 'array';
 
-  public function setStats($stats)
-  {
-    $this->stats = $stats;
-  }
-  public function getStats()
-  {
-    return $this->stats;
-  }
+    public function setStats($stats) {
+        $this->stats = $stats;
+    }
+
+    public function getStats() {
+        return $this->stats;
+    }
 }

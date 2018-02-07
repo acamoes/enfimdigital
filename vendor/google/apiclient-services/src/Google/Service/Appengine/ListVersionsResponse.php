@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Appengine_ListVersionsResponse extends Google_Collection
-{
-  protected $collection_key = 'versions';
-  public $nextPageToken;
-  protected $versionsType = 'Google_Service_Appengine_Version';
-  protected $versionsDataType = 'array';
+class Google_Service_Appengine_ListVersionsResponse extends Google_Collection {
+    protected $collection_key   = 'versions';
+    public $nextPageToken;
+    protected $versionsType     = 'Google_Service_Appengine_Version';
+    protected $versionsDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Appengine_Version
-   */
-  public function setVersions($versions)
-  {
-    $this->versions = $versions;
-  }
-  /**
-   * @return Google_Service_Appengine_Version
-   */
-  public function getVersions()
-  {
-    return $this->versions;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Appengine_Version
+     */
+    public function setVersions($versions) {
+        $this->versions = $versions;
+    }
+
+    /**
+     * @return Google_Service_Appengine_Version
+     */
+    public function getVersions() {
+        return $this->versions;
+    }
 }

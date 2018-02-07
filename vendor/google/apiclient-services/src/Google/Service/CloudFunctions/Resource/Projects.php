@@ -23,6 +23,6 @@
  *   $projects = $cloudfunctionsService->projects;
  *  </code>
  */
-class Google_Service_CloudFunctions_Resource_Projects extends Google_Service_Resource
-{
+class Google_Service_CloudFunctions_Resource_Projects extends Google_Service_Resource {
+
 }

@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ManagedPropertyBundle extends Google_Collection
-{
-  protected $collection_key = 'managedProperty';
-  protected $managedPropertyType = 'Google_Service_AndroidEnterprise_ManagedProperty';
-  protected $managedPropertyDataType = 'array';
+class Google_Service_AndroidEnterprise_ManagedPropertyBundle extends Google_Collection {
+    protected $collection_key          = 'managedProperty';
+    protected $managedPropertyType     = 'Google_Service_AndroidEnterprise_ManagedProperty';
+    protected $managedPropertyDataType = 'array';
 
-  /**
-   * @param Google_Service_AndroidEnterprise_ManagedProperty
-   */
-  public function setManagedProperty($managedProperty)
-  {
-    $this->managedProperty = $managedProperty;
-  }
-  /**
-   * @return Google_Service_AndroidEnterprise_ManagedProperty
-   */
-  public function getManagedProperty()
-  {
-    return $this->managedProperty;
-  }
+    /**
+     * @param Google_Service_AndroidEnterprise_ManagedProperty
+     */
+    public function setManagedProperty($managedProperty) {
+        $this->managedProperty = $managedProperty;
+    }
+
+    /**
+     * @return Google_Service_AndroidEnterprise_ManagedProperty
+     */
+    public function getManagedProperty() {
+        return $this->managedProperty;
+    }
 }

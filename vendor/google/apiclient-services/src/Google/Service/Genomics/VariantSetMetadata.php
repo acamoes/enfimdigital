@@ -15,70 +15,68 @@
  * the License.
  */
 
-class Google_Service_Genomics_VariantSetMetadata extends Google_Model
-{
-  public $description;
-  public $id;
-  public $info;
-  public $key;
-  public $number;
-  public $type;
-  public $value;
+class Google_Service_Genomics_VariantSetMetadata extends Google_Model {
+    public $description;
+    public $id;
+    public $info;
+    public $key;
+    public $number;
+    public $type;
+    public $value;
 
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setInfo($info)
-  {
-    $this->info = $info;
-  }
-  public function getInfo()
-  {
-    return $this->info;
-  }
-  public function setKey($key)
-  {
-    $this->key = $key;
-  }
-  public function getKey()
-  {
-    return $this->key;
-  }
-  public function setNumber($number)
-  {
-    $this->number = $number;
-  }
-  public function getNumber()
-  {
-    return $this->number;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setInfo($info) {
+        $this->info = $info;
+    }
+
+    public function getInfo() {
+        return $this->info;
+    }
+
+    public function setKey($key) {
+        $this->key = $key;
+    }
+
+    public function getKey() {
+        return $this->key;
+    }
+
+    public function setNumber($number) {
+        $this->number = $number;
+    }
+
+    public function getNumber() {
+        return $this->number;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

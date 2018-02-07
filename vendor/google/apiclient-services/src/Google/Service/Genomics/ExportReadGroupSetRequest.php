@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Genomics_ExportReadGroupSetRequest extends Google_Collection
-{
-  protected $collection_key = 'referenceNames';
-  public $exportUri;
-  public $projectId;
-  public $referenceNames;
+class Google_Service_Genomics_ExportReadGroupSetRequest extends Google_Collection {
+    protected $collection_key = 'referenceNames';
+    public $exportUri;
+    public $projectId;
+    public $referenceNames;
 
-  public function setExportUri($exportUri)
-  {
-    $this->exportUri = $exportUri;
-  }
-  public function getExportUri()
-  {
-    return $this->exportUri;
-  }
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
-  }
-  public function setReferenceNames($referenceNames)
-  {
-    $this->referenceNames = $referenceNames;
-  }
-  public function getReferenceNames()
-  {
-    return $this->referenceNames;
-  }
+    public function setExportUri($exportUri) {
+        $this->exportUri = $exportUri;
+    }
+
+    public function getExportUri() {
+        return $this->exportUri;
+    }
+
+    public function setProjectId($projectId) {
+        $this->projectId = $projectId;
+    }
+
+    public function getProjectId() {
+        return $this->projectId;
+    }
+
+    public function setReferenceNames($referenceNames) {
+        $this->referenceNames = $referenceNames;
+    }
+
+    public function getReferenceNames() {
+        return $this->referenceNames;
+    }
 }

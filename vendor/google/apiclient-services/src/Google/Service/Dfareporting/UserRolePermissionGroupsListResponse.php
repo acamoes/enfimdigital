@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_UserRolePermissionGroupsListResponse extends Google_Collection
-{
-  protected $collection_key = 'userRolePermissionGroups';
-  public $kind;
-  protected $userRolePermissionGroupsType = 'Google_Service_Dfareporting_UserRolePermissionGroup';
-  protected $userRolePermissionGroupsDataType = 'array';
+class Google_Service_Dfareporting_UserRolePermissionGroupsListResponse extends Google_Collection {
+    protected $collection_key                   = 'userRolePermissionGroups';
+    public $kind;
+    protected $userRolePermissionGroupsType     = 'Google_Service_Dfareporting_UserRolePermissionGroup';
+    protected $userRolePermissionGroupsDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_Dfareporting_UserRolePermissionGroup
-   */
-  public function setUserRolePermissionGroups($userRolePermissionGroups)
-  {
-    $this->userRolePermissionGroups = $userRolePermissionGroups;
-  }
-  /**
-   * @return Google_Service_Dfareporting_UserRolePermissionGroup
-   */
-  public function getUserRolePermissionGroups()
-  {
-    return $this->userRolePermissionGroups;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_Dfareporting_UserRolePermissionGroup
+     */
+    public function setUserRolePermissionGroups($userRolePermissionGroups) {
+        $this->userRolePermissionGroups = $userRolePermissionGroups;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_UserRolePermissionGroup
+     */
+    public function getUserRolePermissionGroups() {
+        return $this->userRolePermissionGroups;
+    }
 }

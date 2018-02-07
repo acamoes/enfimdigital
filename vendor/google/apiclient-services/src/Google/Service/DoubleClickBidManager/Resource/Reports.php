@@ -23,19 +23,18 @@
  *   $reports = $doubleclickbidmanagerService->reports;
  *  </code>
  */
-class Google_Service_DoubleClickBidManager_Resource_Reports extends Google_Service_Resource
-{
-  /**
-   * Retrieves stored reports. (reports.listreports)
-   *
-   * @param string $queryId Query ID with which the reports are associated.
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_DoubleClickBidManager_ListReportsResponse
-   */
-  public function listreports($queryId, $optParams = array())
-  {
-    $params = array('queryId' => $queryId);
-    $params = array_merge($params, $optParams);
-    return $this->call('listreports', array($params), "Google_Service_DoubleClickBidManager_ListReportsResponse");
-  }
+class Google_Service_DoubleClickBidManager_Resource_Reports extends Google_Service_Resource {
+
+    /**
+     * Retrieves stored reports. (reports.listreports)
+     *
+     * @param string $queryId Query ID with which the reports are associated.
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_DoubleClickBidManager_ListReportsResponse
+     */
+    public function listreports($queryId, $optParams = array()) {
+        $params = array('queryId' => $queryId);
+        $params = array_merge($params, $optParams);
+        return $this->call('listreports', array($params), "Google_Service_DoubleClickBidManager_ListReportsResponse");
+    }
 }

@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Firestore_MapValue extends Google_Model
-{
-  protected $fieldsType = 'Google_Service_Firestore_Value';
-  protected $fieldsDataType = 'map';
+class Google_Service_Firestore_MapValue extends Google_Model {
+    protected $fieldsType     = 'Google_Service_Firestore_Value';
+    protected $fieldsDataType = 'map';
 
-  /**
-   * @param Google_Service_Firestore_Value
-   */
-  public function setFields($fields)
-  {
-    $this->fields = $fields;
-  }
-  /**
-   * @return Google_Service_Firestore_Value
-   */
-  public function getFields()
-  {
-    return $this->fields;
-  }
+    /**
+     * @param Google_Service_Firestore_Value
+     */
+    public function setFields($fields) {
+        $this->fields = $fields;
+    }
+
+    /**
+     * @return Google_Service_Firestore_Value
+     */
+    public function getFields() {
+        return $this->fields;
+    }
 }

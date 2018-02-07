@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_YouTube_LiveChatPollOpenedDetails extends Google_Collection
-{
-  protected $collection_key = 'items';
-  public $id;
-  protected $itemsType = 'Google_Service_YouTube_LiveChatPollItem';
-  protected $itemsDataType = 'array';
-  public $prompt;
+class Google_Service_YouTube_LiveChatPollOpenedDetails extends Google_Collection {
+    protected $collection_key = 'items';
+    public $id;
+    protected $itemsType      = 'Google_Service_YouTube_LiveChatPollItem';
+    protected $itemsDataType  = 'array';
+    public $prompt;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  /**
-   * @param Google_Service_YouTube_LiveChatPollItem
-   */
-  public function setItems($items)
-  {
-    $this->items = $items;
-  }
-  /**
-   * @return Google_Service_YouTube_LiveChatPollItem
-   */
-  public function getItems()
-  {
-    return $this->items;
-  }
-  public function setPrompt($prompt)
-  {
-    $this->prompt = $prompt;
-  }
-  public function getPrompt()
-  {
-    return $this->prompt;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * @param Google_Service_YouTube_LiveChatPollItem
+     */
+    public function setItems($items) {
+        $this->items = $items;
+    }
+
+    /**
+     * @return Google_Service_YouTube_LiveChatPollItem
+     */
+    public function getItems() {
+        return $this->items;
+    }
+
+    public function setPrompt($prompt) {
+        $this->prompt = $prompt;
+    }
+
+    public function getPrompt() {
+        return $this->prompt;
+    }
 }

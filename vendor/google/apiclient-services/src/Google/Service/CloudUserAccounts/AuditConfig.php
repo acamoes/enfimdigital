@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_CloudUserAccounts_AuditConfig extends Google_Collection
-{
-  protected $collection_key = 'exemptedMembers';
-  public $exemptedMembers;
-  public $service;
+class Google_Service_CloudUserAccounts_AuditConfig extends Google_Collection {
+    protected $collection_key = 'exemptedMembers';
+    public $exemptedMembers;
+    public $service;
 
-  public function setExemptedMembers($exemptedMembers)
-  {
-    $this->exemptedMembers = $exemptedMembers;
-  }
-  public function getExemptedMembers()
-  {
-    return $this->exemptedMembers;
-  }
-  public function setService($service)
-  {
-    $this->service = $service;
-  }
-  public function getService()
-  {
-    return $this->service;
-  }
+    public function setExemptedMembers($exemptedMembers) {
+        $this->exemptedMembers = $exemptedMembers;
+    }
+
+    public function getExemptedMembers() {
+        return $this->exemptedMembers;
+    }
+
+    public function setService($service) {
+        $this->service = $service;
+    }
+
+    public function getService() {
+        return $this->service;
+    }
 }

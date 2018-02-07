@@ -23,6 +23,6 @@
  *   $accounts = $adexchangebuyer2Service->accounts;
  *  </code>
  */
-class Google_Service_AdExchangeBuyerII_Resource_Accounts extends Google_Service_Resource
-{
+class Google_Service_AdExchangeBuyerII_Resource_Accounts extends Google_Service_Resource {
+
 }

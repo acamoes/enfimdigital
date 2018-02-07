@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_DetectIntentRequest extends Google_Model
-{
-  public $inputAudio;
-  protected $queryInputType = 'Google_Service_Dialogflow_QueryInput';
-  protected $queryInputDataType = '';
-  protected $queryParamsType = 'Google_Service_Dialogflow_QueryParameters';
-  protected $queryParamsDataType = '';
+class Google_Service_Dialogflow_DetectIntentRequest extends Google_Model {
+    public $inputAudio;
+    protected $queryInputType      = 'Google_Service_Dialogflow_QueryInput';
+    protected $queryInputDataType  = '';
+    protected $queryParamsType     = 'Google_Service_Dialogflow_QueryParameters';
+    protected $queryParamsDataType = '';
 
-  public function setInputAudio($inputAudio)
-  {
-    $this->inputAudio = $inputAudio;
-  }
-  public function getInputAudio()
-  {
-    return $this->inputAudio;
-  }
-  /**
-   * @param Google_Service_Dialogflow_QueryInput
-   */
-  public function setQueryInput(Google_Service_Dialogflow_QueryInput $queryInput)
-  {
-    $this->queryInput = $queryInput;
-  }
-  /**
-   * @return Google_Service_Dialogflow_QueryInput
-   */
-  public function getQueryInput()
-  {
-    return $this->queryInput;
-  }
-  /**
-   * @param Google_Service_Dialogflow_QueryParameters
-   */
-  public function setQueryParams(Google_Service_Dialogflow_QueryParameters $queryParams)
-  {
-    $this->queryParams = $queryParams;
-  }
-  /**
-   * @return Google_Service_Dialogflow_QueryParameters
-   */
-  public function getQueryParams()
-  {
-    return $this->queryParams;
-  }
+    public function setInputAudio($inputAudio) {
+        $this->inputAudio = $inputAudio;
+    }
+
+    public function getInputAudio() {
+        return $this->inputAudio;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_QueryInput
+     */
+    public function setQueryInput(Google_Service_Dialogflow_QueryInput $queryInput) {
+        $this->queryInput = $queryInput;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_QueryInput
+     */
+    public function getQueryInput() {
+        return $this->queryInput;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_QueryParameters
+     */
+    public function setQueryParams(Google_Service_Dialogflow_QueryParameters $queryParams) {
+        $this->queryParams = $queryParams;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_QueryParameters
+     */
+    public function getQueryParams() {
+        return $this->queryParams;
+    }
 }

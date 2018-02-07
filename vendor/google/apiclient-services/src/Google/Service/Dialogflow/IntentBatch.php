@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentBatch extends Google_Collection
-{
-  protected $collection_key = 'intents';
-  protected $intentsType = 'Google_Service_Dialogflow_Intent';
-  protected $intentsDataType = 'array';
+class Google_Service_Dialogflow_IntentBatch extends Google_Collection {
+    protected $collection_key  = 'intents';
+    protected $intentsType     = 'Google_Service_Dialogflow_Intent';
+    protected $intentsDataType = 'array';
 
-  /**
-   * @param Google_Service_Dialogflow_Intent
-   */
-  public function setIntents($intents)
-  {
-    $this->intents = $intents;
-  }
-  /**
-   * @return Google_Service_Dialogflow_Intent
-   */
-  public function getIntents()
-  {
-    return $this->intents;
-  }
+    /**
+     * @param Google_Service_Dialogflow_Intent
+     */
+    public function setIntents($intents) {
+        $this->intents = $intents;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_Intent
+     */
+    public function getIntents() {
+        return $this->intents;
+    }
 }

@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CivicInfo_ElectionsQueryResponse extends Google_Collection
-{
-  protected $collection_key = 'elections';
-  protected $electionsType = 'Google_Service_CivicInfo_Election';
-  protected $electionsDataType = 'array';
-  public $kind;
+class Google_Service_CivicInfo_ElectionsQueryResponse extends Google_Collection {
+    protected $collection_key    = 'elections';
+    protected $electionsType     = 'Google_Service_CivicInfo_Election';
+    protected $electionsDataType = 'array';
+    public $kind;
 
-  /**
-   * @param Google_Service_CivicInfo_Election
-   */
-  public function setElections($elections)
-  {
-    $this->elections = $elections;
-  }
-  /**
-   * @return Google_Service_CivicInfo_Election
-   */
-  public function getElections()
-  {
-    return $this->elections;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_CivicInfo_Election
+     */
+    public function setElections($elections) {
+        $this->elections = $elections;
+    }
+
+    /**
+     * @return Google_Service_CivicInfo_Election
+     */
+    public function getElections() {
+        return $this->elections;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

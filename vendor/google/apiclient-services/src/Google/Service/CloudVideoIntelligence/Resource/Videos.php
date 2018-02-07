@@ -23,22 +23,21 @@
  *   $videos = $videointelligenceService->videos;
  *  </code>
  */
-class Google_Service_CloudVideoIntelligence_Resource_Videos extends Google_Service_Resource
-{
-  /**
-   * Performs asynchronous video annotation. Progress and results can be retrieved
-   * through the `google.longrunning.Operations` interface. `Operation.metadata`
-   * contains `AnnotateVideoProgress` (progress). `Operation.response` contains
-   * `AnnotateVideoResponse` (results). (videos.annotate)
-   *
-   * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta1AnnotateVideoRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_CloudVideoIntelligence_GoogleLongrunningOperation
-   */
-  public function annotate(Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta1AnnotateVideoRequest $postBody, $optParams = array())
-  {
-    $params = array('postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('annotate', array($params), "Google_Service_CloudVideoIntelligence_GoogleLongrunningOperation");
-  }
+class Google_Service_CloudVideoIntelligence_Resource_Videos extends Google_Service_Resource {
+
+    /**
+     * Performs asynchronous video annotation. Progress and results can be retrieved
+     * through the `google.longrunning.Operations` interface. `Operation.metadata`
+     * contains `AnnotateVideoProgress` (progress). `Operation.response` contains
+     * `AnnotateVideoResponse` (results). (videos.annotate)
+     *
+     * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta1AnnotateVideoRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_CloudVideoIntelligence_GoogleLongrunningOperation
+     */
+    public function annotate(Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta1AnnotateVideoRequest $postBody, $optParams = array()) {
+        $params = array('postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('annotate', array($params), "Google_Service_CloudVideoIntelligence_GoogleLongrunningOperation");
+    }
 }

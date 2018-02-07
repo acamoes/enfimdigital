@@ -15,96 +15,94 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_PricingSchedule extends Google_Collection
-{
-  protected $collection_key = 'pricingPeriods';
-  public $capCostOption;
-  public $disregardOverdelivery;
-  public $endDate;
-  public $flighted;
-  public $floodlightActivityId;
-  protected $pricingPeriodsType = 'Google_Service_Dfareporting_PricingSchedulePricingPeriod';
-  protected $pricingPeriodsDataType = 'array';
-  public $pricingType;
-  public $startDate;
-  public $testingStartDate;
+class Google_Service_Dfareporting_PricingSchedule extends Google_Collection {
+    protected $collection_key         = 'pricingPeriods';
+    public $capCostOption;
+    public $disregardOverdelivery;
+    public $endDate;
+    public $flighted;
+    public $floodlightActivityId;
+    protected $pricingPeriodsType     = 'Google_Service_Dfareporting_PricingSchedulePricingPeriod';
+    protected $pricingPeriodsDataType = 'array';
+    public $pricingType;
+    public $startDate;
+    public $testingStartDate;
 
-  public function setCapCostOption($capCostOption)
-  {
-    $this->capCostOption = $capCostOption;
-  }
-  public function getCapCostOption()
-  {
-    return $this->capCostOption;
-  }
-  public function setDisregardOverdelivery($disregardOverdelivery)
-  {
-    $this->disregardOverdelivery = $disregardOverdelivery;
-  }
-  public function getDisregardOverdelivery()
-  {
-    return $this->disregardOverdelivery;
-  }
-  public function setEndDate($endDate)
-  {
-    $this->endDate = $endDate;
-  }
-  public function getEndDate()
-  {
-    return $this->endDate;
-  }
-  public function setFlighted($flighted)
-  {
-    $this->flighted = $flighted;
-  }
-  public function getFlighted()
-  {
-    return $this->flighted;
-  }
-  public function setFloodlightActivityId($floodlightActivityId)
-  {
-    $this->floodlightActivityId = $floodlightActivityId;
-  }
-  public function getFloodlightActivityId()
-  {
-    return $this->floodlightActivityId;
-  }
-  /**
-   * @param Google_Service_Dfareporting_PricingSchedulePricingPeriod
-   */
-  public function setPricingPeriods($pricingPeriods)
-  {
-    $this->pricingPeriods = $pricingPeriods;
-  }
-  /**
-   * @return Google_Service_Dfareporting_PricingSchedulePricingPeriod
-   */
-  public function getPricingPeriods()
-  {
-    return $this->pricingPeriods;
-  }
-  public function setPricingType($pricingType)
-  {
-    $this->pricingType = $pricingType;
-  }
-  public function getPricingType()
-  {
-    return $this->pricingType;
-  }
-  public function setStartDate($startDate)
-  {
-    $this->startDate = $startDate;
-  }
-  public function getStartDate()
-  {
-    return $this->startDate;
-  }
-  public function setTestingStartDate($testingStartDate)
-  {
-    $this->testingStartDate = $testingStartDate;
-  }
-  public function getTestingStartDate()
-  {
-    return $this->testingStartDate;
-  }
+    public function setCapCostOption($capCostOption) {
+        $this->capCostOption = $capCostOption;
+    }
+
+    public function getCapCostOption() {
+        return $this->capCostOption;
+    }
+
+    public function setDisregardOverdelivery($disregardOverdelivery) {
+        $this->disregardOverdelivery = $disregardOverdelivery;
+    }
+
+    public function getDisregardOverdelivery() {
+        return $this->disregardOverdelivery;
+    }
+
+    public function setEndDate($endDate) {
+        $this->endDate = $endDate;
+    }
+
+    public function getEndDate() {
+        return $this->endDate;
+    }
+
+    public function setFlighted($flighted) {
+        $this->flighted = $flighted;
+    }
+
+    public function getFlighted() {
+        return $this->flighted;
+    }
+
+    public function setFloodlightActivityId($floodlightActivityId) {
+        $this->floodlightActivityId = $floodlightActivityId;
+    }
+
+    public function getFloodlightActivityId() {
+        return $this->floodlightActivityId;
+    }
+
+    /**
+     * @param Google_Service_Dfareporting_PricingSchedulePricingPeriod
+     */
+    public function setPricingPeriods($pricingPeriods) {
+        $this->pricingPeriods = $pricingPeriods;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_PricingSchedulePricingPeriod
+     */
+    public function getPricingPeriods() {
+        return $this->pricingPeriods;
+    }
+
+    public function setPricingType($pricingType) {
+        $this->pricingType = $pricingType;
+    }
+
+    public function getPricingType() {
+        return $this->pricingType;
+    }
+
+    public function setStartDate($startDate) {
+        $this->startDate = $startDate;
+    }
+
+    public function getStartDate() {
+        return $this->startDate;
+    }
+
+    public function setTestingStartDate($testingStartDate) {
+        $this->testingStartDate = $testingStartDate;
+    }
+
+    public function getTestingStartDate() {
+        return $this->testingStartDate;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_TokenPagination extends Google_Model
-{
-  public $nextPageToken;
-  public $previousPageToken;
+class Google_Service_AndroidEnterprise_TokenPagination extends Google_Model {
+    public $nextPageToken;
+    public $previousPageToken;
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setPreviousPageToken($previousPageToken)
-  {
-    $this->previousPageToken = $previousPageToken;
-  }
-  public function getPreviousPageToken()
-  {
-    return $this->previousPageToken;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    public function setPreviousPageToken($previousPageToken) {
+        $this->previousPageToken = $previousPageToken;
+    }
+
+    public function getPreviousPageToken() {
+        return $this->previousPageToken;
+    }
 }

@@ -15,65 +15,63 @@
  * the License.
  */
 
-class Google_Service_Vision_Block extends Google_Collection
-{
-  protected $collection_key = 'paragraphs';
-  public $blockType;
-  protected $boundingBoxType = 'Google_Service_Vision_BoundingPoly';
-  protected $boundingBoxDataType = '';
-  protected $paragraphsType = 'Google_Service_Vision_Paragraph';
-  protected $paragraphsDataType = 'array';
-  protected $propertyType = 'Google_Service_Vision_TextProperty';
-  protected $propertyDataType = '';
+class Google_Service_Vision_Block extends Google_Collection {
+    protected $collection_key      = 'paragraphs';
+    public $blockType;
+    protected $boundingBoxType     = 'Google_Service_Vision_BoundingPoly';
+    protected $boundingBoxDataType = '';
+    protected $paragraphsType      = 'Google_Service_Vision_Paragraph';
+    protected $paragraphsDataType  = 'array';
+    protected $propertyType        = 'Google_Service_Vision_TextProperty';
+    protected $propertyDataType    = '';
 
-  public function setBlockType($blockType)
-  {
-    $this->blockType = $blockType;
-  }
-  public function getBlockType()
-  {
-    return $this->blockType;
-  }
-  /**
-   * @param Google_Service_Vision_BoundingPoly
-   */
-  public function setBoundingBox(Google_Service_Vision_BoundingPoly $boundingBox)
-  {
-    $this->boundingBox = $boundingBox;
-  }
-  /**
-   * @return Google_Service_Vision_BoundingPoly
-   */
-  public function getBoundingBox()
-  {
-    return $this->boundingBox;
-  }
-  /**
-   * @param Google_Service_Vision_Paragraph
-   */
-  public function setParagraphs($paragraphs)
-  {
-    $this->paragraphs = $paragraphs;
-  }
-  /**
-   * @return Google_Service_Vision_Paragraph
-   */
-  public function getParagraphs()
-  {
-    return $this->paragraphs;
-  }
-  /**
-   * @param Google_Service_Vision_TextProperty
-   */
-  public function setProperty(Google_Service_Vision_TextProperty $property)
-  {
-    $this->property = $property;
-  }
-  /**
-   * @return Google_Service_Vision_TextProperty
-   */
-  public function getProperty()
-  {
-    return $this->property;
-  }
+    public function setBlockType($blockType) {
+        $this->blockType = $blockType;
+    }
+
+    public function getBlockType() {
+        return $this->blockType;
+    }
+
+    /**
+     * @param Google_Service_Vision_BoundingPoly
+     */
+    public function setBoundingBox(Google_Service_Vision_BoundingPoly $boundingBox) {
+        $this->boundingBox = $boundingBox;
+    }
+
+    /**
+     * @return Google_Service_Vision_BoundingPoly
+     */
+    public function getBoundingBox() {
+        return $this->boundingBox;
+    }
+
+    /**
+     * @param Google_Service_Vision_Paragraph
+     */
+    public function setParagraphs($paragraphs) {
+        $this->paragraphs = $paragraphs;
+    }
+
+    /**
+     * @return Google_Service_Vision_Paragraph
+     */
+    public function getParagraphs() {
+        return $this->paragraphs;
+    }
+
+    /**
+     * @param Google_Service_Vision_TextProperty
+     */
+    public function setProperty(Google_Service_Vision_TextProperty $property) {
+        $this->property = $property;
+    }
+
+    /**
+     * @return Google_Service_Vision_TextProperty
+     */
+    public function getProperty() {
+        return $this->property;
+    }
 }

@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_CloudTasks_SetIamPolicyRequest extends Google_Model
-{
-  protected $policyType = 'Google_Service_CloudTasks_Policy';
-  protected $policyDataType = '';
+class Google_Service_CloudTasks_SetIamPolicyRequest extends Google_Model {
+    protected $policyType     = 'Google_Service_CloudTasks_Policy';
+    protected $policyDataType = '';
 
-  /**
-   * @param Google_Service_CloudTasks_Policy
-   */
-  public function setPolicy(Google_Service_CloudTasks_Policy $policy)
-  {
-    $this->policy = $policy;
-  }
-  /**
-   * @return Google_Service_CloudTasks_Policy
-   */
-  public function getPolicy()
-  {
-    return $this->policy;
-  }
+    /**
+     * @param Google_Service_CloudTasks_Policy
+     */
+    public function setPolicy(Google_Service_CloudTasks_Policy $policy) {
+        $this->policy = $policy;
+    }
+
+    /**
+     * @return Google_Service_CloudTasks_Policy
+     */
+    public function getPolicy() {
+        return $this->policy;
+    }
 }

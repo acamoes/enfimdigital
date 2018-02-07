@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Doubleclicksearch_UpdateAvailabilityRequest extends Google_Collection
-{
-  protected $collection_key = 'availabilities';
-  protected $availabilitiesType = 'Google_Service_Doubleclicksearch_Availability';
-  protected $availabilitiesDataType = 'array';
+class Google_Service_Doubleclicksearch_UpdateAvailabilityRequest extends Google_Collection {
+    protected $collection_key         = 'availabilities';
+    protected $availabilitiesType     = 'Google_Service_Doubleclicksearch_Availability';
+    protected $availabilitiesDataType = 'array';
 
-  /**
-   * @param Google_Service_Doubleclicksearch_Availability
-   */
-  public function setAvailabilities($availabilities)
-  {
-    $this->availabilities = $availabilities;
-  }
-  /**
-   * @return Google_Service_Doubleclicksearch_Availability
-   */
-  public function getAvailabilities()
-  {
-    return $this->availabilities;
-  }
+    /**
+     * @param Google_Service_Doubleclicksearch_Availability
+     */
+    public function setAvailabilities($availabilities) {
+        $this->availabilities = $availabilities;
+    }
+
+    /**
+     * @return Google_Service_Doubleclicksearch_Availability
+     */
+    public function getAvailabilities() {
+        return $this->availabilities;
+    }
 }

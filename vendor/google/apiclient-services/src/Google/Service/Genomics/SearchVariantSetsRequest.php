@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchVariantSetsRequest extends Google_Collection
-{
-  protected $collection_key = 'datasetIds';
-  public $datasetIds;
-  public $pageSize;
-  public $pageToken;
+class Google_Service_Genomics_SearchVariantSetsRequest extends Google_Collection {
+    protected $collection_key = 'datasetIds';
+    public $datasetIds;
+    public $pageSize;
+    public $pageToken;
 
-  public function setDatasetIds($datasetIds)
-  {
-    $this->datasetIds = $datasetIds;
-  }
-  public function getDatasetIds()
-  {
-    return $this->datasetIds;
-  }
-  public function setPageSize($pageSize)
-  {
-    $this->pageSize = $pageSize;
-  }
-  public function getPageSize()
-  {
-    return $this->pageSize;
-  }
-  public function setPageToken($pageToken)
-  {
-    $this->pageToken = $pageToken;
-  }
-  public function getPageToken()
-  {
-    return $this->pageToken;
-  }
+    public function setDatasetIds($datasetIds) {
+        $this->datasetIds = $datasetIds;
+    }
+
+    public function getDatasetIds() {
+        return $this->datasetIds;
+    }
+
+    public function setPageSize($pageSize) {
+        $this->pageSize = $pageSize;
+    }
+
+    public function getPageSize() {
+        return $this->pageSize;
+    }
+
+    public function setPageToken($pageToken) {
+        $this->pageToken = $pageToken;
+    }
+
+    public function getPageToken() {
+        return $this->pageToken;
+    }
 }

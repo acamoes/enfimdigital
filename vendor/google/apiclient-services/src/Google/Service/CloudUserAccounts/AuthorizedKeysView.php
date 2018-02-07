@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_CloudUserAccounts_AuthorizedKeysView extends Google_Collection
-{
-  protected $collection_key = 'keys';
-  public $keys;
-  public $sudoer;
+class Google_Service_CloudUserAccounts_AuthorizedKeysView extends Google_Collection {
+    protected $collection_key = 'keys';
+    public $keys;
+    public $sudoer;
 
-  public function setKeys($keys)
-  {
-    $this->keys = $keys;
-  }
-  public function getKeys()
-  {
-    return $this->keys;
-  }
-  public function setSudoer($sudoer)
-  {
-    $this->sudoer = $sudoer;
-  }
-  public function getSudoer()
-  {
-    return $this->sudoer;
-  }
+    public function setKeys($keys) {
+        $this->keys = $keys;
+    }
+
+    public function getKeys() {
+        return $this->keys;
+    }
+
+    public function setSudoer($sudoer) {
+        $this->sudoer = $sudoer;
+    }
+
+    public function getSudoer() {
+        return $this->sudoer;
+    }
 }

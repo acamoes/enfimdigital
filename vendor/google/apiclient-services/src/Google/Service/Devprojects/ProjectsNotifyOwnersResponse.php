@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Devprojects_ProjectsNotifyOwnersResponse extends Google_Collection
-{
-  protected $collection_key = 'userId';
-  public $kind;
-  public $userId;
+class Google_Service_Devprojects_ProjectsNotifyOwnersResponse extends Google_Collection {
+    protected $collection_key = 'userId';
+    public $kind;
+    public $userId;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setUserId($userId)
-  {
-    $this->userId = $userId;
-  }
-  public function getUserId()
-  {
-    return $this->userId;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setUserId($userId) {
+        $this->userId = $userId;
+    }
+
+    public function getUserId() {
+        return $this->userId;
+    }
 }

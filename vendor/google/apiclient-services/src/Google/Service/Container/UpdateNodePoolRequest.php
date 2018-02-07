@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Container_UpdateNodePoolRequest extends Google_Model
-{
-  public $imageType;
-  public $nodeVersion;
+class Google_Service_Container_UpdateNodePoolRequest extends Google_Model {
+    public $imageType;
+    public $nodeVersion;
 
-  public function setImageType($imageType)
-  {
-    $this->imageType = $imageType;
-  }
-  public function getImageType()
-  {
-    return $this->imageType;
-  }
-  public function setNodeVersion($nodeVersion)
-  {
-    $this->nodeVersion = $nodeVersion;
-  }
-  public function getNodeVersion()
-  {
-    return $this->nodeVersion;
-  }
+    public function setImageType($imageType) {
+        $this->imageType = $imageType;
+    }
+
+    public function getImageType() {
+        return $this->imageType;
+    }
+
+    public function setNodeVersion($nodeVersion) {
+        $this->nodeVersion = $nodeVersion;
+    }
+
+    public function getNodeVersion() {
+        return $this->nodeVersion;
+    }
 }

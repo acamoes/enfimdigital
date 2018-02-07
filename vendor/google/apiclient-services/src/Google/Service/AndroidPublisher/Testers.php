@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_Testers extends Google_Collection
-{
-  protected $collection_key = 'googlePlusCommunities';
-  public $googleGroups;
-  public $googlePlusCommunities;
+class Google_Service_AndroidPublisher_Testers extends Google_Collection {
+    protected $collection_key = 'googlePlusCommunities';
+    public $googleGroups;
+    public $googlePlusCommunities;
 
-  public function setGoogleGroups($googleGroups)
-  {
-    $this->googleGroups = $googleGroups;
-  }
-  public function getGoogleGroups()
-  {
-    return $this->googleGroups;
-  }
-  public function setGooglePlusCommunities($googlePlusCommunities)
-  {
-    $this->googlePlusCommunities = $googlePlusCommunities;
-  }
-  public function getGooglePlusCommunities()
-  {
-    return $this->googlePlusCommunities;
-  }
+    public function setGoogleGroups($googleGroups) {
+        $this->googleGroups = $googleGroups;
+    }
+
+    public function getGoogleGroups() {
+        return $this->googleGroups;
+    }
+
+    public function setGooglePlusCommunities($googlePlusCommunities) {
+        $this->googlePlusCommunities = $googlePlusCommunities;
+    }
+
+    public function getGooglePlusCommunities() {
+        return $this->googlePlusCommunities;
+    }
 }

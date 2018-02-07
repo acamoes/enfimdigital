@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Cih_GrmData extends Google_Collection
-{
-  protected $collection_key = 'intentId';
-  public $agencyId;
-  public $contactLdap;
-  public $intentId;
+class Google_Service_Cih_GrmData extends Google_Collection {
+    protected $collection_key = 'intentId';
+    public $agencyId;
+    public $contactLdap;
+    public $intentId;
 
-  public function setAgencyId($agencyId)
-  {
-    $this->agencyId = $agencyId;
-  }
-  public function getAgencyId()
-  {
-    return $this->agencyId;
-  }
-  public function setContactLdap($contactLdap)
-  {
-    $this->contactLdap = $contactLdap;
-  }
-  public function getContactLdap()
-  {
-    return $this->contactLdap;
-  }
-  public function setIntentId($intentId)
-  {
-    $this->intentId = $intentId;
-  }
-  public function getIntentId()
-  {
-    return $this->intentId;
-  }
+    public function setAgencyId($agencyId) {
+        $this->agencyId = $agencyId;
+    }
+
+    public function getAgencyId() {
+        return $this->agencyId;
+    }
+
+    public function setContactLdap($contactLdap) {
+        $this->contactLdap = $contactLdap;
+    }
+
+    public function getContactLdap() {
+        return $this->contactLdap;
+    }
+
+    public function setIntentId($intentId) {
+        $this->intentId = $intentId;
+    }
+
+    public function getIntentId() {
+        return $this->intentId;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Blogger_CommentAuthorImage extends Google_Model
-{
-  public $url;
+class Google_Service_Blogger_CommentAuthorImage extends Google_Model {
+    public $url;
 
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

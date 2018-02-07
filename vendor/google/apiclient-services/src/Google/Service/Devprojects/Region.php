@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Devprojects_Region extends Google_Model
-{
-  public $kind;
-  public $region;
+class Google_Service_Devprojects_Region extends Google_Model {
+    public $kind;
+    public $region;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setRegion($region)
-  {
-    $this->region = $region;
-  }
-  public function getRegion()
-  {
-    return $this->region;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setRegion($region) {
+        $this->region = $region;
+    }
+
+    public function getRegion() {
+        return $this->region;
+    }
 }

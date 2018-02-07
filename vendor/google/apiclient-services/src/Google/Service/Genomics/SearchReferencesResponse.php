@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchReferencesResponse extends Google_Collection
-{
-  protected $collection_key = 'references';
-  public $nextPageToken;
-  protected $referencesType = 'Google_Service_Genomics_Reference';
-  protected $referencesDataType = 'array';
+class Google_Service_Genomics_SearchReferencesResponse extends Google_Collection {
+    protected $collection_key     = 'references';
+    public $nextPageToken;
+    protected $referencesType     = 'Google_Service_Genomics_Reference';
+    protected $referencesDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Genomics_Reference
-   */
-  public function setReferences($references)
-  {
-    $this->references = $references;
-  }
-  /**
-   * @return Google_Service_Genomics_Reference
-   */
-  public function getReferences()
-  {
-    return $this->references;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Genomics_Reference
+     */
+    public function setReferences($references) {
+        $this->references = $references;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Reference
+     */
+    public function getReferences() {
+        return $this->references;
+    }
 }

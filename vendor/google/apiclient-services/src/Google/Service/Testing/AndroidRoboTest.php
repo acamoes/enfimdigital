@@ -15,92 +15,90 @@
  * the License.
  */
 
-class Google_Service_Testing_AndroidRoboTest extends Google_Collection
-{
-  protected $collection_key = 'startingIntents';
-  protected $appApkType = 'Google_Service_Testing_FileReference';
-  protected $appApkDataType = '';
-  public $appInitialActivity;
-  public $appPackageId;
-  public $maxDepth;
-  public $maxSteps;
-  protected $roboDirectivesType = 'Google_Service_Testing_RoboDirective';
-  protected $roboDirectivesDataType = 'array';
-  protected $startingIntentsType = 'Google_Service_Testing_RoboStartingIntent';
-  protected $startingIntentsDataType = 'array';
+class Google_Service_Testing_AndroidRoboTest extends Google_Collection {
+    protected $collection_key          = 'startingIntents';
+    protected $appApkType              = 'Google_Service_Testing_FileReference';
+    protected $appApkDataType          = '';
+    public $appInitialActivity;
+    public $appPackageId;
+    public $maxDepth;
+    public $maxSteps;
+    protected $roboDirectivesType      = 'Google_Service_Testing_RoboDirective';
+    protected $roboDirectivesDataType  = 'array';
+    protected $startingIntentsType     = 'Google_Service_Testing_RoboStartingIntent';
+    protected $startingIntentsDataType = 'array';
 
-  /**
-   * @param Google_Service_Testing_FileReference
-   */
-  public function setAppApk(Google_Service_Testing_FileReference $appApk)
-  {
-    $this->appApk = $appApk;
-  }
-  /**
-   * @return Google_Service_Testing_FileReference
-   */
-  public function getAppApk()
-  {
-    return $this->appApk;
-  }
-  public function setAppInitialActivity($appInitialActivity)
-  {
-    $this->appInitialActivity = $appInitialActivity;
-  }
-  public function getAppInitialActivity()
-  {
-    return $this->appInitialActivity;
-  }
-  public function setAppPackageId($appPackageId)
-  {
-    $this->appPackageId = $appPackageId;
-  }
-  public function getAppPackageId()
-  {
-    return $this->appPackageId;
-  }
-  public function setMaxDepth($maxDepth)
-  {
-    $this->maxDepth = $maxDepth;
-  }
-  public function getMaxDepth()
-  {
-    return $this->maxDepth;
-  }
-  public function setMaxSteps($maxSteps)
-  {
-    $this->maxSteps = $maxSteps;
-  }
-  public function getMaxSteps()
-  {
-    return $this->maxSteps;
-  }
-  /**
-   * @param Google_Service_Testing_RoboDirective
-   */
-  public function setRoboDirectives($roboDirectives)
-  {
-    $this->roboDirectives = $roboDirectives;
-  }
-  /**
-   * @return Google_Service_Testing_RoboDirective
-   */
-  public function getRoboDirectives()
-  {
-    return $this->roboDirectives;
-  }
-  /**
-   * @param Google_Service_Testing_RoboStartingIntent
-   */
-  public function setStartingIntents($startingIntents)
-  {
-    $this->startingIntents = $startingIntents;
-  }
-  /**
-   * @return Google_Service_Testing_RoboStartingIntent
-   */
-  public function getStartingIntents()
-  {
-    return $this->startingIntents;
-  }
+    /**
+     * @param Google_Service_Testing_FileReference
+     */
+    public function setAppApk(Google_Service_Testing_FileReference $appApk) {
+        $this->appApk = $appApk;
+    }
+
+    /**
+     * @return Google_Service_Testing_FileReference
+     */
+    public function getAppApk() {
+        return $this->appApk;
+    }
+
+    public function setAppInitialActivity($appInitialActivity) {
+        $this->appInitialActivity = $appInitialActivity;
+    }
+
+    public function getAppInitialActivity() {
+        return $this->appInitialActivity;
+    }
+
+    public function setAppPackageId($appPackageId) {
+        $this->appPackageId = $appPackageId;
+    }
+
+    public function getAppPackageId() {
+        return $this->appPackageId;
+    }
+
+    public function setMaxDepth($maxDepth) {
+        $this->maxDepth = $maxDepth;
+    }
+
+    public function getMaxDepth() {
+        return $this->maxDepth;
+    }
+
+    public function setMaxSteps($maxSteps) {
+        $this->maxSteps = $maxSteps;
+    }
+
+    public function getMaxSteps() {
+        return $this->maxSteps;
+    }
+
+    /**
+     * @param Google_Service_Testing_RoboDirective
+     */
+    public function setRoboDirectives($roboDirectives) {
+        $this->roboDirectives = $roboDirectives;
+    }
+
+    /**
+     * @return Google_Service_Testing_RoboDirective
+     */
+    public function getRoboDirectives() {
+        return $this->roboDirectives;
+    }
+
+    /**
+     * @param Google_Service_Testing_RoboStartingIntent
+     */
+    public function setStartingIntents($startingIntents) {
+        $this->startingIntents = $startingIntents;
+    }
+
+    /**
+     * @return Google_Service_Testing_RoboStartingIntent
+     */
+    public function getStartingIntents() {
+        return $this->startingIntents;
+    }
 }

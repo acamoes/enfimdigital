@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Devprojects_ProjectLinkingSection extends Google_Model
-{
-  public $kind;
-  protected $plusPageType = 'Google_Service_Devprojects_ProjectPlusPage';
-  protected $plusPageDataType = '';
+class Google_Service_Devprojects_ProjectLinkingSection extends Google_Model {
+    public $kind;
+    protected $plusPageType     = 'Google_Service_Devprojects_ProjectPlusPage';
+    protected $plusPageDataType = '';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setPlusPage(Google_Service_Devprojects_ProjectPlusPage $plusPage)
-  {
-    $this->plusPage = $plusPage;
-  }
-  public function getPlusPage()
-  {
-    return $this->plusPage;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setPlusPage(Google_Service_Devprojects_ProjectPlusPage $plusPage) {
+        $this->plusPage = $plusPage;
+    }
+
+    public function getPlusPage() {
+        return $this->plusPage;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_OffsetPosition extends Google_Model
-{
-  public $left;
-  public $top;
+class Google_Service_Dfareporting_OffsetPosition extends Google_Model {
+    public $left;
+    public $top;
 
-  public function setLeft($left)
-  {
-    $this->left = $left;
-  }
-  public function getLeft()
-  {
-    return $this->left;
-  }
-  public function setTop($top)
-  {
-    $this->top = $top;
-  }
-  public function getTop()
-  {
-    return $this->top;
-  }
+    public function setLeft($left) {
+        $this->left = $left;
+    }
+
+    public function getLeft() {
+        return $this->left;
+    }
+
+    public function setTop($top) {
+        $this->top = $top;
+    }
+
+    public function getTop() {
+        return $this->top;
+    }
 }

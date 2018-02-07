@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataproc_NodeInitializationAction extends Google_Model
-{
-  public $executableFile;
-  public $executionTimeout;
+class Google_Service_Dataproc_NodeInitializationAction extends Google_Model {
+    public $executableFile;
+    public $executionTimeout;
 
-  public function setExecutableFile($executableFile)
-  {
-    $this->executableFile = $executableFile;
-  }
-  public function getExecutableFile()
-  {
-    return $this->executableFile;
-  }
-  public function setExecutionTimeout($executionTimeout)
-  {
-    $this->executionTimeout = $executionTimeout;
-  }
-  public function getExecutionTimeout()
-  {
-    return $this->executionTimeout;
-  }
+    public function setExecutableFile($executableFile) {
+        $this->executableFile = $executableFile;
+    }
+
+    public function getExecutableFile() {
+        return $this->executableFile;
+    }
+
+    public function setExecutionTimeout($executionTimeout) {
+        $this->executionTimeout = $executionTimeout;
+    }
+
+    public function getExecutionTimeout() {
+        return $this->executionTimeout;
+    }
 }

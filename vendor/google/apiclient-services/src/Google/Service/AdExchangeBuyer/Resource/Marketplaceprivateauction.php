@@ -23,20 +23,19 @@
  *   $marketplaceprivateauction = $adexchangebuyerService->marketplaceprivateauction;
  *  </code>
  */
-class Google_Service_AdExchangeBuyer_Resource_Marketplaceprivateauction extends Google_Service_Resource
-{
-  /**
-   * Update a given private auction proposal
-   * (marketplaceprivateauction.updateproposal)
-   *
-   * @param string $privateAuctionId The private auction id to be updated.
-   * @param Google_Service_AdExchangeBuyer_UpdatePrivateAuctionProposalRequest $postBody
-   * @param array $optParams Optional parameters.
-   */
-  public function updateproposal($privateAuctionId, Google_Service_AdExchangeBuyer_UpdatePrivateAuctionProposalRequest $postBody, $optParams = array())
-  {
-    $params = array('privateAuctionId' => $privateAuctionId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('updateproposal', array($params));
-  }
+class Google_Service_AdExchangeBuyer_Resource_Marketplaceprivateauction extends Google_Service_Resource {
+
+    /**
+     * Update a given private auction proposal
+     * (marketplaceprivateauction.updateproposal)
+     *
+     * @param string $privateAuctionId The private auction id to be updated.
+     * @param Google_Service_AdExchangeBuyer_UpdatePrivateAuctionProposalRequest $postBody
+     * @param array $optParams Optional parameters.
+     */
+    public function updateproposal($privateAuctionId, Google_Service_AdExchangeBuyer_UpdatePrivateAuctionProposalRequest $postBody, $optParams = array()) {
+        $params = array('privateAuctionId' => $privateAuctionId, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('updateproposal', array($params));
+    }
 }

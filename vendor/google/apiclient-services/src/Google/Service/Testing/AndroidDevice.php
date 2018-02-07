@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Testing_AndroidDevice extends Google_Model
-{
-  public $androidModelId;
-  public $androidVersionId;
-  public $locale;
-  public $orientation;
+class Google_Service_Testing_AndroidDevice extends Google_Model {
+    public $androidModelId;
+    public $androidVersionId;
+    public $locale;
+    public $orientation;
 
-  public function setAndroidModelId($androidModelId)
-  {
-    $this->androidModelId = $androidModelId;
-  }
-  public function getAndroidModelId()
-  {
-    return $this->androidModelId;
-  }
-  public function setAndroidVersionId($androidVersionId)
-  {
-    $this->androidVersionId = $androidVersionId;
-  }
-  public function getAndroidVersionId()
-  {
-    return $this->androidVersionId;
-  }
-  public function setLocale($locale)
-  {
-    $this->locale = $locale;
-  }
-  public function getLocale()
-  {
-    return $this->locale;
-  }
-  public function setOrientation($orientation)
-  {
-    $this->orientation = $orientation;
-  }
-  public function getOrientation()
-  {
-    return $this->orientation;
-  }
+    public function setAndroidModelId($androidModelId) {
+        $this->androidModelId = $androidModelId;
+    }
+
+    public function getAndroidModelId() {
+        return $this->androidModelId;
+    }
+
+    public function setAndroidVersionId($androidVersionId) {
+        $this->androidVersionId = $androidVersionId;
+    }
+
+    public function getAndroidVersionId() {
+        return $this->androidVersionId;
+    }
+
+    public function setLocale($locale) {
+        $this->locale = $locale;
+    }
+
+    public function getLocale() {
+        return $this->locale;
+    }
+
+    public function setOrientation($orientation) {
+        $this->orientation = $orientation;
+    }
+
+    public function getOrientation() {
+        return $this->orientation;
+    }
 }

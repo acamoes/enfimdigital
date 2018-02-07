@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_DeliveryControlFrequencyCap extends Google_Model
-{
-  public $maxImpressions;
-  public $numTimeUnits;
-  public $timeUnitType;
+class Google_Service_AdExchangeBuyer_DeliveryControlFrequencyCap extends Google_Model {
+    public $maxImpressions;
+    public $numTimeUnits;
+    public $timeUnitType;
 
-  public function setMaxImpressions($maxImpressions)
-  {
-    $this->maxImpressions = $maxImpressions;
-  }
-  public function getMaxImpressions()
-  {
-    return $this->maxImpressions;
-  }
-  public function setNumTimeUnits($numTimeUnits)
-  {
-    $this->numTimeUnits = $numTimeUnits;
-  }
-  public function getNumTimeUnits()
-  {
-    return $this->numTimeUnits;
-  }
-  public function setTimeUnitType($timeUnitType)
-  {
-    $this->timeUnitType = $timeUnitType;
-  }
-  public function getTimeUnitType()
-  {
-    return $this->timeUnitType;
-  }
+    public function setMaxImpressions($maxImpressions) {
+        $this->maxImpressions = $maxImpressions;
+    }
+
+    public function getMaxImpressions() {
+        return $this->maxImpressions;
+    }
+
+    public function setNumTimeUnits($numTimeUnits) {
+        $this->numTimeUnits = $numTimeUnits;
+    }
+
+    public function getNumTimeUnits() {
+        return $this->numTimeUnits;
+    }
+
+    public function setTimeUnitType($timeUnitType) {
+        $this->timeUnitType = $timeUnitType;
+    }
+
+    public function getTimeUnitType() {
+        return $this->timeUnitType;
+    }
 }

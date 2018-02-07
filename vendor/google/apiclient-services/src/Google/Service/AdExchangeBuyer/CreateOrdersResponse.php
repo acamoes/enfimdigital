@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_CreateOrdersResponse extends Google_Collection
-{
-  protected $collection_key = 'proposals';
-  protected $proposalsType = 'Google_Service_AdExchangeBuyer_Proposal';
-  protected $proposalsDataType = 'array';
+class Google_Service_AdExchangeBuyer_CreateOrdersResponse extends Google_Collection {
+    protected $collection_key    = 'proposals';
+    protected $proposalsType     = 'Google_Service_AdExchangeBuyer_Proposal';
+    protected $proposalsDataType = 'array';
 
-  /**
-   * @param Google_Service_AdExchangeBuyer_Proposal
-   */
-  public function setProposals($proposals)
-  {
-    $this->proposals = $proposals;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyer_Proposal
-   */
-  public function getProposals()
-  {
-    return $this->proposals;
-  }
+    /**
+     * @param Google_Service_AdExchangeBuyer_Proposal
+     */
+    public function setProposals($proposals) {
+        $this->proposals = $proposals;
+    }
+
+    /**
+     * @return Google_Service_AdExchangeBuyer_Proposal
+     */
+    public function getProposals() {
+        return $this->proposals;
+    }
 }

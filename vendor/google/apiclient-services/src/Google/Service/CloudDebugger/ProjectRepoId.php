@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudDebugger_ProjectRepoId extends Google_Model
-{
-  public $projectId;
-  public $repoName;
+class Google_Service_CloudDebugger_ProjectRepoId extends Google_Model {
+    public $projectId;
+    public $repoName;
 
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
-  }
-  public function setRepoName($repoName)
-  {
-    $this->repoName = $repoName;
-  }
-  public function getRepoName()
-  {
-    return $this->repoName;
-  }
+    public function setProjectId($projectId) {
+        $this->projectId = $projectId;
+    }
+
+    public function getProjectId() {
+        return $this->projectId;
+    }
+
+    public function setRepoName($repoName) {
+        $this->repoName = $repoName;
+    }
+
+    public function getRepoName() {
+        return $this->repoName;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageImage extends Google_Model
-{
-  public $imageUri;
+class Google_Service_Dialogflow_IntentMessageImage extends Google_Model {
+    public $imageUri;
 
-  public function setImageUri($imageUri)
-  {
-    $this->imageUri = $imageUri;
-  }
-  public function getImageUri()
-  {
-    return $this->imageUri;
-  }
+    public function setImageUri($imageUri) {
+        $this->imageUri = $imageUri;
+    }
+
+    public function getImageUri() {
+        return $this->imageUri;
+    }
 }

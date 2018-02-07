@@ -15,61 +15,59 @@
  * the License.
  */
 
-class Google_Service_Iam_Permission extends Google_Model
-{
-  public $customRolesSupportLevel;
-  public $description;
-  public $name;
-  public $onlyInPredefinedRoles;
-  public $stage;
-  public $title;
+class Google_Service_Iam_Permission extends Google_Model {
+    public $customRolesSupportLevel;
+    public $description;
+    public $name;
+    public $onlyInPredefinedRoles;
+    public $stage;
+    public $title;
 
-  public function setCustomRolesSupportLevel($customRolesSupportLevel)
-  {
-    $this->customRolesSupportLevel = $customRolesSupportLevel;
-  }
-  public function getCustomRolesSupportLevel()
-  {
-    return $this->customRolesSupportLevel;
-  }
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setOnlyInPredefinedRoles($onlyInPredefinedRoles)
-  {
-    $this->onlyInPredefinedRoles = $onlyInPredefinedRoles;
-  }
-  public function getOnlyInPredefinedRoles()
-  {
-    return $this->onlyInPredefinedRoles;
-  }
-  public function setStage($stage)
-  {
-    $this->stage = $stage;
-  }
-  public function getStage()
-  {
-    return $this->stage;
-  }
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  public function getTitle()
-  {
-    return $this->title;
-  }
+    public function setCustomRolesSupportLevel($customRolesSupportLevel) {
+        $this->customRolesSupportLevel = $customRolesSupportLevel;
+    }
+
+    public function getCustomRolesSupportLevel() {
+        return $this->customRolesSupportLevel;
+    }
+
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setOnlyInPredefinedRoles($onlyInPredefinedRoles) {
+        $this->onlyInPredefinedRoles = $onlyInPredefinedRoles;
+    }
+
+    public function getOnlyInPredefinedRoles() {
+        return $this->onlyInPredefinedRoles;
+    }
+
+    public function setStage($stage) {
+        $this->stage = $stage;
+    }
+
+    public function getStage() {
+        return $this->stage;
+    }
+
+    public function setTitle($title) {
+        $this->title = $title;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
 }

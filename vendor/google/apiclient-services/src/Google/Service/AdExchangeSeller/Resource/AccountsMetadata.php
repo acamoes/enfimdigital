@@ -23,6 +23,6 @@
  *   $metadata = $adexchangesellerService->metadata;
  *  </code>
  */
-class Google_Service_AdExchangeSeller_Resource_AccountsMetadata extends Google_Service_Resource
-{
+class Google_Service_AdExchangeSeller_Resource_AccountsMetadata extends Google_Service_Resource {
+
 }

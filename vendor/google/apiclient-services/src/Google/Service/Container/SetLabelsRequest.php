@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Container_SetLabelsRequest extends Google_Model
-{
-  public $labelFingerprint;
-  public $resourceLabels;
+class Google_Service_Container_SetLabelsRequest extends Google_Model {
+    public $labelFingerprint;
+    public $resourceLabels;
 
-  public function setLabelFingerprint($labelFingerprint)
-  {
-    $this->labelFingerprint = $labelFingerprint;
-  }
-  public function getLabelFingerprint()
-  {
-    return $this->labelFingerprint;
-  }
-  public function setResourceLabels($resourceLabels)
-  {
-    $this->resourceLabels = $resourceLabels;
-  }
-  public function getResourceLabels()
-  {
-    return $this->resourceLabels;
-  }
+    public function setLabelFingerprint($labelFingerprint) {
+        $this->labelFingerprint = $labelFingerprint;
+    }
+
+    public function getLabelFingerprint() {
+        return $this->labelFingerprint;
+    }
+
+    public function setResourceLabels($resourceLabels) {
+        $this->resourceLabels = $resourceLabels;
+    }
+
+    public function getResourceLabels() {
+        return $this->resourceLabels;
+    }
 }

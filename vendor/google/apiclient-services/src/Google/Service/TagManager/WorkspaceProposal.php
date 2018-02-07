@@ -15,83 +15,81 @@
  * the License.
  */
 
-class Google_Service_TagManager_WorkspaceProposal extends Google_Collection
-{
-  protected $collection_key = 'reviewers';
-  protected $authorsType = 'Google_Service_TagManager_WorkspaceProposalUser';
-  protected $authorsDataType = 'array';
-  public $fingerprint;
-  protected $historyType = 'Google_Service_TagManager_WorkspaceProposalHistory';
-  protected $historyDataType = 'array';
-  public $path;
-  protected $reviewersType = 'Google_Service_TagManager_WorkspaceProposalUser';
-  protected $reviewersDataType = 'array';
-  public $status;
+class Google_Service_TagManager_WorkspaceProposal extends Google_Collection {
+    protected $collection_key    = 'reviewers';
+    protected $authorsType       = 'Google_Service_TagManager_WorkspaceProposalUser';
+    protected $authorsDataType   = 'array';
+    public $fingerprint;
+    protected $historyType       = 'Google_Service_TagManager_WorkspaceProposalHistory';
+    protected $historyDataType   = 'array';
+    public $path;
+    protected $reviewersType     = 'Google_Service_TagManager_WorkspaceProposalUser';
+    protected $reviewersDataType = 'array';
+    public $status;
 
-  /**
-   * @param Google_Service_TagManager_WorkspaceProposalUser
-   */
-  public function setAuthors($authors)
-  {
-    $this->authors = $authors;
-  }
-  /**
-   * @return Google_Service_TagManager_WorkspaceProposalUser
-   */
-  public function getAuthors()
-  {
-    return $this->authors;
-  }
-  public function setFingerprint($fingerprint)
-  {
-    $this->fingerprint = $fingerprint;
-  }
-  public function getFingerprint()
-  {
-    return $this->fingerprint;
-  }
-  /**
-   * @param Google_Service_TagManager_WorkspaceProposalHistory
-   */
-  public function setHistory($history)
-  {
-    $this->history = $history;
-  }
-  /**
-   * @return Google_Service_TagManager_WorkspaceProposalHistory
-   */
-  public function getHistory()
-  {
-    return $this->history;
-  }
-  public function setPath($path)
-  {
-    $this->path = $path;
-  }
-  public function getPath()
-  {
-    return $this->path;
-  }
-  /**
-   * @param Google_Service_TagManager_WorkspaceProposalUser
-   */
-  public function setReviewers($reviewers)
-  {
-    $this->reviewers = $reviewers;
-  }
-  /**
-   * @return Google_Service_TagManager_WorkspaceProposalUser
-   */
-  public function getReviewers()
-  {
-    return $this->reviewers;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
+    /**
+     * @param Google_Service_TagManager_WorkspaceProposalUser
+     */
+    public function setAuthors($authors) {
+        $this->authors = $authors;
+    }
+
+    /**
+     * @return Google_Service_TagManager_WorkspaceProposalUser
+     */
+    public function getAuthors() {
+        return $this->authors;
+    }
+
+    public function setFingerprint($fingerprint) {
+        $this->fingerprint = $fingerprint;
+    }
+
+    public function getFingerprint() {
+        return $this->fingerprint;
+    }
+
+    /**
+     * @param Google_Service_TagManager_WorkspaceProposalHistory
+     */
+    public function setHistory($history) {
+        $this->history = $history;
+    }
+
+    /**
+     * @return Google_Service_TagManager_WorkspaceProposalHistory
+     */
+    public function getHistory() {
+        return $this->history;
+    }
+
+    public function setPath($path) {
+        $this->path = $path;
+    }
+
+    public function getPath() {
+        return $this->path;
+    }
+
+    /**
+     * @param Google_Service_TagManager_WorkspaceProposalUser
+     */
+    public function setReviewers($reviewers) {
+        $this->reviewers = $reviewers;
+    }
+
+    /**
+     * @return Google_Service_TagManager_WorkspaceProposalUser
+     */
+    public function getReviewers() {
+        return $this->reviewers;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Appengine_ManualScaling extends Google_Model
-{
-  public $instances;
+class Google_Service_Appengine_ManualScaling extends Google_Model {
+    public $instances;
 
-  public function setInstances($instances)
-  {
-    $this->instances = $instances;
-  }
-  public function getInstances()
-  {
-    return $this->instances;
-  }
+    public function setInstances($instances) {
+        $this->instances = $instances;
+    }
+
+    public function getInstances() {
+        return $this->instances;
+    }
 }

@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_FirebaseRules_Ruleset extends Google_Model
-{
-  public $createTime;
-  public $name;
-  protected $sourceType = 'Google_Service_FirebaseRules_Source';
-  protected $sourceDataType = '';
+class Google_Service_FirebaseRules_Ruleset extends Google_Model {
+    public $createTime;
+    public $name;
+    protected $sourceType     = 'Google_Service_FirebaseRules_Source';
+    protected $sourceDataType = '';
 
-  public function setCreateTime($createTime)
-  {
-    $this->createTime = $createTime;
-  }
-  public function getCreateTime()
-  {
-    return $this->createTime;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  /**
-   * @param Google_Service_FirebaseRules_Source
-   */
-  public function setSource(Google_Service_FirebaseRules_Source $source)
-  {
-    $this->source = $source;
-  }
-  /**
-   * @return Google_Service_FirebaseRules_Source
-   */
-  public function getSource()
-  {
-    return $this->source;
-  }
+    public function setCreateTime($createTime) {
+        $this->createTime = $createTime;
+    }
+
+    public function getCreateTime() {
+        return $this->createTime;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * @param Google_Service_FirebaseRules_Source
+     */
+    public function setSource(Google_Service_FirebaseRules_Source $source) {
+        $this->source = $source;
+    }
+
+    /**
+     * @return Google_Service_FirebaseRules_Source
+     */
+    public function getSource() {
+        return $this->source;
+    }
 }

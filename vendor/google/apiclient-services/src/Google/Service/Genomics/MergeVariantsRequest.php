@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Genomics_MergeVariantsRequest extends Google_Collection
-{
-  protected $collection_key = 'variants';
-  public $infoMergeConfig;
-  public $variantSetId;
-  protected $variantsType = 'Google_Service_Genomics_Variant';
-  protected $variantsDataType = 'array';
+class Google_Service_Genomics_MergeVariantsRequest extends Google_Collection {
+    protected $collection_key   = 'variants';
+    public $infoMergeConfig;
+    public $variantSetId;
+    protected $variantsType     = 'Google_Service_Genomics_Variant';
+    protected $variantsDataType = 'array';
 
-  public function setInfoMergeConfig($infoMergeConfig)
-  {
-    $this->infoMergeConfig = $infoMergeConfig;
-  }
-  public function getInfoMergeConfig()
-  {
-    return $this->infoMergeConfig;
-  }
-  public function setVariantSetId($variantSetId)
-  {
-    $this->variantSetId = $variantSetId;
-  }
-  public function getVariantSetId()
-  {
-    return $this->variantSetId;
-  }
-  /**
-   * @param Google_Service_Genomics_Variant
-   */
-  public function setVariants($variants)
-  {
-    $this->variants = $variants;
-  }
-  /**
-   * @return Google_Service_Genomics_Variant
-   */
-  public function getVariants()
-  {
-    return $this->variants;
-  }
+    public function setInfoMergeConfig($infoMergeConfig) {
+        $this->infoMergeConfig = $infoMergeConfig;
+    }
+
+    public function getInfoMergeConfig() {
+        return $this->infoMergeConfig;
+    }
+
+    public function setVariantSetId($variantSetId) {
+        $this->variantSetId = $variantSetId;
+    }
+
+    public function getVariantSetId() {
+        return $this->variantSetId;
+    }
+
+    /**
+     * @param Google_Service_Genomics_Variant
+     */
+    public function setVariants($variants) {
+        $this->variants = $variants;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Variant
+     */
+    public function getVariants() {
+        return $this->variants;
+    }
 }

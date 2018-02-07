@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_TagManager_WorkspaceProposalUser extends Google_Model
-{
-  public $gaiaId;
-  public $type;
+class Google_Service_TagManager_WorkspaceProposalUser extends Google_Model {
+    public $gaiaId;
+    public $type;
 
-  public function setGaiaId($gaiaId)
-  {
-    $this->gaiaId = $gaiaId;
-  }
-  public function getGaiaId()
-  {
-    return $this->gaiaId;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setGaiaId($gaiaId) {
+        $this->gaiaId = $gaiaId;
+    }
+
+    public function getGaiaId() {
+        return $this->gaiaId;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

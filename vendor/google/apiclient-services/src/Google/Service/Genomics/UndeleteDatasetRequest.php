@@ -15,6 +15,6 @@
  * the License.
  */
 
-class Google_Service_Genomics_UndeleteDatasetRequest extends Google_Model
-{
+class Google_Service_Genomics_UndeleteDatasetRequest extends Google_Model {
+
 }

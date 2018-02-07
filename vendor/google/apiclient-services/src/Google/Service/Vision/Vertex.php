@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Vision_Vertex extends Google_Model
-{
-  public $x;
-  public $y;
+class Google_Service_Vision_Vertex extends Google_Model {
+    public $x;
+    public $y;
 
-  public function setX($x)
-  {
-    $this->x = $x;
-  }
-  public function getX()
-  {
-    return $this->x;
-  }
-  public function setY($y)
-  {
-    $this->y = $y;
-  }
-  public function getY()
-  {
-    return $this->y;
-  }
+    public function setX($x) {
+        $this->x = $x;
+    }
+
+    public function getX() {
+        return $this->x;
+    }
+
+    public function setY($y) {
+        $this->y = $y;
+    }
+
+    public function getY() {
+        return $this->y;
+    }
 }

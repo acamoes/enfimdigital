@@ -23,6 +23,6 @@
  *   $management = $analyticsService->management;
  *  </code>
  */
-class Google_Service_Analytics_Resource_Management extends Google_Service_Resource
-{
+class Google_Service_Analytics_Resource_Management extends Google_Service_Resource {
+
 }

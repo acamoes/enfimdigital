@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_TagManager_SetupTag extends Google_Model
-{
-  public $stopOnSetupFailure;
-  public $tagName;
+class Google_Service_TagManager_SetupTag extends Google_Model {
+    public $stopOnSetupFailure;
+    public $tagName;
 
-  public function setStopOnSetupFailure($stopOnSetupFailure)
-  {
-    $this->stopOnSetupFailure = $stopOnSetupFailure;
-  }
-  public function getStopOnSetupFailure()
-  {
-    return $this->stopOnSetupFailure;
-  }
-  public function setTagName($tagName)
-  {
-    $this->tagName = $tagName;
-  }
-  public function getTagName()
-  {
-    return $this->tagName;
-  }
+    public function setStopOnSetupFailure($stopOnSetupFailure) {
+        $this->stopOnSetupFailure = $stopOnSetupFailure;
+    }
+
+    public function getStopOnSetupFailure() {
+        return $this->stopOnSetupFailure;
+    }
+
+    public function setTagName($tagName) {
+        $this->tagName = $tagName;
+    }
+
+    public function getTagName() {
+        return $this->tagName;
+    }
 }

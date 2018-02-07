@@ -23,6 +23,6 @@
  *   $firewall = $appengineService->firewall;
  *  </code>
  */
-class Google_Service_Appengine_Resource_AppsFirewall extends Google_Service_Resource
-{
+class Google_Service_Appengine_Resource_AppsFirewall extends Google_Service_Resource {
+
 }

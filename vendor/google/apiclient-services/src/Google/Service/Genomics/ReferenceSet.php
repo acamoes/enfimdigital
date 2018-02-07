@@ -15,80 +15,78 @@
  * the License.
  */
 
-class Google_Service_Genomics_ReferenceSet extends Google_Collection
-{
-  protected $collection_key = 'sourceAccessions';
-  public $assemblyId;
-  public $description;
-  public $id;
-  public $md5checksum;
-  public $ncbiTaxonId;
-  public $referenceIds;
-  public $sourceAccessions;
-  public $sourceUri;
+class Google_Service_Genomics_ReferenceSet extends Google_Collection {
+    protected $collection_key = 'sourceAccessions';
+    public $assemblyId;
+    public $description;
+    public $id;
+    public $md5checksum;
+    public $ncbiTaxonId;
+    public $referenceIds;
+    public $sourceAccessions;
+    public $sourceUri;
 
-  public function setAssemblyId($assemblyId)
-  {
-    $this->assemblyId = $assemblyId;
-  }
-  public function getAssemblyId()
-  {
-    return $this->assemblyId;
-  }
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setMd5checksum($md5checksum)
-  {
-    $this->md5checksum = $md5checksum;
-  }
-  public function getMd5checksum()
-  {
-    return $this->md5checksum;
-  }
-  public function setNcbiTaxonId($ncbiTaxonId)
-  {
-    $this->ncbiTaxonId = $ncbiTaxonId;
-  }
-  public function getNcbiTaxonId()
-  {
-    return $this->ncbiTaxonId;
-  }
-  public function setReferenceIds($referenceIds)
-  {
-    $this->referenceIds = $referenceIds;
-  }
-  public function getReferenceIds()
-  {
-    return $this->referenceIds;
-  }
-  public function setSourceAccessions($sourceAccessions)
-  {
-    $this->sourceAccessions = $sourceAccessions;
-  }
-  public function getSourceAccessions()
-  {
-    return $this->sourceAccessions;
-  }
-  public function setSourceUri($sourceUri)
-  {
-    $this->sourceUri = $sourceUri;
-  }
-  public function getSourceUri()
-  {
-    return $this->sourceUri;
-  }
+    public function setAssemblyId($assemblyId) {
+        $this->assemblyId = $assemblyId;
+    }
+
+    public function getAssemblyId() {
+        return $this->assemblyId;
+    }
+
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setMd5checksum($md5checksum) {
+        $this->md5checksum = $md5checksum;
+    }
+
+    public function getMd5checksum() {
+        return $this->md5checksum;
+    }
+
+    public function setNcbiTaxonId($ncbiTaxonId) {
+        $this->ncbiTaxonId = $ncbiTaxonId;
+    }
+
+    public function getNcbiTaxonId() {
+        return $this->ncbiTaxonId;
+    }
+
+    public function setReferenceIds($referenceIds) {
+        $this->referenceIds = $referenceIds;
+    }
+
+    public function getReferenceIds() {
+        return $this->referenceIds;
+    }
+
+    public function setSourceAccessions($sourceAccessions) {
+        $this->sourceAccessions = $sourceAccessions;
+    }
+
+    public function getSourceAccessions() {
+        return $this->sourceAccessions;
+    }
+
+    public function setSourceUri($sourceUri) {
+        $this->sourceUri = $sourceUri;
+    }
+
+    public function getSourceUri() {
+        return $this->sourceUri;
+    }
 }

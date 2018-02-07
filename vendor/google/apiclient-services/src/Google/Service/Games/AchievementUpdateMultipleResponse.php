@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Games_AchievementUpdateMultipleResponse extends Google_Collection
-{
-  protected $collection_key = 'updatedAchievements';
-  public $kind;
-  protected $updatedAchievementsType = 'Google_Service_Games_AchievementUpdateResponse';
-  protected $updatedAchievementsDataType = 'array';
+class Google_Service_Games_AchievementUpdateMultipleResponse extends Google_Collection {
+    protected $collection_key              = 'updatedAchievements';
+    public $kind;
+    protected $updatedAchievementsType     = 'Google_Service_Games_AchievementUpdateResponse';
+    protected $updatedAchievementsDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_Games_AchievementUpdateResponse
-   */
-  public function setUpdatedAchievements($updatedAchievements)
-  {
-    $this->updatedAchievements = $updatedAchievements;
-  }
-  /**
-   * @return Google_Service_Games_AchievementUpdateResponse
-   */
-  public function getUpdatedAchievements()
-  {
-    return $this->updatedAchievements;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_Games_AchievementUpdateResponse
+     */
+    public function setUpdatedAchievements($updatedAchievements) {
+        $this->updatedAchievements = $updatedAchievements;
+    }
+
+    /**
+     * @return Google_Service_Games_AchievementUpdateResponse
+     */
+    public function getUpdatedAchievements() {
+        return $this->updatedAchievements;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ApprovalUrlInfo extends Google_Model
-{
-  public $approvalUrl;
-  public $kind;
+class Google_Service_AndroidEnterprise_ApprovalUrlInfo extends Google_Model {
+    public $approvalUrl;
+    public $kind;
 
-  public function setApprovalUrl($approvalUrl)
-  {
-    $this->approvalUrl = $approvalUrl;
-  }
-  public function getApprovalUrl()
-  {
-    return $this->approvalUrl;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setApprovalUrl($approvalUrl) {
+        $this->approvalUrl = $approvalUrl;
+    }
+
+    public function getApprovalUrl() {
+        return $this->approvalUrl;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

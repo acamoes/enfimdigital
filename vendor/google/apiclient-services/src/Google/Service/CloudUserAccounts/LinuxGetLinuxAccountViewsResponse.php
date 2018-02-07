@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_CloudUserAccounts_LinuxGetLinuxAccountViewsResponse extends Google_Model
-{
-  protected $resourceType = 'Google_Service_CloudUserAccounts_LinuxAccountViews';
-  protected $resourceDataType = '';
+class Google_Service_CloudUserAccounts_LinuxGetLinuxAccountViewsResponse extends Google_Model {
+    protected $resourceType     = 'Google_Service_CloudUserAccounts_LinuxAccountViews';
+    protected $resourceDataType = '';
 
-  /**
-   * @param Google_Service_CloudUserAccounts_LinuxAccountViews
-   */
-  public function setResource(Google_Service_CloudUserAccounts_LinuxAccountViews $resource)
-  {
-    $this->resource = $resource;
-  }
-  /**
-   * @return Google_Service_CloudUserAccounts_LinuxAccountViews
-   */
-  public function getResource()
-  {
-    return $this->resource;
-  }
+    /**
+     * @param Google_Service_CloudUserAccounts_LinuxAccountViews
+     */
+    public function setResource(Google_Service_CloudUserAccounts_LinuxAccountViews $resource) {
+        $this->resource = $resource;
+    }
+
+    /**
+     * @return Google_Service_CloudUserAccounts_LinuxAccountViews
+     */
+    public function getResource() {
+        return $this->resource;
+    }
 }

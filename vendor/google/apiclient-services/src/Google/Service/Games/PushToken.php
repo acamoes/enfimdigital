@@ -15,50 +15,48 @@
  * the License.
  */
 
-class Google_Service_Games_PushToken extends Google_Model
-{
-  public $clientRevision;
-  protected $idType = 'Google_Service_Games_PushTokenId';
-  protected $idDataType = '';
-  public $kind;
-  public $language;
+class Google_Service_Games_PushToken extends Google_Model {
+    public $clientRevision;
+    protected $idType     = 'Google_Service_Games_PushTokenId';
+    protected $idDataType = '';
+    public $kind;
+    public $language;
 
-  public function setClientRevision($clientRevision)
-  {
-    $this->clientRevision = $clientRevision;
-  }
-  public function getClientRevision()
-  {
-    return $this->clientRevision;
-  }
-  /**
-   * @param Google_Service_Games_PushTokenId
-   */
-  public function setId(Google_Service_Games_PushTokenId $id)
-  {
-    $this->id = $id;
-  }
-  /**
-   * @return Google_Service_Games_PushTokenId
-   */
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setLanguage($language)
-  {
-    $this->language = $language;
-  }
-  public function getLanguage()
-  {
-    return $this->language;
-  }
+    public function setClientRevision($clientRevision) {
+        $this->clientRevision = $clientRevision;
+    }
+
+    public function getClientRevision() {
+        return $this->clientRevision;
+    }
+
+    /**
+     * @param Google_Service_Games_PushTokenId
+     */
+    public function setId(Google_Service_Games_PushTokenId $id) {
+        $this->id = $id;
+    }
+
+    /**
+     * @return Google_Service_Games_PushTokenId
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setLanguage($language) {
+        $this->language = $language;
+    }
+
+    public function getLanguage() {
+        return $this->language;
+    }
 }

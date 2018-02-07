@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_ListAvailableOrgPolicyConstraintsResponse extends Google_Collection
-{
-  protected $collection_key = 'constraints';
-  protected $constraintsType = 'Google_Service_CloudResourceManager_Constraint';
-  protected $constraintsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_CloudResourceManager_ListAvailableOrgPolicyConstraintsResponse extends Google_Collection {
+    protected $collection_key      = 'constraints';
+    protected $constraintsType     = 'Google_Service_CloudResourceManager_Constraint';
+    protected $constraintsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_CloudResourceManager_Constraint
-   */
-  public function setConstraints($constraints)
-  {
-    $this->constraints = $constraints;
-  }
-  /**
-   * @return Google_Service_CloudResourceManager_Constraint
-   */
-  public function getConstraints()
-  {
-    return $this->constraints;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_CloudResourceManager_Constraint
+     */
+    public function setConstraints($constraints) {
+        $this->constraints = $constraints;
+    }
+
+    /**
+     * @return Google_Service_CloudResourceManager_Constraint
+     */
+    public function getConstraints() {
+        return $this->constraints;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

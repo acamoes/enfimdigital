@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_People_PersonResponse extends Google_Model
-{
-  public $httpStatusCode;
-  protected $personType = 'Google_Service_People_Person';
-  protected $personDataType = '';
-  public $requestedResourceName;
+class Google_Service_People_PersonResponse extends Google_Model {
+    public $httpStatusCode;
+    protected $personType     = 'Google_Service_People_Person';
+    protected $personDataType = '';
+    public $requestedResourceName;
 
-  public function setHttpStatusCode($httpStatusCode)
-  {
-    $this->httpStatusCode = $httpStatusCode;
-  }
-  public function getHttpStatusCode()
-  {
-    return $this->httpStatusCode;
-  }
-  public function setPerson(Google_Service_People_Person $person)
-  {
-    $this->person = $person;
-  }
-  public function getPerson()
-  {
-    return $this->person;
-  }
-  public function setRequestedResourceName($requestedResourceName)
-  {
-    $this->requestedResourceName = $requestedResourceName;
-  }
-  public function getRequestedResourceName()
-  {
-    return $this->requestedResourceName;
-  }
+    public function setHttpStatusCode($httpStatusCode) {
+        $this->httpStatusCode = $httpStatusCode;
+    }
+
+    public function getHttpStatusCode() {
+        return $this->httpStatusCode;
+    }
+
+    public function setPerson(Google_Service_People_Person $person) {
+        $this->person = $person;
+    }
+
+    public function getPerson() {
+        return $this->person;
+    }
+
+    public function setRequestedResourceName($requestedResourceName) {
+        $this->requestedResourceName = $requestedResourceName;
+    }
+
+    public function getRequestedResourceName() {
+        return $this->requestedResourceName;
+    }
 }

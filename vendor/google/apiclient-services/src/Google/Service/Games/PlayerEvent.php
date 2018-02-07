@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_Games_PlayerEvent extends Google_Model
-{
-  public $definitionId;
-  public $formattedNumEvents;
-  public $kind;
-  public $numEvents;
-  public $playerId;
+class Google_Service_Games_PlayerEvent extends Google_Model {
+    public $definitionId;
+    public $formattedNumEvents;
+    public $kind;
+    public $numEvents;
+    public $playerId;
 
-  public function setDefinitionId($definitionId)
-  {
-    $this->definitionId = $definitionId;
-  }
-  public function getDefinitionId()
-  {
-    return $this->definitionId;
-  }
-  public function setFormattedNumEvents($formattedNumEvents)
-  {
-    $this->formattedNumEvents = $formattedNumEvents;
-  }
-  public function getFormattedNumEvents()
-  {
-    return $this->formattedNumEvents;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNumEvents($numEvents)
-  {
-    $this->numEvents = $numEvents;
-  }
-  public function getNumEvents()
-  {
-    return $this->numEvents;
-  }
-  public function setPlayerId($playerId)
-  {
-    $this->playerId = $playerId;
-  }
-  public function getPlayerId()
-  {
-    return $this->playerId;
-  }
+    public function setDefinitionId($definitionId) {
+        $this->definitionId = $definitionId;
+    }
+
+    public function getDefinitionId() {
+        return $this->definitionId;
+    }
+
+    public function setFormattedNumEvents($formattedNumEvents) {
+        $this->formattedNumEvents = $formattedNumEvents;
+    }
+
+    public function getFormattedNumEvents() {
+        return $this->formattedNumEvents;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNumEvents($numEvents) {
+        $this->numEvents = $numEvents;
+    }
+
+    public function getNumEvents() {
+        return $this->numEvents;
+    }
+
+    public function setPlayerId($playerId) {
+        $this->playerId = $playerId;
+    }
+
+    public function getPlayerId() {
+        return $this->playerId;
+    }
 }

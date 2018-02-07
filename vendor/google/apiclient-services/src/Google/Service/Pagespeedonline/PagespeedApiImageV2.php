@@ -15,72 +15,70 @@
  * the License.
  */
 
-class Google_Service_Pagespeedonline_PagespeedApiImageV2 extends Google_Model
-{
-  protected $internal_gapi_mappings = array(
+class Google_Service_Pagespeedonline_PagespeedApiImageV2 extends Google_Model {
+    protected $internal_gapi_mappings = array(
         "mimeType" => "mime_type",
         "pageRect" => "page_rect",
-  );
-  public $data;
-  public $height;
-  public $key;
-  public $mimeType;
-  protected $pageRectType = 'Google_Service_Pagespeedonline_PagespeedApiImageV2PageRect';
-  protected $pageRectDataType = '';
-  public $width;
+    );
+    public $data;
+    public $height;
+    public $key;
+    public $mimeType;
+    protected $pageRectType           = 'Google_Service_Pagespeedonline_PagespeedApiImageV2PageRect';
+    protected $pageRectDataType       = '';
+    public $width;
 
-  public function setData($data)
-  {
-    $this->data = $data;
-  }
-  public function getData()
-  {
-    return $this->data;
-  }
-  public function setHeight($height)
-  {
-    $this->height = $height;
-  }
-  public function getHeight()
-  {
-    return $this->height;
-  }
-  public function setKey($key)
-  {
-    $this->key = $key;
-  }
-  public function getKey()
-  {
-    return $this->key;
-  }
-  public function setMimeType($mimeType)
-  {
-    $this->mimeType = $mimeType;
-  }
-  public function getMimeType()
-  {
-    return $this->mimeType;
-  }
-  /**
-   * @param Google_Service_Pagespeedonline_PagespeedApiImageV2PageRect
-   */
-  public function setPageRect(Google_Service_Pagespeedonline_PagespeedApiImageV2PageRect $pageRect)
-  {
-    $this->pageRect = $pageRect;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_PagespeedApiImageV2PageRect
-   */
-  public function getPageRect()
-  {
-    return $this->pageRect;
-  }
-  public function setWidth($width)
-  {
-    $this->width = $width;
-  }
-  public function getWidth()
-  {
-    return $this->width;
-  }
+    public function setData($data) {
+        $this->data = $data;
+    }
+
+    public function getData() {
+        return $this->data;
+    }
+
+    public function setHeight($height) {
+        $this->height = $height;
+    }
+
+    public function getHeight() {
+        return $this->height;
+    }
+
+    public function setKey($key) {
+        $this->key = $key;
+    }
+
+    public function getKey() {
+        return $this->key;
+    }
+
+    public function setMimeType($mimeType) {
+        $this->mimeType = $mimeType;
+    }
+
+    public function getMimeType() {
+        return $this->mimeType;
+    }
+
+    /**
+     * @param Google_Service_Pagespeedonline_PagespeedApiImageV2PageRect
+     */
+    public function setPageRect(Google_Service_Pagespeedonline_PagespeedApiImageV2PageRect $pageRect) {
+        $this->pageRect = $pageRect;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_PagespeedApiImageV2PageRect
+     */
+    public function getPageRect() {
+        return $this->pageRect;
+    }
+
+    public function setWidth($width) {
+        $this->width = $width;
+    }
+
+    public function getWidth() {
+        return $this->width;
+    }
 }

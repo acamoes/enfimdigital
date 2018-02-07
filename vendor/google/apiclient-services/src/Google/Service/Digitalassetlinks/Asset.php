@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_Digitalassetlinks_Asset extends Google_Model
-{
-  protected $androidAppType = 'Google_Service_Digitalassetlinks_AndroidAppAsset';
-  protected $androidAppDataType = '';
-  protected $webType = 'Google_Service_Digitalassetlinks_WebAsset';
-  protected $webDataType = '';
+class Google_Service_Digitalassetlinks_Asset extends Google_Model {
+    protected $androidAppType     = 'Google_Service_Digitalassetlinks_AndroidAppAsset';
+    protected $androidAppDataType = '';
+    protected $webType            = 'Google_Service_Digitalassetlinks_WebAsset';
+    protected $webDataType        = '';
 
-  /**
-   * @param Google_Service_Digitalassetlinks_AndroidAppAsset
-   */
-  public function setAndroidApp(Google_Service_Digitalassetlinks_AndroidAppAsset $androidApp)
-  {
-    $this->androidApp = $androidApp;
-  }
-  /**
-   * @return Google_Service_Digitalassetlinks_AndroidAppAsset
-   */
-  public function getAndroidApp()
-  {
-    return $this->androidApp;
-  }
-  /**
-   * @param Google_Service_Digitalassetlinks_WebAsset
-   */
-  public function setWeb(Google_Service_Digitalassetlinks_WebAsset $web)
-  {
-    $this->web = $web;
-  }
-  /**
-   * @return Google_Service_Digitalassetlinks_WebAsset
-   */
-  public function getWeb()
-  {
-    return $this->web;
-  }
+    /**
+     * @param Google_Service_Digitalassetlinks_AndroidAppAsset
+     */
+    public function setAndroidApp(Google_Service_Digitalassetlinks_AndroidAppAsset $androidApp) {
+        $this->androidApp = $androidApp;
+    }
+
+    /**
+     * @return Google_Service_Digitalassetlinks_AndroidAppAsset
+     */
+    public function getAndroidApp() {
+        return $this->androidApp;
+    }
+
+    /**
+     * @param Google_Service_Digitalassetlinks_WebAsset
+     */
+    public function setWeb(Google_Service_Digitalassetlinks_WebAsset $web) {
+        $this->web = $web;
+    }
+
+    /**
+     * @return Google_Service_Digitalassetlinks_WebAsset
+     */
+    public function getWeb() {
+        return $this->web;
+    }
 }

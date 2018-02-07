@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Classroom_CourseMaterialSet extends Google_Collection
-{
-  protected $collection_key = 'materials';
-  protected $materialsType = 'Google_Service_Classroom_CourseMaterial';
-  protected $materialsDataType = 'array';
-  public $title;
+class Google_Service_Classroom_CourseMaterialSet extends Google_Collection {
+    protected $collection_key    = 'materials';
+    protected $materialsType     = 'Google_Service_Classroom_CourseMaterial';
+    protected $materialsDataType = 'array';
+    public $title;
 
-  /**
-   * @param Google_Service_Classroom_CourseMaterial
-   */
-  public function setMaterials($materials)
-  {
-    $this->materials = $materials;
-  }
-  /**
-   * @return Google_Service_Classroom_CourseMaterial
-   */
-  public function getMaterials()
-  {
-    return $this->materials;
-  }
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  public function getTitle()
-  {
-    return $this->title;
-  }
+    /**
+     * @param Google_Service_Classroom_CourseMaterial
+     */
+    public function setMaterials($materials) {
+        $this->materials = $materials;
+    }
+
+    /**
+     * @return Google_Service_Classroom_CourseMaterial
+     */
+    public function getMaterials() {
+        return $this->materials;
+    }
+
+    public function setTitle($title) {
+        $this->title = $title;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
 }

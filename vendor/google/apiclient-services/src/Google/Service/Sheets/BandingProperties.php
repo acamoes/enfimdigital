@@ -15,71 +15,69 @@
  * the License.
  */
 
-class Google_Service_Sheets_BandingProperties extends Google_Model
-{
-  protected $firstBandColorType = 'Google_Service_Sheets_Color';
-  protected $firstBandColorDataType = '';
-  protected $footerColorType = 'Google_Service_Sheets_Color';
-  protected $footerColorDataType = '';
-  protected $headerColorType = 'Google_Service_Sheets_Color';
-  protected $headerColorDataType = '';
-  protected $secondBandColorType = 'Google_Service_Sheets_Color';
-  protected $secondBandColorDataType = '';
+class Google_Service_Sheets_BandingProperties extends Google_Model {
+    protected $firstBandColorType      = 'Google_Service_Sheets_Color';
+    protected $firstBandColorDataType  = '';
+    protected $footerColorType         = 'Google_Service_Sheets_Color';
+    protected $footerColorDataType     = '';
+    protected $headerColorType         = 'Google_Service_Sheets_Color';
+    protected $headerColorDataType     = '';
+    protected $secondBandColorType     = 'Google_Service_Sheets_Color';
+    protected $secondBandColorDataType = '';
 
-  /**
-   * @param Google_Service_Sheets_Color
-   */
-  public function setFirstBandColor(Google_Service_Sheets_Color $firstBandColor)
-  {
-    $this->firstBandColor = $firstBandColor;
-  }
-  /**
-   * @return Google_Service_Sheets_Color
-   */
-  public function getFirstBandColor()
-  {
-    return $this->firstBandColor;
-  }
-  /**
-   * @param Google_Service_Sheets_Color
-   */
-  public function setFooterColor(Google_Service_Sheets_Color $footerColor)
-  {
-    $this->footerColor = $footerColor;
-  }
-  /**
-   * @return Google_Service_Sheets_Color
-   */
-  public function getFooterColor()
-  {
-    return $this->footerColor;
-  }
-  /**
-   * @param Google_Service_Sheets_Color
-   */
-  public function setHeaderColor(Google_Service_Sheets_Color $headerColor)
-  {
-    $this->headerColor = $headerColor;
-  }
-  /**
-   * @return Google_Service_Sheets_Color
-   */
-  public function getHeaderColor()
-  {
-    return $this->headerColor;
-  }
-  /**
-   * @param Google_Service_Sheets_Color
-   */
-  public function setSecondBandColor(Google_Service_Sheets_Color $secondBandColor)
-  {
-    $this->secondBandColor = $secondBandColor;
-  }
-  /**
-   * @return Google_Service_Sheets_Color
-   */
-  public function getSecondBandColor()
-  {
-    return $this->secondBandColor;
-  }
+    /**
+     * @param Google_Service_Sheets_Color
+     */
+    public function setFirstBandColor(Google_Service_Sheets_Color $firstBandColor) {
+        $this->firstBandColor = $firstBandColor;
+    }
+
+    /**
+     * @return Google_Service_Sheets_Color
+     */
+    public function getFirstBandColor() {
+        return $this->firstBandColor;
+    }
+
+    /**
+     * @param Google_Service_Sheets_Color
+     */
+    public function setFooterColor(Google_Service_Sheets_Color $footerColor) {
+        $this->footerColor = $footerColor;
+    }
+
+    /**
+     * @return Google_Service_Sheets_Color
+     */
+    public function getFooterColor() {
+        return $this->footerColor;
+    }
+
+    /**
+     * @param Google_Service_Sheets_Color
+     */
+    public function setHeaderColor(Google_Service_Sheets_Color $headerColor) {
+        $this->headerColor = $headerColor;
+    }
+
+    /**
+     * @return Google_Service_Sheets_Color
+     */
+    public function getHeaderColor() {
+        return $this->headerColor;
+    }
+
+    /**
+     * @param Google_Service_Sheets_Color
+     */
+    public function setSecondBandColor(Google_Service_Sheets_Color $secondBandColor) {
+        $this->secondBandColor = $secondBandColor;
+    }
+
+    /**
+     * @return Google_Service_Sheets_Color
+     */
+    public function getSecondBandColor() {
+        return $this->secondBandColor;
+    }
 }

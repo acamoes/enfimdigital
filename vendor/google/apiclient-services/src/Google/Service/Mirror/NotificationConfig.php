@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Mirror_NotificationConfig extends Google_Model
-{
-  public $deliveryTime;
-  public $level;
+class Google_Service_Mirror_NotificationConfig extends Google_Model {
+    public $deliveryTime;
+    public $level;
 
-  public function setDeliveryTime($deliveryTime)
-  {
-    $this->deliveryTime = $deliveryTime;
-  }
-  public function getDeliveryTime()
-  {
-    return $this->deliveryTime;
-  }
-  public function setLevel($level)
-  {
-    $this->level = $level;
-  }
-  public function getLevel()
-  {
-    return $this->level;
-  }
+    public function setDeliveryTime($deliveryTime) {
+        $this->deliveryTime = $deliveryTime;
+    }
+
+    public function getDeliveryTime() {
+        return $this->deliveryTime;
+    }
+
+    public function setLevel($level) {
+        $this->level = $level;
+    }
+
+    public function getLevel() {
+        return $this->level;
+    }
 }

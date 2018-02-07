@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_AndroidManagement_PackageNameList extends Google_Collection
-{
-  protected $collection_key = 'packageNames';
-  public $packageNames;
+class Google_Service_AndroidManagement_PackageNameList extends Google_Collection {
+    protected $collection_key = 'packageNames';
+    public $packageNames;
 
-  public function setPackageNames($packageNames)
-  {
-    $this->packageNames = $packageNames;
-  }
-  public function getPackageNames()
-  {
-    return $this->packageNames;
-  }
+    public function setPackageNames($packageNames) {
+        $this->packageNames = $packageNames;
+    }
+
+    public function getPackageNames() {
+        return $this->packageNames;
+    }
 }

@@ -15,63 +15,61 @@
  * the License.
  */
 
-class Google_Service_Webmasters_UrlCrawlErrorsSample extends Google_Model
-{
-  protected $internal_gapi_mappings = array(
+class Google_Service_Webmasters_UrlCrawlErrorsSample extends Google_Model {
+    protected $internal_gapi_mappings = array(
         "firstDetected" => "first_detected",
-        "lastCrawled" => "last_crawled",
-  );
-  public $firstDetected;
-  public $lastCrawled;
-  public $pageUrl;
-  public $responseCode;
-  protected $urlDetailsType = 'Google_Service_Webmasters_UrlSampleDetails';
-  protected $urlDetailsDataType = '';
+        "lastCrawled"   => "last_crawled",
+    );
+    public $firstDetected;
+    public $lastCrawled;
+    public $pageUrl;
+    public $responseCode;
+    protected $urlDetailsType         = 'Google_Service_Webmasters_UrlSampleDetails';
+    protected $urlDetailsDataType     = '';
 
-  public function setFirstDetected($firstDetected)
-  {
-    $this->firstDetected = $firstDetected;
-  }
-  public function getFirstDetected()
-  {
-    return $this->firstDetected;
-  }
-  public function setLastCrawled($lastCrawled)
-  {
-    $this->lastCrawled = $lastCrawled;
-  }
-  public function getLastCrawled()
-  {
-    return $this->lastCrawled;
-  }
-  public function setPageUrl($pageUrl)
-  {
-    $this->pageUrl = $pageUrl;
-  }
-  public function getPageUrl()
-  {
-    return $this->pageUrl;
-  }
-  public function setResponseCode($responseCode)
-  {
-    $this->responseCode = $responseCode;
-  }
-  public function getResponseCode()
-  {
-    return $this->responseCode;
-  }
-  /**
-   * @param Google_Service_Webmasters_UrlSampleDetails
-   */
-  public function setUrlDetails(Google_Service_Webmasters_UrlSampleDetails $urlDetails)
-  {
-    $this->urlDetails = $urlDetails;
-  }
-  /**
-   * @return Google_Service_Webmasters_UrlSampleDetails
-   */
-  public function getUrlDetails()
-  {
-    return $this->urlDetails;
-  }
+    public function setFirstDetected($firstDetected) {
+        $this->firstDetected = $firstDetected;
+    }
+
+    public function getFirstDetected() {
+        return $this->firstDetected;
+    }
+
+    public function setLastCrawled($lastCrawled) {
+        $this->lastCrawled = $lastCrawled;
+    }
+
+    public function getLastCrawled() {
+        return $this->lastCrawled;
+    }
+
+    public function setPageUrl($pageUrl) {
+        $this->pageUrl = $pageUrl;
+    }
+
+    public function getPageUrl() {
+        return $this->pageUrl;
+    }
+
+    public function setResponseCode($responseCode) {
+        $this->responseCode = $responseCode;
+    }
+
+    public function getResponseCode() {
+        return $this->responseCode;
+    }
+
+    /**
+     * @param Google_Service_Webmasters_UrlSampleDetails
+     */
+    public function setUrlDetails(Google_Service_Webmasters_UrlSampleDetails $urlDetails) {
+        $this->urlDetails = $urlDetails;
+    }
+
+    /**
+     * @return Google_Service_Webmasters_UrlSampleDetails
+     */
+    public function getUrlDetails() {
+        return $this->urlDetails;
+    }
 }

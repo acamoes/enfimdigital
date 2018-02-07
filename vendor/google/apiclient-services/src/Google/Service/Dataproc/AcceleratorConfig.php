@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataproc_AcceleratorConfig extends Google_Model
-{
-  public $acceleratorCount;
-  public $acceleratorTypeUri;
+class Google_Service_Dataproc_AcceleratorConfig extends Google_Model {
+    public $acceleratorCount;
+    public $acceleratorTypeUri;
 
-  public function setAcceleratorCount($acceleratorCount)
-  {
-    $this->acceleratorCount = $acceleratorCount;
-  }
-  public function getAcceleratorCount()
-  {
-    return $this->acceleratorCount;
-  }
-  public function setAcceleratorTypeUri($acceleratorTypeUri)
-  {
-    $this->acceleratorTypeUri = $acceleratorTypeUri;
-  }
-  public function getAcceleratorTypeUri()
-  {
-    return $this->acceleratorTypeUri;
-  }
+    public function setAcceleratorCount($acceleratorCount) {
+        $this->acceleratorCount = $acceleratorCount;
+    }
+
+    public function getAcceleratorCount() {
+        return $this->acceleratorCount;
+    }
+
+    public function setAcceleratorTypeUri($acceleratorTypeUri) {
+        $this->acceleratorTypeUri = $acceleratorTypeUri;
+    }
+
+    public function getAcceleratorTypeUri() {
+        return $this->acceleratorTypeUri;
+    }
 }

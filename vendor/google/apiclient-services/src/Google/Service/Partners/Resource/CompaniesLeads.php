@@ -23,20 +23,19 @@
  *   $leads = $partnersService->leads;
  *  </code>
  */
-class Google_Service_Partners_Resource_CompaniesLeads extends Google_Service_Resource
-{
-  /**
-   * Creates an advertiser lead for the given company ID. (leads.create)
-   *
-   * @param string $companyId The ID of the company to contact.
-   * @param Google_Service_Partners_CreateLeadRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Partners_CreateLeadResponse
-   */
-  public function create($companyId, Google_Service_Partners_CreateLeadRequest $postBody, $optParams = array())
-  {
-    $params = array('companyId' => $companyId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('create', array($params), "Google_Service_Partners_CreateLeadResponse");
-  }
+class Google_Service_Partners_Resource_CompaniesLeads extends Google_Service_Resource {
+
+    /**
+     * Creates an advertiser lead for the given company ID. (leads.create)
+     *
+     * @param string $companyId The ID of the company to contact.
+     * @param Google_Service_Partners_CreateLeadRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Partners_CreateLeadResponse
+     */
+    public function create($companyId, Google_Service_Partners_CreateLeadRequest $postBody, $optParams = array()) {
+        $params = array('companyId' => $companyId, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('create', array($params), "Google_Service_Partners_CreateLeadResponse");
+    }
 }

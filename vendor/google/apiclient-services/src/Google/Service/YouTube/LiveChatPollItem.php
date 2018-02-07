@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_YouTube_LiveChatPollItem extends Google_Model
-{
-  public $description;
-  public $itemId;
+class Google_Service_YouTube_LiveChatPollItem extends Google_Model {
+    public $description;
+    public $itemId;
 
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setItemId($itemId)
-  {
-    $this->itemId = $itemId;
-  }
-  public function getItemId()
-  {
-    return $this->itemId;
-  }
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setItemId($itemId) {
+        $this->itemId = $itemId;
+    }
+
+    public function getItemId() {
+        return $this->itemId;
+    }
 }

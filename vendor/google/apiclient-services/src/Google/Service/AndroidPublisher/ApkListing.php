@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_ApkListing extends Google_Model
-{
-  public $language;
-  public $recentChanges;
+class Google_Service_AndroidPublisher_ApkListing extends Google_Model {
+    public $language;
+    public $recentChanges;
 
-  public function setLanguage($language)
-  {
-    $this->language = $language;
-  }
-  public function getLanguage()
-  {
-    return $this->language;
-  }
-  public function setRecentChanges($recentChanges)
-  {
-    $this->recentChanges = $recentChanges;
-  }
-  public function getRecentChanges()
-  {
-    return $this->recentChanges;
-  }
+    public function setLanguage($language) {
+        $this->language = $language;
+    }
+
+    public function getLanguage() {
+        return $this->language;
+    }
+
+    public function setRecentChanges($recentChanges) {
+        $this->recentChanges = $recentChanges;
+    }
+
+    public function getRecentChanges() {
+        return $this->recentChanges;
+    }
 }

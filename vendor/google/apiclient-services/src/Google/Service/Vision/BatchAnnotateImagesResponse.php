@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Vision_BatchAnnotateImagesResponse extends Google_Collection
-{
-  protected $collection_key = 'responses';
-  protected $responsesType = 'Google_Service_Vision_AnnotateImageResponse';
-  protected $responsesDataType = 'array';
+class Google_Service_Vision_BatchAnnotateImagesResponse extends Google_Collection {
+    protected $collection_key    = 'responses';
+    protected $responsesType     = 'Google_Service_Vision_AnnotateImageResponse';
+    protected $responsesDataType = 'array';
 
-  /**
-   * @param Google_Service_Vision_AnnotateImageResponse
-   */
-  public function setResponses($responses)
-  {
-    $this->responses = $responses;
-  }
-  /**
-   * @return Google_Service_Vision_AnnotateImageResponse
-   */
-  public function getResponses()
-  {
-    return $this->responses;
-  }
+    /**
+     * @param Google_Service_Vision_AnnotateImageResponse
+     */
+    public function setResponses($responses) {
+        $this->responses = $responses;
+    }
+
+    /**
+     * @return Google_Service_Vision_AnnotateImageResponse
+     */
+    public function getResponses() {
+        return $this->responses;
+    }
 }

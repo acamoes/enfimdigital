@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_YouTube_ChannelBannerResource extends Google_Model
-{
-  public $etag;
-  public $kind;
-  public $url;
+class Google_Service_YouTube_ChannelBannerResource extends Google_Model {
+    public $etag;
+    public $kind;
+    public $url;
 
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setEtag($etag) {
+        $this->etag = $etag;
+    }
+
+    public function getEtag() {
+        return $this->etag;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

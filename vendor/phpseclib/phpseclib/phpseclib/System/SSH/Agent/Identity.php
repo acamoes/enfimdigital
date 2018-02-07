@@ -12,9 +12,7 @@
  * @link      http://phpseclib.sourceforge.net
  * @internal  See http://api.libssh.org/rfc/PROTOCOL.agent
  */
-
 namespace phpseclib\System\SSH\Agent;
-
 use phpseclib\System\SSH\Agent;
 
 /**
@@ -30,8 +28,7 @@ use phpseclib\System\SSH\Agent;
  * @author  Jim Wigginton <terrafrost@php.net>
  * @access  internal
  */
-class Identity
-{
+class Identity {
     /**
      * Key Object
      *
@@ -40,7 +37,6 @@ class Identity
      * @see self::getPublicKey()
      */
     var $key;
-
     /**
      * Key Blob
      *
@@ -49,7 +45,6 @@ class Identity
      * @see self::sign()
      */
     var $key_blob;
-
     /**
      * Socket Resource
      *
@@ -66,8 +61,7 @@ class Identity
      * @return \phpseclib\System\SSH\Agent\Identity
      * @access private
      */
-    function __construct($fsock)
-    {
+    function __construct($fsock) {
         $this->fsock = $fsock;
     }
 
@@ -79,8 +73,7 @@ class Identity
      * @param \phpseclib\Crypt\RSA $key
      * @access private
      */
-    function setPublicKey($key)
-    {
+    function setPublicKey($key) {
         $this->key = $key;
         $this->key->setPublicKey();
     }
@@ -94,8 +87,7 @@ class Identity
      * @param string $key_blob
      * @access private
      */
-    function setPublicKeyBlob($key_blob)
-    {
+    function setPublicKeyBlob($key_blob) {
         $this->key_blob = $key_blob;
     }
 
@@ -108,8 +100,7 @@ class Identity
      * @return mixed
      * @access public
      */
-    function getPublicKey($format = null)
-    {
+    function getPublicKey($format = null) {
         return !isset($format) ? $this->key->getPublicKey() : $this->key->getPublicKey($format);
     }
 
@@ -122,8 +113,8 @@ class Identity
      * @param int $mode
      * @access public
      */
-    function setSignatureMode($mode)
-    {
+    function setSignatureMode($mode) {
+
     }
 
     /**
@@ -135,8 +126,7 @@ class Identity
      * @return string
      * @access public
      */
-    function sign($message)
-    {
+    function sign($message) {
         // the last parameter (currently 0) is for flags and ssh-agent only defines one flag (for ssh-dss): SSH_AGENT_OLD_SIGNATURE
         $packet = pack('CNa*Na*N', Agent::SSH_AGENTC_SIGN_REQUEST, strlen($this->key_blob), $this->key_blob, strlen($message), $message, 0);
         $packet = pack('Na*', strlen($packet), $packet);
@@ -145,7 +135,7 @@ class Identity
         }
 
         $length = current(unpack('N', fread($this->fsock, 4)));
-        $type = ord(fread($this->fsock, 1));
+        $type   = ord(fread($this->fsock, 1));
         if ($type != Agent::SSH_AGENT_SIGN_RESPONSE) {
             user_error('Unable to retrieve signature');
         }

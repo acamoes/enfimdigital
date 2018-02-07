@@ -15,77 +15,75 @@
  * the License.
  */
 
-class Google_Service_YouTube_FanFundingEventSnippet extends Google_Model
-{
-  public $amountMicros;
-  public $channelId;
-  public $commentText;
-  public $createdAt;
-  public $currency;
-  public $displayString;
-  protected $supporterDetailsType = 'Google_Service_YouTube_ChannelProfileDetails';
-  protected $supporterDetailsDataType = '';
+class Google_Service_YouTube_FanFundingEventSnippet extends Google_Model {
+    public $amountMicros;
+    public $channelId;
+    public $commentText;
+    public $createdAt;
+    public $currency;
+    public $displayString;
+    protected $supporterDetailsType     = 'Google_Service_YouTube_ChannelProfileDetails';
+    protected $supporterDetailsDataType = '';
 
-  public function setAmountMicros($amountMicros)
-  {
-    $this->amountMicros = $amountMicros;
-  }
-  public function getAmountMicros()
-  {
-    return $this->amountMicros;
-  }
-  public function setChannelId($channelId)
-  {
-    $this->channelId = $channelId;
-  }
-  public function getChannelId()
-  {
-    return $this->channelId;
-  }
-  public function setCommentText($commentText)
-  {
-    $this->commentText = $commentText;
-  }
-  public function getCommentText()
-  {
-    return $this->commentText;
-  }
-  public function setCreatedAt($createdAt)
-  {
-    $this->createdAt = $createdAt;
-  }
-  public function getCreatedAt()
-  {
-    return $this->createdAt;
-  }
-  public function setCurrency($currency)
-  {
-    $this->currency = $currency;
-  }
-  public function getCurrency()
-  {
-    return $this->currency;
-  }
-  public function setDisplayString($displayString)
-  {
-    $this->displayString = $displayString;
-  }
-  public function getDisplayString()
-  {
-    return $this->displayString;
-  }
-  /**
-   * @param Google_Service_YouTube_ChannelProfileDetails
-   */
-  public function setSupporterDetails(Google_Service_YouTube_ChannelProfileDetails $supporterDetails)
-  {
-    $this->supporterDetails = $supporterDetails;
-  }
-  /**
-   * @return Google_Service_YouTube_ChannelProfileDetails
-   */
-  public function getSupporterDetails()
-  {
-    return $this->supporterDetails;
-  }
+    public function setAmountMicros($amountMicros) {
+        $this->amountMicros = $amountMicros;
+    }
+
+    public function getAmountMicros() {
+        return $this->amountMicros;
+    }
+
+    public function setChannelId($channelId) {
+        $this->channelId = $channelId;
+    }
+
+    public function getChannelId() {
+        return $this->channelId;
+    }
+
+    public function setCommentText($commentText) {
+        $this->commentText = $commentText;
+    }
+
+    public function getCommentText() {
+        return $this->commentText;
+    }
+
+    public function setCreatedAt($createdAt) {
+        $this->createdAt = $createdAt;
+    }
+
+    public function getCreatedAt() {
+        return $this->createdAt;
+    }
+
+    public function setCurrency($currency) {
+        $this->currency = $currency;
+    }
+
+    public function getCurrency() {
+        return $this->currency;
+    }
+
+    public function setDisplayString($displayString) {
+        $this->displayString = $displayString;
+    }
+
+    public function getDisplayString() {
+        return $this->displayString;
+    }
+
+    /**
+     * @param Google_Service_YouTube_ChannelProfileDetails
+     */
+    public function setSupporterDetails(Google_Service_YouTube_ChannelProfileDetails $supporterDetails) {
+        $this->supporterDetails = $supporterDetails;
+    }
+
+    /**
+     * @return Google_Service_YouTube_ChannelProfileDetails
+     */
+    public function getSupporterDetails() {
+        return $this->supporterDetails;
+    }
 }

@@ -15,59 +15,57 @@
  * the License.
  */
 
-class Google_Service_YouTubeAnalytics_GroupItem extends Google_Model
-{
-  public $etag;
-  public $groupId;
-  public $id;
-  public $kind;
-  protected $resourceType = 'Google_Service_YouTubeAnalytics_GroupItemResource';
-  protected $resourceDataType = '';
+class Google_Service_YouTubeAnalytics_GroupItem extends Google_Model {
+    public $etag;
+    public $groupId;
+    public $id;
+    public $kind;
+    protected $resourceType     = 'Google_Service_YouTubeAnalytics_GroupItemResource';
+    protected $resourceDataType = '';
 
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  public function setGroupId($groupId)
-  {
-    $this->groupId = $groupId;
-  }
-  public function getGroupId()
-  {
-    return $this->groupId;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_YouTubeAnalytics_GroupItemResource
-   */
-  public function setResource(Google_Service_YouTubeAnalytics_GroupItemResource $resource)
-  {
-    $this->resource = $resource;
-  }
-  /**
-   * @return Google_Service_YouTubeAnalytics_GroupItemResource
-   */
-  public function getResource()
-  {
-    return $this->resource;
-  }
+    public function setEtag($etag) {
+        $this->etag = $etag;
+    }
+
+    public function getEtag() {
+        return $this->etag;
+    }
+
+    public function setGroupId($groupId) {
+        $this->groupId = $groupId;
+    }
+
+    public function getGroupId() {
+        return $this->groupId;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_YouTubeAnalytics_GroupItemResource
+     */
+    public function setResource(Google_Service_YouTubeAnalytics_GroupItemResource $resource) {
+        $this->resource = $resource;
+    }
+
+    /**
+     * @return Google_Service_YouTubeAnalytics_GroupItemResource
+     */
+    public function getResource() {
+        return $this->resource;
+    }
 }

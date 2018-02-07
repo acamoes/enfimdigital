@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_OperatingSystem extends Google_Model
-{
-  public $dartId;
-  public $desktop;
-  public $kind;
-  public $mobile;
-  public $name;
+class Google_Service_Dfareporting_OperatingSystem extends Google_Model {
+    public $dartId;
+    public $desktop;
+    public $kind;
+    public $mobile;
+    public $name;
 
-  public function setDartId($dartId)
-  {
-    $this->dartId = $dartId;
-  }
-  public function getDartId()
-  {
-    return $this->dartId;
-  }
-  public function setDesktop($desktop)
-  {
-    $this->desktop = $desktop;
-  }
-  public function getDesktop()
-  {
-    return $this->desktop;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setMobile($mobile)
-  {
-    $this->mobile = $mobile;
-  }
-  public function getMobile()
-  {
-    return $this->mobile;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setDartId($dartId) {
+        $this->dartId = $dartId;
+    }
+
+    public function getDartId() {
+        return $this->dartId;
+    }
+
+    public function setDesktop($desktop) {
+        $this->desktop = $desktop;
+    }
+
+    public function getDesktop() {
+        return $this->desktop;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setMobile($mobile) {
+        $this->mobile = $mobile;
+    }
+
+    public function getMobile() {
+        return $this->mobile;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Sheets_DeleteProtectedRangeRequest extends Google_Model
-{
-  public $protectedRangeId;
+class Google_Service_Sheets_DeleteProtectedRangeRequest extends Google_Model {
+    public $protectedRangeId;
 
-  public function setProtectedRangeId($protectedRangeId)
-  {
-    $this->protectedRangeId = $protectedRangeId;
-  }
-  public function getProtectedRangeId()
-  {
-    return $this->protectedRangeId;
-  }
+    public function setProtectedRangeId($protectedRangeId) {
+        $this->protectedRangeId = $protectedRangeId;
+    }
+
+    public function getProtectedRangeId() {
+        return $this->protectedRangeId;
+    }
 }

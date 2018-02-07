@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Prediction_OutputOutputMulti extends Google_Model
-{
-  public $label;
-  public $score;
+class Google_Service_Prediction_OutputOutputMulti extends Google_Model {
+    public $label;
+    public $score;
 
-  public function setLabel($label)
-  {
-    $this->label = $label;
-  }
-  public function getLabel()
-  {
-    return $this->label;
-  }
-  public function setScore($score)
-  {
-    $this->score = $score;
-  }
-  public function getScore()
-  {
-    return $this->score;
-  }
+    public function setLabel($label) {
+        $this->label = $label;
+    }
+
+    public function getLabel() {
+        return $this->label;
+    }
+
+    public function setScore($score) {
+        $this->score = $score;
+    }
+
+    public function getScore() {
+        return $this->score;
+    }
 }

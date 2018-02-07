@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ServiceControl_ResourceInfo extends Google_Model
-{
-  public $resourceContainer;
-  public $resourceName;
+class Google_Service_ServiceControl_ResourceInfo extends Google_Model {
+    public $resourceContainer;
+    public $resourceName;
 
-  public function setResourceContainer($resourceContainer)
-  {
-    $this->resourceContainer = $resourceContainer;
-  }
-  public function getResourceContainer()
-  {
-    return $this->resourceContainer;
-  }
-  public function setResourceName($resourceName)
-  {
-    $this->resourceName = $resourceName;
-  }
-  public function getResourceName()
-  {
-    return $this->resourceName;
-  }
+    public function setResourceContainer($resourceContainer) {
+        $this->resourceContainer = $resourceContainer;
+    }
+
+    public function getResourceContainer() {
+        return $this->resourceContainer;
+    }
+
+    public function setResourceName($resourceName) {
+        $this->resourceName = $resourceName;
+    }
+
+    public function getResourceName() {
+        return $this->resourceName;
+    }
 }

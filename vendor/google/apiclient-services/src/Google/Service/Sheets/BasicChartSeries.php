@@ -15,57 +15,55 @@
  * the License.
  */
 
-class Google_Service_Sheets_BasicChartSeries extends Google_Model
-{
-  protected $lineStyleType = 'Google_Service_Sheets_LineStyle';
-  protected $lineStyleDataType = '';
-  protected $seriesType = 'Google_Service_Sheets_ChartData';
-  protected $seriesDataType = '';
-  public $targetAxis;
-  public $type;
+class Google_Service_Sheets_BasicChartSeries extends Google_Model {
+    protected $lineStyleType     = 'Google_Service_Sheets_LineStyle';
+    protected $lineStyleDataType = '';
+    protected $seriesType        = 'Google_Service_Sheets_ChartData';
+    protected $seriesDataType    = '';
+    public $targetAxis;
+    public $type;
 
-  /**
-   * @param Google_Service_Sheets_LineStyle
-   */
-  public function setLineStyle(Google_Service_Sheets_LineStyle $lineStyle)
-  {
-    $this->lineStyle = $lineStyle;
-  }
-  /**
-   * @return Google_Service_Sheets_LineStyle
-   */
-  public function getLineStyle()
-  {
-    return $this->lineStyle;
-  }
-  /**
-   * @param Google_Service_Sheets_ChartData
-   */
-  public function setSeries(Google_Service_Sheets_ChartData $series)
-  {
-    $this->series = $series;
-  }
-  /**
-   * @return Google_Service_Sheets_ChartData
-   */
-  public function getSeries()
-  {
-    return $this->series;
-  }
-  public function setTargetAxis($targetAxis)
-  {
-    $this->targetAxis = $targetAxis;
-  }
-  public function getTargetAxis()
-  {
-    return $this->targetAxis;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    /**
+     * @param Google_Service_Sheets_LineStyle
+     */
+    public function setLineStyle(Google_Service_Sheets_LineStyle $lineStyle) {
+        $this->lineStyle = $lineStyle;
+    }
+
+    /**
+     * @return Google_Service_Sheets_LineStyle
+     */
+    public function getLineStyle() {
+        return $this->lineStyle;
+    }
+
+    /**
+     * @param Google_Service_Sheets_ChartData
+     */
+    public function setSeries(Google_Service_Sheets_ChartData $series) {
+        $this->series = $series;
+    }
+
+    /**
+     * @return Google_Service_Sheets_ChartData
+     */
+    public function getSeries() {
+        return $this->series;
+    }
+
+    public function setTargetAxis($targetAxis) {
+        $this->targetAxis = $targetAxis;
+    }
+
+    public function getTargetAxis() {
+        return $this->targetAxis;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

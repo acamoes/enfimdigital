@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_EventTagsListResponse extends Google_Collection
-{
-  protected $collection_key = 'eventTags';
-  protected $eventTagsType = 'Google_Service_Dfareporting_EventTag';
-  protected $eventTagsDataType = 'array';
-  public $kind;
+class Google_Service_Dfareporting_EventTagsListResponse extends Google_Collection {
+    protected $collection_key    = 'eventTags';
+    protected $eventTagsType     = 'Google_Service_Dfareporting_EventTag';
+    protected $eventTagsDataType = 'array';
+    public $kind;
 
-  /**
-   * @param Google_Service_Dfareporting_EventTag
-   */
-  public function setEventTags($eventTags)
-  {
-    $this->eventTags = $eventTags;
-  }
-  /**
-   * @return Google_Service_Dfareporting_EventTag
-   */
-  public function getEventTags()
-  {
-    return $this->eventTags;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_Dfareporting_EventTag
+     */
+    public function setEventTags($eventTags) {
+        $this->eventTags = $eventTags;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_EventTag
+     */
+    public function getEventTags() {
+        return $this->eventTags;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

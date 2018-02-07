@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_ServiceConsumerManagement_Context extends Google_Collection
-{
-  protected $collection_key = 'rules';
-  protected $rulesType = 'Google_Service_ServiceConsumerManagement_ContextRule';
-  protected $rulesDataType = 'array';
+class Google_Service_ServiceConsumerManagement_Context extends Google_Collection {
+    protected $collection_key = 'rules';
+    protected $rulesType      = 'Google_Service_ServiceConsumerManagement_ContextRule';
+    protected $rulesDataType  = 'array';
 
-  /**
-   * @param Google_Service_ServiceConsumerManagement_ContextRule
-   */
-  public function setRules($rules)
-  {
-    $this->rules = $rules;
-  }
-  /**
-   * @return Google_Service_ServiceConsumerManagement_ContextRule
-   */
-  public function getRules()
-  {
-    return $this->rules;
-  }
+    /**
+     * @param Google_Service_ServiceConsumerManagement_ContextRule
+     */
+    public function setRules($rules) {
+        $this->rules = $rules;
+    }
+
+    /**
+     * @return Google_Service_ServiceConsumerManagement_ContextRule
+     */
+    public function getRules() {
+        return $this->rules;
+    }
 }

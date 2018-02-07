@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudFunctions_GenerateDownloadUrlRequest extends Google_Model
-{
-  public $versionId;
+class Google_Service_CloudFunctions_GenerateDownloadUrlRequest extends Google_Model {
+    public $versionId;
 
-  public function setVersionId($versionId)
-  {
-    $this->versionId = $versionId;
-  }
-  public function getVersionId()
-  {
-    return $this->versionId;
-  }
+    public function setVersionId($versionId) {
+        $this->versionId = $versionId;
+    }
+
+    public function getVersionId() {
+        return $this->versionId;
+    }
 }

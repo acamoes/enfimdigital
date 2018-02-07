@@ -15,53 +15,51 @@
  * the License.
  */
 
-class Google_Service_Container_ServerConfig extends Google_Collection
-{
-  protected $collection_key = 'validNodeVersions';
-  public $defaultClusterVersion;
-  public $defaultImageType;
-  public $validImageTypes;
-  public $validMasterVersions;
-  public $validNodeVersions;
+class Google_Service_Container_ServerConfig extends Google_Collection {
+    protected $collection_key = 'validNodeVersions';
+    public $defaultClusterVersion;
+    public $defaultImageType;
+    public $validImageTypes;
+    public $validMasterVersions;
+    public $validNodeVersions;
 
-  public function setDefaultClusterVersion($defaultClusterVersion)
-  {
-    $this->defaultClusterVersion = $defaultClusterVersion;
-  }
-  public function getDefaultClusterVersion()
-  {
-    return $this->defaultClusterVersion;
-  }
-  public function setDefaultImageType($defaultImageType)
-  {
-    $this->defaultImageType = $defaultImageType;
-  }
-  public function getDefaultImageType()
-  {
-    return $this->defaultImageType;
-  }
-  public function setValidImageTypes($validImageTypes)
-  {
-    $this->validImageTypes = $validImageTypes;
-  }
-  public function getValidImageTypes()
-  {
-    return $this->validImageTypes;
-  }
-  public function setValidMasterVersions($validMasterVersions)
-  {
-    $this->validMasterVersions = $validMasterVersions;
-  }
-  public function getValidMasterVersions()
-  {
-    return $this->validMasterVersions;
-  }
-  public function setValidNodeVersions($validNodeVersions)
-  {
-    $this->validNodeVersions = $validNodeVersions;
-  }
-  public function getValidNodeVersions()
-  {
-    return $this->validNodeVersions;
-  }
+    public function setDefaultClusterVersion($defaultClusterVersion) {
+        $this->defaultClusterVersion = $defaultClusterVersion;
+    }
+
+    public function getDefaultClusterVersion() {
+        return $this->defaultClusterVersion;
+    }
+
+    public function setDefaultImageType($defaultImageType) {
+        $this->defaultImageType = $defaultImageType;
+    }
+
+    public function getDefaultImageType() {
+        return $this->defaultImageType;
+    }
+
+    public function setValidImageTypes($validImageTypes) {
+        $this->validImageTypes = $validImageTypes;
+    }
+
+    public function getValidImageTypes() {
+        return $this->validImageTypes;
+    }
+
+    public function setValidMasterVersions($validMasterVersions) {
+        $this->validMasterVersions = $validMasterVersions;
+    }
+
+    public function getValidMasterVersions() {
+        return $this->validMasterVersions;
+    }
+
+    public function setValidNodeVersions($validNodeVersions) {
+        $this->validNodeVersions = $validNodeVersions;
+    }
+
+    public function getValidNodeVersions() {
+        return $this->validNodeVersions;
+    }
 }

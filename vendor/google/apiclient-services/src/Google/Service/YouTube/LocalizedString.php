@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_YouTube_LocalizedString extends Google_Model
-{
-  public $language;
-  public $value;
+class Google_Service_YouTube_LocalizedString extends Google_Model {
+    public $language;
+    public $value;
 
-  public function setLanguage($language)
-  {
-    $this->language = $language;
-  }
-  public function getLanguage()
-  {
-    return $this->language;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setLanguage($language) {
+        $this->language = $language;
+    }
+
+    public function getLanguage() {
+        return $this->language;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

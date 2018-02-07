@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Mirror_SubscriptionsListResponse extends Google_Collection
-{
-  protected $collection_key = 'items';
-  protected $itemsType = 'Google_Service_Mirror_Subscription';
-  protected $itemsDataType = 'array';
-  public $kind;
+class Google_Service_Mirror_SubscriptionsListResponse extends Google_Collection {
+    protected $collection_key = 'items';
+    protected $itemsType      = 'Google_Service_Mirror_Subscription';
+    protected $itemsDataType  = 'array';
+    public $kind;
 
-  /**
-   * @param Google_Service_Mirror_Subscription
-   */
-  public function setItems($items)
-  {
-    $this->items = $items;
-  }
-  /**
-   * @return Google_Service_Mirror_Subscription
-   */
-  public function getItems()
-  {
-    return $this->items;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_Mirror_Subscription
+     */
+    public function setItems($items) {
+        $this->items = $items;
+    }
+
+    /**
+     * @return Google_Service_Mirror_Subscription
+     */
+    public function getItems() {
+        return $this->items;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

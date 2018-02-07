@@ -15,77 +15,75 @@
  * the License.
  */
 
-class Google_Service_Sheets_TextFormat extends Google_Model
-{
-  public $bold;
-  public $fontFamily;
-  public $fontSize;
-  protected $foregroundColorType = 'Google_Service_Sheets_Color';
-  protected $foregroundColorDataType = '';
-  public $italic;
-  public $strikethrough;
-  public $underline;
+class Google_Service_Sheets_TextFormat extends Google_Model {
+    public $bold;
+    public $fontFamily;
+    public $fontSize;
+    protected $foregroundColorType     = 'Google_Service_Sheets_Color';
+    protected $foregroundColorDataType = '';
+    public $italic;
+    public $strikethrough;
+    public $underline;
 
-  public function setBold($bold)
-  {
-    $this->bold = $bold;
-  }
-  public function getBold()
-  {
-    return $this->bold;
-  }
-  public function setFontFamily($fontFamily)
-  {
-    $this->fontFamily = $fontFamily;
-  }
-  public function getFontFamily()
-  {
-    return $this->fontFamily;
-  }
-  public function setFontSize($fontSize)
-  {
-    $this->fontSize = $fontSize;
-  }
-  public function getFontSize()
-  {
-    return $this->fontSize;
-  }
-  /**
-   * @param Google_Service_Sheets_Color
-   */
-  public function setForegroundColor(Google_Service_Sheets_Color $foregroundColor)
-  {
-    $this->foregroundColor = $foregroundColor;
-  }
-  /**
-   * @return Google_Service_Sheets_Color
-   */
-  public function getForegroundColor()
-  {
-    return $this->foregroundColor;
-  }
-  public function setItalic($italic)
-  {
-    $this->italic = $italic;
-  }
-  public function getItalic()
-  {
-    return $this->italic;
-  }
-  public function setStrikethrough($strikethrough)
-  {
-    $this->strikethrough = $strikethrough;
-  }
-  public function getStrikethrough()
-  {
-    return $this->strikethrough;
-  }
-  public function setUnderline($underline)
-  {
-    $this->underline = $underline;
-  }
-  public function getUnderline()
-  {
-    return $this->underline;
-  }
+    public function setBold($bold) {
+        $this->bold = $bold;
+    }
+
+    public function getBold() {
+        return $this->bold;
+    }
+
+    public function setFontFamily($fontFamily) {
+        $this->fontFamily = $fontFamily;
+    }
+
+    public function getFontFamily() {
+        return $this->fontFamily;
+    }
+
+    public function setFontSize($fontSize) {
+        $this->fontSize = $fontSize;
+    }
+
+    public function getFontSize() {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param Google_Service_Sheets_Color
+     */
+    public function setForegroundColor(Google_Service_Sheets_Color $foregroundColor) {
+        $this->foregroundColor = $foregroundColor;
+    }
+
+    /**
+     * @return Google_Service_Sheets_Color
+     */
+    public function getForegroundColor() {
+        return $this->foregroundColor;
+    }
+
+    public function setItalic($italic) {
+        $this->italic = $italic;
+    }
+
+    public function getItalic() {
+        return $this->italic;
+    }
+
+    public function setStrikethrough($strikethrough) {
+        $this->strikethrough = $strikethrough;
+    }
+
+    public function getStrikethrough() {
+        return $this->strikethrough;
+    }
+
+    public function setUnderline($underline) {
+        $this->underline = $underline;
+    }
+
+    public function getUnderline() {
+        return $this->underline;
+    }
 }

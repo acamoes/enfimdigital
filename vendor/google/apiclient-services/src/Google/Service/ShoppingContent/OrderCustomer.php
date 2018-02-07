@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrderCustomer extends Google_Model
-{
-  public $email;
-  public $explicitMarketingPreference;
-  public $fullName;
+class Google_Service_ShoppingContent_OrderCustomer extends Google_Model {
+    public $email;
+    public $explicitMarketingPreference;
+    public $fullName;
 
-  public function setEmail($email)
-  {
-    $this->email = $email;
-  }
-  public function getEmail()
-  {
-    return $this->email;
-  }
-  public function setExplicitMarketingPreference($explicitMarketingPreference)
-  {
-    $this->explicitMarketingPreference = $explicitMarketingPreference;
-  }
-  public function getExplicitMarketingPreference()
-  {
-    return $this->explicitMarketingPreference;
-  }
-  public function setFullName($fullName)
-  {
-    $this->fullName = $fullName;
-  }
-  public function getFullName()
-  {
-    return $this->fullName;
-  }
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setExplicitMarketingPreference($explicitMarketingPreference) {
+        $this->explicitMarketingPreference = $explicitMarketingPreference;
+    }
+
+    public function getExplicitMarketingPreference() {
+        return $this->explicitMarketingPreference;
+    }
+
+    public function setFullName($fullName) {
+        $this->fullName = $fullName;
+    }
+
+    public function getFullName() {
+        return $this->fullName;
+    }
 }

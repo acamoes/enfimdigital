@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Games_AchievementUnlockResponse extends Google_Model
-{
-  public $kind;
-  public $newlyUnlocked;
+class Google_Service_Games_AchievementUnlockResponse extends Google_Model {
+    public $kind;
+    public $newlyUnlocked;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNewlyUnlocked($newlyUnlocked)
-  {
-    $this->newlyUnlocked = $newlyUnlocked;
-  }
-  public function getNewlyUnlocked()
-  {
-    return $this->newlyUnlocked;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNewlyUnlocked($newlyUnlocked) {
+        $this->newlyUnlocked = $newlyUnlocked;
+    }
+
+    public function getNewlyUnlocked() {
+        return $this->newlyUnlocked;
+    }
 }

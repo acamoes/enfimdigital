@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_OnPremisesConfiguration extends Google_Model
-{
-  public $hostPort;
-  public $kind;
+class Google_Service_SQLAdmin_OnPremisesConfiguration extends Google_Model {
+    public $hostPort;
+    public $kind;
 
-  public function setHostPort($hostPort)
-  {
-    $this->hostPort = $hostPort;
-  }
-  public function getHostPort()
-  {
-    return $this->hostPort;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setHostPort($hostPort) {
+        $this->hostPort = $hostPort;
+    }
+
+    public function getHostPort() {
+        return $this->hostPort;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

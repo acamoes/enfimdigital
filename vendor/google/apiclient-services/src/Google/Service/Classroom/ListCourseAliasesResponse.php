@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Classroom_ListCourseAliasesResponse extends Google_Collection
-{
-  protected $collection_key = 'aliases';
-  protected $aliasesType = 'Google_Service_Classroom_CourseAlias';
-  protected $aliasesDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Classroom_ListCourseAliasesResponse extends Google_Collection {
+    protected $collection_key  = 'aliases';
+    protected $aliasesType     = 'Google_Service_Classroom_CourseAlias';
+    protected $aliasesDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Classroom_CourseAlias
-   */
-  public function setAliases($aliases)
-  {
-    $this->aliases = $aliases;
-  }
-  /**
-   * @return Google_Service_Classroom_CourseAlias
-   */
-  public function getAliases()
-  {
-    return $this->aliases;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Classroom_CourseAlias
+     */
+    public function setAliases($aliases) {
+        $this->aliases = $aliases;
+    }
+
+    /**
+     * @return Google_Service_Classroom_CourseAlias
+     */
+    public function getAliases() {
+        return $this->aliases;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

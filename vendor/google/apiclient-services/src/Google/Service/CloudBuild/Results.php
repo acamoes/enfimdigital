@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CloudBuild_Results extends Google_Collection
-{
-  protected $collection_key = 'images';
-  public $buildStepImages;
-  protected $imagesType = 'Google_Service_CloudBuild_BuiltImage';
-  protected $imagesDataType = 'array';
+class Google_Service_CloudBuild_Results extends Google_Collection {
+    protected $collection_key = 'images';
+    public $buildStepImages;
+    protected $imagesType     = 'Google_Service_CloudBuild_BuiltImage';
+    protected $imagesDataType = 'array';
 
-  public function setBuildStepImages($buildStepImages)
-  {
-    $this->buildStepImages = $buildStepImages;
-  }
-  public function getBuildStepImages()
-  {
-    return $this->buildStepImages;
-  }
-  /**
-   * @param Google_Service_CloudBuild_BuiltImage
-   */
-  public function setImages($images)
-  {
-    $this->images = $images;
-  }
-  /**
-   * @return Google_Service_CloudBuild_BuiltImage
-   */
-  public function getImages()
-  {
-    return $this->images;
-  }
+    public function setBuildStepImages($buildStepImages) {
+        $this->buildStepImages = $buildStepImages;
+    }
+
+    public function getBuildStepImages() {
+        return $this->buildStepImages;
+    }
+
+    /**
+     * @param Google_Service_CloudBuild_BuiltImage
+     */
+    public function setImages($images) {
+        $this->images = $images;
+    }
+
+    /**
+     * @return Google_Service_CloudBuild_BuiltImage
+     */
+    public function getImages() {
+        return $this->images;
+    }
 }

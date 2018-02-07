@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_AccountPermissionGroupsListResponse extends Google_Collection
-{
-  protected $collection_key = 'accountPermissionGroups';
-  protected $accountPermissionGroupsType = 'Google_Service_Dfareporting_AccountPermissionGroup';
-  protected $accountPermissionGroupsDataType = 'array';
-  public $kind;
+class Google_Service_Dfareporting_AccountPermissionGroupsListResponse extends Google_Collection {
+    protected $collection_key                  = 'accountPermissionGroups';
+    protected $accountPermissionGroupsType     = 'Google_Service_Dfareporting_AccountPermissionGroup';
+    protected $accountPermissionGroupsDataType = 'array';
+    public $kind;
 
-  /**
-   * @param Google_Service_Dfareporting_AccountPermissionGroup
-   */
-  public function setAccountPermissionGroups($accountPermissionGroups)
-  {
-    $this->accountPermissionGroups = $accountPermissionGroups;
-  }
-  /**
-   * @return Google_Service_Dfareporting_AccountPermissionGroup
-   */
-  public function getAccountPermissionGroups()
-  {
-    return $this->accountPermissionGroups;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_Dfareporting_AccountPermissionGroup
+     */
+    public function setAccountPermissionGroups($accountPermissionGroups) {
+        $this->accountPermissionGroups = $accountPermissionGroups;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_AccountPermissionGroup
+     */
+    public function getAccountPermissionGroups() {
+        return $this->accountPermissionGroups;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

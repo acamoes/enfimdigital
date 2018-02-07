@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageCard extends Google_Collection
-{
-  protected $collection_key = 'buttons';
-  protected $buttonsType = 'Google_Service_Dialogflow_IntentMessageCardButton';
-  protected $buttonsDataType = 'array';
-  public $imageUri;
-  public $subtitle;
-  public $title;
+class Google_Service_Dialogflow_IntentMessageCard extends Google_Collection {
+    protected $collection_key  = 'buttons';
+    protected $buttonsType     = 'Google_Service_Dialogflow_IntentMessageCardButton';
+    protected $buttonsDataType = 'array';
+    public $imageUri;
+    public $subtitle;
+    public $title;
 
-  /**
-   * @param Google_Service_Dialogflow_IntentMessageCardButton
-   */
-  public function setButtons($buttons)
-  {
-    $this->buttons = $buttons;
-  }
-  /**
-   * @return Google_Service_Dialogflow_IntentMessageCardButton
-   */
-  public function getButtons()
-  {
-    return $this->buttons;
-  }
-  public function setImageUri($imageUri)
-  {
-    $this->imageUri = $imageUri;
-  }
-  public function getImageUri()
-  {
-    return $this->imageUri;
-  }
-  public function setSubtitle($subtitle)
-  {
-    $this->subtitle = $subtitle;
-  }
-  public function getSubtitle()
-  {
-    return $this->subtitle;
-  }
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  public function getTitle()
-  {
-    return $this->title;
-  }
+    /**
+     * @param Google_Service_Dialogflow_IntentMessageCardButton
+     */
+    public function setButtons($buttons) {
+        $this->buttons = $buttons;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_IntentMessageCardButton
+     */
+    public function getButtons() {
+        return $this->buttons;
+    }
+
+    public function setImageUri($imageUri) {
+        $this->imageUri = $imageUri;
+    }
+
+    public function getImageUri() {
+        return $this->imageUri;
+    }
+
+    public function setSubtitle($subtitle) {
+        $this->subtitle = $subtitle;
+    }
+
+    public function getSubtitle() {
+        return $this->subtitle;
+    }
+
+    public function setTitle($title) {
+        $this->title = $title;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
 }

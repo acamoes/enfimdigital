@@ -15,57 +15,55 @@
  * the License.
  */
 
-class Google_Service_Firestore_RunQueryRequest extends Google_Model
-{
-  protected $newTransactionType = 'Google_Service_Firestore_TransactionOptions';
-  protected $newTransactionDataType = '';
-  public $readTime;
-  protected $structuredQueryType = 'Google_Service_Firestore_StructuredQuery';
-  protected $structuredQueryDataType = '';
-  public $transaction;
+class Google_Service_Firestore_RunQueryRequest extends Google_Model {
+    protected $newTransactionType      = 'Google_Service_Firestore_TransactionOptions';
+    protected $newTransactionDataType  = '';
+    public $readTime;
+    protected $structuredQueryType     = 'Google_Service_Firestore_StructuredQuery';
+    protected $structuredQueryDataType = '';
+    public $transaction;
 
-  /**
-   * @param Google_Service_Firestore_TransactionOptions
-   */
-  public function setNewTransaction(Google_Service_Firestore_TransactionOptions $newTransaction)
-  {
-    $this->newTransaction = $newTransaction;
-  }
-  /**
-   * @return Google_Service_Firestore_TransactionOptions
-   */
-  public function getNewTransaction()
-  {
-    return $this->newTransaction;
-  }
-  public function setReadTime($readTime)
-  {
-    $this->readTime = $readTime;
-  }
-  public function getReadTime()
-  {
-    return $this->readTime;
-  }
-  /**
-   * @param Google_Service_Firestore_StructuredQuery
-   */
-  public function setStructuredQuery(Google_Service_Firestore_StructuredQuery $structuredQuery)
-  {
-    $this->structuredQuery = $structuredQuery;
-  }
-  /**
-   * @return Google_Service_Firestore_StructuredQuery
-   */
-  public function getStructuredQuery()
-  {
-    return $this->structuredQuery;
-  }
-  public function setTransaction($transaction)
-  {
-    $this->transaction = $transaction;
-  }
-  public function getTransaction()
-  {
-    return $this->transaction;
-  }
+    /**
+     * @param Google_Service_Firestore_TransactionOptions
+     */
+    public function setNewTransaction(Google_Service_Firestore_TransactionOptions $newTransaction) {
+        $this->newTransaction = $newTransaction;
+    }
+
+    /**
+     * @return Google_Service_Firestore_TransactionOptions
+     */
+    public function getNewTransaction() {
+        return $this->newTransaction;
+    }
+
+    public function setReadTime($readTime) {
+        $this->readTime = $readTime;
+    }
+
+    public function getReadTime() {
+        return $this->readTime;
+    }
+
+    /**
+     * @param Google_Service_Firestore_StructuredQuery
+     */
+    public function setStructuredQuery(Google_Service_Firestore_StructuredQuery $structuredQuery) {
+        $this->structuredQuery = $structuredQuery;
+    }
+
+    /**
+     * @return Google_Service_Firestore_StructuredQuery
+     */
+    public function getStructuredQuery() {
+        return $this->structuredQuery;
+    }
+
+    public function setTransaction($transaction) {
+        $this->transaction = $transaction;
+    }
+
+    public function getTransaction() {
+        return $this->transaction;
+    }
 }

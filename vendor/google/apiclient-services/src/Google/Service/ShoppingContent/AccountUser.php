@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_AccountUser extends Google_Model
-{
-  public $admin;
-  public $emailAddress;
+class Google_Service_ShoppingContent_AccountUser extends Google_Model {
+    public $admin;
+    public $emailAddress;
 
-  public function setAdmin($admin)
-  {
-    $this->admin = $admin;
-  }
-  public function getAdmin()
-  {
-    return $this->admin;
-  }
-  public function setEmailAddress($emailAddress)
-  {
-    $this->emailAddress = $emailAddress;
-  }
-  public function getEmailAddress()
-  {
-    return $this->emailAddress;
-  }
+    public function setAdmin($admin) {
+        $this->admin = $admin;
+    }
+
+    public function getAdmin() {
+        return $this->admin;
+    }
+
+    public function setEmailAddress($emailAddress) {
+        $this->emailAddress = $emailAddress;
+    }
+
+    public function getEmailAddress() {
+        return $this->emailAddress;
+    }
 }

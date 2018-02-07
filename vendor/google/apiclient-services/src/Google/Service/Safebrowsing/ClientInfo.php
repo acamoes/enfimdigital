@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Safebrowsing_ClientInfo extends Google_Model
-{
-  public $clientId;
-  public $clientVersion;
+class Google_Service_Safebrowsing_ClientInfo extends Google_Model {
+    public $clientId;
+    public $clientVersion;
 
-  public function setClientId($clientId)
-  {
-    $this->clientId = $clientId;
-  }
-  public function getClientId()
-  {
-    return $this->clientId;
-  }
-  public function setClientVersion($clientVersion)
-  {
-    $this->clientVersion = $clientVersion;
-  }
-  public function getClientVersion()
-  {
-    return $this->clientVersion;
-  }
+    public function setClientId($clientId) {
+        $this->clientId = $clientId;
+    }
+
+    public function getClientId() {
+        return $this->clientId;
+    }
+
+    public function setClientVersion($clientVersion) {
+        $this->clientVersion = $clientVersion;
+    }
+
+    public function getClientVersion() {
+        return $this->clientVersion;
+    }
 }

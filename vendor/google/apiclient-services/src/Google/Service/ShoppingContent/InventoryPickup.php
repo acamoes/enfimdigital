@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_InventoryPickup extends Google_Model
-{
-  public $pickupMethod;
-  public $pickupSla;
+class Google_Service_ShoppingContent_InventoryPickup extends Google_Model {
+    public $pickupMethod;
+    public $pickupSla;
 
-  public function setPickupMethod($pickupMethod)
-  {
-    $this->pickupMethod = $pickupMethod;
-  }
-  public function getPickupMethod()
-  {
-    return $this->pickupMethod;
-  }
-  public function setPickupSla($pickupSla)
-  {
-    $this->pickupSla = $pickupSla;
-  }
-  public function getPickupSla()
-  {
-    return $this->pickupSla;
-  }
+    public function setPickupMethod($pickupMethod) {
+        $this->pickupMethod = $pickupMethod;
+    }
+
+    public function getPickupMethod() {
+        return $this->pickupMethod;
+    }
+
+    public function setPickupSla($pickupSla) {
+        $this->pickupSla = $pickupSla;
+    }
+
+    public function getPickupSla() {
+        return $this->pickupSla;
+    }
 }

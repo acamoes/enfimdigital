@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_ServiceControl_AuthorizationInfo extends Google_Model
-{
-  public $granted;
-  public $permission;
-  public $resource;
+class Google_Service_ServiceControl_AuthorizationInfo extends Google_Model {
+    public $granted;
+    public $permission;
+    public $resource;
 
-  public function setGranted($granted)
-  {
-    $this->granted = $granted;
-  }
-  public function getGranted()
-  {
-    return $this->granted;
-  }
-  public function setPermission($permission)
-  {
-    $this->permission = $permission;
-  }
-  public function getPermission()
-  {
-    return $this->permission;
-  }
-  public function setResource($resource)
-  {
-    $this->resource = $resource;
-  }
-  public function getResource()
-  {
-    return $this->resource;
-  }
+    public function setGranted($granted) {
+        $this->granted = $granted;
+    }
+
+    public function getGranted() {
+        return $this->granted;
+    }
+
+    public function setPermission($permission) {
+        $this->permission = $permission;
+    }
+
+    public function getPermission() {
+        return $this->permission;
+    }
+
+    public function setResource($resource) {
+        $this->resource = $resource;
+    }
+
+    public function getResource() {
+        return $this->resource;
+    }
 }

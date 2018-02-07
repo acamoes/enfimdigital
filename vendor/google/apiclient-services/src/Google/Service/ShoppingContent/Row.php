@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_Row extends Google_Collection
-{
-  protected $collection_key = 'cells';
-  protected $cellsType = 'Google_Service_ShoppingContent_Value';
-  protected $cellsDataType = 'array';
+class Google_Service_ShoppingContent_Row extends Google_Collection {
+    protected $collection_key = 'cells';
+    protected $cellsType      = 'Google_Service_ShoppingContent_Value';
+    protected $cellsDataType  = 'array';
 
-  /**
-   * @param Google_Service_ShoppingContent_Value
-   */
-  public function setCells($cells)
-  {
-    $this->cells = $cells;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_Value
-   */
-  public function getCells()
-  {
-    return $this->cells;
-  }
+    /**
+     * @param Google_Service_ShoppingContent_Value
+     */
+    public function setCells($cells) {
+        $this->cells = $cells;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_Value
+     */
+    public function getCells() {
+        return $this->cells;
+    }
 }

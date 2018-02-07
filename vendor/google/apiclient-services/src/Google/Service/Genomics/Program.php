@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_Genomics_Program extends Google_Model
-{
-  public $commandLine;
-  public $id;
-  public $name;
-  public $prevProgramId;
-  public $version;
+class Google_Service_Genomics_Program extends Google_Model {
+    public $commandLine;
+    public $id;
+    public $name;
+    public $prevProgramId;
+    public $version;
 
-  public function setCommandLine($commandLine)
-  {
-    $this->commandLine = $commandLine;
-  }
-  public function getCommandLine()
-  {
-    return $this->commandLine;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setPrevProgramId($prevProgramId)
-  {
-    $this->prevProgramId = $prevProgramId;
-  }
-  public function getPrevProgramId()
-  {
-    return $this->prevProgramId;
-  }
-  public function setVersion($version)
-  {
-    $this->version = $version;
-  }
-  public function getVersion()
-  {
-    return $this->version;
-  }
+    public function setCommandLine($commandLine) {
+        $this->commandLine = $commandLine;
+    }
+
+    public function getCommandLine() {
+        return $this->commandLine;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setPrevProgramId($prevProgramId) {
+        $this->prevProgramId = $prevProgramId;
+    }
+
+    public function getPrevProgramId() {
+        return $this->prevProgramId;
+    }
+
+    public function setVersion($version) {
+        $this->version = $version;
+    }
+
+    public function getVersion() {
+        return $this->version;
+    }
 }

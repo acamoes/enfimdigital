@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Proximitybeacon_Observation extends Google_Model
-{
-  protected $advertisedIdType = 'Google_Service_Proximitybeacon_AdvertisedId';
-  protected $advertisedIdDataType = '';
-  public $telemetry;
-  public $timestampMs;
+class Google_Service_Proximitybeacon_Observation extends Google_Model {
+    protected $advertisedIdType     = 'Google_Service_Proximitybeacon_AdvertisedId';
+    protected $advertisedIdDataType = '';
+    public $telemetry;
+    public $timestampMs;
 
-  /**
-   * @param Google_Service_Proximitybeacon_AdvertisedId
-   */
-  public function setAdvertisedId(Google_Service_Proximitybeacon_AdvertisedId $advertisedId)
-  {
-    $this->advertisedId = $advertisedId;
-  }
-  /**
-   * @return Google_Service_Proximitybeacon_AdvertisedId
-   */
-  public function getAdvertisedId()
-  {
-    return $this->advertisedId;
-  }
-  public function setTelemetry($telemetry)
-  {
-    $this->telemetry = $telemetry;
-  }
-  public function getTelemetry()
-  {
-    return $this->telemetry;
-  }
-  public function setTimestampMs($timestampMs)
-  {
-    $this->timestampMs = $timestampMs;
-  }
-  public function getTimestampMs()
-  {
-    return $this->timestampMs;
-  }
+    /**
+     * @param Google_Service_Proximitybeacon_AdvertisedId
+     */
+    public function setAdvertisedId(Google_Service_Proximitybeacon_AdvertisedId $advertisedId) {
+        $this->advertisedId = $advertisedId;
+    }
+
+    /**
+     * @return Google_Service_Proximitybeacon_AdvertisedId
+     */
+    public function getAdvertisedId() {
+        return $this->advertisedId;
+    }
+
+    public function setTelemetry($telemetry) {
+        $this->telemetry = $telemetry;
+    }
+
+    public function getTelemetry() {
+        return $this->telemetry;
+    }
+
+    public function setTimestampMs($timestampMs) {
+        $this->timestampMs = $timestampMs;
+    }
+
+    public function getTimestampMs() {
+        return $this->timestampMs;
+    }
 }

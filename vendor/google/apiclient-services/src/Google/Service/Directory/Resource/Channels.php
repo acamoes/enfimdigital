@@ -23,18 +23,17 @@
  *   $channels = $adminService->channels;
  *  </code>
  */
-class Google_Service_Directory_Resource_Channels extends Google_Service_Resource
-{
-  /**
-   * Stop watching resources through this channel (channels.stop)
-   *
-   * @param Google_Service_Directory_Channel $postBody
-   * @param array $optParams Optional parameters.
-   */
-  public function stop(Google_Service_Directory_Channel $postBody, $optParams = array())
-  {
-    $params = array('postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('stop', array($params));
-  }
+class Google_Service_Directory_Resource_Channels extends Google_Service_Resource {
+
+    /**
+     * Stop watching resources through this channel (channels.stop)
+     *
+     * @param Google_Service_Directory_Channel $postBody
+     * @param array $optParams Optional parameters.
+     */
+    public function stop(Google_Service_Directory_Channel $postBody, $optParams = array()) {
+        $params = array('postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('stop', array($params));
+    }
 }

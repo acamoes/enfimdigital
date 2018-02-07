@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Slides_Link extends Google_Model
-{
-  public $pageObjectId;
-  public $relativeLink;
-  public $slideIndex;
-  public $url;
+class Google_Service_Slides_Link extends Google_Model {
+    public $pageObjectId;
+    public $relativeLink;
+    public $slideIndex;
+    public $url;
 
-  public function setPageObjectId($pageObjectId)
-  {
-    $this->pageObjectId = $pageObjectId;
-  }
-  public function getPageObjectId()
-  {
-    return $this->pageObjectId;
-  }
-  public function setRelativeLink($relativeLink)
-  {
-    $this->relativeLink = $relativeLink;
-  }
-  public function getRelativeLink()
-  {
-    return $this->relativeLink;
-  }
-  public function setSlideIndex($slideIndex)
-  {
-    $this->slideIndex = $slideIndex;
-  }
-  public function getSlideIndex()
-  {
-    return $this->slideIndex;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setPageObjectId($pageObjectId) {
+        $this->pageObjectId = $pageObjectId;
+    }
+
+    public function getPageObjectId() {
+        return $this->pageObjectId;
+    }
+
+    public function setRelativeLink($relativeLink) {
+        $this->relativeLink = $relativeLink;
+    }
+
+    public function getRelativeLink() {
+        return $this->relativeLink;
+    }
+
+    public function setSlideIndex($slideIndex) {
+        $this->slideIndex = $slideIndex;
+    }
+
+    public function getSlideIndex() {
+        return $this->slideIndex;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

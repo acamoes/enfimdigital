@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1GetConfigResponse extends Google_Model
-{
-  public $serviceAccount;
-  public $serviceAccountProject;
+class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1GetConfigResponse extends Google_Model {
+    public $serviceAccount;
+    public $serviceAccountProject;
 
-  public function setServiceAccount($serviceAccount)
-  {
-    $this->serviceAccount = $serviceAccount;
-  }
-  public function getServiceAccount()
-  {
-    return $this->serviceAccount;
-  }
-  public function setServiceAccountProject($serviceAccountProject)
-  {
-    $this->serviceAccountProject = $serviceAccountProject;
-  }
-  public function getServiceAccountProject()
-  {
-    return $this->serviceAccountProject;
-  }
+    public function setServiceAccount($serviceAccount) {
+        $this->serviceAccount = $serviceAccount;
+    }
+
+    public function getServiceAccount() {
+        return $this->serviceAccount;
+    }
+
+    public function setServiceAccountProject($serviceAccountProject) {
+        $this->serviceAccountProject = $serviceAccountProject;
+    }
+
+    public function getServiceAccountProject() {
+        return $this->serviceAccountProject;
+    }
 }

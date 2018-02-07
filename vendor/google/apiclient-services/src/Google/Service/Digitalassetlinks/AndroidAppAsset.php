@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Digitalassetlinks_AndroidAppAsset extends Google_Model
-{
-  protected $certificateType = 'Google_Service_Digitalassetlinks_CertificateInfo';
-  protected $certificateDataType = '';
-  public $packageName;
+class Google_Service_Digitalassetlinks_AndroidAppAsset extends Google_Model {
+    protected $certificateType     = 'Google_Service_Digitalassetlinks_CertificateInfo';
+    protected $certificateDataType = '';
+    public $packageName;
 
-  /**
-   * @param Google_Service_Digitalassetlinks_CertificateInfo
-   */
-  public function setCertificate(Google_Service_Digitalassetlinks_CertificateInfo $certificate)
-  {
-    $this->certificate = $certificate;
-  }
-  /**
-   * @return Google_Service_Digitalassetlinks_CertificateInfo
-   */
-  public function getCertificate()
-  {
-    return $this->certificate;
-  }
-  public function setPackageName($packageName)
-  {
-    $this->packageName = $packageName;
-  }
-  public function getPackageName()
-  {
-    return $this->packageName;
-  }
+    /**
+     * @param Google_Service_Digitalassetlinks_CertificateInfo
+     */
+    public function setCertificate(Google_Service_Digitalassetlinks_CertificateInfo $certificate) {
+        $this->certificate = $certificate;
+    }
+
+    /**
+     * @return Google_Service_Digitalassetlinks_CertificateInfo
+     */
+    public function getCertificate() {
+        return $this->certificate;
+    }
+
+    public function setPackageName($packageName) {
+        $this->packageName = $packageName;
+    }
+
+    public function getPackageName() {
+        return $this->packageName;
+    }
 }

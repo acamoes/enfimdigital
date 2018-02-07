@@ -23,6 +23,6 @@
  *   $regions = $dataprocService->regions;
  *  </code>
  */
-class Google_Service_Dataproc_Resource_ProjectsRegions extends Google_Service_Resource
-{
+class Google_Service_Dataproc_Resource_ProjectsRegions extends Google_Service_Resource {
+
 }

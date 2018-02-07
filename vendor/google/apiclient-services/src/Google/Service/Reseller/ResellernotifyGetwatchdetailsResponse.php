@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Reseller_ResellernotifyGetwatchdetailsResponse extends Google_Collection
-{
-  protected $collection_key = 'serviceAccountEmailAddresses';
-  public $serviceAccountEmailAddresses;
-  public $topicName;
+class Google_Service_Reseller_ResellernotifyGetwatchdetailsResponse extends Google_Collection {
+    protected $collection_key = 'serviceAccountEmailAddresses';
+    public $serviceAccountEmailAddresses;
+    public $topicName;
 
-  public function setServiceAccountEmailAddresses($serviceAccountEmailAddresses)
-  {
-    $this->serviceAccountEmailAddresses = $serviceAccountEmailAddresses;
-  }
-  public function getServiceAccountEmailAddresses()
-  {
-    return $this->serviceAccountEmailAddresses;
-  }
-  public function setTopicName($topicName)
-  {
-    $this->topicName = $topicName;
-  }
-  public function getTopicName()
-  {
-    return $this->topicName;
-  }
+    public function setServiceAccountEmailAddresses($serviceAccountEmailAddresses) {
+        $this->serviceAccountEmailAddresses = $serviceAccountEmailAddresses;
+    }
+
+    public function getServiceAccountEmailAddresses() {
+        return $this->serviceAccountEmailAddresses;
+    }
+
+    public function setTopicName($topicName) {
+        $this->topicName = $topicName;
+    }
+
+    public function getTopicName() {
+        return $this->topicName;
+    }
 }

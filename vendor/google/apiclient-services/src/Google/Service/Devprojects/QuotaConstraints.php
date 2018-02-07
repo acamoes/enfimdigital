@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Devprojects_QuotaConstraints extends Google_Model
-{
-  public $explicitDailyQuota;
-  public $kind;
+class Google_Service_Devprojects_QuotaConstraints extends Google_Model {
+    public $explicitDailyQuota;
+    public $kind;
 
-  public function setExplicitDailyQuota($explicitDailyQuota)
-  {
-    $this->explicitDailyQuota = $explicitDailyQuota;
-  }
-  public function getExplicitDailyQuota()
-  {
-    return $this->explicitDailyQuota;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setExplicitDailyQuota($explicitDailyQuota) {
+        $this->explicitDailyQuota = $explicitDailyQuota;
+    }
+
+    public function getExplicitDailyQuota() {
+        return $this->explicitDailyQuota;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

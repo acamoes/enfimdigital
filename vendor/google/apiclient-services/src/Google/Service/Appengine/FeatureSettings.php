@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Appengine_FeatureSettings extends Google_Model
-{
-  public $splitHealthChecks;
+class Google_Service_Appengine_FeatureSettings extends Google_Model {
+    public $splitHealthChecks;
 
-  public function setSplitHealthChecks($splitHealthChecks)
-  {
-    $this->splitHealthChecks = $splitHealthChecks;
-  }
-  public function getSplitHealthChecks()
-  {
-    return $this->splitHealthChecks;
-  }
+    public function setSplitHealthChecks($splitHealthChecks) {
+        $this->splitHealthChecks = $splitHealthChecks;
+    }
+
+    public function getSplitHealthChecks() {
+        return $this->splitHealthChecks;
+    }
 }

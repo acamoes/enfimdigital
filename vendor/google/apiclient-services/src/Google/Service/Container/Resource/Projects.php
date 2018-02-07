@@ -23,6 +23,6 @@
  *   $projects = $containerService->projects;
  *  </code>
  */
-class Google_Service_Container_Resource_Projects extends Google_Service_Resource
-{
+class Google_Service_Container_Resource_Projects extends Google_Service_Resource {
+
 }

@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_YouTube_VideoRecordingDetails extends Google_Model
-{
-  protected $locationType = 'Google_Service_YouTube_GeoPoint';
-  protected $locationDataType = '';
-  public $locationDescription;
-  public $recordingDate;
+class Google_Service_YouTube_VideoRecordingDetails extends Google_Model {
+    protected $locationType     = 'Google_Service_YouTube_GeoPoint';
+    protected $locationDataType = '';
+    public $locationDescription;
+    public $recordingDate;
 
-  /**
-   * @param Google_Service_YouTube_GeoPoint
-   */
-  public function setLocation(Google_Service_YouTube_GeoPoint $location)
-  {
-    $this->location = $location;
-  }
-  /**
-   * @return Google_Service_YouTube_GeoPoint
-   */
-  public function getLocation()
-  {
-    return $this->location;
-  }
-  public function setLocationDescription($locationDescription)
-  {
-    $this->locationDescription = $locationDescription;
-  }
-  public function getLocationDescription()
-  {
-    return $this->locationDescription;
-  }
-  public function setRecordingDate($recordingDate)
-  {
-    $this->recordingDate = $recordingDate;
-  }
-  public function getRecordingDate()
-  {
-    return $this->recordingDate;
-  }
+    /**
+     * @param Google_Service_YouTube_GeoPoint
+     */
+    public function setLocation(Google_Service_YouTube_GeoPoint $location) {
+        $this->location = $location;
+    }
+
+    /**
+     * @return Google_Service_YouTube_GeoPoint
+     */
+    public function getLocation() {
+        return $this->location;
+    }
+
+    public function setLocationDescription($locationDescription) {
+        $this->locationDescription = $locationDescription;
+    }
+
+    public function getLocationDescription() {
+        return $this->locationDescription;
+    }
+
+    public function setRecordingDate($recordingDate) {
+        $this->recordingDate = $recordingDate;
+    }
+
+    public function getRecordingDate() {
+        return $this->recordingDate;
+    }
 }

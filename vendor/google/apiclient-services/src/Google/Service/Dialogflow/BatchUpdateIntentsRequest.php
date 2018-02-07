@@ -15,59 +15,57 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_BatchUpdateIntentsRequest extends Google_Model
-{
-  protected $intentBatchInlineType = 'Google_Service_Dialogflow_IntentBatch';
-  protected $intentBatchInlineDataType = '';
-  public $intentBatchUri;
-  public $intentView;
-  public $languageCode;
-  public $updateMask;
+class Google_Service_Dialogflow_BatchUpdateIntentsRequest extends Google_Model {
+    protected $intentBatchInlineType     = 'Google_Service_Dialogflow_IntentBatch';
+    protected $intentBatchInlineDataType = '';
+    public $intentBatchUri;
+    public $intentView;
+    public $languageCode;
+    public $updateMask;
 
-  /**
-   * @param Google_Service_Dialogflow_IntentBatch
-   */
-  public function setIntentBatchInline(Google_Service_Dialogflow_IntentBatch $intentBatchInline)
-  {
-    $this->intentBatchInline = $intentBatchInline;
-  }
-  /**
-   * @return Google_Service_Dialogflow_IntentBatch
-   */
-  public function getIntentBatchInline()
-  {
-    return $this->intentBatchInline;
-  }
-  public function setIntentBatchUri($intentBatchUri)
-  {
-    $this->intentBatchUri = $intentBatchUri;
-  }
-  public function getIntentBatchUri()
-  {
-    return $this->intentBatchUri;
-  }
-  public function setIntentView($intentView)
-  {
-    $this->intentView = $intentView;
-  }
-  public function getIntentView()
-  {
-    return $this->intentView;
-  }
-  public function setLanguageCode($languageCode)
-  {
-    $this->languageCode = $languageCode;
-  }
-  public function getLanguageCode()
-  {
-    return $this->languageCode;
-  }
-  public function setUpdateMask($updateMask)
-  {
-    $this->updateMask = $updateMask;
-  }
-  public function getUpdateMask()
-  {
-    return $this->updateMask;
-  }
+    /**
+     * @param Google_Service_Dialogflow_IntentBatch
+     */
+    public function setIntentBatchInline(Google_Service_Dialogflow_IntentBatch $intentBatchInline) {
+        $this->intentBatchInline = $intentBatchInline;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_IntentBatch
+     */
+    public function getIntentBatchInline() {
+        return $this->intentBatchInline;
+    }
+
+    public function setIntentBatchUri($intentBatchUri) {
+        $this->intentBatchUri = $intentBatchUri;
+    }
+
+    public function getIntentBatchUri() {
+        return $this->intentBatchUri;
+    }
+
+    public function setIntentView($intentView) {
+        $this->intentView = $intentView;
+    }
+
+    public function getIntentView() {
+        return $this->intentView;
+    }
+
+    public function setLanguageCode($languageCode) {
+        $this->languageCode = $languageCode;
+    }
+
+    public function getLanguageCode() {
+        return $this->languageCode;
+    }
+
+    public function setUpdateMask($updateMask) {
+        $this->updateMask = $updateMask;
+    }
+
+    public function getUpdateMask() {
+        return $this->updateMask;
+    }
 }

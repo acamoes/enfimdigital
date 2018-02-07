@@ -15,44 +15,42 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchCallSetsRequest extends Google_Collection
-{
-  protected $collection_key = 'variantSetIds';
-  public $name;
-  public $pageSize;
-  public $pageToken;
-  public $variantSetIds;
+class Google_Service_Genomics_SearchCallSetsRequest extends Google_Collection {
+    protected $collection_key = 'variantSetIds';
+    public $name;
+    public $pageSize;
+    public $pageToken;
+    public $variantSetIds;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setPageSize($pageSize)
-  {
-    $this->pageSize = $pageSize;
-  }
-  public function getPageSize()
-  {
-    return $this->pageSize;
-  }
-  public function setPageToken($pageToken)
-  {
-    $this->pageToken = $pageToken;
-  }
-  public function getPageToken()
-  {
-    return $this->pageToken;
-  }
-  public function setVariantSetIds($variantSetIds)
-  {
-    $this->variantSetIds = $variantSetIds;
-  }
-  public function getVariantSetIds()
-  {
-    return $this->variantSetIds;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setPageSize($pageSize) {
+        $this->pageSize = $pageSize;
+    }
+
+    public function getPageSize() {
+        return $this->pageSize;
+    }
+
+    public function setPageToken($pageToken) {
+        $this->pageToken = $pageToken;
+    }
+
+    public function getPageToken() {
+        return $this->pageToken;
+    }
+
+    public function setVariantSetIds($variantSetIds) {
+        $this->variantSetIds = $variantSetIds;
+    }
+
+    public function getVariantSetIds() {
+        return $this->variantSetIds;
+    }
 }

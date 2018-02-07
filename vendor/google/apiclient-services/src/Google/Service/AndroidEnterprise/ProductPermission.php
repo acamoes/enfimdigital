@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductPermission extends Google_Model
-{
-  public $permissionId;
-  public $state;
+class Google_Service_AndroidEnterprise_ProductPermission extends Google_Model {
+    public $permissionId;
+    public $state;
 
-  public function setPermissionId($permissionId)
-  {
-    $this->permissionId = $permissionId;
-  }
-  public function getPermissionId()
-  {
-    return $this->permissionId;
-  }
-  public function setState($state)
-  {
-    $this->state = $state;
-  }
-  public function getState()
-  {
-    return $this->state;
-  }
+    public function setPermissionId($permissionId) {
+        $this->permissionId = $permissionId;
+    }
+
+    public function getPermissionId() {
+        return $this->permissionId;
+    }
+
+    public function setState($state) {
+        $this->state = $state;
+    }
+
+    public function getState() {
+        return $this->state;
+    }
 }

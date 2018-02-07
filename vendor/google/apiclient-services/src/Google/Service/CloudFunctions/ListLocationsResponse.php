@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CloudFunctions_ListLocationsResponse extends Google_Collection
-{
-  protected $collection_key = 'locations';
-  protected $locationsType = 'Google_Service_CloudFunctions_Location';
-  protected $locationsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_CloudFunctions_ListLocationsResponse extends Google_Collection {
+    protected $collection_key    = 'locations';
+    protected $locationsType     = 'Google_Service_CloudFunctions_Location';
+    protected $locationsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_CloudFunctions_Location
-   */
-  public function setLocations($locations)
-  {
-    $this->locations = $locations;
-  }
-  /**
-   * @return Google_Service_CloudFunctions_Location
-   */
-  public function getLocations()
-  {
-    return $this->locations;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_CloudFunctions_Location
+     */
+    public function setLocations($locations) {
+        $this->locations = $locations;
+    }
+
+    /**
+     * @return Google_Service_CloudFunctions_Location
+     */
+    public function getLocations() {
+        return $this->locations;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_CloudSourceRepositories_MirrorConfig extends Google_Model
-{
-  public $deployKeyId;
-  public $url;
-  public $webhookId;
+class Google_Service_CloudSourceRepositories_MirrorConfig extends Google_Model {
+    public $deployKeyId;
+    public $url;
+    public $webhookId;
 
-  public function setDeployKeyId($deployKeyId)
-  {
-    $this->deployKeyId = $deployKeyId;
-  }
-  public function getDeployKeyId()
-  {
-    return $this->deployKeyId;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
-  public function setWebhookId($webhookId)
-  {
-    $this->webhookId = $webhookId;
-  }
-  public function getWebhookId()
-  {
-    return $this->webhookId;
-  }
+    public function setDeployKeyId($deployKeyId) {
+        $this->deployKeyId = $deployKeyId;
+    }
+
+    public function getDeployKeyId() {
+        return $this->deployKeyId;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
+
+    public function setWebhookId($webhookId) {
+        $this->webhookId = $webhookId;
+    }
+
+    public function getWebhookId() {
+        return $this->webhookId;
+    }
 }

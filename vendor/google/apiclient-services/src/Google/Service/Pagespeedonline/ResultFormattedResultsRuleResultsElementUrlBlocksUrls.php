@@ -15,40 +15,38 @@
  * the License.
  */
 
-class Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocksUrls extends Google_Collection
-{
-  protected $collection_key = 'details';
-  protected $detailsType = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2';
-  protected $detailsDataType = 'array';
-  protected $resultType = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2';
-  protected $resultDataType = '';
+class Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocksUrls extends Google_Collection {
+    protected $collection_key  = 'details';
+    protected $detailsType     = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2';
+    protected $detailsDataType = 'array';
+    protected $resultType      = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2';
+    protected $resultDataType  = '';
 
-  /**
-   * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
-   */
-  public function setDetails($details)
-  {
-    $this->details = $details;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
-   */
-  public function getDetails()
-  {
-    return $this->details;
-  }
-  /**
-   * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
-   */
-  public function setResult(Google_Service_Pagespeedonline_PagespeedApiFormatStringV2 $result)
-  {
-    $this->result = $result;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
-   */
-  public function getResult()
-  {
-    return $this->result;
-  }
+    /**
+     * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
+     */
+    public function setDetails($details) {
+        $this->details = $details;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
+     */
+    public function getDetails() {
+        return $this->details;
+    }
+
+    /**
+     * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
+     */
+    public function setResult(Google_Service_Pagespeedonline_PagespeedApiFormatStringV2 $result) {
+        $this->result = $result;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
+     */
+    public function getResult() {
+        return $this->result;
+    }
 }

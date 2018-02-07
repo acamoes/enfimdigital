@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudTasks_AcknowledgeTaskRequest extends Google_Model
-{
-  public $scheduleTime;
+class Google_Service_CloudTasks_AcknowledgeTaskRequest extends Google_Model {
+    public $scheduleTime;
 
-  public function setScheduleTime($scheduleTime)
-  {
-    $this->scheduleTime = $scheduleTime;
-  }
-  public function getScheduleTime()
-  {
-    return $this->scheduleTime;
-  }
+    public function setScheduleTime($scheduleTime) {
+        $this->scheduleTime = $scheduleTime;
+    }
+
+    public function getScheduleTime() {
+        return $this->scheduleTime;
+    }
 }

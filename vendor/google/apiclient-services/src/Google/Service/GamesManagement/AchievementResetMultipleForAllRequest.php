@@ -15,29 +15,27 @@
  * the License.
  */
 
-class Google_Service_GamesManagement_AchievementResetMultipleForAllRequest extends Google_Collection
-{
-  protected $collection_key = 'achievement_ids';
-  protected $internal_gapi_mappings = array(
+class Google_Service_GamesManagement_AchievementResetMultipleForAllRequest extends Google_Collection {
+    protected $collection_key         = 'achievement_ids';
+    protected $internal_gapi_mappings = array(
         "achievementIds" => "achievement_ids",
-  );
-  public $achievementIds;
-  public $kind;
+    );
+    public $achievementIds;
+    public $kind;
 
-  public function setAchievementIds($achievementIds)
-  {
-    $this->achievementIds = $achievementIds;
-  }
-  public function getAchievementIds()
-  {
-    return $this->achievementIds;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setAchievementIds($achievementIds) {
+        $this->achievementIds = $achievementIds;
+    }
+
+    public function getAchievementIds() {
+        return $this->achievementIds;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

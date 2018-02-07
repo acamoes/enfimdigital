@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_ImagesListResponse extends Google_Collection
-{
-  protected $collection_key = 'images';
-  protected $imagesType = 'Google_Service_AndroidPublisher_Image';
-  protected $imagesDataType = 'array';
+class Google_Service_AndroidPublisher_ImagesListResponse extends Google_Collection {
+    protected $collection_key = 'images';
+    protected $imagesType     = 'Google_Service_AndroidPublisher_Image';
+    protected $imagesDataType = 'array';
 
-  /**
-   * @param Google_Service_AndroidPublisher_Image
-   */
-  public function setImages($images)
-  {
-    $this->images = $images;
-  }
-  /**
-   * @return Google_Service_AndroidPublisher_Image
-   */
-  public function getImages()
-  {
-    return $this->images;
-  }
+    /**
+     * @param Google_Service_AndroidPublisher_Image
+     */
+    public function setImages($images) {
+        $this->images = $images;
+    }
+
+    /**
+     * @return Google_Service_AndroidPublisher_Image
+     */
+    public function getImages() {
+        return $this->images;
+    }
 }

@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Firestore_DocumentDelete extends Google_Collection
-{
-  protected $collection_key = 'removedTargetIds';
-  public $document;
-  public $readTime;
-  public $removedTargetIds;
+class Google_Service_Firestore_DocumentDelete extends Google_Collection {
+    protected $collection_key = 'removedTargetIds';
+    public $document;
+    public $readTime;
+    public $removedTargetIds;
 
-  public function setDocument($document)
-  {
-    $this->document = $document;
-  }
-  public function getDocument()
-  {
-    return $this->document;
-  }
-  public function setReadTime($readTime)
-  {
-    $this->readTime = $readTime;
-  }
-  public function getReadTime()
-  {
-    return $this->readTime;
-  }
-  public function setRemovedTargetIds($removedTargetIds)
-  {
-    $this->removedTargetIds = $removedTargetIds;
-  }
-  public function getRemovedTargetIds()
-  {
-    return $this->removedTargetIds;
-  }
+    public function setDocument($document) {
+        $this->document = $document;
+    }
+
+    public function getDocument() {
+        return $this->document;
+    }
+
+    public function setReadTime($readTime) {
+        $this->readTime = $readTime;
+    }
+
+    public function getReadTime() {
+        return $this->readTime;
+    }
+
+    public function setRemovedTargetIds($removedTargetIds) {
+        $this->removedTargetIds = $removedTargetIds;
+    }
+
+    public function getRemovedTargetIds() {
+        return $this->removedTargetIds;
+    }
 }

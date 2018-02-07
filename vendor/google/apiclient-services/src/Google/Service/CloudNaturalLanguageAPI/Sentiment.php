@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudNaturalLanguageAPI_Sentiment extends Google_Model
-{
-  public $magnitude;
-  public $polarity;
+class Google_Service_CloudNaturalLanguageAPI_Sentiment extends Google_Model {
+    public $magnitude;
+    public $polarity;
 
-  public function setMagnitude($magnitude)
-  {
-    $this->magnitude = $magnitude;
-  }
-  public function getMagnitude()
-  {
-    return $this->magnitude;
-  }
-  public function setPolarity($polarity)
-  {
-    $this->polarity = $polarity;
-  }
-  public function getPolarity()
-  {
-    return $this->polarity;
-  }
+    public function setMagnitude($magnitude) {
+        $this->magnitude = $magnitude;
+    }
+
+    public function getMagnitude() {
+        return $this->magnitude;
+    }
+
+    public function setPolarity($polarity) {
+        $this->polarity = $polarity;
+    }
+
+    public function getPolarity() {
+        return $this->polarity;
+    }
 }

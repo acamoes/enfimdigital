@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Pubsub_UpdateSnapshotRequest extends Google_Model
-{
-  protected $snapshotType = 'Google_Service_Pubsub_Snapshot';
-  protected $snapshotDataType = '';
-  public $updateMask;
+class Google_Service_Pubsub_UpdateSnapshotRequest extends Google_Model {
+    protected $snapshotType     = 'Google_Service_Pubsub_Snapshot';
+    protected $snapshotDataType = '';
+    public $updateMask;
 
-  /**
-   * @param Google_Service_Pubsub_Snapshot
-   */
-  public function setSnapshot(Google_Service_Pubsub_Snapshot $snapshot)
-  {
-    $this->snapshot = $snapshot;
-  }
-  /**
-   * @return Google_Service_Pubsub_Snapshot
-   */
-  public function getSnapshot()
-  {
-    return $this->snapshot;
-  }
-  public function setUpdateMask($updateMask)
-  {
-    $this->updateMask = $updateMask;
-  }
-  public function getUpdateMask()
-  {
-    return $this->updateMask;
-  }
+    /**
+     * @param Google_Service_Pubsub_Snapshot
+     */
+    public function setSnapshot(Google_Service_Pubsub_Snapshot $snapshot) {
+        $this->snapshot = $snapshot;
+    }
+
+    /**
+     * @return Google_Service_Pubsub_Snapshot
+     */
+    public function getSnapshot() {
+        return $this->snapshot;
+    }
+
+    public function setUpdateMask($updateMask) {
+        $this->updateMask = $updateMask;
+    }
+
+    public function getUpdateMask() {
+        return $this->updateMask;
+    }
 }

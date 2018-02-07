@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Slides_ThemeColorPair extends Google_Model
-{
-  protected $colorType = 'Google_Service_Slides_RgbColor';
-  protected $colorDataType = '';
-  public $type;
+class Google_Service_Slides_ThemeColorPair extends Google_Model {
+    protected $colorType     = 'Google_Service_Slides_RgbColor';
+    protected $colorDataType = '';
+    public $type;
 
-  /**
-   * @param Google_Service_Slides_RgbColor
-   */
-  public function setColor(Google_Service_Slides_RgbColor $color)
-  {
-    $this->color = $color;
-  }
-  /**
-   * @return Google_Service_Slides_RgbColor
-   */
-  public function getColor()
-  {
-    return $this->color;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    /**
+     * @param Google_Service_Slides_RgbColor
+     */
+    public function setColor(Google_Service_Slides_RgbColor $color) {
+        $this->color = $color;
+    }
+
+    /**
+     * @return Google_Service_Slides_RgbColor
+     */
+    public function getColor() {
+        return $this->color;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

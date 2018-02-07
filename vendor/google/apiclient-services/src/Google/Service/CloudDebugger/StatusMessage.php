@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_CloudDebugger_StatusMessage extends Google_Model
-{
-  protected $descriptionType = 'Google_Service_CloudDebugger_FormatMessage';
-  protected $descriptionDataType = '';
-  public $isError;
-  public $refersTo;
+class Google_Service_CloudDebugger_StatusMessage extends Google_Model {
+    protected $descriptionType     = 'Google_Service_CloudDebugger_FormatMessage';
+    protected $descriptionDataType = '';
+    public $isError;
+    public $refersTo;
 
-  /**
-   * @param Google_Service_CloudDebugger_FormatMessage
-   */
-  public function setDescription(Google_Service_CloudDebugger_FormatMessage $description)
-  {
-    $this->description = $description;
-  }
-  /**
-   * @return Google_Service_CloudDebugger_FormatMessage
-   */
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setIsError($isError)
-  {
-    $this->isError = $isError;
-  }
-  public function getIsError()
-  {
-    return $this->isError;
-  }
-  public function setRefersTo($refersTo)
-  {
-    $this->refersTo = $refersTo;
-  }
-  public function getRefersTo()
-  {
-    return $this->refersTo;
-  }
+    /**
+     * @param Google_Service_CloudDebugger_FormatMessage
+     */
+    public function setDescription(Google_Service_CloudDebugger_FormatMessage $description) {
+        $this->description = $description;
+    }
+
+    /**
+     * @return Google_Service_CloudDebugger_FormatMessage
+     */
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setIsError($isError) {
+        $this->isError = $isError;
+    }
+
+    public function getIsError() {
+        return $this->isError;
+    }
+
+    public function setRefersTo($refersTo) {
+        $this->refersTo = $refersTo;
+    }
+
+    public function getRefersTo() {
+        return $this->refersTo;
+    }
 }

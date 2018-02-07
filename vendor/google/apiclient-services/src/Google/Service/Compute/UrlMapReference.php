@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Compute_UrlMapReference extends Google_Model
-{
-  public $urlMap;
+class Google_Service_Compute_UrlMapReference extends Google_Model {
+    public $urlMap;
 
-  public function setUrlMap($urlMap)
-  {
-    $this->urlMap = $urlMap;
-  }
-  public function getUrlMap()
-  {
-    return $this->urlMap;
-  }
+    public function setUrlMap($urlMap) {
+        $this->urlMap = $urlMap;
+    }
+
+    public function getUrlMap() {
+        return $this->urlMap;
+    }
 }

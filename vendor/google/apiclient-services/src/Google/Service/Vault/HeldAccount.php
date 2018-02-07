@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Vault_HeldAccount extends Google_Model
-{
-  public $accountId;
-  public $holdTime;
+class Google_Service_Vault_HeldAccount extends Google_Model {
+    public $accountId;
+    public $holdTime;
 
-  public function setAccountId($accountId)
-  {
-    $this->accountId = $accountId;
-  }
-  public function getAccountId()
-  {
-    return $this->accountId;
-  }
-  public function setHoldTime($holdTime)
-  {
-    $this->holdTime = $holdTime;
-  }
-  public function getHoldTime()
-  {
-    return $this->holdTime;
-  }
+    public function setAccountId($accountId) {
+        $this->accountId = $accountId;
+    }
+
+    public function getAccountId() {
+        return $this->accountId;
+    }
+
+    public function setHoldTime($holdTime) {
+        $this->holdTime = $holdTime;
+    }
+
+    public function getHoldTime() {
+        return $this->holdTime;
+    }
 }

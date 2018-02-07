@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_YouTube_IngestionInfo extends Google_Model
-{
-  public $backupIngestionAddress;
-  public $ingestionAddress;
-  public $streamName;
+class Google_Service_YouTube_IngestionInfo extends Google_Model {
+    public $backupIngestionAddress;
+    public $ingestionAddress;
+    public $streamName;
 
-  public function setBackupIngestionAddress($backupIngestionAddress)
-  {
-    $this->backupIngestionAddress = $backupIngestionAddress;
-  }
-  public function getBackupIngestionAddress()
-  {
-    return $this->backupIngestionAddress;
-  }
-  public function setIngestionAddress($ingestionAddress)
-  {
-    $this->ingestionAddress = $ingestionAddress;
-  }
-  public function getIngestionAddress()
-  {
-    return $this->ingestionAddress;
-  }
-  public function setStreamName($streamName)
-  {
-    $this->streamName = $streamName;
-  }
-  public function getStreamName()
-  {
-    return $this->streamName;
-  }
+    public function setBackupIngestionAddress($backupIngestionAddress) {
+        $this->backupIngestionAddress = $backupIngestionAddress;
+    }
+
+    public function getBackupIngestionAddress() {
+        return $this->backupIngestionAddress;
+    }
+
+    public function setIngestionAddress($ingestionAddress) {
+        $this->ingestionAddress = $ingestionAddress;
+    }
+
+    public function getIngestionAddress() {
+        return $this->ingestionAddress;
+    }
+
+    public function setStreamName($streamName) {
+        $this->streamName = $streamName;
+    }
+
+    public function getStreamName() {
+        return $this->streamName;
+    }
 }

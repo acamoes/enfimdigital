@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Proximitybeacon_ProximitybeaconNamespace extends Google_Model
-{
-  public $namespaceName;
-  public $servingVisibility;
+class Google_Service_Proximitybeacon_ProximitybeaconNamespace extends Google_Model {
+    public $namespaceName;
+    public $servingVisibility;
 
-  public function setNamespaceName($namespaceName)
-  {
-    $this->namespaceName = $namespaceName;
-  }
-  public function getNamespaceName()
-  {
-    return $this->namespaceName;
-  }
-  public function setServingVisibility($servingVisibility)
-  {
-    $this->servingVisibility = $servingVisibility;
-  }
-  public function getServingVisibility()
-  {
-    return $this->servingVisibility;
-  }
+    public function setNamespaceName($namespaceName) {
+        $this->namespaceName = $namespaceName;
+    }
+
+    public function getNamespaceName() {
+        return $this->namespaceName;
+    }
+
+    public function setServingVisibility($servingVisibility) {
+        $this->servingVisibility = $servingVisibility;
+    }
+
+    public function getServingVisibility() {
+        return $this->servingVisibility;
+    }
 }

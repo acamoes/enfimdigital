@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Sheets_WaterfallChartColumnStyle extends Google_Model
-{
-  protected $colorType = 'Google_Service_Sheets_Color';
-  protected $colorDataType = '';
-  public $label;
+class Google_Service_Sheets_WaterfallChartColumnStyle extends Google_Model {
+    protected $colorType     = 'Google_Service_Sheets_Color';
+    protected $colorDataType = '';
+    public $label;
 
-  /**
-   * @param Google_Service_Sheets_Color
-   */
-  public function setColor(Google_Service_Sheets_Color $color)
-  {
-    $this->color = $color;
-  }
-  /**
-   * @return Google_Service_Sheets_Color
-   */
-  public function getColor()
-  {
-    return $this->color;
-  }
-  public function setLabel($label)
-  {
-    $this->label = $label;
-  }
-  public function getLabel()
-  {
-    return $this->label;
-  }
+    /**
+     * @param Google_Service_Sheets_Color
+     */
+    public function setColor(Google_Service_Sheets_Color $color) {
+        $this->color = $color;
+    }
+
+    /**
+     * @return Google_Service_Sheets_Color
+     */
+    public function getColor() {
+        return $this->color;
+    }
+
+    public function setLabel($label) {
+        $this->label = $label;
+    }
+
+    public function getLabel() {
+        return $this->label;
+    }
 }

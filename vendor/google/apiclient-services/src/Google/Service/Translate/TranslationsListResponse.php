@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Translate_TranslationsListResponse extends Google_Collection
-{
-  protected $collection_key = 'translations';
-  protected $translationsType = 'Google_Service_Translate_TranslationsResource';
-  protected $translationsDataType = 'array';
+class Google_Service_Translate_TranslationsListResponse extends Google_Collection {
+    protected $collection_key       = 'translations';
+    protected $translationsType     = 'Google_Service_Translate_TranslationsResource';
+    protected $translationsDataType = 'array';
 
-  /**
-   * @param Google_Service_Translate_TranslationsResource
-   */
-  public function setTranslations($translations)
-  {
-    $this->translations = $translations;
-  }
-  /**
-   * @return Google_Service_Translate_TranslationsResource
-   */
-  public function getTranslations()
-  {
-    return $this->translations;
-  }
+    /**
+     * @param Google_Service_Translate_TranslationsResource
+     */
+    public function setTranslations($translations) {
+        $this->translations = $translations;
+    }
+
+    /**
+     * @return Google_Service_Translate_TranslationsResource
+     */
+    public function getTranslations() {
+        return $this->translations;
+    }
 }

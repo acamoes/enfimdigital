@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Sheets_AddNamedRangeRequest extends Google_Model
-{
-  protected $namedRangeType = 'Google_Service_Sheets_NamedRange';
-  protected $namedRangeDataType = '';
+class Google_Service_Sheets_AddNamedRangeRequest extends Google_Model {
+    protected $namedRangeType     = 'Google_Service_Sheets_NamedRange';
+    protected $namedRangeDataType = '';
 
-  /**
-   * @param Google_Service_Sheets_NamedRange
-   */
-  public function setNamedRange(Google_Service_Sheets_NamedRange $namedRange)
-  {
-    $this->namedRange = $namedRange;
-  }
-  /**
-   * @return Google_Service_Sheets_NamedRange
-   */
-  public function getNamedRange()
-  {
-    return $this->namedRange;
-  }
+    /**
+     * @param Google_Service_Sheets_NamedRange
+     */
+    public function setNamedRange(Google_Service_Sheets_NamedRange $namedRange) {
+        $this->namedRange = $namedRange;
+    }
+
+    /**
+     * @return Google_Service_Sheets_NamedRange
+     */
+    public function getNamedRange() {
+        return $this->namedRange;
+    }
 }

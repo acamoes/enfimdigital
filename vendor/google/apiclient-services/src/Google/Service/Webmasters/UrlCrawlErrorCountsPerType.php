@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Webmasters_UrlCrawlErrorCountsPerType extends Google_Collection
-{
-  protected $collection_key = 'entries';
-  public $category;
-  protected $entriesType = 'Google_Service_Webmasters_UrlCrawlErrorCount';
-  protected $entriesDataType = 'array';
-  public $platform;
+class Google_Service_Webmasters_UrlCrawlErrorCountsPerType extends Google_Collection {
+    protected $collection_key  = 'entries';
+    public $category;
+    protected $entriesType     = 'Google_Service_Webmasters_UrlCrawlErrorCount';
+    protected $entriesDataType = 'array';
+    public $platform;
 
-  public function setCategory($category)
-  {
-    $this->category = $category;
-  }
-  public function getCategory()
-  {
-    return $this->category;
-  }
-  /**
-   * @param Google_Service_Webmasters_UrlCrawlErrorCount
-   */
-  public function setEntries($entries)
-  {
-    $this->entries = $entries;
-  }
-  /**
-   * @return Google_Service_Webmasters_UrlCrawlErrorCount
-   */
-  public function getEntries()
-  {
-    return $this->entries;
-  }
-  public function setPlatform($platform)
-  {
-    $this->platform = $platform;
-  }
-  public function getPlatform()
-  {
-    return $this->platform;
-  }
+    public function setCategory($category) {
+        $this->category = $category;
+    }
+
+    public function getCategory() {
+        return $this->category;
+    }
+
+    /**
+     * @param Google_Service_Webmasters_UrlCrawlErrorCount
+     */
+    public function setEntries($entries) {
+        $this->entries = $entries;
+    }
+
+    /**
+     * @return Google_Service_Webmasters_UrlCrawlErrorCount
+     */
+    public function getEntries() {
+        return $this->entries;
+    }
+
+    public function setPlatform($platform) {
+        $this->platform = $platform;
+    }
+
+    public function getPlatform() {
+        return $this->platform;
+    }
 }

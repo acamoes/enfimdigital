@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartyDeleteAccountRequest extends Google_Model
-{
-  public $delegatedProjectNumber;
-  public $idToken;
-  public $localId;
+class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartyDeleteAccountRequest extends Google_Model {
+    public $delegatedProjectNumber;
+    public $idToken;
+    public $localId;
 
-  public function setDelegatedProjectNumber($delegatedProjectNumber)
-  {
-    $this->delegatedProjectNumber = $delegatedProjectNumber;
-  }
-  public function getDelegatedProjectNumber()
-  {
-    return $this->delegatedProjectNumber;
-  }
-  public function setIdToken($idToken)
-  {
-    $this->idToken = $idToken;
-  }
-  public function getIdToken()
-  {
-    return $this->idToken;
-  }
-  public function setLocalId($localId)
-  {
-    $this->localId = $localId;
-  }
-  public function getLocalId()
-  {
-    return $this->localId;
-  }
+    public function setDelegatedProjectNumber($delegatedProjectNumber) {
+        $this->delegatedProjectNumber = $delegatedProjectNumber;
+    }
+
+    public function getDelegatedProjectNumber() {
+        return $this->delegatedProjectNumber;
+    }
+
+    public function setIdToken($idToken) {
+        $this->idToken = $idToken;
+    }
+
+    public function getIdToken() {
+        return $this->idToken;
+    }
+
+    public function setLocalId($localId) {
+        $this->localId = $localId;
+    }
+
+    public function getLocalId() {
+        return $this->localId;
+    }
 }

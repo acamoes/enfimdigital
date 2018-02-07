@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_BackupConfiguration extends Google_Model
-{
-  public $binaryLogEnabled;
-  public $enabled;
-  public $kind;
-  public $startTime;
+class Google_Service_SQLAdmin_BackupConfiguration extends Google_Model {
+    public $binaryLogEnabled;
+    public $enabled;
+    public $kind;
+    public $startTime;
 
-  public function setBinaryLogEnabled($binaryLogEnabled)
-  {
-    $this->binaryLogEnabled = $binaryLogEnabled;
-  }
-  public function getBinaryLogEnabled()
-  {
-    return $this->binaryLogEnabled;
-  }
-  public function setEnabled($enabled)
-  {
-    $this->enabled = $enabled;
-  }
-  public function getEnabled()
-  {
-    return $this->enabled;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setStartTime($startTime)
-  {
-    $this->startTime = $startTime;
-  }
-  public function getStartTime()
-  {
-    return $this->startTime;
-  }
+    public function setBinaryLogEnabled($binaryLogEnabled) {
+        $this->binaryLogEnabled = $binaryLogEnabled;
+    }
+
+    public function getBinaryLogEnabled() {
+        return $this->binaryLogEnabled;
+    }
+
+    public function setEnabled($enabled) {
+        $this->enabled = $enabled;
+    }
+
+    public function getEnabled() {
+        return $this->enabled;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setStartTime($startTime) {
+        $this->startTime = $startTime;
+    }
+
+    public function getStartTime() {
+        return $this->startTime;
+    }
 }

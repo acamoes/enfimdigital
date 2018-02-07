@@ -15,82 +15,80 @@
  * the License.
  */
 
-class Google_Service_Slides_LineProperties extends Google_Model
-{
-  public $dashStyle;
-  public $endArrow;
-  protected $lineFillType = 'Google_Service_Slides_LineFill';
-  protected $lineFillDataType = '';
-  protected $linkType = 'Google_Service_Slides_Link';
-  protected $linkDataType = '';
-  public $startArrow;
-  protected $weightType = 'Google_Service_Slides_Dimension';
-  protected $weightDataType = '';
+class Google_Service_Slides_LineProperties extends Google_Model {
+    public $dashStyle;
+    public $endArrow;
+    protected $lineFillType     = 'Google_Service_Slides_LineFill';
+    protected $lineFillDataType = '';
+    protected $linkType         = 'Google_Service_Slides_Link';
+    protected $linkDataType     = '';
+    public $startArrow;
+    protected $weightType       = 'Google_Service_Slides_Dimension';
+    protected $weightDataType   = '';
 
-  public function setDashStyle($dashStyle)
-  {
-    $this->dashStyle = $dashStyle;
-  }
-  public function getDashStyle()
-  {
-    return $this->dashStyle;
-  }
-  public function setEndArrow($endArrow)
-  {
-    $this->endArrow = $endArrow;
-  }
-  public function getEndArrow()
-  {
-    return $this->endArrow;
-  }
-  /**
-   * @param Google_Service_Slides_LineFill
-   */
-  public function setLineFill(Google_Service_Slides_LineFill $lineFill)
-  {
-    $this->lineFill = $lineFill;
-  }
-  /**
-   * @return Google_Service_Slides_LineFill
-   */
-  public function getLineFill()
-  {
-    return $this->lineFill;
-  }
-  /**
-   * @param Google_Service_Slides_Link
-   */
-  public function setLink(Google_Service_Slides_Link $link)
-  {
-    $this->link = $link;
-  }
-  /**
-   * @return Google_Service_Slides_Link
-   */
-  public function getLink()
-  {
-    return $this->link;
-  }
-  public function setStartArrow($startArrow)
-  {
-    $this->startArrow = $startArrow;
-  }
-  public function getStartArrow()
-  {
-    return $this->startArrow;
-  }
-  /**
-   * @param Google_Service_Slides_Dimension
-   */
-  public function setWeight(Google_Service_Slides_Dimension $weight)
-  {
-    $this->weight = $weight;
-  }
-  /**
-   * @return Google_Service_Slides_Dimension
-   */
-  public function getWeight()
-  {
-    return $this->weight;
-  }
+    public function setDashStyle($dashStyle) {
+        $this->dashStyle = $dashStyle;
+    }
+
+    public function getDashStyle() {
+        return $this->dashStyle;
+    }
+
+    public function setEndArrow($endArrow) {
+        $this->endArrow = $endArrow;
+    }
+
+    public function getEndArrow() {
+        return $this->endArrow;
+    }
+
+    /**
+     * @param Google_Service_Slides_LineFill
+     */
+    public function setLineFill(Google_Service_Slides_LineFill $lineFill) {
+        $this->lineFill = $lineFill;
+    }
+
+    /**
+     * @return Google_Service_Slides_LineFill
+     */
+    public function getLineFill() {
+        return $this->lineFill;
+    }
+
+    /**
+     * @param Google_Service_Slides_Link
+     */
+    public function setLink(Google_Service_Slides_Link $link) {
+        $this->link = $link;
+    }
+
+    /**
+     * @return Google_Service_Slides_Link
+     */
+    public function getLink() {
+        return $this->link;
+    }
+
+    public function setStartArrow($startArrow) {
+        $this->startArrow = $startArrow;
+    }
+
+    public function getStartArrow() {
+        return $this->startArrow;
+    }
+
+    /**
+     * @param Google_Service_Slides_Dimension
+     */
+    public function setWeight(Google_Service_Slides_Dimension $weight) {
+        $this->weight = $weight;
+    }
+
+    /**
+     * @return Google_Service_Slides_Dimension
+     */
+    public function getWeight() {
+        return $this->weight;
+    }
 }

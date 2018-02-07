@@ -15,78 +15,76 @@
  * the License.
  */
 
-class Google_Service_Speech_RecognitionConfig extends Google_Collection
-{
-  protected $collection_key = 'speechContexts';
-  public $enableWordTimeOffsets;
-  public $encoding;
-  public $languageCode;
-  public $maxAlternatives;
-  public $profanityFilter;
-  public $sampleRateHertz;
-  protected $speechContextsType = 'Google_Service_Speech_SpeechContext';
-  protected $speechContextsDataType = 'array';
+class Google_Service_Speech_RecognitionConfig extends Google_Collection {
+    protected $collection_key         = 'speechContexts';
+    public $enableWordTimeOffsets;
+    public $encoding;
+    public $languageCode;
+    public $maxAlternatives;
+    public $profanityFilter;
+    public $sampleRateHertz;
+    protected $speechContextsType     = 'Google_Service_Speech_SpeechContext';
+    protected $speechContextsDataType = 'array';
 
-  public function setEnableWordTimeOffsets($enableWordTimeOffsets)
-  {
-    $this->enableWordTimeOffsets = $enableWordTimeOffsets;
-  }
-  public function getEnableWordTimeOffsets()
-  {
-    return $this->enableWordTimeOffsets;
-  }
-  public function setEncoding($encoding)
-  {
-    $this->encoding = $encoding;
-  }
-  public function getEncoding()
-  {
-    return $this->encoding;
-  }
-  public function setLanguageCode($languageCode)
-  {
-    $this->languageCode = $languageCode;
-  }
-  public function getLanguageCode()
-  {
-    return $this->languageCode;
-  }
-  public function setMaxAlternatives($maxAlternatives)
-  {
-    $this->maxAlternatives = $maxAlternatives;
-  }
-  public function getMaxAlternatives()
-  {
-    return $this->maxAlternatives;
-  }
-  public function setProfanityFilter($profanityFilter)
-  {
-    $this->profanityFilter = $profanityFilter;
-  }
-  public function getProfanityFilter()
-  {
-    return $this->profanityFilter;
-  }
-  public function setSampleRateHertz($sampleRateHertz)
-  {
-    $this->sampleRateHertz = $sampleRateHertz;
-  }
-  public function getSampleRateHertz()
-  {
-    return $this->sampleRateHertz;
-  }
-  /**
-   * @param Google_Service_Speech_SpeechContext
-   */
-  public function setSpeechContexts($speechContexts)
-  {
-    $this->speechContexts = $speechContexts;
-  }
-  /**
-   * @return Google_Service_Speech_SpeechContext
-   */
-  public function getSpeechContexts()
-  {
-    return $this->speechContexts;
-  }
+    public function setEnableWordTimeOffsets($enableWordTimeOffsets) {
+        $this->enableWordTimeOffsets = $enableWordTimeOffsets;
+    }
+
+    public function getEnableWordTimeOffsets() {
+        return $this->enableWordTimeOffsets;
+    }
+
+    public function setEncoding($encoding) {
+        $this->encoding = $encoding;
+    }
+
+    public function getEncoding() {
+        return $this->encoding;
+    }
+
+    public function setLanguageCode($languageCode) {
+        $this->languageCode = $languageCode;
+    }
+
+    public function getLanguageCode() {
+        return $this->languageCode;
+    }
+
+    public function setMaxAlternatives($maxAlternatives) {
+        $this->maxAlternatives = $maxAlternatives;
+    }
+
+    public function getMaxAlternatives() {
+        return $this->maxAlternatives;
+    }
+
+    public function setProfanityFilter($profanityFilter) {
+        $this->profanityFilter = $profanityFilter;
+    }
+
+    public function getProfanityFilter() {
+        return $this->profanityFilter;
+    }
+
+    public function setSampleRateHertz($sampleRateHertz) {
+        $this->sampleRateHertz = $sampleRateHertz;
+    }
+
+    public function getSampleRateHertz() {
+        return $this->sampleRateHertz;
+    }
+
+    /**
+     * @param Google_Service_Speech_SpeechContext
+     */
+    public function setSpeechContexts($speechContexts) {
+        $this->speechContexts = $speechContexts;
+    }
+
+    /**
+     * @return Google_Service_Speech_SpeechContext
+     */
+    public function getSpeechContexts() {
+        return $this->speechContexts;
+    }
 }

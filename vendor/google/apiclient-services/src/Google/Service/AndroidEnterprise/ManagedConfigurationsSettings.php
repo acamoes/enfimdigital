@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ManagedConfigurationsSettings extends Google_Collection
-{
-  protected $collection_key = 'managedProperty';
-  public $kind;
-  protected $managedPropertyType = 'Google_Service_AndroidEnterprise_ManagedProperty';
-  protected $managedPropertyDataType = 'array';
-  public $mcmId;
-  public $name;
+class Google_Service_AndroidEnterprise_ManagedConfigurationsSettings extends Google_Collection {
+    protected $collection_key          = 'managedProperty';
+    public $kind;
+    protected $managedPropertyType     = 'Google_Service_AndroidEnterprise_ManagedProperty';
+    protected $managedPropertyDataType = 'array';
+    public $mcmId;
+    public $name;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_AndroidEnterprise_ManagedProperty
-   */
-  public function setManagedProperty($managedProperty)
-  {
-    $this->managedProperty = $managedProperty;
-  }
-  /**
-   * @return Google_Service_AndroidEnterprise_ManagedProperty
-   */
-  public function getManagedProperty()
-  {
-    return $this->managedProperty;
-  }
-  public function setMcmId($mcmId)
-  {
-    $this->mcmId = $mcmId;
-  }
-  public function getMcmId()
-  {
-    return $this->mcmId;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_AndroidEnterprise_ManagedProperty
+     */
+    public function setManagedProperty($managedProperty) {
+        $this->managedProperty = $managedProperty;
+    }
+
+    /**
+     * @return Google_Service_AndroidEnterprise_ManagedProperty
+     */
+    public function getManagedProperty() {
+        return $this->managedProperty;
+    }
+
+    public function setMcmId($mcmId) {
+        $this->mcmId = $mcmId;
+    }
+
+    public function getMcmId() {
+        return $this->mcmId;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

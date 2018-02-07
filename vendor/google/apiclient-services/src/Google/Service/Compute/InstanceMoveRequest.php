@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Compute_InstanceMoveRequest extends Google_Model
-{
-  public $destinationZone;
-  public $targetInstance;
+class Google_Service_Compute_InstanceMoveRequest extends Google_Model {
+    public $destinationZone;
+    public $targetInstance;
 
-  public function setDestinationZone($destinationZone)
-  {
-    $this->destinationZone = $destinationZone;
-  }
-  public function getDestinationZone()
-  {
-    return $this->destinationZone;
-  }
-  public function setTargetInstance($targetInstance)
-  {
-    $this->targetInstance = $targetInstance;
-  }
-  public function getTargetInstance()
-  {
-    return $this->targetInstance;
-  }
+    public function setDestinationZone($destinationZone) {
+        $this->destinationZone = $destinationZone;
+    }
+
+    public function getDestinationZone() {
+        return $this->destinationZone;
+    }
+
+    public function setTargetInstance($targetInstance) {
+        $this->targetInstance = $targetInstance;
+    }
+
+    public function getTargetInstance() {
+        return $this->targetInstance;
+    }
 }

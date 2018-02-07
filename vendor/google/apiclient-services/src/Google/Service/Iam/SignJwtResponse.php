@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Iam_SignJwtResponse extends Google_Model
-{
-  public $keyId;
-  public $signedJwt;
+class Google_Service_Iam_SignJwtResponse extends Google_Model {
+    public $keyId;
+    public $signedJwt;
 
-  public function setKeyId($keyId)
-  {
-    $this->keyId = $keyId;
-  }
-  public function getKeyId()
-  {
-    return $this->keyId;
-  }
-  public function setSignedJwt($signedJwt)
-  {
-    $this->signedJwt = $signedJwt;
-  }
-  public function getSignedJwt()
-  {
-    return $this->signedJwt;
-  }
+    public function setKeyId($keyId) {
+        $this->keyId = $keyId;
+    }
+
+    public function getKeyId() {
+        return $this->keyId;
+    }
+
+    public function setSignedJwt($signedJwt) {
+        $this->signedJwt = $signedJwt;
+    }
+
+    public function getSignedJwt() {
+        return $this->signedJwt;
+    }
 }

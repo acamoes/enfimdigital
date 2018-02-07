@@ -15,67 +15,65 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_AccountStatus extends Google_Collection
-{
-  protected $collection_key = 'dataQualityIssues';
-  public $accountId;
-  protected $accountLevelIssuesType = 'Google_Service_ShoppingContent_AccountStatusAccountLevelIssue';
-  protected $accountLevelIssuesDataType = 'array';
-  protected $dataQualityIssuesType = 'Google_Service_ShoppingContent_AccountStatusDataQualityIssue';
-  protected $dataQualityIssuesDataType = 'array';
-  public $kind;
-  public $websiteClaimed;
+class Google_Service_ShoppingContent_AccountStatus extends Google_Collection {
+    protected $collection_key             = 'dataQualityIssues';
+    public $accountId;
+    protected $accountLevelIssuesType     = 'Google_Service_ShoppingContent_AccountStatusAccountLevelIssue';
+    protected $accountLevelIssuesDataType = 'array';
+    protected $dataQualityIssuesType      = 'Google_Service_ShoppingContent_AccountStatusDataQualityIssue';
+    protected $dataQualityIssuesDataType  = 'array';
+    public $kind;
+    public $websiteClaimed;
 
-  public function setAccountId($accountId)
-  {
-    $this->accountId = $accountId;
-  }
-  public function getAccountId()
-  {
-    return $this->accountId;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_AccountStatusAccountLevelIssue
-   */
-  public function setAccountLevelIssues($accountLevelIssues)
-  {
-    $this->accountLevelIssues = $accountLevelIssues;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_AccountStatusAccountLevelIssue
-   */
-  public function getAccountLevelIssues()
-  {
-    return $this->accountLevelIssues;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_AccountStatusDataQualityIssue
-   */
-  public function setDataQualityIssues($dataQualityIssues)
-  {
-    $this->dataQualityIssues = $dataQualityIssues;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_AccountStatusDataQualityIssue
-   */
-  public function getDataQualityIssues()
-  {
-    return $this->dataQualityIssues;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setWebsiteClaimed($websiteClaimed)
-  {
-    $this->websiteClaimed = $websiteClaimed;
-  }
-  public function getWebsiteClaimed()
-  {
-    return $this->websiteClaimed;
-  }
+    public function setAccountId($accountId) {
+        $this->accountId = $accountId;
+    }
+
+    public function getAccountId() {
+        return $this->accountId;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_AccountStatusAccountLevelIssue
+     */
+    public function setAccountLevelIssues($accountLevelIssues) {
+        $this->accountLevelIssues = $accountLevelIssues;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_AccountStatusAccountLevelIssue
+     */
+    public function getAccountLevelIssues() {
+        return $this->accountLevelIssues;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_AccountStatusDataQualityIssue
+     */
+    public function setDataQualityIssues($dataQualityIssues) {
+        $this->dataQualityIssues = $dataQualityIssues;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_AccountStatusDataQualityIssue
+     */
+    public function getDataQualityIssues() {
+        return $this->dataQualityIssues;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setWebsiteClaimed($websiteClaimed) {
+        $this->websiteClaimed = $websiteClaimed;
+    }
+
+    public function getWebsiteClaimed() {
+        return $this->websiteClaimed;
+    }
 }

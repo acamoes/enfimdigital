@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Compute_DisksResizeRequest extends Google_Model
-{
-  public $sizeGb;
+class Google_Service_Compute_DisksResizeRequest extends Google_Model {
+    public $sizeGb;
 
-  public function setSizeGb($sizeGb)
-  {
-    $this->sizeGb = $sizeGb;
-  }
-  public function getSizeGb()
-  {
-    return $this->sizeGb;
-  }
+    public function setSizeGb($sizeGb) {
+        $this->sizeGb = $sizeGb;
+    }
+
+    public function getSizeGb() {
+        return $this->sizeGb;
+    }
 }

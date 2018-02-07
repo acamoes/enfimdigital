@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Fitness_BucketByTime extends Google_Model
-{
-  public $durationMillis;
-  protected $periodType = 'Google_Service_Fitness_BucketByTimePeriod';
-  protected $periodDataType = '';
+class Google_Service_Fitness_BucketByTime extends Google_Model {
+    public $durationMillis;
+    protected $periodType     = 'Google_Service_Fitness_BucketByTimePeriod';
+    protected $periodDataType = '';
 
-  public function setDurationMillis($durationMillis)
-  {
-    $this->durationMillis = $durationMillis;
-  }
-  public function getDurationMillis()
-  {
-    return $this->durationMillis;
-  }
-  /**
-   * @param Google_Service_Fitness_BucketByTimePeriod
-   */
-  public function setPeriod(Google_Service_Fitness_BucketByTimePeriod $period)
-  {
-    $this->period = $period;
-  }
-  /**
-   * @return Google_Service_Fitness_BucketByTimePeriod
-   */
-  public function getPeriod()
-  {
-    return $this->period;
-  }
+    public function setDurationMillis($durationMillis) {
+        $this->durationMillis = $durationMillis;
+    }
+
+    public function getDurationMillis() {
+        return $this->durationMillis;
+    }
+
+    /**
+     * @param Google_Service_Fitness_BucketByTimePeriod
+     */
+    public function setPeriod(Google_Service_Fitness_BucketByTimePeriod $period) {
+        $this->period = $period;
+    }
+
+    /**
+     * @return Google_Service_Fitness_BucketByTimePeriod
+     */
+    public function getPeriod() {
+        return $this->period;
+    }
 }

@@ -23,6 +23,6 @@
  *   $organizations = $iamService->organizations;
  *  </code>
  */
-class Google_Service_Iam_Resource_Organizations extends Google_Service_Resource
-{
+class Google_Service_Iam_Resource_Organizations extends Google_Service_Resource {
+
 }

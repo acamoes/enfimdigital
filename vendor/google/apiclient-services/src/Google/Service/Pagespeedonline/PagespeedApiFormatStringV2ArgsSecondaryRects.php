@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsSecondaryRects extends Google_Model
-{
-  public $height;
-  public $left;
-  public $top;
-  public $width;
+class Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsSecondaryRects extends Google_Model {
+    public $height;
+    public $left;
+    public $top;
+    public $width;
 
-  public function setHeight($height)
-  {
-    $this->height = $height;
-  }
-  public function getHeight()
-  {
-    return $this->height;
-  }
-  public function setLeft($left)
-  {
-    $this->left = $left;
-  }
-  public function getLeft()
-  {
-    return $this->left;
-  }
-  public function setTop($top)
-  {
-    $this->top = $top;
-  }
-  public function getTop()
-  {
-    return $this->top;
-  }
-  public function setWidth($width)
-  {
-    $this->width = $width;
-  }
-  public function getWidth()
-  {
-    return $this->width;
-  }
+    public function setHeight($height) {
+        $this->height = $height;
+    }
+
+    public function getHeight() {
+        return $this->height;
+    }
+
+    public function setLeft($left) {
+        $this->left = $left;
+    }
+
+    public function getLeft() {
+        return $this->left;
+    }
+
+    public function setTop($top) {
+        $this->top = $top;
+    }
+
+    public function getTop() {
+        return $this->top;
+    }
+
+    public function setWidth($width) {
+        $this->width = $width;
+    }
+
+    public function getWidth() {
+        return $this->width;
+    }
 }

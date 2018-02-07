@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_CompanionClickThroughOverride extends Google_Model
-{
-  protected $clickThroughUrlType = 'Google_Service_Dfareporting_ClickThroughUrl';
-  protected $clickThroughUrlDataType = '';
-  public $creativeId;
+class Google_Service_Dfareporting_CompanionClickThroughOverride extends Google_Model {
+    protected $clickThroughUrlType     = 'Google_Service_Dfareporting_ClickThroughUrl';
+    protected $clickThroughUrlDataType = '';
+    public $creativeId;
 
-  /**
-   * @param Google_Service_Dfareporting_ClickThroughUrl
-   */
-  public function setClickThroughUrl(Google_Service_Dfareporting_ClickThroughUrl $clickThroughUrl)
-  {
-    $this->clickThroughUrl = $clickThroughUrl;
-  }
-  /**
-   * @return Google_Service_Dfareporting_ClickThroughUrl
-   */
-  public function getClickThroughUrl()
-  {
-    return $this->clickThroughUrl;
-  }
-  public function setCreativeId($creativeId)
-  {
-    $this->creativeId = $creativeId;
-  }
-  public function getCreativeId()
-  {
-    return $this->creativeId;
-  }
+    /**
+     * @param Google_Service_Dfareporting_ClickThroughUrl
+     */
+    public function setClickThroughUrl(Google_Service_Dfareporting_ClickThroughUrl $clickThroughUrl) {
+        $this->clickThroughUrl = $clickThroughUrl;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_ClickThroughUrl
+     */
+    public function getClickThroughUrl() {
+        return $this->clickThroughUrl;
+    }
+
+    public function setCreativeId($creativeId) {
+        $this->creativeId = $creativeId;
+    }
+
+    public function getCreativeId() {
+        return $this->creativeId;
+    }
 }

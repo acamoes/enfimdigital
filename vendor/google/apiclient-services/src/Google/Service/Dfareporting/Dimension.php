@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_Dimension extends Google_Model
-{
-  public $kind;
-  public $name;
+class Google_Service_Dfareporting_Dimension extends Google_Model {
+    public $kind;
+    public $name;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Dataproc_JobStatus extends Google_Model
-{
-  public $details;
-  public $state;
-  public $stateStartTime;
-  public $substate;
+class Google_Service_Dataproc_JobStatus extends Google_Model {
+    public $details;
+    public $state;
+    public $stateStartTime;
+    public $substate;
 
-  public function setDetails($details)
-  {
-    $this->details = $details;
-  }
-  public function getDetails()
-  {
-    return $this->details;
-  }
-  public function setState($state)
-  {
-    $this->state = $state;
-  }
-  public function getState()
-  {
-    return $this->state;
-  }
-  public function setStateStartTime($stateStartTime)
-  {
-    $this->stateStartTime = $stateStartTime;
-  }
-  public function getStateStartTime()
-  {
-    return $this->stateStartTime;
-  }
-  public function setSubstate($substate)
-  {
-    $this->substate = $substate;
-  }
-  public function getSubstate()
-  {
-    return $this->substate;
-  }
+    public function setDetails($details) {
+        $this->details = $details;
+    }
+
+    public function getDetails() {
+        return $this->details;
+    }
+
+    public function setState($state) {
+        $this->state = $state;
+    }
+
+    public function getState() {
+        return $this->state;
+    }
+
+    public function setStateStartTime($stateStartTime) {
+        $this->stateStartTime = $stateStartTime;
+    }
+
+    public function getStateStartTime() {
+        return $this->stateStartTime;
+    }
+
+    public function setSubstate($substate) {
+        $this->substate = $substate;
+    }
+
+    public function getSubstate() {
+        return $this->substate;
+    }
 }

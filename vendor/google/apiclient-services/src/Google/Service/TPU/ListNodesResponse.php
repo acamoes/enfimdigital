@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_TPU_ListNodesResponse extends Google_Collection
-{
-  protected $collection_key = 'nodes';
-  public $nextPageToken;
-  protected $nodesType = 'Google_Service_TPU_Node';
-  protected $nodesDataType = 'array';
+class Google_Service_TPU_ListNodesResponse extends Google_Collection {
+    protected $collection_key = 'nodes';
+    public $nextPageToken;
+    protected $nodesType      = 'Google_Service_TPU_Node';
+    protected $nodesDataType  = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_TPU_Node
-   */
-  public function setNodes($nodes)
-  {
-    $this->nodes = $nodes;
-  }
-  /**
-   * @return Google_Service_TPU_Node
-   */
-  public function getNodes()
-  {
-    return $this->nodes;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_TPU_Node
+     */
+    public function setNodes($nodes) {
+        $this->nodes = $nodes;
+    }
+
+    /**
+     * @return Google_Service_TPU_Node
+     */
+    public function getNodes() {
+        return $this->nodes;
+    }
 }

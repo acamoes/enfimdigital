@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_GamesManagement_GamesPlayedResource extends Google_Model
-{
-  public $autoMatched;
-  public $timeMillis;
+class Google_Service_GamesManagement_GamesPlayedResource extends Google_Model {
+    public $autoMatched;
+    public $timeMillis;
 
-  public function setAutoMatched($autoMatched)
-  {
-    $this->autoMatched = $autoMatched;
-  }
-  public function getAutoMatched()
-  {
-    return $this->autoMatched;
-  }
-  public function setTimeMillis($timeMillis)
-  {
-    $this->timeMillis = $timeMillis;
-  }
-  public function getTimeMillis()
-  {
-    return $this->timeMillis;
-  }
+    public function setAutoMatched($autoMatched) {
+        $this->autoMatched = $autoMatched;
+    }
+
+    public function getAutoMatched() {
+        return $this->autoMatched;
+    }
+
+    public function setTimeMillis($timeMillis) {
+        $this->timeMillis = $timeMillis;
+    }
+
+    public function getTimeMillis() {
+        return $this->timeMillis;
+    }
 }

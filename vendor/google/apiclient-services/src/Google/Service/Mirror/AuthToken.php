@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Mirror_AuthToken extends Google_Model
-{
-  public $authToken;
-  public $type;
+class Google_Service_Mirror_AuthToken extends Google_Model {
+    public $authToken;
+    public $type;
 
-  public function setAuthToken($authToken)
-  {
-    $this->authToken = $authToken;
-  }
-  public function getAuthToken()
-  {
-    return $this->authToken;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setAuthToken($authToken) {
+        $this->authToken = $authToken;
+    }
+
+    public function getAuthToken() {
+        return $this->authToken;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

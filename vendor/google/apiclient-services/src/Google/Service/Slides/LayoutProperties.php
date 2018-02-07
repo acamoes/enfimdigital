@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Slides_LayoutProperties extends Google_Model
-{
-  public $displayName;
-  public $masterObjectId;
-  public $name;
+class Google_Service_Slides_LayoutProperties extends Google_Model {
+    public $displayName;
+    public $masterObjectId;
+    public $name;
 
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
-  public function setMasterObjectId($masterObjectId)
-  {
-    $this->masterObjectId = $masterObjectId;
-  }
-  public function getMasterObjectId()
-  {
-    return $this->masterObjectId;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
+
+    public function setMasterObjectId($masterObjectId) {
+        $this->masterObjectId = $masterObjectId;
+    }
+
+    public function getMasterObjectId() {
+        return $this->masterObjectId;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

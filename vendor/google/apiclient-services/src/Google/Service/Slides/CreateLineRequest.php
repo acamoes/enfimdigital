@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Slides_CreateLineRequest extends Google_Model
-{
-  protected $elementPropertiesType = 'Google_Service_Slides_PageElementProperties';
-  protected $elementPropertiesDataType = '';
-  public $lineCategory;
-  public $objectId;
+class Google_Service_Slides_CreateLineRequest extends Google_Model {
+    protected $elementPropertiesType     = 'Google_Service_Slides_PageElementProperties';
+    protected $elementPropertiesDataType = '';
+    public $lineCategory;
+    public $objectId;
 
-  /**
-   * @param Google_Service_Slides_PageElementProperties
-   */
-  public function setElementProperties(Google_Service_Slides_PageElementProperties $elementProperties)
-  {
-    $this->elementProperties = $elementProperties;
-  }
-  /**
-   * @return Google_Service_Slides_PageElementProperties
-   */
-  public function getElementProperties()
-  {
-    return $this->elementProperties;
-  }
-  public function setLineCategory($lineCategory)
-  {
-    $this->lineCategory = $lineCategory;
-  }
-  public function getLineCategory()
-  {
-    return $this->lineCategory;
-  }
-  public function setObjectId($objectId)
-  {
-    $this->objectId = $objectId;
-  }
-  public function getObjectId()
-  {
-    return $this->objectId;
-  }
+    /**
+     * @param Google_Service_Slides_PageElementProperties
+     */
+    public function setElementProperties(Google_Service_Slides_PageElementProperties $elementProperties) {
+        $this->elementProperties = $elementProperties;
+    }
+
+    /**
+     * @return Google_Service_Slides_PageElementProperties
+     */
+    public function getElementProperties() {
+        return $this->elementProperties;
+    }
+
+    public function setLineCategory($lineCategory) {
+        $this->lineCategory = $lineCategory;
+    }
+
+    public function getLineCategory() {
+        return $this->lineCategory;
+    }
+
+    public function setObjectId($objectId) {
+        $this->objectId = $objectId;
+    }
+
+    public function getObjectId() {
+        return $this->objectId;
+    }
 }

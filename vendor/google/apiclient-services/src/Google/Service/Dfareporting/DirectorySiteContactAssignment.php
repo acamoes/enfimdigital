@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_DirectorySiteContactAssignment extends Google_Model
-{
-  public $contactId;
-  public $visibility;
+class Google_Service_Dfareporting_DirectorySiteContactAssignment extends Google_Model {
+    public $contactId;
+    public $visibility;
 
-  public function setContactId($contactId)
-  {
-    $this->contactId = $contactId;
-  }
-  public function getContactId()
-  {
-    return $this->contactId;
-  }
-  public function setVisibility($visibility)
-  {
-    $this->visibility = $visibility;
-  }
-  public function getVisibility()
-  {
-    return $this->visibility;
-  }
+    public function setContactId($contactId) {
+        $this->contactId = $contactId;
+    }
+
+    public function getContactId() {
+        return $this->contactId;
+    }
+
+    public function setVisibility($visibility) {
+        $this->visibility = $visibility;
+    }
+
+    public function getVisibility() {
+        return $this->visibility;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_AccountYouTubeChannelLink extends Google_Model
-{
-  public $channelId;
-  public $status;
+class Google_Service_ShoppingContent_AccountYouTubeChannelLink extends Google_Model {
+    public $channelId;
+    public $status;
 
-  public function setChannelId($channelId)
-  {
-    $this->channelId = $channelId;
-  }
-  public function getChannelId()
-  {
-    return $this->channelId;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
+    public function setChannelId($channelId) {
+        $this->channelId = $channelId;
+    }
+
+    public function getChannelId() {
+        return $this->channelId;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
 }

@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Safebrowsing_RawIndices extends Google_Collection
-{
-  protected $collection_key = 'indices';
-  public $indices;
+class Google_Service_Safebrowsing_RawIndices extends Google_Collection {
+    protected $collection_key = 'indices';
+    public $indices;
 
-  public function setIndices($indices)
-  {
-    $this->indices = $indices;
-  }
-  public function getIndices()
-  {
-    return $this->indices;
-  }
+    public function setIndices($indices) {
+        $this->indices = $indices;
+    }
+
+    public function getIndices() {
+        return $this->indices;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Sheets_NumberFormat extends Google_Model
-{
-  public $pattern;
-  public $type;
+class Google_Service_Sheets_NumberFormat extends Google_Model {
+    public $pattern;
+    public $type;
 
-  public function setPattern($pattern)
-  {
-    $this->pattern = $pattern;
-  }
-  public function getPattern()
-  {
-    return $this->pattern;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setPattern($pattern) {
+        $this->pattern = $pattern;
+    }
+
+    public function getPattern() {
+        return $this->pattern;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

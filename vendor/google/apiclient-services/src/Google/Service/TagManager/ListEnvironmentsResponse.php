@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_TagManager_ListEnvironmentsResponse extends Google_Collection
-{
-  protected $collection_key = 'environment';
-  protected $environmentType = 'Google_Service_TagManager_Environment';
-  protected $environmentDataType = 'array';
-  public $nextPageToken;
+class Google_Service_TagManager_ListEnvironmentsResponse extends Google_Collection {
+    protected $collection_key      = 'environment';
+    protected $environmentType     = 'Google_Service_TagManager_Environment';
+    protected $environmentDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_TagManager_Environment
-   */
-  public function setEnvironment($environment)
-  {
-    $this->environment = $environment;
-  }
-  /**
-   * @return Google_Service_TagManager_Environment
-   */
-  public function getEnvironment()
-  {
-    return $this->environment;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_TagManager_Environment
+     */
+    public function setEnvironment($environment) {
+        $this->environment = $environment;
+    }
+
+    /**
+     * @return Google_Service_TagManager_Environment
+     */
+    public function getEnvironment() {
+        return $this->environment;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_ServiceControl_ReleaseQuotaRequest extends Google_Model
-{
-  protected $releaseOperationType = 'Google_Service_ServiceControl_QuotaOperation';
-  protected $releaseOperationDataType = '';
-  public $serviceConfigId;
+class Google_Service_ServiceControl_ReleaseQuotaRequest extends Google_Model {
+    protected $releaseOperationType     = 'Google_Service_ServiceControl_QuotaOperation';
+    protected $releaseOperationDataType = '';
+    public $serviceConfigId;
 
-  /**
-   * @param Google_Service_ServiceControl_QuotaOperation
-   */
-  public function setReleaseOperation(Google_Service_ServiceControl_QuotaOperation $releaseOperation)
-  {
-    $this->releaseOperation = $releaseOperation;
-  }
-  /**
-   * @return Google_Service_ServiceControl_QuotaOperation
-   */
-  public function getReleaseOperation()
-  {
-    return $this->releaseOperation;
-  }
-  public function setServiceConfigId($serviceConfigId)
-  {
-    $this->serviceConfigId = $serviceConfigId;
-  }
-  public function getServiceConfigId()
-  {
-    return $this->serviceConfigId;
-  }
+    /**
+     * @param Google_Service_ServiceControl_QuotaOperation
+     */
+    public function setReleaseOperation(Google_Service_ServiceControl_QuotaOperation $releaseOperation) {
+        $this->releaseOperation = $releaseOperation;
+    }
+
+    /**
+     * @return Google_Service_ServiceControl_QuotaOperation
+     */
+    public function getReleaseOperation() {
+        return $this->releaseOperation;
+    }
+
+    public function setServiceConfigId($serviceConfigId) {
+        $this->serviceConfigId = $serviceConfigId;
+    }
+
+    public function getServiceConfigId() {
+        return $this->serviceConfigId;
+    }
 }

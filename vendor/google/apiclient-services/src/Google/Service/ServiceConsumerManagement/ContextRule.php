@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_ServiceConsumerManagement_ContextRule extends Google_Collection
-{
-  protected $collection_key = 'requested';
-  public $provided;
-  public $requested;
-  public $selector;
+class Google_Service_ServiceConsumerManagement_ContextRule extends Google_Collection {
+    protected $collection_key = 'requested';
+    public $provided;
+    public $requested;
+    public $selector;
 
-  public function setProvided($provided)
-  {
-    $this->provided = $provided;
-  }
-  public function getProvided()
-  {
-    return $this->provided;
-  }
-  public function setRequested($requested)
-  {
-    $this->requested = $requested;
-  }
-  public function getRequested()
-  {
-    return $this->requested;
-  }
-  public function setSelector($selector)
-  {
-    $this->selector = $selector;
-  }
-  public function getSelector()
-  {
-    return $this->selector;
-  }
+    public function setProvided($provided) {
+        $this->provided = $provided;
+    }
+
+    public function getProvided() {
+        return $this->provided;
+    }
+
+    public function setRequested($requested) {
+        $this->requested = $requested;
+    }
+
+    public function getRequested() {
+        return $this->requested;
+    }
+
+    public function setSelector($selector) {
+        $this->selector = $selector;
+    }
+
+    public function getSelector() {
+        return $this->selector;
+    }
 }

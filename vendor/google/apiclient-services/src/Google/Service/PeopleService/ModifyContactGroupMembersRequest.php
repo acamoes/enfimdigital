@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_PeopleService_ModifyContactGroupMembersRequest extends Google_Collection
-{
-  protected $collection_key = 'resourceNamesToRemove';
-  public $resourceNamesToAdd;
-  public $resourceNamesToRemove;
+class Google_Service_PeopleService_ModifyContactGroupMembersRequest extends Google_Collection {
+    protected $collection_key = 'resourceNamesToRemove';
+    public $resourceNamesToAdd;
+    public $resourceNamesToRemove;
 
-  public function setResourceNamesToAdd($resourceNamesToAdd)
-  {
-    $this->resourceNamesToAdd = $resourceNamesToAdd;
-  }
-  public function getResourceNamesToAdd()
-  {
-    return $this->resourceNamesToAdd;
-  }
-  public function setResourceNamesToRemove($resourceNamesToRemove)
-  {
-    $this->resourceNamesToRemove = $resourceNamesToRemove;
-  }
-  public function getResourceNamesToRemove()
-  {
-    return $this->resourceNamesToRemove;
-  }
+    public function setResourceNamesToAdd($resourceNamesToAdd) {
+        $this->resourceNamesToAdd = $resourceNamesToAdd;
+    }
+
+    public function getResourceNamesToAdd() {
+        return $this->resourceNamesToAdd;
+    }
+
+    public function setResourceNamesToRemove($resourceNamesToRemove) {
+        $this->resourceNamesToRemove = $resourceNamesToRemove;
+    }
+
+    public function getResourceNamesToRemove() {
+        return $this->resourceNamesToRemove;
+    }
 }

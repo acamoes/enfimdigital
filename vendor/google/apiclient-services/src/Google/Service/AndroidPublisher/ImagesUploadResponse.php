@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_ImagesUploadResponse extends Google_Model
-{
-  protected $imageType = 'Google_Service_AndroidPublisher_Image';
-  protected $imageDataType = '';
+class Google_Service_AndroidPublisher_ImagesUploadResponse extends Google_Model {
+    protected $imageType     = 'Google_Service_AndroidPublisher_Image';
+    protected $imageDataType = '';
 
-  /**
-   * @param Google_Service_AndroidPublisher_Image
-   */
-  public function setImage(Google_Service_AndroidPublisher_Image $image)
-  {
-    $this->image = $image;
-  }
-  /**
-   * @return Google_Service_AndroidPublisher_Image
-   */
-  public function getImage()
-  {
-    return $this->image;
-  }
+    /**
+     * @param Google_Service_AndroidPublisher_Image
+     */
+    public function setImage(Google_Service_AndroidPublisher_Image $image) {
+        $this->image = $image;
+    }
+
+    /**
+     * @return Google_Service_AndroidPublisher_Image
+     */
+    public function getImage() {
+        return $this->image;
+    }
 }

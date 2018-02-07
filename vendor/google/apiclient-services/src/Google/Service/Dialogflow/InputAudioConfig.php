@@ -15,44 +15,42 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_InputAudioConfig extends Google_Collection
-{
-  protected $collection_key = 'phraseHints';
-  public $audioEncoding;
-  public $languageCode;
-  public $phraseHints;
-  public $sampleRateHertz;
+class Google_Service_Dialogflow_InputAudioConfig extends Google_Collection {
+    protected $collection_key = 'phraseHints';
+    public $audioEncoding;
+    public $languageCode;
+    public $phraseHints;
+    public $sampleRateHertz;
 
-  public function setAudioEncoding($audioEncoding)
-  {
-    $this->audioEncoding = $audioEncoding;
-  }
-  public function getAudioEncoding()
-  {
-    return $this->audioEncoding;
-  }
-  public function setLanguageCode($languageCode)
-  {
-    $this->languageCode = $languageCode;
-  }
-  public function getLanguageCode()
-  {
-    return $this->languageCode;
-  }
-  public function setPhraseHints($phraseHints)
-  {
-    $this->phraseHints = $phraseHints;
-  }
-  public function getPhraseHints()
-  {
-    return $this->phraseHints;
-  }
-  public function setSampleRateHertz($sampleRateHertz)
-  {
-    $this->sampleRateHertz = $sampleRateHertz;
-  }
-  public function getSampleRateHertz()
-  {
-    return $this->sampleRateHertz;
-  }
+    public function setAudioEncoding($audioEncoding) {
+        $this->audioEncoding = $audioEncoding;
+    }
+
+    public function getAudioEncoding() {
+        return $this->audioEncoding;
+    }
+
+    public function setLanguageCode($languageCode) {
+        $this->languageCode = $languageCode;
+    }
+
+    public function getLanguageCode() {
+        return $this->languageCode;
+    }
+
+    public function setPhraseHints($phraseHints) {
+        $this->phraseHints = $phraseHints;
+    }
+
+    public function getPhraseHints() {
+        return $this->phraseHints;
+    }
+
+    public function setSampleRateHertz($sampleRateHertz) {
+        $this->sampleRateHertz = $sampleRateHertz;
+    }
+
+    public function getSampleRateHertz() {
+        return $this->sampleRateHertz;
+    }
 }

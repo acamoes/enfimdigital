@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryCancel extends Google_Model
-{
-  public $reason;
-  public $reasonText;
+class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryCancel extends Google_Model {
+    public $reason;
+    public $reasonText;
 
-  public function setReason($reason)
-  {
-    $this->reason = $reason;
-  }
-  public function getReason()
-  {
-    return $this->reason;
-  }
-  public function setReasonText($reasonText)
-  {
-    $this->reasonText = $reasonText;
-  }
-  public function getReasonText()
-  {
-    return $this->reasonText;
-  }
+    public function setReason($reason) {
+        $this->reason = $reason;
+    }
+
+    public function getReason() {
+        return $this->reason;
+    }
+
+    public function setReasonText($reasonText) {
+        $this->reasonText = $reasonText;
+    }
+
+    public function getReasonText() {
+        return $this->reasonText;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Analytics_FilterUppercaseDetails extends Google_Model
-{
-  public $field;
-  public $fieldIndex;
+class Google_Service_Analytics_FilterUppercaseDetails extends Google_Model {
+    public $field;
+    public $fieldIndex;
 
-  public function setField($field)
-  {
-    $this->field = $field;
-  }
-  public function getField()
-  {
-    return $this->field;
-  }
-  public function setFieldIndex($fieldIndex)
-  {
-    $this->fieldIndex = $fieldIndex;
-  }
-  public function getFieldIndex()
-  {
-    return $this->fieldIndex;
-  }
+    public function setField($field) {
+        $this->field = $field;
+    }
+
+    public function getField() {
+        return $this->field;
+    }
+
+    public function setFieldIndex($fieldIndex) {
+        $this->fieldIndex = $fieldIndex;
+    }
+
+    public function getFieldIndex() {
+        return $this->fieldIndex;
+    }
 }

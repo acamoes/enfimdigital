@@ -15,79 +15,77 @@
  * the License.
  */
 
-class Google_Service_Logging_LogSink extends Google_Model
-{
-  public $destination;
-  public $endTime;
-  public $filter;
-  public $includeChildren;
-  public $name;
-  public $outputVersionFormat;
-  public $startTime;
-  public $writerIdentity;
+class Google_Service_Logging_LogSink extends Google_Model {
+    public $destination;
+    public $endTime;
+    public $filter;
+    public $includeChildren;
+    public $name;
+    public $outputVersionFormat;
+    public $startTime;
+    public $writerIdentity;
 
-  public function setDestination($destination)
-  {
-    $this->destination = $destination;
-  }
-  public function getDestination()
-  {
-    return $this->destination;
-  }
-  public function setEndTime($endTime)
-  {
-    $this->endTime = $endTime;
-  }
-  public function getEndTime()
-  {
-    return $this->endTime;
-  }
-  public function setFilter($filter)
-  {
-    $this->filter = $filter;
-  }
-  public function getFilter()
-  {
-    return $this->filter;
-  }
-  public function setIncludeChildren($includeChildren)
-  {
-    $this->includeChildren = $includeChildren;
-  }
-  public function getIncludeChildren()
-  {
-    return $this->includeChildren;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setOutputVersionFormat($outputVersionFormat)
-  {
-    $this->outputVersionFormat = $outputVersionFormat;
-  }
-  public function getOutputVersionFormat()
-  {
-    return $this->outputVersionFormat;
-  }
-  public function setStartTime($startTime)
-  {
-    $this->startTime = $startTime;
-  }
-  public function getStartTime()
-  {
-    return $this->startTime;
-  }
-  public function setWriterIdentity($writerIdentity)
-  {
-    $this->writerIdentity = $writerIdentity;
-  }
-  public function getWriterIdentity()
-  {
-    return $this->writerIdentity;
-  }
+    public function setDestination($destination) {
+        $this->destination = $destination;
+    }
+
+    public function getDestination() {
+        return $this->destination;
+    }
+
+    public function setEndTime($endTime) {
+        $this->endTime = $endTime;
+    }
+
+    public function getEndTime() {
+        return $this->endTime;
+    }
+
+    public function setFilter($filter) {
+        $this->filter = $filter;
+    }
+
+    public function getFilter() {
+        return $this->filter;
+    }
+
+    public function setIncludeChildren($includeChildren) {
+        $this->includeChildren = $includeChildren;
+    }
+
+    public function getIncludeChildren() {
+        return $this->includeChildren;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setOutputVersionFormat($outputVersionFormat) {
+        $this->outputVersionFormat = $outputVersionFormat;
+    }
+
+    public function getOutputVersionFormat() {
+        return $this->outputVersionFormat;
+    }
+
+    public function setStartTime($startTime) {
+        $this->startTime = $startTime;
+    }
+
+    public function getStartTime() {
+        return $this->startTime;
+    }
+
+    public function setWriterIdentity($writerIdentity) {
+        $this->writerIdentity = $writerIdentity;
+    }
+
+    public function getWriterIdentity() {
+        return $this->writerIdentity;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Appengine_Volume extends Google_Model
-{
-  public $name;
-  public $sizeGb;
-  public $volumeType;
+class Google_Service_Appengine_Volume extends Google_Model {
+    public $name;
+    public $sizeGb;
+    public $volumeType;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setSizeGb($sizeGb)
-  {
-    $this->sizeGb = $sizeGb;
-  }
-  public function getSizeGb()
-  {
-    return $this->sizeGb;
-  }
-  public function setVolumeType($volumeType)
-  {
-    $this->volumeType = $volumeType;
-  }
-  public function getVolumeType()
-  {
-    return $this->volumeType;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setSizeGb($sizeGb) {
+        $this->sizeGb = $sizeGb;
+    }
+
+    public function getSizeGb() {
+        return $this->sizeGb;
+    }
+
+    public function setVolumeType($volumeType) {
+        $this->volumeType = $volumeType;
+    }
+
+    public function getVolumeType() {
+        return $this->volumeType;
+    }
 }

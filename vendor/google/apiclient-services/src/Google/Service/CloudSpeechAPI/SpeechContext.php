@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_CloudSpeechAPI_SpeechContext extends Google_Collection
-{
-  protected $collection_key = 'phrases';
-  public $phrases;
+class Google_Service_CloudSpeechAPI_SpeechContext extends Google_Collection {
+    protected $collection_key = 'phrases';
+    public $phrases;
 
-  public function setPhrases($phrases)
-  {
-    $this->phrases = $phrases;
-  }
-  public function getPhrases()
-  {
-    return $this->phrases;
-  }
+    public function setPhrases($phrases) {
+        $this->phrases = $phrases;
+    }
+
+    public function getPhrases() {
+        return $this->phrases;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Genomics_ListBasesResponse extends Google_Model
-{
-  public $nextPageToken;
-  public $offset;
-  public $sequence;
+class Google_Service_Genomics_ListBasesResponse extends Google_Model {
+    public $nextPageToken;
+    public $offset;
+    public $sequence;
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setOffset($offset)
-  {
-    $this->offset = $offset;
-  }
-  public function getOffset()
-  {
-    return $this->offset;
-  }
-  public function setSequence($sequence)
-  {
-    $this->sequence = $sequence;
-  }
-  public function getSequence()
-  {
-    return $this->sequence;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    public function setOffset($offset) {
+        $this->offset = $offset;
+    }
+
+    public function getOffset() {
+        return $this->offset;
+    }
+
+    public function setSequence($sequence) {
+        $this->sequence = $sequence;
+    }
+
+    public function getSequence() {
+        return $this->sequence;
+    }
 }

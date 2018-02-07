@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_InstancesDemoteMasterRequest extends Google_Model
-{
-  protected $demoteMasterContextType = 'Google_Service_SQLAdmin_DemoteMasterContext';
-  protected $demoteMasterContextDataType = '';
+class Google_Service_SQLAdmin_InstancesDemoteMasterRequest extends Google_Model {
+    protected $demoteMasterContextType     = 'Google_Service_SQLAdmin_DemoteMasterContext';
+    protected $demoteMasterContextDataType = '';
 
-  /**
-   * @param Google_Service_SQLAdmin_DemoteMasterContext
-   */
-  public function setDemoteMasterContext(Google_Service_SQLAdmin_DemoteMasterContext $demoteMasterContext)
-  {
-    $this->demoteMasterContext = $demoteMasterContext;
-  }
-  /**
-   * @return Google_Service_SQLAdmin_DemoteMasterContext
-   */
-  public function getDemoteMasterContext()
-  {
-    return $this->demoteMasterContext;
-  }
+    /**
+     * @param Google_Service_SQLAdmin_DemoteMasterContext
+     */
+    public function setDemoteMasterContext(Google_Service_SQLAdmin_DemoteMasterContext $demoteMasterContext) {
+        $this->demoteMasterContext = $demoteMasterContext;
+    }
+
+    /**
+     * @return Google_Service_SQLAdmin_DemoteMasterContext
+     */
+    public function getDemoteMasterContext() {
+        return $this->demoteMasterContext;
+    }
 }

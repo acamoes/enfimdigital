@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductsApproveRequest extends Google_Model
-{
-  protected $approvalUrlInfoType = 'Google_Service_AndroidEnterprise_ApprovalUrlInfo';
-  protected $approvalUrlInfoDataType = '';
-  public $approvedPermissions;
+class Google_Service_AndroidEnterprise_ProductsApproveRequest extends Google_Model {
+    protected $approvalUrlInfoType     = 'Google_Service_AndroidEnterprise_ApprovalUrlInfo';
+    protected $approvalUrlInfoDataType = '';
+    public $approvedPermissions;
 
-  /**
-   * @param Google_Service_AndroidEnterprise_ApprovalUrlInfo
-   */
-  public function setApprovalUrlInfo(Google_Service_AndroidEnterprise_ApprovalUrlInfo $approvalUrlInfo)
-  {
-    $this->approvalUrlInfo = $approvalUrlInfo;
-  }
-  /**
-   * @return Google_Service_AndroidEnterprise_ApprovalUrlInfo
-   */
-  public function getApprovalUrlInfo()
-  {
-    return $this->approvalUrlInfo;
-  }
-  public function setApprovedPermissions($approvedPermissions)
-  {
-    $this->approvedPermissions = $approvedPermissions;
-  }
-  public function getApprovedPermissions()
-  {
-    return $this->approvedPermissions;
-  }
+    /**
+     * @param Google_Service_AndroidEnterprise_ApprovalUrlInfo
+     */
+    public function setApprovalUrlInfo(Google_Service_AndroidEnterprise_ApprovalUrlInfo $approvalUrlInfo) {
+        $this->approvalUrlInfo = $approvalUrlInfo;
+    }
+
+    /**
+     * @return Google_Service_AndroidEnterprise_ApprovalUrlInfo
+     */
+    public function getApprovalUrlInfo() {
+        return $this->approvalUrlInfo;
+    }
+
+    public function setApprovedPermissions($approvedPermissions) {
+        $this->approvedPermissions = $approvedPermissions;
+    }
+
+    public function getApprovedPermissions() {
+        return $this->approvedPermissions;
+    }
 }

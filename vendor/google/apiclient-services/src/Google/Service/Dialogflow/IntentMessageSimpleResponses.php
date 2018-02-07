@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageSimpleResponses extends Google_Collection
-{
-  protected $collection_key = 'simpleResponses';
-  protected $simpleResponsesType = 'Google_Service_Dialogflow_IntentMessageSimpleResponse';
-  protected $simpleResponsesDataType = 'array';
+class Google_Service_Dialogflow_IntentMessageSimpleResponses extends Google_Collection {
+    protected $collection_key          = 'simpleResponses';
+    protected $simpleResponsesType     = 'Google_Service_Dialogflow_IntentMessageSimpleResponse';
+    protected $simpleResponsesDataType = 'array';
 
-  /**
-   * @param Google_Service_Dialogflow_IntentMessageSimpleResponse
-   */
-  public function setSimpleResponses($simpleResponses)
-  {
-    $this->simpleResponses = $simpleResponses;
-  }
-  /**
-   * @return Google_Service_Dialogflow_IntentMessageSimpleResponse
-   */
-  public function getSimpleResponses()
-  {
-    return $this->simpleResponses;
-  }
+    /**
+     * @param Google_Service_Dialogflow_IntentMessageSimpleResponse
+     */
+    public function setSimpleResponses($simpleResponses) {
+        $this->simpleResponses = $simpleResponses;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_IntentMessageSimpleResponse
+     */
+    public function getSimpleResponses() {
+        return $this->simpleResponses;
+    }
 }

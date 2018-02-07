@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Genomics_BatchCreateAnnotationsRequest extends Google_Collection
-{
-  protected $collection_key = 'annotations';
-  protected $annotationsType = 'Google_Service_Genomics_Annotation';
-  protected $annotationsDataType = 'array';
-  public $requestId;
+class Google_Service_Genomics_BatchCreateAnnotationsRequest extends Google_Collection {
+    protected $collection_key      = 'annotations';
+    protected $annotationsType     = 'Google_Service_Genomics_Annotation';
+    protected $annotationsDataType = 'array';
+    public $requestId;
 
-  /**
-   * @param Google_Service_Genomics_Annotation
-   */
-  public function setAnnotations($annotations)
-  {
-    $this->annotations = $annotations;
-  }
-  /**
-   * @return Google_Service_Genomics_Annotation
-   */
-  public function getAnnotations()
-  {
-    return $this->annotations;
-  }
-  public function setRequestId($requestId)
-  {
-    $this->requestId = $requestId;
-  }
-  public function getRequestId()
-  {
-    return $this->requestId;
-  }
+    /**
+     * @param Google_Service_Genomics_Annotation
+     */
+    public function setAnnotations($annotations) {
+        $this->annotations = $annotations;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Annotation
+     */
+    public function getAnnotations() {
+        return $this->annotations;
+    }
+
+    public function setRequestId($requestId) {
+        $this->requestId = $requestId;
+    }
+
+    public function getRequestId() {
+        return $this->requestId;
+    }
 }

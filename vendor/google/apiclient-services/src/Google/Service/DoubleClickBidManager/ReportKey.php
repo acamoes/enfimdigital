@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_DoubleClickBidManager_ReportKey extends Google_Model
-{
-  public $queryId;
-  public $reportId;
+class Google_Service_DoubleClickBidManager_ReportKey extends Google_Model {
+    public $queryId;
+    public $reportId;
 
-  public function setQueryId($queryId)
-  {
-    $this->queryId = $queryId;
-  }
-  public function getQueryId()
-  {
-    return $this->queryId;
-  }
-  public function setReportId($reportId)
-  {
-    $this->reportId = $reportId;
-  }
-  public function getReportId()
-  {
-    return $this->reportId;
-  }
+    public function setQueryId($queryId) {
+        $this->queryId = $queryId;
+    }
+
+    public function getQueryId() {
+        return $this->queryId;
+    }
+
+    public function setReportId($reportId) {
+        $this->reportId = $reportId;
+    }
+
+    public function getReportId() {
+        return $this->reportId;
+    }
 }

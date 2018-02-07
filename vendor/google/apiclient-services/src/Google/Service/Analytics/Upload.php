@@ -15,71 +15,69 @@
  * the License.
  */
 
-class Google_Service_Analytics_Upload extends Google_Collection
-{
-  protected $collection_key = 'errors';
-  public $accountId;
-  public $customDataSourceId;
-  public $errors;
-  public $id;
-  public $kind;
-  public $status;
-  public $uploadTime;
+class Google_Service_Analytics_Upload extends Google_Collection {
+    protected $collection_key = 'errors';
+    public $accountId;
+    public $customDataSourceId;
+    public $errors;
+    public $id;
+    public $kind;
+    public $status;
+    public $uploadTime;
 
-  public function setAccountId($accountId)
-  {
-    $this->accountId = $accountId;
-  }
-  public function getAccountId()
-  {
-    return $this->accountId;
-  }
-  public function setCustomDataSourceId($customDataSourceId)
-  {
-    $this->customDataSourceId = $customDataSourceId;
-  }
-  public function getCustomDataSourceId()
-  {
-    return $this->customDataSourceId;
-  }
-  public function setErrors($errors)
-  {
-    $this->errors = $errors;
-  }
-  public function getErrors()
-  {
-    return $this->errors;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
-  public function setUploadTime($uploadTime)
-  {
-    $this->uploadTime = $uploadTime;
-  }
-  public function getUploadTime()
-  {
-    return $this->uploadTime;
-  }
+    public function setAccountId($accountId) {
+        $this->accountId = $accountId;
+    }
+
+    public function getAccountId() {
+        return $this->accountId;
+    }
+
+    public function setCustomDataSourceId($customDataSourceId) {
+        $this->customDataSourceId = $customDataSourceId;
+    }
+
+    public function getCustomDataSourceId() {
+        return $this->customDataSourceId;
+    }
+
+    public function setErrors($errors) {
+        $this->errors = $errors;
+    }
+
+    public function getErrors() {
+        return $this->errors;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
+
+    public function setUploadTime($uploadTime) {
+        $this->uploadTime = $uploadTime;
+    }
+
+    public function getUploadTime() {
+        return $this->uploadTime;
+    }
 }

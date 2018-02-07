@@ -15,44 +15,42 @@
  * the License.
  */
 
-class Google_Service_Appengine_Network extends Google_Collection
-{
-  protected $collection_key = 'forwardedPorts';
-  public $forwardedPorts;
-  public $instanceTag;
-  public $name;
-  public $subnetworkName;
+class Google_Service_Appengine_Network extends Google_Collection {
+    protected $collection_key = 'forwardedPorts';
+    public $forwardedPorts;
+    public $instanceTag;
+    public $name;
+    public $subnetworkName;
 
-  public function setForwardedPorts($forwardedPorts)
-  {
-    $this->forwardedPorts = $forwardedPorts;
-  }
-  public function getForwardedPorts()
-  {
-    return $this->forwardedPorts;
-  }
-  public function setInstanceTag($instanceTag)
-  {
-    $this->instanceTag = $instanceTag;
-  }
-  public function getInstanceTag()
-  {
-    return $this->instanceTag;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setSubnetworkName($subnetworkName)
-  {
-    $this->subnetworkName = $subnetworkName;
-  }
-  public function getSubnetworkName()
-  {
-    return $this->subnetworkName;
-  }
+    public function setForwardedPorts($forwardedPorts) {
+        $this->forwardedPorts = $forwardedPorts;
+    }
+
+    public function getForwardedPorts() {
+        return $this->forwardedPorts;
+    }
+
+    public function setInstanceTag($instanceTag) {
+        $this->instanceTag = $instanceTag;
+    }
+
+    public function getInstanceTag() {
+        return $this->instanceTag;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setSubnetworkName($subnetworkName) {
+        $this->subnetworkName = $subnetworkName;
+    }
+
+    public function getSubnetworkName() {
+        return $this->subnetworkName;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Reseller_SubscriptionTransferInfo extends Google_Model
-{
-  public $minimumTransferableSeats;
-  public $transferabilityExpirationTime;
+class Google_Service_Reseller_SubscriptionTransferInfo extends Google_Model {
+    public $minimumTransferableSeats;
+    public $transferabilityExpirationTime;
 
-  public function setMinimumTransferableSeats($minimumTransferableSeats)
-  {
-    $this->minimumTransferableSeats = $minimumTransferableSeats;
-  }
-  public function getMinimumTransferableSeats()
-  {
-    return $this->minimumTransferableSeats;
-  }
-  public function setTransferabilityExpirationTime($transferabilityExpirationTime)
-  {
-    $this->transferabilityExpirationTime = $transferabilityExpirationTime;
-  }
-  public function getTransferabilityExpirationTime()
-  {
-    return $this->transferabilityExpirationTime;
-  }
+    public function setMinimumTransferableSeats($minimumTransferableSeats) {
+        $this->minimumTransferableSeats = $minimumTransferableSeats;
+    }
+
+    public function getMinimumTransferableSeats() {
+        return $this->minimumTransferableSeats;
+    }
+
+    public function setTransferabilityExpirationTime($transferabilityExpirationTime) {
+        $this->transferabilityExpirationTime = $transferabilityExpirationTime;
+    }
+
+    public function getTransferabilityExpirationTime() {
+        return $this->transferabilityExpirationTime;
+    }
 }

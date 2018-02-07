@@ -15,44 +15,42 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_CreativeServingRestrictionsContexts extends Google_Collection
-{
-  protected $collection_key = 'platform';
-  public $auctionType;
-  public $contextType;
-  public $geoCriteriaId;
-  public $platform;
+class Google_Service_AdExchangeBuyer_CreativeServingRestrictionsContexts extends Google_Collection {
+    protected $collection_key = 'platform';
+    public $auctionType;
+    public $contextType;
+    public $geoCriteriaId;
+    public $platform;
 
-  public function setAuctionType($auctionType)
-  {
-    $this->auctionType = $auctionType;
-  }
-  public function getAuctionType()
-  {
-    return $this->auctionType;
-  }
-  public function setContextType($contextType)
-  {
-    $this->contextType = $contextType;
-  }
-  public function getContextType()
-  {
-    return $this->contextType;
-  }
-  public function setGeoCriteriaId($geoCriteriaId)
-  {
-    $this->geoCriteriaId = $geoCriteriaId;
-  }
-  public function getGeoCriteriaId()
-  {
-    return $this->geoCriteriaId;
-  }
-  public function setPlatform($platform)
-  {
-    $this->platform = $platform;
-  }
-  public function getPlatform()
-  {
-    return $this->platform;
-  }
+    public function setAuctionType($auctionType) {
+        $this->auctionType = $auctionType;
+    }
+
+    public function getAuctionType() {
+        return $this->auctionType;
+    }
+
+    public function setContextType($contextType) {
+        $this->contextType = $contextType;
+    }
+
+    public function getContextType() {
+        return $this->contextType;
+    }
+
+    public function setGeoCriteriaId($geoCriteriaId) {
+        $this->geoCriteriaId = $geoCriteriaId;
+    }
+
+    public function getGeoCriteriaId() {
+        return $this->geoCriteriaId;
+    }
+
+    public function setPlatform($platform) {
+        $this->platform = $platform;
+    }
+
+    public function getPlatform() {
+        return $this->platform;
+    }
 }

@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Classroom_ModifyCourseWorkAssigneesRequest extends Google_Model
-{
-  public $assigneeMode;
-  protected $modifyIndividualStudentsOptionsType = 'Google_Service_Classroom_ModifyIndividualStudentsOptions';
-  protected $modifyIndividualStudentsOptionsDataType = '';
+class Google_Service_Classroom_ModifyCourseWorkAssigneesRequest extends Google_Model {
+    public $assigneeMode;
+    protected $modifyIndividualStudentsOptionsType     = 'Google_Service_Classroom_ModifyIndividualStudentsOptions';
+    protected $modifyIndividualStudentsOptionsDataType = '';
 
-  public function setAssigneeMode($assigneeMode)
-  {
-    $this->assigneeMode = $assigneeMode;
-  }
-  public function getAssigneeMode()
-  {
-    return $this->assigneeMode;
-  }
-  /**
-   * @param Google_Service_Classroom_ModifyIndividualStudentsOptions
-   */
-  public function setModifyIndividualStudentsOptions(Google_Service_Classroom_ModifyIndividualStudentsOptions $modifyIndividualStudentsOptions)
-  {
-    $this->modifyIndividualStudentsOptions = $modifyIndividualStudentsOptions;
-  }
-  /**
-   * @return Google_Service_Classroom_ModifyIndividualStudentsOptions
-   */
-  public function getModifyIndividualStudentsOptions()
-  {
-    return $this->modifyIndividualStudentsOptions;
-  }
+    public function setAssigneeMode($assigneeMode) {
+        $this->assigneeMode = $assigneeMode;
+    }
+
+    public function getAssigneeMode() {
+        return $this->assigneeMode;
+    }
+
+    /**
+     * @param Google_Service_Classroom_ModifyIndividualStudentsOptions
+     */
+    public function setModifyIndividualStudentsOptions(Google_Service_Classroom_ModifyIndividualStudentsOptions $modifyIndividualStudentsOptions) {
+        $this->modifyIndividualStudentsOptions = $modifyIndividualStudentsOptions;
+    }
+
+    /**
+     * @return Google_Service_Classroom_ModifyIndividualStudentsOptions
+     */
+    public function getModifyIndividualStudentsOptions() {
+        return $this->modifyIndividualStudentsOptions;
+    }
 }

@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_ImagesDeleteAllResponse extends Google_Collection
-{
-  protected $collection_key = 'deleted';
-  protected $deletedType = 'Google_Service_AndroidPublisher_Image';
-  protected $deletedDataType = 'array';
+class Google_Service_AndroidPublisher_ImagesDeleteAllResponse extends Google_Collection {
+    protected $collection_key  = 'deleted';
+    protected $deletedType     = 'Google_Service_AndroidPublisher_Image';
+    protected $deletedDataType = 'array';
 
-  /**
-   * @param Google_Service_AndroidPublisher_Image
-   */
-  public function setDeleted($deleted)
-  {
-    $this->deleted = $deleted;
-  }
-  /**
-   * @return Google_Service_AndroidPublisher_Image
-   */
-  public function getDeleted()
-  {
-    return $this->deleted;
-  }
+    /**
+     * @param Google_Service_AndroidPublisher_Image
+     */
+    public function setDeleted($deleted) {
+        $this->deleted = $deleted;
+    }
+
+    /**
+     * @return Google_Service_AndroidPublisher_Image
+     */
+    public function getDeleted() {
+        return $this->deleted;
+    }
 }

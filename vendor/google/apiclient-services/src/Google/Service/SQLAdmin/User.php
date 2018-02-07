@@ -15,70 +15,68 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_User extends Google_Model
-{
-  public $etag;
-  public $host;
-  public $instance;
-  public $kind;
-  public $name;
-  public $password;
-  public $project;
+class Google_Service_SQLAdmin_User extends Google_Model {
+    public $etag;
+    public $host;
+    public $instance;
+    public $kind;
+    public $name;
+    public $password;
+    public $project;
 
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  public function setHost($host)
-  {
-    $this->host = $host;
-  }
-  public function getHost()
-  {
-    return $this->host;
-  }
-  public function setInstance($instance)
-  {
-    $this->instance = $instance;
-  }
-  public function getInstance()
-  {
-    return $this->instance;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setPassword($password)
-  {
-    $this->password = $password;
-  }
-  public function getPassword()
-  {
-    return $this->password;
-  }
-  public function setProject($project)
-  {
-    $this->project = $project;
-  }
-  public function getProject()
-  {
-    return $this->project;
-  }
+    public function setEtag($etag) {
+        $this->etag = $etag;
+    }
+
+    public function getEtag() {
+        return $this->etag;
+    }
+
+    public function setHost($host) {
+        $this->host = $host;
+    }
+
+    public function getHost() {
+        return $this->host;
+    }
+
+    public function setInstance($instance) {
+        $this->instance = $instance;
+    }
+
+    public function getInstance() {
+        return $this->instance;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setPassword($password) {
+        $this->password = $password;
+    }
+
+    public function getPassword() {
+        return $this->password;
+    }
+
+    public function setProject($project) {
+        $this->project = $project;
+    }
+
+    public function getProject() {
+        return $this->project;
+    }
 }

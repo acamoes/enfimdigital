@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_TagSetting extends Google_Model
-{
-  public $additionalKeyValues;
-  public $includeClickThroughUrls;
-  public $includeClickTracking;
-  public $keywordOption;
+class Google_Service_Dfareporting_TagSetting extends Google_Model {
+    public $additionalKeyValues;
+    public $includeClickThroughUrls;
+    public $includeClickTracking;
+    public $keywordOption;
 
-  public function setAdditionalKeyValues($additionalKeyValues)
-  {
-    $this->additionalKeyValues = $additionalKeyValues;
-  }
-  public function getAdditionalKeyValues()
-  {
-    return $this->additionalKeyValues;
-  }
-  public function setIncludeClickThroughUrls($includeClickThroughUrls)
-  {
-    $this->includeClickThroughUrls = $includeClickThroughUrls;
-  }
-  public function getIncludeClickThroughUrls()
-  {
-    return $this->includeClickThroughUrls;
-  }
-  public function setIncludeClickTracking($includeClickTracking)
-  {
-    $this->includeClickTracking = $includeClickTracking;
-  }
-  public function getIncludeClickTracking()
-  {
-    return $this->includeClickTracking;
-  }
-  public function setKeywordOption($keywordOption)
-  {
-    $this->keywordOption = $keywordOption;
-  }
-  public function getKeywordOption()
-  {
-    return $this->keywordOption;
-  }
+    public function setAdditionalKeyValues($additionalKeyValues) {
+        $this->additionalKeyValues = $additionalKeyValues;
+    }
+
+    public function getAdditionalKeyValues() {
+        return $this->additionalKeyValues;
+    }
+
+    public function setIncludeClickThroughUrls($includeClickThroughUrls) {
+        $this->includeClickThroughUrls = $includeClickThroughUrls;
+    }
+
+    public function getIncludeClickThroughUrls() {
+        return $this->includeClickThroughUrls;
+    }
+
+    public function setIncludeClickTracking($includeClickTracking) {
+        $this->includeClickTracking = $includeClickTracking;
+    }
+
+    public function getIncludeClickTracking() {
+        return $this->includeClickTracking;
+    }
+
+    public function setKeywordOption($keywordOption) {
+        $this->keywordOption = $keywordOption;
+    }
+
+    public function getKeywordOption() {
+        return $this->keywordOption;
+    }
 }

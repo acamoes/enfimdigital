@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_PlacementTag extends Google_Collection
-{
-  protected $collection_key = 'tagDatas';
-  public $placementId;
-  protected $tagDatasType = 'Google_Service_Dfareporting_TagData';
-  protected $tagDatasDataType = 'array';
+class Google_Service_Dfareporting_PlacementTag extends Google_Collection {
+    protected $collection_key   = 'tagDatas';
+    public $placementId;
+    protected $tagDatasType     = 'Google_Service_Dfareporting_TagData';
+    protected $tagDatasDataType = 'array';
 
-  public function setPlacementId($placementId)
-  {
-    $this->placementId = $placementId;
-  }
-  public function getPlacementId()
-  {
-    return $this->placementId;
-  }
-  /**
-   * @param Google_Service_Dfareporting_TagData
-   */
-  public function setTagDatas($tagDatas)
-  {
-    $this->tagDatas = $tagDatas;
-  }
-  /**
-   * @return Google_Service_Dfareporting_TagData
-   */
-  public function getTagDatas()
-  {
-    return $this->tagDatas;
-  }
+    public function setPlacementId($placementId) {
+        $this->placementId = $placementId;
+    }
+
+    public function getPlacementId() {
+        return $this->placementId;
+    }
+
+    /**
+     * @param Google_Service_Dfareporting_TagData
+     */
+    public function setTagDatas($tagDatas) {
+        $this->tagDatas = $tagDatas;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_TagData
+     */
+    public function getTagDatas() {
+        return $this->tagDatas;
+    }
 }

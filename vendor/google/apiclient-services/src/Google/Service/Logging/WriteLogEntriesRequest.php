@@ -15,67 +15,65 @@
  * the License.
  */
 
-class Google_Service_Logging_WriteLogEntriesRequest extends Google_Collection
-{
-  protected $collection_key = 'entries';
-  protected $entriesType = 'Google_Service_Logging_LogEntry';
-  protected $entriesDataType = 'array';
-  public $labels;
-  public $logName;
-  public $partialSuccess;
-  protected $resourceType = 'Google_Service_Logging_MonitoredResource';
-  protected $resourceDataType = '';
+class Google_Service_Logging_WriteLogEntriesRequest extends Google_Collection {
+    protected $collection_key   = 'entries';
+    protected $entriesType      = 'Google_Service_Logging_LogEntry';
+    protected $entriesDataType  = 'array';
+    public $labels;
+    public $logName;
+    public $partialSuccess;
+    protected $resourceType     = 'Google_Service_Logging_MonitoredResource';
+    protected $resourceDataType = '';
 
-  /**
-   * @param Google_Service_Logging_LogEntry
-   */
-  public function setEntries($entries)
-  {
-    $this->entries = $entries;
-  }
-  /**
-   * @return Google_Service_Logging_LogEntry
-   */
-  public function getEntries()
-  {
-    return $this->entries;
-  }
-  public function setLabels($labels)
-  {
-    $this->labels = $labels;
-  }
-  public function getLabels()
-  {
-    return $this->labels;
-  }
-  public function setLogName($logName)
-  {
-    $this->logName = $logName;
-  }
-  public function getLogName()
-  {
-    return $this->logName;
-  }
-  public function setPartialSuccess($partialSuccess)
-  {
-    $this->partialSuccess = $partialSuccess;
-  }
-  public function getPartialSuccess()
-  {
-    return $this->partialSuccess;
-  }
-  /**
-   * @param Google_Service_Logging_MonitoredResource
-   */
-  public function setResource(Google_Service_Logging_MonitoredResource $resource)
-  {
-    $this->resource = $resource;
-  }
-  /**
-   * @return Google_Service_Logging_MonitoredResource
-   */
-  public function getResource()
-  {
-    return $this->resource;
-  }
+    /**
+     * @param Google_Service_Logging_LogEntry
+     */
+    public function setEntries($entries) {
+        $this->entries = $entries;
+    }
+
+    /**
+     * @return Google_Service_Logging_LogEntry
+     */
+    public function getEntries() {
+        return $this->entries;
+    }
+
+    public function setLabels($labels) {
+        $this->labels = $labels;
+    }
+
+    public function getLabels() {
+        return $this->labels;
+    }
+
+    public function setLogName($logName) {
+        $this->logName = $logName;
+    }
+
+    public function getLogName() {
+        return $this->logName;
+    }
+
+    public function setPartialSuccess($partialSuccess) {
+        $this->partialSuccess = $partialSuccess;
+    }
+
+    public function getPartialSuccess() {
+        return $this->partialSuccess;
+    }
+
+    /**
+     * @param Google_Service_Logging_MonitoredResource
+     */
+    public function setResource(Google_Service_Logging_MonitoredResource $resource) {
+        $this->resource = $resource;
+    }
+
+    /**
+     * @return Google_Service_Logging_MonitoredResource
+     */
+    public function getResource() {
+        return $this->resource;
+    }
 }

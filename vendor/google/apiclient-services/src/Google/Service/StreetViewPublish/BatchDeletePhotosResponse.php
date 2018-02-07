@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_StreetViewPublish_BatchDeletePhotosResponse extends Google_Collection
-{
-  protected $collection_key = 'status';
-  protected $statusType = 'Google_Service_StreetViewPublish_Status';
-  protected $statusDataType = 'array';
+class Google_Service_StreetViewPublish_BatchDeletePhotosResponse extends Google_Collection {
+    protected $collection_key = 'status';
+    protected $statusType     = 'Google_Service_StreetViewPublish_Status';
+    protected $statusDataType = 'array';
 
-  /**
-   * @param Google_Service_StreetViewPublish_Status
-   */
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  /**
-   * @return Google_Service_StreetViewPublish_Status
-   */
-  public function getStatus()
-  {
-    return $this->status;
-  }
+    /**
+     * @param Google_Service_StreetViewPublish_Status
+     */
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    /**
+     * @return Google_Service_StreetViewPublish_Status
+     */
+    public function getStatus() {
+        return $this->status;
+    }
 }

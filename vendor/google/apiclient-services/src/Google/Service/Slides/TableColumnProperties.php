@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Slides_TableColumnProperties extends Google_Model
-{
-  protected $columnWidthType = 'Google_Service_Slides_Dimension';
-  protected $columnWidthDataType = '';
+class Google_Service_Slides_TableColumnProperties extends Google_Model {
+    protected $columnWidthType     = 'Google_Service_Slides_Dimension';
+    protected $columnWidthDataType = '';
 
-  /**
-   * @param Google_Service_Slides_Dimension
-   */
-  public function setColumnWidth(Google_Service_Slides_Dimension $columnWidth)
-  {
-    $this->columnWidth = $columnWidth;
-  }
-  /**
-   * @return Google_Service_Slides_Dimension
-   */
-  public function getColumnWidth()
-  {
-    return $this->columnWidth;
-  }
+    /**
+     * @param Google_Service_Slides_Dimension
+     */
+    public function setColumnWidth(Google_Service_Slides_Dimension $columnWidth) {
+        $this->columnWidth = $columnWidth;
+    }
+
+    /**
+     * @return Google_Service_Slides_Dimension
+     */
+    public function getColumnWidth() {
+        return $this->columnWidth;
+    }
 }

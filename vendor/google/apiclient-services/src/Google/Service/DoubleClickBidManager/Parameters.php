@@ -15,60 +15,58 @@
  * the License.
  */
 
-class Google_Service_DoubleClickBidManager_Parameters extends Google_Collection
-{
-  protected $collection_key = 'metrics';
-  protected $filtersType = 'Google_Service_DoubleClickBidManager_FilterPair';
-  protected $filtersDataType = 'array';
-  public $groupBys;
-  public $includeInviteData;
-  public $metrics;
-  public $type;
+class Google_Service_DoubleClickBidManager_Parameters extends Google_Collection {
+    protected $collection_key  = 'metrics';
+    protected $filtersType     = 'Google_Service_DoubleClickBidManager_FilterPair';
+    protected $filtersDataType = 'array';
+    public $groupBys;
+    public $includeInviteData;
+    public $metrics;
+    public $type;
 
-  /**
-   * @param Google_Service_DoubleClickBidManager_FilterPair
-   */
-  public function setFilters($filters)
-  {
-    $this->filters = $filters;
-  }
-  /**
-   * @return Google_Service_DoubleClickBidManager_FilterPair
-   */
-  public function getFilters()
-  {
-    return $this->filters;
-  }
-  public function setGroupBys($groupBys)
-  {
-    $this->groupBys = $groupBys;
-  }
-  public function getGroupBys()
-  {
-    return $this->groupBys;
-  }
-  public function setIncludeInviteData($includeInviteData)
-  {
-    $this->includeInviteData = $includeInviteData;
-  }
-  public function getIncludeInviteData()
-  {
-    return $this->includeInviteData;
-  }
-  public function setMetrics($metrics)
-  {
-    $this->metrics = $metrics;
-  }
-  public function getMetrics()
-  {
-    return $this->metrics;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    /**
+     * @param Google_Service_DoubleClickBidManager_FilterPair
+     */
+    public function setFilters($filters) {
+        $this->filters = $filters;
+    }
+
+    /**
+     * @return Google_Service_DoubleClickBidManager_FilterPair
+     */
+    public function getFilters() {
+        return $this->filters;
+    }
+
+    public function setGroupBys($groupBys) {
+        $this->groupBys = $groupBys;
+    }
+
+    public function getGroupBys() {
+        return $this->groupBys;
+    }
+
+    public function setIncludeInviteData($includeInviteData) {
+        $this->includeInviteData = $includeInviteData;
+    }
+
+    public function getIncludeInviteData() {
+        return $this->includeInviteData;
+    }
+
+    public function setMetrics($metrics) {
+        $this->metrics = $metrics;
+    }
+
+    public function getMetrics() {
+        return $this->metrics;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

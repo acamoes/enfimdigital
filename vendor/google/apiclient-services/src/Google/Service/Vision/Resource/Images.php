@@ -23,19 +23,18 @@
  *   $images = $visionService->images;
  *  </code>
  */
-class Google_Service_Vision_Resource_Images extends Google_Service_Resource
-{
-  /**
-   * Run image detection and annotation for a batch of images. (images.annotate)
-   *
-   * @param Google_Service_Vision_BatchAnnotateImagesRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Vision_BatchAnnotateImagesResponse
-   */
-  public function annotate(Google_Service_Vision_BatchAnnotateImagesRequest $postBody, $optParams = array())
-  {
-    $params = array('postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('annotate', array($params), "Google_Service_Vision_BatchAnnotateImagesResponse");
-  }
+class Google_Service_Vision_Resource_Images extends Google_Service_Resource {
+
+    /**
+     * Run image detection and annotation for a batch of images. (images.annotate)
+     *
+     * @param Google_Service_Vision_BatchAnnotateImagesRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Vision_BatchAnnotateImagesResponse
+     */
+    public function annotate(Google_Service_Vision_BatchAnnotateImagesRequest $postBody, $optParams = array()) {
+        $params = array('postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('annotate', array($params), "Google_Service_Vision_BatchAnnotateImagesResponse");
+    }
 }

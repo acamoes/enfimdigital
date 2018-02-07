@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_DimensionFilter extends Google_Model
-{
-  public $dimensionName;
-  public $kind;
-  public $value;
+class Google_Service_Dfareporting_DimensionFilter extends Google_Model {
+    public $dimensionName;
+    public $kind;
+    public $value;
 
-  public function setDimensionName($dimensionName)
-  {
-    $this->dimensionName = $dimensionName;
-  }
-  public function getDimensionName()
-  {
-    return $this->dimensionName;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setDimensionName($dimensionName) {
+        $this->dimensionName = $dimensionName;
+    }
+
+    public function getDimensionName() {
+        return $this->dimensionName;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

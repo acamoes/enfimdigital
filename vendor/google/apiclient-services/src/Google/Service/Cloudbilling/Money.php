@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Cloudbilling_Money extends Google_Model
-{
-  public $currencyCode;
-  public $nanos;
-  public $units;
+class Google_Service_Cloudbilling_Money extends Google_Model {
+    public $currencyCode;
+    public $nanos;
+    public $units;
 
-  public function setCurrencyCode($currencyCode)
-  {
-    $this->currencyCode = $currencyCode;
-  }
-  public function getCurrencyCode()
-  {
-    return $this->currencyCode;
-  }
-  public function setNanos($nanos)
-  {
-    $this->nanos = $nanos;
-  }
-  public function getNanos()
-  {
-    return $this->nanos;
-  }
-  public function setUnits($units)
-  {
-    $this->units = $units;
-  }
-  public function getUnits()
-  {
-    return $this->units;
-  }
+    public function setCurrencyCode($currencyCode) {
+        $this->currencyCode = $currencyCode;
+    }
+
+    public function getCurrencyCode() {
+        return $this->currencyCode;
+    }
+
+    public function setNanos($nanos) {
+        $this->nanos = $nanos;
+    }
+
+    public function getNanos() {
+        return $this->nanos;
+    }
+
+    public function setUnits($units) {
+        $this->units = $units;
+    }
+
+    public function getUnits() {
+        return $this->units;
+    }
 }

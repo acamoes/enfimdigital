@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_YouTube_LiveBroadcastStatus extends Google_Model
-{
-  public $lifeCycleStatus;
-  public $liveBroadcastPriority;
-  public $privacyStatus;
-  public $recordingStatus;
+class Google_Service_YouTube_LiveBroadcastStatus extends Google_Model {
+    public $lifeCycleStatus;
+    public $liveBroadcastPriority;
+    public $privacyStatus;
+    public $recordingStatus;
 
-  public function setLifeCycleStatus($lifeCycleStatus)
-  {
-    $this->lifeCycleStatus = $lifeCycleStatus;
-  }
-  public function getLifeCycleStatus()
-  {
-    return $this->lifeCycleStatus;
-  }
-  public function setLiveBroadcastPriority($liveBroadcastPriority)
-  {
-    $this->liveBroadcastPriority = $liveBroadcastPriority;
-  }
-  public function getLiveBroadcastPriority()
-  {
-    return $this->liveBroadcastPriority;
-  }
-  public function setPrivacyStatus($privacyStatus)
-  {
-    $this->privacyStatus = $privacyStatus;
-  }
-  public function getPrivacyStatus()
-  {
-    return $this->privacyStatus;
-  }
-  public function setRecordingStatus($recordingStatus)
-  {
-    $this->recordingStatus = $recordingStatus;
-  }
-  public function getRecordingStatus()
-  {
-    return $this->recordingStatus;
-  }
+    public function setLifeCycleStatus($lifeCycleStatus) {
+        $this->lifeCycleStatus = $lifeCycleStatus;
+    }
+
+    public function getLifeCycleStatus() {
+        return $this->lifeCycleStatus;
+    }
+
+    public function setLiveBroadcastPriority($liveBroadcastPriority) {
+        $this->liveBroadcastPriority = $liveBroadcastPriority;
+    }
+
+    public function getLiveBroadcastPriority() {
+        return $this->liveBroadcastPriority;
+    }
+
+    public function setPrivacyStatus($privacyStatus) {
+        $this->privacyStatus = $privacyStatus;
+    }
+
+    public function getPrivacyStatus() {
+        return $this->privacyStatus;
+    }
+
+    public function setRecordingStatus($recordingStatus) {
+        $this->recordingStatus = $recordingStatus;
+    }
+
+    public function getRecordingStatus() {
+        return $this->recordingStatus;
+    }
 }

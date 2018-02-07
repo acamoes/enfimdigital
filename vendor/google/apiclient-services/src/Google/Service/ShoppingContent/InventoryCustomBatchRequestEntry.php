@@ -15,59 +15,57 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_InventoryCustomBatchRequestEntry extends Google_Model
-{
-  public $batchId;
-  protected $inventoryType = 'Google_Service_ShoppingContent_Inventory';
-  protected $inventoryDataType = '';
-  public $merchantId;
-  public $productId;
-  public $storeCode;
+class Google_Service_ShoppingContent_InventoryCustomBatchRequestEntry extends Google_Model {
+    public $batchId;
+    protected $inventoryType     = 'Google_Service_ShoppingContent_Inventory';
+    protected $inventoryDataType = '';
+    public $merchantId;
+    public $productId;
+    public $storeCode;
 
-  public function setBatchId($batchId)
-  {
-    $this->batchId = $batchId;
-  }
-  public function getBatchId()
-  {
-    return $this->batchId;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_Inventory
-   */
-  public function setInventory(Google_Service_ShoppingContent_Inventory $inventory)
-  {
-    $this->inventory = $inventory;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_Inventory
-   */
-  public function getInventory()
-  {
-    return $this->inventory;
-  }
-  public function setMerchantId($merchantId)
-  {
-    $this->merchantId = $merchantId;
-  }
-  public function getMerchantId()
-  {
-    return $this->merchantId;
-  }
-  public function setProductId($productId)
-  {
-    $this->productId = $productId;
-  }
-  public function getProductId()
-  {
-    return $this->productId;
-  }
-  public function setStoreCode($storeCode)
-  {
-    $this->storeCode = $storeCode;
-  }
-  public function getStoreCode()
-  {
-    return $this->storeCode;
-  }
+    public function setBatchId($batchId) {
+        $this->batchId = $batchId;
+    }
+
+    public function getBatchId() {
+        return $this->batchId;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_Inventory
+     */
+    public function setInventory(Google_Service_ShoppingContent_Inventory $inventory) {
+        $this->inventory = $inventory;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_Inventory
+     */
+    public function getInventory() {
+        return $this->inventory;
+    }
+
+    public function setMerchantId($merchantId) {
+        $this->merchantId = $merchantId;
+    }
+
+    public function getMerchantId() {
+        return $this->merchantId;
+    }
+
+    public function setProductId($productId) {
+        $this->productId = $productId;
+    }
+
+    public function getProductId() {
+        return $this->productId;
+    }
+
+    public function setStoreCode($storeCode) {
+        $this->storeCode = $storeCode;
+    }
+
+    public function getStoreCode() {
+        return $this->storeCode;
+    }
 }

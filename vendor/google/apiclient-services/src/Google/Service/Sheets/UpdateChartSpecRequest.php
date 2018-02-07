@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Sheets_UpdateChartSpecRequest extends Google_Model
-{
-  public $chartId;
-  protected $specType = 'Google_Service_Sheets_ChartSpec';
-  protected $specDataType = '';
+class Google_Service_Sheets_UpdateChartSpecRequest extends Google_Model {
+    public $chartId;
+    protected $specType     = 'Google_Service_Sheets_ChartSpec';
+    protected $specDataType = '';
 
-  public function setChartId($chartId)
-  {
-    $this->chartId = $chartId;
-  }
-  public function getChartId()
-  {
-    return $this->chartId;
-  }
-  /**
-   * @param Google_Service_Sheets_ChartSpec
-   */
-  public function setSpec(Google_Service_Sheets_ChartSpec $spec)
-  {
-    $this->spec = $spec;
-  }
-  /**
-   * @return Google_Service_Sheets_ChartSpec
-   */
-  public function getSpec()
-  {
-    return $this->spec;
-  }
+    public function setChartId($chartId) {
+        $this->chartId = $chartId;
+    }
+
+    public function getChartId() {
+        return $this->chartId;
+    }
+
+    /**
+     * @param Google_Service_Sheets_ChartSpec
+     */
+    public function setSpec(Google_Service_Sheets_ChartSpec $spec) {
+        $this->spec = $spec;
+    }
+
+    /**
+     * @return Google_Service_Sheets_ChartSpec
+     */
+    public function getSpec() {
+        return $this->spec;
+    }
 }

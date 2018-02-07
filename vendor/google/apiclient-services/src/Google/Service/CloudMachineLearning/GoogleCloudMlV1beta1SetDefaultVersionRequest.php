@@ -15,6 +15,6 @@
  * the License.
  */
 
-class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1SetDefaultVersionRequest extends Google_Model
-{
+class Google_Service_CloudMachineLearning_GoogleCloudMlV1beta1SetDefaultVersionRequest extends Google_Model {
+
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidProvisioningPartner_ClaimDeviceResponse extends Google_Model
-{
-  public $deviceId;
-  public $deviceName;
+class Google_Service_AndroidProvisioningPartner_ClaimDeviceResponse extends Google_Model {
+    public $deviceId;
+    public $deviceName;
 
-  public function setDeviceId($deviceId)
-  {
-    $this->deviceId = $deviceId;
-  }
-  public function getDeviceId()
-  {
-    return $this->deviceId;
-  }
-  public function setDeviceName($deviceName)
-  {
-    $this->deviceName = $deviceName;
-  }
-  public function getDeviceName()
-  {
-    return $this->deviceName;
-  }
+    public function setDeviceId($deviceId) {
+        $this->deviceId = $deviceId;
+    }
+
+    public function getDeviceId() {
+        return $this->deviceId;
+    }
+
+    public function setDeviceName($deviceName) {
+        $this->deviceName = $deviceName;
+    }
+
+    public function getDeviceName() {
+        return $this->deviceName;
+    }
 }

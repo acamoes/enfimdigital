@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Directory_MembersHasMember extends Google_Model
-{
-  public $isMember;
+class Google_Service_Directory_MembersHasMember extends Google_Model {
+    public $isMember;
 
-  public function setIsMember($isMember)
-  {
-    $this->isMember = $isMember;
-  }
-  public function getIsMember()
-  {
-    return $this->isMember;
-  }
+    public function setIsMember($isMember) {
+        $this->isMember = $isMember;
+    }
+
+    public function getIsMember() {
+        return $this->isMember;
+    }
 }

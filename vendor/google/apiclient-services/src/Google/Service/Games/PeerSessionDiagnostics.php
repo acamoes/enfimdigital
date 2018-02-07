@@ -15,66 +15,64 @@
  * the License.
  */
 
-class Google_Service_Games_PeerSessionDiagnostics extends Google_Model
-{
-  public $connectedTimestampMillis;
-  public $kind;
-  public $participantId;
-  protected $reliableChannelType = 'Google_Service_Games_PeerChannelDiagnostics';
-  protected $reliableChannelDataType = '';
-  protected $unreliableChannelType = 'Google_Service_Games_PeerChannelDiagnostics';
-  protected $unreliableChannelDataType = '';
+class Google_Service_Games_PeerSessionDiagnostics extends Google_Model {
+    public $connectedTimestampMillis;
+    public $kind;
+    public $participantId;
+    protected $reliableChannelType       = 'Google_Service_Games_PeerChannelDiagnostics';
+    protected $reliableChannelDataType   = '';
+    protected $unreliableChannelType     = 'Google_Service_Games_PeerChannelDiagnostics';
+    protected $unreliableChannelDataType = '';
 
-  public function setConnectedTimestampMillis($connectedTimestampMillis)
-  {
-    $this->connectedTimestampMillis = $connectedTimestampMillis;
-  }
-  public function getConnectedTimestampMillis()
-  {
-    return $this->connectedTimestampMillis;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setParticipantId($participantId)
-  {
-    $this->participantId = $participantId;
-  }
-  public function getParticipantId()
-  {
-    return $this->participantId;
-  }
-  /**
-   * @param Google_Service_Games_PeerChannelDiagnostics
-   */
-  public function setReliableChannel(Google_Service_Games_PeerChannelDiagnostics $reliableChannel)
-  {
-    $this->reliableChannel = $reliableChannel;
-  }
-  /**
-   * @return Google_Service_Games_PeerChannelDiagnostics
-   */
-  public function getReliableChannel()
-  {
-    return $this->reliableChannel;
-  }
-  /**
-   * @param Google_Service_Games_PeerChannelDiagnostics
-   */
-  public function setUnreliableChannel(Google_Service_Games_PeerChannelDiagnostics $unreliableChannel)
-  {
-    $this->unreliableChannel = $unreliableChannel;
-  }
-  /**
-   * @return Google_Service_Games_PeerChannelDiagnostics
-   */
-  public function getUnreliableChannel()
-  {
-    return $this->unreliableChannel;
-  }
+    public function setConnectedTimestampMillis($connectedTimestampMillis) {
+        $this->connectedTimestampMillis = $connectedTimestampMillis;
+    }
+
+    public function getConnectedTimestampMillis() {
+        return $this->connectedTimestampMillis;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setParticipantId($participantId) {
+        $this->participantId = $participantId;
+    }
+
+    public function getParticipantId() {
+        return $this->participantId;
+    }
+
+    /**
+     * @param Google_Service_Games_PeerChannelDiagnostics
+     */
+    public function setReliableChannel(Google_Service_Games_PeerChannelDiagnostics $reliableChannel) {
+        $this->reliableChannel = $reliableChannel;
+    }
+
+    /**
+     * @return Google_Service_Games_PeerChannelDiagnostics
+     */
+    public function getReliableChannel() {
+        return $this->reliableChannel;
+    }
+
+    /**
+     * @param Google_Service_Games_PeerChannelDiagnostics
+     */
+    public function setUnreliableChannel(Google_Service_Games_PeerChannelDiagnostics $unreliableChannel) {
+        $this->unreliableChannel = $unreliableChannel;
+    }
+
+    /**
+     * @return Google_Service_Games_PeerChannelDiagnostics
+     */
+    public function getUnreliableChannel() {
+        return $this->unreliableChannel;
+    }
 }

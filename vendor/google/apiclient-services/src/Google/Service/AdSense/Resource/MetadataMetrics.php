@@ -23,19 +23,18 @@
  *   $metrics = $adsenseService->metrics;
  *  </code>
  */
-class Google_Service_AdSense_Resource_MetadataMetrics extends Google_Service_Resource
-{
-  /**
-   * List the metadata for the metrics available to this AdSense account.
-   * (metrics.listMetadataMetrics)
-   *
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_AdSense_Metadata
-   */
-  public function listMetadataMetrics($optParams = array())
-  {
-    $params = array();
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_AdSense_Metadata");
-  }
+class Google_Service_AdSense_Resource_MetadataMetrics extends Google_Service_Resource {
+
+    /**
+     * List the metadata for the metrics available to this AdSense account.
+     * (metrics.listMetadataMetrics)
+     *
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_AdSense_Metadata
+     */
+    public function listMetadataMetrics($optParams = array()) {
+        $params = array();
+        $params = array_merge($params, $optParams);
+        return $this->call('list', array($params), "Google_Service_AdSense_Metadata");
+    }
 }

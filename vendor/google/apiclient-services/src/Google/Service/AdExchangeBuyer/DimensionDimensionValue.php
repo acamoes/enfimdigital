@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_DimensionDimensionValue extends Google_Model
-{
-  public $id;
-  public $name;
-  public $percentage;
+class Google_Service_AdExchangeBuyer_DimensionDimensionValue extends Google_Model {
+    public $id;
+    public $name;
+    public $percentage;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setPercentage($percentage)
-  {
-    $this->percentage = $percentage;
-  }
-  public function getPercentage()
-  {
-    return $this->percentage;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setPercentage($percentage) {
+        $this->percentage = $percentage;
+    }
+
+    public function getPercentage() {
+        return $this->percentage;
+    }
 }

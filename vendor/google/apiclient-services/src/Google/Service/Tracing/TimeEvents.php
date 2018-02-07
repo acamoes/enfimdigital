@@ -15,36 +15,34 @@
  * the License.
  */
 
-class Google_Service_Tracing_TimeEvents extends Google_Collection
-{
-  protected $collection_key = 'timeEvent';
-  public $droppedAnnotationsCount;
-  public $droppedNetworkEventsCount;
-  protected $timeEventType = 'Google_Service_Tracing_TimeEvent';
-  protected $timeEventDataType = 'array';
+class Google_Service_Tracing_TimeEvents extends Google_Collection {
+    protected $collection_key    = 'timeEvent';
+    public $droppedAnnotationsCount;
+    public $droppedNetworkEventsCount;
+    protected $timeEventType     = 'Google_Service_Tracing_TimeEvent';
+    protected $timeEventDataType = 'array';
 
-  public function setDroppedAnnotationsCount($droppedAnnotationsCount)
-  {
-    $this->droppedAnnotationsCount = $droppedAnnotationsCount;
-  }
-  public function getDroppedAnnotationsCount()
-  {
-    return $this->droppedAnnotationsCount;
-  }
-  public function setDroppedNetworkEventsCount($droppedNetworkEventsCount)
-  {
-    $this->droppedNetworkEventsCount = $droppedNetworkEventsCount;
-  }
-  public function getDroppedNetworkEventsCount()
-  {
-    return $this->droppedNetworkEventsCount;
-  }
-  public function setTimeEvent($timeEvent)
-  {
-    $this->timeEvent = $timeEvent;
-  }
-  public function getTimeEvent()
-  {
-    return $this->timeEvent;
-  }
+    public function setDroppedAnnotationsCount($droppedAnnotationsCount) {
+        $this->droppedAnnotationsCount = $droppedAnnotationsCount;
+    }
+
+    public function getDroppedAnnotationsCount() {
+        return $this->droppedAnnotationsCount;
+    }
+
+    public function setDroppedNetworkEventsCount($droppedNetworkEventsCount) {
+        $this->droppedNetworkEventsCount = $droppedNetworkEventsCount;
+    }
+
+    public function getDroppedNetworkEventsCount() {
+        return $this->droppedNetworkEventsCount;
+    }
+
+    public function setTimeEvent($timeEvent) {
+        $this->timeEvent = $timeEvent;
+    }
+
+    public function getTimeEvent() {
+        return $this->timeEvent;
+    }
 }

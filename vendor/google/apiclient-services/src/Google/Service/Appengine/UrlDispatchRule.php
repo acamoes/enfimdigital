@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Appengine_UrlDispatchRule extends Google_Model
-{
-  public $domain;
-  public $path;
-  public $service;
+class Google_Service_Appengine_UrlDispatchRule extends Google_Model {
+    public $domain;
+    public $path;
+    public $service;
 
-  public function setDomain($domain)
-  {
-    $this->domain = $domain;
-  }
-  public function getDomain()
-  {
-    return $this->domain;
-  }
-  public function setPath($path)
-  {
-    $this->path = $path;
-  }
-  public function getPath()
-  {
-    return $this->path;
-  }
-  public function setService($service)
-  {
-    $this->service = $service;
-  }
-  public function getService()
-  {
-    return $this->service;
-  }
+    public function setDomain($domain) {
+        $this->domain = $domain;
+    }
+
+    public function getDomain() {
+        return $this->domain;
+    }
+
+    public function setPath($path) {
+        $this->path = $path;
+    }
+
+    public function getPath() {
+        return $this->path;
+    }
+
+    public function setService($service) {
+        $this->service = $service;
+    }
+
+    public function getService() {
+        return $this->service;
+    }
 }

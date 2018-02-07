@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_PostalCodeRange extends Google_Model
-{
-  public $postalCodeRangeBegin;
-  public $postalCodeRangeEnd;
+class Google_Service_ShoppingContent_PostalCodeRange extends Google_Model {
+    public $postalCodeRangeBegin;
+    public $postalCodeRangeEnd;
 
-  public function setPostalCodeRangeBegin($postalCodeRangeBegin)
-  {
-    $this->postalCodeRangeBegin = $postalCodeRangeBegin;
-  }
-  public function getPostalCodeRangeBegin()
-  {
-    return $this->postalCodeRangeBegin;
-  }
-  public function setPostalCodeRangeEnd($postalCodeRangeEnd)
-  {
-    $this->postalCodeRangeEnd = $postalCodeRangeEnd;
-  }
-  public function getPostalCodeRangeEnd()
-  {
-    return $this->postalCodeRangeEnd;
-  }
+    public function setPostalCodeRangeBegin($postalCodeRangeBegin) {
+        $this->postalCodeRangeBegin = $postalCodeRangeBegin;
+    }
+
+    public function getPostalCodeRangeBegin() {
+        return $this->postalCodeRangeBegin;
+    }
+
+    public function setPostalCodeRangeEnd($postalCodeRangeEnd) {
+        $this->postalCodeRangeEnd = $postalCodeRangeEnd;
+    }
+
+    public function getPostalCodeRangeEnd() {
+        return $this->postalCodeRangeEnd;
+    }
 }

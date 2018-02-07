@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Cih_AdoptionInteraction extends Google_Model
-{
-  public $latestTreatmentInstanceTimestamp;
+class Google_Service_Cih_AdoptionInteraction extends Google_Model {
+    public $latestTreatmentInstanceTimestamp;
 
-  public function setLatestTreatmentInstanceTimestamp($latestTreatmentInstanceTimestamp)
-  {
-    $this->latestTreatmentInstanceTimestamp = $latestTreatmentInstanceTimestamp;
-  }
-  public function getLatestTreatmentInstanceTimestamp()
-  {
-    return $this->latestTreatmentInstanceTimestamp;
-  }
+    public function setLatestTreatmentInstanceTimestamp($latestTreatmentInstanceTimestamp) {
+        $this->latestTreatmentInstanceTimestamp = $latestTreatmentInstanceTimestamp;
+    }
+
+    public function getLatestTreatmentInstanceTimestamp() {
+        return $this->latestTreatmentInstanceTimestamp;
+    }
 }

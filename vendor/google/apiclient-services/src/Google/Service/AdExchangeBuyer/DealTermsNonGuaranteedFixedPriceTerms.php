@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_DealTermsNonGuaranteedFixedPriceTerms extends Google_Collection
-{
-  protected $collection_key = 'fixedPrices';
-  protected $fixedPricesType = 'Google_Service_AdExchangeBuyer_PricePerBuyer';
-  protected $fixedPricesDataType = 'array';
+class Google_Service_AdExchangeBuyer_DealTermsNonGuaranteedFixedPriceTerms extends Google_Collection {
+    protected $collection_key      = 'fixedPrices';
+    protected $fixedPricesType     = 'Google_Service_AdExchangeBuyer_PricePerBuyer';
+    protected $fixedPricesDataType = 'array';
 
-  /**
-   * @param Google_Service_AdExchangeBuyer_PricePerBuyer
-   */
-  public function setFixedPrices($fixedPrices)
-  {
-    $this->fixedPrices = $fixedPrices;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyer_PricePerBuyer
-   */
-  public function getFixedPrices()
-  {
-    return $this->fixedPrices;
-  }
+    /**
+     * @param Google_Service_AdExchangeBuyer_PricePerBuyer
+     */
+    public function setFixedPrices($fixedPrices) {
+        $this->fixedPrices = $fixedPrices;
+    }
+
+    /**
+     * @return Google_Service_AdExchangeBuyer_PricePerBuyer
+     */
+    public function getFixedPrices() {
+        return $this->fixedPrices;
+    }
 }

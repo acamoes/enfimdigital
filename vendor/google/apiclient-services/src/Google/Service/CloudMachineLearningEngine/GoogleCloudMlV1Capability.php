@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1Capability extends Google_Collection
-{
-  protected $collection_key = 'availableAccelerators';
-  public $availableAccelerators;
-  public $type;
+class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1Capability extends Google_Collection {
+    protected $collection_key = 'availableAccelerators';
+    public $availableAccelerators;
+    public $type;
 
-  public function setAvailableAccelerators($availableAccelerators)
-  {
-    $this->availableAccelerators = $availableAccelerators;
-  }
-  public function getAvailableAccelerators()
-  {
-    return $this->availableAccelerators;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setAvailableAccelerators($availableAccelerators) {
+        $this->availableAccelerators = $availableAccelerators;
+    }
+
+    public function getAvailableAccelerators() {
+        return $this->availableAccelerators;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

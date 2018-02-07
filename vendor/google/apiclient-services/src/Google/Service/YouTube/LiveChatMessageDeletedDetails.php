@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_YouTube_LiveChatMessageDeletedDetails extends Google_Model
-{
-  public $deletedMessageId;
+class Google_Service_YouTube_LiveChatMessageDeletedDetails extends Google_Model {
+    public $deletedMessageId;
 
-  public function setDeletedMessageId($deletedMessageId)
-  {
-    $this->deletedMessageId = $deletedMessageId;
-  }
-  public function getDeletedMessageId()
-  {
-    return $this->deletedMessageId;
-  }
+    public function setDeletedMessageId($deletedMessageId) {
+        $this->deletedMessageId = $deletedMessageId;
+    }
+
+    public function getDeletedMessageId() {
+        return $this->deletedMessageId;
+    }
 }

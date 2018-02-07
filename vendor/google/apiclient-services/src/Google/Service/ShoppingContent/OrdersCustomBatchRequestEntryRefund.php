@@ -15,73 +15,71 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryRefund extends Google_Model
-{
-  protected $amountType = 'Google_Service_ShoppingContent_Price';
-  protected $amountDataType = '';
-  protected $amountPretaxType = 'Google_Service_ShoppingContent_Price';
-  protected $amountPretaxDataType = '';
-  protected $amountTaxType = 'Google_Service_ShoppingContent_Price';
-  protected $amountTaxDataType = '';
-  public $reason;
-  public $reasonText;
+class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryRefund extends Google_Model {
+    protected $amountType           = 'Google_Service_ShoppingContent_Price';
+    protected $amountDataType       = '';
+    protected $amountPretaxType     = 'Google_Service_ShoppingContent_Price';
+    protected $amountPretaxDataType = '';
+    protected $amountTaxType        = 'Google_Service_ShoppingContent_Price';
+    protected $amountTaxDataType    = '';
+    public $reason;
+    public $reasonText;
 
-  /**
-   * @param Google_Service_ShoppingContent_Price
-   */
-  public function setAmount(Google_Service_ShoppingContent_Price $amount)
-  {
-    $this->amount = $amount;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_Price
-   */
-  public function getAmount()
-  {
-    return $this->amount;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_Price
-   */
-  public function setAmountPretax(Google_Service_ShoppingContent_Price $amountPretax)
-  {
-    $this->amountPretax = $amountPretax;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_Price
-   */
-  public function getAmountPretax()
-  {
-    return $this->amountPretax;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_Price
-   */
-  public function setAmountTax(Google_Service_ShoppingContent_Price $amountTax)
-  {
-    $this->amountTax = $amountTax;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_Price
-   */
-  public function getAmountTax()
-  {
-    return $this->amountTax;
-  }
-  public function setReason($reason)
-  {
-    $this->reason = $reason;
-  }
-  public function getReason()
-  {
-    return $this->reason;
-  }
-  public function setReasonText($reasonText)
-  {
-    $this->reasonText = $reasonText;
-  }
-  public function getReasonText()
-  {
-    return $this->reasonText;
-  }
+    /**
+     * @param Google_Service_ShoppingContent_Price
+     */
+    public function setAmount(Google_Service_ShoppingContent_Price $amount) {
+        $this->amount = $amount;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_Price
+     */
+    public function getAmount() {
+        return $this->amount;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_Price
+     */
+    public function setAmountPretax(Google_Service_ShoppingContent_Price $amountPretax) {
+        $this->amountPretax = $amountPretax;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_Price
+     */
+    public function getAmountPretax() {
+        return $this->amountPretax;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_Price
+     */
+    public function setAmountTax(Google_Service_ShoppingContent_Price $amountTax) {
+        $this->amountTax = $amountTax;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_Price
+     */
+    public function getAmountTax() {
+        return $this->amountTax;
+    }
+
+    public function setReason($reason) {
+        $this->reason = $reason;
+    }
+
+    public function getReason() {
+        return $this->reason;
+    }
+
+    public function setReasonText($reasonText) {
+        $this->reasonText = $reasonText;
+    }
+
+    public function getReasonText() {
+        return $this->reasonText;
+    }
 }

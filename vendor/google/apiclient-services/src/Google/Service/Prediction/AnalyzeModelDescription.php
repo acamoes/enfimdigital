@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Prediction_AnalyzeModelDescription extends Google_Model
-{
-  public $confusionMatrix;
-  public $confusionMatrixRowTotals;
-  protected $modelinfoType = 'Google_Service_Prediction_Insert2';
-  protected $modelinfoDataType = '';
+class Google_Service_Prediction_AnalyzeModelDescription extends Google_Model {
+    public $confusionMatrix;
+    public $confusionMatrixRowTotals;
+    protected $modelinfoType     = 'Google_Service_Prediction_Insert2';
+    protected $modelinfoDataType = '';
 
-  public function setConfusionMatrix($confusionMatrix)
-  {
-    $this->confusionMatrix = $confusionMatrix;
-  }
-  public function getConfusionMatrix()
-  {
-    return $this->confusionMatrix;
-  }
-  public function setConfusionMatrixRowTotals($confusionMatrixRowTotals)
-  {
-    $this->confusionMatrixRowTotals = $confusionMatrixRowTotals;
-  }
-  public function getConfusionMatrixRowTotals()
-  {
-    return $this->confusionMatrixRowTotals;
-  }
-  /**
-   * @param Google_Service_Prediction_Insert2
-   */
-  public function setModelinfo(Google_Service_Prediction_Insert2 $modelinfo)
-  {
-    $this->modelinfo = $modelinfo;
-  }
-  /**
-   * @return Google_Service_Prediction_Insert2
-   */
-  public function getModelinfo()
-  {
-    return $this->modelinfo;
-  }
+    public function setConfusionMatrix($confusionMatrix) {
+        $this->confusionMatrix = $confusionMatrix;
+    }
+
+    public function getConfusionMatrix() {
+        return $this->confusionMatrix;
+    }
+
+    public function setConfusionMatrixRowTotals($confusionMatrixRowTotals) {
+        $this->confusionMatrixRowTotals = $confusionMatrixRowTotals;
+    }
+
+    public function getConfusionMatrixRowTotals() {
+        return $this->confusionMatrixRowTotals;
+    }
+
+    /**
+     * @param Google_Service_Prediction_Insert2
+     */
+    public function setModelinfo(Google_Service_Prediction_Insert2 $modelinfo) {
+        $this->modelinfo = $modelinfo;
+    }
+
+    /**
+     * @return Google_Service_Prediction_Insert2
+     */
+    public function getModelinfo() {
+        return $this->modelinfo;
+    }
 }

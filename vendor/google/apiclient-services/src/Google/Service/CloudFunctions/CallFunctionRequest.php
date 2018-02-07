@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudFunctions_CallFunctionRequest extends Google_Model
-{
-  public $data;
+class Google_Service_CloudFunctions_CallFunctionRequest extends Google_Model {
+    public $data;
 
-  public function setData($data)
-  {
-    $this->data = $data;
-  }
-  public function getData()
-  {
-    return $this->data;
-  }
+    public function setData($data) {
+        $this->data = $data;
+    }
+
+    public function getData() {
+        return $this->data;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Firestore_Precondition extends Google_Model
-{
-  public $exists;
-  public $updateTime;
+class Google_Service_Firestore_Precondition extends Google_Model {
+    public $exists;
+    public $updateTime;
 
-  public function setExists($exists)
-  {
-    $this->exists = $exists;
-  }
-  public function getExists()
-  {
-    return $this->exists;
-  }
-  public function setUpdateTime($updateTime)
-  {
-    $this->updateTime = $updateTime;
-  }
-  public function getUpdateTime()
-  {
-    return $this->updateTime;
-  }
+    public function setExists($exists) {
+        $this->exists = $exists;
+    }
+
+    public function getExists() {
+        return $this->exists;
+    }
+
+    public function setUpdateTime($updateTime) {
+        $this->updateTime = $updateTime;
+    }
+
+    public function getUpdateTime() {
+        return $this->updateTime;
+    }
 }

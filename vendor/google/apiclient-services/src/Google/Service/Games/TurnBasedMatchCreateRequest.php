@@ -15,60 +15,58 @@
  * the License.
  */
 
-class Google_Service_Games_TurnBasedMatchCreateRequest extends Google_Collection
-{
-  protected $collection_key = 'invitedPlayerIds';
-  protected $autoMatchingCriteriaType = 'Google_Service_Games_TurnBasedAutoMatchingCriteria';
-  protected $autoMatchingCriteriaDataType = '';
-  public $invitedPlayerIds;
-  public $kind;
-  public $requestId;
-  public $variant;
+class Google_Service_Games_TurnBasedMatchCreateRequest extends Google_Collection {
+    protected $collection_key               = 'invitedPlayerIds';
+    protected $autoMatchingCriteriaType     = 'Google_Service_Games_TurnBasedAutoMatchingCriteria';
+    protected $autoMatchingCriteriaDataType = '';
+    public $invitedPlayerIds;
+    public $kind;
+    public $requestId;
+    public $variant;
 
-  /**
-   * @param Google_Service_Games_TurnBasedAutoMatchingCriteria
-   */
-  public function setAutoMatchingCriteria(Google_Service_Games_TurnBasedAutoMatchingCriteria $autoMatchingCriteria)
-  {
-    $this->autoMatchingCriteria = $autoMatchingCriteria;
-  }
-  /**
-   * @return Google_Service_Games_TurnBasedAutoMatchingCriteria
-   */
-  public function getAutoMatchingCriteria()
-  {
-    return $this->autoMatchingCriteria;
-  }
-  public function setInvitedPlayerIds($invitedPlayerIds)
-  {
-    $this->invitedPlayerIds = $invitedPlayerIds;
-  }
-  public function getInvitedPlayerIds()
-  {
-    return $this->invitedPlayerIds;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setRequestId($requestId)
-  {
-    $this->requestId = $requestId;
-  }
-  public function getRequestId()
-  {
-    return $this->requestId;
-  }
-  public function setVariant($variant)
-  {
-    $this->variant = $variant;
-  }
-  public function getVariant()
-  {
-    return $this->variant;
-  }
+    /**
+     * @param Google_Service_Games_TurnBasedAutoMatchingCriteria
+     */
+    public function setAutoMatchingCriteria(Google_Service_Games_TurnBasedAutoMatchingCriteria $autoMatchingCriteria) {
+        $this->autoMatchingCriteria = $autoMatchingCriteria;
+    }
+
+    /**
+     * @return Google_Service_Games_TurnBasedAutoMatchingCriteria
+     */
+    public function getAutoMatchingCriteria() {
+        return $this->autoMatchingCriteria;
+    }
+
+    public function setInvitedPlayerIds($invitedPlayerIds) {
+        $this->invitedPlayerIds = $invitedPlayerIds;
+    }
+
+    public function getInvitedPlayerIds() {
+        return $this->invitedPlayerIds;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setRequestId($requestId) {
+        $this->requestId = $requestId;
+    }
+
+    public function getRequestId() {
+        return $this->requestId;
+    }
+
+    public function setVariant($variant) {
+        $this->variant = $variant;
+    }
+
+    public function getVariant() {
+        return $this->variant;
+    }
 }

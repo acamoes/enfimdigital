@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Plus_CommentActorClientSpecificActorInfoYoutubeActorInfo extends Google_Model
-{
-  public $channelId;
+class Google_Service_Plus_CommentActorClientSpecificActorInfoYoutubeActorInfo extends Google_Model {
+    public $channelId;
 
-  public function setChannelId($channelId)
-  {
-    $this->channelId = $channelId;
-  }
-  public function getChannelId()
-  {
-    return $this->channelId;
-  }
+    public function setChannelId($channelId) {
+        $this->channelId = $channelId;
+    }
+
+    public function getChannelId() {
+        return $this->channelId;
+    }
 }

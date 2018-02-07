@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Firestore_CollectionSelector extends Google_Model
-{
-  public $allDescendants;
-  public $collectionId;
+class Google_Service_Firestore_CollectionSelector extends Google_Model {
+    public $allDescendants;
+    public $collectionId;
 
-  public function setAllDescendants($allDescendants)
-  {
-    $this->allDescendants = $allDescendants;
-  }
-  public function getAllDescendants()
-  {
-    return $this->allDescendants;
-  }
-  public function setCollectionId($collectionId)
-  {
-    $this->collectionId = $collectionId;
-  }
-  public function getCollectionId()
-  {
-    return $this->collectionId;
-  }
+    public function setAllDescendants($allDescendants) {
+        $this->allDescendants = $allDescendants;
+    }
+
+    public function getAllDescendants() {
+        return $this->allDescendants;
+    }
+
+    public function setCollectionId($collectionId) {
+        $this->collectionId = $collectionId;
+    }
+
+    public function getCollectionId() {
+        return $this->collectionId;
+    }
 }

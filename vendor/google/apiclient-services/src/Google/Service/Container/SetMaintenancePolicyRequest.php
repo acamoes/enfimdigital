@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Container_SetMaintenancePolicyRequest extends Google_Model
-{
-  protected $maintenancePolicyType = 'Google_Service_Container_MaintenancePolicy';
-  protected $maintenancePolicyDataType = '';
+class Google_Service_Container_SetMaintenancePolicyRequest extends Google_Model {
+    protected $maintenancePolicyType     = 'Google_Service_Container_MaintenancePolicy';
+    protected $maintenancePolicyDataType = '';
 
-  /**
-   * @param Google_Service_Container_MaintenancePolicy
-   */
-  public function setMaintenancePolicy(Google_Service_Container_MaintenancePolicy $maintenancePolicy)
-  {
-    $this->maintenancePolicy = $maintenancePolicy;
-  }
-  /**
-   * @return Google_Service_Container_MaintenancePolicy
-   */
-  public function getMaintenancePolicy()
-  {
-    return $this->maintenancePolicy;
-  }
+    /**
+     * @param Google_Service_Container_MaintenancePolicy
+     */
+    public function setMaintenancePolicy(Google_Service_Container_MaintenancePolicy $maintenancePolicy) {
+        $this->maintenancePolicy = $maintenancePolicy;
+    }
+
+    /**
+     * @return Google_Service_Container_MaintenancePolicy
+     */
+    public function getMaintenancePolicy() {
+        return $this->maintenancePolicy;
+    }
 }

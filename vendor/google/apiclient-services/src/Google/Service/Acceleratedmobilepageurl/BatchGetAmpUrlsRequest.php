@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Acceleratedmobilepageurl_BatchGetAmpUrlsRequest extends Google_Collection
-{
-  protected $collection_key = 'urls';
-  public $lookupStrategy;
-  public $urls;
+class Google_Service_Acceleratedmobilepageurl_BatchGetAmpUrlsRequest extends Google_Collection {
+    protected $collection_key = 'urls';
+    public $lookupStrategy;
+    public $urls;
 
-  public function setLookupStrategy($lookupStrategy)
-  {
-    $this->lookupStrategy = $lookupStrategy;
-  }
-  public function getLookupStrategy()
-  {
-    return $this->lookupStrategy;
-  }
-  public function setUrls($urls)
-  {
-    $this->urls = $urls;
-  }
-  public function getUrls()
-  {
-    return $this->urls;
-  }
+    public function setLookupStrategy($lookupStrategy) {
+        $this->lookupStrategy = $lookupStrategy;
+    }
+
+    public function getLookupStrategy() {
+        return $this->lookupStrategy;
+    }
+
+    public function setUrls($urls) {
+        $this->urls = $urls;
+    }
+
+    public function getUrls() {
+        return $this->urls;
+    }
 }

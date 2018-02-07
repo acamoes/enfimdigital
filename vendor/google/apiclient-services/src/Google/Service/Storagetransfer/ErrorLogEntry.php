@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Storagetransfer_ErrorLogEntry extends Google_Collection
-{
-  protected $collection_key = 'errorDetails';
-  public $errorDetails;
-  public $url;
+class Google_Service_Storagetransfer_ErrorLogEntry extends Google_Collection {
+    protected $collection_key = 'errorDetails';
+    public $errorDetails;
+    public $url;
 
-  public function setErrorDetails($errorDetails)
-  {
-    $this->errorDetails = $errorDetails;
-  }
-  public function getErrorDetails()
-  {
-    return $this->errorDetails;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setErrorDetails($errorDetails) {
+        $this->errorDetails = $errorDetails;
+    }
+
+    public function getErrorDetails() {
+        return $this->errorDetails;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

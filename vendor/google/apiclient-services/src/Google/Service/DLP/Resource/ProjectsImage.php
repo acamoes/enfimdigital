@@ -23,23 +23,22 @@
  *   $image = $dlpService->image;
  *  </code>
  */
-class Google_Service_DLP_Resource_ProjectsImage extends Google_Service_Resource
-{
-  /**
-   * Redacts potentially sensitive info from an image. This method has limits on
-   * input size, processing time, and output size. [How-to guide](/dlp/docs
-   * /redacting-sensitive-data-images) (image.redact)
-   *
-   * @param string $parent The parent resource name, for example projects/my-
-   * project-id.
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageResponse
-   */
-  public function redact($parent, Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageRequest $postBody, $optParams = array())
-  {
-    $params = array('parent' => $parent, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('redact', array($params), "Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageResponse");
-  }
+class Google_Service_DLP_Resource_ProjectsImage extends Google_Service_Resource {
+
+    /**
+     * Redacts potentially sensitive info from an image. This method has limits on
+     * input size, processing time, and output size. [How-to guide](/dlp/docs
+     * /redacting-sensitive-data-images) (image.redact)
+     *
+     * @param string $parent The parent resource name, for example projects/my-
+     * project-id.
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageResponse
+     */
+    public function redact($parent, Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageRequest $postBody, $optParams = array()) {
+        $params = array('parent' => $parent, 'postBody' => $postBody);
+        $params = array_merge($params, $optParams);
+        return $this->call('redact', array($params), "Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageResponse");
+    }
 }

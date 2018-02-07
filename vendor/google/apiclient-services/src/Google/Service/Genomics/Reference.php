@@ -15,71 +15,69 @@
  * the License.
  */
 
-class Google_Service_Genomics_Reference extends Google_Collection
-{
-  protected $collection_key = 'sourceAccessions';
-  public $id;
-  public $length;
-  public $md5checksum;
-  public $name;
-  public $ncbiTaxonId;
-  public $sourceAccessions;
-  public $sourceUri;
+class Google_Service_Genomics_Reference extends Google_Collection {
+    protected $collection_key = 'sourceAccessions';
+    public $id;
+    public $length;
+    public $md5checksum;
+    public $name;
+    public $ncbiTaxonId;
+    public $sourceAccessions;
+    public $sourceUri;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setLength($length)
-  {
-    $this->length = $length;
-  }
-  public function getLength()
-  {
-    return $this->length;
-  }
-  public function setMd5checksum($md5checksum)
-  {
-    $this->md5checksum = $md5checksum;
-  }
-  public function getMd5checksum()
-  {
-    return $this->md5checksum;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setNcbiTaxonId($ncbiTaxonId)
-  {
-    $this->ncbiTaxonId = $ncbiTaxonId;
-  }
-  public function getNcbiTaxonId()
-  {
-    return $this->ncbiTaxonId;
-  }
-  public function setSourceAccessions($sourceAccessions)
-  {
-    $this->sourceAccessions = $sourceAccessions;
-  }
-  public function getSourceAccessions()
-  {
-    return $this->sourceAccessions;
-  }
-  public function setSourceUri($sourceUri)
-  {
-    $this->sourceUri = $sourceUri;
-  }
-  public function getSourceUri()
-  {
-    return $this->sourceUri;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setLength($length) {
+        $this->length = $length;
+    }
+
+    public function getLength() {
+        return $this->length;
+    }
+
+    public function setMd5checksum($md5checksum) {
+        $this->md5checksum = $md5checksum;
+    }
+
+    public function getMd5checksum() {
+        return $this->md5checksum;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setNcbiTaxonId($ncbiTaxonId) {
+        $this->ncbiTaxonId = $ncbiTaxonId;
+    }
+
+    public function getNcbiTaxonId() {
+        return $this->ncbiTaxonId;
+    }
+
+    public function setSourceAccessions($sourceAccessions) {
+        $this->sourceAccessions = $sourceAccessions;
+    }
+
+    public function getSourceAccessions() {
+        return $this->sourceAccessions;
+    }
+
+    public function setSourceUri($sourceUri) {
+        $this->sourceUri = $sourceUri;
+    }
+
+    public function getSourceUri() {
+        return $this->sourceUri;
+    }
 }

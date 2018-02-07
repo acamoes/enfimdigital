@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Translate_LanguagesResource extends Google_Model
-{
-  public $language;
-  public $name;
+class Google_Service_Translate_LanguagesResource extends Google_Model {
+    public $language;
+    public $name;
 
-  public function setLanguage($language)
-  {
-    $this->language = $language;
-  }
-  public function getLanguage()
-  {
-    return $this->language;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setLanguage($language) {
+        $this->language = $language;
+    }
+
+    public function getLanguage() {
+        return $this->language;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_AppUpdateEvent extends Google_Model
-{
-  public $productId;
+class Google_Service_AndroidEnterprise_AppUpdateEvent extends Google_Model {
+    public $productId;
 
-  public function setProductId($productId)
-  {
-    $this->productId = $productId;
-  }
-  public function getProductId()
-  {
-    return $this->productId;
-  }
+    public function setProductId($productId) {
+        $this->productId = $productId;
+    }
+
+    public function getProductId() {
+        return $this->productId;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentFollowupIntentInfo extends Google_Model
-{
-  public $followupIntentName;
-  public $parentFollowupIntentName;
+class Google_Service_Dialogflow_IntentFollowupIntentInfo extends Google_Model {
+    public $followupIntentName;
+    public $parentFollowupIntentName;
 
-  public function setFollowupIntentName($followupIntentName)
-  {
-    $this->followupIntentName = $followupIntentName;
-  }
-  public function getFollowupIntentName()
-  {
-    return $this->followupIntentName;
-  }
-  public function setParentFollowupIntentName($parentFollowupIntentName)
-  {
-    $this->parentFollowupIntentName = $parentFollowupIntentName;
-  }
-  public function getParentFollowupIntentName()
-  {
-    return $this->parentFollowupIntentName;
-  }
+    public function setFollowupIntentName($followupIntentName) {
+        $this->followupIntentName = $followupIntentName;
+    }
+
+    public function getFollowupIntentName() {
+        return $this->followupIntentName;
+    }
+
+    public function setParentFollowupIntentName($parentFollowupIntentName) {
+        $this->parentFollowupIntentName = $parentFollowupIntentName;
+    }
+
+    public function getParentFollowupIntentName() {
+        return $this->parentFollowupIntentName;
+    }
 }

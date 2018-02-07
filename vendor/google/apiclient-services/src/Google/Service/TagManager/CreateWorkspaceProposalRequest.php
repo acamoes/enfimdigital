@@ -15,40 +15,38 @@
  * the License.
  */
 
-class Google_Service_TagManager_CreateWorkspaceProposalRequest extends Google_Collection
-{
-  protected $collection_key = 'reviewers';
-  protected $initialCommentType = 'Google_Service_TagManager_WorkspaceProposalHistoryComment';
-  protected $initialCommentDataType = '';
-  protected $reviewersType = 'Google_Service_TagManager_WorkspaceProposalUser';
-  protected $reviewersDataType = 'array';
+class Google_Service_TagManager_CreateWorkspaceProposalRequest extends Google_Collection {
+    protected $collection_key         = 'reviewers';
+    protected $initialCommentType     = 'Google_Service_TagManager_WorkspaceProposalHistoryComment';
+    protected $initialCommentDataType = '';
+    protected $reviewersType          = 'Google_Service_TagManager_WorkspaceProposalUser';
+    protected $reviewersDataType      = 'array';
 
-  /**
-   * @param Google_Service_TagManager_WorkspaceProposalHistoryComment
-   */
-  public function setInitialComment(Google_Service_TagManager_WorkspaceProposalHistoryComment $initialComment)
-  {
-    $this->initialComment = $initialComment;
-  }
-  /**
-   * @return Google_Service_TagManager_WorkspaceProposalHistoryComment
-   */
-  public function getInitialComment()
-  {
-    return $this->initialComment;
-  }
-  /**
-   * @param Google_Service_TagManager_WorkspaceProposalUser
-   */
-  public function setReviewers($reviewers)
-  {
-    $this->reviewers = $reviewers;
-  }
-  /**
-   * @return Google_Service_TagManager_WorkspaceProposalUser
-   */
-  public function getReviewers()
-  {
-    return $this->reviewers;
-  }
+    /**
+     * @param Google_Service_TagManager_WorkspaceProposalHistoryComment
+     */
+    public function setInitialComment(Google_Service_TagManager_WorkspaceProposalHistoryComment $initialComment) {
+        $this->initialComment = $initialComment;
+    }
+
+    /**
+     * @return Google_Service_TagManager_WorkspaceProposalHistoryComment
+     */
+    public function getInitialComment() {
+        return $this->initialComment;
+    }
+
+    /**
+     * @param Google_Service_TagManager_WorkspaceProposalUser
+     */
+    public function setReviewers($reviewers) {
+        $this->reviewers = $reviewers;
+    }
+
+    /**
+     * @return Google_Service_TagManager_WorkspaceProposalUser
+     */
+    public function getReviewers() {
+        return $this->reviewers;
+    }
 }

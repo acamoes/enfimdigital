@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Genomics_CoverageBucket extends Google_Model
-{
-  public $meanCoverage;
-  protected $rangeType = 'Google_Service_Genomics_Range';
-  protected $rangeDataType = '';
+class Google_Service_Genomics_CoverageBucket extends Google_Model {
+    public $meanCoverage;
+    protected $rangeType     = 'Google_Service_Genomics_Range';
+    protected $rangeDataType = '';
 
-  public function setMeanCoverage($meanCoverage)
-  {
-    $this->meanCoverage = $meanCoverage;
-  }
-  public function getMeanCoverage()
-  {
-    return $this->meanCoverage;
-  }
-  /**
-   * @param Google_Service_Genomics_Range
-   */
-  public function setRange(Google_Service_Genomics_Range $range)
-  {
-    $this->range = $range;
-  }
-  /**
-   * @return Google_Service_Genomics_Range
-   */
-  public function getRange()
-  {
-    return $this->range;
-  }
+    public function setMeanCoverage($meanCoverage) {
+        $this->meanCoverage = $meanCoverage;
+    }
+
+    public function getMeanCoverage() {
+        return $this->meanCoverage;
+    }
+
+    /**
+     * @param Google_Service_Genomics_Range
+     */
+    public function setRange(Google_Service_Genomics_Range $range) {
+        $this->range = $range;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Range
+     */
+    public function getRange() {
+        return $this->range;
+    }
 }

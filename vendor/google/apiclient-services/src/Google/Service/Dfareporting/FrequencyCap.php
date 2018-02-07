@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_FrequencyCap extends Google_Model
-{
-  public $duration;
-  public $impressions;
+class Google_Service_Dfareporting_FrequencyCap extends Google_Model {
+    public $duration;
+    public $impressions;
 
-  public function setDuration($duration)
-  {
-    $this->duration = $duration;
-  }
-  public function getDuration()
-  {
-    return $this->duration;
-  }
-  public function setImpressions($impressions)
-  {
-    $this->impressions = $impressions;
-  }
-  public function getImpressions()
-  {
-    return $this->impressions;
-  }
+    public function setDuration($duration) {
+        $this->duration = $duration;
+    }
+
+    public function getDuration() {
+        return $this->duration;
+    }
+
+    public function setImpressions($impressions) {
+        $this->impressions = $impressions;
+    }
+
+    public function getImpressions() {
+        return $this->impressions;
+    }
 }

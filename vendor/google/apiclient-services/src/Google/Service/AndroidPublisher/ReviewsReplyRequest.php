@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_ReviewsReplyRequest extends Google_Model
-{
-  public $replyText;
+class Google_Service_AndroidPublisher_ReviewsReplyRequest extends Google_Model {
+    public $replyText;
 
-  public function setReplyText($replyText)
-  {
-    $this->replyText = $replyText;
-  }
-  public function getReplyText()
-  {
-    return $this->replyText;
-  }
+    public function setReplyText($replyText) {
+        $this->replyText = $replyText;
+    }
+
+    public function getReplyText() {
+        return $this->replyText;
+    }
 }

@@ -15,61 +15,59 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_LandingPage extends Google_Model
-{
-  public $advertiserId;
-  public $archived;
-  public $id;
-  public $kind;
-  public $name;
-  public $url;
+class Google_Service_Dfareporting_LandingPage extends Google_Model {
+    public $advertiserId;
+    public $archived;
+    public $id;
+    public $kind;
+    public $name;
+    public $url;
 
-  public function setAdvertiserId($advertiserId)
-  {
-    $this->advertiserId = $advertiserId;
-  }
-  public function getAdvertiserId()
-  {
-    return $this->advertiserId;
-  }
-  public function setArchived($archived)
-  {
-    $this->archived = $archived;
-  }
-  public function getArchived()
-  {
-    return $this->archived;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setAdvertiserId($advertiserId) {
+        $this->advertiserId = $advertiserId;
+    }
+
+    public function getAdvertiserId() {
+        return $this->advertiserId;
+    }
+
+    public function setArchived($archived) {
+        $this->archived = $archived;
+    }
+
+    public function getArchived() {
+        return $this->archived;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

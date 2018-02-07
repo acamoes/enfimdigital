@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_CreativeSettings extends Google_Model
-{
-  public $iFrameFooter;
-  public $iFrameHeader;
+class Google_Service_Dfareporting_CreativeSettings extends Google_Model {
+    public $iFrameFooter;
+    public $iFrameHeader;
 
-  public function setIFrameFooter($iFrameFooter)
-  {
-    $this->iFrameFooter = $iFrameFooter;
-  }
-  public function getIFrameFooter()
-  {
-    return $this->iFrameFooter;
-  }
-  public function setIFrameHeader($iFrameHeader)
-  {
-    $this->iFrameHeader = $iFrameHeader;
-  }
-  public function getIFrameHeader()
-  {
-    return $this->iFrameHeader;
-  }
+    public function setIFrameFooter($iFrameFooter) {
+        $this->iFrameFooter = $iFrameFooter;
+    }
+
+    public function getIFrameFooter() {
+        return $this->iFrameFooter;
+    }
+
+    public function setIFrameHeader($iFrameHeader) {
+        $this->iFrameHeader = $iFrameHeader;
+    }
+
+    public function getIFrameHeader() {
+        return $this->iFrameHeader;
+    }
 }

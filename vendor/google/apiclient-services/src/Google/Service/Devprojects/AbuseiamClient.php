@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Devprojects_AbuseiamClient extends Google_Model
-{
-  public $id;
-  public $kind;
-  public $subservice;
+class Google_Service_Devprojects_AbuseiamClient extends Google_Model {
+    public $id;
+    public $kind;
+    public $subservice;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setSubservice($subservice)
-  {
-    $this->subservice = $subservice;
-  }
-  public function getSubservice()
-  {
-    return $this->subservice;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setSubservice($subservice) {
+        $this->subservice = $subservice;
+    }
+
+    public function getSubservice() {
+        return $this->subservice;
+    }
 }

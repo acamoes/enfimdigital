@@ -15,70 +15,68 @@
  * the License.
  */
 
-class Google_Service_Pagespeedonline_PagespeedApiFormatStringV2Args extends Google_Collection
-{
-  protected $collection_key = 'secondary_rects';
-  protected $internal_gapi_mappings = array(
+class Google_Service_Pagespeedonline_PagespeedApiFormatStringV2Args extends Google_Collection {
+    protected $collection_key         = 'secondary_rects';
+    protected $internal_gapi_mappings = array(
         "secondaryRects" => "secondary_rects",
-  );
-  public $key;
-  protected $rectsType = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsRects';
-  protected $rectsDataType = 'array';
-  protected $secondaryRectsType = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsSecondaryRects';
-  protected $secondaryRectsDataType = 'array';
-  public $type;
-  public $value;
+    );
+    public $key;
+    protected $rectsType              = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsRects';
+    protected $rectsDataType          = 'array';
+    protected $secondaryRectsType     = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsSecondaryRects';
+    protected $secondaryRectsDataType = 'array';
+    public $type;
+    public $value;
 
-  public function setKey($key)
-  {
-    $this->key = $key;
-  }
-  public function getKey()
-  {
-    return $this->key;
-  }
-  /**
-   * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsRects
-   */
-  public function setRects($rects)
-  {
-    $this->rects = $rects;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsRects
-   */
-  public function getRects()
-  {
-    return $this->rects;
-  }
-  /**
-   * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsSecondaryRects
-   */
-  public function setSecondaryRects($secondaryRects)
-  {
-    $this->secondaryRects = $secondaryRects;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsSecondaryRects
-   */
-  public function getSecondaryRects()
-  {
-    return $this->secondaryRects;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setKey($key) {
+        $this->key = $key;
+    }
+
+    public function getKey() {
+        return $this->key;
+    }
+
+    /**
+     * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsRects
+     */
+    public function setRects($rects) {
+        $this->rects = $rects;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsRects
+     */
+    public function getRects() {
+        return $this->rects;
+    }
+
+    /**
+     * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsSecondaryRects
+     */
+    public function setSecondaryRects($secondaryRects) {
+        $this->secondaryRects = $secondaryRects;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2ArgsSecondaryRects
+     */
+    public function getSecondaryRects() {
+        return $this->secondaryRects;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

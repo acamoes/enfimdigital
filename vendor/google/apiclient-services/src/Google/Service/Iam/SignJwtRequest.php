@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Iam_SignJwtRequest extends Google_Model
-{
-  public $payload;
+class Google_Service_Iam_SignJwtRequest extends Google_Model {
+    public $payload;
 
-  public function setPayload($payload)
-  {
-    $this->payload = $payload;
-  }
-  public function getPayload()
-  {
-    return $this->payload;
-  }
+    public function setPayload($payload) {
+        $this->payload = $payload;
+    }
+
+    public function getPayload() {
+        return $this->payload;
+    }
 }

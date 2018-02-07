@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Pubsub_PushConfig extends Google_Model
-{
-  public $attributes;
-  public $pushEndpoint;
+class Google_Service_Pubsub_PushConfig extends Google_Model {
+    public $attributes;
+    public $pushEndpoint;
 
-  public function setAttributes($attributes)
-  {
-    $this->attributes = $attributes;
-  }
-  public function getAttributes()
-  {
-    return $this->attributes;
-  }
-  public function setPushEndpoint($pushEndpoint)
-  {
-    $this->pushEndpoint = $pushEndpoint;
-  }
-  public function getPushEndpoint()
-  {
-    return $this->pushEndpoint;
-  }
+    public function setAttributes($attributes) {
+        $this->attributes = $attributes;
+    }
+
+    public function getAttributes() {
+        return $this->attributes;
+    }
+
+    public function setPushEndpoint($pushEndpoint) {
+        $this->pushEndpoint = $pushEndpoint;
+    }
+
+    public function getPushEndpoint() {
+        return $this->pushEndpoint;
+    }
 }

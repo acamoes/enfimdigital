@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_YouTube_VideoMonetizationDetails extends Google_Model
-{
-  protected $accessType = 'Google_Service_YouTube_AccessPolicy';
-  protected $accessDataType = '';
+class Google_Service_YouTube_VideoMonetizationDetails extends Google_Model {
+    protected $accessType     = 'Google_Service_YouTube_AccessPolicy';
+    protected $accessDataType = '';
 
-  /**
-   * @param Google_Service_YouTube_AccessPolicy
-   */
-  public function setAccess(Google_Service_YouTube_AccessPolicy $access)
-  {
-    $this->access = $access;
-  }
-  /**
-   * @return Google_Service_YouTube_AccessPolicy
-   */
-  public function getAccess()
-  {
-    return $this->access;
-  }
+    /**
+     * @param Google_Service_YouTube_AccessPolicy
+     */
+    public function setAccess(Google_Service_YouTube_AccessPolicy $access) {
+        $this->access = $access;
+    }
+
+    /**
+     * @return Google_Service_YouTube_AccessPolicy
+     */
+    public function getAccess() {
+        return $this->access;
+    }
 }

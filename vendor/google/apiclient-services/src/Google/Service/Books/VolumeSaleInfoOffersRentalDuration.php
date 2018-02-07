@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Books_VolumeSaleInfoOffersRentalDuration extends Google_Model
-{
-  public $count;
-  public $unit;
+class Google_Service_Books_VolumeSaleInfoOffersRentalDuration extends Google_Model {
+    public $count;
+    public $unit;
 
-  public function setCount($count)
-  {
-    $this->count = $count;
-  }
-  public function getCount()
-  {
-    return $this->count;
-  }
-  public function setUnit($unit)
-  {
-    $this->unit = $unit;
-  }
-  public function getUnit()
-  {
-    return $this->unit;
-  }
+    public function setCount($count) {
+        $this->count = $count;
+    }
+
+    public function getCount() {
+        return $this->count;
+    }
+
+    public function setUnit($unit) {
+        $this->unit = $unit;
+    }
+
+    public function getUnit() {
+        return $this->unit;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Slides_DuplicateObjectRequest extends Google_Model
-{
-  public $objectId;
-  public $objectIds;
+class Google_Service_Slides_DuplicateObjectRequest extends Google_Model {
+    public $objectId;
+    public $objectIds;
 
-  public function setObjectId($objectId)
-  {
-    $this->objectId = $objectId;
-  }
-  public function getObjectId()
-  {
-    return $this->objectId;
-  }
-  public function setObjectIds($objectIds)
-  {
-    $this->objectIds = $objectIds;
-  }
-  public function getObjectIds()
-  {
-    return $this->objectIds;
-  }
+    public function setObjectId($objectId) {
+        $this->objectId = $objectId;
+    }
+
+    public function getObjectId() {
+        return $this->objectId;
+    }
+
+    public function setObjectIds($objectIds) {
+        $this->objectIds = $objectIds;
+    }
+
+    public function getObjectIds() {
+        return $this->objectIds;
+    }
 }

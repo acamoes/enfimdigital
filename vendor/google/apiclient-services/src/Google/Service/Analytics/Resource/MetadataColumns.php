@@ -23,20 +23,19 @@
  *   $columns = $analyticsService->columns;
  *  </code>
  */
-class Google_Service_Analytics_Resource_MetadataColumns extends Google_Service_Resource
-{
-  /**
-   * Lists all columns for a report type (columns.listMetadataColumns)
-   *
-   * @param string $reportType Report type. Allowed Values: 'ga'. Where 'ga'
-   * corresponds to the Core Reporting API
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_Analytics_Columns
-   */
-  public function listMetadataColumns($reportType, $optParams = array())
-  {
-    $params = array('reportType' => $reportType);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Analytics_Columns");
-  }
+class Google_Service_Analytics_Resource_MetadataColumns extends Google_Service_Resource {
+
+    /**
+     * Lists all columns for a report type (columns.listMetadataColumns)
+     *
+     * @param string $reportType Report type. Allowed Values: 'ga'. Where 'ga'
+     * corresponds to the Core Reporting API
+     * @param array $optParams Optional parameters.
+     * @return Google_Service_Analytics_Columns
+     */
+    public function listMetadataColumns($reportType, $optParams = array()) {
+        $params = array('reportType' => $reportType);
+        $params = array_merge($params, $optParams);
+        return $this->call('list', array($params), "Google_Service_Analytics_Columns");
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Container_CidrBlock extends Google_Model
-{
-  public $cidrBlock;
-  public $displayName;
+class Google_Service_Container_CidrBlock extends Google_Model {
+    public $cidrBlock;
+    public $displayName;
 
-  public function setCidrBlock($cidrBlock)
-  {
-    $this->cidrBlock = $cidrBlock;
-  }
-  public function getCidrBlock()
-  {
-    return $this->cidrBlock;
-  }
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
+    public function setCidrBlock($cidrBlock) {
+        $this->cidrBlock = $cidrBlock;
+    }
+
+    public function getCidrBlock() {
+        return $this->cidrBlock;
+    }
+
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
 }

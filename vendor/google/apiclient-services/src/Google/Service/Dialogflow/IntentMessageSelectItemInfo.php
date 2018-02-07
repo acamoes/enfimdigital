@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_IntentMessageSelectItemInfo extends Google_Collection
-{
-  protected $collection_key = 'synonyms';
-  public $key;
-  public $synonyms;
+class Google_Service_Dialogflow_IntentMessageSelectItemInfo extends Google_Collection {
+    protected $collection_key = 'synonyms';
+    public $key;
+    public $synonyms;
 
-  public function setKey($key)
-  {
-    $this->key = $key;
-  }
-  public function getKey()
-  {
-    return $this->key;
-  }
-  public function setSynonyms($synonyms)
-  {
-    $this->synonyms = $synonyms;
-  }
-  public function getSynonyms()
-  {
-    return $this->synonyms;
-  }
+    public function setKey($key) {
+        $this->key = $key;
+    }
+
+    public function getKey() {
+        return $this->key;
+    }
+
+    public function setSynonyms($synonyms) {
+        $this->synonyms = $synonyms;
+    }
+
+    public function getSynonyms() {
+        return $this->synonyms;
+    }
 }

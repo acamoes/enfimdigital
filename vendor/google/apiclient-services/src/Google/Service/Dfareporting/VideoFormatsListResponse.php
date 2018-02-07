@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_VideoFormatsListResponse extends Google_Collection
-{
-  protected $collection_key = 'videoFormats';
-  public $kind;
-  protected $videoFormatsType = 'Google_Service_Dfareporting_VideoFormat';
-  protected $videoFormatsDataType = 'array';
+class Google_Service_Dfareporting_VideoFormatsListResponse extends Google_Collection {
+    protected $collection_key       = 'videoFormats';
+    public $kind;
+    protected $videoFormatsType     = 'Google_Service_Dfareporting_VideoFormat';
+    protected $videoFormatsDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_Dfareporting_VideoFormat
-   */
-  public function setVideoFormats($videoFormats)
-  {
-    $this->videoFormats = $videoFormats;
-  }
-  /**
-   * @return Google_Service_Dfareporting_VideoFormat
-   */
-  public function getVideoFormats()
-  {
-    return $this->videoFormats;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_Dfareporting_VideoFormat
+     */
+    public function setVideoFormats($videoFormats) {
+        $this->videoFormats = $videoFormats;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_VideoFormat
+     */
+    public function getVideoFormats() {
+        return $this->videoFormats;
+    }
 }

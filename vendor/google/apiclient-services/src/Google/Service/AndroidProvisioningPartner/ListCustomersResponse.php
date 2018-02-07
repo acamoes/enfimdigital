@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AndroidProvisioningPartner_ListCustomersResponse extends Google_Collection
-{
-  protected $collection_key = 'customers';
-  protected $customersType = 'Google_Service_AndroidProvisioningPartner_Company';
-  protected $customersDataType = 'array';
+class Google_Service_AndroidProvisioningPartner_ListCustomersResponse extends Google_Collection {
+    protected $collection_key    = 'customers';
+    protected $customersType     = 'Google_Service_AndroidProvisioningPartner_Company';
+    protected $customersDataType = 'array';
 
-  /**
-   * @param Google_Service_AndroidProvisioningPartner_Company
-   */
-  public function setCustomers($customers)
-  {
-    $this->customers = $customers;
-  }
-  /**
-   * @return Google_Service_AndroidProvisioningPartner_Company
-   */
-  public function getCustomers()
-  {
-    return $this->customers;
-  }
+    /**
+     * @param Google_Service_AndroidProvisioningPartner_Company
+     */
+    public function setCustomers($customers) {
+        $this->customers = $customers;
+    }
+
+    /**
+     * @return Google_Service_AndroidProvisioningPartner_Company
+     */
+    public function getCustomers() {
+        return $this->customers;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_YouTube_InvideoPosition extends Google_Model
-{
-  public $cornerPosition;
-  public $type;
+class Google_Service_YouTube_InvideoPosition extends Google_Model {
+    public $cornerPosition;
+    public $type;
 
-  public function setCornerPosition($cornerPosition)
-  {
-    $this->cornerPosition = $cornerPosition;
-  }
-  public function getCornerPosition()
-  {
-    return $this->cornerPosition;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setCornerPosition($cornerPosition) {
+        $this->cornerPosition = $cornerPosition;
+    }
+
+    public function getCornerPosition() {
+        return $this->cornerPosition;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

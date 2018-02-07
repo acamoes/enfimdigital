@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Slides_ReplaceAllShapesWithSheetsChartResponse extends Google_Model
-{
-  public $occurrencesChanged;
+class Google_Service_Slides_ReplaceAllShapesWithSheetsChartResponse extends Google_Model {
+    public $occurrencesChanged;
 
-  public function setOccurrencesChanged($occurrencesChanged)
-  {
-    $this->occurrencesChanged = $occurrencesChanged;
-  }
-  public function getOccurrencesChanged()
-  {
-    return $this->occurrencesChanged;
-  }
+    public function setOccurrencesChanged($occurrencesChanged) {
+        $this->occurrencesChanged = $occurrencesChanged;
+    }
+
+    public function getOccurrencesChanged() {
+        return $this->occurrencesChanged;
+    }
 }

@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Proximitybeacon_ListNamespacesResponse extends Google_Collection
-{
-  protected $collection_key = 'namespaces';
-  protected $namespacesType = 'Google_Service_Proximitybeacon_ProximitybeaconNamespace';
-  protected $namespacesDataType = 'array';
+class Google_Service_Proximitybeacon_ListNamespacesResponse extends Google_Collection {
+    protected $collection_key     = 'namespaces';
+    protected $namespacesType     = 'Google_Service_Proximitybeacon_ProximitybeaconNamespace';
+    protected $namespacesDataType = 'array';
 
-  /**
-   * @param Google_Service_Proximitybeacon_ProximitybeaconNamespace
-   */
-  public function setNamespaces($namespaces)
-  {
-    $this->namespaces = $namespaces;
-  }
-  /**
-   * @return Google_Service_Proximitybeacon_ProximitybeaconNamespace
-   */
-  public function getNamespaces()
-  {
-    return $this->namespaces;
-  }
+    /**
+     * @param Google_Service_Proximitybeacon_ProximitybeaconNamespace
+     */
+    public function setNamespaces($namespaces) {
+        $this->namespaces = $namespaces;
+    }
+
+    /**
+     * @return Google_Service_Proximitybeacon_ProximitybeaconNamespace
+     */
+    public function getNamespaces() {
+        return $this->namespaces;
+    }
 }

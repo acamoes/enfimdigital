@@ -23,6 +23,6 @@
  *   $databases = $firestoreService->databases;
  *  </code>
  */
-class Google_Service_Firestore_Resource_ProjectsDatabases extends Google_Service_Resource
-{
+class Google_Service_Firestore_Resource_ProjectsDatabases extends Google_Service_Resource {
+
 }

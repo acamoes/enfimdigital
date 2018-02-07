@@ -15,80 +15,78 @@
  * the License.
  */
 
-class Google_Service_Directory_AppAccessCollections extends Google_Collection
-{
-  protected $collection_key = 'blockedApiAccessBuckets';
-  public $blockedApiAccessBuckets;
-  public $enforceSettingsForAndroidDrive;
-  public $errorMessage;
-  public $etag;
-  public $kind;
-  public $resourceId;
-  public $resourceName;
-  public $trustDomainOwnedApps;
+class Google_Service_Directory_AppAccessCollections extends Google_Collection {
+    protected $collection_key = 'blockedApiAccessBuckets';
+    public $blockedApiAccessBuckets;
+    public $enforceSettingsForAndroidDrive;
+    public $errorMessage;
+    public $etag;
+    public $kind;
+    public $resourceId;
+    public $resourceName;
+    public $trustDomainOwnedApps;
 
-  public function setBlockedApiAccessBuckets($blockedApiAccessBuckets)
-  {
-    $this->blockedApiAccessBuckets = $blockedApiAccessBuckets;
-  }
-  public function getBlockedApiAccessBuckets()
-  {
-    return $this->blockedApiAccessBuckets;
-  }
-  public function setEnforceSettingsForAndroidDrive($enforceSettingsForAndroidDrive)
-  {
-    $this->enforceSettingsForAndroidDrive = $enforceSettingsForAndroidDrive;
-  }
-  public function getEnforceSettingsForAndroidDrive()
-  {
-    return $this->enforceSettingsForAndroidDrive;
-  }
-  public function setErrorMessage($errorMessage)
-  {
-    $this->errorMessage = $errorMessage;
-  }
-  public function getErrorMessage()
-  {
-    return $this->errorMessage;
-  }
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setResourceId($resourceId)
-  {
-    $this->resourceId = $resourceId;
-  }
-  public function getResourceId()
-  {
-    return $this->resourceId;
-  }
-  public function setResourceName($resourceName)
-  {
-    $this->resourceName = $resourceName;
-  }
-  public function getResourceName()
-  {
-    return $this->resourceName;
-  }
-  public function setTrustDomainOwnedApps($trustDomainOwnedApps)
-  {
-    $this->trustDomainOwnedApps = $trustDomainOwnedApps;
-  }
-  public function getTrustDomainOwnedApps()
-  {
-    return $this->trustDomainOwnedApps;
-  }
+    public function setBlockedApiAccessBuckets($blockedApiAccessBuckets) {
+        $this->blockedApiAccessBuckets = $blockedApiAccessBuckets;
+    }
+
+    public function getBlockedApiAccessBuckets() {
+        return $this->blockedApiAccessBuckets;
+    }
+
+    public function setEnforceSettingsForAndroidDrive($enforceSettingsForAndroidDrive) {
+        $this->enforceSettingsForAndroidDrive = $enforceSettingsForAndroidDrive;
+    }
+
+    public function getEnforceSettingsForAndroidDrive() {
+        return $this->enforceSettingsForAndroidDrive;
+    }
+
+    public function setErrorMessage($errorMessage) {
+        $this->errorMessage = $errorMessage;
+    }
+
+    public function getErrorMessage() {
+        return $this->errorMessage;
+    }
+
+    public function setEtag($etag) {
+        $this->etag = $etag;
+    }
+
+    public function getEtag() {
+        return $this->etag;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setResourceId($resourceId) {
+        $this->resourceId = $resourceId;
+    }
+
+    public function getResourceId() {
+        return $this->resourceId;
+    }
+
+    public function setResourceName($resourceName) {
+        $this->resourceName = $resourceName;
+    }
+
+    public function getResourceName() {
+        return $this->resourceName;
+    }
+
+    public function setTrustDomainOwnedApps($trustDomainOwnedApps) {
+        $this->trustDomainOwnedApps = $trustDomainOwnedApps;
+    }
+
+    public function getTrustDomainOwnedApps() {
+        return $this->trustDomainOwnedApps;
+    }
 }

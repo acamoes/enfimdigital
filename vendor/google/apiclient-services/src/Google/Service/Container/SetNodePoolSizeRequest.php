@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Container_SetNodePoolSizeRequest extends Google_Model
-{
-  public $nodeCount;
+class Google_Service_Container_SetNodePoolSizeRequest extends Google_Model {
+    public $nodeCount;
 
-  public function setNodeCount($nodeCount)
-  {
-    $this->nodeCount = $nodeCount;
-  }
-  public function getNodeCount()
-  {
-    return $this->nodeCount;
-  }
+    public function setNodeCount($nodeCount) {
+        $this->nodeCount = $nodeCount;
+    }
+
+    public function getNodeCount() {
+        return $this->nodeCount;
+    }
 }

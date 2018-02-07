@@ -23,29 +23,28 @@
  *   $testEnvironmentCatalog = $testingService->testEnvironmentCatalog;
  *  </code>
  */
-class Google_Service_Testing_Resource_TestEnvironmentCatalog extends Google_Service_Resource
-{
-  /**
-   * Get the catalog of supported test environments.
-   *
-   * May return any of the following canonical error codes:
-   *
-   * - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the
-   * environment type does not exist - INTERNAL - if an internal error occurred
-   * (testEnvironmentCatalog.get)
-   *
-   * @param string $environmentType The type of environment that should be listed.
-   * Required
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string projectId For authorization, the cloud project requesting
-   * the TestEnvironmentCatalog. Optional
-   * @return Google_Service_Testing_TestEnvironmentCatalog
-   */
-  public function get($environmentType, $optParams = array())
-  {
-    $params = array('environmentType' => $environmentType);
-    $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Testing_TestEnvironmentCatalog");
-  }
+class Google_Service_Testing_Resource_TestEnvironmentCatalog extends Google_Service_Resource {
+
+    /**
+     * Get the catalog of supported test environments.
+     *
+     * May return any of the following canonical error codes:
+     *
+     * - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the
+     * environment type does not exist - INTERNAL - if an internal error occurred
+     * (testEnvironmentCatalog.get)
+     *
+     * @param string $environmentType The type of environment that should be listed.
+     * Required
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param string projectId For authorization, the cloud project requesting
+     * the TestEnvironmentCatalog. Optional
+     * @return Google_Service_Testing_TestEnvironmentCatalog
+     */
+    public function get($environmentType, $optParams = array()) {
+        $params = array('environmentType' => $environmentType);
+        $params = array_merge($params, $optParams);
+        return $this->call('get', array($params), "Google_Service_Testing_TestEnvironmentCatalog");
+    }
 }

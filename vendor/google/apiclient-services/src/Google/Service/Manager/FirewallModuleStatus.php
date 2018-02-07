@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Manager_FirewallModuleStatus extends Google_Model
-{
-  public $firewallUrl;
+class Google_Service_Manager_FirewallModuleStatus extends Google_Model {
+    public $firewallUrl;
 
-  public function setFirewallUrl($firewallUrl)
-  {
-    $this->firewallUrl = $firewallUrl;
-  }
-  public function getFirewallUrl()
-  {
-    return $this->firewallUrl;
-  }
+    public function setFirewallUrl($firewallUrl) {
+        $this->firewallUrl = $firewallUrl;
+    }
+
+    public function getFirewallUrl() {
+        return $this->firewallUrl;
+    }
 }

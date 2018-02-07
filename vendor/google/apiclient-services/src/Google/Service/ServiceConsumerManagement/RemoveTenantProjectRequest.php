@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ServiceConsumerManagement_RemoveTenantProjectRequest extends Google_Model
-{
-  public $tag;
+class Google_Service_ServiceConsumerManagement_RemoveTenantProjectRequest extends Google_Model {
+    public $tag;
 
-  public function setTag($tag)
-  {
-    $this->tag = $tag;
-  }
-  public function getTag()
-  {
-    return $this->tag;
-  }
+    public function setTag($tag) {
+        $this->tag = $tag;
+    }
+
+    public function getTag() {
+        return $this->tag;
+    }
 }

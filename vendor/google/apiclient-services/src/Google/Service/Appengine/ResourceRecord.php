@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Appengine_ResourceRecord extends Google_Model
-{
-  public $name;
-  public $rrdata;
-  public $type;
+class Google_Service_Appengine_ResourceRecord extends Google_Model {
+    public $name;
+    public $rrdata;
+    public $type;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setRrdata($rrdata)
-  {
-    $this->rrdata = $rrdata;
-  }
-  public function getRrdata()
-  {
-    return $this->rrdata;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setRrdata($rrdata) {
+        $this->rrdata = $rrdata;
+    }
+
+    public function getRrdata() {
+        return $this->rrdata;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

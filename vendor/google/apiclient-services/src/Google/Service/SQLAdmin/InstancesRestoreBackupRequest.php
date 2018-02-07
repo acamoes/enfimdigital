@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_InstancesRestoreBackupRequest extends Google_Model
-{
-  protected $restoreBackupContextType = 'Google_Service_SQLAdmin_RestoreBackupContext';
-  protected $restoreBackupContextDataType = '';
+class Google_Service_SQLAdmin_InstancesRestoreBackupRequest extends Google_Model {
+    protected $restoreBackupContextType     = 'Google_Service_SQLAdmin_RestoreBackupContext';
+    protected $restoreBackupContextDataType = '';
 
-  /**
-   * @param Google_Service_SQLAdmin_RestoreBackupContext
-   */
-  public function setRestoreBackupContext(Google_Service_SQLAdmin_RestoreBackupContext $restoreBackupContext)
-  {
-    $this->restoreBackupContext = $restoreBackupContext;
-  }
-  /**
-   * @return Google_Service_SQLAdmin_RestoreBackupContext
-   */
-  public function getRestoreBackupContext()
-  {
-    return $this->restoreBackupContext;
-  }
+    /**
+     * @param Google_Service_SQLAdmin_RestoreBackupContext
+     */
+    public function setRestoreBackupContext(Google_Service_SQLAdmin_RestoreBackupContext $restoreBackupContext) {
+        $this->restoreBackupContext = $restoreBackupContext;
+    }
+
+    /**
+     * @return Google_Service_SQLAdmin_RestoreBackupContext
+     */
+    public function getRestoreBackupContext() {
+        return $this->restoreBackupContext;
+    }
 }

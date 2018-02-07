@@ -101,28 +101,28 @@
                                         {literal} onChange="if (document.getElementById('internshipNao').checked && this.options[this.selectedIndex].value == 'Estágio') {
                                                     this.selectedIndex = 0;
                                                 }"> {/literal}
-                                    <option value="Aberto" {if $calendario['status'] eq 'Aberto'}selected="selected"{/if}>Aberto</option>
-                                    <option value="A decorrer" {if $calendario['status'] eq 'A decorrer'}selected="selected"{/if}>A decorrer</option>
-                                    <option value="Terminado" {if $calendario['status'] eq 'Terminado'}selected="selected"{/if}>Terminado</option>
-                                    <option value="Estágio" {if $calendario['status'] eq 'Estágio'}selected="selected"{/if}>Estágio (opção inválida)</option>
-                                    <option value="Fechado" {if $calendario['status'] eq 'Fechado'}selected="selected"{/if}>Fechado</option>
-                                </select>
-                            </div>								
-                        </div>
-                        <div class="row uniform">
-                            <div style="float: left">
-                                <label for="observations">Observações</label>
-                                <textarea cols="5" rows="3" name="observations" id="observations" style="width: 630px">{$calendario['observations']}</textarea>
+                                            <option value="Aberto" {if $calendario['status'] eq 'Aberto'}selected="selected"{/if}>Aberto</option>
+                                            <option value="A decorrer" {if $calendario['status'] eq 'A decorrer'}selected="selected"{/if}>A decorrer</option>
+                                            <option value="Terminado" {if $calendario['status'] eq 'Terminado'}selected="selected"{/if}>Terminado</option>
+                                            <option value="Estágio" {if $calendario['status'] eq 'Estágio'}selected="selected"{/if}>Estágio (opção inválida)</option>
+                                            <option value="Fechado" {if $calendario['status'] eq 'Fechado'}selected="selected"{/if}>Fechado</option>
+                                        </select>
+                                </div>								
                             </div>
-                        </div>
-                        <div class="row uniform">
-                            <div style="float: right;">
-                                <button>Submit</button>
+                            <div class="row uniform">
+                                <div style="float: left">
+                                    <label for="observations">Observações</label>
+                                    <textarea cols="5" rows="3" name="observations" id="observations" style="width: 630px">{$calendario['observations']}</textarea>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </section>
+                            <div class="row uniform">
+                                <div style="float: right;">
+                                    <button>Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
             </div>
-        </div>
+        </section>
     </section>
-</section>

@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_PolyService_PresentationParams extends Google_Model
-{
-  public $colorSpace;
-  protected $orientingRotationType = 'Google_Service_PolyService_Quaternion';
-  protected $orientingRotationDataType = '';
+class Google_Service_PolyService_PresentationParams extends Google_Model {
+    public $colorSpace;
+    protected $orientingRotationType     = 'Google_Service_PolyService_Quaternion';
+    protected $orientingRotationDataType = '';
 
-  public function setColorSpace($colorSpace)
-  {
-    $this->colorSpace = $colorSpace;
-  }
-  public function getColorSpace()
-  {
-    return $this->colorSpace;
-  }
-  /**
-   * @param Google_Service_PolyService_Quaternion
-   */
-  public function setOrientingRotation(Google_Service_PolyService_Quaternion $orientingRotation)
-  {
-    $this->orientingRotation = $orientingRotation;
-  }
-  /**
-   * @return Google_Service_PolyService_Quaternion
-   */
-  public function getOrientingRotation()
-  {
-    return $this->orientingRotation;
-  }
+    public function setColorSpace($colorSpace) {
+        $this->colorSpace = $colorSpace;
+    }
+
+    public function getColorSpace() {
+        return $this->colorSpace;
+    }
+
+    /**
+     * @param Google_Service_PolyService_Quaternion
+     */
+    public function setOrientingRotation(Google_Service_PolyService_Quaternion $orientingRotation) {
+        $this->orientingRotation = $orientingRotation;
+    }
+
+    /**
+     * @return Google_Service_PolyService_Quaternion
+     */
+    public function getOrientingRotation() {
+        return $this->orientingRotation;
+    }
 }

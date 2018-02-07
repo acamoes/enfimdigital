@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Speech_WordInfo extends Google_Model
-{
-  public $endTime;
-  public $startTime;
-  public $word;
+class Google_Service_Speech_WordInfo extends Google_Model {
+    public $endTime;
+    public $startTime;
+    public $word;
 
-  public function setEndTime($endTime)
-  {
-    $this->endTime = $endTime;
-  }
-  public function getEndTime()
-  {
-    return $this->endTime;
-  }
-  public function setStartTime($startTime)
-  {
-    $this->startTime = $startTime;
-  }
-  public function getStartTime()
-  {
-    return $this->startTime;
-  }
-  public function setWord($word)
-  {
-    $this->word = $word;
-  }
-  public function getWord()
-  {
-    return $this->word;
-  }
+    public function setEndTime($endTime) {
+        $this->endTime = $endTime;
+    }
+
+    public function getEndTime() {
+        return $this->endTime;
+    }
+
+    public function setStartTime($startTime) {
+        $this->startTime = $startTime;
+    }
+
+    public function getStartTime() {
+        return $this->startTime;
+    }
+
+    public function setWord($word) {
+        $this->word = $word;
+    }
+
+    public function getWord() {
+        return $this->word;
+    }
 }

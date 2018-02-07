@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_StreetViewPublish_Place extends Google_Model
-{
-  public $placeId;
+class Google_Service_StreetViewPublish_Place extends Google_Model {
+    public $placeId;
 
-  public function setPlaceId($placeId)
-  {
-    $this->placeId = $placeId;
-  }
-  public function getPlaceId()
-  {
-    return $this->placeId;
-  }
+    public function setPlaceId($placeId) {
+        $this->placeId = $placeId;
+    }
+
+    public function getPlaceId() {
+        return $this->placeId;
+    }
 }

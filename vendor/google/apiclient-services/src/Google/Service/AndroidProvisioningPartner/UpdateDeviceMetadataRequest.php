@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_AndroidProvisioningPartner_UpdateDeviceMetadataRequest extends Google_Model
-{
-  protected $deviceMetadataType = 'Google_Service_AndroidProvisioningPartner_DeviceMetadata';
-  protected $deviceMetadataDataType = '';
+class Google_Service_AndroidProvisioningPartner_UpdateDeviceMetadataRequest extends Google_Model {
+    protected $deviceMetadataType     = 'Google_Service_AndroidProvisioningPartner_DeviceMetadata';
+    protected $deviceMetadataDataType = '';
 
-  /**
-   * @param Google_Service_AndroidProvisioningPartner_DeviceMetadata
-   */
-  public function setDeviceMetadata(Google_Service_AndroidProvisioningPartner_DeviceMetadata $deviceMetadata)
-  {
-    $this->deviceMetadata = $deviceMetadata;
-  }
-  /**
-   * @return Google_Service_AndroidProvisioningPartner_DeviceMetadata
-   */
-  public function getDeviceMetadata()
-  {
-    return $this->deviceMetadata;
-  }
+    /**
+     * @param Google_Service_AndroidProvisioningPartner_DeviceMetadata
+     */
+    public function setDeviceMetadata(Google_Service_AndroidProvisioningPartner_DeviceMetadata $deviceMetadata) {
+        $this->deviceMetadata = $deviceMetadata;
+    }
+
+    /**
+     * @return Google_Service_AndroidProvisioningPartner_DeviceMetadata
+     */
+    public function getDeviceMetadata() {
+        return $this->deviceMetadata;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Slides_LayoutReference extends Google_Model
-{
-  public $layoutId;
-  public $predefinedLayout;
+class Google_Service_Slides_LayoutReference extends Google_Model {
+    public $layoutId;
+    public $predefinedLayout;
 
-  public function setLayoutId($layoutId)
-  {
-    $this->layoutId = $layoutId;
-  }
-  public function getLayoutId()
-  {
-    return $this->layoutId;
-  }
-  public function setPredefinedLayout($predefinedLayout)
-  {
-    $this->predefinedLayout = $predefinedLayout;
-  }
-  public function getPredefinedLayout()
-  {
-    return $this->predefinedLayout;
-  }
+    public function setLayoutId($layoutId) {
+        $this->layoutId = $layoutId;
+    }
+
+    public function getLayoutId() {
+        return $this->layoutId;
+    }
+
+    public function setPredefinedLayout($predefinedLayout) {
+        $this->predefinedLayout = $predefinedLayout;
+    }
+
+    public function getPredefinedLayout() {
+        return $this->predefinedLayout;
+    }
 }

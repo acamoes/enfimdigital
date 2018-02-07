@@ -15,44 +15,42 @@
  * the License.
  */
 
-class Google_Service_Devprojects_AcceptanceDenied extends Google_Model
-{
-  protected $acceptanceType = 'Google_Service_Devprojects_Acceptance';
-  protected $acceptanceDataType = '';
-  public $errorMessage;
-  public $kind;
-  public $reason;
+class Google_Service_Devprojects_AcceptanceDenied extends Google_Model {
+    protected $acceptanceType     = 'Google_Service_Devprojects_Acceptance';
+    protected $acceptanceDataType = '';
+    public $errorMessage;
+    public $kind;
+    public $reason;
 
-  public function setAcceptance(Google_Service_Devprojects_Acceptance $acceptance)
-  {
-    $this->acceptance = $acceptance;
-  }
-  public function getAcceptance()
-  {
-    return $this->acceptance;
-  }
-  public function setErrorMessage($errorMessage)
-  {
-    $this->errorMessage = $errorMessage;
-  }
-  public function getErrorMessage()
-  {
-    return $this->errorMessage;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setReason($reason)
-  {
-    $this->reason = $reason;
-  }
-  public function getReason()
-  {
-    return $this->reason;
-  }
+    public function setAcceptance(Google_Service_Devprojects_Acceptance $acceptance) {
+        $this->acceptance = $acceptance;
+    }
+
+    public function getAcceptance() {
+        return $this->acceptance;
+    }
+
+    public function setErrorMessage($errorMessage) {
+        $this->errorMessage = $errorMessage;
+    }
+
+    public function getErrorMessage() {
+        return $this->errorMessage;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setReason($reason) {
+        $this->reason = $reason;
+    }
+
+    public function getReason() {
+        return $this->reason;
+    }
 }

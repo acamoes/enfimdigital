@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_UserDefinedVariableConfiguration extends Google_Model
-{
-  public $dataType;
-  public $reportName;
-  public $variableType;
+class Google_Service_Dfareporting_UserDefinedVariableConfiguration extends Google_Model {
+    public $dataType;
+    public $reportName;
+    public $variableType;
 
-  public function setDataType($dataType)
-  {
-    $this->dataType = $dataType;
-  }
-  public function getDataType()
-  {
-    return $this->dataType;
-  }
-  public function setReportName($reportName)
-  {
-    $this->reportName = $reportName;
-  }
-  public function getReportName()
-  {
-    return $this->reportName;
-  }
-  public function setVariableType($variableType)
-  {
-    $this->variableType = $variableType;
-  }
-  public function getVariableType()
-  {
-    return $this->variableType;
-  }
+    public function setDataType($dataType) {
+        $this->dataType = $dataType;
+    }
+
+    public function getDataType() {
+        return $this->dataType;
+    }
+
+    public function setReportName($reportName) {
+        $this->reportName = $reportName;
+    }
+
+    public function getReportName() {
+        return $this->reportName;
+    }
+
+    public function setVariableType($variableType) {
+        $this->variableType = $variableType;
+    }
+
+    public function getVariableType() {
+        return $this->variableType;
+    }
 }

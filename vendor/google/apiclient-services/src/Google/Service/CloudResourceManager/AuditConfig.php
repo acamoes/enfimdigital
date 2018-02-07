@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_AuditConfig extends Google_Collection
-{
-  protected $collection_key = 'auditLogConfigs';
-  protected $auditLogConfigsType = 'Google_Service_CloudResourceManager_AuditLogConfig';
-  protected $auditLogConfigsDataType = 'array';
-  public $service;
+class Google_Service_CloudResourceManager_AuditConfig extends Google_Collection {
+    protected $collection_key          = 'auditLogConfigs';
+    protected $auditLogConfigsType     = 'Google_Service_CloudResourceManager_AuditLogConfig';
+    protected $auditLogConfigsDataType = 'array';
+    public $service;
 
-  /**
-   * @param Google_Service_CloudResourceManager_AuditLogConfig
-   */
-  public function setAuditLogConfigs($auditLogConfigs)
-  {
-    $this->auditLogConfigs = $auditLogConfigs;
-  }
-  /**
-   * @return Google_Service_CloudResourceManager_AuditLogConfig
-   */
-  public function getAuditLogConfigs()
-  {
-    return $this->auditLogConfigs;
-  }
-  public function setService($service)
-  {
-    $this->service = $service;
-  }
-  public function getService()
-  {
-    return $this->service;
-  }
+    /**
+     * @param Google_Service_CloudResourceManager_AuditLogConfig
+     */
+    public function setAuditLogConfigs($auditLogConfigs) {
+        $this->auditLogConfigs = $auditLogConfigs;
+    }
+
+    /**
+     * @return Google_Service_CloudResourceManager_AuditLogConfig
+     */
+    public function getAuditLogConfigs() {
+        return $this->auditLogConfigs;
+    }
+
+    public function setService($service) {
+        $this->service = $service;
+    }
+
+    public function getService() {
+        return $this->service;
+    }
 }

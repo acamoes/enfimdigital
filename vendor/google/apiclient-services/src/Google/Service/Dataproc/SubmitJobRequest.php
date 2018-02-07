@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Dataproc_SubmitJobRequest extends Google_Model
-{
-  protected $jobType = 'Google_Service_Dataproc_Job';
-  protected $jobDataType = '';
+class Google_Service_Dataproc_SubmitJobRequest extends Google_Model {
+    protected $jobType     = 'Google_Service_Dataproc_Job';
+    protected $jobDataType = '';
 
-  /**
-   * @param Google_Service_Dataproc_Job
-   */
-  public function setJob(Google_Service_Dataproc_Job $job)
-  {
-    $this->job = $job;
-  }
-  /**
-   * @return Google_Service_Dataproc_Job
-   */
-  public function getJob()
-  {
-    return $this->job;
-  }
+    /**
+     * @param Google_Service_Dataproc_Job
+     */
+    public function setJob(Google_Service_Dataproc_Job $job) {
+        $this->job = $job;
+    }
+
+    /**
+     * @return Google_Service_Dataproc_Job
+     */
+    public function getJob() {
+        return $this->job;
+    }
 }

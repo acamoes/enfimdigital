@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Books_VolumeUserInfoUserUploadedVolumeInfo extends Google_Model
-{
-  public $processingState;
+class Google_Service_Books_VolumeUserInfoUserUploadedVolumeInfo extends Google_Model {
+    public $processingState;
 
-  public function setProcessingState($processingState)
-  {
-    $this->processingState = $processingState;
-  }
-  public function getProcessingState()
-  {
-    return $this->processingState;
-  }
+    public function setProcessingState($processingState) {
+        $this->processingState = $processingState;
+    }
+
+    public function getProcessingState() {
+        return $this->processingState;
+    }
 }

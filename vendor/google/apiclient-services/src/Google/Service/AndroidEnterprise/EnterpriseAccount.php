@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_EnterpriseAccount extends Google_Model
-{
-  public $accountEmail;
-  public $kind;
+class Google_Service_AndroidEnterprise_EnterpriseAccount extends Google_Model {
+    public $accountEmail;
+    public $kind;
 
-  public function setAccountEmail($accountEmail)
-  {
-    $this->accountEmail = $accountEmail;
-  }
-  public function getAccountEmail()
-  {
-    return $this->accountEmail;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setAccountEmail($accountEmail) {
+        $this->accountEmail = $accountEmail;
+    }
+
+    public function getAccountEmail() {
+        return $this->accountEmail;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,11 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler\Curl;
 
-class Util
-{
+class Util {
     private static $retriableErrorCodes = array(
         CURLE_COULDNT_RESOLVE_HOST,
         CURLE_COULDNT_CONNECT,
@@ -29,8 +26,7 @@ class Util
      * @param  resource          $ch curl handler
      * @throws \RuntimeException
      */
-    public static function execute($ch, $retries = 5, $closeAfterDone = true)
-    {
+    public static function execute($ch, $retries = 5, $closeAfterDone = true) {
         while ($retries--) {
             if (curl_exec($ch) === false) {
                 $curlErrno = curl_errno($ch);

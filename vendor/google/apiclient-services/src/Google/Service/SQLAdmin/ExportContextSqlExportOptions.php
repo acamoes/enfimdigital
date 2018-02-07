@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_ExportContextSqlExportOptions extends Google_Collection
-{
-  protected $collection_key = 'tables';
-  public $schemaOnly;
-  public $tables;
+class Google_Service_SQLAdmin_ExportContextSqlExportOptions extends Google_Collection {
+    protected $collection_key = 'tables';
+    public $schemaOnly;
+    public $tables;
 
-  public function setSchemaOnly($schemaOnly)
-  {
-    $this->schemaOnly = $schemaOnly;
-  }
-  public function getSchemaOnly()
-  {
-    return $this->schemaOnly;
-  }
-  public function setTables($tables)
-  {
-    $this->tables = $tables;
-  }
-  public function getTables()
-  {
-    return $this->tables;
-  }
+    public function setSchemaOnly($schemaOnly) {
+        $this->schemaOnly = $schemaOnly;
+    }
+
+    public function getSchemaOnly() {
+        return $this->schemaOnly;
+    }
+
+    public function setTables($tables) {
+        $this->tables = $tables;
+    }
+
+    public function getTables() {
+        return $this->tables;
+    }
 }

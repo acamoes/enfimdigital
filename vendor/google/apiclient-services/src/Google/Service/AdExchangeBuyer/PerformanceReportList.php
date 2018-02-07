@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_PerformanceReportList extends Google_Collection
-{
-  protected $collection_key = 'performanceReport';
-  public $kind;
-  protected $performanceReportType = 'Google_Service_AdExchangeBuyer_PerformanceReport';
-  protected $performanceReportDataType = 'array';
+class Google_Service_AdExchangeBuyer_PerformanceReportList extends Google_Collection {
+    protected $collection_key            = 'performanceReport';
+    public $kind;
+    protected $performanceReportType     = 'Google_Service_AdExchangeBuyer_PerformanceReport';
+    protected $performanceReportDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_AdExchangeBuyer_PerformanceReport
-   */
-  public function setPerformanceReport($performanceReport)
-  {
-    $this->performanceReport = $performanceReport;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyer_PerformanceReport
-   */
-  public function getPerformanceReport()
-  {
-    return $this->performanceReport;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_AdExchangeBuyer_PerformanceReport
+     */
+    public function setPerformanceReport($performanceReport) {
+        $this->performanceReport = $performanceReport;
+    }
+
+    /**
+     * @return Google_Service_AdExchangeBuyer_PerformanceReport
+     */
+    public function getPerformanceReport() {
+        return $this->performanceReport;
+    }
 }

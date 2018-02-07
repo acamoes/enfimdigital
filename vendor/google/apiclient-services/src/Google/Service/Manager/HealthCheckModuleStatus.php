@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Manager_HealthCheckModuleStatus extends Google_Model
-{
-  public $healthCheckUrl;
+class Google_Service_Manager_HealthCheckModuleStatus extends Google_Model {
+    public $healthCheckUrl;
 
-  public function setHealthCheckUrl($healthCheckUrl)
-  {
-    $this->healthCheckUrl = $healthCheckUrl;
-  }
-  public function getHealthCheckUrl()
-  {
-    return $this->healthCheckUrl;
-  }
+    public function setHealthCheckUrl($healthCheckUrl) {
+        $this->healthCheckUrl = $healthCheckUrl;
+    }
+
+    public function getHealthCheckUrl() {
+        return $this->healthCheckUrl;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_TagManager_RevertBuiltInVariableResponse extends Google_Model
-{
-  public $enabled;
+class Google_Service_TagManager_RevertBuiltInVariableResponse extends Google_Model {
+    public $enabled;
 
-  public function setEnabled($enabled)
-  {
-    $this->enabled = $enabled;
-  }
-  public function getEnabled()
-  {
-    return $this->enabled;
-  }
+    public function setEnabled($enabled) {
+        $this->enabled = $enabled;
+    }
+
+    public function getEnabled() {
+        return $this->enabled;
+    }
 }

@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_AndroidProvisioningPartner_FindDevicesByDeviceIdentifierRequest extends Google_Model
-{
-  protected $deviceIdentifierType = 'Google_Service_AndroidProvisioningPartner_DeviceIdentifier';
-  protected $deviceIdentifierDataType = '';
-  public $limit;
-  public $pageToken;
+class Google_Service_AndroidProvisioningPartner_FindDevicesByDeviceIdentifierRequest extends Google_Model {
+    protected $deviceIdentifierType     = 'Google_Service_AndroidProvisioningPartner_DeviceIdentifier';
+    protected $deviceIdentifierDataType = '';
+    public $limit;
+    public $pageToken;
 
-  /**
-   * @param Google_Service_AndroidProvisioningPartner_DeviceIdentifier
-   */
-  public function setDeviceIdentifier(Google_Service_AndroidProvisioningPartner_DeviceIdentifier $deviceIdentifier)
-  {
-    $this->deviceIdentifier = $deviceIdentifier;
-  }
-  /**
-   * @return Google_Service_AndroidProvisioningPartner_DeviceIdentifier
-   */
-  public function getDeviceIdentifier()
-  {
-    return $this->deviceIdentifier;
-  }
-  public function setLimit($limit)
-  {
-    $this->limit = $limit;
-  }
-  public function getLimit()
-  {
-    return $this->limit;
-  }
-  public function setPageToken($pageToken)
-  {
-    $this->pageToken = $pageToken;
-  }
-  public function getPageToken()
-  {
-    return $this->pageToken;
-  }
+    /**
+     * @param Google_Service_AndroidProvisioningPartner_DeviceIdentifier
+     */
+    public function setDeviceIdentifier(Google_Service_AndroidProvisioningPartner_DeviceIdentifier $deviceIdentifier) {
+        $this->deviceIdentifier = $deviceIdentifier;
+    }
+
+    /**
+     * @return Google_Service_AndroidProvisioningPartner_DeviceIdentifier
+     */
+    public function getDeviceIdentifier() {
+        return $this->deviceIdentifier;
+    }
+
+    public function setLimit($limit) {
+        $this->limit = $limit;
+    }
+
+    public function getLimit() {
+        return $this->limit;
+    }
+
+    public function setPageToken($pageToken) {
+        $this->pageToken = $pageToken;
+    }
+
+    public function getPageToken() {
+        return $this->pageToken;
+    }
 }

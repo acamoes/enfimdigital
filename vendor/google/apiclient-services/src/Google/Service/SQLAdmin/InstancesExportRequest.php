@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_InstancesExportRequest extends Google_Model
-{
-  protected $exportContextType = 'Google_Service_SQLAdmin_ExportContext';
-  protected $exportContextDataType = '';
+class Google_Service_SQLAdmin_InstancesExportRequest extends Google_Model {
+    protected $exportContextType     = 'Google_Service_SQLAdmin_ExportContext';
+    protected $exportContextDataType = '';
 
-  /**
-   * @param Google_Service_SQLAdmin_ExportContext
-   */
-  public function setExportContext(Google_Service_SQLAdmin_ExportContext $exportContext)
-  {
-    $this->exportContext = $exportContext;
-  }
-  /**
-   * @return Google_Service_SQLAdmin_ExportContext
-   */
-  public function getExportContext()
-  {
-    return $this->exportContext;
-  }
+    /**
+     * @param Google_Service_SQLAdmin_ExportContext
+     */
+    public function setExportContext(Google_Service_SQLAdmin_ExportContext $exportContext) {
+        $this->exportContext = $exportContext;
+    }
+
+    /**
+     * @return Google_Service_SQLAdmin_ExportContext
+     */
+    public function getExportContext() {
+        return $this->exportContext;
+    }
 }

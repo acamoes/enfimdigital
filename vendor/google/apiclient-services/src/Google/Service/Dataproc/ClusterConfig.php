@@ -15,113 +15,111 @@
  * the License.
  */
 
-class Google_Service_Dataproc_ClusterConfig extends Google_Collection
-{
-  protected $collection_key = 'initializationActions';
-  public $configBucket;
-  protected $gceClusterConfigType = 'Google_Service_Dataproc_GceClusterConfig';
-  protected $gceClusterConfigDataType = '';
-  protected $initializationActionsType = 'Google_Service_Dataproc_NodeInitializationAction';
-  protected $initializationActionsDataType = 'array';
-  protected $masterConfigType = 'Google_Service_Dataproc_InstanceGroupConfig';
-  protected $masterConfigDataType = '';
-  protected $secondaryWorkerConfigType = 'Google_Service_Dataproc_InstanceGroupConfig';
-  protected $secondaryWorkerConfigDataType = '';
-  protected $softwareConfigType = 'Google_Service_Dataproc_SoftwareConfig';
-  protected $softwareConfigDataType = '';
-  protected $workerConfigType = 'Google_Service_Dataproc_InstanceGroupConfig';
-  protected $workerConfigDataType = '';
+class Google_Service_Dataproc_ClusterConfig extends Google_Collection {
+    protected $collection_key                = 'initializationActions';
+    public $configBucket;
+    protected $gceClusterConfigType          = 'Google_Service_Dataproc_GceClusterConfig';
+    protected $gceClusterConfigDataType      = '';
+    protected $initializationActionsType     = 'Google_Service_Dataproc_NodeInitializationAction';
+    protected $initializationActionsDataType = 'array';
+    protected $masterConfigType              = 'Google_Service_Dataproc_InstanceGroupConfig';
+    protected $masterConfigDataType          = '';
+    protected $secondaryWorkerConfigType     = 'Google_Service_Dataproc_InstanceGroupConfig';
+    protected $secondaryWorkerConfigDataType = '';
+    protected $softwareConfigType            = 'Google_Service_Dataproc_SoftwareConfig';
+    protected $softwareConfigDataType        = '';
+    protected $workerConfigType              = 'Google_Service_Dataproc_InstanceGroupConfig';
+    protected $workerConfigDataType          = '';
 
-  public function setConfigBucket($configBucket)
-  {
-    $this->configBucket = $configBucket;
-  }
-  public function getConfigBucket()
-  {
-    return $this->configBucket;
-  }
-  /**
-   * @param Google_Service_Dataproc_GceClusterConfig
-   */
-  public function setGceClusterConfig(Google_Service_Dataproc_GceClusterConfig $gceClusterConfig)
-  {
-    $this->gceClusterConfig = $gceClusterConfig;
-  }
-  /**
-   * @return Google_Service_Dataproc_GceClusterConfig
-   */
-  public function getGceClusterConfig()
-  {
-    return $this->gceClusterConfig;
-  }
-  /**
-   * @param Google_Service_Dataproc_NodeInitializationAction
-   */
-  public function setInitializationActions($initializationActions)
-  {
-    $this->initializationActions = $initializationActions;
-  }
-  /**
-   * @return Google_Service_Dataproc_NodeInitializationAction
-   */
-  public function getInitializationActions()
-  {
-    return $this->initializationActions;
-  }
-  /**
-   * @param Google_Service_Dataproc_InstanceGroupConfig
-   */
-  public function setMasterConfig(Google_Service_Dataproc_InstanceGroupConfig $masterConfig)
-  {
-    $this->masterConfig = $masterConfig;
-  }
-  /**
-   * @return Google_Service_Dataproc_InstanceGroupConfig
-   */
-  public function getMasterConfig()
-  {
-    return $this->masterConfig;
-  }
-  /**
-   * @param Google_Service_Dataproc_InstanceGroupConfig
-   */
-  public function setSecondaryWorkerConfig(Google_Service_Dataproc_InstanceGroupConfig $secondaryWorkerConfig)
-  {
-    $this->secondaryWorkerConfig = $secondaryWorkerConfig;
-  }
-  /**
-   * @return Google_Service_Dataproc_InstanceGroupConfig
-   */
-  public function getSecondaryWorkerConfig()
-  {
-    return $this->secondaryWorkerConfig;
-  }
-  /**
-   * @param Google_Service_Dataproc_SoftwareConfig
-   */
-  public function setSoftwareConfig(Google_Service_Dataproc_SoftwareConfig $softwareConfig)
-  {
-    $this->softwareConfig = $softwareConfig;
-  }
-  /**
-   * @return Google_Service_Dataproc_SoftwareConfig
-   */
-  public function getSoftwareConfig()
-  {
-    return $this->softwareConfig;
-  }
-  /**
-   * @param Google_Service_Dataproc_InstanceGroupConfig
-   */
-  public function setWorkerConfig(Google_Service_Dataproc_InstanceGroupConfig $workerConfig)
-  {
-    $this->workerConfig = $workerConfig;
-  }
-  /**
-   * @return Google_Service_Dataproc_InstanceGroupConfig
-   */
-  public function getWorkerConfig()
-  {
-    return $this->workerConfig;
-  }
+    public function setConfigBucket($configBucket) {
+        $this->configBucket = $configBucket;
+    }
+
+    public function getConfigBucket() {
+        return $this->configBucket;
+    }
+
+    /**
+     * @param Google_Service_Dataproc_GceClusterConfig
+     */
+    public function setGceClusterConfig(Google_Service_Dataproc_GceClusterConfig $gceClusterConfig) {
+        $this->gceClusterConfig = $gceClusterConfig;
+    }
+
+    /**
+     * @return Google_Service_Dataproc_GceClusterConfig
+     */
+    public function getGceClusterConfig() {
+        return $this->gceClusterConfig;
+    }
+
+    /**
+     * @param Google_Service_Dataproc_NodeInitializationAction
+     */
+    public function setInitializationActions($initializationActions) {
+        $this->initializationActions = $initializationActions;
+    }
+
+    /**
+     * @return Google_Service_Dataproc_NodeInitializationAction
+     */
+    public function getInitializationActions() {
+        return $this->initializationActions;
+    }
+
+    /**
+     * @param Google_Service_Dataproc_InstanceGroupConfig
+     */
+    public function setMasterConfig(Google_Service_Dataproc_InstanceGroupConfig $masterConfig) {
+        $this->masterConfig = $masterConfig;
+    }
+
+    /**
+     * @return Google_Service_Dataproc_InstanceGroupConfig
+     */
+    public function getMasterConfig() {
+        return $this->masterConfig;
+    }
+
+    /**
+     * @param Google_Service_Dataproc_InstanceGroupConfig
+     */
+    public function setSecondaryWorkerConfig(Google_Service_Dataproc_InstanceGroupConfig $secondaryWorkerConfig) {
+        $this->secondaryWorkerConfig = $secondaryWorkerConfig;
+    }
+
+    /**
+     * @return Google_Service_Dataproc_InstanceGroupConfig
+     */
+    public function getSecondaryWorkerConfig() {
+        return $this->secondaryWorkerConfig;
+    }
+
+    /**
+     * @param Google_Service_Dataproc_SoftwareConfig
+     */
+    public function setSoftwareConfig(Google_Service_Dataproc_SoftwareConfig $softwareConfig) {
+        $this->softwareConfig = $softwareConfig;
+    }
+
+    /**
+     * @return Google_Service_Dataproc_SoftwareConfig
+     */
+    public function getSoftwareConfig() {
+        return $this->softwareConfig;
+    }
+
+    /**
+     * @param Google_Service_Dataproc_InstanceGroupConfig
+     */
+    public function setWorkerConfig(Google_Service_Dataproc_InstanceGroupConfig $workerConfig) {
+        $this->workerConfig = $workerConfig;
+    }
+
+    /**
+     * @return Google_Service_Dataproc_InstanceGroupConfig
+     */
+    public function getWorkerConfig() {
+        return $this->workerConfig;
+    }
 }

@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_DetectIntentResponse extends Google_Model
-{
-  protected $queryResultType = 'Google_Service_Dialogflow_QueryResult';
-  protected $queryResultDataType = '';
-  public $responseId;
-  protected $webhookStatusType = 'Google_Service_Dialogflow_Status';
-  protected $webhookStatusDataType = '';
+class Google_Service_Dialogflow_DetectIntentResponse extends Google_Model {
+    protected $queryResultType       = 'Google_Service_Dialogflow_QueryResult';
+    protected $queryResultDataType   = '';
+    public $responseId;
+    protected $webhookStatusType     = 'Google_Service_Dialogflow_Status';
+    protected $webhookStatusDataType = '';
 
-  /**
-   * @param Google_Service_Dialogflow_QueryResult
-   */
-  public function setQueryResult(Google_Service_Dialogflow_QueryResult $queryResult)
-  {
-    $this->queryResult = $queryResult;
-  }
-  /**
-   * @return Google_Service_Dialogflow_QueryResult
-   */
-  public function getQueryResult()
-  {
-    return $this->queryResult;
-  }
-  public function setResponseId($responseId)
-  {
-    $this->responseId = $responseId;
-  }
-  public function getResponseId()
-  {
-    return $this->responseId;
-  }
-  /**
-   * @param Google_Service_Dialogflow_Status
-   */
-  public function setWebhookStatus(Google_Service_Dialogflow_Status $webhookStatus)
-  {
-    $this->webhookStatus = $webhookStatus;
-  }
-  /**
-   * @return Google_Service_Dialogflow_Status
-   */
-  public function getWebhookStatus()
-  {
-    return $this->webhookStatus;
-  }
+    /**
+     * @param Google_Service_Dialogflow_QueryResult
+     */
+    public function setQueryResult(Google_Service_Dialogflow_QueryResult $queryResult) {
+        $this->queryResult = $queryResult;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_QueryResult
+     */
+    public function getQueryResult() {
+        return $this->queryResult;
+    }
+
+    public function setResponseId($responseId) {
+        $this->responseId = $responseId;
+    }
+
+    public function getResponseId() {
+        return $this->responseId;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_Status
+     */
+    public function setWebhookStatus(Google_Service_Dialogflow_Status $webhookStatus) {
+        $this->webhookStatus = $webhookStatus;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_Status
+     */
+    public function getWebhookStatus() {
+        return $this->webhookStatus;
+    }
 }

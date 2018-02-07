@@ -15,73 +15,71 @@
  * the License.
  */
 
-class Google_Service_Games_QuestCriterion extends Google_Model
-{
-  protected $completionContributionType = 'Google_Service_Games_QuestContribution';
-  protected $completionContributionDataType = '';
-  protected $currentContributionType = 'Google_Service_Games_QuestContribution';
-  protected $currentContributionDataType = '';
-  public $eventId;
-  protected $initialPlayerProgressType = 'Google_Service_Games_QuestContribution';
-  protected $initialPlayerProgressDataType = '';
-  public $kind;
+class Google_Service_Games_QuestCriterion extends Google_Model {
+    protected $completionContributionType     = 'Google_Service_Games_QuestContribution';
+    protected $completionContributionDataType = '';
+    protected $currentContributionType        = 'Google_Service_Games_QuestContribution';
+    protected $currentContributionDataType    = '';
+    public $eventId;
+    protected $initialPlayerProgressType      = 'Google_Service_Games_QuestContribution';
+    protected $initialPlayerProgressDataType  = '';
+    public $kind;
 
-  /**
-   * @param Google_Service_Games_QuestContribution
-   */
-  public function setCompletionContribution(Google_Service_Games_QuestContribution $completionContribution)
-  {
-    $this->completionContribution = $completionContribution;
-  }
-  /**
-   * @return Google_Service_Games_QuestContribution
-   */
-  public function getCompletionContribution()
-  {
-    return $this->completionContribution;
-  }
-  /**
-   * @param Google_Service_Games_QuestContribution
-   */
-  public function setCurrentContribution(Google_Service_Games_QuestContribution $currentContribution)
-  {
-    $this->currentContribution = $currentContribution;
-  }
-  /**
-   * @return Google_Service_Games_QuestContribution
-   */
-  public function getCurrentContribution()
-  {
-    return $this->currentContribution;
-  }
-  public function setEventId($eventId)
-  {
-    $this->eventId = $eventId;
-  }
-  public function getEventId()
-  {
-    return $this->eventId;
-  }
-  /**
-   * @param Google_Service_Games_QuestContribution
-   */
-  public function setInitialPlayerProgress(Google_Service_Games_QuestContribution $initialPlayerProgress)
-  {
-    $this->initialPlayerProgress = $initialPlayerProgress;
-  }
-  /**
-   * @return Google_Service_Games_QuestContribution
-   */
-  public function getInitialPlayerProgress()
-  {
-    return $this->initialPlayerProgress;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_Games_QuestContribution
+     */
+    public function setCompletionContribution(Google_Service_Games_QuestContribution $completionContribution) {
+        $this->completionContribution = $completionContribution;
+    }
+
+    /**
+     * @return Google_Service_Games_QuestContribution
+     */
+    public function getCompletionContribution() {
+        return $this->completionContribution;
+    }
+
+    /**
+     * @param Google_Service_Games_QuestContribution
+     */
+    public function setCurrentContribution(Google_Service_Games_QuestContribution $currentContribution) {
+        $this->currentContribution = $currentContribution;
+    }
+
+    /**
+     * @return Google_Service_Games_QuestContribution
+     */
+    public function getCurrentContribution() {
+        return $this->currentContribution;
+    }
+
+    public function setEventId($eventId) {
+        $this->eventId = $eventId;
+    }
+
+    public function getEventId() {
+        return $this->eventId;
+    }
+
+    /**
+     * @param Google_Service_Games_QuestContribution
+     */
+    public function setInitialPlayerProgress(Google_Service_Games_QuestContribution $initialPlayerProgress) {
+        $this->initialPlayerProgress = $initialPlayerProgress;
+    }
+
+    /**
+     * @return Google_Service_Games_QuestContribution
+     */
+    public function getInitialPlayerProgress() {
+        return $this->initialPlayerProgress;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

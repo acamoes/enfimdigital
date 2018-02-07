@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Directory_ChromeOsDeviceActiveTimeRanges extends Google_Model
-{
-  public $activeTime;
-  public $date;
+class Google_Service_Directory_ChromeOsDeviceActiveTimeRanges extends Google_Model {
+    public $activeTime;
+    public $date;
 
-  public function setActiveTime($activeTime)
-  {
-    $this->activeTime = $activeTime;
-  }
-  public function getActiveTime()
-  {
-    return $this->activeTime;
-  }
-  public function setDate($date)
-  {
-    $this->date = $date;
-  }
-  public function getDate()
-  {
-    return $this->date;
-  }
+    public function setActiveTime($activeTime) {
+        $this->activeTime = $activeTime;
+    }
+
+    public function getActiveTime() {
+        return $this->activeTime;
+    }
+
+    public function setDate($date) {
+        $this->date = $date;
+    }
+
+    public function getDate() {
+        return $this->date;
+    }
 }

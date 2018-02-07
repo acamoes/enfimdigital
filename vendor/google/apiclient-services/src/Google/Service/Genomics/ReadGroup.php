@@ -15,112 +15,110 @@
  * the License.
  */
 
-class Google_Service_Genomics_ReadGroup extends Google_Collection
-{
-  protected $collection_key = 'programs';
-  public $datasetId;
-  public $description;
-  protected $experimentType = 'Google_Service_Genomics_Experiment';
-  protected $experimentDataType = '';
-  public $id;
-  public $info;
-  public $name;
-  public $predictedInsertSize;
-  protected $programsType = 'Google_Service_Genomics_Program';
-  protected $programsDataType = 'array';
-  public $referenceSetId;
-  public $sampleId;
+class Google_Service_Genomics_ReadGroup extends Google_Collection {
+    protected $collection_key     = 'programs';
+    public $datasetId;
+    public $description;
+    protected $experimentType     = 'Google_Service_Genomics_Experiment';
+    protected $experimentDataType = '';
+    public $id;
+    public $info;
+    public $name;
+    public $predictedInsertSize;
+    protected $programsType       = 'Google_Service_Genomics_Program';
+    protected $programsDataType   = 'array';
+    public $referenceSetId;
+    public $sampleId;
 
-  public function setDatasetId($datasetId)
-  {
-    $this->datasetId = $datasetId;
-  }
-  public function getDatasetId()
-  {
-    return $this->datasetId;
-  }
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  /**
-   * @param Google_Service_Genomics_Experiment
-   */
-  public function setExperiment(Google_Service_Genomics_Experiment $experiment)
-  {
-    $this->experiment = $experiment;
-  }
-  /**
-   * @return Google_Service_Genomics_Experiment
-   */
-  public function getExperiment()
-  {
-    return $this->experiment;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setInfo($info)
-  {
-    $this->info = $info;
-  }
-  public function getInfo()
-  {
-    return $this->info;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setPredictedInsertSize($predictedInsertSize)
-  {
-    $this->predictedInsertSize = $predictedInsertSize;
-  }
-  public function getPredictedInsertSize()
-  {
-    return $this->predictedInsertSize;
-  }
-  /**
-   * @param Google_Service_Genomics_Program
-   */
-  public function setPrograms($programs)
-  {
-    $this->programs = $programs;
-  }
-  /**
-   * @return Google_Service_Genomics_Program
-   */
-  public function getPrograms()
-  {
-    return $this->programs;
-  }
-  public function setReferenceSetId($referenceSetId)
-  {
-    $this->referenceSetId = $referenceSetId;
-  }
-  public function getReferenceSetId()
-  {
-    return $this->referenceSetId;
-  }
-  public function setSampleId($sampleId)
-  {
-    $this->sampleId = $sampleId;
-  }
-  public function getSampleId()
-  {
-    return $this->sampleId;
-  }
+    public function setDatasetId($datasetId) {
+        $this->datasetId = $datasetId;
+    }
+
+    public function getDatasetId() {
+        return $this->datasetId;
+    }
+
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    /**
+     * @param Google_Service_Genomics_Experiment
+     */
+    public function setExperiment(Google_Service_Genomics_Experiment $experiment) {
+        $this->experiment = $experiment;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Experiment
+     */
+    public function getExperiment() {
+        return $this->experiment;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setInfo($info) {
+        $this->info = $info;
+    }
+
+    public function getInfo() {
+        return $this->info;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setPredictedInsertSize($predictedInsertSize) {
+        $this->predictedInsertSize = $predictedInsertSize;
+    }
+
+    public function getPredictedInsertSize() {
+        return $this->predictedInsertSize;
+    }
+
+    /**
+     * @param Google_Service_Genomics_Program
+     */
+    public function setPrograms($programs) {
+        $this->programs = $programs;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Program
+     */
+    public function getPrograms() {
+        return $this->programs;
+    }
+
+    public function setReferenceSetId($referenceSetId) {
+        $this->referenceSetId = $referenceSetId;
+    }
+
+    public function getReferenceSetId() {
+        return $this->referenceSetId;
+    }
+
+    public function setSampleId($sampleId) {
+        $this->sampleId = $sampleId;
+    }
+
+    public function getSampleId() {
+        return $this->sampleId;
+    }
 }

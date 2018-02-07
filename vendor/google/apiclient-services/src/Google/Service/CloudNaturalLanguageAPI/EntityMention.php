@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_CloudNaturalLanguageAPI_EntityMention extends Google_Model
-{
-  protected $textType = 'Google_Service_CloudNaturalLanguageAPI_TextSpan';
-  protected $textDataType = '';
+class Google_Service_CloudNaturalLanguageAPI_EntityMention extends Google_Model {
+    protected $textType     = 'Google_Service_CloudNaturalLanguageAPI_TextSpan';
+    protected $textDataType = '';
 
-  public function setText(Google_Service_CloudNaturalLanguageAPI_TextSpan $text)
-  {
-    $this->text = $text;
-  }
-  public function getText()
-  {
-    return $this->text;
-  }
+    public function setText(Google_Service_CloudNaturalLanguageAPI_TextSpan $text) {
+        $this->text = $text;
+    }
+
+    public function getText() {
+        return $this->text;
+    }
 }

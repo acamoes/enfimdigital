@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Sheets_UpdateEmbeddedObjectPositionResponse extends Google_Model
-{
-  protected $positionType = 'Google_Service_Sheets_EmbeddedObjectPosition';
-  protected $positionDataType = '';
+class Google_Service_Sheets_UpdateEmbeddedObjectPositionResponse extends Google_Model {
+    protected $positionType     = 'Google_Service_Sheets_EmbeddedObjectPosition';
+    protected $positionDataType = '';
 
-  /**
-   * @param Google_Service_Sheets_EmbeddedObjectPosition
-   */
-  public function setPosition(Google_Service_Sheets_EmbeddedObjectPosition $position)
-  {
-    $this->position = $position;
-  }
-  /**
-   * @return Google_Service_Sheets_EmbeddedObjectPosition
-   */
-  public function getPosition()
-  {
-    return $this->position;
-  }
+    /**
+     * @param Google_Service_Sheets_EmbeddedObjectPosition
+     */
+    public function setPosition(Google_Service_Sheets_EmbeddedObjectPosition $position) {
+        $this->position = $position;
+    }
+
+    /**
+     * @return Google_Service_Sheets_EmbeddedObjectPosition
+     */
+    public function getPosition() {
+        return $this->position;
+    }
 }

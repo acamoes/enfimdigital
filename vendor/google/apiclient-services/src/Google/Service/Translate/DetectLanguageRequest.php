@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Translate_DetectLanguageRequest extends Google_Collection
-{
-  protected $collection_key = 'q';
-  public $q;
+class Google_Service_Translate_DetectLanguageRequest extends Google_Collection {
+    protected $collection_key = 'q';
+    public $q;
 
-  public function setQ($q)
-  {
-    $this->q = $q;
-  }
-  public function getQ()
-  {
-    return $this->q;
-  }
+    public function setQ($q) {
+        $this->q = $q;
+    }
+
+    public function getQ() {
+        return $this->q;
+    }
 }

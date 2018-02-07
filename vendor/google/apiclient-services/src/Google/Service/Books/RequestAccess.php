@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_Books_RequestAccess extends Google_Model
-{
-  protected $concurrentAccessType = 'Google_Service_Books_ConcurrentAccessRestriction';
-  protected $concurrentAccessDataType = '';
-  protected $downloadAccessType = 'Google_Service_Books_DownloadAccessRestriction';
-  protected $downloadAccessDataType = '';
-  public $kind;
+class Google_Service_Books_RequestAccess extends Google_Model {
+    protected $concurrentAccessType     = 'Google_Service_Books_ConcurrentAccessRestriction';
+    protected $concurrentAccessDataType = '';
+    protected $downloadAccessType       = 'Google_Service_Books_DownloadAccessRestriction';
+    protected $downloadAccessDataType   = '';
+    public $kind;
 
-  /**
-   * @param Google_Service_Books_ConcurrentAccessRestriction
-   */
-  public function setConcurrentAccess(Google_Service_Books_ConcurrentAccessRestriction $concurrentAccess)
-  {
-    $this->concurrentAccess = $concurrentAccess;
-  }
-  /**
-   * @return Google_Service_Books_ConcurrentAccessRestriction
-   */
-  public function getConcurrentAccess()
-  {
-    return $this->concurrentAccess;
-  }
-  /**
-   * @param Google_Service_Books_DownloadAccessRestriction
-   */
-  public function setDownloadAccess(Google_Service_Books_DownloadAccessRestriction $downloadAccess)
-  {
-    $this->downloadAccess = $downloadAccess;
-  }
-  /**
-   * @return Google_Service_Books_DownloadAccessRestriction
-   */
-  public function getDownloadAccess()
-  {
-    return $this->downloadAccess;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_Books_ConcurrentAccessRestriction
+     */
+    public function setConcurrentAccess(Google_Service_Books_ConcurrentAccessRestriction $concurrentAccess) {
+        $this->concurrentAccess = $concurrentAccess;
+    }
+
+    /**
+     * @return Google_Service_Books_ConcurrentAccessRestriction
+     */
+    public function getConcurrentAccess() {
+        return $this->concurrentAccess;
+    }
+
+    /**
+     * @param Google_Service_Books_DownloadAccessRestriction
+     */
+    public function setDownloadAccess(Google_Service_Books_DownloadAccessRestriction $downloadAccess) {
+        $this->downloadAccess = $downloadAccess;
+    }
+
+    /**
+     * @return Google_Service_Books_DownloadAccessRestriction
+     */
+    public function getDownloadAccess() {
+        return $this->downloadAccess;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

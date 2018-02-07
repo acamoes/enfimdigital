@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_BatchUpdateEntityTypesResponse extends Google_Collection
-{
-  protected $collection_key = 'entityTypes';
-  protected $entityTypesType = 'Google_Service_Dialogflow_EntityType';
-  protected $entityTypesDataType = 'array';
+class Google_Service_Dialogflow_BatchUpdateEntityTypesResponse extends Google_Collection {
+    protected $collection_key      = 'entityTypes';
+    protected $entityTypesType     = 'Google_Service_Dialogflow_EntityType';
+    protected $entityTypesDataType = 'array';
 
-  /**
-   * @param Google_Service_Dialogflow_EntityType
-   */
-  public function setEntityTypes($entityTypes)
-  {
-    $this->entityTypes = $entityTypes;
-  }
-  /**
-   * @return Google_Service_Dialogflow_EntityType
-   */
-  public function getEntityTypes()
-  {
-    return $this->entityTypes;
-  }
+    /**
+     * @param Google_Service_Dialogflow_EntityType
+     */
+    public function setEntityTypes($entityTypes) {
+        $this->entityTypes = $entityTypes;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_EntityType
+     */
+    public function getEntityTypes() {
+        return $this->entityTypes;
+    }
 }

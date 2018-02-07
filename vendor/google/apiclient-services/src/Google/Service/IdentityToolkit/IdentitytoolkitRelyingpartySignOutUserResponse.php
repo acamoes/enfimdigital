@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartySignOutUserResponse extends Google_Model
-{
-  public $localId;
+class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartySignOutUserResponse extends Google_Model {
+    public $localId;
 
-  public function setLocalId($localId)
-  {
-    $this->localId = $localId;
-  }
-  public function getLocalId()
-  {
-    return $this->localId;
-  }
+    public function setLocalId($localId) {
+        $this->localId = $localId;
+    }
+
+    public function getLocalId() {
+        return $this->localId;
+    }
 }

@@ -23,6 +23,6 @@
  *   $projects = $firestoreService->projects;
  *  </code>
  */
-class Google_Service_Firestore_Resource_Projects extends Google_Service_Resource
-{
+class Google_Service_Firestore_Resource_Projects extends Google_Service_Resource {
+
 }

@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Iam_Policy extends Google_Collection
-{
-  protected $collection_key = 'bindings';
-  protected $bindingsType = 'Google_Service_Iam_Binding';
-  protected $bindingsDataType = 'array';
-  public $etag;
-  public $version;
+class Google_Service_Iam_Policy extends Google_Collection {
+    protected $collection_key   = 'bindings';
+    protected $bindingsType     = 'Google_Service_Iam_Binding';
+    protected $bindingsDataType = 'array';
+    public $etag;
+    public $version;
 
-  /**
-   * @param Google_Service_Iam_Binding
-   */
-  public function setBindings($bindings)
-  {
-    $this->bindings = $bindings;
-  }
-  /**
-   * @return Google_Service_Iam_Binding
-   */
-  public function getBindings()
-  {
-    return $this->bindings;
-  }
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  public function setVersion($version)
-  {
-    $this->version = $version;
-  }
-  public function getVersion()
-  {
-    return $this->version;
-  }
+    /**
+     * @param Google_Service_Iam_Binding
+     */
+    public function setBindings($bindings) {
+        $this->bindings = $bindings;
+    }
+
+    /**
+     * @return Google_Service_Iam_Binding
+     */
+    public function getBindings() {
+        return $this->bindings;
+    }
+
+    public function setEtag($etag) {
+        $this->etag = $etag;
+    }
+
+    public function getEtag() {
+        return $this->etag;
+    }
+
+    public function setVersion($version) {
+        $this->version = $version;
+    }
+
+    public function getVersion() {
+        return $this->version;
+    }
 }

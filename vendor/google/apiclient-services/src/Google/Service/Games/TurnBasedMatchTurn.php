@@ -15,67 +15,65 @@
  * the License.
  */
 
-class Google_Service_Games_TurnBasedMatchTurn extends Google_Collection
-{
-  protected $collection_key = 'results';
-  protected $dataType = 'Google_Service_Games_TurnBasedMatchDataRequest';
-  protected $dataDataType = '';
-  public $kind;
-  public $matchVersion;
-  public $pendingParticipantId;
-  protected $resultsType = 'Google_Service_Games_ParticipantResult';
-  protected $resultsDataType = 'array';
+class Google_Service_Games_TurnBasedMatchTurn extends Google_Collection {
+    protected $collection_key  = 'results';
+    protected $dataType        = 'Google_Service_Games_TurnBasedMatchDataRequest';
+    protected $dataDataType    = '';
+    public $kind;
+    public $matchVersion;
+    public $pendingParticipantId;
+    protected $resultsType     = 'Google_Service_Games_ParticipantResult';
+    protected $resultsDataType = 'array';
 
-  /**
-   * @param Google_Service_Games_TurnBasedMatchDataRequest
-   */
-  public function setData(Google_Service_Games_TurnBasedMatchDataRequest $data)
-  {
-    $this->data = $data;
-  }
-  /**
-   * @return Google_Service_Games_TurnBasedMatchDataRequest
-   */
-  public function getData()
-  {
-    return $this->data;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setMatchVersion($matchVersion)
-  {
-    $this->matchVersion = $matchVersion;
-  }
-  public function getMatchVersion()
-  {
-    return $this->matchVersion;
-  }
-  public function setPendingParticipantId($pendingParticipantId)
-  {
-    $this->pendingParticipantId = $pendingParticipantId;
-  }
-  public function getPendingParticipantId()
-  {
-    return $this->pendingParticipantId;
-  }
-  /**
-   * @param Google_Service_Games_ParticipantResult
-   */
-  public function setResults($results)
-  {
-    $this->results = $results;
-  }
-  /**
-   * @return Google_Service_Games_ParticipantResult
-   */
-  public function getResults()
-  {
-    return $this->results;
-  }
+    /**
+     * @param Google_Service_Games_TurnBasedMatchDataRequest
+     */
+    public function setData(Google_Service_Games_TurnBasedMatchDataRequest $data) {
+        $this->data = $data;
+    }
+
+    /**
+     * @return Google_Service_Games_TurnBasedMatchDataRequest
+     */
+    public function getData() {
+        return $this->data;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setMatchVersion($matchVersion) {
+        $this->matchVersion = $matchVersion;
+    }
+
+    public function getMatchVersion() {
+        return $this->matchVersion;
+    }
+
+    public function setPendingParticipantId($pendingParticipantId) {
+        $this->pendingParticipantId = $pendingParticipantId;
+    }
+
+    public function getPendingParticipantId() {
+        return $this->pendingParticipantId;
+    }
+
+    /**
+     * @param Google_Service_Games_ParticipantResult
+     */
+    public function setResults($results) {
+        $this->results = $results;
+    }
+
+    /**
+     * @return Google_Service_Games_ParticipantResult
+     */
+    public function getResults() {
+        return $this->results;
+    }
 }

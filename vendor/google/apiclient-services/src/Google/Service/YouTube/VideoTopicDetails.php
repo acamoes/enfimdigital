@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_YouTube_VideoTopicDetails extends Google_Collection
-{
-  protected $collection_key = 'topicIds';
-  public $relevantTopicIds;
-  public $topicCategories;
-  public $topicIds;
+class Google_Service_YouTube_VideoTopicDetails extends Google_Collection {
+    protected $collection_key = 'topicIds';
+    public $relevantTopicIds;
+    public $topicCategories;
+    public $topicIds;
 
-  public function setRelevantTopicIds($relevantTopicIds)
-  {
-    $this->relevantTopicIds = $relevantTopicIds;
-  }
-  public function getRelevantTopicIds()
-  {
-    return $this->relevantTopicIds;
-  }
-  public function setTopicCategories($topicCategories)
-  {
-    $this->topicCategories = $topicCategories;
-  }
-  public function getTopicCategories()
-  {
-    return $this->topicCategories;
-  }
-  public function setTopicIds($topicIds)
-  {
-    $this->topicIds = $topicIds;
-  }
-  public function getTopicIds()
-  {
-    return $this->topicIds;
-  }
+    public function setRelevantTopicIds($relevantTopicIds) {
+        $this->relevantTopicIds = $relevantTopicIds;
+    }
+
+    public function getRelevantTopicIds() {
+        return $this->relevantTopicIds;
+    }
+
+    public function setTopicCategories($topicCategories) {
+        $this->topicCategories = $topicCategories;
+    }
+
+    public function getTopicCategories() {
+        return $this->topicCategories;
+    }
+
+    public function setTopicIds($topicIds) {
+        $this->topicIds = $topicIds;
+    }
+
+    public function getTopicIds() {
+        return $this->topicIds;
+    }
 }

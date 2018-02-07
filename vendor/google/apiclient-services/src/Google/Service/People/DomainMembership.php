@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_People_DomainMembership extends Google_Model
-{
-  public $inViewerDomain;
+class Google_Service_People_DomainMembership extends Google_Model {
+    public $inViewerDomain;
 
-  public function setInViewerDomain($inViewerDomain)
-  {
-    $this->inViewerDomain = $inViewerDomain;
-  }
-  public function getInViewerDomain()
-  {
-    return $this->inViewerDomain;
-  }
+    public function setInViewerDomain($inViewerDomain) {
+        $this->inViewerDomain = $inViewerDomain;
+    }
+
+    public function getInViewerDomain() {
+        return $this->inViewerDomain;
+    }
 }

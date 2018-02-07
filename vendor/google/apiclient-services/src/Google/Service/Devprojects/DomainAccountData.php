@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Devprojects_DomainAccountData extends Google_Model
-{
-  protected $domainDataType = 'Google_Service_Devprojects_DomainData';
-  protected $domainDataDataType = '';
-  public $kind;
+class Google_Service_Devprojects_DomainAccountData extends Google_Model {
+    protected $domainDataType     = 'Google_Service_Devprojects_DomainData';
+    protected $domainDataDataType = '';
+    public $kind;
 
-  public function setDomainData(Google_Service_Devprojects_DomainData $domainData)
-  {
-    $this->domainData = $domainData;
-  }
-  public function getDomainData()
-  {
-    return $this->domainData;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setDomainData(Google_Service_Devprojects_DomainData $domainData) {
+        $this->domainData = $domainData;
+    }
+
+    public function getDomainData() {
+        return $this->domainData;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

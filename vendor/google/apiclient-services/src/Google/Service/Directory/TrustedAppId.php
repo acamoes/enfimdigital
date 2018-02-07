@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_Directory_TrustedAppId extends Google_Model
-{
-  public $androidPackageName;
-  public $certificateHashSHA1;
-  public $certificateHashSHA256;
-  public $etag;
-  public $kind;
+class Google_Service_Directory_TrustedAppId extends Google_Model {
+    public $androidPackageName;
+    public $certificateHashSHA1;
+    public $certificateHashSHA256;
+    public $etag;
+    public $kind;
 
-  public function setAndroidPackageName($androidPackageName)
-  {
-    $this->androidPackageName = $androidPackageName;
-  }
-  public function getAndroidPackageName()
-  {
-    return $this->androidPackageName;
-  }
-  public function setCertificateHashSHA1($certificateHashSHA1)
-  {
-    $this->certificateHashSHA1 = $certificateHashSHA1;
-  }
-  public function getCertificateHashSHA1()
-  {
-    return $this->certificateHashSHA1;
-  }
-  public function setCertificateHashSHA256($certificateHashSHA256)
-  {
-    $this->certificateHashSHA256 = $certificateHashSHA256;
-  }
-  public function getCertificateHashSHA256()
-  {
-    return $this->certificateHashSHA256;
-  }
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setAndroidPackageName($androidPackageName) {
+        $this->androidPackageName = $androidPackageName;
+    }
+
+    public function getAndroidPackageName() {
+        return $this->androidPackageName;
+    }
+
+    public function setCertificateHashSHA1($certificateHashSHA1) {
+        $this->certificateHashSHA1 = $certificateHashSHA1;
+    }
+
+    public function getCertificateHashSHA1() {
+        return $this->certificateHashSHA1;
+    }
+
+    public function setCertificateHashSHA256($certificateHashSHA256) {
+        $this->certificateHashSHA256 = $certificateHashSHA256;
+    }
+
+    public function getCertificateHashSHA256() {
+        return $this->certificateHashSHA256;
+    }
+
+    public function setEtag($etag) {
+        $this->etag = $etag;
+    }
+
+    public function getEtag() {
+        return $this->etag;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

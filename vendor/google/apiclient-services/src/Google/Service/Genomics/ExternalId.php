@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Genomics_ExternalId extends Google_Model
-{
-  public $id;
-  public $sourceName;
+class Google_Service_Genomics_ExternalId extends Google_Model {
+    public $id;
+    public $sourceName;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setSourceName($sourceName)
-  {
-    $this->sourceName = $sourceName;
-  }
-  public function getSourceName()
-  {
-    return $this->sourceName;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setSourceName($sourceName) {
+        $this->sourceName = $sourceName;
+    }
+
+    public function getSourceName() {
+        return $this->sourceName;
+    }
 }

@@ -23,25 +23,24 @@
  *   $i18nRegions = $youtubeService->i18nRegions;
  *  </code>
  */
-class Google_Service_YouTube_Resource_I18nRegions extends Google_Service_Resource
-{
-  /**
-   * Returns a list of content regions that the YouTube website supports.
-   * (i18nRegions.listI18nRegions)
-   *
-   * @param string $part The part parameter specifies the i18nRegion resource
-   * properties that the API response will include. Set the parameter value to
-   * snippet.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string hl The hl parameter specifies the language that should be
-   * used for text values in the API response.
-   * @return Google_Service_YouTube_I18nRegionListResponse
-   */
-  public function listI18nRegions($part, $optParams = array())
-  {
-    $params = array('part' => $part);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_YouTube_I18nRegionListResponse");
-  }
+class Google_Service_YouTube_Resource_I18nRegions extends Google_Service_Resource {
+
+    /**
+     * Returns a list of content regions that the YouTube website supports.
+     * (i18nRegions.listI18nRegions)
+     *
+     * @param string $part The part parameter specifies the i18nRegion resource
+     * properties that the API response will include. Set the parameter value to
+     * snippet.
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param string hl The hl parameter specifies the language that should be
+     * used for text values in the API response.
+     * @return Google_Service_YouTube_I18nRegionListResponse
+     */
+    public function listI18nRegions($part, $optParams = array()) {
+        $params = array('part' => $part);
+        $params = array_merge($params, $optParams);
+        return $this->call('list', array($params), "Google_Service_YouTube_I18nRegionListResponse");
+    }
 }

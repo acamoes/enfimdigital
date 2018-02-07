@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Translate_GetSupportedLanguagesRequest extends Google_Model
-{
-  public $target;
+class Google_Service_Translate_GetSupportedLanguagesRequest extends Google_Model {
+    public $target;
 
-  public function setTarget($target)
-  {
-    $this->target = $target;
-  }
-  public function getTarget()
-  {
-    return $this->target;
-  }
+    public function setTarget($target) {
+        $this->target = $target;
+    }
+
+    public function getTarget() {
+        return $this->target;
+    }
 }

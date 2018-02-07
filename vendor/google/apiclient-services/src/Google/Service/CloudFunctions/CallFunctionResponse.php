@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_CloudFunctions_CallFunctionResponse extends Google_Model
-{
-  public $error;
-  public $executionId;
-  public $result;
+class Google_Service_CloudFunctions_CallFunctionResponse extends Google_Model {
+    public $error;
+    public $executionId;
+    public $result;
 
-  public function setError($error)
-  {
-    $this->error = $error;
-  }
-  public function getError()
-  {
-    return $this->error;
-  }
-  public function setExecutionId($executionId)
-  {
-    $this->executionId = $executionId;
-  }
-  public function getExecutionId()
-  {
-    return $this->executionId;
-  }
-  public function setResult($result)
-  {
-    $this->result = $result;
-  }
-  public function getResult()
-  {
-    return $this->result;
-  }
+    public function setError($error) {
+        $this->error = $error;
+    }
+
+    public function getError() {
+        return $this->error;
+    }
+
+    public function setExecutionId($executionId) {
+        $this->executionId = $executionId;
+    }
+
+    public function getExecutionId() {
+        return $this->executionId;
+    }
+
+    public function setResult($result) {
+        $this->result = $result;
+    }
+
+    public function getResult() {
+        return $this->result;
+    }
 }

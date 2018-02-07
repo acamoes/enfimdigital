@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Games_RoomClientAddress extends Google_Model
-{
-  public $kind;
-  public $xmppAddress;
+class Google_Service_Games_RoomClientAddress extends Google_Model {
+    public $kind;
+    public $xmppAddress;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setXmppAddress($xmppAddress)
-  {
-    $this->xmppAddress = $xmppAddress;
-  }
-  public function getXmppAddress()
-  {
-    return $this->xmppAddress;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setXmppAddress($xmppAddress) {
+        $this->xmppAddress = $xmppAddress;
+    }
+
+    public function getXmppAddress() {
+        return $this->xmppAddress;
+    }
 }

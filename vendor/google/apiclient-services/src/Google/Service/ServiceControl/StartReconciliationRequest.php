@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_ServiceControl_StartReconciliationRequest extends Google_Model
-{
-  protected $reconciliationOperationType = 'Google_Service_ServiceControl_QuotaOperation';
-  protected $reconciliationOperationDataType = '';
-  public $serviceConfigId;
+class Google_Service_ServiceControl_StartReconciliationRequest extends Google_Model {
+    protected $reconciliationOperationType     = 'Google_Service_ServiceControl_QuotaOperation';
+    protected $reconciliationOperationDataType = '';
+    public $serviceConfigId;
 
-  /**
-   * @param Google_Service_ServiceControl_QuotaOperation
-   */
-  public function setReconciliationOperation(Google_Service_ServiceControl_QuotaOperation $reconciliationOperation)
-  {
-    $this->reconciliationOperation = $reconciliationOperation;
-  }
-  /**
-   * @return Google_Service_ServiceControl_QuotaOperation
-   */
-  public function getReconciliationOperation()
-  {
-    return $this->reconciliationOperation;
-  }
-  public function setServiceConfigId($serviceConfigId)
-  {
-    $this->serviceConfigId = $serviceConfigId;
-  }
-  public function getServiceConfigId()
-  {
-    return $this->serviceConfigId;
-  }
+    /**
+     * @param Google_Service_ServiceControl_QuotaOperation
+     */
+    public function setReconciliationOperation(Google_Service_ServiceControl_QuotaOperation $reconciliationOperation) {
+        $this->reconciliationOperation = $reconciliationOperation;
+    }
+
+    /**
+     * @return Google_Service_ServiceControl_QuotaOperation
+     */
+    public function getReconciliationOperation() {
+        return $this->reconciliationOperation;
+    }
+
+    public function setServiceConfigId($serviceConfigId) {
+        $this->serviceConfigId = $serviceConfigId;
+    }
+
+    public function getServiceConfigId() {
+        return $this->serviceConfigId;
+    }
 }

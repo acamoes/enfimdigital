@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchReferenceSetsResponse extends Google_Collection
-{
-  protected $collection_key = 'referenceSets';
-  public $nextPageToken;
-  protected $referenceSetsType = 'Google_Service_Genomics_ReferenceSet';
-  protected $referenceSetsDataType = 'array';
+class Google_Service_Genomics_SearchReferenceSetsResponse extends Google_Collection {
+    protected $collection_key        = 'referenceSets';
+    public $nextPageToken;
+    protected $referenceSetsType     = 'Google_Service_Genomics_ReferenceSet';
+    protected $referenceSetsDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Genomics_ReferenceSet
-   */
-  public function setReferenceSets($referenceSets)
-  {
-    $this->referenceSets = $referenceSets;
-  }
-  /**
-   * @return Google_Service_Genomics_ReferenceSet
-   */
-  public function getReferenceSets()
-  {
-    return $this->referenceSets;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Genomics_ReferenceSet
+     */
+    public function setReferenceSets($referenceSets) {
+        $this->referenceSets = $referenceSets;
+    }
+
+    /**
+     * @return Google_Service_Genomics_ReferenceSet
+     */
+    public function getReferenceSets() {
+        return $this->referenceSets;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Compute_MachineTypeScratchDisks extends Google_Model
-{
-  public $diskGb;
+class Google_Service_Compute_MachineTypeScratchDisks extends Google_Model {
+    public $diskGb;
 
-  public function setDiskGb($diskGb)
-  {
-    $this->diskGb = $diskGb;
-  }
-  public function getDiskGb()
-  {
-    return $this->diskGb;
-  }
+    public function setDiskGb($diskGb) {
+        $this->diskGb = $diskGb;
+    }
+
+    public function getDiskGb() {
+        return $this->diskGb;
+    }
 }

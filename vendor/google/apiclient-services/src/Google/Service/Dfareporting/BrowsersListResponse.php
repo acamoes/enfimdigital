@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_BrowsersListResponse extends Google_Collection
-{
-  protected $collection_key = 'browsers';
-  protected $browsersType = 'Google_Service_Dfareporting_Browser';
-  protected $browsersDataType = 'array';
-  public $kind;
+class Google_Service_Dfareporting_BrowsersListResponse extends Google_Collection {
+    protected $collection_key   = 'browsers';
+    protected $browsersType     = 'Google_Service_Dfareporting_Browser';
+    protected $browsersDataType = 'array';
+    public $kind;
 
-  /**
-   * @param Google_Service_Dfareporting_Browser
-   */
-  public function setBrowsers($browsers)
-  {
-    $this->browsers = $browsers;
-  }
-  /**
-   * @return Google_Service_Dfareporting_Browser
-   */
-  public function getBrowsers()
-  {
-    return $this->browsers;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    /**
+     * @param Google_Service_Dfareporting_Browser
+     */
+    public function setBrowsers($browsers) {
+        $this->browsers = $browsers;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_Browser
+     */
+    public function getBrowsers() {
+        return $this->browsers;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

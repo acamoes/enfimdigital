@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_OrganizationOwner extends Google_Model
-{
-  public $directoryCustomerId;
+class Google_Service_CloudResourceManager_OrganizationOwner extends Google_Model {
+    public $directoryCustomerId;
 
-  public function setDirectoryCustomerId($directoryCustomerId)
-  {
-    $this->directoryCustomerId = $directoryCustomerId;
-  }
-  public function getDirectoryCustomerId()
-  {
-    return $this->directoryCustomerId;
-  }
+    public function setDirectoryCustomerId($directoryCustomerId) {
+        $this->directoryCustomerId = $directoryCustomerId;
+    }
+
+    public function getDirectoryCustomerId() {
+        return $this->directoryCustomerId;
+    }
 }

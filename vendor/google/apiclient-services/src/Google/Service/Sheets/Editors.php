@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Sheets_Editors extends Google_Collection
-{
-  protected $collection_key = 'users';
-  public $domainUsersCanEdit;
-  public $groups;
-  public $users;
+class Google_Service_Sheets_Editors extends Google_Collection {
+    protected $collection_key = 'users';
+    public $domainUsersCanEdit;
+    public $groups;
+    public $users;
 
-  public function setDomainUsersCanEdit($domainUsersCanEdit)
-  {
-    $this->domainUsersCanEdit = $domainUsersCanEdit;
-  }
-  public function getDomainUsersCanEdit()
-  {
-    return $this->domainUsersCanEdit;
-  }
-  public function setGroups($groups)
-  {
-    $this->groups = $groups;
-  }
-  public function getGroups()
-  {
-    return $this->groups;
-  }
-  public function setUsers($users)
-  {
-    $this->users = $users;
-  }
-  public function getUsers()
-  {
-    return $this->users;
-  }
+    public function setDomainUsersCanEdit($domainUsersCanEdit) {
+        $this->domainUsersCanEdit = $domainUsersCanEdit;
+    }
+
+    public function getDomainUsersCanEdit() {
+        return $this->domainUsersCanEdit;
+    }
+
+    public function setGroups($groups) {
+        $this->groups = $groups;
+    }
+
+    public function getGroups() {
+        return $this->groups;
+    }
+
+    public function setUsers($users) {
+        $this->users = $users;
+    }
+
+    public function getUsers() {
+        return $this->users;
+    }
 }

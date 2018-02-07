@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_People_ContactGroupMembership extends Google_Model
-{
-  public $contactGroupId;
+class Google_Service_People_ContactGroupMembership extends Google_Model {
+    public $contactGroupId;
 
-  public function setContactGroupId($contactGroupId)
-  {
-    $this->contactGroupId = $contactGroupId;
-  }
-  public function getContactGroupId()
-  {
-    return $this->contactGroupId;
-  }
+    public function setContactGroupId($contactGroupId) {
+        $this->contactGroupId = $contactGroupId;
+    }
+
+    public function getContactGroupId() {
+        return $this->contactGroupId;
+    }
 }

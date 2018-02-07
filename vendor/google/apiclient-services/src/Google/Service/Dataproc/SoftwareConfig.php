@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataproc_SoftwareConfig extends Google_Model
-{
-  public $imageVersion;
-  public $properties;
+class Google_Service_Dataproc_SoftwareConfig extends Google_Model {
+    public $imageVersion;
+    public $properties;
 
-  public function setImageVersion($imageVersion)
-  {
-    $this->imageVersion = $imageVersion;
-  }
-  public function getImageVersion()
-  {
-    return $this->imageVersion;
-  }
-  public function setProperties($properties)
-  {
-    $this->properties = $properties;
-  }
-  public function getProperties()
-  {
-    return $this->properties;
-  }
+    public function setImageVersion($imageVersion) {
+        $this->imageVersion = $imageVersion;
+    }
+
+    public function getImageVersion() {
+        return $this->imageVersion;
+    }
+
+    public function setProperties($properties) {
+        $this->properties = $properties;
+    }
+
+    public function getProperties() {
+        return $this->properties;
+    }
 }

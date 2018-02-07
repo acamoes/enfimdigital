@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_OmnitureSettings extends Google_Model
-{
-  public $omnitureCostDataEnabled;
-  public $omnitureIntegrationEnabled;
+class Google_Service_Dfareporting_OmnitureSettings extends Google_Model {
+    public $omnitureCostDataEnabled;
+    public $omnitureIntegrationEnabled;
 
-  public function setOmnitureCostDataEnabled($omnitureCostDataEnabled)
-  {
-    $this->omnitureCostDataEnabled = $omnitureCostDataEnabled;
-  }
-  public function getOmnitureCostDataEnabled()
-  {
-    return $this->omnitureCostDataEnabled;
-  }
-  public function setOmnitureIntegrationEnabled($omnitureIntegrationEnabled)
-  {
-    $this->omnitureIntegrationEnabled = $omnitureIntegrationEnabled;
-  }
-  public function getOmnitureIntegrationEnabled()
-  {
-    return $this->omnitureIntegrationEnabled;
-  }
+    public function setOmnitureCostDataEnabled($omnitureCostDataEnabled) {
+        $this->omnitureCostDataEnabled = $omnitureCostDataEnabled;
+    }
+
+    public function getOmnitureCostDataEnabled() {
+        return $this->omnitureCostDataEnabled;
+    }
+
+    public function setOmnitureIntegrationEnabled($omnitureIntegrationEnabled) {
+        $this->omnitureIntegrationEnabled = $omnitureIntegrationEnabled;
+    }
+
+    public function getOmnitureIntegrationEnabled() {
+        return $this->omnitureIntegrationEnabled;
+    }
 }

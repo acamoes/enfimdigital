@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Cloudbilling_AggregationInfo extends Google_Model
-{
-  public $aggregationCount;
-  public $aggregationInterval;
-  public $aggregationLevel;
+class Google_Service_Cloudbilling_AggregationInfo extends Google_Model {
+    public $aggregationCount;
+    public $aggregationInterval;
+    public $aggregationLevel;
 
-  public function setAggregationCount($aggregationCount)
-  {
-    $this->aggregationCount = $aggregationCount;
-  }
-  public function getAggregationCount()
-  {
-    return $this->aggregationCount;
-  }
-  public function setAggregationInterval($aggregationInterval)
-  {
-    $this->aggregationInterval = $aggregationInterval;
-  }
-  public function getAggregationInterval()
-  {
-    return $this->aggregationInterval;
-  }
-  public function setAggregationLevel($aggregationLevel)
-  {
-    $this->aggregationLevel = $aggregationLevel;
-  }
-  public function getAggregationLevel()
-  {
-    return $this->aggregationLevel;
-  }
+    public function setAggregationCount($aggregationCount) {
+        $this->aggregationCount = $aggregationCount;
+    }
+
+    public function getAggregationCount() {
+        return $this->aggregationCount;
+    }
+
+    public function setAggregationInterval($aggregationInterval) {
+        $this->aggregationInterval = $aggregationInterval;
+    }
+
+    public function getAggregationInterval() {
+        return $this->aggregationInterval;
+    }
+
+    public function setAggregationLevel($aggregationLevel) {
+        $this->aggregationLevel = $aggregationLevel;
+    }
+
+    public function getAggregationLevel() {
+        return $this->aggregationLevel;
+    }
 }

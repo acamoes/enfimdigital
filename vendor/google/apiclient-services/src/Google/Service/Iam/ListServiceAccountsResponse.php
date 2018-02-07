@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Iam_ListServiceAccountsResponse extends Google_Collection
-{
-  protected $collection_key = 'accounts';
-  protected $accountsType = 'Google_Service_Iam_ServiceAccount';
-  protected $accountsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Iam_ListServiceAccountsResponse extends Google_Collection {
+    protected $collection_key   = 'accounts';
+    protected $accountsType     = 'Google_Service_Iam_ServiceAccount';
+    protected $accountsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Iam_ServiceAccount
-   */
-  public function setAccounts($accounts)
-  {
-    $this->accounts = $accounts;
-  }
-  /**
-   * @return Google_Service_Iam_ServiceAccount
-   */
-  public function getAccounts()
-  {
-    return $this->accounts;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Iam_ServiceAccount
+     */
+    public function setAccounts($accounts) {
+        $this->accounts = $accounts;
+    }
+
+    /**
+     * @return Google_Service_Iam_ServiceAccount
+     */
+    public function getAccounts() {
+        return $this->accounts;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

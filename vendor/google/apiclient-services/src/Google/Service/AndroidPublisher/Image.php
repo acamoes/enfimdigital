@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_Image extends Google_Model
-{
-  public $id;
-  public $sha1;
-  public $url;
+class Google_Service_AndroidPublisher_Image extends Google_Model {
+    public $id;
+    public $sha1;
+    public $url;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setSha1($sha1)
-  {
-    $this->sha1 = $sha1;
-  }
-  public function getSha1()
-  {
-    return $this->sha1;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setSha1($sha1) {
+        $this->sha1 = $sha1;
+    }
+
+    public function getSha1() {
+        return $this->sha1;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

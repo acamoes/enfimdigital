@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Translate_TranslationsResource extends Google_Model
-{
-  public $detectedSourceLanguage;
-  public $model;
-  public $translatedText;
+class Google_Service_Translate_TranslationsResource extends Google_Model {
+    public $detectedSourceLanguage;
+    public $model;
+    public $translatedText;
 
-  public function setDetectedSourceLanguage($detectedSourceLanguage)
-  {
-    $this->detectedSourceLanguage = $detectedSourceLanguage;
-  }
-  public function getDetectedSourceLanguage()
-  {
-    return $this->detectedSourceLanguage;
-  }
-  public function setModel($model)
-  {
-    $this->model = $model;
-  }
-  public function getModel()
-  {
-    return $this->model;
-  }
-  public function setTranslatedText($translatedText)
-  {
-    $this->translatedText = $translatedText;
-  }
-  public function getTranslatedText()
-  {
-    return $this->translatedText;
-  }
+    public function setDetectedSourceLanguage($detectedSourceLanguage) {
+        $this->detectedSourceLanguage = $detectedSourceLanguage;
+    }
+
+    public function getDetectedSourceLanguage() {
+        return $this->detectedSourceLanguage;
+    }
+
+    public function setModel($model) {
+        $this->model = $model;
+    }
+
+    public function getModel() {
+        return $this->model;
+    }
+
+    public function setTranslatedText($translatedText) {
+        $this->translatedText = $translatedText;
+    }
+
+    public function getTranslatedText() {
+        return $this->translatedText;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Devprojects_ProjectPlusPage extends Google_Model
-{
-  public $approved;
-  public $kind;
-  public $obfuscatedPageId;
+class Google_Service_Devprojects_ProjectPlusPage extends Google_Model {
+    public $approved;
+    public $kind;
+    public $obfuscatedPageId;
 
-  public function setApproved($approved)
-  {
-    $this->approved = $approved;
-  }
-  public function getApproved()
-  {
-    return $this->approved;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setObfuscatedPageId($obfuscatedPageId)
-  {
-    $this->obfuscatedPageId = $obfuscatedPageId;
-  }
-  public function getObfuscatedPageId()
-  {
-    return $this->obfuscatedPageId;
-  }
+    public function setApproved($approved) {
+        $this->approved = $approved;
+    }
+
+    public function getApproved() {
+        return $this->approved;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setObfuscatedPageId($obfuscatedPageId) {
+        $this->obfuscatedPageId = $obfuscatedPageId;
+    }
+
+    public function getObfuscatedPageId() {
+        return $this->obfuscatedPageId;
+    }
 }

@@ -15,58 +15,56 @@
  * the License.
  */
 
-class Google_Service_FirebaseRules_TestResult extends Google_Collection
-{
-  protected $collection_key = 'functionCalls';
-  public $debugMessages;
-  protected $errorPositionType = 'Google_Service_FirebaseRules_SourcePosition';
-  protected $errorPositionDataType = '';
-  protected $functionCallsType = 'Google_Service_FirebaseRules_FunctionCall';
-  protected $functionCallsDataType = 'array';
-  public $state;
+class Google_Service_FirebaseRules_TestResult extends Google_Collection {
+    protected $collection_key        = 'functionCalls';
+    public $debugMessages;
+    protected $errorPositionType     = 'Google_Service_FirebaseRules_SourcePosition';
+    protected $errorPositionDataType = '';
+    protected $functionCallsType     = 'Google_Service_FirebaseRules_FunctionCall';
+    protected $functionCallsDataType = 'array';
+    public $state;
 
-  public function setDebugMessages($debugMessages)
-  {
-    $this->debugMessages = $debugMessages;
-  }
-  public function getDebugMessages()
-  {
-    return $this->debugMessages;
-  }
-  /**
-   * @param Google_Service_FirebaseRules_SourcePosition
-   */
-  public function setErrorPosition(Google_Service_FirebaseRules_SourcePosition $errorPosition)
-  {
-    $this->errorPosition = $errorPosition;
-  }
-  /**
-   * @return Google_Service_FirebaseRules_SourcePosition
-   */
-  public function getErrorPosition()
-  {
-    return $this->errorPosition;
-  }
-  /**
-   * @param Google_Service_FirebaseRules_FunctionCall
-   */
-  public function setFunctionCalls($functionCalls)
-  {
-    $this->functionCalls = $functionCalls;
-  }
-  /**
-   * @return Google_Service_FirebaseRules_FunctionCall
-   */
-  public function getFunctionCalls()
-  {
-    return $this->functionCalls;
-  }
-  public function setState($state)
-  {
-    $this->state = $state;
-  }
-  public function getState()
-  {
-    return $this->state;
-  }
+    public function setDebugMessages($debugMessages) {
+        $this->debugMessages = $debugMessages;
+    }
+
+    public function getDebugMessages() {
+        return $this->debugMessages;
+    }
+
+    /**
+     * @param Google_Service_FirebaseRules_SourcePosition
+     */
+    public function setErrorPosition(Google_Service_FirebaseRules_SourcePosition $errorPosition) {
+        $this->errorPosition = $errorPosition;
+    }
+
+    /**
+     * @return Google_Service_FirebaseRules_SourcePosition
+     */
+    public function getErrorPosition() {
+        return $this->errorPosition;
+    }
+
+    /**
+     * @param Google_Service_FirebaseRules_FunctionCall
+     */
+    public function setFunctionCalls($functionCalls) {
+        $this->functionCalls = $functionCalls;
+    }
+
+    /**
+     * @return Google_Service_FirebaseRules_FunctionCall
+     */
+    public function getFunctionCalls() {
+        return $this->functionCalls;
+    }
+
+    public function setState($state) {
+        $this->state = $state;
+    }
+
+    public function getState() {
+        return $this->state;
+    }
 }

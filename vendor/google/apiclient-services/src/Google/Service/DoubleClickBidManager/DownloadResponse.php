@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_DoubleClickBidManager_DownloadResponse extends Google_Model
-{
-  public $adGroups;
-  public $ads;
-  public $insertionOrders;
-  public $lineItems;
+class Google_Service_DoubleClickBidManager_DownloadResponse extends Google_Model {
+    public $adGroups;
+    public $ads;
+    public $insertionOrders;
+    public $lineItems;
 
-  public function setAdGroups($adGroups)
-  {
-    $this->adGroups = $adGroups;
-  }
-  public function getAdGroups()
-  {
-    return $this->adGroups;
-  }
-  public function setAds($ads)
-  {
-    $this->ads = $ads;
-  }
-  public function getAds()
-  {
-    return $this->ads;
-  }
-  public function setInsertionOrders($insertionOrders)
-  {
-    $this->insertionOrders = $insertionOrders;
-  }
-  public function getInsertionOrders()
-  {
-    return $this->insertionOrders;
-  }
-  public function setLineItems($lineItems)
-  {
-    $this->lineItems = $lineItems;
-  }
-  public function getLineItems()
-  {
-    return $this->lineItems;
-  }
+    public function setAdGroups($adGroups) {
+        $this->adGroups = $adGroups;
+    }
+
+    public function getAdGroups() {
+        return $this->adGroups;
+    }
+
+    public function setAds($ads) {
+        $this->ads = $ads;
+    }
+
+    public function getAds() {
+        return $this->ads;
+    }
+
+    public function setInsertionOrders($insertionOrders) {
+        $this->insertionOrders = $insertionOrders;
+    }
+
+    public function getInsertionOrders() {
+        return $this->insertionOrders;
+    }
+
+    public function setLineItems($lineItems) {
+        $this->lineItems = $lineItems;
+    }
+
+    public function getLineItems() {
+        return $this->lineItems;
+    }
 }

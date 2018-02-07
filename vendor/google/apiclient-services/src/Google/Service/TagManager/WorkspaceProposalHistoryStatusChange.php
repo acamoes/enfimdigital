@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_TagManager_WorkspaceProposalHistoryStatusChange extends Google_Model
-{
-  public $newStatus;
-  public $oldStatus;
+class Google_Service_TagManager_WorkspaceProposalHistoryStatusChange extends Google_Model {
+    public $newStatus;
+    public $oldStatus;
 
-  public function setNewStatus($newStatus)
-  {
-    $this->newStatus = $newStatus;
-  }
-  public function getNewStatus()
-  {
-    return $this->newStatus;
-  }
-  public function setOldStatus($oldStatus)
-  {
-    $this->oldStatus = $oldStatus;
-  }
-  public function getOldStatus()
-  {
-    return $this->oldStatus;
-  }
+    public function setNewStatus($newStatus) {
+        $this->newStatus = $newStatus;
+    }
+
+    public function getNewStatus() {
+        return $this->newStatus;
+    }
+
+    public function setOldStatus($oldStatus) {
+        $this->oldStatus = $oldStatus;
+    }
+
+    public function getOldStatus() {
+        return $this->oldStatus;
+    }
 }

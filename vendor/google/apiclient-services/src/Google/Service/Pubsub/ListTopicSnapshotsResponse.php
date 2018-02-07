@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Pubsub_ListTopicSnapshotsResponse extends Google_Collection
-{
-  protected $collection_key = 'snapshots';
-  public $nextPageToken;
-  public $snapshots;
+class Google_Service_Pubsub_ListTopicSnapshotsResponse extends Google_Collection {
+    protected $collection_key = 'snapshots';
+    public $nextPageToken;
+    public $snapshots;
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setSnapshots($snapshots)
-  {
-    $this->snapshots = $snapshots;
-  }
-  public function getSnapshots()
-  {
-    return $this->snapshots;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    public function setSnapshots($snapshots) {
+        $this->snapshots = $snapshots;
+    }
+
+    public function getSnapshots() {
+        return $this->snapshots;
+    }
 }

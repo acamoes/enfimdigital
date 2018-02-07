@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_ListLiensResponse extends Google_Collection
-{
-  protected $collection_key = 'liens';
-  protected $liensType = 'Google_Service_CloudResourceManager_Lien';
-  protected $liensDataType = 'array';
-  public $nextPageToken;
+class Google_Service_CloudResourceManager_ListLiensResponse extends Google_Collection {
+    protected $collection_key = 'liens';
+    protected $liensType      = 'Google_Service_CloudResourceManager_Lien';
+    protected $liensDataType  = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_CloudResourceManager_Lien
-   */
-  public function setLiens($liens)
-  {
-    $this->liens = $liens;
-  }
-  /**
-   * @return Google_Service_CloudResourceManager_Lien
-   */
-  public function getLiens()
-  {
-    return $this->liens;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_CloudResourceManager_Lien
+     */
+    public function setLiens($liens) {
+        $this->liens = $liens;
+    }
+
+    /**
+     * @return Google_Service_CloudResourceManager_Lien
+     */
+    public function getLiens() {
+        return $this->liens;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

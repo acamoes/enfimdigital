@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Proximitybeacon_ListBeaconsResponse extends Google_Collection
-{
-  protected $collection_key = 'beacons';
-  protected $beaconsType = 'Google_Service_Proximitybeacon_Beacon';
-  protected $beaconsDataType = 'array';
-  public $nextPageToken;
-  public $totalCount;
+class Google_Service_Proximitybeacon_ListBeaconsResponse extends Google_Collection {
+    protected $collection_key  = 'beacons';
+    protected $beaconsType     = 'Google_Service_Proximitybeacon_Beacon';
+    protected $beaconsDataType = 'array';
+    public $nextPageToken;
+    public $totalCount;
 
-  /**
-   * @param Google_Service_Proximitybeacon_Beacon
-   */
-  public function setBeacons($beacons)
-  {
-    $this->beacons = $beacons;
-  }
-  /**
-   * @return Google_Service_Proximitybeacon_Beacon
-   */
-  public function getBeacons()
-  {
-    return $this->beacons;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setTotalCount($totalCount)
-  {
-    $this->totalCount = $totalCount;
-  }
-  public function getTotalCount()
-  {
-    return $this->totalCount;
-  }
+    /**
+     * @param Google_Service_Proximitybeacon_Beacon
+     */
+    public function setBeacons($beacons) {
+        $this->beacons = $beacons;
+    }
+
+    /**
+     * @return Google_Service_Proximitybeacon_Beacon
+     */
+    public function getBeacons() {
+        return $this->beacons;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    public function setTotalCount($totalCount) {
+        $this->totalCount = $totalCount;
+    }
+
+    public function getTotalCount() {
+        return $this->totalCount;
+    }
 }

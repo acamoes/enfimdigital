@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_GetOrderNotesResponse extends Google_Collection
-{
-  protected $collection_key = 'notes';
-  protected $notesType = 'Google_Service_AdExchangeBuyer_MarketplaceNote';
-  protected $notesDataType = 'array';
+class Google_Service_AdExchangeBuyer_GetOrderNotesResponse extends Google_Collection {
+    protected $collection_key = 'notes';
+    protected $notesType      = 'Google_Service_AdExchangeBuyer_MarketplaceNote';
+    protected $notesDataType  = 'array';
 
-  /**
-   * @param Google_Service_AdExchangeBuyer_MarketplaceNote
-   */
-  public function setNotes($notes)
-  {
-    $this->notes = $notes;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyer_MarketplaceNote
-   */
-  public function getNotes()
-  {
-    return $this->notes;
-  }
+    /**
+     * @param Google_Service_AdExchangeBuyer_MarketplaceNote
+     */
+    public function setNotes($notes) {
+        $this->notes = $notes;
+    }
+
+    /**
+     * @return Google_Service_AdExchangeBuyer_MarketplaceNote
+     */
+    public function getNotes() {
+        return $this->notes;
+    }
 }

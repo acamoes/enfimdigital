@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_Genomics_Entry extends Google_Model
-{
-  protected $annotationType = 'Google_Service_Genomics_Annotation';
-  protected $annotationDataType = '';
-  protected $statusType = 'Google_Service_Genomics_Status';
-  protected $statusDataType = '';
+class Google_Service_Genomics_Entry extends Google_Model {
+    protected $annotationType     = 'Google_Service_Genomics_Annotation';
+    protected $annotationDataType = '';
+    protected $statusType         = 'Google_Service_Genomics_Status';
+    protected $statusDataType     = '';
 
-  /**
-   * @param Google_Service_Genomics_Annotation
-   */
-  public function setAnnotation(Google_Service_Genomics_Annotation $annotation)
-  {
-    $this->annotation = $annotation;
-  }
-  /**
-   * @return Google_Service_Genomics_Annotation
-   */
-  public function getAnnotation()
-  {
-    return $this->annotation;
-  }
-  /**
-   * @param Google_Service_Genomics_Status
-   */
-  public function setStatus(Google_Service_Genomics_Status $status)
-  {
-    $this->status = $status;
-  }
-  /**
-   * @return Google_Service_Genomics_Status
-   */
-  public function getStatus()
-  {
-    return $this->status;
-  }
+    /**
+     * @param Google_Service_Genomics_Annotation
+     */
+    public function setAnnotation(Google_Service_Genomics_Annotation $annotation) {
+        $this->annotation = $annotation;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Annotation
+     */
+    public function getAnnotation() {
+        return $this->annotation;
+    }
+
+    /**
+     * @param Google_Service_Genomics_Status
+     */
+    public function setStatus(Google_Service_Genomics_Status $status) {
+        $this->status = $status;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Status
+     */
+    public function getStatus() {
+        return $this->status;
+    }
 }

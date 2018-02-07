@@ -15,78 +15,76 @@
  * the License.
  */
 
-class Google_Service_Genomics_VariantAnnotation extends Google_Collection
-{
-  protected $collection_key = 'transcriptIds';
-  public $alternateBases;
-  public $clinicalSignificance;
-  protected $conditionsType = 'Google_Service_Genomics_ClinicalCondition';
-  protected $conditionsDataType = 'array';
-  public $effect;
-  public $geneId;
-  public $transcriptIds;
-  public $type;
+class Google_Service_Genomics_VariantAnnotation extends Google_Collection {
+    protected $collection_key     = 'transcriptIds';
+    public $alternateBases;
+    public $clinicalSignificance;
+    protected $conditionsType     = 'Google_Service_Genomics_ClinicalCondition';
+    protected $conditionsDataType = 'array';
+    public $effect;
+    public $geneId;
+    public $transcriptIds;
+    public $type;
 
-  public function setAlternateBases($alternateBases)
-  {
-    $this->alternateBases = $alternateBases;
-  }
-  public function getAlternateBases()
-  {
-    return $this->alternateBases;
-  }
-  public function setClinicalSignificance($clinicalSignificance)
-  {
-    $this->clinicalSignificance = $clinicalSignificance;
-  }
-  public function getClinicalSignificance()
-  {
-    return $this->clinicalSignificance;
-  }
-  /**
-   * @param Google_Service_Genomics_ClinicalCondition
-   */
-  public function setConditions($conditions)
-  {
-    $this->conditions = $conditions;
-  }
-  /**
-   * @return Google_Service_Genomics_ClinicalCondition
-   */
-  public function getConditions()
-  {
-    return $this->conditions;
-  }
-  public function setEffect($effect)
-  {
-    $this->effect = $effect;
-  }
-  public function getEffect()
-  {
-    return $this->effect;
-  }
-  public function setGeneId($geneId)
-  {
-    $this->geneId = $geneId;
-  }
-  public function getGeneId()
-  {
-    return $this->geneId;
-  }
-  public function setTranscriptIds($transcriptIds)
-  {
-    $this->transcriptIds = $transcriptIds;
-  }
-  public function getTranscriptIds()
-  {
-    return $this->transcriptIds;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setAlternateBases($alternateBases) {
+        $this->alternateBases = $alternateBases;
+    }
+
+    public function getAlternateBases() {
+        return $this->alternateBases;
+    }
+
+    public function setClinicalSignificance($clinicalSignificance) {
+        $this->clinicalSignificance = $clinicalSignificance;
+    }
+
+    public function getClinicalSignificance() {
+        return $this->clinicalSignificance;
+    }
+
+    /**
+     * @param Google_Service_Genomics_ClinicalCondition
+     */
+    public function setConditions($conditions) {
+        $this->conditions = $conditions;
+    }
+
+    /**
+     * @return Google_Service_Genomics_ClinicalCondition
+     */
+    public function getConditions() {
+        return $this->conditions;
+    }
+
+    public function setEffect($effect) {
+        $this->effect = $effect;
+    }
+
+    public function getEffect() {
+        return $this->effect;
+    }
+
+    public function setGeneId($geneId) {
+        $this->geneId = $geneId;
+    }
+
+    public function getGeneId() {
+        return $this->geneId;
+    }
+
+    public function setTranscriptIds($transcriptIds) {
+        $this->transcriptIds = $transcriptIds;
+    }
+
+    public function getTranscriptIds() {
+        return $this->transcriptIds;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

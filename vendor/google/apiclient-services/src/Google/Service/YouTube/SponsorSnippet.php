@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_YouTube_SponsorSnippet extends Google_Model
-{
-  public $channelId;
-  protected $sponsorDetailsType = 'Google_Service_YouTube_ChannelProfileDetails';
-  protected $sponsorDetailsDataType = '';
-  public $sponsorSince;
+class Google_Service_YouTube_SponsorSnippet extends Google_Model {
+    public $channelId;
+    protected $sponsorDetailsType     = 'Google_Service_YouTube_ChannelProfileDetails';
+    protected $sponsorDetailsDataType = '';
+    public $sponsorSince;
 
-  public function setChannelId($channelId)
-  {
-    $this->channelId = $channelId;
-  }
-  public function getChannelId()
-  {
-    return $this->channelId;
-  }
-  /**
-   * @param Google_Service_YouTube_ChannelProfileDetails
-   */
-  public function setSponsorDetails(Google_Service_YouTube_ChannelProfileDetails $sponsorDetails)
-  {
-    $this->sponsorDetails = $sponsorDetails;
-  }
-  /**
-   * @return Google_Service_YouTube_ChannelProfileDetails
-   */
-  public function getSponsorDetails()
-  {
-    return $this->sponsorDetails;
-  }
-  public function setSponsorSince($sponsorSince)
-  {
-    $this->sponsorSince = $sponsorSince;
-  }
-  public function getSponsorSince()
-  {
-    return $this->sponsorSince;
-  }
+    public function setChannelId($channelId) {
+        $this->channelId = $channelId;
+    }
+
+    public function getChannelId() {
+        return $this->channelId;
+    }
+
+    /**
+     * @param Google_Service_YouTube_ChannelProfileDetails
+     */
+    public function setSponsorDetails(Google_Service_YouTube_ChannelProfileDetails $sponsorDetails) {
+        $this->sponsorDetails = $sponsorDetails;
+    }
+
+    /**
+     * @return Google_Service_YouTube_ChannelProfileDetails
+     */
+    public function getSponsorDetails() {
+        return $this->sponsorDetails;
+    }
+
+    public function setSponsorSince($sponsorSince) {
+        $this->sponsorSince = $sponsorSince;
+    }
+
+    public function getSponsorSince() {
+        return $this->sponsorSince;
+    }
 }

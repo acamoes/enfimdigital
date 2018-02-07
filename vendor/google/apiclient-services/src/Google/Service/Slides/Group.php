@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Slides_Group extends Google_Collection
-{
-  protected $collection_key = 'children';
-  protected $childrenType = 'Google_Service_Slides_PageElement';
-  protected $childrenDataType = 'array';
+class Google_Service_Slides_Group extends Google_Collection {
+    protected $collection_key   = 'children';
+    protected $childrenType     = 'Google_Service_Slides_PageElement';
+    protected $childrenDataType = 'array';
 
-  /**
-   * @param Google_Service_Slides_PageElement
-   */
-  public function setChildren($children)
-  {
-    $this->children = $children;
-  }
-  /**
-   * @return Google_Service_Slides_PageElement
-   */
-  public function getChildren()
-  {
-    return $this->children;
-  }
+    /**
+     * @param Google_Service_Slides_PageElement
+     */
+    public function setChildren($children) {
+        $this->children = $children;
+    }
+
+    /**
+     * @return Google_Service_Slides_PageElement
+     */
+    public function getChildren() {
+        return $this->children;
+    }
 }

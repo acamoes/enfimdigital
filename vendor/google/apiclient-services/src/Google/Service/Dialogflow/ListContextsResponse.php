@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_ListContextsResponse extends Google_Collection
-{
-  protected $collection_key = 'contexts';
-  protected $contextsType = 'Google_Service_Dialogflow_Context';
-  protected $contextsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Dialogflow_ListContextsResponse extends Google_Collection {
+    protected $collection_key   = 'contexts';
+    protected $contextsType     = 'Google_Service_Dialogflow_Context';
+    protected $contextsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Dialogflow_Context
-   */
-  public function setContexts($contexts)
-  {
-    $this->contexts = $contexts;
-  }
-  /**
-   * @return Google_Service_Dialogflow_Context
-   */
-  public function getContexts()
-  {
-    return $this->contexts;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Dialogflow_Context
+     */
+    public function setContexts($contexts) {
+        $this->contexts = $contexts;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_Context
+     */
+    public function getContexts() {
+        return $this->contexts;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

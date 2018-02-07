@@ -15,58 +15,56 @@
  * the License.
  */
 
-class Google_Service_ServiceControl_ReleaseQuotaResponse extends Google_Collection
-{
-  protected $collection_key = 'releaseErrors';
-  public $operationId;
-  protected $quotaMetricsType = 'Google_Service_ServiceControl_MetricValueSet';
-  protected $quotaMetricsDataType = 'array';
-  protected $releaseErrorsType = 'Google_Service_ServiceControl_QuotaError';
-  protected $releaseErrorsDataType = 'array';
-  public $serviceConfigId;
+class Google_Service_ServiceControl_ReleaseQuotaResponse extends Google_Collection {
+    protected $collection_key        = 'releaseErrors';
+    public $operationId;
+    protected $quotaMetricsType      = 'Google_Service_ServiceControl_MetricValueSet';
+    protected $quotaMetricsDataType  = 'array';
+    protected $releaseErrorsType     = 'Google_Service_ServiceControl_QuotaError';
+    protected $releaseErrorsDataType = 'array';
+    public $serviceConfigId;
 
-  public function setOperationId($operationId)
-  {
-    $this->operationId = $operationId;
-  }
-  public function getOperationId()
-  {
-    return $this->operationId;
-  }
-  /**
-   * @param Google_Service_ServiceControl_MetricValueSet
-   */
-  public function setQuotaMetrics($quotaMetrics)
-  {
-    $this->quotaMetrics = $quotaMetrics;
-  }
-  /**
-   * @return Google_Service_ServiceControl_MetricValueSet
-   */
-  public function getQuotaMetrics()
-  {
-    return $this->quotaMetrics;
-  }
-  /**
-   * @param Google_Service_ServiceControl_QuotaError
-   */
-  public function setReleaseErrors($releaseErrors)
-  {
-    $this->releaseErrors = $releaseErrors;
-  }
-  /**
-   * @return Google_Service_ServiceControl_QuotaError
-   */
-  public function getReleaseErrors()
-  {
-    return $this->releaseErrors;
-  }
-  public function setServiceConfigId($serviceConfigId)
-  {
-    $this->serviceConfigId = $serviceConfigId;
-  }
-  public function getServiceConfigId()
-  {
-    return $this->serviceConfigId;
-  }
+    public function setOperationId($operationId) {
+        $this->operationId = $operationId;
+    }
+
+    public function getOperationId() {
+        return $this->operationId;
+    }
+
+    /**
+     * @param Google_Service_ServiceControl_MetricValueSet
+     */
+    public function setQuotaMetrics($quotaMetrics) {
+        $this->quotaMetrics = $quotaMetrics;
+    }
+
+    /**
+     * @return Google_Service_ServiceControl_MetricValueSet
+     */
+    public function getQuotaMetrics() {
+        return $this->quotaMetrics;
+    }
+
+    /**
+     * @param Google_Service_ServiceControl_QuotaError
+     */
+    public function setReleaseErrors($releaseErrors) {
+        $this->releaseErrors = $releaseErrors;
+    }
+
+    /**
+     * @return Google_Service_ServiceControl_QuotaError
+     */
+    public function getReleaseErrors() {
+        return $this->releaseErrors;
+    }
+
+    public function setServiceConfigId($serviceConfigId) {
+        $this->serviceConfigId = $serviceConfigId;
+    }
+
+    public function getServiceConfigId() {
+        return $this->serviceConfigId;
+    }
 }

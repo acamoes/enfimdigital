@@ -15,40 +15,38 @@
  * the License.
  */
 
-class Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocks extends Google_Collection
-{
-  protected $collection_key = 'urls';
-  protected $headerType = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2';
-  protected $headerDataType = '';
-  protected $urlsType = 'Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocksUrls';
-  protected $urlsDataType = 'array';
+class Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocks extends Google_Collection {
+    protected $collection_key = 'urls';
+    protected $headerType     = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2';
+    protected $headerDataType = '';
+    protected $urlsType       = 'Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocksUrls';
+    protected $urlsDataType   = 'array';
 
-  /**
-   * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
-   */
-  public function setHeader(Google_Service_Pagespeedonline_PagespeedApiFormatStringV2 $header)
-  {
-    $this->header = $header;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
-   */
-  public function getHeader()
-  {
-    return $this->header;
-  }
-  /**
-   * @param Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocksUrls
-   */
-  public function setUrls($urls)
-  {
-    $this->urls = $urls;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocksUrls
-   */
-  public function getUrls()
-  {
-    return $this->urls;
-  }
+    /**
+     * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
+     */
+    public function setHeader(Google_Service_Pagespeedonline_PagespeedApiFormatStringV2 $header) {
+        $this->header = $header;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
+     */
+    public function getHeader() {
+        return $this->header;
+    }
+
+    /**
+     * @param Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocksUrls
+     */
+    public function setUrls($urls) {
+        $this->urls = $urls;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocksUrls
+     */
+    public function getUrls() {
+        return $this->urls;
+    }
 }

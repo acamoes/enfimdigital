@@ -23,29 +23,28 @@
  *   $urlcrawlerrorscounts = $webmastersService->urlcrawlerrorscounts;
  *  </code>
  */
-class Google_Service_Webmasters_Resource_Urlcrawlerrorscounts extends Google_Service_Resource
-{
-  /**
-   * Retrieves a time series of the number of URL crawl errors per error category
-   * and platform. (urlcrawlerrorscounts.query)
-   *
-   * @param string $siteUrl The site's URL, including protocol. For example:
-   * http://www.example.com/
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string category The crawl error category. For example:
-   * serverError. If not specified, returns results for all categories.
-   * @opt_param bool latestCountsOnly If true, returns only the latest crawl error
-   * counts.
-   * @opt_param string platform The user agent type (platform) that made the
-   * request. For example: web. If not specified, returns results for all
-   * platforms.
-   * @return Google_Service_Webmasters_UrlCrawlErrorsCountsQueryResponse
-   */
-  public function query($siteUrl, $optParams = array())
-  {
-    $params = array('siteUrl' => $siteUrl);
-    $params = array_merge($params, $optParams);
-    return $this->call('query', array($params), "Google_Service_Webmasters_UrlCrawlErrorsCountsQueryResponse");
-  }
+class Google_Service_Webmasters_Resource_Urlcrawlerrorscounts extends Google_Service_Resource {
+
+    /**
+     * Retrieves a time series of the number of URL crawl errors per error category
+     * and platform. (urlcrawlerrorscounts.query)
+     *
+     * @param string $siteUrl The site's URL, including protocol. For example:
+     * http://www.example.com/
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param string category The crawl error category. For example:
+     * serverError. If not specified, returns results for all categories.
+     * @opt_param bool latestCountsOnly If true, returns only the latest crawl error
+     * counts.
+     * @opt_param string platform The user agent type (platform) that made the
+     * request. For example: web. If not specified, returns results for all
+     * platforms.
+     * @return Google_Service_Webmasters_UrlCrawlErrorsCountsQueryResponse
+     */
+    public function query($siteUrl, $optParams = array()) {
+        $params = array('siteUrl' => $siteUrl);
+        $params = array_merge($params, $optParams);
+        return $this->call('query', array($params), "Google_Service_Webmasters_UrlCrawlErrorsCountsQueryResponse");
+    }
 }

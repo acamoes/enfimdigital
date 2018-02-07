@@ -15,27 +15,25 @@
  * the License.
  */
 
-class Google_Service_Playmoviespartner_ListAvailsResponse extends Google_Collection
-{
-  protected $collection_key = 'avails';
-  protected $availsType = 'Google_Service_Playmoviespartner_Avail';
-  protected $availsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Playmoviespartner_ListAvailsResponse extends Google_Collection {
+    protected $collection_key = 'avails';
+    protected $availsType     = 'Google_Service_Playmoviespartner_Avail';
+    protected $availsDataType = 'array';
+    public $nextPageToken;
 
-  public function setAvails($avails)
-  {
-    $this->avails = $avails;
-  }
-  public function getAvails()
-  {
-    return $this->avails;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    public function setAvails($avails) {
+        $this->avails = $avails;
+    }
+
+    public function getAvails() {
+        return $this->avails;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

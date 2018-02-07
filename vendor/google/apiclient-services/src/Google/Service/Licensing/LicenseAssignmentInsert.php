@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Licensing_LicenseAssignmentInsert extends Google_Model
-{
-  public $userId;
+class Google_Service_Licensing_LicenseAssignmentInsert extends Google_Model {
+    public $userId;
 
-  public function setUserId($userId)
-  {
-    $this->userId = $userId;
-  }
-  public function getUserId()
-  {
-    return $this->userId;
-  }
+    public function setUserId($userId) {
+        $this->userId = $userId;
+    }
+
+    public function getUserId() {
+        return $this->userId;
+    }
 }

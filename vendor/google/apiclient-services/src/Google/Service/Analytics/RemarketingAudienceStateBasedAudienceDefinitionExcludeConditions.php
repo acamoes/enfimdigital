@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Analytics_RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions extends Google_Model
-{
-  public $exclusionDuration;
-  public $segment;
+class Google_Service_Analytics_RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions extends Google_Model {
+    public $exclusionDuration;
+    public $segment;
 
-  public function setExclusionDuration($exclusionDuration)
-  {
-    $this->exclusionDuration = $exclusionDuration;
-  }
-  public function getExclusionDuration()
-  {
-    return $this->exclusionDuration;
-  }
-  public function setSegment($segment)
-  {
-    $this->segment = $segment;
-  }
-  public function getSegment()
-  {
-    return $this->segment;
-  }
+    public function setExclusionDuration($exclusionDuration) {
+        $this->exclusionDuration = $exclusionDuration;
+    }
+
+    public function getExclusionDuration() {
+        return $this->exclusionDuration;
+    }
+
+    public function setSegment($segment) {
+        $this->segment = $segment;
+    }
+
+    public function getSegment() {
+        return $this->segment;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_FloodlightActivityDynamicTag extends Google_Model
-{
-  public $id;
-  public $name;
-  public $tag;
+class Google_Service_Dfareporting_FloodlightActivityDynamicTag extends Google_Model {
+    public $id;
+    public $name;
+    public $tag;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setTag($tag)
-  {
-    $this->tag = $tag;
-  }
-  public function getTag()
-  {
-    return $this->tag;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setTag($tag) {
+        $this->tag = $tag;
+    }
+
+    public function getTag() {
+        return $this->tag;
+    }
 }

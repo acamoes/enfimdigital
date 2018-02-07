@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CloudTasks_ListQueuesResponse extends Google_Collection
-{
-  protected $collection_key = 'queues';
-  public $nextPageToken;
-  protected $queuesType = 'Google_Service_CloudTasks_Queue';
-  protected $queuesDataType = 'array';
+class Google_Service_CloudTasks_ListQueuesResponse extends Google_Collection {
+    protected $collection_key = 'queues';
+    public $nextPageToken;
+    protected $queuesType     = 'Google_Service_CloudTasks_Queue';
+    protected $queuesDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_CloudTasks_Queue
-   */
-  public function setQueues($queues)
-  {
-    $this->queues = $queues;
-  }
-  /**
-   * @return Google_Service_CloudTasks_Queue
-   */
-  public function getQueues()
-  {
-    return $this->queues;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_CloudTasks_Queue
+     */
+    public function setQueues($queues) {
+        $this->queues = $queues;
+    }
+
+    /**
+     * @return Google_Service_CloudTasks_Queue
+     */
+    public function getQueues() {
+        return $this->queues;
+    }
 }

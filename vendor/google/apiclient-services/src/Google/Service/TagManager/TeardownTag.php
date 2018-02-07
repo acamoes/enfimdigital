@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_TagManager_TeardownTag extends Google_Model
-{
-  public $stopTeardownOnFailure;
-  public $tagName;
+class Google_Service_TagManager_TeardownTag extends Google_Model {
+    public $stopTeardownOnFailure;
+    public $tagName;
 
-  public function setStopTeardownOnFailure($stopTeardownOnFailure)
-  {
-    $this->stopTeardownOnFailure = $stopTeardownOnFailure;
-  }
-  public function getStopTeardownOnFailure()
-  {
-    return $this->stopTeardownOnFailure;
-  }
-  public function setTagName($tagName)
-  {
-    $this->tagName = $tagName;
-  }
-  public function getTagName()
-  {
-    return $this->tagName;
-  }
+    public function setStopTeardownOnFailure($stopTeardownOnFailure) {
+        $this->stopTeardownOnFailure = $stopTeardownOnFailure;
+    }
+
+    public function getStopTeardownOnFailure() {
+        return $this->stopTeardownOnFailure;
+    }
+
+    public function setTagName($tagName) {
+        $this->tagName = $tagName;
+    }
+
+    public function getTagName() {
+        return $this->tagName;
+    }
 }

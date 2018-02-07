@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Compute_InstanceReference extends Google_Model
-{
-  public $instance;
+class Google_Service_Compute_InstanceReference extends Google_Model {
+    public $instance;
 
-  public function setInstance($instance)
-  {
-    $this->instance = $instance;
-  }
-  public function getInstance()
-  {
-    return $this->instance;
-  }
+    public function setInstance($instance) {
+        $this->instance = $instance;
+    }
+
+    public function getInstance() {
+        return $this->instance;
+    }
 }

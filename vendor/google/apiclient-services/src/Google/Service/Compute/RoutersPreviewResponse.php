@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Compute_RoutersPreviewResponse extends Google_Model
-{
-  protected $resourceType = 'Google_Service_Compute_Router';
-  protected $resourceDataType = '';
+class Google_Service_Compute_RoutersPreviewResponse extends Google_Model {
+    protected $resourceType     = 'Google_Service_Compute_Router';
+    protected $resourceDataType = '';
 
-  /**
-   * @param Google_Service_Compute_Router
-   */
-  public function setResource(Google_Service_Compute_Router $resource)
-  {
-    $this->resource = $resource;
-  }
-  /**
-   * @return Google_Service_Compute_Router
-   */
-  public function getResource()
-  {
-    return $this->resource;
-  }
+    /**
+     * @param Google_Service_Compute_Router
+     */
+    public function setResource(Google_Service_Compute_Router $resource) {
+        $this->resource = $resource;
+    }
+
+    /**
+     * @return Google_Service_Compute_Router
+     */
+    public function getResource() {
+        return $this->resource;
+    }
 }

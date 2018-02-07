@@ -15,53 +15,51 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchReferenceSetsRequest extends Google_Collection
-{
-  protected $collection_key = 'md5checksums';
-  public $accessions;
-  public $assemblyId;
-  public $md5checksums;
-  public $pageSize;
-  public $pageToken;
+class Google_Service_Genomics_SearchReferenceSetsRequest extends Google_Collection {
+    protected $collection_key = 'md5checksums';
+    public $accessions;
+    public $assemblyId;
+    public $md5checksums;
+    public $pageSize;
+    public $pageToken;
 
-  public function setAccessions($accessions)
-  {
-    $this->accessions = $accessions;
-  }
-  public function getAccessions()
-  {
-    return $this->accessions;
-  }
-  public function setAssemblyId($assemblyId)
-  {
-    $this->assemblyId = $assemblyId;
-  }
-  public function getAssemblyId()
-  {
-    return $this->assemblyId;
-  }
-  public function setMd5checksums($md5checksums)
-  {
-    $this->md5checksums = $md5checksums;
-  }
-  public function getMd5checksums()
-  {
-    return $this->md5checksums;
-  }
-  public function setPageSize($pageSize)
-  {
-    $this->pageSize = $pageSize;
-  }
-  public function getPageSize()
-  {
-    return $this->pageSize;
-  }
-  public function setPageToken($pageToken)
-  {
-    $this->pageToken = $pageToken;
-  }
-  public function getPageToken()
-  {
-    return $this->pageToken;
-  }
+    public function setAccessions($accessions) {
+        $this->accessions = $accessions;
+    }
+
+    public function getAccessions() {
+        return $this->accessions;
+    }
+
+    public function setAssemblyId($assemblyId) {
+        $this->assemblyId = $assemblyId;
+    }
+
+    public function getAssemblyId() {
+        return $this->assemblyId;
+    }
+
+    public function setMd5checksums($md5checksums) {
+        $this->md5checksums = $md5checksums;
+    }
+
+    public function getMd5checksums() {
+        return $this->md5checksums;
+    }
+
+    public function setPageSize($pageSize) {
+        $this->pageSize = $pageSize;
+    }
+
+    public function getPageSize() {
+        return $this->pageSize;
+    }
+
+    public function setPageToken($pageToken) {
+        $this->pageToken = $pageToken;
+    }
+
+    public function getPageToken() {
+        return $this->pageToken;
+    }
 }

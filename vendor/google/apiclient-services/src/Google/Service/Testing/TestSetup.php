@@ -15,74 +15,72 @@
  * the License.
  */
 
-class Google_Service_Testing_TestSetup extends Google_Collection
-{
-  protected $collection_key = 'filesToPush';
-  protected $accountType = 'Google_Service_Testing_Account';
-  protected $accountDataType = '';
-  public $directoriesToPull;
-  protected $environmentVariablesType = 'Google_Service_Testing_EnvironmentVariable';
-  protected $environmentVariablesDataType = 'array';
-  protected $filesToPushType = 'Google_Service_Testing_DeviceFile';
-  protected $filesToPushDataType = 'array';
-  public $networkProfile;
+class Google_Service_Testing_TestSetup extends Google_Collection {
+    protected $collection_key               = 'filesToPush';
+    protected $accountType                  = 'Google_Service_Testing_Account';
+    protected $accountDataType              = '';
+    public $directoriesToPull;
+    protected $environmentVariablesType     = 'Google_Service_Testing_EnvironmentVariable';
+    protected $environmentVariablesDataType = 'array';
+    protected $filesToPushType              = 'Google_Service_Testing_DeviceFile';
+    protected $filesToPushDataType          = 'array';
+    public $networkProfile;
 
-  /**
-   * @param Google_Service_Testing_Account
-   */
-  public function setAccount(Google_Service_Testing_Account $account)
-  {
-    $this->account = $account;
-  }
-  /**
-   * @return Google_Service_Testing_Account
-   */
-  public function getAccount()
-  {
-    return $this->account;
-  }
-  public function setDirectoriesToPull($directoriesToPull)
-  {
-    $this->directoriesToPull = $directoriesToPull;
-  }
-  public function getDirectoriesToPull()
-  {
-    return $this->directoriesToPull;
-  }
-  /**
-   * @param Google_Service_Testing_EnvironmentVariable
-   */
-  public function setEnvironmentVariables($environmentVariables)
-  {
-    $this->environmentVariables = $environmentVariables;
-  }
-  /**
-   * @return Google_Service_Testing_EnvironmentVariable
-   */
-  public function getEnvironmentVariables()
-  {
-    return $this->environmentVariables;
-  }
-  /**
-   * @param Google_Service_Testing_DeviceFile
-   */
-  public function setFilesToPush($filesToPush)
-  {
-    $this->filesToPush = $filesToPush;
-  }
-  /**
-   * @return Google_Service_Testing_DeviceFile
-   */
-  public function getFilesToPush()
-  {
-    return $this->filesToPush;
-  }
-  public function setNetworkProfile($networkProfile)
-  {
-    $this->networkProfile = $networkProfile;
-  }
-  public function getNetworkProfile()
-  {
-    return $this->networkProfile;
-  }
+    /**
+     * @param Google_Service_Testing_Account
+     */
+    public function setAccount(Google_Service_Testing_Account $account) {
+        $this->account = $account;
+    }
+
+    /**
+     * @return Google_Service_Testing_Account
+     */
+    public function getAccount() {
+        return $this->account;
+    }
+
+    public function setDirectoriesToPull($directoriesToPull) {
+        $this->directoriesToPull = $directoriesToPull;
+    }
+
+    public function getDirectoriesToPull() {
+        return $this->directoriesToPull;
+    }
+
+    /**
+     * @param Google_Service_Testing_EnvironmentVariable
+     */
+    public function setEnvironmentVariables($environmentVariables) {
+        $this->environmentVariables = $environmentVariables;
+    }
+
+    /**
+     * @return Google_Service_Testing_EnvironmentVariable
+     */
+    public function getEnvironmentVariables() {
+        return $this->environmentVariables;
+    }
+
+    /**
+     * @param Google_Service_Testing_DeviceFile
+     */
+    public function setFilesToPush($filesToPush) {
+        $this->filesToPush = $filesToPush;
+    }
+
+    /**
+     * @return Google_Service_Testing_DeviceFile
+     */
+    public function getFilesToPush() {
+        return $this->filesToPush;
+    }
+
+    public function setNetworkProfile($networkProfile) {
+        $this->networkProfile = $networkProfile;
+    }
+
+    public function getNetworkProfile() {
+        return $this->networkProfile;
+    }
 }

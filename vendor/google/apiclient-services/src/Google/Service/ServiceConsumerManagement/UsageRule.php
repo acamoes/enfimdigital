@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_ServiceConsumerManagement_UsageRule extends Google_Model
-{
-  public $allowUnregisteredCalls;
-  public $selector;
-  public $skipServiceControl;
+class Google_Service_ServiceConsumerManagement_UsageRule extends Google_Model {
+    public $allowUnregisteredCalls;
+    public $selector;
+    public $skipServiceControl;
 
-  public function setAllowUnregisteredCalls($allowUnregisteredCalls)
-  {
-    $this->allowUnregisteredCalls = $allowUnregisteredCalls;
-  }
-  public function getAllowUnregisteredCalls()
-  {
-    return $this->allowUnregisteredCalls;
-  }
-  public function setSelector($selector)
-  {
-    $this->selector = $selector;
-  }
-  public function getSelector()
-  {
-    return $this->selector;
-  }
-  public function setSkipServiceControl($skipServiceControl)
-  {
-    $this->skipServiceControl = $skipServiceControl;
-  }
-  public function getSkipServiceControl()
-  {
-    return $this->skipServiceControl;
-  }
+    public function setAllowUnregisteredCalls($allowUnregisteredCalls) {
+        $this->allowUnregisteredCalls = $allowUnregisteredCalls;
+    }
+
+    public function getAllowUnregisteredCalls() {
+        return $this->allowUnregisteredCalls;
+    }
+
+    public function setSelector($selector) {
+        $this->selector = $selector;
+    }
+
+    public function getSelector() {
+        return $this->selector;
+    }
+
+    public function setSkipServiceControl($skipServiceControl) {
+        $this->skipServiceControl = $skipServiceControl;
+    }
+
+    public function getSkipServiceControl() {
+        return $this->skipServiceControl;
+    }
 }

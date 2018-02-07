@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Directory_ChromeOsDeviceAction extends Google_Model
-{
-  public $action;
-  public $deprovisionReason;
+class Google_Service_Directory_ChromeOsDeviceAction extends Google_Model {
+    public $action;
+    public $deprovisionReason;
 
-  public function setAction($action)
-  {
-    $this->action = $action;
-  }
-  public function getAction()
-  {
-    return $this->action;
-  }
-  public function setDeprovisionReason($deprovisionReason)
-  {
-    $this->deprovisionReason = $deprovisionReason;
-  }
-  public function getDeprovisionReason()
-  {
-    return $this->deprovisionReason;
-  }
+    public function setAction($action) {
+        $this->action = $action;
+    }
+
+    public function getAction() {
+        return $this->action;
+    }
+
+    public function setDeprovisionReason($deprovisionReason) {
+        $this->deprovisionReason = $deprovisionReason;
+    }
+
+    public function getDeprovisionReason() {
+        return $this->deprovisionReason;
+    }
 }

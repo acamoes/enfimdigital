@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Fitness_MapValue extends Google_Model
-{
-  public $fpVal;
+class Google_Service_Fitness_MapValue extends Google_Model {
+    public $fpVal;
 
-  public function setFpVal($fpVal)
-  {
-    $this->fpVal = $fpVal;
-  }
-  public function getFpVal()
-  {
-    return $this->fpVal;
-  }
+    public function setFpVal($fpVal) {
+        $this->fpVal = $fpVal;
+    }
+
+    public function getFpVal() {
+        return $this->fpVal;
+    }
 }

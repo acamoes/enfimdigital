@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Sheets_DuplicateFilterViewRequest extends Google_Model
-{
-  public $filterId;
+class Google_Service_Sheets_DuplicateFilterViewRequest extends Google_Model {
+    public $filterId;
 
-  public function setFilterId($filterId)
-  {
-    $this->filterId = $filterId;
-  }
-  public function getFilterId()
-  {
-    return $this->filterId;
-  }
+    public function setFilterId($filterId) {
+        $this->filterId = $filterId;
+    }
+
+    public function getFilterId() {
+        return $this->filterId;
+    }
 }

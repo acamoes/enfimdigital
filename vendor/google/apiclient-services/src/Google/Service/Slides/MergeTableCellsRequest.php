@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Slides_MergeTableCellsRequest extends Google_Model
-{
-  public $objectId;
-  protected $tableRangeType = 'Google_Service_Slides_TableRange';
-  protected $tableRangeDataType = '';
+class Google_Service_Slides_MergeTableCellsRequest extends Google_Model {
+    public $objectId;
+    protected $tableRangeType     = 'Google_Service_Slides_TableRange';
+    protected $tableRangeDataType = '';
 
-  public function setObjectId($objectId)
-  {
-    $this->objectId = $objectId;
-  }
-  public function getObjectId()
-  {
-    return $this->objectId;
-  }
-  /**
-   * @param Google_Service_Slides_TableRange
-   */
-  public function setTableRange(Google_Service_Slides_TableRange $tableRange)
-  {
-    $this->tableRange = $tableRange;
-  }
-  /**
-   * @return Google_Service_Slides_TableRange
-   */
-  public function getTableRange()
-  {
-    return $this->tableRange;
-  }
+    public function setObjectId($objectId) {
+        $this->objectId = $objectId;
+    }
+
+    public function getObjectId() {
+        return $this->objectId;
+    }
+
+    /**
+     * @param Google_Service_Slides_TableRange
+     */
+    public function setTableRange(Google_Service_Slides_TableRange $tableRange) {
+        $this->tableRange = $tableRange;
+    }
+
+    /**
+     * @return Google_Service_Slides_TableRange
+     */
+    public function getTableRange() {
+        return $this->tableRange;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Genomics_CigarUnit extends Google_Model
-{
-  public $operation;
-  public $operationLength;
-  public $referenceSequence;
+class Google_Service_Genomics_CigarUnit extends Google_Model {
+    public $operation;
+    public $operationLength;
+    public $referenceSequence;
 
-  public function setOperation($operation)
-  {
-    $this->operation = $operation;
-  }
-  public function getOperation()
-  {
-    return $this->operation;
-  }
-  public function setOperationLength($operationLength)
-  {
-    $this->operationLength = $operationLength;
-  }
-  public function getOperationLength()
-  {
-    return $this->operationLength;
-  }
-  public function setReferenceSequence($referenceSequence)
-  {
-    $this->referenceSequence = $referenceSequence;
-  }
-  public function getReferenceSequence()
-  {
-    return $this->referenceSequence;
-  }
+    public function setOperation($operation) {
+        $this->operation = $operation;
+    }
+
+    public function getOperation() {
+        return $this->operation;
+    }
+
+    public function setOperationLength($operationLength) {
+        $this->operationLength = $operationLength;
+    }
+
+    public function getOperationLength() {
+        return $this->operationLength;
+    }
+
+    public function setReferenceSequence($referenceSequence) {
+        $this->referenceSequence = $referenceSequence;
+    }
+
+    public function getReferenceSequence() {
+        return $this->referenceSequence;
+    }
 }

@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CivicInfo_DivisionSearchResponse extends Google_Collection
-{
-  protected $collection_key = 'results';
-  public $kind;
-  protected $resultsType = 'Google_Service_CivicInfo_DivisionSearchResult';
-  protected $resultsDataType = 'array';
+class Google_Service_CivicInfo_DivisionSearchResponse extends Google_Collection {
+    protected $collection_key  = 'results';
+    public $kind;
+    protected $resultsType     = 'Google_Service_CivicInfo_DivisionSearchResult';
+    protected $resultsDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_CivicInfo_DivisionSearchResult
-   */
-  public function setResults($results)
-  {
-    $this->results = $results;
-  }
-  /**
-   * @return Google_Service_CivicInfo_DivisionSearchResult
-   */
-  public function getResults()
-  {
-    return $this->results;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_CivicInfo_DivisionSearchResult
+     */
+    public function setResults($results) {
+        $this->results = $results;
+    }
+
+    /**
+     * @return Google_Service_CivicInfo_DivisionSearchResult
+     */
+    public function getResults() {
+        return $this->results;
+    }
 }

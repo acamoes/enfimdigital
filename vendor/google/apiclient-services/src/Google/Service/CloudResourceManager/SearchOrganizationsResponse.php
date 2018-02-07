@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_CloudResourceManager_SearchOrganizationsResponse extends Google_Collection
-{
-  protected $collection_key = 'organizations';
-  public $nextPageToken;
-  protected $organizationsType = 'Google_Service_CloudResourceManager_Organization';
-  protected $organizationsDataType = 'array';
+class Google_Service_CloudResourceManager_SearchOrganizationsResponse extends Google_Collection {
+    protected $collection_key        = 'organizations';
+    public $nextPageToken;
+    protected $organizationsType     = 'Google_Service_CloudResourceManager_Organization';
+    protected $organizationsDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_CloudResourceManager_Organization
-   */
-  public function setOrganizations($organizations)
-  {
-    $this->organizations = $organizations;
-  }
-  /**
-   * @return Google_Service_CloudResourceManager_Organization
-   */
-  public function getOrganizations()
-  {
-    return $this->organizations;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_CloudResourceManager_Organization
+     */
+    public function setOrganizations($organizations) {
+        $this->organizations = $organizations;
+    }
+
+    /**
+     * @return Google_Service_CloudResourceManager_Organization
+     */
+    public function getOrganizations() {
+        return $this->organizations;
+    }
 }

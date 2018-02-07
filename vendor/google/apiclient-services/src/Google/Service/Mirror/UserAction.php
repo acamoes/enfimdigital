@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Mirror_UserAction extends Google_Model
-{
-  public $payload;
-  public $type;
+class Google_Service_Mirror_UserAction extends Google_Model {
+    public $payload;
+    public $type;
 
-  public function setPayload($payload)
-  {
-    $this->payload = $payload;
-  }
-  public function getPayload()
-  {
-    return $this->payload;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setPayload($payload) {
+        $this->payload = $payload;
+    }
+
+    public function getPayload() {
+        return $this->payload;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

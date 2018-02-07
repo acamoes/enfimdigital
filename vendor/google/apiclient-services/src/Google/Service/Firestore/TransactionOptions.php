@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_Firestore_TransactionOptions extends Google_Model
-{
-  protected $readOnlyType = 'Google_Service_Firestore_ReadOnly';
-  protected $readOnlyDataType = '';
-  protected $readWriteType = 'Google_Service_Firestore_ReadWrite';
-  protected $readWriteDataType = '';
+class Google_Service_Firestore_TransactionOptions extends Google_Model {
+    protected $readOnlyType      = 'Google_Service_Firestore_ReadOnly';
+    protected $readOnlyDataType  = '';
+    protected $readWriteType     = 'Google_Service_Firestore_ReadWrite';
+    protected $readWriteDataType = '';
 
-  /**
-   * @param Google_Service_Firestore_ReadOnly
-   */
-  public function setReadOnly(Google_Service_Firestore_ReadOnly $readOnly)
-  {
-    $this->readOnly = $readOnly;
-  }
-  /**
-   * @return Google_Service_Firestore_ReadOnly
-   */
-  public function getReadOnly()
-  {
-    return $this->readOnly;
-  }
-  /**
-   * @param Google_Service_Firestore_ReadWrite
-   */
-  public function setReadWrite(Google_Service_Firestore_ReadWrite $readWrite)
-  {
-    $this->readWrite = $readWrite;
-  }
-  /**
-   * @return Google_Service_Firestore_ReadWrite
-   */
-  public function getReadWrite()
-  {
-    return $this->readWrite;
-  }
+    /**
+     * @param Google_Service_Firestore_ReadOnly
+     */
+    public function setReadOnly(Google_Service_Firestore_ReadOnly $readOnly) {
+        $this->readOnly = $readOnly;
+    }
+
+    /**
+     * @return Google_Service_Firestore_ReadOnly
+     */
+    public function getReadOnly() {
+        return $this->readOnly;
+    }
+
+    /**
+     * @param Google_Service_Firestore_ReadWrite
+     */
+    public function setReadWrite(Google_Service_Firestore_ReadWrite $readWrite) {
+        $this->readWrite = $readWrite;
+    }
+
+    /**
+     * @return Google_Service_Firestore_ReadWrite
+     */
+    public function getReadWrite() {
+        return $this->readWrite;
+    }
 }

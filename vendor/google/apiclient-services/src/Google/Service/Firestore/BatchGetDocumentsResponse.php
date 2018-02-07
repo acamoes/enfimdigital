@@ -15,50 +15,48 @@
  * the License.
  */
 
-class Google_Service_Firestore_BatchGetDocumentsResponse extends Google_Model
-{
-  protected $foundType = 'Google_Service_Firestore_Document';
-  protected $foundDataType = '';
-  public $missing;
-  public $readTime;
-  public $transaction;
+class Google_Service_Firestore_BatchGetDocumentsResponse extends Google_Model {
+    protected $foundType     = 'Google_Service_Firestore_Document';
+    protected $foundDataType = '';
+    public $missing;
+    public $readTime;
+    public $transaction;
 
-  /**
-   * @param Google_Service_Firestore_Document
-   */
-  public function setFound(Google_Service_Firestore_Document $found)
-  {
-    $this->found = $found;
-  }
-  /**
-   * @return Google_Service_Firestore_Document
-   */
-  public function getFound()
-  {
-    return $this->found;
-  }
-  public function setMissing($missing)
-  {
-    $this->missing = $missing;
-  }
-  public function getMissing()
-  {
-    return $this->missing;
-  }
-  public function setReadTime($readTime)
-  {
-    $this->readTime = $readTime;
-  }
-  public function getReadTime()
-  {
-    return $this->readTime;
-  }
-  public function setTransaction($transaction)
-  {
-    $this->transaction = $transaction;
-  }
-  public function getTransaction()
-  {
-    return $this->transaction;
-  }
+    /**
+     * @param Google_Service_Firestore_Document
+     */
+    public function setFound(Google_Service_Firestore_Document $found) {
+        $this->found = $found;
+    }
+
+    /**
+     * @return Google_Service_Firestore_Document
+     */
+    public function getFound() {
+        return $this->found;
+    }
+
+    public function setMissing($missing) {
+        $this->missing = $missing;
+    }
+
+    public function getMissing() {
+        return $this->missing;
+    }
+
+    public function setReadTime($readTime) {
+        $this->readTime = $readTime;
+    }
+
+    public function getReadTime() {
+        return $this->readTime;
+    }
+
+    public function setTransaction($transaction) {
+        $this->transaction = $transaction;
+    }
+
+    public function getTransaction() {
+        return $this->transaction;
+    }
 }

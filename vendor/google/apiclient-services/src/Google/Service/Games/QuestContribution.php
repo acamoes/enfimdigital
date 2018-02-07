@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Games_QuestContribution extends Google_Model
-{
-  public $formattedValue;
-  public $kind;
-  public $value;
+class Google_Service_Games_QuestContribution extends Google_Model {
+    public $formattedValue;
+    public $kind;
+    public $value;
 
-  public function setFormattedValue($formattedValue)
-  {
-    $this->formattedValue = $formattedValue;
-  }
-  public function getFormattedValue()
-  {
-    return $this->formattedValue;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setFormattedValue($formattedValue) {
+        $this->formattedValue = $formattedValue;
+    }
+
+    public function getFormattedValue() {
+        return $this->formattedValue;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

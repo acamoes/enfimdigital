@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Games_RoomP2PStatuses extends Google_Collection
-{
-  protected $collection_key = 'updates';
-  public $kind;
-  protected $updatesType = 'Google_Service_Games_RoomP2PStatus';
-  protected $updatesDataType = 'array';
+class Google_Service_Games_RoomP2PStatuses extends Google_Collection {
+    protected $collection_key  = 'updates';
+    public $kind;
+    protected $updatesType     = 'Google_Service_Games_RoomP2PStatus';
+    protected $updatesDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_Games_RoomP2PStatus
-   */
-  public function setUpdates($updates)
-  {
-    $this->updates = $updates;
-  }
-  /**
-   * @return Google_Service_Games_RoomP2PStatus
-   */
-  public function getUpdates()
-  {
-    return $this->updates;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_Games_RoomP2PStatus
+     */
+    public function setUpdates($updates) {
+        $this->updates = $updates;
+    }
+
+    /**
+     * @return Google_Service_Games_RoomP2PStatus
+     */
+    public function getUpdates() {
+        return $this->updates;
+    }
 }

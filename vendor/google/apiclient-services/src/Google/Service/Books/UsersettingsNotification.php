@@ -15,55 +15,53 @@
  * the License.
  */
 
-class Google_Service_Books_UsersettingsNotification extends Google_Model
-{
-  protected $moreFromAuthorsType = 'Google_Service_Books_UsersettingsNotificationMoreFromAuthors';
-  protected $moreFromAuthorsDataType = '';
-  protected $moreFromSeriesType = 'Google_Service_Books_UsersettingsNotificationMoreFromSeries';
-  protected $moreFromSeriesDataType = '';
-  protected $rewardExpirationsType = 'Google_Service_Books_UsersettingsNotificationRewardExpirations';
-  protected $rewardExpirationsDataType = '';
+class Google_Service_Books_UsersettingsNotification extends Google_Model {
+    protected $moreFromAuthorsType       = 'Google_Service_Books_UsersettingsNotificationMoreFromAuthors';
+    protected $moreFromAuthorsDataType   = '';
+    protected $moreFromSeriesType        = 'Google_Service_Books_UsersettingsNotificationMoreFromSeries';
+    protected $moreFromSeriesDataType    = '';
+    protected $rewardExpirationsType     = 'Google_Service_Books_UsersettingsNotificationRewardExpirations';
+    protected $rewardExpirationsDataType = '';
 
-  /**
-   * @param Google_Service_Books_UsersettingsNotificationMoreFromAuthors
-   */
-  public function setMoreFromAuthors(Google_Service_Books_UsersettingsNotificationMoreFromAuthors $moreFromAuthors)
-  {
-    $this->moreFromAuthors = $moreFromAuthors;
-  }
-  /**
-   * @return Google_Service_Books_UsersettingsNotificationMoreFromAuthors
-   */
-  public function getMoreFromAuthors()
-  {
-    return $this->moreFromAuthors;
-  }
-  /**
-   * @param Google_Service_Books_UsersettingsNotificationMoreFromSeries
-   */
-  public function setMoreFromSeries(Google_Service_Books_UsersettingsNotificationMoreFromSeries $moreFromSeries)
-  {
-    $this->moreFromSeries = $moreFromSeries;
-  }
-  /**
-   * @return Google_Service_Books_UsersettingsNotificationMoreFromSeries
-   */
-  public function getMoreFromSeries()
-  {
-    return $this->moreFromSeries;
-  }
-  /**
-   * @param Google_Service_Books_UsersettingsNotificationRewardExpirations
-   */
-  public function setRewardExpirations(Google_Service_Books_UsersettingsNotificationRewardExpirations $rewardExpirations)
-  {
-    $this->rewardExpirations = $rewardExpirations;
-  }
-  /**
-   * @return Google_Service_Books_UsersettingsNotificationRewardExpirations
-   */
-  public function getRewardExpirations()
-  {
-    return $this->rewardExpirations;
-  }
+    /**
+     * @param Google_Service_Books_UsersettingsNotificationMoreFromAuthors
+     */
+    public function setMoreFromAuthors(Google_Service_Books_UsersettingsNotificationMoreFromAuthors $moreFromAuthors) {
+        $this->moreFromAuthors = $moreFromAuthors;
+    }
+
+    /**
+     * @return Google_Service_Books_UsersettingsNotificationMoreFromAuthors
+     */
+    public function getMoreFromAuthors() {
+        return $this->moreFromAuthors;
+    }
+
+    /**
+     * @param Google_Service_Books_UsersettingsNotificationMoreFromSeries
+     */
+    public function setMoreFromSeries(Google_Service_Books_UsersettingsNotificationMoreFromSeries $moreFromSeries) {
+        $this->moreFromSeries = $moreFromSeries;
+    }
+
+    /**
+     * @return Google_Service_Books_UsersettingsNotificationMoreFromSeries
+     */
+    public function getMoreFromSeries() {
+        return $this->moreFromSeries;
+    }
+
+    /**
+     * @param Google_Service_Books_UsersettingsNotificationRewardExpirations
+     */
+    public function setRewardExpirations(Google_Service_Books_UsersettingsNotificationRewardExpirations $rewardExpirations) {
+        $this->rewardExpirations = $rewardExpirations;
+    }
+
+    /**
+     * @return Google_Service_Books_UsersettingsNotificationRewardExpirations
+     */
+    public function getRewardExpirations() {
+        return $this->rewardExpirations;
+    }
 }

@@ -95,7 +95,8 @@
                                 <ul class="actions" onclick="
                                         if (isPositiveInteger(document.getElementById('aepId').value))
                                     {ldelim}
-        requestAPI('action={$action}&task=getEAEP&tab={$currentTab}&tab={$currentSubTab}&aepId=' + document.getElementById('aepId').value, 'formMsg');}"
+                                                requestAPI('action={$action}&task=getEAEP&tab={$currentTab}&tab={$currentSubTab}&aepId=' + document.getElementById('aepId').value, 'formMsg');
+                                            }"
                                     style="float: right">
                                     <li class="button small"
                                         style="cursor: pointer; padding: 0 10pt 0 10pt; line-height: 3em; height: 3em;background-color: darkgreen;">e-aep</li>

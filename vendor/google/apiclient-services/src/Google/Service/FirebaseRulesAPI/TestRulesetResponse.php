@@ -15,18 +15,16 @@
  * the License.
  */
 
-class Google_Service_FirebaseRulesAPI_TestRulesetResponse extends Google_Collection
-{
-  protected $collection_key = 'issues';
-  protected $issuesType = 'Google_Service_FirebaseRulesAPI_Issue';
-  protected $issuesDataType = 'array';
+class Google_Service_FirebaseRulesAPI_TestRulesetResponse extends Google_Collection {
+    protected $collection_key = 'issues';
+    protected $issuesType     = 'Google_Service_FirebaseRulesAPI_Issue';
+    protected $issuesDataType = 'array';
 
-  public function setIssues($issues)
-  {
-    $this->issues = $issues;
-  }
-  public function getIssues()
-  {
-    return $this->issues;
-  }
+    public function setIssues($issues) {
+        $this->issues = $issues;
+    }
+
+    public function getIssues() {
+        return $this->issues;
+    }
 }

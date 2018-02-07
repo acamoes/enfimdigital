@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Directory_ChromeOsMoveDevicesToOu extends Google_Collection
-{
-  protected $collection_key = 'deviceIds';
-  public $deviceIds;
+class Google_Service_Directory_ChromeOsMoveDevicesToOu extends Google_Collection {
+    protected $collection_key = 'deviceIds';
+    public $deviceIds;
 
-  public function setDeviceIds($deviceIds)
-  {
-    $this->deviceIds = $deviceIds;
-  }
-  public function getDeviceIds()
-  {
-    return $this->deviceIds;
-  }
+    public function setDeviceIds($deviceIds) {
+        $this->deviceIds = $deviceIds;
+    }
+
+    public function getDeviceIds() {
+        return $this->deviceIds;
+    }
 }

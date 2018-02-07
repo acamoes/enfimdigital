@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CivicInfo_ContextParams extends Google_Model
-{
-  public $clientProfile;
+class Google_Service_CivicInfo_ContextParams extends Google_Model {
+    public $clientProfile;
 
-  public function setClientProfile($clientProfile)
-  {
-    $this->clientProfile = $clientProfile;
-  }
-  public function getClientProfile()
-  {
-    return $this->clientProfile;
-  }
+    public function setClientProfile($clientProfile) {
+        $this->clientProfile = $clientProfile;
+    }
+
+    public function getClientProfile() {
+        return $this->clientProfile;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Sheets_TextRotation extends Google_Model
-{
-  public $angle;
-  public $vertical;
+class Google_Service_Sheets_TextRotation extends Google_Model {
+    public $angle;
+    public $vertical;
 
-  public function setAngle($angle)
-  {
-    $this->angle = $angle;
-  }
-  public function getAngle()
-  {
-    return $this->angle;
-  }
-  public function setVertical($vertical)
-  {
-    $this->vertical = $vertical;
-  }
-  public function getVertical()
-  {
-    return $this->vertical;
-  }
+    public function setAngle($angle) {
+        $this->angle = $angle;
+    }
+
+    public function getAngle() {
+        return $this->angle;
+    }
+
+    public function setVertical($vertical) {
+        $this->vertical = $vertical;
+    }
+
+    public function getVertical() {
+        return $this->vertical;
+    }
 }

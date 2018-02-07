@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_DefaultClickThroughEventTagProperties extends Google_Model
-{
-  public $defaultClickThroughEventTagId;
-  public $overrideInheritedEventTag;
+class Google_Service_Dfareporting_DefaultClickThroughEventTagProperties extends Google_Model {
+    public $defaultClickThroughEventTagId;
+    public $overrideInheritedEventTag;
 
-  public function setDefaultClickThroughEventTagId($defaultClickThroughEventTagId)
-  {
-    $this->defaultClickThroughEventTagId = $defaultClickThroughEventTagId;
-  }
-  public function getDefaultClickThroughEventTagId()
-  {
-    return $this->defaultClickThroughEventTagId;
-  }
-  public function setOverrideInheritedEventTag($overrideInheritedEventTag)
-  {
-    $this->overrideInheritedEventTag = $overrideInheritedEventTag;
-  }
-  public function getOverrideInheritedEventTag()
-  {
-    return $this->overrideInheritedEventTag;
-  }
+    public function setDefaultClickThroughEventTagId($defaultClickThroughEventTagId) {
+        $this->defaultClickThroughEventTagId = $defaultClickThroughEventTagId;
+    }
+
+    public function getDefaultClickThroughEventTagId() {
+        return $this->defaultClickThroughEventTagId;
+    }
+
+    public function setOverrideInheritedEventTag($overrideInheritedEventTag) {
+        $this->overrideInheritedEventTag = $overrideInheritedEventTag;
+    }
+
+    public function getOverrideInheritedEventTag() {
+        return $this->overrideInheritedEventTag;
+    }
 }

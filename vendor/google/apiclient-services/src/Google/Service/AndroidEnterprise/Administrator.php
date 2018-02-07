@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_Administrator extends Google_Model
-{
-  public $email;
+class Google_Service_AndroidEnterprise_Administrator extends Google_Model {
+    public $email;
 
-  public function setEmail($email)
-  {
-    $this->email = $email;
-  }
-  public function getEmail()
-  {
-    return $this->email;
-  }
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
 }

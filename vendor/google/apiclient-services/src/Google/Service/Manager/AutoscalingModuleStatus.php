@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Manager_AutoscalingModuleStatus extends Google_Model
-{
-  public $autoscalingConfigUrl;
+class Google_Service_Manager_AutoscalingModuleStatus extends Google_Model {
+    public $autoscalingConfigUrl;
 
-  public function setAutoscalingConfigUrl($autoscalingConfigUrl)
-  {
-    $this->autoscalingConfigUrl = $autoscalingConfigUrl;
-  }
-  public function getAutoscalingConfigUrl()
-  {
-    return $this->autoscalingConfigUrl;
-  }
+    public function setAutoscalingConfigUrl($autoscalingConfigUrl) {
+        $this->autoscalingConfigUrl = $autoscalingConfigUrl;
+    }
+
+    public function getAutoscalingConfigUrl() {
+        return $this->autoscalingConfigUrl;
+    }
 }

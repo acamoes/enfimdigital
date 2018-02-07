@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Genomics_Position extends Google_Model
-{
-  public $position;
-  public $referenceName;
-  public $reverseStrand;
+class Google_Service_Genomics_Position extends Google_Model {
+    public $position;
+    public $referenceName;
+    public $reverseStrand;
 
-  public function setPosition($position)
-  {
-    $this->position = $position;
-  }
-  public function getPosition()
-  {
-    return $this->position;
-  }
-  public function setReferenceName($referenceName)
-  {
-    $this->referenceName = $referenceName;
-  }
-  public function getReferenceName()
-  {
-    return $this->referenceName;
-  }
-  public function setReverseStrand($reverseStrand)
-  {
-    $this->reverseStrand = $reverseStrand;
-  }
-  public function getReverseStrand()
-  {
-    return $this->reverseStrand;
-  }
+    public function setPosition($position) {
+        $this->position = $position;
+    }
+
+    public function getPosition() {
+        return $this->position;
+    }
+
+    public function setReferenceName($referenceName) {
+        $this->referenceName = $referenceName;
+    }
+
+    public function getReferenceName() {
+        return $this->referenceName;
+    }
+
+    public function setReverseStrand($reverseStrand) {
+        $this->reverseStrand = $reverseStrand;
+    }
+
+    public function getReverseStrand() {
+        return $this->reverseStrand;
+    }
 }

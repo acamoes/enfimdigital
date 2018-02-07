@@ -23,22 +23,21 @@
  *   $flags = $sqladminService->flags;
  *  </code>
  */
-class Google_Service_SQLAdmin_Resource_Flags extends Google_Service_Resource
-{
-  /**
-   * List all available database flags for Google Cloud SQL instances.
-   * (flags.listFlags)
-   *
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string databaseVersion Database version for flag retrieval. Flags
-   * are specific to the database version.
-   * @return Google_Service_SQLAdmin_FlagsListResponse
-   */
-  public function listFlags($optParams = array())
-  {
-    $params = array();
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_SQLAdmin_FlagsListResponse");
-  }
+class Google_Service_SQLAdmin_Resource_Flags extends Google_Service_Resource {
+
+    /**
+     * List all available database flags for Google Cloud SQL instances.
+     * (flags.listFlags)
+     *
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param string databaseVersion Database version for flag retrieval. Flags
+     * are specific to the database version.
+     * @return Google_Service_SQLAdmin_FlagsListResponse
+     */
+    public function listFlags($optParams = array()) {
+        $params = array();
+        $params = array_merge($params, $optParams);
+        return $this->call('list', array($params), "Google_Service_SQLAdmin_FlagsListResponse");
+    }
 }

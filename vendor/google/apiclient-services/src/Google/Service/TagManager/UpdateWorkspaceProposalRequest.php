@@ -15,58 +15,56 @@
  * the License.
  */
 
-class Google_Service_TagManager_UpdateWorkspaceProposalRequest extends Google_Collection
-{
-  protected $collection_key = 'reviewers';
-  public $fingerprint;
-  protected $newCommentType = 'Google_Service_TagManager_WorkspaceProposalHistoryComment';
-  protected $newCommentDataType = '';
-  protected $reviewersType = 'Google_Service_TagManager_WorkspaceProposalUser';
-  protected $reviewersDataType = 'array';
-  public $status;
+class Google_Service_TagManager_UpdateWorkspaceProposalRequest extends Google_Collection {
+    protected $collection_key     = 'reviewers';
+    public $fingerprint;
+    protected $newCommentType     = 'Google_Service_TagManager_WorkspaceProposalHistoryComment';
+    protected $newCommentDataType = '';
+    protected $reviewersType      = 'Google_Service_TagManager_WorkspaceProposalUser';
+    protected $reviewersDataType  = 'array';
+    public $status;
 
-  public function setFingerprint($fingerprint)
-  {
-    $this->fingerprint = $fingerprint;
-  }
-  public function getFingerprint()
-  {
-    return $this->fingerprint;
-  }
-  /**
-   * @param Google_Service_TagManager_WorkspaceProposalHistoryComment
-   */
-  public function setNewComment(Google_Service_TagManager_WorkspaceProposalHistoryComment $newComment)
-  {
-    $this->newComment = $newComment;
-  }
-  /**
-   * @return Google_Service_TagManager_WorkspaceProposalHistoryComment
-   */
-  public function getNewComment()
-  {
-    return $this->newComment;
-  }
-  /**
-   * @param Google_Service_TagManager_WorkspaceProposalUser
-   */
-  public function setReviewers($reviewers)
-  {
-    $this->reviewers = $reviewers;
-  }
-  /**
-   * @return Google_Service_TagManager_WorkspaceProposalUser
-   */
-  public function getReviewers()
-  {
-    return $this->reviewers;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
+    public function setFingerprint($fingerprint) {
+        $this->fingerprint = $fingerprint;
+    }
+
+    public function getFingerprint() {
+        return $this->fingerprint;
+    }
+
+    /**
+     * @param Google_Service_TagManager_WorkspaceProposalHistoryComment
+     */
+    public function setNewComment(Google_Service_TagManager_WorkspaceProposalHistoryComment $newComment) {
+        $this->newComment = $newComment;
+    }
+
+    /**
+     * @return Google_Service_TagManager_WorkspaceProposalHistoryComment
+     */
+    public function getNewComment() {
+        return $this->newComment;
+    }
+
+    /**
+     * @param Google_Service_TagManager_WorkspaceProposalUser
+     */
+    public function setReviewers($reviewers) {
+        $this->reviewers = $reviewers;
+    }
+
+    /**
+     * @return Google_Service_TagManager_WorkspaceProposalUser
+     */
+    public function getReviewers() {
+        return $this->reviewers;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
 }

@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Classroom_AssignmentSubmission extends Google_Collection
-{
-  protected $collection_key = 'attachments';
-  protected $attachmentsType = 'Google_Service_Classroom_Attachment';
-  protected $attachmentsDataType = 'array';
+class Google_Service_Classroom_AssignmentSubmission extends Google_Collection {
+    protected $collection_key      = 'attachments';
+    protected $attachmentsType     = 'Google_Service_Classroom_Attachment';
+    protected $attachmentsDataType = 'array';
 
-  /**
-   * @param Google_Service_Classroom_Attachment
-   */
-  public function setAttachments($attachments)
-  {
-    $this->attachments = $attachments;
-  }
-  /**
-   * @return Google_Service_Classroom_Attachment
-   */
-  public function getAttachments()
-  {
-    return $this->attachments;
-  }
+    /**
+     * @param Google_Service_Classroom_Attachment
+     */
+    public function setAttachments($attachments) {
+        $this->attachments = $attachments;
+    }
+
+    /**
+     * @return Google_Service_Classroom_Attachment
+     */
+    public function getAttachments() {
+        return $this->attachments;
+    }
 }

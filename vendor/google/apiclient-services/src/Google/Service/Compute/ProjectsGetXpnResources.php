@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Compute_ProjectsGetXpnResources extends Google_Collection
-{
-  protected $collection_key = 'resources';
-  public $kind;
-  public $nextPageToken;
-  protected $resourcesType = 'Google_Service_Compute_XpnResourceId';
-  protected $resourcesDataType = 'array';
+class Google_Service_Compute_ProjectsGetXpnResources extends Google_Collection {
+    protected $collection_key    = 'resources';
+    public $kind;
+    public $nextPageToken;
+    protected $resourcesType     = 'Google_Service_Compute_XpnResourceId';
+    protected $resourcesDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Compute_XpnResourceId
-   */
-  public function setResources($resources)
-  {
-    $this->resources = $resources;
-  }
-  /**
-   * @return Google_Service_Compute_XpnResourceId
-   */
-  public function getResources()
-  {
-    return $this->resources;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Compute_XpnResourceId
+     */
+    public function setResources($resources) {
+        $this->resources = $resources;
+    }
+
+    /**
+     * @return Google_Service_Compute_XpnResourceId
+     */
+    public function getResources() {
+        return $this->resources;
+    }
 }

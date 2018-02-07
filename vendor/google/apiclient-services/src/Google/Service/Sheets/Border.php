@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Sheets_Border extends Google_Model
-{
-  protected $colorType = 'Google_Service_Sheets_Color';
-  protected $colorDataType = '';
-  public $style;
-  public $width;
+class Google_Service_Sheets_Border extends Google_Model {
+    protected $colorType     = 'Google_Service_Sheets_Color';
+    protected $colorDataType = '';
+    public $style;
+    public $width;
 
-  /**
-   * @param Google_Service_Sheets_Color
-   */
-  public function setColor(Google_Service_Sheets_Color $color)
-  {
-    $this->color = $color;
-  }
-  /**
-   * @return Google_Service_Sheets_Color
-   */
-  public function getColor()
-  {
-    return $this->color;
-  }
-  public function setStyle($style)
-  {
-    $this->style = $style;
-  }
-  public function getStyle()
-  {
-    return $this->style;
-  }
-  public function setWidth($width)
-  {
-    $this->width = $width;
-  }
-  public function getWidth()
-  {
-    return $this->width;
-  }
+    /**
+     * @param Google_Service_Sheets_Color
+     */
+    public function setColor(Google_Service_Sheets_Color $color) {
+        $this->color = $color;
+    }
+
+    /**
+     * @return Google_Service_Sheets_Color
+     */
+    public function getColor() {
+        return $this->color;
+    }
+
+    public function setStyle($style) {
+        $this->style = $style;
+    }
+
+    public function getStyle() {
+        return $this->style;
+    }
+
+    public function setWidth($width) {
+        $this->width = $width;
+    }
+
+    public function getWidth() {
+        return $this->width;
+    }
 }

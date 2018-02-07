@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Slides_LayoutPlaceholderIdMapping extends Google_Model
-{
-  protected $layoutPlaceholderType = 'Google_Service_Slides_Placeholder';
-  protected $layoutPlaceholderDataType = '';
-  public $layoutPlaceholderObjectId;
-  public $objectId;
+class Google_Service_Slides_LayoutPlaceholderIdMapping extends Google_Model {
+    protected $layoutPlaceholderType     = 'Google_Service_Slides_Placeholder';
+    protected $layoutPlaceholderDataType = '';
+    public $layoutPlaceholderObjectId;
+    public $objectId;
 
-  /**
-   * @param Google_Service_Slides_Placeholder
-   */
-  public function setLayoutPlaceholder(Google_Service_Slides_Placeholder $layoutPlaceholder)
-  {
-    $this->layoutPlaceholder = $layoutPlaceholder;
-  }
-  /**
-   * @return Google_Service_Slides_Placeholder
-   */
-  public function getLayoutPlaceholder()
-  {
-    return $this->layoutPlaceholder;
-  }
-  public function setLayoutPlaceholderObjectId($layoutPlaceholderObjectId)
-  {
-    $this->layoutPlaceholderObjectId = $layoutPlaceholderObjectId;
-  }
-  public function getLayoutPlaceholderObjectId()
-  {
-    return $this->layoutPlaceholderObjectId;
-  }
-  public function setObjectId($objectId)
-  {
-    $this->objectId = $objectId;
-  }
-  public function getObjectId()
-  {
-    return $this->objectId;
-  }
+    /**
+     * @param Google_Service_Slides_Placeholder
+     */
+    public function setLayoutPlaceholder(Google_Service_Slides_Placeholder $layoutPlaceholder) {
+        $this->layoutPlaceholder = $layoutPlaceholder;
+    }
+
+    /**
+     * @return Google_Service_Slides_Placeholder
+     */
+    public function getLayoutPlaceholder() {
+        return $this->layoutPlaceholder;
+    }
+
+    public function setLayoutPlaceholderObjectId($layoutPlaceholderObjectId) {
+        $this->layoutPlaceholderObjectId = $layoutPlaceholderObjectId;
+    }
+
+    public function getLayoutPlaceholderObjectId() {
+        return $this->layoutPlaceholderObjectId;
+    }
+
+    public function setObjectId($objectId) {
+        $this->objectId = $objectId;
+    }
+
+    public function getObjectId() {
+        return $this->objectId;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_YouTube_PlaylistContentDetails extends Google_Model
-{
-  public $itemCount;
+class Google_Service_YouTube_PlaylistContentDetails extends Google_Model {
+    public $itemCount;
 
-  public function setItemCount($itemCount)
-  {
-    $this->itemCount = $itemCount;
-  }
-  public function getItemCount()
-  {
-    return $this->itemCount;
-  }
+    public function setItemCount($itemCount) {
+        $this->itemCount = $itemCount;
+    }
+
+    public function getItemCount() {
+        return $this->itemCount;
+    }
 }

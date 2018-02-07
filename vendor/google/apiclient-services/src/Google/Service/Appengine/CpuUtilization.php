@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Appengine_CpuUtilization extends Google_Model
-{
-  public $aggregationWindowLength;
-  public $targetUtilization;
+class Google_Service_Appengine_CpuUtilization extends Google_Model {
+    public $aggregationWindowLength;
+    public $targetUtilization;
 
-  public function setAggregationWindowLength($aggregationWindowLength)
-  {
-    $this->aggregationWindowLength = $aggregationWindowLength;
-  }
-  public function getAggregationWindowLength()
-  {
-    return $this->aggregationWindowLength;
-  }
-  public function setTargetUtilization($targetUtilization)
-  {
-    $this->targetUtilization = $targetUtilization;
-  }
-  public function getTargetUtilization()
-  {
-    return $this->targetUtilization;
-  }
+    public function setAggregationWindowLength($aggregationWindowLength) {
+        $this->aggregationWindowLength = $aggregationWindowLength;
+    }
+
+    public function getAggregationWindowLength() {
+        return $this->aggregationWindowLength;
+    }
+
+    public function setTargetUtilization($targetUtilization) {
+        $this->targetUtilization = $targetUtilization;
+    }
+
+    public function getTargetUtilization() {
+        return $this->targetUtilization;
+    }
 }

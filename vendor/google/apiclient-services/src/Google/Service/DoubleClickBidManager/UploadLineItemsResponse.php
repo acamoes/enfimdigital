@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DoubleClickBidManager_UploadLineItemsResponse extends Google_Model
-{
-  protected $uploadStatusType = 'Google_Service_DoubleClickBidManager_UploadStatus';
-  protected $uploadStatusDataType = '';
+class Google_Service_DoubleClickBidManager_UploadLineItemsResponse extends Google_Model {
+    protected $uploadStatusType     = 'Google_Service_DoubleClickBidManager_UploadStatus';
+    protected $uploadStatusDataType = '';
 
-  /**
-   * @param Google_Service_DoubleClickBidManager_UploadStatus
-   */
-  public function setUploadStatus(Google_Service_DoubleClickBidManager_UploadStatus $uploadStatus)
-  {
-    $this->uploadStatus = $uploadStatus;
-  }
-  /**
-   * @return Google_Service_DoubleClickBidManager_UploadStatus
-   */
-  public function getUploadStatus()
-  {
-    return $this->uploadStatus;
-  }
+    /**
+     * @param Google_Service_DoubleClickBidManager_UploadStatus
+     */
+    public function setUploadStatus(Google_Service_DoubleClickBidManager_UploadStatus $uploadStatus) {
+        $this->uploadStatus = $uploadStatus;
+    }
+
+    /**
+     * @return Google_Service_DoubleClickBidManager_UploadStatus
+     */
+    public function getUploadStatus() {
+        return $this->uploadStatus;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_YouTube_ActivityContentDetailsUpload extends Google_Model
-{
-  public $videoId;
+class Google_Service_YouTube_ActivityContentDetailsUpload extends Google_Model {
+    public $videoId;
 
-  public function setVideoId($videoId)
-  {
-    $this->videoId = $videoId;
-  }
-  public function getVideoId()
-  {
-    return $this->videoId;
-  }
+    public function setVideoId($videoId) {
+        $this->videoId = $videoId;
+    }
+
+    public function getVideoId() {
+        return $this->videoId;
+    }
 }

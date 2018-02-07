@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Firestore_FieldTransform extends Google_Model
-{
-  public $fieldPath;
-  public $setToServerValue;
+class Google_Service_Firestore_FieldTransform extends Google_Model {
+    public $fieldPath;
+    public $setToServerValue;
 
-  public function setFieldPath($fieldPath)
-  {
-    $this->fieldPath = $fieldPath;
-  }
-  public function getFieldPath()
-  {
-    return $this->fieldPath;
-  }
-  public function setSetToServerValue($setToServerValue)
-  {
-    $this->setToServerValue = $setToServerValue;
-  }
-  public function getSetToServerValue()
-  {
-    return $this->setToServerValue;
-  }
+    public function setFieldPath($fieldPath) {
+        $this->fieldPath = $fieldPath;
+    }
+
+    public function getFieldPath() {
+        return $this->fieldPath;
+    }
+
+    public function setSetToServerValue($setToServerValue) {
+        $this->setToServerValue = $setToServerValue;
+    }
+
+    public function getSetToServerValue() {
+        return $this->setToServerValue;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Genomics_ReferenceBound extends Google_Model
-{
-  public $referenceName;
-  public $upperBound;
+class Google_Service_Genomics_ReferenceBound extends Google_Model {
+    public $referenceName;
+    public $upperBound;
 
-  public function setReferenceName($referenceName)
-  {
-    $this->referenceName = $referenceName;
-  }
-  public function getReferenceName()
-  {
-    return $this->referenceName;
-  }
-  public function setUpperBound($upperBound)
-  {
-    $this->upperBound = $upperBound;
-  }
-  public function getUpperBound()
-  {
-    return $this->upperBound;
-  }
+    public function setReferenceName($referenceName) {
+        $this->referenceName = $referenceName;
+    }
+
+    public function getReferenceName() {
+        return $this->referenceName;
+    }
+
+    public function setUpperBound($upperBound) {
+        $this->upperBound = $upperBound;
+    }
+
+    public function getUpperBound() {
+        return $this->upperBound;
+    }
 }

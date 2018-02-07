@@ -15,60 +15,58 @@
  * the License.
  */
 
-class Google_Service_Games_QuestMilestone extends Google_Collection
-{
-  protected $collection_key = 'criteria';
-  public $completionRewardData;
-  protected $criteriaType = 'Google_Service_Games_QuestCriterion';
-  protected $criteriaDataType = 'array';
-  public $id;
-  public $kind;
-  public $state;
+class Google_Service_Games_QuestMilestone extends Google_Collection {
+    protected $collection_key   = 'criteria';
+    public $completionRewardData;
+    protected $criteriaType     = 'Google_Service_Games_QuestCriterion';
+    protected $criteriaDataType = 'array';
+    public $id;
+    public $kind;
+    public $state;
 
-  public function setCompletionRewardData($completionRewardData)
-  {
-    $this->completionRewardData = $completionRewardData;
-  }
-  public function getCompletionRewardData()
-  {
-    return $this->completionRewardData;
-  }
-  /**
-   * @param Google_Service_Games_QuestCriterion
-   */
-  public function setCriteria($criteria)
-  {
-    $this->criteria = $criteria;
-  }
-  /**
-   * @return Google_Service_Games_QuestCriterion
-   */
-  public function getCriteria()
-  {
-    return $this->criteria;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setState($state)
-  {
-    $this->state = $state;
-  }
-  public function getState()
-  {
-    return $this->state;
-  }
+    public function setCompletionRewardData($completionRewardData) {
+        $this->completionRewardData = $completionRewardData;
+    }
+
+    public function getCompletionRewardData() {
+        return $this->completionRewardData;
+    }
+
+    /**
+     * @param Google_Service_Games_QuestCriterion
+     */
+    public function setCriteria($criteria) {
+        $this->criteria = $criteria;
+    }
+
+    /**
+     * @return Google_Service_Games_QuestCriterion
+     */
+    public function getCriteria() {
+        return $this->criteria;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setState($state) {
+        $this->state = $state;
+    }
+
+    public function getState() {
+        return $this->state;
+    }
 }

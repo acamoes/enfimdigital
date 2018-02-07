@@ -15,44 +15,42 @@
  * the License.
  */
 
-class Google_Service_Genomics_ImportReadGroupSetsRequest extends Google_Collection
-{
-  protected $collection_key = 'sourceUris';
-  public $datasetId;
-  public $partitionStrategy;
-  public $referenceSetId;
-  public $sourceUris;
+class Google_Service_Genomics_ImportReadGroupSetsRequest extends Google_Collection {
+    protected $collection_key = 'sourceUris';
+    public $datasetId;
+    public $partitionStrategy;
+    public $referenceSetId;
+    public $sourceUris;
 
-  public function setDatasetId($datasetId)
-  {
-    $this->datasetId = $datasetId;
-  }
-  public function getDatasetId()
-  {
-    return $this->datasetId;
-  }
-  public function setPartitionStrategy($partitionStrategy)
-  {
-    $this->partitionStrategy = $partitionStrategy;
-  }
-  public function getPartitionStrategy()
-  {
-    return $this->partitionStrategy;
-  }
-  public function setReferenceSetId($referenceSetId)
-  {
-    $this->referenceSetId = $referenceSetId;
-  }
-  public function getReferenceSetId()
-  {
-    return $this->referenceSetId;
-  }
-  public function setSourceUris($sourceUris)
-  {
-    $this->sourceUris = $sourceUris;
-  }
-  public function getSourceUris()
-  {
-    return $this->sourceUris;
-  }
+    public function setDatasetId($datasetId) {
+        $this->datasetId = $datasetId;
+    }
+
+    public function getDatasetId() {
+        return $this->datasetId;
+    }
+
+    public function setPartitionStrategy($partitionStrategy) {
+        $this->partitionStrategy = $partitionStrategy;
+    }
+
+    public function getPartitionStrategy() {
+        return $this->partitionStrategy;
+    }
+
+    public function setReferenceSetId($referenceSetId) {
+        $this->referenceSetId = $referenceSetId;
+    }
+
+    public function getReferenceSetId() {
+        return $this->referenceSetId;
+    }
+
+    public function setSourceUris($sourceUris) {
+        $this->sourceUris = $sourceUris;
+    }
+
+    public function getSourceUris() {
+        return $this->sourceUris;
+    }
 }

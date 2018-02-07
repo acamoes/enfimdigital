@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Webmasters_UrlCrawlErrorCount extends Google_Model
-{
-  public $count;
-  public $timestamp;
+class Google_Service_Webmasters_UrlCrawlErrorCount extends Google_Model {
+    public $count;
+    public $timestamp;
 
-  public function setCount($count)
-  {
-    $this->count = $count;
-  }
-  public function getCount()
-  {
-    return $this->count;
-  }
-  public function setTimestamp($timestamp)
-  {
-    $this->timestamp = $timestamp;
-  }
-  public function getTimestamp()
-  {
-    return $this->timestamp;
-  }
+    public function setCount($count) {
+        $this->count = $count;
+    }
+
+    public function getCount() {
+        return $this->count;
+    }
+
+    public function setTimestamp($timestamp) {
+        $this->timestamp = $timestamp;
+    }
+
+    public function getTimestamp() {
+        return $this->timestamp;
+    }
 }

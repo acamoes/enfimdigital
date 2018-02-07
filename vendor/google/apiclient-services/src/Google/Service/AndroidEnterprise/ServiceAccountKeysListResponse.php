@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ServiceAccountKeysListResponse extends Google_Collection
-{
-  protected $collection_key = 'serviceAccountKey';
-  protected $serviceAccountKeyType = 'Google_Service_AndroidEnterprise_ServiceAccountKey';
-  protected $serviceAccountKeyDataType = 'array';
+class Google_Service_AndroidEnterprise_ServiceAccountKeysListResponse extends Google_Collection {
+    protected $collection_key            = 'serviceAccountKey';
+    protected $serviceAccountKeyType     = 'Google_Service_AndroidEnterprise_ServiceAccountKey';
+    protected $serviceAccountKeyDataType = 'array';
 
-  /**
-   * @param Google_Service_AndroidEnterprise_ServiceAccountKey
-   */
-  public function setServiceAccountKey($serviceAccountKey)
-  {
-    $this->serviceAccountKey = $serviceAccountKey;
-  }
-  /**
-   * @return Google_Service_AndroidEnterprise_ServiceAccountKey
-   */
-  public function getServiceAccountKey()
-  {
-    return $this->serviceAccountKey;
-  }
+    /**
+     * @param Google_Service_AndroidEnterprise_ServiceAccountKey
+     */
+    public function setServiceAccountKey($serviceAccountKey) {
+        $this->serviceAccountKey = $serviceAccountKey;
+    }
+
+    /**
+     * @return Google_Service_AndroidEnterprise_ServiceAccountKey
+     */
+    public function getServiceAccountKey() {
+        return $this->serviceAccountKey;
+    }
 }

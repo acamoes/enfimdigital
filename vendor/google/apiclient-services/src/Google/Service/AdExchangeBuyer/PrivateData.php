@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_PrivateData extends Google_Model
-{
-  public $referenceId;
-  public $referencePayload;
+class Google_Service_AdExchangeBuyer_PrivateData extends Google_Model {
+    public $referenceId;
+    public $referencePayload;
 
-  public function setReferenceId($referenceId)
-  {
-    $this->referenceId = $referenceId;
-  }
-  public function getReferenceId()
-  {
-    return $this->referenceId;
-  }
-  public function setReferencePayload($referencePayload)
-  {
-    $this->referencePayload = $referencePayload;
-  }
-  public function getReferencePayload()
-  {
-    return $this->referencePayload;
-  }
+    public function setReferenceId($referenceId) {
+        $this->referenceId = $referenceId;
+    }
+
+    public function getReferenceId() {
+        return $this->referenceId;
+    }
+
+    public function setReferencePayload($referencePayload) {
+        $this->referencePayload = $referencePayload;
+    }
+
+    public function getReferencePayload() {
+        return $this->referencePayload;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Games_EventPeriodRange extends Google_Model
-{
-  public $kind;
-  public $periodEndMillis;
-  public $periodStartMillis;
+class Google_Service_Games_EventPeriodRange extends Google_Model {
+    public $kind;
+    public $periodEndMillis;
+    public $periodStartMillis;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setPeriodEndMillis($periodEndMillis)
-  {
-    $this->periodEndMillis = $periodEndMillis;
-  }
-  public function getPeriodEndMillis()
-  {
-    return $this->periodEndMillis;
-  }
-  public function setPeriodStartMillis($periodStartMillis)
-  {
-    $this->periodStartMillis = $periodStartMillis;
-  }
-  public function getPeriodStartMillis()
-  {
-    return $this->periodStartMillis;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setPeriodEndMillis($periodEndMillis) {
+        $this->periodEndMillis = $periodEndMillis;
+    }
+
+    public function getPeriodEndMillis() {
+        return $this->periodEndMillis;
+    }
+
+    public function setPeriodStartMillis($periodStartMillis) {
+        $this->periodStartMillis = $periodStartMillis;
+    }
+
+    public function getPeriodStartMillis() {
+        return $this->periodStartMillis;
+    }
 }

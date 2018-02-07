@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_SQLAdmin_TruncateLogContext extends Google_Model
-{
-  public $kind;
-  public $logType;
+class Google_Service_SQLAdmin_TruncateLogContext extends Google_Model {
+    public $kind;
+    public $logType;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setLogType($logType)
-  {
-    $this->logType = $logType;
-  }
-  public function getLogType()
-  {
-    return $this->logType;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setLogType($logType) {
+        $this->logType = $logType;
+    }
+
+    public function getLogType() {
+        return $this->logType;
+    }
 }

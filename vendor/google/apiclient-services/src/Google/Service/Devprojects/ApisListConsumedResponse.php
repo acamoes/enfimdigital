@@ -15,27 +15,25 @@
  * the License.
  */
 
-class Google_Service_Devprojects_ApisListConsumedResponse extends Google_Collection
-{
-  protected $collection_key = 'apiDefinition';
-  protected $apiDefinitionType = 'Google_Service_Devprojects_ApiData';
-  protected $apiDefinitionDataType = 'array';
-  public $kind;
+class Google_Service_Devprojects_ApisListConsumedResponse extends Google_Collection {
+    protected $collection_key        = 'apiDefinition';
+    protected $apiDefinitionType     = 'Google_Service_Devprojects_ApiData';
+    protected $apiDefinitionDataType = 'array';
+    public $kind;
 
-  public function setApiDefinition($apiDefinition)
-  {
-    $this->apiDefinition = $apiDefinition;
-  }
-  public function getApiDefinition()
-  {
-    return $this->apiDefinition;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setApiDefinition($apiDefinition) {
+        $this->apiDefinition = $apiDefinition;
+    }
+
+    public function getApiDefinition() {
+        return $this->apiDefinition;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

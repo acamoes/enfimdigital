@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchCallSetsResponse extends Google_Collection
-{
-  protected $collection_key = 'callSets';
-  protected $callSetsType = 'Google_Service_Genomics_CallSet';
-  protected $callSetsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Genomics_SearchCallSetsResponse extends Google_Collection {
+    protected $collection_key   = 'callSets';
+    protected $callSetsType     = 'Google_Service_Genomics_CallSet';
+    protected $callSetsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Genomics_CallSet
-   */
-  public function setCallSets($callSets)
-  {
-    $this->callSets = $callSets;
-  }
-  /**
-   * @return Google_Service_Genomics_CallSet
-   */
-  public function getCallSets()
-  {
-    return $this->callSets;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Genomics_CallSet
+     */
+    public function setCallSets($callSets) {
+        $this->callSets = $callSets;
+    }
+
+    /**
+     * @return Google_Service_Genomics_CallSet
+     */
+    public function getCallSets() {
+        return $this->callSets;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

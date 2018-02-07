@@ -15,55 +15,53 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_QueryInput extends Google_Model
-{
-  protected $audioConfigType = 'Google_Service_Dialogflow_InputAudioConfig';
-  protected $audioConfigDataType = '';
-  protected $eventType = 'Google_Service_Dialogflow_EventInput';
-  protected $eventDataType = '';
-  protected $textType = 'Google_Service_Dialogflow_TextInput';
-  protected $textDataType = '';
+class Google_Service_Dialogflow_QueryInput extends Google_Model {
+    protected $audioConfigType     = 'Google_Service_Dialogflow_InputAudioConfig';
+    protected $audioConfigDataType = '';
+    protected $eventType           = 'Google_Service_Dialogflow_EventInput';
+    protected $eventDataType       = '';
+    protected $textType            = 'Google_Service_Dialogflow_TextInput';
+    protected $textDataType        = '';
 
-  /**
-   * @param Google_Service_Dialogflow_InputAudioConfig
-   */
-  public function setAudioConfig(Google_Service_Dialogflow_InputAudioConfig $audioConfig)
-  {
-    $this->audioConfig = $audioConfig;
-  }
-  /**
-   * @return Google_Service_Dialogflow_InputAudioConfig
-   */
-  public function getAudioConfig()
-  {
-    return $this->audioConfig;
-  }
-  /**
-   * @param Google_Service_Dialogflow_EventInput
-   */
-  public function setEvent(Google_Service_Dialogflow_EventInput $event)
-  {
-    $this->event = $event;
-  }
-  /**
-   * @return Google_Service_Dialogflow_EventInput
-   */
-  public function getEvent()
-  {
-    return $this->event;
-  }
-  /**
-   * @param Google_Service_Dialogflow_TextInput
-   */
-  public function setText(Google_Service_Dialogflow_TextInput $text)
-  {
-    $this->text = $text;
-  }
-  /**
-   * @return Google_Service_Dialogflow_TextInput
-   */
-  public function getText()
-  {
-    return $this->text;
-  }
+    /**
+     * @param Google_Service_Dialogflow_InputAudioConfig
+     */
+    public function setAudioConfig(Google_Service_Dialogflow_InputAudioConfig $audioConfig) {
+        $this->audioConfig = $audioConfig;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_InputAudioConfig
+     */
+    public function getAudioConfig() {
+        return $this->audioConfig;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_EventInput
+     */
+    public function setEvent(Google_Service_Dialogflow_EventInput $event) {
+        $this->event = $event;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_EventInput
+     */
+    public function getEvent() {
+        return $this->event;
+    }
+
+    /**
+     * @param Google_Service_Dialogflow_TextInput
+     */
+    public function setText(Google_Service_Dialogflow_TextInput $text) {
+        $this->text = $text;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_TextInput
+     */
+    public function getText() {
+        return $this->text;
+    }
 }

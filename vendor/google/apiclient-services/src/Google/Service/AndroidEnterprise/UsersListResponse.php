@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_UsersListResponse extends Google_Collection
-{
-  protected $collection_key = 'user';
-  public $kind;
-  protected $userType = 'Google_Service_AndroidEnterprise_User';
-  protected $userDataType = 'array';
+class Google_Service_AndroidEnterprise_UsersListResponse extends Google_Collection {
+    protected $collection_key = 'user';
+    public $kind;
+    protected $userType       = 'Google_Service_AndroidEnterprise_User';
+    protected $userDataType   = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_AndroidEnterprise_User
-   */
-  public function setUser($user)
-  {
-    $this->user = $user;
-  }
-  /**
-   * @return Google_Service_AndroidEnterprise_User
-   */
-  public function getUser()
-  {
-    return $this->user;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_AndroidEnterprise_User
+     */
+    public function setUser($user) {
+        $this->user = $user;
+    }
+
+    /**
+     * @return Google_Service_AndroidEnterprise_User
+     */
+    public function getUser() {
+        return $this->user;
+    }
 }

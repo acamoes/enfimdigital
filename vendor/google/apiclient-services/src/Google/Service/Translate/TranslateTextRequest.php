@@ -15,53 +15,51 @@
  * the License.
  */
 
-class Google_Service_Translate_TranslateTextRequest extends Google_Collection
-{
-  protected $collection_key = 'q';
-  public $format;
-  public $model;
-  public $q;
-  public $source;
-  public $target;
+class Google_Service_Translate_TranslateTextRequest extends Google_Collection {
+    protected $collection_key = 'q';
+    public $format;
+    public $model;
+    public $q;
+    public $source;
+    public $target;
 
-  public function setFormat($format)
-  {
-    $this->format = $format;
-  }
-  public function getFormat()
-  {
-    return $this->format;
-  }
-  public function setModel($model)
-  {
-    $this->model = $model;
-  }
-  public function getModel()
-  {
-    return $this->model;
-  }
-  public function setQ($q)
-  {
-    $this->q = $q;
-  }
-  public function getQ()
-  {
-    return $this->q;
-  }
-  public function setSource($source)
-  {
-    $this->source = $source;
-  }
-  public function getSource()
-  {
-    return $this->source;
-  }
-  public function setTarget($target)
-  {
-    $this->target = $target;
-  }
-  public function getTarget()
-  {
-    return $this->target;
-  }
+    public function setFormat($format) {
+        $this->format = $format;
+    }
+
+    public function getFormat() {
+        return $this->format;
+    }
+
+    public function setModel($model) {
+        $this->model = $model;
+    }
+
+    public function getModel() {
+        return $this->model;
+    }
+
+    public function setQ($q) {
+        $this->q = $q;
+    }
+
+    public function getQ() {
+        return $this->q;
+    }
+
+    public function setSource($source) {
+        $this->source = $source;
+    }
+
+    public function getSource() {
+        return $this->source;
+    }
+
+    public function setTarget($target) {
+        $this->target = $target;
+    }
+
+    public function getTarget() {
+        return $this->target;
+    }
 }

@@ -15,67 +15,65 @@
  * the License.
  */
 
-class Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElement extends Google_Collection
-{
-  protected $collection_key = 'urlBlocks';
-  public $groups;
-  public $localizedRuleName;
-  public $ruleImpact;
-  protected $summaryType = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2';
-  protected $summaryDataType = '';
-  protected $urlBlocksType = 'Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocks';
-  protected $urlBlocksDataType = 'array';
+class Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElement extends Google_Collection {
+    protected $collection_key    = 'urlBlocks';
+    public $groups;
+    public $localizedRuleName;
+    public $ruleImpact;
+    protected $summaryType       = 'Google_Service_Pagespeedonline_PagespeedApiFormatStringV2';
+    protected $summaryDataType   = '';
+    protected $urlBlocksType     = 'Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocks';
+    protected $urlBlocksDataType = 'array';
 
-  public function setGroups($groups)
-  {
-    $this->groups = $groups;
-  }
-  public function getGroups()
-  {
-    return $this->groups;
-  }
-  public function setLocalizedRuleName($localizedRuleName)
-  {
-    $this->localizedRuleName = $localizedRuleName;
-  }
-  public function getLocalizedRuleName()
-  {
-    return $this->localizedRuleName;
-  }
-  public function setRuleImpact($ruleImpact)
-  {
-    $this->ruleImpact = $ruleImpact;
-  }
-  public function getRuleImpact()
-  {
-    return $this->ruleImpact;
-  }
-  /**
-   * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
-   */
-  public function setSummary(Google_Service_Pagespeedonline_PagespeedApiFormatStringV2 $summary)
-  {
-    $this->summary = $summary;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
-   */
-  public function getSummary()
-  {
-    return $this->summary;
-  }
-  /**
-   * @param Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocks
-   */
-  public function setUrlBlocks($urlBlocks)
-  {
-    $this->urlBlocks = $urlBlocks;
-  }
-  /**
-   * @return Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocks
-   */
-  public function getUrlBlocks()
-  {
-    return $this->urlBlocks;
-  }
+    public function setGroups($groups) {
+        $this->groups = $groups;
+    }
+
+    public function getGroups() {
+        return $this->groups;
+    }
+
+    public function setLocalizedRuleName($localizedRuleName) {
+        $this->localizedRuleName = $localizedRuleName;
+    }
+
+    public function getLocalizedRuleName() {
+        return $this->localizedRuleName;
+    }
+
+    public function setRuleImpact($ruleImpact) {
+        $this->ruleImpact = $ruleImpact;
+    }
+
+    public function getRuleImpact() {
+        return $this->ruleImpact;
+    }
+
+    /**
+     * @param Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
+     */
+    public function setSummary(Google_Service_Pagespeedonline_PagespeedApiFormatStringV2 $summary) {
+        $this->summary = $summary;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_PagespeedApiFormatStringV2
+     */
+    public function getSummary() {
+        return $this->summary;
+    }
+
+    /**
+     * @param Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocks
+     */
+    public function setUrlBlocks($urlBlocks) {
+        $this->urlBlocks = $urlBlocks;
+    }
+
+    /**
+     * @return Google_Service_Pagespeedonline_ResultFormattedResultsRuleResultsElementUrlBlocks
+     */
+    public function getUrlBlocks() {
+        return $this->urlBlocks;
+    }
 }

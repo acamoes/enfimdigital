@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrdersCreateTestOrderRequest extends Google_Model
-{
-  public $templateName;
-  protected $testOrderType = 'Google_Service_ShoppingContent_TestOrder';
-  protected $testOrderDataType = '';
+class Google_Service_ShoppingContent_OrdersCreateTestOrderRequest extends Google_Model {
+    public $templateName;
+    protected $testOrderType     = 'Google_Service_ShoppingContent_TestOrder';
+    protected $testOrderDataType = '';
 
-  public function setTemplateName($templateName)
-  {
-    $this->templateName = $templateName;
-  }
-  public function getTemplateName()
-  {
-    return $this->templateName;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_TestOrder
-   */
-  public function setTestOrder(Google_Service_ShoppingContent_TestOrder $testOrder)
-  {
-    $this->testOrder = $testOrder;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_TestOrder
-   */
-  public function getTestOrder()
-  {
-    return $this->testOrder;
-  }
+    public function setTemplateName($templateName) {
+        $this->templateName = $templateName;
+    }
+
+    public function getTemplateName() {
+        return $this->templateName;
+    }
+
+    /**
+     * @param Google_Service_ShoppingContent_TestOrder
+     */
+    public function setTestOrder(Google_Service_ShoppingContent_TestOrder $testOrder) {
+        $this->testOrder = $testOrder;
+    }
+
+    /**
+     * @return Google_Service_ShoppingContent_TestOrder
+     */
+    public function getTestOrder() {
+        return $this->testOrder;
+    }
 }

@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Firestore_UnaryFilter extends Google_Model
-{
-  protected $fieldType = 'Google_Service_Firestore_FieldReference';
-  protected $fieldDataType = '';
-  public $op;
+class Google_Service_Firestore_UnaryFilter extends Google_Model {
+    protected $fieldType     = 'Google_Service_Firestore_FieldReference';
+    protected $fieldDataType = '';
+    public $op;
 
-  /**
-   * @param Google_Service_Firestore_FieldReference
-   */
-  public function setField(Google_Service_Firestore_FieldReference $field)
-  {
-    $this->field = $field;
-  }
-  /**
-   * @return Google_Service_Firestore_FieldReference
-   */
-  public function getField()
-  {
-    return $this->field;
-  }
-  public function setOp($op)
-  {
-    $this->op = $op;
-  }
-  public function getOp()
-  {
-    return $this->op;
-  }
+    /**
+     * @param Google_Service_Firestore_FieldReference
+     */
+    public function setField(Google_Service_Firestore_FieldReference $field) {
+        $this->field = $field;
+    }
+
+    /**
+     * @return Google_Service_Firestore_FieldReference
+     */
+    public function getField() {
+        return $this->field;
+    }
+
+    public function setOp($op) {
+        $this->op = $op;
+    }
+
+    public function getOp() {
+        return $this->op;
+    }
 }

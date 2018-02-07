@@ -23,26 +23,25 @@
  *   $questMilestones = $gamesService->questMilestones;
  *  </code>
  */
-class Google_Service_Games_Resource_QuestMilestones extends Google_Service_Resource
-{
-  /**
-   * Report that a reward for the milestone corresponding to milestoneId for the
-   * quest corresponding to questId has been claimed by the currently authorized
-   * user. (questMilestones.claim)
-   *
-   * @param string $questId The ID of the quest.
-   * @param string $milestoneId The ID of the milestone.
-   * @param string $requestId A numeric ID to ensure that the request is handled
-   * correctly across retries. Your client application must generate this ID
-   * randomly.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string consistencyToken The last-seen mutation timestamp.
-   */
-  public function claim($questId, $milestoneId, $requestId, $optParams = array())
-  {
-    $params = array('questId' => $questId, 'milestoneId' => $milestoneId, 'requestId' => $requestId);
-    $params = array_merge($params, $optParams);
-    return $this->call('claim', array($params));
-  }
+class Google_Service_Games_Resource_QuestMilestones extends Google_Service_Resource {
+
+    /**
+     * Report that a reward for the milestone corresponding to milestoneId for the
+     * quest corresponding to questId has been claimed by the currently authorized
+     * user. (questMilestones.claim)
+     *
+     * @param string $questId The ID of the quest.
+     * @param string $milestoneId The ID of the milestone.
+     * @param string $requestId A numeric ID to ensure that the request is handled
+     * correctly across retries. Your client application must generate this ID
+     * randomly.
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param string consistencyToken The last-seen mutation timestamp.
+     */
+    public function claim($questId, $milestoneId, $requestId, $optParams = array()) {
+        $params = array('questId' => $questId, 'milestoneId' => $milestoneId, 'requestId' => $requestId);
+        $params = array_merge($params, $optParams);
+        return $this->call('claim', array($params));
+    }
 }

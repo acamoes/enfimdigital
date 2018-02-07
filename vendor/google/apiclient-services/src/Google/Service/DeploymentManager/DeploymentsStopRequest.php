@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_DeploymentManager_DeploymentsStopRequest extends Google_Model
-{
-  public $fingerprint;
+class Google_Service_DeploymentManager_DeploymentsStopRequest extends Google_Model {
+    public $fingerprint;
 
-  public function setFingerprint($fingerprint)
-  {
-    $this->fingerprint = $fingerprint;
-  }
-  public function getFingerprint()
-  {
-    return $this->fingerprint;
-  }
+    public function setFingerprint($fingerprint) {
+        $this->fingerprint = $fingerprint;
+    }
+
+    public function getFingerprint() {
+        return $this->fingerprint;
+    }
 }

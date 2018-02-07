@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Appengine_DebugInstanceRequest extends Google_Model
-{
-  public $sshKey;
+class Google_Service_Appengine_DebugInstanceRequest extends Google_Model {
+    public $sshKey;
 
-  public function setSshKey($sshKey)
-  {
-    $this->sshKey = $sshKey;
-  }
-  public function getSshKey()
-  {
-    return $this->sshKey;
-  }
+    public function setSshKey($sshKey) {
+        $this->sshKey = $sshKey;
+    }
+
+    public function getSshKey() {
+        return $this->sshKey;
+    }
 }

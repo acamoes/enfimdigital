@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Fitness_AggregateResponse extends Google_Collection
-{
-  protected $collection_key = 'bucket';
-  protected $bucketType = 'Google_Service_Fitness_AggregateBucket';
-  protected $bucketDataType = 'array';
+class Google_Service_Fitness_AggregateResponse extends Google_Collection {
+    protected $collection_key = 'bucket';
+    protected $bucketType     = 'Google_Service_Fitness_AggregateBucket';
+    protected $bucketDataType = 'array';
 
-  /**
-   * @param Google_Service_Fitness_AggregateBucket
-   */
-  public function setBucket($bucket)
-  {
-    $this->bucket = $bucket;
-  }
-  /**
-   * @return Google_Service_Fitness_AggregateBucket
-   */
-  public function getBucket()
-  {
-    return $this->bucket;
-  }
+    /**
+     * @param Google_Service_Fitness_AggregateBucket
+     */
+    public function setBucket($bucket) {
+        $this->bucket = $bucket;
+    }
+
+    /**
+     * @return Google_Service_Fitness_AggregateBucket
+     */
+    public function getBucket() {
+        return $this->bucket;
+    }
 }

@@ -23,6 +23,6 @@
  *   $metadata = $analyticsService->metadata;
  *  </code>
  */
-class Google_Service_Analytics_Resource_Metadata extends Google_Service_Resource
-{
+class Google_Service_Analytics_Resource_Metadata extends Google_Service_Resource {
+
 }

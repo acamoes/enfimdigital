@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Genomics_BatchCreateAnnotationsResponse extends Google_Collection
-{
-  protected $collection_key = 'entries';
-  protected $entriesType = 'Google_Service_Genomics_Entry';
-  protected $entriesDataType = 'array';
+class Google_Service_Genomics_BatchCreateAnnotationsResponse extends Google_Collection {
+    protected $collection_key  = 'entries';
+    protected $entriesType     = 'Google_Service_Genomics_Entry';
+    protected $entriesDataType = 'array';
 
-  /**
-   * @param Google_Service_Genomics_Entry
-   */
-  public function setEntries($entries)
-  {
-    $this->entries = $entries;
-  }
-  /**
-   * @return Google_Service_Genomics_Entry
-   */
-  public function getEntries()
-  {
-    return $this->entries;
-  }
+    /**
+     * @param Google_Service_Genomics_Entry
+     */
+    public function setEntries($entries) {
+        $this->entries = $entries;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Entry
+     */
+    public function getEntries() {
+        return $this->entries;
+    }
 }

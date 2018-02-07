@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Gmail_HistoryMessageAdded extends Google_Model
-{
-  protected $messageType = 'Google_Service_Gmail_Message';
-  protected $messageDataType = '';
+class Google_Service_Gmail_HistoryMessageAdded extends Google_Model {
+    protected $messageType     = 'Google_Service_Gmail_Message';
+    protected $messageDataType = '';
 
-  /**
-   * @param Google_Service_Gmail_Message
-   */
-  public function setMessage(Google_Service_Gmail_Message $message)
-  {
-    $this->message = $message;
-  }
-  /**
-   * @return Google_Service_Gmail_Message
-   */
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    /**
+     * @param Google_Service_Gmail_Message
+     */
+    public function setMessage(Google_Service_Gmail_Message $message) {
+        $this->message = $message;
+    }
+
+    /**
+     * @return Google_Service_Gmail_Message
+     */
+    public function getMessage() {
+        return $this->message;
+    }
 }

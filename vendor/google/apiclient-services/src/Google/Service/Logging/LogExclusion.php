@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_Logging_LogExclusion extends Google_Model
-{
-  public $description;
-  public $disabled;
-  public $filter;
-  public $name;
+class Google_Service_Logging_LogExclusion extends Google_Model {
+    public $description;
+    public $disabled;
+    public $filter;
+    public $name;
 
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setDisabled($disabled)
-  {
-    $this->disabled = $disabled;
-  }
-  public function getDisabled()
-  {
-    return $this->disabled;
-  }
-  public function setFilter($filter)
-  {
-    $this->filter = $filter;
-  }
-  public function getFilter()
-  {
-    return $this->filter;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setDisabled($disabled) {
+        $this->disabled = $disabled;
+    }
+
+    public function getDisabled() {
+        return $this->disabled;
+    }
+
+    public function setFilter($filter) {
+        $this->filter = $filter;
+    }
+
+    public function getFilter() {
+        return $this->filter;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

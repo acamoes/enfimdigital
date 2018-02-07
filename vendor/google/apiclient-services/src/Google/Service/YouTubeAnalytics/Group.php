@@ -15,66 +15,64 @@
  * the License.
  */
 
-class Google_Service_YouTubeAnalytics_Group extends Google_Model
-{
-  protected $contentDetailsType = 'Google_Service_YouTubeAnalytics_GroupContentDetails';
-  protected $contentDetailsDataType = '';
-  public $etag;
-  public $id;
-  public $kind;
-  protected $snippetType = 'Google_Service_YouTubeAnalytics_GroupSnippet';
-  protected $snippetDataType = '';
+class Google_Service_YouTubeAnalytics_Group extends Google_Model {
+    protected $contentDetailsType     = 'Google_Service_YouTubeAnalytics_GroupContentDetails';
+    protected $contentDetailsDataType = '';
+    public $etag;
+    public $id;
+    public $kind;
+    protected $snippetType            = 'Google_Service_YouTubeAnalytics_GroupSnippet';
+    protected $snippetDataType        = '';
 
-  /**
-   * @param Google_Service_YouTubeAnalytics_GroupContentDetails
-   */
-  public function setContentDetails(Google_Service_YouTubeAnalytics_GroupContentDetails $contentDetails)
-  {
-    $this->contentDetails = $contentDetails;
-  }
-  /**
-   * @return Google_Service_YouTubeAnalytics_GroupContentDetails
-   */
-  public function getContentDetails()
-  {
-    return $this->contentDetails;
-  }
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_YouTubeAnalytics_GroupSnippet
-   */
-  public function setSnippet(Google_Service_YouTubeAnalytics_GroupSnippet $snippet)
-  {
-    $this->snippet = $snippet;
-  }
-  /**
-   * @return Google_Service_YouTubeAnalytics_GroupSnippet
-   */
-  public function getSnippet()
-  {
-    return $this->snippet;
-  }
+    /**
+     * @param Google_Service_YouTubeAnalytics_GroupContentDetails
+     */
+    public function setContentDetails(Google_Service_YouTubeAnalytics_GroupContentDetails $contentDetails) {
+        $this->contentDetails = $contentDetails;
+    }
+
+    /**
+     * @return Google_Service_YouTubeAnalytics_GroupContentDetails
+     */
+    public function getContentDetails() {
+        return $this->contentDetails;
+    }
+
+    public function setEtag($etag) {
+        $this->etag = $etag;
+    }
+
+    public function getEtag() {
+        return $this->etag;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_YouTubeAnalytics_GroupSnippet
+     */
+    public function setSnippet(Google_Service_YouTubeAnalytics_GroupSnippet $snippet) {
+        $this->snippet = $snippet;
+    }
+
+    /**
+     * @return Google_Service_YouTubeAnalytics_GroupSnippet
+     */
+    public function getSnippet() {
+        return $this->snippet;
+    }
 }

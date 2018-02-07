@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Sheets_UpdateDeveloperMetadataResponse extends Google_Collection
-{
-  protected $collection_key = 'developerMetadata';
-  protected $developerMetadataType = 'Google_Service_Sheets_DeveloperMetadata';
-  protected $developerMetadataDataType = 'array';
+class Google_Service_Sheets_UpdateDeveloperMetadataResponse extends Google_Collection {
+    protected $collection_key            = 'developerMetadata';
+    protected $developerMetadataType     = 'Google_Service_Sheets_DeveloperMetadata';
+    protected $developerMetadataDataType = 'array';
 
-  /**
-   * @param Google_Service_Sheets_DeveloperMetadata
-   */
-  public function setDeveloperMetadata($developerMetadata)
-  {
-    $this->developerMetadata = $developerMetadata;
-  }
-  /**
-   * @return Google_Service_Sheets_DeveloperMetadata
-   */
-  public function getDeveloperMetadata()
-  {
-    return $this->developerMetadata;
-  }
+    /**
+     * @param Google_Service_Sheets_DeveloperMetadata
+     */
+    public function setDeveloperMetadata($developerMetadata) {
+        $this->developerMetadata = $developerMetadata;
+    }
+
+    /**
+     * @return Google_Service_Sheets_DeveloperMetadata
+     */
+    public function getDeveloperMetadata() {
+        return $this->developerMetadata;
+    }
 }

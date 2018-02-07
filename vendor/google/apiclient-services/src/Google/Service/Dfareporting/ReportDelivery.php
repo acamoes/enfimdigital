@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Dfareporting_ReportDelivery extends Google_Collection
-{
-  protected $collection_key = 'recipients';
-  public $emailOwner;
-  public $emailOwnerDeliveryType;
-  public $message;
-  protected $recipientsType = 'Google_Service_Dfareporting_Recipient';
-  protected $recipientsDataType = 'array';
+class Google_Service_Dfareporting_ReportDelivery extends Google_Collection {
+    protected $collection_key     = 'recipients';
+    public $emailOwner;
+    public $emailOwnerDeliveryType;
+    public $message;
+    protected $recipientsType     = 'Google_Service_Dfareporting_Recipient';
+    protected $recipientsDataType = 'array';
 
-  public function setEmailOwner($emailOwner)
-  {
-    $this->emailOwner = $emailOwner;
-  }
-  public function getEmailOwner()
-  {
-    return $this->emailOwner;
-  }
-  public function setEmailOwnerDeliveryType($emailOwnerDeliveryType)
-  {
-    $this->emailOwnerDeliveryType = $emailOwnerDeliveryType;
-  }
-  public function getEmailOwnerDeliveryType()
-  {
-    return $this->emailOwnerDeliveryType;
-  }
-  public function setMessage($message)
-  {
-    $this->message = $message;
-  }
-  public function getMessage()
-  {
-    return $this->message;
-  }
-  /**
-   * @param Google_Service_Dfareporting_Recipient
-   */
-  public function setRecipients($recipients)
-  {
-    $this->recipients = $recipients;
-  }
-  /**
-   * @return Google_Service_Dfareporting_Recipient
-   */
-  public function getRecipients()
-  {
-    return $this->recipients;
-  }
+    public function setEmailOwner($emailOwner) {
+        $this->emailOwner = $emailOwner;
+    }
+
+    public function getEmailOwner() {
+        return $this->emailOwner;
+    }
+
+    public function setEmailOwnerDeliveryType($emailOwnerDeliveryType) {
+        $this->emailOwnerDeliveryType = $emailOwnerDeliveryType;
+    }
+
+    public function getEmailOwnerDeliveryType() {
+        return $this->emailOwnerDeliveryType;
+    }
+
+    public function setMessage($message) {
+        $this->message = $message;
+    }
+
+    public function getMessage() {
+        return $this->message;
+    }
+
+    /**
+     * @param Google_Service_Dfareporting_Recipient
+     */
+    public function setRecipients($recipients) {
+        $this->recipients = $recipients;
+    }
+
+    /**
+     * @return Google_Service_Dfareporting_Recipient
+     */
+    public function getRecipients() {
+        return $this->recipients;
+    }
 }

@@ -15,29 +15,27 @@
  * the License.
  */
 
-class Google_Service_Games_PushTokenIdIos extends Google_Model
-{
-  protected $internal_gapi_mappings = array(
+class Google_Service_Games_PushTokenIdIos extends Google_Model {
+    protected $internal_gapi_mappings = array(
         "apnsDeviceToken" => "apns_device_token",
         "apnsEnvironment" => "apns_environment",
-  );
-  public $apnsDeviceToken;
-  public $apnsEnvironment;
+    );
+    public $apnsDeviceToken;
+    public $apnsEnvironment;
 
-  public function setApnsDeviceToken($apnsDeviceToken)
-  {
-    $this->apnsDeviceToken = $apnsDeviceToken;
-  }
-  public function getApnsDeviceToken()
-  {
-    return $this->apnsDeviceToken;
-  }
-  public function setApnsEnvironment($apnsEnvironment)
-  {
-    $this->apnsEnvironment = $apnsEnvironment;
-  }
-  public function getApnsEnvironment()
-  {
-    return $this->apnsEnvironment;
-  }
+    public function setApnsDeviceToken($apnsDeviceToken) {
+        $this->apnsDeviceToken = $apnsDeviceToken;
+    }
+
+    public function getApnsDeviceToken() {
+        return $this->apnsDeviceToken;
+    }
+
+    public function setApnsEnvironment($apnsEnvironment) {
+        $this->apnsEnvironment = $apnsEnvironment;
+    }
+
+    public function getApnsEnvironment() {
+        return $this->apnsEnvironment;
+    }
 }

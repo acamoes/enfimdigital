@@ -15,70 +15,68 @@
  * the License.
  */
 
-class Google_Service_Genomics_AnnotationSet extends Google_Model
-{
-  public $datasetId;
-  public $id;
-  public $info;
-  public $name;
-  public $referenceSetId;
-  public $sourceUri;
-  public $type;
+class Google_Service_Genomics_AnnotationSet extends Google_Model {
+    public $datasetId;
+    public $id;
+    public $info;
+    public $name;
+    public $referenceSetId;
+    public $sourceUri;
+    public $type;
 
-  public function setDatasetId($datasetId)
-  {
-    $this->datasetId = $datasetId;
-  }
-  public function getDatasetId()
-  {
-    return $this->datasetId;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setInfo($info)
-  {
-    $this->info = $info;
-  }
-  public function getInfo()
-  {
-    return $this->info;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setReferenceSetId($referenceSetId)
-  {
-    $this->referenceSetId = $referenceSetId;
-  }
-  public function getReferenceSetId()
-  {
-    return $this->referenceSetId;
-  }
-  public function setSourceUri($sourceUri)
-  {
-    $this->sourceUri = $sourceUri;
-  }
-  public function getSourceUri()
-  {
-    return $this->sourceUri;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setDatasetId($datasetId) {
+        $this->datasetId = $datasetId;
+    }
+
+    public function getDatasetId() {
+        return $this->datasetId;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setInfo($info) {
+        $this->info = $info;
+    }
+
+    public function getInfo() {
+        return $this->info;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setReferenceSetId($referenceSetId) {
+        $this->referenceSetId = $referenceSetId;
+    }
+
+    public function getReferenceSetId() {
+        return $this->referenceSetId;
+    }
+
+    public function setSourceUri($sourceUri) {
+        $this->sourceUri = $sourceUri;
+    }
+
+    public function getSourceUri() {
+        return $this->sourceUri;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

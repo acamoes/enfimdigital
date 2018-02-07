@@ -15,137 +15,135 @@
  * the License.
  */
 
-class Google_Service_PolyService_Asset extends Google_Collection
-{
-  protected $collection_key = 'formats';
-  public $authorName;
-  public $createTime;
-  public $description;
-  public $displayName;
-  protected $formatsType = 'Google_Service_PolyService_Format';
-  protected $formatsDataType = 'array';
-  public $isCurated;
-  public $license;
-  public $name;
-  protected $presentationParamsType = 'Google_Service_PolyService_PresentationParams';
-  protected $presentationParamsDataType = '';
-  protected $thumbnailType = 'Google_Service_PolyService_PolyFile';
-  protected $thumbnailDataType = '';
-  public $updateTime;
-  public $visibility;
+class Google_Service_PolyService_Asset extends Google_Collection {
+    protected $collection_key             = 'formats';
+    public $authorName;
+    public $createTime;
+    public $description;
+    public $displayName;
+    protected $formatsType                = 'Google_Service_PolyService_Format';
+    protected $formatsDataType            = 'array';
+    public $isCurated;
+    public $license;
+    public $name;
+    protected $presentationParamsType     = 'Google_Service_PolyService_PresentationParams';
+    protected $presentationParamsDataType = '';
+    protected $thumbnailType              = 'Google_Service_PolyService_PolyFile';
+    protected $thumbnailDataType          = '';
+    public $updateTime;
+    public $visibility;
 
-  public function setAuthorName($authorName)
-  {
-    $this->authorName = $authorName;
-  }
-  public function getAuthorName()
-  {
-    return $this->authorName;
-  }
-  public function setCreateTime($createTime)
-  {
-    $this->createTime = $createTime;
-  }
-  public function getCreateTime()
-  {
-    return $this->createTime;
-  }
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
-  /**
-   * @param Google_Service_PolyService_Format
-   */
-  public function setFormats($formats)
-  {
-    $this->formats = $formats;
-  }
-  /**
-   * @return Google_Service_PolyService_Format
-   */
-  public function getFormats()
-  {
-    return $this->formats;
-  }
-  public function setIsCurated($isCurated)
-  {
-    $this->isCurated = $isCurated;
-  }
-  public function getIsCurated()
-  {
-    return $this->isCurated;
-  }
-  public function setLicense($license)
-  {
-    $this->license = $license;
-  }
-  public function getLicense()
-  {
-    return $this->license;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  /**
-   * @param Google_Service_PolyService_PresentationParams
-   */
-  public function setPresentationParams(Google_Service_PolyService_PresentationParams $presentationParams)
-  {
-    $this->presentationParams = $presentationParams;
-  }
-  /**
-   * @return Google_Service_PolyService_PresentationParams
-   */
-  public function getPresentationParams()
-  {
-    return $this->presentationParams;
-  }
-  /**
-   * @param Google_Service_PolyService_PolyFile
-   */
-  public function setThumbnail(Google_Service_PolyService_PolyFile $thumbnail)
-  {
-    $this->thumbnail = $thumbnail;
-  }
-  /**
-   * @return Google_Service_PolyService_PolyFile
-   */
-  public function getThumbnail()
-  {
-    return $this->thumbnail;
-  }
-  public function setUpdateTime($updateTime)
-  {
-    $this->updateTime = $updateTime;
-  }
-  public function getUpdateTime()
-  {
-    return $this->updateTime;
-  }
-  public function setVisibility($visibility)
-  {
-    $this->visibility = $visibility;
-  }
-  public function getVisibility()
-  {
-    return $this->visibility;
-  }
+    public function setAuthorName($authorName) {
+        $this->authorName = $authorName;
+    }
+
+    public function getAuthorName() {
+        return $this->authorName;
+    }
+
+    public function setCreateTime($createTime) {
+        $this->createTime = $createTime;
+    }
+
+    public function getCreateTime() {
+        return $this->createTime;
+    }
+
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
+
+    /**
+     * @param Google_Service_PolyService_Format
+     */
+    public function setFormats($formats) {
+        $this->formats = $formats;
+    }
+
+    /**
+     * @return Google_Service_PolyService_Format
+     */
+    public function getFormats() {
+        return $this->formats;
+    }
+
+    public function setIsCurated($isCurated) {
+        $this->isCurated = $isCurated;
+    }
+
+    public function getIsCurated() {
+        return $this->isCurated;
+    }
+
+    public function setLicense($license) {
+        $this->license = $license;
+    }
+
+    public function getLicense() {
+        return $this->license;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * @param Google_Service_PolyService_PresentationParams
+     */
+    public function setPresentationParams(Google_Service_PolyService_PresentationParams $presentationParams) {
+        $this->presentationParams = $presentationParams;
+    }
+
+    /**
+     * @return Google_Service_PolyService_PresentationParams
+     */
+    public function getPresentationParams() {
+        return $this->presentationParams;
+    }
+
+    /**
+     * @param Google_Service_PolyService_PolyFile
+     */
+    public function setThumbnail(Google_Service_PolyService_PolyFile $thumbnail) {
+        $this->thumbnail = $thumbnail;
+    }
+
+    /**
+     * @return Google_Service_PolyService_PolyFile
+     */
+    public function getThumbnail() {
+        return $this->thumbnail;
+    }
+
+    public function setUpdateTime($updateTime) {
+        $this->updateTime = $updateTime;
+    }
+
+    public function getUpdateTime() {
+        return $this->updateTime;
+    }
+
+    public function setVisibility($visibility) {
+        $this->visibility = $visibility;
+    }
+
+    public function getVisibility() {
+        return $this->visibility;
+    }
 }

@@ -15,53 +15,51 @@
  * the License.
  */
 
-class Google_Service_ServiceConsumerManagement_Endpoint extends Google_Collection
-{
-  protected $collection_key = 'features';
-  public $aliases;
-  public $allowCors;
-  public $features;
-  public $name;
-  public $target;
+class Google_Service_ServiceConsumerManagement_Endpoint extends Google_Collection {
+    protected $collection_key = 'features';
+    public $aliases;
+    public $allowCors;
+    public $features;
+    public $name;
+    public $target;
 
-  public function setAliases($aliases)
-  {
-    $this->aliases = $aliases;
-  }
-  public function getAliases()
-  {
-    return $this->aliases;
-  }
-  public function setAllowCors($allowCors)
-  {
-    $this->allowCors = $allowCors;
-  }
-  public function getAllowCors()
-  {
-    return $this->allowCors;
-  }
-  public function setFeatures($features)
-  {
-    $this->features = $features;
-  }
-  public function getFeatures()
-  {
-    return $this->features;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setTarget($target)
-  {
-    $this->target = $target;
-  }
-  public function getTarget()
-  {
-    return $this->target;
-  }
+    public function setAliases($aliases) {
+        $this->aliases = $aliases;
+    }
+
+    public function getAliases() {
+        return $this->aliases;
+    }
+
+    public function setAllowCors($allowCors) {
+        $this->allowCors = $allowCors;
+    }
+
+    public function getAllowCors() {
+        return $this->allowCors;
+    }
+
+    public function setFeatures($features) {
+        $this->features = $features;
+    }
+
+    public function getFeatures() {
+        return $this->features;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setTarget($target) {
+        $this->target = $target;
+    }
+
+    public function getTarget() {
+        return $this->target;
+    }
 }

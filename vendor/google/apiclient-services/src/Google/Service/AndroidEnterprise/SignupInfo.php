@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_SignupInfo extends Google_Model
-{
-  public $completionToken;
-  public $kind;
-  public $url;
+class Google_Service_AndroidEnterprise_SignupInfo extends Google_Model {
+    public $completionToken;
+    public $kind;
+    public $url;
 
-  public function setCompletionToken($completionToken)
-  {
-    $this->completionToken = $completionToken;
-  }
-  public function getCompletionToken()
-  {
-    return $this->completionToken;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setCompletionToken($completionToken) {
+        $this->completionToken = $completionToken;
+    }
+
+    public function getCompletionToken() {
+        return $this->completionToken;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

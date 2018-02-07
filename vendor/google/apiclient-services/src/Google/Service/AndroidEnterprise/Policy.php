@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_Policy extends Google_Collection
-{
-  protected $collection_key = 'productPolicy';
-  public $productAvailabilityPolicy;
-  protected $productPolicyType = 'Google_Service_AndroidEnterprise_ProductPolicy';
-  protected $productPolicyDataType = 'array';
+class Google_Service_AndroidEnterprise_Policy extends Google_Collection {
+    protected $collection_key        = 'productPolicy';
+    public $productAvailabilityPolicy;
+    protected $productPolicyType     = 'Google_Service_AndroidEnterprise_ProductPolicy';
+    protected $productPolicyDataType = 'array';
 
-  public function setProductAvailabilityPolicy($productAvailabilityPolicy)
-  {
-    $this->productAvailabilityPolicy = $productAvailabilityPolicy;
-  }
-  public function getProductAvailabilityPolicy()
-  {
-    return $this->productAvailabilityPolicy;
-  }
-  /**
-   * @param Google_Service_AndroidEnterprise_ProductPolicy
-   */
-  public function setProductPolicy($productPolicy)
-  {
-    $this->productPolicy = $productPolicy;
-  }
-  /**
-   * @return Google_Service_AndroidEnterprise_ProductPolicy
-   */
-  public function getProductPolicy()
-  {
-    return $this->productPolicy;
-  }
+    public function setProductAvailabilityPolicy($productAvailabilityPolicy) {
+        $this->productAvailabilityPolicy = $productAvailabilityPolicy;
+    }
+
+    public function getProductAvailabilityPolicy() {
+        return $this->productAvailabilityPolicy;
+    }
+
+    /**
+     * @param Google_Service_AndroidEnterprise_ProductPolicy
+     */
+    public function setProductPolicy($productPolicy) {
+        $this->productPolicy = $productPolicy;
+    }
+
+    /**
+     * @return Google_Service_AndroidEnterprise_ProductPolicy
+     */
+    public function getProductPolicy() {
+        return $this->productPolicy;
+    }
 }

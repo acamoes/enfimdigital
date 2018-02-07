@@ -15,55 +15,53 @@
  * the License.
  */
 
-class Google_Service_Vault_CorpusQuery extends Google_Model
-{
-  protected $driveQueryType = 'Google_Service_Vault_HeldDriveQuery';
-  protected $driveQueryDataType = '';
-  protected $groupsQueryType = 'Google_Service_Vault_HeldGroupsQuery';
-  protected $groupsQueryDataType = '';
-  protected $mailQueryType = 'Google_Service_Vault_HeldMailQuery';
-  protected $mailQueryDataType = '';
+class Google_Service_Vault_CorpusQuery extends Google_Model {
+    protected $driveQueryType      = 'Google_Service_Vault_HeldDriveQuery';
+    protected $driveQueryDataType  = '';
+    protected $groupsQueryType     = 'Google_Service_Vault_HeldGroupsQuery';
+    protected $groupsQueryDataType = '';
+    protected $mailQueryType       = 'Google_Service_Vault_HeldMailQuery';
+    protected $mailQueryDataType   = '';
 
-  /**
-   * @param Google_Service_Vault_HeldDriveQuery
-   */
-  public function setDriveQuery(Google_Service_Vault_HeldDriveQuery $driveQuery)
-  {
-    $this->driveQuery = $driveQuery;
-  }
-  /**
-   * @return Google_Service_Vault_HeldDriveQuery
-   */
-  public function getDriveQuery()
-  {
-    return $this->driveQuery;
-  }
-  /**
-   * @param Google_Service_Vault_HeldGroupsQuery
-   */
-  public function setGroupsQuery(Google_Service_Vault_HeldGroupsQuery $groupsQuery)
-  {
-    $this->groupsQuery = $groupsQuery;
-  }
-  /**
-   * @return Google_Service_Vault_HeldGroupsQuery
-   */
-  public function getGroupsQuery()
-  {
-    return $this->groupsQuery;
-  }
-  /**
-   * @param Google_Service_Vault_HeldMailQuery
-   */
-  public function setMailQuery(Google_Service_Vault_HeldMailQuery $mailQuery)
-  {
-    $this->mailQuery = $mailQuery;
-  }
-  /**
-   * @return Google_Service_Vault_HeldMailQuery
-   */
-  public function getMailQuery()
-  {
-    return $this->mailQuery;
-  }
+    /**
+     * @param Google_Service_Vault_HeldDriveQuery
+     */
+    public function setDriveQuery(Google_Service_Vault_HeldDriveQuery $driveQuery) {
+        $this->driveQuery = $driveQuery;
+    }
+
+    /**
+     * @return Google_Service_Vault_HeldDriveQuery
+     */
+    public function getDriveQuery() {
+        return $this->driveQuery;
+    }
+
+    /**
+     * @param Google_Service_Vault_HeldGroupsQuery
+     */
+    public function setGroupsQuery(Google_Service_Vault_HeldGroupsQuery $groupsQuery) {
+        $this->groupsQuery = $groupsQuery;
+    }
+
+    /**
+     * @return Google_Service_Vault_HeldGroupsQuery
+     */
+    public function getGroupsQuery() {
+        return $this->groupsQuery;
+    }
+
+    /**
+     * @param Google_Service_Vault_HeldMailQuery
+     */
+    public function setMailQuery(Google_Service_Vault_HeldMailQuery $mailQuery) {
+        $this->mailQuery = $mailQuery;
+    }
+
+    /**
+     * @return Google_Service_Vault_HeldMailQuery
+     */
+    public function getMailQuery() {
+        return $this->mailQuery;
+    }
 }

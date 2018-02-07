@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dialogflow_ListIntentsResponse extends Google_Collection
-{
-  protected $collection_key = 'intents';
-  protected $intentsType = 'Google_Service_Dialogflow_Intent';
-  protected $intentsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Dialogflow_ListIntentsResponse extends Google_Collection {
+    protected $collection_key  = 'intents';
+    protected $intentsType     = 'Google_Service_Dialogflow_Intent';
+    protected $intentsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Dialogflow_Intent
-   */
-  public function setIntents($intents)
-  {
-    $this->intents = $intents;
-  }
-  /**
-   * @return Google_Service_Dialogflow_Intent
-   */
-  public function getIntents()
-  {
-    return $this->intents;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Dialogflow_Intent
+     */
+    public function setIntents($intents) {
+        $this->intents = $intents;
+    }
+
+    /**
+     * @return Google_Service_Dialogflow_Intent
+     */
+    public function getIntents() {
+        return $this->intents;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

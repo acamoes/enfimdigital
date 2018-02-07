@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Webmasters_UrlSampleDetails extends Google_Collection
-{
-  protected $collection_key = 'linkedFromUrls';
-  public $containingSitemaps;
-  public $linkedFromUrls;
+class Google_Service_Webmasters_UrlSampleDetails extends Google_Collection {
+    protected $collection_key = 'linkedFromUrls';
+    public $containingSitemaps;
+    public $linkedFromUrls;
 
-  public function setContainingSitemaps($containingSitemaps)
-  {
-    $this->containingSitemaps = $containingSitemaps;
-  }
-  public function getContainingSitemaps()
-  {
-    return $this->containingSitemaps;
-  }
-  public function setLinkedFromUrls($linkedFromUrls)
-  {
-    $this->linkedFromUrls = $linkedFromUrls;
-  }
-  public function getLinkedFromUrls()
-  {
-    return $this->linkedFromUrls;
-  }
+    public function setContainingSitemaps($containingSitemaps) {
+        $this->containingSitemaps = $containingSitemaps;
+    }
+
+    public function getContainingSitemaps() {
+        return $this->containingSitemaps;
+    }
+
+    public function setLinkedFromUrls($linkedFromUrls) {
+        $this->linkedFromUrls = $linkedFromUrls;
+    }
+
+    public function getLinkedFromUrls() {
+        return $this->linkedFromUrls;
+    }
 }

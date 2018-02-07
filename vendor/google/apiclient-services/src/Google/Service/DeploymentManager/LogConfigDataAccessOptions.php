@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_DeploymentManager_LogConfigDataAccessOptions extends Google_Model
-{
-  public $logMode;
+class Google_Service_DeploymentManager_LogConfigDataAccessOptions extends Google_Model {
+    public $logMode;
 
-  public function setLogMode($logMode)
-  {
-    $this->logMode = $logMode;
-  }
-  public function getLogMode()
-  {
-    return $this->logMode;
-  }
+    public function setLogMode($logMode) {
+        $this->logMode = $logMode;
+    }
+
+    public function getLogMode() {
+        return $this->logMode;
+    }
 }

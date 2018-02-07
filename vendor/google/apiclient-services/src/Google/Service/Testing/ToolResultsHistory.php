@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Testing_ToolResultsHistory extends Google_Model
-{
-  public $historyId;
-  public $projectId;
+class Google_Service_Testing_ToolResultsHistory extends Google_Model {
+    public $historyId;
+    public $projectId;
 
-  public function setHistoryId($historyId)
-  {
-    $this->historyId = $historyId;
-  }
-  public function getHistoryId()
-  {
-    return $this->historyId;
-  }
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
-  }
+    public function setHistoryId($historyId) {
+        $this->historyId = $historyId;
+    }
+
+    public function getHistoryId() {
+        return $this->historyId;
+    }
+
+    public function setProjectId($projectId) {
+        $this->projectId = $projectId;
+    }
+
+    public function getProjectId() {
+        return $this->projectId;
+    }
 }

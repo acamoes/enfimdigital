@@ -15,18 +15,16 @@
  * the License.
  */
 
-class Google_Service_Tracing_BatchWriteSpansRequest extends Google_Collection
-{
-  protected $collection_key = 'spans';
-  protected $spansType = 'Google_Service_Tracing_Span';
-  protected $spansDataType = 'array';
+class Google_Service_Tracing_BatchWriteSpansRequest extends Google_Collection {
+    protected $collection_key = 'spans';
+    protected $spansType      = 'Google_Service_Tracing_Span';
+    protected $spansDataType  = 'array';
 
-  public function setSpans($spans)
-  {
-    $this->spans = $spans;
-  }
-  public function getSpans()
-  {
-    return $this->spans;
-  }
+    public function setSpans($spans) {
+        $this->spans = $spans;
+    }
+
+    public function getSpans() {
+        return $this->spans;
+    }
 }

@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_GamesManagement_GamesPlayerLevelResource extends Google_Model
-{
-  public $level;
-  public $maxExperiencePoints;
-  public $minExperiencePoints;
+class Google_Service_GamesManagement_GamesPlayerLevelResource extends Google_Model {
+    public $level;
+    public $maxExperiencePoints;
+    public $minExperiencePoints;
 
-  public function setLevel($level)
-  {
-    $this->level = $level;
-  }
-  public function getLevel()
-  {
-    return $this->level;
-  }
-  public function setMaxExperiencePoints($maxExperiencePoints)
-  {
-    $this->maxExperiencePoints = $maxExperiencePoints;
-  }
-  public function getMaxExperiencePoints()
-  {
-    return $this->maxExperiencePoints;
-  }
-  public function setMinExperiencePoints($minExperiencePoints)
-  {
-    $this->minExperiencePoints = $minExperiencePoints;
-  }
-  public function getMinExperiencePoints()
-  {
-    return $this->minExperiencePoints;
-  }
+    public function setLevel($level) {
+        $this->level = $level;
+    }
+
+    public function getLevel() {
+        return $this->level;
+    }
+
+    public function setMaxExperiencePoints($maxExperiencePoints) {
+        $this->maxExperiencePoints = $maxExperiencePoints;
+    }
+
+    public function getMaxExperiencePoints() {
+        return $this->maxExperiencePoints;
+    }
+
+    public function setMinExperiencePoints($minExperiencePoints) {
+        $this->minExperiencePoints = $minExperiencePoints;
+    }
+
+    public function getMinExperiencePoints() {
+        return $this->minExperiencePoints;
+    }
 }

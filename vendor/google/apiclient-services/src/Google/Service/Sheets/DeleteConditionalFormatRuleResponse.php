@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Sheets_DeleteConditionalFormatRuleResponse extends Google_Model
-{
-  protected $ruleType = 'Google_Service_Sheets_ConditionalFormatRule';
-  protected $ruleDataType = '';
+class Google_Service_Sheets_DeleteConditionalFormatRuleResponse extends Google_Model {
+    protected $ruleType     = 'Google_Service_Sheets_ConditionalFormatRule';
+    protected $ruleDataType = '';
 
-  /**
-   * @param Google_Service_Sheets_ConditionalFormatRule
-   */
-  public function setRule(Google_Service_Sheets_ConditionalFormatRule $rule)
-  {
-    $this->rule = $rule;
-  }
-  /**
-   * @return Google_Service_Sheets_ConditionalFormatRule
-   */
-  public function getRule()
-  {
-    return $this->rule;
-  }
+    /**
+     * @param Google_Service_Sheets_ConditionalFormatRule
+     */
+    public function setRule(Google_Service_Sheets_ConditionalFormatRule $rule) {
+        $this->rule = $rule;
+    }
+
+    /**
+     * @return Google_Service_Sheets_ConditionalFormatRule
+     */
+    public function getRule() {
+        return $this->rule;
+    }
 }

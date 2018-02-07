@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Genomics_SearchReadsResponse extends Google_Collection
-{
-  protected $collection_key = 'alignments';
-  protected $alignmentsType = 'Google_Service_Genomics_Read';
-  protected $alignmentsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_Genomics_SearchReadsResponse extends Google_Collection {
+    protected $collection_key     = 'alignments';
+    protected $alignmentsType     = 'Google_Service_Genomics_Read';
+    protected $alignmentsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Genomics_Read
-   */
-  public function setAlignments($alignments)
-  {
-    $this->alignments = $alignments;
-  }
-  /**
-   * @return Google_Service_Genomics_Read
-   */
-  public function getAlignments()
-  {
-    return $this->alignments;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Genomics_Read
+     */
+    public function setAlignments($alignments) {
+        $this->alignments = $alignments;
+    }
+
+    /**
+     * @return Google_Service_Genomics_Read
+     */
+    public function getAlignments() {
+        return $this->alignments;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyer_Dimension extends Google_Collection
-{
-  protected $collection_key = 'dimensionValues';
-  public $dimensionType;
-  protected $dimensionValuesType = 'Google_Service_AdExchangeBuyer_DimensionDimensionValue';
-  protected $dimensionValuesDataType = 'array';
+class Google_Service_AdExchangeBuyer_Dimension extends Google_Collection {
+    protected $collection_key          = 'dimensionValues';
+    public $dimensionType;
+    protected $dimensionValuesType     = 'Google_Service_AdExchangeBuyer_DimensionDimensionValue';
+    protected $dimensionValuesDataType = 'array';
 
-  public function setDimensionType($dimensionType)
-  {
-    $this->dimensionType = $dimensionType;
-  }
-  public function getDimensionType()
-  {
-    return $this->dimensionType;
-  }
-  /**
-   * @param Google_Service_AdExchangeBuyer_DimensionDimensionValue
-   */
-  public function setDimensionValues($dimensionValues)
-  {
-    $this->dimensionValues = $dimensionValues;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyer_DimensionDimensionValue
-   */
-  public function getDimensionValues()
-  {
-    return $this->dimensionValues;
-  }
+    public function setDimensionType($dimensionType) {
+        $this->dimensionType = $dimensionType;
+    }
+
+    public function getDimensionType() {
+        return $this->dimensionType;
+    }
+
+    /**
+     * @param Google_Service_AdExchangeBuyer_DimensionDimensionValue
+     */
+    public function setDimensionValues($dimensionValues) {
+        $this->dimensionValues = $dimensionValues;
+    }
+
+    /**
+     * @return Google_Service_AdExchangeBuyer_DimensionDimensionValue
+     */
+    public function getDimensionValues() {
+        return $this->dimensionValues;
+    }
 }

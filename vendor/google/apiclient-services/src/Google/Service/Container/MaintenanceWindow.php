@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Container_MaintenanceWindow extends Google_Model
-{
-  protected $dailyMaintenanceWindowType = 'Google_Service_Container_DailyMaintenanceWindow';
-  protected $dailyMaintenanceWindowDataType = '';
+class Google_Service_Container_MaintenanceWindow extends Google_Model {
+    protected $dailyMaintenanceWindowType     = 'Google_Service_Container_DailyMaintenanceWindow';
+    protected $dailyMaintenanceWindowDataType = '';
 
-  /**
-   * @param Google_Service_Container_DailyMaintenanceWindow
-   */
-  public function setDailyMaintenanceWindow(Google_Service_Container_DailyMaintenanceWindow $dailyMaintenanceWindow)
-  {
-    $this->dailyMaintenanceWindow = $dailyMaintenanceWindow;
-  }
-  /**
-   * @return Google_Service_Container_DailyMaintenanceWindow
-   */
-  public function getDailyMaintenanceWindow()
-  {
-    return $this->dailyMaintenanceWindow;
-  }
+    /**
+     * @param Google_Service_Container_DailyMaintenanceWindow
+     */
+    public function setDailyMaintenanceWindow(Google_Service_Container_DailyMaintenanceWindow $dailyMaintenanceWindow) {
+        $this->dailyMaintenanceWindow = $dailyMaintenanceWindow;
+    }
+
+    /**
+     * @return Google_Service_Container_DailyMaintenanceWindow
+     */
+    public function getDailyMaintenanceWindow() {
+        return $this->dailyMaintenanceWindow;
+    }
 }
