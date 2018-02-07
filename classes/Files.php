@@ -18,9 +18,9 @@ class Files {
 
     }
 
-    public function getInformations($id) {
+    public function getInformations($idInformations) {
         $query  = "SELECT ci.* FROM courses_informations ci INNER JOIN users_courses uc "
-                . "ON ci.idCourses=uc.idCourses AND uc.idUsers=" . $_SESSION['users']->id . " AND ci.status='Ativo' AND ci.idInformations=" . $id . " LIMIT 1";
+                . "ON ci.idCourses=uc.idCourses AND uc.idUsers=" . $_SESSION['users']->idUsers . " AND ci.status='Ativo' AND ci.idInformations=" . $idInformations . " LIMIT 1";
         $con    = new Database ();
         $result = $con->get($query);
         if (count($result) > 0) {
@@ -34,22 +34,18 @@ class Files {
         $this->display();
     }
 
-    public function getDocuments($id) {
-
-    }
-
-    public function getArchive($id, $filePos) {
+    public function getArchive($idDocuments, $filePos) {
         $query  = "SELECT cd.name, cd.type,cd.document3 as doc1,cd.document3Blob as blob1,cd.document4 as doc2,cd.document4Blob as blob2,cd.status "
                 . "FROM courses_documents cd INNER JOIN users_courses uc "
-                . "ON cd.idCourses=uc.idCourses AND cd.public='Sim' AND cd.status='Fechado' AND cd.idDocuments=" . $id . " AND type='Texto'  AND uc.idUsers=" . $_SESSION['users']->id . " "
+                . "ON cd.idCourses=uc.idCourses AND cd.public='Sim' AND cd.status='Fechado' AND cd.idDocuments=" . $idDocuments . " AND type='Texto'  AND uc.idUsers=" . $_SESSION['users']->idUsers . " "
                 . "UNION "
                 . "SELECT cd.name, cd.type,cd.document4 as doc1,cd.document4Blob as blob1, null as doc2,null as blob2,cd.status "
                 . "FROM courses_documents cd INNER JOIN users_courses uc "
-                . "ON cd.idCourses=uc.idCourses AND cd.public='Sim' AND cd.status='Fechado' AND cd.idDocuments=" . $id . " AND type='Apresentação'  AND uc.idUsers=" . $_SESSION['users']->id . " "
+                . "ON cd.idCourses=uc.idCourses AND cd.public='Sim' AND cd.status='Fechado' AND cd.idDocuments=" . $idDocuments . " AND type='Apresentação'  AND uc.idUsers=" . $_SESSION['users']->idUsers . " "
                 . "UNION "
                 . "SELECT cd.name, cd.type,cd.document1 as doc1,cd.document1Blob as blob1, null as doc2,null as blob2,cd.status "
                 . "FROM courses_documents cd INNER JOIN users_courses uc "
-                . "ON cd.idCourses=uc.idCourses AND cd.public='Sim' AND cd.status='Fechado' AND cd.idDocuments=" . $id . " AND type='Extra'  AND uc.idUsers=" . $_SESSION['users']->id . " ";
+                . "ON cd.idCourses=uc.idCourses AND cd.public='Sim' AND cd.status='Fechado' AND cd.idDocuments=" . $idDocuments . " AND type='Extra'  AND uc.idUsers=" . $_SESSION['users']->idUsers . " ";
         $con    = new Database ();
         $result = $con->get($query);
         if (count($result) > 0) {
@@ -63,14 +59,14 @@ class Files {
         $this->display();
     }
 
-    public function getArchiveAll($id, $filePos) {
+    public function getArchiveAll($ids, $filePos) {
         if ($_SESSION['users']->permission == 'Equipa Executiva' ||
                 $_SESSION['users']->permission == 'Formador') {
             if ($filePos != '5') {
-                $query = "SELECT * FROM documents WHERE idDocuments=" . $id;
+                $query = "SELECT * FROM documents WHERE idDocuments=" . $ids;
             }
             else {
-                $query   = "SELECT * FROM courses_informations WHERE idInformations=" . $id;
+                $query   = "SELECT * FROM courses_informations WHERE idInformations=" . $ids;
                 $filePos = '';
             }
             $con    = new Database ();
@@ -100,10 +96,10 @@ class Files {
         echo $this->content;
     }
 
-    public function getFormacoesArchiveAll($id, $filePos) {
+    public function getFormacoesArchiveAll($idDocuments, $filePos) {
         if ($_SESSION['users']->permission == 'Equipa Executiva' ||
                 $_SESSION['users']->permission == 'Formador') {
-            $query  = "SELECT * FROM courses_documents WHERE idDocuments=" . $id;
+            $query  = "SELECT * FROM courses_documents WHERE idDocuments=" . $idDocuments;
             $con    = new Database ();
             $result = $con->get($query);
             if (count($result) > 0) {

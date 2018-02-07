@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Calendar_TimePeriod extends Google_Model
-{
-  public $end;
-  public $start;
+class Google_Service_Calendar_TimePeriod extends Google_Model {
+    public $end;
+    public $start;
 
-  public function setEnd($end)
-  {
-    $this->end = $end;
-  }
-  public function getEnd()
-  {
-    return $this->end;
-  }
-  public function setStart($start)
-  {
-    $this->start = $start;
-  }
-  public function getStart()
-  {
-    return $this->start;
-  }
+    public function setEnd($end) {
+        $this->end = $end;
+    }
+
+    public function getEnd() {
+        return $this->end;
+    }
+
+    public function setStart($start) {
+        $this->start = $start;
+    }
+
+    public function getStart() {
+        return $this->start;
+    }
 }

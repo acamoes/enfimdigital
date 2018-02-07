@@ -15,87 +15,85 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric extends Google_Model
-{
-  protected $categoricalStatsConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsConfig';
-  protected $categoricalStatsConfigDataType = '';
-  protected $kAnonymityConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig';
-  protected $kAnonymityConfigDataType = '';
-  protected $kMapEstimationConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationConfig';
-  protected $kMapEstimationConfigDataType = '';
-  protected $lDiversityConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig';
-  protected $lDiversityConfigDataType = '';
-  protected $numericalStatsConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsConfig';
-  protected $numericalStatsConfigDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric extends Google_Model {
+    protected $categoricalStatsConfigType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsConfig';
+    protected $categoricalStatsConfigDataType = '';
+    protected $kAnonymityConfigType           = 'Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig';
+    protected $kAnonymityConfigDataType       = '';
+    protected $kMapEstimationConfigType       = 'Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationConfig';
+    protected $kMapEstimationConfigDataType   = '';
+    protected $lDiversityConfigType           = 'Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig';
+    protected $lDiversityConfigDataType       = '';
+    protected $numericalStatsConfigType       = 'Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsConfig';
+    protected $numericalStatsConfigDataType   = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsConfig
-   */
-  public function setCategoricalStatsConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsConfig $categoricalStatsConfig)
-  {
-    $this->categoricalStatsConfig = $categoricalStatsConfig;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsConfig
-   */
-  public function getCategoricalStatsConfig()
-  {
-    return $this->categoricalStatsConfig;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig
-   */
-  public function setKAnonymityConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig $kAnonymityConfig)
-  {
-    $this->kAnonymityConfig = $kAnonymityConfig;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig
-   */
-  public function getKAnonymityConfig()
-  {
-    return $this->kAnonymityConfig;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationConfig
-   */
-  public function setKMapEstimationConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationConfig $kMapEstimationConfig)
-  {
-    $this->kMapEstimationConfig = $kMapEstimationConfig;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationConfig
-   */
-  public function getKMapEstimationConfig()
-  {
-    return $this->kMapEstimationConfig;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig
-   */
-  public function setLDiversityConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig $lDiversityConfig)
-  {
-    $this->lDiversityConfig = $lDiversityConfig;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig
-   */
-  public function getLDiversityConfig()
-  {
-    return $this->lDiversityConfig;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsConfig
-   */
-  public function setNumericalStatsConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsConfig $numericalStatsConfig)
-  {
-    $this->numericalStatsConfig = $numericalStatsConfig;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsConfig
-   */
-  public function getNumericalStatsConfig()
-  {
-    return $this->numericalStatsConfig;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsConfig
+     */
+    public function setCategoricalStatsConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsConfig $categoricalStatsConfig) {
+        $this->categoricalStatsConfig = $categoricalStatsConfig;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsConfig
+     */
+    public function getCategoricalStatsConfig() {
+        return $this->categoricalStatsConfig;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig
+     */
+    public function setKAnonymityConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig $kAnonymityConfig) {
+        $this->kAnonymityConfig = $kAnonymityConfig;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig
+     */
+    public function getKAnonymityConfig() {
+        return $this->kAnonymityConfig;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationConfig
+     */
+    public function setKMapEstimationConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationConfig $kMapEstimationConfig) {
+        $this->kMapEstimationConfig = $kMapEstimationConfig;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationConfig
+     */
+    public function getKMapEstimationConfig() {
+        return $this->kMapEstimationConfig;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig
+     */
+    public function setLDiversityConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig $lDiversityConfig) {
+        $this->lDiversityConfig = $lDiversityConfig;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig
+     */
+    public function getLDiversityConfig() {
+        return $this->lDiversityConfig;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsConfig
+     */
+    public function setNumericalStatsConfig(Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsConfig $numericalStatsConfig) {
+        $this->numericalStatsConfig = $numericalStatsConfig;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsConfig
+     */
+    public function getNumericalStatsConfig() {
+        return $this->numericalStatsConfig;
+    }
 }

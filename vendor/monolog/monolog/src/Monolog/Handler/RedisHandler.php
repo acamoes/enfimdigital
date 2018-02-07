@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;
 
@@ -25,8 +22,7 @@ use Monolog\Logger;
  *
  * @author Thomas Tourlourat <thomas@tourlourat.com>
  */
-class RedisHandler extends AbstractProcessingHandler
-{
+class RedisHandler extends AbstractProcessingHandler {
     private $redisClient;
     private $redisKey;
     protected $capSize;
@@ -38,15 +34,14 @@ class RedisHandler extends AbstractProcessingHandler
      * @param bool                  $bubble  Whether the messages that are handled can bubble up the stack or not
      * @param int                   $capSize Number of entries to limit list size to
      */
-    public function __construct($redis, $key, $level = Logger::DEBUG, $bubble = true, $capSize = false)
-    {
+    public function __construct($redis, $key, $level = Logger::DEBUG, $bubble = true, $capSize = false) {
         if (!(($redis instanceof \Predis\Client) || ($redis instanceof \Redis))) {
             throw new \InvalidArgumentException('Predis\Client or Redis instance required');
         }
 
         $this->redisClient = $redis;
-        $this->redisKey = $key;
-        $this->capSize = $capSize;
+        $this->redisKey    = $key;
+        $this->capSize     = $capSize;
 
         parent::__construct($level, $bubble);
     }
@@ -54,11 +49,11 @@ class RedisHandler extends AbstractProcessingHandler
     /**
      * {@inheritDoc}
      */
-    protected function write(array $record)
-    {
+    protected function write(array $record) {
         if ($this->capSize) {
             $this->writeCapped($record);
-        } else {
+        }
+        else {
             $this->redisClient->rpush($this->redisKey, $record["formatted"]);
         }
     }
@@ -70,16 +65,16 @@ class RedisHandler extends AbstractProcessingHandler
      * @param  array $record associative record array
      * @return void
      */
-    protected function writeCapped(array $record)
-    {
+    protected function writeCapped(array $record) {
         if ($this->redisClient instanceof \Redis) {
             $this->redisClient->multi()
-                ->rpush($this->redisKey, $record["formatted"])
-                ->ltrim($this->redisKey, -$this->capSize, -1)
-                ->exec();
-        } else {
+                    ->rpush($this->redisKey, $record["formatted"])
+                    ->ltrim($this->redisKey, -$this->capSize, -1)
+                    ->exec();
+        }
+        else {
             $redisKey = $this->redisKey;
-            $capSize = $this->capSize;
+            $capSize  = $this->capSize;
             $this->redisClient->transaction(function ($tx) use ($record, $redisKey, $capSize) {
                 $tx->rpush($redisKey, $record["formatted"]);
                 $tx->ltrim($redisKey, -$capSize, -1);
@@ -90,8 +85,7 @@ class RedisHandler extends AbstractProcessingHandler
     /**
      * {@inheritDoc}
      */
-    protected function getDefaultFormatter()
-    {
+    protected function getDefaultFormatter() {
         return new LineFormatter();
     }
 }

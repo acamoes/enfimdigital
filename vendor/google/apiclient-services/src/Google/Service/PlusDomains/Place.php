@@ -15,66 +15,64 @@
  * the License.
  */
 
-class Google_Service_PlusDomains_Place extends Google_Model
-{
-  protected $addressType = 'Google_Service_PlusDomains_PlaceAddress';
-  protected $addressDataType = '';
-  public $displayName;
-  public $id;
-  public $kind;
-  protected $positionType = 'Google_Service_PlusDomains_PlacePosition';
-  protected $positionDataType = '';
+class Google_Service_PlusDomains_Place extends Google_Model {
+    protected $addressType      = 'Google_Service_PlusDomains_PlaceAddress';
+    protected $addressDataType  = '';
+    public $displayName;
+    public $id;
+    public $kind;
+    protected $positionType     = 'Google_Service_PlusDomains_PlacePosition';
+    protected $positionDataType = '';
 
-  /**
-   * @param Google_Service_PlusDomains_PlaceAddress
-   */
-  public function setAddress(Google_Service_PlusDomains_PlaceAddress $address)
-  {
-    $this->address = $address;
-  }
-  /**
-   * @return Google_Service_PlusDomains_PlaceAddress
-   */
-  public function getAddress()
-  {
-    return $this->address;
-  }
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_PlusDomains_PlacePosition
-   */
-  public function setPosition(Google_Service_PlusDomains_PlacePosition $position)
-  {
-    $this->position = $position;
-  }
-  /**
-   * @return Google_Service_PlusDomains_PlacePosition
-   */
-  public function getPosition()
-  {
-    return $this->position;
-  }
+    /**
+     * @param Google_Service_PlusDomains_PlaceAddress
+     */
+    public function setAddress(Google_Service_PlusDomains_PlaceAddress $address) {
+        $this->address = $address;
+    }
+
+    /**
+     * @return Google_Service_PlusDomains_PlaceAddress
+     */
+    public function getAddress() {
+        return $this->address;
+    }
+
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_PlusDomains_PlacePosition
+     */
+    public function setPosition(Google_Service_PlusDomains_PlacePosition $position) {
+        $this->position = $position;
+    }
+
+    /**
+     * @return Google_Service_PlusDomains_PlacePosition
+     */
+    public function getPosition() {
+        return $this->position;
+    }
 }

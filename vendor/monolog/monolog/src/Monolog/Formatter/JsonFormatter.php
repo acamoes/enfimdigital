@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Formatter;
-
 use Exception;
 use Throwable;
 
@@ -21,14 +18,11 @@ use Throwable;
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
-class JsonFormatter extends NormalizerFormatter
-{
-    const BATCH_MODE_JSON = 1;
-    const BATCH_MODE_NEWLINES = 2;
-
+class JsonFormatter extends NormalizerFormatter {
+    const BATCH_MODE_JSON               = 1;
+    const BATCH_MODE_NEWLINES           = 2;
     protected $batchMode;
     protected $appendNewline;
-
     /**
      * @var bool
      */
@@ -38,9 +32,8 @@ class JsonFormatter extends NormalizerFormatter
      * @param int $batchMode
      * @param bool $appendNewline
      */
-    public function __construct($batchMode = self::BATCH_MODE_JSON, $appendNewline = true)
-    {
-        $this->batchMode = $batchMode;
+    public function __construct($batchMode = self::BATCH_MODE_JSON, $appendNewline = true) {
+        $this->batchMode     = $batchMode;
         $this->appendNewline = $appendNewline;
     }
 
@@ -53,8 +46,7 @@ class JsonFormatter extends NormalizerFormatter
      *
      * @return int
      */
-    public function getBatchMode()
-    {
+    public function getBatchMode() {
         return $this->batchMode;
     }
 
@@ -63,24 +55,21 @@ class JsonFormatter extends NormalizerFormatter
      *
      * @return bool
      */
-    public function isAppendingNewlines()
-    {
+    public function isAppendingNewlines() {
         return $this->appendNewline;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function format(array $record)
-    {
+    public function format(array $record) {
         return $this->toJson($this->normalize($record), true) . ($this->appendNewline ? "\n" : '');
     }
 
     /**
      * {@inheritdoc}
      */
-    public function formatBatch(array $records)
-    {
+    public function formatBatch(array $records) {
         switch ($this->batchMode) {
             case static::BATCH_MODE_NEWLINES:
                 return $this->formatBatchNewlines($records);
@@ -94,8 +83,7 @@ class JsonFormatter extends NormalizerFormatter
     /**
      * @param bool $include
      */
-    public function includeStacktraces($include = true)
-    {
+    public function includeStacktraces($include = true) {
         $this->includeStacktraces = $include;
     }
 
@@ -105,8 +93,7 @@ class JsonFormatter extends NormalizerFormatter
      * @param  array  $records
      * @return string
      */
-    protected function formatBatchJson(array $records)
-    {
+    protected function formatBatchJson(array $records) {
         return $this->toJson($this->normalize($records), true);
     }
 
@@ -117,11 +104,10 @@ class JsonFormatter extends NormalizerFormatter
      * @param  array  $records
      * @return string
      */
-    protected function formatBatchNewlines(array $records)
-    {
+    protected function formatBatchNewlines(array $records) {
         $instance = $this;
 
-        $oldNewline = $this->appendNewline;
+        $oldNewline          = $this->appendNewline;
         $this->appendNewline = false;
         array_walk($records, function (&$value, $key) use ($instance) {
             $value = $instance->format($value);
@@ -138,8 +124,7 @@ class JsonFormatter extends NormalizerFormatter
      *
      * @return mixed
      */
-    protected function normalize($data)
-    {
+    protected function normalize($data) {
         if (is_array($data) || $data instanceof \Traversable) {
             $normalized = array();
 
@@ -170,29 +155,30 @@ class JsonFormatter extends NormalizerFormatter
      *
      * @return array
      */
-    protected function normalizeException($e)
-    {
+    protected function normalizeException($e) {
         // TODO 2.0 only check for Throwable
         if (!$e instanceof Exception && !$e instanceof Throwable) {
-            throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.get_class($e));
+            throw new \InvalidArgumentException('Exception/Throwable expected, got ' . gettype($e) . ' / ' . get_class($e));
         }
 
         $data = array(
-            'class' => get_class($e),
+            'class'   => get_class($e),
             'message' => $e->getMessage(),
-            'code' => $e->getCode(),
-            'file' => $e->getFile().':'.$e->getLine(),
+            'code'    => $e->getCode(),
+            'file'    => $e->getFile() . ':' . $e->getLine(),
         );
 
         if ($this->includeStacktraces) {
             $trace = $e->getTrace();
             foreach ($trace as $frame) {
                 if (isset($frame['file'])) {
-                    $data['trace'][] = $frame['file'].':'.$frame['line'];
-                } elseif (isset($frame['function']) && $frame['function'] === '{closure}') {
+                    $data['trace'][] = $frame['file'] . ':' . $frame['line'];
+                }
+                elseif (isset($frame['function']) && $frame['function'] === '{closure}') {
                     // We should again normalize the frames, because it might contain invalid items
                     $data['trace'][] = $frame['function'];
-                } else {
+                }
+                else {
                     // We should again normalize the frames, because it might contain invalid items
                     $data['trace'][] = $this->normalize($frame);
                 }

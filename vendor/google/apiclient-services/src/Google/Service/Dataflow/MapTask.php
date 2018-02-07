@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Dataflow_MapTask extends Google_Collection
-{
-  protected $collection_key = 'instructions';
-  protected $instructionsType = 'Google_Service_Dataflow_ParallelInstruction';
-  protected $instructionsDataType = 'array';
-  public $stageName;
-  public $systemName;
+class Google_Service_Dataflow_MapTask extends Google_Collection {
+    protected $collection_key       = 'instructions';
+    protected $instructionsType     = 'Google_Service_Dataflow_ParallelInstruction';
+    protected $instructionsDataType = 'array';
+    public $stageName;
+    public $systemName;
 
-  /**
-   * @param Google_Service_Dataflow_ParallelInstruction
-   */
-  public function setInstructions($instructions)
-  {
-    $this->instructions = $instructions;
-  }
-  /**
-   * @return Google_Service_Dataflow_ParallelInstruction
-   */
-  public function getInstructions()
-  {
-    return $this->instructions;
-  }
-  public function setStageName($stageName)
-  {
-    $this->stageName = $stageName;
-  }
-  public function getStageName()
-  {
-    return $this->stageName;
-  }
-  public function setSystemName($systemName)
-  {
-    $this->systemName = $systemName;
-  }
-  public function getSystemName()
-  {
-    return $this->systemName;
-  }
+    /**
+     * @param Google_Service_Dataflow_ParallelInstruction
+     */
+    public function setInstructions($instructions) {
+        $this->instructions = $instructions;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_ParallelInstruction
+     */
+    public function getInstructions() {
+        return $this->instructions;
+    }
+
+    public function setStageName($stageName) {
+        $this->stageName = $stageName;
+    }
+
+    public function getStageName() {
+        return $this->stageName;
+    }
+
+    public function setSystemName($systemName) {
+        $this->systemName = $systemName;
+    }
+
+    public function getSystemName() {
+        return $this->systemName;
+    }
 }

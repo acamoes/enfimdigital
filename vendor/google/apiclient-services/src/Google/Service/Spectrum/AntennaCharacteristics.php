@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Spectrum_AntennaCharacteristics extends Google_Model
-{
-  public $height;
-  public $heightType;
-  public $heightUncertainty;
+class Google_Service_Spectrum_AntennaCharacteristics extends Google_Model {
+    public $height;
+    public $heightType;
+    public $heightUncertainty;
 
-  public function setHeight($height)
-  {
-    $this->height = $height;
-  }
-  public function getHeight()
-  {
-    return $this->height;
-  }
-  public function setHeightType($heightType)
-  {
-    $this->heightType = $heightType;
-  }
-  public function getHeightType()
-  {
-    return $this->heightType;
-  }
-  public function setHeightUncertainty($heightUncertainty)
-  {
-    $this->heightUncertainty = $heightUncertainty;
-  }
-  public function getHeightUncertainty()
-  {
-    return $this->heightUncertainty;
-  }
+    public function setHeight($height) {
+        $this->height = $height;
+    }
+
+    public function getHeight() {
+        return $this->height;
+    }
+
+    public function setHeightType($heightType) {
+        $this->heightType = $heightType;
+    }
+
+    public function getHeightType() {
+        return $this->heightType;
+    }
+
+    public function setHeightUncertainty($heightUncertainty) {
+        $this->heightUncertainty = $heightUncertainty;
+    }
+
+    public function getHeightUncertainty() {
+        return $this->heightUncertainty;
+    }
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace Psr\Http\Message;
 
 /**
@@ -21,8 +20,8 @@ namespace Psr\Http\Message;
  * be implemented such that they retain the internal state of the current
  * message and return an instance that contains the changed state.
  */
-interface RequestInterface extends MessageInterface
-{
+interface RequestInterface extends MessageInterface {
+
     /**
      * Retrieves the message's request target.
      *

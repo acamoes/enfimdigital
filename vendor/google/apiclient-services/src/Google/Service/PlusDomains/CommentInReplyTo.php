@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_PlusDomains_CommentInReplyTo extends Google_Model
-{
-  public $id;
-  public $url;
+class Google_Service_PlusDomains_CommentInReplyTo extends Google_Model {
+    public $id;
+    public $url;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

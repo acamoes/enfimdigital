@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ServiceUser_Mixin extends Google_Model
-{
-  public $name;
-  public $root;
+class Google_Service_ServiceUser_Mixin extends Google_Model {
+    public $name;
+    public $root;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setRoot($root)
-  {
-    $this->root = $root;
-  }
-  public function getRoot()
-  {
-    return $this->root;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setRoot($root) {
+        $this->root = $root;
+    }
+
+    public function getRoot() {
+        return $this->root;
+    }
 }

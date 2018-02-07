@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dataflow_StreamingComputationRanges extends Google_Collection
-{
-  protected $collection_key = 'rangeAssignments';
-  public $computationId;
-  protected $rangeAssignmentsType = 'Google_Service_Dataflow_KeyRangeDataDiskAssignment';
-  protected $rangeAssignmentsDataType = 'array';
+class Google_Service_Dataflow_StreamingComputationRanges extends Google_Collection {
+    protected $collection_key           = 'rangeAssignments';
+    public $computationId;
+    protected $rangeAssignmentsType     = 'Google_Service_Dataflow_KeyRangeDataDiskAssignment';
+    protected $rangeAssignmentsDataType = 'array';
 
-  public function setComputationId($computationId)
-  {
-    $this->computationId = $computationId;
-  }
-  public function getComputationId()
-  {
-    return $this->computationId;
-  }
-  /**
-   * @param Google_Service_Dataflow_KeyRangeDataDiskAssignment
-   */
-  public function setRangeAssignments($rangeAssignments)
-  {
-    $this->rangeAssignments = $rangeAssignments;
-  }
-  /**
-   * @return Google_Service_Dataflow_KeyRangeDataDiskAssignment
-   */
-  public function getRangeAssignments()
-  {
-    return $this->rangeAssignments;
-  }
+    public function setComputationId($computationId) {
+        $this->computationId = $computationId;
+    }
+
+    public function getComputationId() {
+        return $this->computationId;
+    }
+
+    /**
+     * @param Google_Service_Dataflow_KeyRangeDataDiskAssignment
+     */
+    public function setRangeAssignments($rangeAssignments) {
+        $this->rangeAssignments = $rangeAssignments;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_KeyRangeDataDiskAssignment
+     */
+    public function getRangeAssignments() {
+        return $this->rangeAssignments;
+    }
 }

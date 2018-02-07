@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Spanner_GetDatabaseDdlResponse extends Google_Collection
-{
-  protected $collection_key = 'statements';
-  public $statements;
+class Google_Service_Spanner_GetDatabaseDdlResponse extends Google_Collection {
+    protected $collection_key = 'statements';
+    public $statements;
 
-  public function setStatements($statements)
-  {
-    $this->statements = $statements;
-  }
-  public function getStatements()
-  {
-    return $this->statements;
-  }
+    public function setStatements($statements) {
+        $this->statements = $statements;
+    }
+
+    public function getStatements() {
+        return $this->statements;
+    }
 }

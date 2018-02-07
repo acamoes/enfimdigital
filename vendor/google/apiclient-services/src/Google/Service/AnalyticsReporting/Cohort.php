@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_AnalyticsReporting_Cohort extends Google_Model
-{
-  protected $dateRangeType = 'Google_Service_AnalyticsReporting_DateRange';
-  protected $dateRangeDataType = '';
-  public $name;
-  public $type;
+class Google_Service_AnalyticsReporting_Cohort extends Google_Model {
+    protected $dateRangeType     = 'Google_Service_AnalyticsReporting_DateRange';
+    protected $dateRangeDataType = '';
+    public $name;
+    public $type;
 
-  /**
-   * @param Google_Service_AnalyticsReporting_DateRange
-   */
-  public function setDateRange(Google_Service_AnalyticsReporting_DateRange $dateRange)
-  {
-    $this->dateRange = $dateRange;
-  }
-  /**
-   * @return Google_Service_AnalyticsReporting_DateRange
-   */
-  public function getDateRange()
-  {
-    return $this->dateRange;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    /**
+     * @param Google_Service_AnalyticsReporting_DateRange
+     */
+    public function setDateRange(Google_Service_AnalyticsReporting_DateRange $dateRange) {
+        $this->dateRange = $dateRange;
+    }
+
+    /**
+     * @return Google_Service_AnalyticsReporting_DateRange
+     */
+    public function getDateRange() {
+        return $this->dateRange;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

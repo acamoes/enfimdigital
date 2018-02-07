@@ -15,68 +15,66 @@
  * the License.
  */
 
-class Google_Service_Monitoring_HttpCheck extends Google_Model
-{
-  protected $authInfoType = 'Google_Service_Monitoring_BasicAuthentication';
-  protected $authInfoDataType = '';
-  public $headers;
-  public $maskHeaders;
-  public $path;
-  public $port;
-  public $useSsl;
+class Google_Service_Monitoring_HttpCheck extends Google_Model {
+    protected $authInfoType     = 'Google_Service_Monitoring_BasicAuthentication';
+    protected $authInfoDataType = '';
+    public $headers;
+    public $maskHeaders;
+    public $path;
+    public $port;
+    public $useSsl;
 
-  /**
-   * @param Google_Service_Monitoring_BasicAuthentication
-   */
-  public function setAuthInfo(Google_Service_Monitoring_BasicAuthentication $authInfo)
-  {
-    $this->authInfo = $authInfo;
-  }
-  /**
-   * @return Google_Service_Monitoring_BasicAuthentication
-   */
-  public function getAuthInfo()
-  {
-    return $this->authInfo;
-  }
-  public function setHeaders($headers)
-  {
-    $this->headers = $headers;
-  }
-  public function getHeaders()
-  {
-    return $this->headers;
-  }
-  public function setMaskHeaders($maskHeaders)
-  {
-    $this->maskHeaders = $maskHeaders;
-  }
-  public function getMaskHeaders()
-  {
-    return $this->maskHeaders;
-  }
-  public function setPath($path)
-  {
-    $this->path = $path;
-  }
-  public function getPath()
-  {
-    return $this->path;
-  }
-  public function setPort($port)
-  {
-    $this->port = $port;
-  }
-  public function getPort()
-  {
-    return $this->port;
-  }
-  public function setUseSsl($useSsl)
-  {
-    $this->useSsl = $useSsl;
-  }
-  public function getUseSsl()
-  {
-    return $this->useSsl;
-  }
+    /**
+     * @param Google_Service_Monitoring_BasicAuthentication
+     */
+    public function setAuthInfo(Google_Service_Monitoring_BasicAuthentication $authInfo) {
+        $this->authInfo = $authInfo;
+    }
+
+    /**
+     * @return Google_Service_Monitoring_BasicAuthentication
+     */
+    public function getAuthInfo() {
+        return $this->authInfo;
+    }
+
+    public function setHeaders($headers) {
+        $this->headers = $headers;
+    }
+
+    public function getHeaders() {
+        return $this->headers;
+    }
+
+    public function setMaskHeaders($maskHeaders) {
+        $this->maskHeaders = $maskHeaders;
+    }
+
+    public function getMaskHeaders() {
+        return $this->maskHeaders;
+    }
+
+    public function setPath($path) {
+        $this->path = $path;
+    }
+
+    public function getPath() {
+        return $this->path;
+    }
+
+    public function setPort($port) {
+        $this->port = $port;
+    }
+
+    public function getPort() {
+        return $this->port;
+    }
+
+    public function setUseSsl($useSsl) {
+        $this->useSsl = $useSsl;
+    }
+
+    public function getUseSsl() {
+        return $this->useSsl;
+    }
 }

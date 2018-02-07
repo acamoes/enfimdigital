@@ -15,83 +15,81 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig extends Google_Collection
-{
-  protected $collection_key = 'infoTypes';
-  protected $customInfoTypesType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2CustomInfoType';
-  protected $customInfoTypesDataType = 'array';
-  public $excludeInfoTypes;
-  public $includeQuote;
-  protected $infoTypesType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
-  protected $infoTypesDataType = 'array';
-  protected $limitsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits';
-  protected $limitsDataType = '';
-  public $minLikelihood;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig extends Google_Collection {
+    protected $collection_key          = 'infoTypes';
+    protected $customInfoTypesType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2CustomInfoType';
+    protected $customInfoTypesDataType = 'array';
+    public $excludeInfoTypes;
+    public $includeQuote;
+    protected $infoTypesType           = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
+    protected $infoTypesDataType       = 'array';
+    protected $limitsType              = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits';
+    protected $limitsDataType          = '';
+    public $minLikelihood;
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2CustomInfoType
-   */
-  public function setCustomInfoTypes($customInfoTypes)
-  {
-    $this->customInfoTypes = $customInfoTypes;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2CustomInfoType
-   */
-  public function getCustomInfoTypes()
-  {
-    return $this->customInfoTypes;
-  }
-  public function setExcludeInfoTypes($excludeInfoTypes)
-  {
-    $this->excludeInfoTypes = $excludeInfoTypes;
-  }
-  public function getExcludeInfoTypes()
-  {
-    return $this->excludeInfoTypes;
-  }
-  public function setIncludeQuote($includeQuote)
-  {
-    $this->includeQuote = $includeQuote;
-  }
-  public function getIncludeQuote()
-  {
-    return $this->includeQuote;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function setInfoTypes($infoTypes)
-  {
-    $this->infoTypes = $infoTypes;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function getInfoTypes()
-  {
-    return $this->infoTypes;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits
-   */
-  public function setLimits(Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits $limits)
-  {
-    $this->limits = $limits;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits
-   */
-  public function getLimits()
-  {
-    return $this->limits;
-  }
-  public function setMinLikelihood($minLikelihood)
-  {
-    $this->minLikelihood = $minLikelihood;
-  }
-  public function getMinLikelihood()
-  {
-    return $this->minLikelihood;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2CustomInfoType
+     */
+    public function setCustomInfoTypes($customInfoTypes) {
+        $this->customInfoTypes = $customInfoTypes;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2CustomInfoType
+     */
+    public function getCustomInfoTypes() {
+        return $this->customInfoTypes;
+    }
+
+    public function setExcludeInfoTypes($excludeInfoTypes) {
+        $this->excludeInfoTypes = $excludeInfoTypes;
+    }
+
+    public function getExcludeInfoTypes() {
+        return $this->excludeInfoTypes;
+    }
+
+    public function setIncludeQuote($includeQuote) {
+        $this->includeQuote = $includeQuote;
+    }
+
+    public function getIncludeQuote() {
+        return $this->includeQuote;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function setInfoTypes($infoTypes) {
+        $this->infoTypes = $infoTypes;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function getInfoTypes() {
+        return $this->infoTypes;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits
+     */
+    public function setLimits(Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits $limits) {
+        $this->limits = $limits;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits
+     */
+    public function getLimits() {
+        return $this->limits;
+    }
+
+    public function setMinLikelihood($minLikelihood) {
+        $this->minLikelihood = $minLikelihood;
+    }
+
+    public function getMinLikelihood() {
+        return $this->minLikelihood;
+    }
 }

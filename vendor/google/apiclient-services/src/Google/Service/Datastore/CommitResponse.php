@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Datastore_CommitResponse extends Google_Collection
-{
-  protected $collection_key = 'mutationResults';
-  public $indexUpdates;
-  protected $mutationResultsType = 'Google_Service_Datastore_MutationResult';
-  protected $mutationResultsDataType = 'array';
+class Google_Service_Datastore_CommitResponse extends Google_Collection {
+    protected $collection_key          = 'mutationResults';
+    public $indexUpdates;
+    protected $mutationResultsType     = 'Google_Service_Datastore_MutationResult';
+    protected $mutationResultsDataType = 'array';
 
-  public function setIndexUpdates($indexUpdates)
-  {
-    $this->indexUpdates = $indexUpdates;
-  }
-  public function getIndexUpdates()
-  {
-    return $this->indexUpdates;
-  }
-  /**
-   * @param Google_Service_Datastore_MutationResult
-   */
-  public function setMutationResults($mutationResults)
-  {
-    $this->mutationResults = $mutationResults;
-  }
-  /**
-   * @return Google_Service_Datastore_MutationResult
-   */
-  public function getMutationResults()
-  {
-    return $this->mutationResults;
-  }
+    public function setIndexUpdates($indexUpdates) {
+        $this->indexUpdates = $indexUpdates;
+    }
+
+    public function getIndexUpdates() {
+        return $this->indexUpdates;
+    }
+
+    /**
+     * @param Google_Service_Datastore_MutationResult
+     */
+    public function setMutationResults($mutationResults) {
+        $this->mutationResults = $mutationResults;
+    }
+
+    /**
+     * @return Google_Service_Datastore_MutationResult
+     */
+    public function getMutationResults() {
+        return $this->mutationResults;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Datastore_GoogleDatastoreAdminV1beta1ExportEntitiesResponse extends Google_Model
-{
-  public $outputUrl;
+class Google_Service_Datastore_GoogleDatastoreAdminV1beta1ExportEntitiesResponse extends Google_Model {
+    public $outputUrl;
 
-  public function setOutputUrl($outputUrl)
-  {
-    $this->outputUrl = $outputUrl;
-  }
-  public function getOutputUrl()
-  {
-    return $this->outputUrl;
-  }
+    public function setOutputUrl($outputUrl) {
+        $this->outputUrl = $outputUrl;
+    }
+
+    public function getOutputUrl() {
+        return $this->outputUrl;
+    }
 }

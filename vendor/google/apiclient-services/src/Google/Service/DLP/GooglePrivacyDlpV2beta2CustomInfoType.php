@@ -15,55 +15,53 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2CustomInfoType extends Google_Model
-{
-  protected $dictionaryType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Dictionary';
-  protected $dictionaryDataType = '';
-  protected $infoTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
-  protected $infoTypeDataType = '';
-  protected $surrogateTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2SurrogateType';
-  protected $surrogateTypeDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2CustomInfoType extends Google_Model {
+    protected $dictionaryType        = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Dictionary';
+    protected $dictionaryDataType    = '';
+    protected $infoTypeType          = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
+    protected $infoTypeDataType      = '';
+    protected $surrogateTypeType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2SurrogateType';
+    protected $surrogateTypeDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Dictionary
-   */
-  public function setDictionary(Google_Service_DLP_GooglePrivacyDlpV2beta2Dictionary $dictionary)
-  {
-    $this->dictionary = $dictionary;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Dictionary
-   */
-  public function getDictionary()
-  {
-    return $this->dictionary;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType $infoType)
-  {
-    $this->infoType = $infoType;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function getInfoType()
-  {
-    return $this->infoType;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2SurrogateType
-   */
-  public function setSurrogateType(Google_Service_DLP_GooglePrivacyDlpV2beta2SurrogateType $surrogateType)
-  {
-    $this->surrogateType = $surrogateType;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2SurrogateType
-   */
-  public function getSurrogateType()
-  {
-    return $this->surrogateType;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Dictionary
+     */
+    public function setDictionary(Google_Service_DLP_GooglePrivacyDlpV2beta2Dictionary $dictionary) {
+        $this->dictionary = $dictionary;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Dictionary
+     */
+    public function getDictionary() {
+        return $this->dictionary;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType $infoType) {
+        $this->infoType = $infoType;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function getInfoType() {
+        return $this->infoType;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2SurrogateType
+     */
+    public function setSurrogateType(Google_Service_DLP_GooglePrivacyDlpV2beta2SurrogateType $surrogateType) {
+        $this->surrogateType = $surrogateType;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2SurrogateType
+     */
+    public function getSurrogateType() {
+        return $this->surrogateType;
+    }
 }

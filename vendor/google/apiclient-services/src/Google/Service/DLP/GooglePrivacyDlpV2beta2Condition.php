@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2Condition extends Google_Model
-{
-  protected $fieldType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId';
-  protected $fieldDataType = '';
-  public $operator;
-  protected $valueType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
-  protected $valueDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2Condition extends Google_Model {
+    protected $fieldType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId';
+    protected $fieldDataType = '';
+    public $operator;
+    protected $valueType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
+    protected $valueDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
-   */
-  public function setField(Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId $field)
-  {
-    $this->field = $field;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
-   */
-  public function getField()
-  {
-    return $this->field;
-  }
-  public function setOperator($operator)
-  {
-    $this->operator = $operator;
-  }
-  public function getOperator()
-  {
-    return $this->operator;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function setValue(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $value)
-  {
-    $this->value = $value;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function getValue()
-  {
-    return $this->value;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
+     */
+    public function setField(Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId $field) {
+        $this->field = $field;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
+     */
+    public function getField() {
+        return $this->field;
+    }
+
+    public function setOperator($operator) {
+        $this->operator = $operator;
+    }
+
+    public function getOperator() {
+        return $this->operator;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function setValue(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $value) {
+        $this->value = $value;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function getValue() {
+        return $this->value;
+    }
 }

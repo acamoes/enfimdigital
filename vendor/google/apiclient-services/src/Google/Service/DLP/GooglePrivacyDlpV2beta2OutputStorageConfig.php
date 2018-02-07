@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2OutputStorageConfig extends Google_Model
-{
-  protected $tableType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable';
-  protected $tableDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2OutputStorageConfig extends Google_Model {
+    protected $tableType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable';
+    protected $tableDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
-   */
-  public function setTable(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable $table)
-  {
-    $this->table = $table;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
-   */
-  public function getTable()
-  {
-    return $this->table;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
+     */
+    public function setTable(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable $table) {
+        $this->table = $table;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
+     */
+    public function getTable() {
+        return $this->table;
+    }
 }

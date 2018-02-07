@@ -4,6 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+declare(strict_types = 1);
 
 /**
  * Description of Avaliacoes
@@ -21,7 +22,7 @@ class Avaliacoes {
         $query     = "UPDATE evaluations SET status=IF(status='Ativo','Inativo','Ativo') WHERE idEvaluations=" . $data['idEvaluations'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'O registo não foi alterado.'];
         }
         return ['success' => true, 'message' => 'Registo alterado.'];
@@ -29,11 +30,11 @@ class Avaliacoes {
 
     static function atualizarAvaliacoes($data) {
         $query     = "UPDATE evaluations SET idCourse=" . $data['idCourse'] . ", name='" . $data ['name'] . "', target='" . $data ['target'] . "'"
-                . ",template='" . $data ['template'] . "',status='" . $data ['status'] . "',dateExecutiva='" . date("Y-m-d H:i:s") . "',idExecutiva=" . $_SESSION['users']->id
+                . ",template='" . $data ['template'] . "',status='" . $data ['status'] . "',dateExecutiva='" . date("Y-m-d H:i:s") . "',idExecutiva=" . $_SESSION['users']->idUsers
                 . " WHERE idEvaluations=" . $data ['idEvaluations'];
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];
@@ -73,10 +74,10 @@ class Avaliacoes {
                 "','" . $data ['status'] .
                 "','" . $data ['template'] .
                 "','" . date("Y-m-d H:i:s") .
-                "'," . $_SESSION['users']->id . ")";
+                "'," . $_SESSION['users']->idUsers . ")";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];

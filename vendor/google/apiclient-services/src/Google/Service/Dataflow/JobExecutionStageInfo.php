@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_Dataflow_JobExecutionStageInfo extends Google_Collection
-{
-  protected $collection_key = 'stepName';
-  public $stepName;
+class Google_Service_Dataflow_JobExecutionStageInfo extends Google_Collection {
+    protected $collection_key = 'stepName';
+    public $stepName;
 
-  public function setStepName($stepName)
-  {
-    $this->stepName = $stepName;
-  }
-  public function getStepName()
-  {
-    return $this->stepName;
-  }
+    public function setStepName($stepName) {
+        $this->stepName = $stepName;
+    }
+
+    public function getStepName() {
+        return $this->stepName;
+    }
 }

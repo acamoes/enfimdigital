@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_SubmitConfigSourceRequest extends Google_Model
-{
-  protected $configSourceType = 'Google_Service_ServiceManagement_ConfigSource';
-  protected $configSourceDataType = '';
-  public $validateOnly;
+class Google_Service_ServiceManagement_SubmitConfigSourceRequest extends Google_Model {
+    protected $configSourceType     = 'Google_Service_ServiceManagement_ConfigSource';
+    protected $configSourceDataType = '';
+    public $validateOnly;
 
-  /**
-   * @param Google_Service_ServiceManagement_ConfigSource
-   */
-  public function setConfigSource(Google_Service_ServiceManagement_ConfigSource $configSource)
-  {
-    $this->configSource = $configSource;
-  }
-  /**
-   * @return Google_Service_ServiceManagement_ConfigSource
-   */
-  public function getConfigSource()
-  {
-    return $this->configSource;
-  }
-  public function setValidateOnly($validateOnly)
-  {
-    $this->validateOnly = $validateOnly;
-  }
-  public function getValidateOnly()
-  {
-    return $this->validateOnly;
-  }
+    /**
+     * @param Google_Service_ServiceManagement_ConfigSource
+     */
+    public function setConfigSource(Google_Service_ServiceManagement_ConfigSource $configSource) {
+        $this->configSource = $configSource;
+    }
+
+    /**
+     * @return Google_Service_ServiceManagement_ConfigSource
+     */
+    public function getConfigSource() {
+        return $this->configSource;
+    }
+
+    public function setValidateOnly($validateOnly) {
+        $this->validateOnly = $validateOnly;
+    }
+
+    public function getValidateOnly() {
+        return $this->validateOnly;
+    }
 }

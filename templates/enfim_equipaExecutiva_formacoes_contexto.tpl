@@ -13,29 +13,29 @@
         {/foreach}
 </div>
 <section>
-<div class="row uniform">
-    <div style="width:100%">
-        {foreach $objSubTabs as $subTabs}
-            {foreach $subTabs as $k=>$subTab}
-                <section class="features subTabsBox" id="SST{$currentTab}{$subTab->tab}"                 
-                         style="display:    
-                         {if isset($subTabActive)}
-                             {if $subTabActive=={$subTab->tab}}
+    <div class="row uniform">
+        <div style="width:100%">
+            {foreach $objSubTabs as $subTabs}
+                {foreach $subTabs as $k=>$subTab}
+                    <section class="features subTabsBox" id="SST{$currentTab}{$subTab->tab}"                 
+                             style="display:    
+                             {if isset($subTabActive)}
+                                 {if $subTabActive=={$subTab->tab}}
+                                     block
+                                 {else}
+                                     none
+                                 {/if}                     
+                             {elseif !isset($subTabActive) && $k==0}
                                  block
                              {else}
                                  none
-                             {/if}                     
-                         {elseif !isset($subTabActive) && $k==0}
-                             block
-                         {else}
-                             none
-                         {/if}; width: 100%;">
-                    {assign var="currentSubTab" value="{$subTab->tab}" scope=global}
-                    {assign var="currentSubTabText" value="{$subTab->text}" scope=global}
-                    {include file="enfim_"|cat:{$action}|cat:"_"|cat:{$currentTab}|cat:"_"|cat:{$currentSubTab}|cat:".tpl"}
-                </section>
+                             {/if}; width: 100%;">
+                        {assign var="currentSubTab" value="{$subTab->tab}" scope=global}
+                        {assign var="currentSubTabText" value="{$subTab->text}" scope=global}
+                        {include file="enfim_"|cat:{$action}|cat:"_"|cat:{$currentTab}|cat:"_"|cat:{$currentSubTab}|cat:".tpl"}
+                    </section>
+                {/foreach}
             {/foreach}
-        {/foreach}
+        </div>
     </div>
-</div>
 </section>

@@ -1,6 +1,5 @@
 <?php
 namespace GuzzleHttp\Handler;
-
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 
@@ -11,8 +10,7 @@ use Psr\Http\Message\RequestInterface;
  * associative array of curl option constants mapping to values in the
  * **curl** key of the "client" key of the request.
  */
-class CurlHandler
-{
+class CurlHandler {
     /** @var CurlFactoryInterface */
     private $factory;
 
@@ -23,20 +21,16 @@ class CurlHandler
      *
      * @param array $options Array of options to use with the handler
      */
-    public function __construct(array $options = [])
-    {
-        $this->factory = isset($options['handle_factory'])
-            ? $options['handle_factory']
-            : new CurlFactory(3);
+    public function __construct(array $options = []) {
+        $this->factory = isset($options['handle_factory']) ? $options['handle_factory'] : new CurlFactory(3);
     }
 
-    public function __invoke(RequestInterface $request, array $options)
-    {
+    public function __invoke(RequestInterface $request, array $options) {
         if (isset($options['delay'])) {
             usleep($options['delay'] * 1000);
         }
 
-        $easy = $this->factory->create($request, $options);
+        $easy        = $this->factory->create($request, $options);
         curl_exec($easy->handle);
         $easy->errno = curl_errno($easy->handle);
 

@@ -9,15 +9,13 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_SetAutoloadFilters
-{
+class Smarty_Internal_Method_SetAutoloadFilters {
     /**
      * Valid for Smarty and template object
      *
      * @var int
      */
-    public $objMap = 3;
-
+    public $objMap       = 3;
     /**
      * Valid filter types
      *
@@ -39,13 +37,13 @@ class Smarty_Internal_Method_SetAutoloadFilters
      *
      * @return \Smarty|\Smarty_Internal_Template
      */
-    public function setAutoloadFilters(Smarty_Internal_TemplateBase $obj, $filters, $type = null)
-    {
+    public function setAutoloadFilters(Smarty_Internal_TemplateBase $obj, $filters, $type = null) {
         $smarty = $obj->_getSmartyObj();
         if ($type !== null) {
             $this->_checkFilterType($type);
-            $smarty->autoload_filters[ $type ] = (array) $filters;
-        } else {
+            $smarty->autoload_filters[$type] = (array) $filters;
+        }
+        else {
             foreach ((array) $filters as $type => $value) {
                 $this->_checkFilterType($type);
             }
@@ -61,9 +59,8 @@ class Smarty_Internal_Method_SetAutoloadFilters
      *
      * @throws \SmartyException
      */
-    public function _checkFilterType($type)
-    {
-        if (!isset($this->filterTypes[ $type ])) {
+    public function _checkFilterType($type) {
+        if (!isset($this->filterTypes[$type])) {
             throw new SmartyException("Illegal filter type \"{$type}\"");
         }
     }

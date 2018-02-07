@@ -4,7 +4,6 @@
  * @package PHPMailer
  * @author Mikael Stokkebro <info@stokkebro.dk>
  */
-
 $PHPMAILER_LANG['authenticate']         = 'SMTP fejl: Kunne ikke logge på.';
 $PHPMAILER_LANG['connect_host']         = 'SMTP fejl: Kunne ikke tilslutte SMTP serveren.';
 $PHPMAILER_LANG['data_not_accepted']    = 'SMTP fejl: Data kunne ikke accepteres.';

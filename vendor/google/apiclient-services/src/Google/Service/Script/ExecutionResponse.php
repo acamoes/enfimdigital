@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Script_ExecutionResponse extends Google_Model
-{
-  public $result;
+class Google_Service_Script_ExecutionResponse extends Google_Model {
+    public $result;
 
-  public function setResult($result)
-  {
-    $this->result = $result;
-  }
-  public function getResult()
-  {
-    return $this->result;
-  }
+    public function setResult($result) {
+        $this->result = $result;
+    }
+
+    public function getResult() {
+        return $this->result;
+    }
 }

@@ -7,91 +7,79 @@
  * @subpackage TemplateResources
  * @author     Rodney Rehm
  */
-abstract class Smarty_Template_Resource_Base
-{
+abstract class Smarty_Template_Resource_Base {
     /**
      * Compiled Filepath
      *
      * @var string
      */
-    public $filepath = null;
-
+    public $filepath         = null;
     /**
      * Compiled Timestamp
      *
      * @var integer|bool
      */
-    public $timestamp = false;
-
+    public $timestamp        = false;
     /**
      * Compiled Existence
      *
      * @var boolean
      */
-    public $exists = false;
-
+    public $exists           = false;
     /**
      * Template Compile Id (Smarty_Internal_Template::$compile_id)
      *
      * @var string
      */
-    public $compile_id = null;
-
+    public $compile_id       = null;
     /**
      * Compiled Content Loaded
      *
      * @var boolean
      */
-    public $processed = false;
-
+    public $processed        = false;
     /**
      * unique function name for compiled template code
      *
      * @var string
      */
-    public $unifunc = '';
-
+    public $unifunc          = '';
     /**
      * flag if template does contain nocache code sections
      *
      * @var bool
      */
     public $has_nocache_code = false;
-
     /**
      * resource file dependency
      *
      * @var array
      */
-    public $file_dependency = array();
-
+    public $file_dependency  = array();
     /**
      * Content buffer
      *
      * @var string
      */
-    public $content = null;
-
+    public $content          = null;
     /**
      * required plugins
      *
      * @var array
      */
     public $required_plugins = array();
-
     /**
      * Included subtemplates
      *
      * @var array
      */
-    public $includes = array();
-
+    public $includes         = array();
     /**
      * Flag if this is a cache resource
      *
      * @var bool
      */
-    public $isCache = false;
+    public $isCache          = false;
 
     /**
      * Process resource
@@ -108,11 +96,10 @@ abstract class Smarty_Template_Resource_Base
      *
      * @throws \Exception
      */
-    public function getRenderedTemplateCode(Smarty_Internal_Template $_template, $unifunc = null)
-    {
-        $smarty = &$_template->smarty;
+    public function getRenderedTemplateCode(Smarty_Internal_Template $_template, $unifunc = null) {
+        $smarty                      = &$_template->smarty;
         $_template->isRenderingCache = $this->isCache;
-        $level = ob_get_level();
+        $level                       = ob_get_level();
         try {
             if (!isset($unifunc)) {
                 $unifunc = $this->unifunc;
@@ -148,8 +135,7 @@ abstract class Smarty_Template_Resource_Base
      *
      * @return int
      */
-    public function getTimeStamp()
-    {
+    public function getTimeStamp() {
         if ($this->exists && !$this->timestamp) {
             $this->timestamp = filemtime($this->filepath);
         }

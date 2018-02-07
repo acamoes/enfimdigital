@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Replicapool_InstanceGroupManagersSetTargetPoolsRequest extends Google_Collection
-{
-  protected $collection_key = 'targetPools';
-  public $fingerprint;
-  public $targetPools;
+class Google_Service_Replicapool_InstanceGroupManagersSetTargetPoolsRequest extends Google_Collection {
+    protected $collection_key = 'targetPools';
+    public $fingerprint;
+    public $targetPools;
 
-  public function setFingerprint($fingerprint)
-  {
-    $this->fingerprint = $fingerprint;
-  }
-  public function getFingerprint()
-  {
-    return $this->fingerprint;
-  }
-  public function setTargetPools($targetPools)
-  {
-    $this->targetPools = $targetPools;
-  }
-  public function getTargetPools()
-  {
-    return $this->targetPools;
-  }
+    public function setFingerprint($fingerprint) {
+        $this->fingerprint = $fingerprint;
+    }
+
+    public function getFingerprint() {
+        return $this->fingerprint;
+    }
+
+    public function setTargetPools($targetPools) {
+        $this->targetPools = $targetPools;
+    }
+
+    public function getTargetPools() {
+        return $this->targetPools;
+    }
 }

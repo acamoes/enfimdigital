@@ -14,38 +14,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Tests;
-
 use Google\Auth\Cache\Item;
 use PHPUnit\Framework\TestCase;
 
-class ItemTest extends TestCase
-{
-    public function getItem($key)
-    {
+class ItemTest extends TestCase {
+
+    public function getItem($key) {
         return new Item($key);
     }
 
-    public function testGetsKey()
-    {
+    public function testGetsKey() {
         $key = 'item';
 
         $this->assertEquals($key, $this->getItem($key)->getKey());
     }
 
-    public function testGetsNull()
-    {
+    public function testGetsNull() {
         $item = $this->getItem('item');
 
         $this->assertNull($item->get());
         $this->assertFalse($item->isHit());
     }
 
-    public function testGetsValue()
-    {
+    public function testGetsValue() {
         $value = 'value';
-        $item = $this->getItem('item');
+        $item  = $this->getItem('item');
         $item->set($value);
 
         $this->assertEquals('value', $item->get());
@@ -54,16 +48,14 @@ class ItemTest extends TestCase
     /**
      * @dataProvider values
      */
-    public function testSetsValue($value)
-    {
+    public function testSetsValue($value) {
         $item = $this->getItem('item');
         $item->set($value);
 
         $this->assertEquals($value, $item->get());
     }
 
-    public function values()
-    {
+    public function values() {
         return [
             [1],
             [1.5],
@@ -75,8 +67,7 @@ class ItemTest extends TestCase
         ];
     }
 
-    public function testIsHit()
-    {
+    public function testIsHit() {
         $item = $this->getItem('item');
 
         $this->assertFalse($item->isHit());
@@ -86,8 +77,7 @@ class ItemTest extends TestCase
         $this->assertTrue($item->isHit());
     }
 
-    public function testExpiresAt()
-    {
+    public function testExpiresAt() {
         $item = $this->getItem('item');
         $item->set('value');
         $item->expiresAt(new \DateTime('now + 1 hour'));
@@ -103,8 +93,7 @@ class ItemTest extends TestCase
         $this->assertFalse($item->isHit());
     }
 
-    public function testExpiresAfter()
-    {
+    public function testExpiresAfter() {
         $item = $this->getItem('item');
         $item->set('value');
         $item->expiresAfter(30);

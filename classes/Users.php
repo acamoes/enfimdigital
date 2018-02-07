@@ -1,7 +1,7 @@
 <?php
 
 class Users {
-    public $id;
+    public $idUsers;
     public $username;
     public $email;
     public $name;
@@ -73,8 +73,8 @@ class Users {
         $con->set($query);
     }
 
-    function getDiretor($id): array {
-        $query     = "select idCourses from courses_team where idUsers=" . $id . " and type='Diretor' ";
+    function getDiretor($idUsers): array {
+        $query     = "select idCourses from courses_team where idUsers=" . $idUsers . " and type='Diretor' ";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -87,12 +87,12 @@ class Users {
         return $idCourses;
     }
 
-    function isDiretor($id) {
-        return in_array($id, array_values($this->diretor));
+    function isDiretor($idUsers) {
+        return in_array($idUsers, array_values($this->diretor));
     }
 
-    function getFormador($id): array {
-        $query     = "select idCourses from courses_team where idUsers=" . $id . " and type='Formador' ";
+    function getFormador($idUsers): array {
+        $query     = "select idCourses from courses_team where idUsers=" . $idUsers . " and type='Formador' ";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -105,12 +105,12 @@ class Users {
         return $idCourses;
     }
 
-    function isFormador($id) {
-        return in_array($id, array_values($this->formador));
+    function isFormador($idUsers) {
+        return in_array($idUsers, array_values($this->formador));
     }
 
-    function getFormando($id): array {
-        $query     = "select idCourses from users_courses where idUsers=" . $id . " ";
+    function getFormando($idUsers): array {
+        $query     = "select idCourses from users_courses where idUsers=" . $idUsers . " ";
         $con       = new Database ();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -123,8 +123,8 @@ class Users {
         return $idCourses;
     }
 
-    function isFormando($id) {
-        return in_array($id, array_values($this->formando));
+    function isFormando($idUsers) {
+        return in_array($idUsers, array_values($this->formando));
     }
 
     function userExists($username): bool {
@@ -811,12 +811,12 @@ class Users {
     function generatePassword($length = 8): string {
         $password = "";
         $possible = "0123456789bcdfghjkmnpqrstvwxyz";
-        $i        = 0;
-        while ($i < $length) {
+        $counter  = 0;
+        while ($counter < $length) {
             $char = substr($possible, mt_rand(0, strlen($possible) - 1), 1);
             if (!strstr($password, $char)) {
                 $password .= $char;
-                $i ++;
+                $counter ++;
             }
         }
         return $password;

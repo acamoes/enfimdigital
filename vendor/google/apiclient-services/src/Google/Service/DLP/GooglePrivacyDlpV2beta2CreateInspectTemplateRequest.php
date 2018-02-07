@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2CreateInspectTemplateRequest extends Google_Model
-{
-  protected $inspectTemplateType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InspectTemplate';
-  protected $inspectTemplateDataType = '';
-  public $templateId;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2CreateInspectTemplateRequest extends Google_Model {
+    protected $inspectTemplateType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InspectTemplate';
+    protected $inspectTemplateDataType = '';
+    public $templateId;
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InspectTemplate
-   */
-  public function setInspectTemplate(Google_Service_DLP_GooglePrivacyDlpV2beta2InspectTemplate $inspectTemplate)
-  {
-    $this->inspectTemplate = $inspectTemplate;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InspectTemplate
-   */
-  public function getInspectTemplate()
-  {
-    return $this->inspectTemplate;
-  }
-  public function setTemplateId($templateId)
-  {
-    $this->templateId = $templateId;
-  }
-  public function getTemplateId()
-  {
-    return $this->templateId;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InspectTemplate
+     */
+    public function setInspectTemplate(Google_Service_DLP_GooglePrivacyDlpV2beta2InspectTemplate $inspectTemplate) {
+        $this->inspectTemplate = $inspectTemplate;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InspectTemplate
+     */
+    public function getInspectTemplate() {
+        return $this->inspectTemplate;
+    }
+
+    public function setTemplateId($templateId) {
+        $this->templateId = $templateId;
+    }
+
+    public function getTemplateId() {
+        return $this->templateId;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_PlusDomains_ActivityActorVerification extends Google_Model
-{
-  public $adHocVerified;
+class Google_Service_PlusDomains_ActivityActorVerification extends Google_Model {
+    public $adHocVerified;
 
-  public function setAdHocVerified($adHocVerified)
-  {
-    $this->adHocVerified = $adHocVerified;
-  }
-  public function getAdHocVerified()
-  {
-    return $this->adHocVerified;
-  }
+    public function setAdHocVerified($adHocVerified) {
+        $this->adHocVerified = $adHocVerified;
+    }
+
+    public function getAdHocVerified() {
+        return $this->adHocVerified;
+    }
 }

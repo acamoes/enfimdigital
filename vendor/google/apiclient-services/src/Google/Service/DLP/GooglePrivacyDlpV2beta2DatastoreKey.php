@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey extends Google_Model
-{
-  protected $entityKeyType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Key';
-  protected $entityKeyDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey extends Google_Model {
+    protected $entityKeyType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Key';
+    protected $entityKeyDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Key
-   */
-  public function setEntityKey(Google_Service_DLP_GooglePrivacyDlpV2beta2Key $entityKey)
-  {
-    $this->entityKey = $entityKey;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Key
-   */
-  public function getEntityKey()
-  {
-    return $this->entityKey;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Key
+     */
+    public function setEntityKey(Google_Service_DLP_GooglePrivacyDlpV2beta2Key $entityKey) {
+        $this->entityKey = $entityKey;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Key
+     */
+    public function getEntityKey() {
+        return $this->entityKey;
+    }
 }

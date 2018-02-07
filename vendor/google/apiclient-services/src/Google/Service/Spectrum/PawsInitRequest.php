@@ -15,57 +15,55 @@
  * the License.
  */
 
-class Google_Service_Spectrum_PawsInitRequest extends Google_Model
-{
-  protected $deviceDescType = 'Google_Service_Spectrum_DeviceDescriptor';
-  protected $deviceDescDataType = '';
-  protected $locationType = 'Google_Service_Spectrum_GeoLocation';
-  protected $locationDataType = '';
-  public $type;
-  public $version;
+class Google_Service_Spectrum_PawsInitRequest extends Google_Model {
+    protected $deviceDescType     = 'Google_Service_Spectrum_DeviceDescriptor';
+    protected $deviceDescDataType = '';
+    protected $locationType       = 'Google_Service_Spectrum_GeoLocation';
+    protected $locationDataType   = '';
+    public $type;
+    public $version;
 
-  /**
-   * @param Google_Service_Spectrum_DeviceDescriptor
-   */
-  public function setDeviceDesc(Google_Service_Spectrum_DeviceDescriptor $deviceDesc)
-  {
-    $this->deviceDesc = $deviceDesc;
-  }
-  /**
-   * @return Google_Service_Spectrum_DeviceDescriptor
-   */
-  public function getDeviceDesc()
-  {
-    return $this->deviceDesc;
-  }
-  /**
-   * @param Google_Service_Spectrum_GeoLocation
-   */
-  public function setLocation(Google_Service_Spectrum_GeoLocation $location)
-  {
-    $this->location = $location;
-  }
-  /**
-   * @return Google_Service_Spectrum_GeoLocation
-   */
-  public function getLocation()
-  {
-    return $this->location;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
-  public function setVersion($version)
-  {
-    $this->version = $version;
-  }
-  public function getVersion()
-  {
-    return $this->version;
-  }
+    /**
+     * @param Google_Service_Spectrum_DeviceDescriptor
+     */
+    public function setDeviceDesc(Google_Service_Spectrum_DeviceDescriptor $deviceDesc) {
+        $this->deviceDesc = $deviceDesc;
+    }
+
+    /**
+     * @return Google_Service_Spectrum_DeviceDescriptor
+     */
+    public function getDeviceDesc() {
+        return $this->deviceDesc;
+    }
+
+    /**
+     * @param Google_Service_Spectrum_GeoLocation
+     */
+    public function setLocation(Google_Service_Spectrum_GeoLocation $location) {
+        $this->location = $location;
+    }
+
+    /**
+     * @return Google_Service_Spectrum_GeoLocation
+     */
+    public function getLocation() {
+        return $this->location;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setVersion($version) {
+        $this->version = $version;
+    }
+
+    public function getVersion() {
+        return $this->version;
+    }
 }

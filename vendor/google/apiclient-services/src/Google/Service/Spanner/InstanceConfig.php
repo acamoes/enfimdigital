@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Spanner_InstanceConfig extends Google_Model
-{
-  public $displayName;
-  public $name;
+class Google_Service_Spanner_InstanceConfig extends Google_Model {
+    public $displayName;
+    public $name;
 
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
 }

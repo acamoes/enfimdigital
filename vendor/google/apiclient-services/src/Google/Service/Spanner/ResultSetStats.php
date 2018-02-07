@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Spanner_ResultSetStats extends Google_Model
-{
-  protected $queryPlanType = 'Google_Service_Spanner_QueryPlan';
-  protected $queryPlanDataType = '';
-  public $queryStats;
+class Google_Service_Spanner_ResultSetStats extends Google_Model {
+    protected $queryPlanType     = 'Google_Service_Spanner_QueryPlan';
+    protected $queryPlanDataType = '';
+    public $queryStats;
 
-  /**
-   * @param Google_Service_Spanner_QueryPlan
-   */
-  public function setQueryPlan(Google_Service_Spanner_QueryPlan $queryPlan)
-  {
-    $this->queryPlan = $queryPlan;
-  }
-  /**
-   * @return Google_Service_Spanner_QueryPlan
-   */
-  public function getQueryPlan()
-  {
-    return $this->queryPlan;
-  }
-  public function setQueryStats($queryStats)
-  {
-    $this->queryStats = $queryStats;
-  }
-  public function getQueryStats()
-  {
-    return $this->queryStats;
-  }
+    /**
+     * @param Google_Service_Spanner_QueryPlan
+     */
+    public function setQueryPlan(Google_Service_Spanner_QueryPlan $queryPlan) {
+        $this->queryPlan = $queryPlan;
+    }
+
+    /**
+     * @return Google_Service_Spanner_QueryPlan
+     */
+    public function getQueryPlan() {
+        return $this->queryPlan;
+    }
+
+    public function setQueryStats($queryStats) {
+        $this->queryStats = $queryStats;
+    }
+
+    public function getQueryStats() {
+        return $this->queryStats;
+    }
 }

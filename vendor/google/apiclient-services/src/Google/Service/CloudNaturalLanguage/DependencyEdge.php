@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudNaturalLanguage_DependencyEdge extends Google_Model
-{
-  public $headTokenIndex;
-  public $label;
+class Google_Service_CloudNaturalLanguage_DependencyEdge extends Google_Model {
+    public $headTokenIndex;
+    public $label;
 
-  public function setHeadTokenIndex($headTokenIndex)
-  {
-    $this->headTokenIndex = $headTokenIndex;
-  }
-  public function getHeadTokenIndex()
-  {
-    return $this->headTokenIndex;
-  }
-  public function setLabel($label)
-  {
-    $this->label = $label;
-  }
-  public function getLabel()
-  {
-    return $this->label;
-  }
+    public function setHeadTokenIndex($headTokenIndex) {
+        $this->headTokenIndex = $headTokenIndex;
+    }
+
+    public function getHeadTokenIndex() {
+        return $this->headTokenIndex;
+    }
+
+    public function setLabel($label) {
+        $this->label = $label;
+    }
+
+    public function getLabel() {
+        return $this->label;
+    }
 }

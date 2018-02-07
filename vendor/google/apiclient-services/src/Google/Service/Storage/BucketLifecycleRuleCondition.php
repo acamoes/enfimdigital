@@ -15,53 +15,51 @@
  * the License.
  */
 
-class Google_Service_Storage_BucketLifecycleRuleCondition extends Google_Collection
-{
-  protected $collection_key = 'matchesStorageClass';
-  public $age;
-  public $createdBefore;
-  public $isLive;
-  public $matchesStorageClass;
-  public $numNewerVersions;
+class Google_Service_Storage_BucketLifecycleRuleCondition extends Google_Collection {
+    protected $collection_key = 'matchesStorageClass';
+    public $age;
+    public $createdBefore;
+    public $isLive;
+    public $matchesStorageClass;
+    public $numNewerVersions;
 
-  public function setAge($age)
-  {
-    $this->age = $age;
-  }
-  public function getAge()
-  {
-    return $this->age;
-  }
-  public function setCreatedBefore($createdBefore)
-  {
-    $this->createdBefore = $createdBefore;
-  }
-  public function getCreatedBefore()
-  {
-    return $this->createdBefore;
-  }
-  public function setIsLive($isLive)
-  {
-    $this->isLive = $isLive;
-  }
-  public function getIsLive()
-  {
-    return $this->isLive;
-  }
-  public function setMatchesStorageClass($matchesStorageClass)
-  {
-    $this->matchesStorageClass = $matchesStorageClass;
-  }
-  public function getMatchesStorageClass()
-  {
-    return $this->matchesStorageClass;
-  }
-  public function setNumNewerVersions($numNewerVersions)
-  {
-    $this->numNewerVersions = $numNewerVersions;
-  }
-  public function getNumNewerVersions()
-  {
-    return $this->numNewerVersions;
-  }
+    public function setAge($age) {
+        $this->age = $age;
+    }
+
+    public function getAge() {
+        return $this->age;
+    }
+
+    public function setCreatedBefore($createdBefore) {
+        $this->createdBefore = $createdBefore;
+    }
+
+    public function getCreatedBefore() {
+        return $this->createdBefore;
+    }
+
+    public function setIsLive($isLive) {
+        $this->isLive = $isLive;
+    }
+
+    public function getIsLive() {
+        return $this->isLive;
+    }
+
+    public function setMatchesStorageClass($matchesStorageClass) {
+        $this->matchesStorageClass = $matchesStorageClass;
+    }
+
+    public function getMatchesStorageClass() {
+        return $this->matchesStorageClass;
+    }
+
+    public function setNumNewerVersions($numNewerVersions) {
+        $this->numNewerVersions = $numNewerVersions;
+    }
+
+    public function getNumNewerVersions() {
+        return $this->numNewerVersions;
+    }
 }

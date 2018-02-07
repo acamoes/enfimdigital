@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_CustomHttpPattern extends Google_Model
-{
-  public $kind;
-  public $path;
+class Google_Service_ServiceManagement_CustomHttpPattern extends Google_Model {
+    public $kind;
+    public $path;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setPath($path)
-  {
-    $this->path = $path;
-  }
-  public function getPath()
-  {
-    return $this->path;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setPath($path) {
+        $this->path = $path;
+    }
+
+    public function getPath() {
+        return $this->path;
+    }
 }

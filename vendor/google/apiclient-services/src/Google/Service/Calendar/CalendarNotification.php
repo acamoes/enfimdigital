@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Calendar_CalendarNotification extends Google_Model
-{
-  public $method;
-  public $type;
+class Google_Service_Calendar_CalendarNotification extends Google_Model {
+    public $method;
+    public $type;
 
-  public function setMethod($method)
-  {
-    $this->method = $method;
-  }
-  public function getMethod()
-  {
-    return $this->method;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setMethod($method) {
+        $this->method = $method;
+    }
+
+    public function getMethod() {
+        return $this->method;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

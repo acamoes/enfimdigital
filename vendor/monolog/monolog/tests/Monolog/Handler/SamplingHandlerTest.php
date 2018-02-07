@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,20 +7,17 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\TestCase;
 
 /**
  * @covers Monolog\Handler\SamplingHandler::handle
  */
-class SamplingHandlerTest extends TestCase
-{
-    public function testHandle()
-    {
+class SamplingHandlerTest extends TestCase {
+
+    public function testHandle() {
         $testHandler = new TestHandler();
-        $handler = new SamplingHandler($testHandler, 2);
+        $handler     = new SamplingHandler($testHandler, 2);
         for ($i = 0; $i < 10000; $i++) {
             $handler->handle($this->getRecord());
         }

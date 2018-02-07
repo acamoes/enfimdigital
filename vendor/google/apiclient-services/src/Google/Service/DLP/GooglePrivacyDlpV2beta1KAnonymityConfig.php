@@ -15,40 +15,38 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig extends Google_Collection
-{
-  protected $collection_key = 'quasiIds';
-  protected $entityIdType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1EntityId';
-  protected $entityIdDataType = '';
-  protected $quasiIdsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId';
-  protected $quasiIdsDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1KAnonymityConfig extends Google_Collection {
+    protected $collection_key   = 'quasiIds';
+    protected $entityIdType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1EntityId';
+    protected $entityIdDataType = '';
+    protected $quasiIdsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId';
+    protected $quasiIdsDataType = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1EntityId
-   */
-  public function setEntityId(Google_Service_DLP_GooglePrivacyDlpV2beta1EntityId $entityId)
-  {
-    $this->entityId = $entityId;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1EntityId
-   */
-  public function getEntityId()
-  {
-    return $this->entityId;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
-   */
-  public function setQuasiIds($quasiIds)
-  {
-    $this->quasiIds = $quasiIds;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
-   */
-  public function getQuasiIds()
-  {
-    return $this->quasiIds;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1EntityId
+     */
+    public function setEntityId(Google_Service_DLP_GooglePrivacyDlpV2beta1EntityId $entityId) {
+        $this->entityId = $entityId;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1EntityId
+     */
+    public function getEntityId() {
+        return $this->entityId;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
+     */
+    public function setQuasiIds($quasiIds) {
+        $this->quasiIds = $quasiIds;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
+     */
+    public function getQuasiIds() {
+        return $this->quasiIds;
+    }
 }

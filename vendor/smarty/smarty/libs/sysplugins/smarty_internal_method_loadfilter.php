@@ -9,15 +9,13 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_LoadFilter
-{
+class Smarty_Internal_Method_LoadFilter {
     /**
      * Valid for Smarty and template object
      *
      * @var int
      */
-    public $objMap = 3;
-
+    public $objMap       = 3;
     /**
      * Valid filter types
      *
@@ -39,14 +37,13 @@ class Smarty_Internal_Method_LoadFilter
      * @return bool
      * @throws SmartyException if filter could not be loaded
      */
-    public function loadFilter(Smarty_Internal_TemplateBase $obj, $type, $name)
-    {
-        $smarty = $obj->_getSmartyObj();
+    public function loadFilter(Smarty_Internal_TemplateBase $obj, $type, $name) {
+        $smarty       = $obj->_getSmartyObj();
         $this->_checkFilterType($type);
-        $_plugin = "smarty_{$type}filter_{$name}";
+        $_plugin      = "smarty_{$type}filter_{$name}";
         $_filter_name = $_plugin;
         if (is_callable($_plugin)) {
-            $smarty->registered_filters[ $type ][ $_filter_name ] = $_plugin;
+            $smarty->registered_filters[$type][$_filter_name] = $_plugin;
             return true;
         }
         if ($smarty->loadPlugin($_plugin)) {
@@ -54,7 +51,7 @@ class Smarty_Internal_Method_LoadFilter
                 $_plugin = array($_plugin, 'execute');
             }
             if (is_callable($_plugin)) {
-                $smarty->registered_filters[ $type ][ $_filter_name ] = $_plugin;
+                $smarty->registered_filters[$type][$_filter_name] = $_plugin;
                 return true;
             }
         }
@@ -68,9 +65,8 @@ class Smarty_Internal_Method_LoadFilter
      *
      * @throws \SmartyException
      */
-    public function _checkFilterType($type)
-    {
-        if (!isset($this->filterTypes[ $type ])) {
+    public function _checkFilterType($type) {
+        if (!isset($this->filterTypes[$type])) {
             throw new SmartyException("Illegal filter type \"{$type}\"");
         }
     }

@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2RecordKey extends Google_Model
-{
-  protected $cloudStorageKeyType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey';
-  protected $cloudStorageKeyDataType = '';
-  protected $datastoreKeyType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey';
-  protected $datastoreKeyDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2RecordKey extends Google_Model {
+    protected $cloudStorageKeyType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey';
+    protected $cloudStorageKeyDataType = '';
+    protected $datastoreKeyType        = 'Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey';
+    protected $datastoreKeyDataType    = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey
-   */
-  public function setCloudStorageKey(Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey $cloudStorageKey)
-  {
-    $this->cloudStorageKey = $cloudStorageKey;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey
-   */
-  public function getCloudStorageKey()
-  {
-    return $this->cloudStorageKey;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey
-   */
-  public function setDatastoreKey(Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey $datastoreKey)
-  {
-    $this->datastoreKey = $datastoreKey;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey
-   */
-  public function getDatastoreKey()
-  {
-    return $this->datastoreKey;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey
+     */
+    public function setCloudStorageKey(Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey $cloudStorageKey) {
+        $this->cloudStorageKey = $cloudStorageKey;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey
+     */
+    public function getCloudStorageKey() {
+        return $this->cloudStorageKey;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey
+     */
+    public function setDatastoreKey(Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey $datastoreKey) {
+        $this->datastoreKey = $datastoreKey;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreKey
+     */
+    public function getDatastoreKey() {
+        return $this->datastoreKey;
+    }
 }

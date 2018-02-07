@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Spanner_CommitResponse extends Google_Model
-{
-  public $commitTimestamp;
+class Google_Service_Spanner_CommitResponse extends Google_Model {
+    public $commitTimestamp;
 
-  public function setCommitTimestamp($commitTimestamp)
-  {
-    $this->commitTimestamp = $commitTimestamp;
-  }
-  public function getCommitTimestamp()
-  {
-    return $this->commitTimestamp;
-  }
+    public function setCommitTimestamp($commitTimestamp) {
+        $this->commitTimestamp = $commitTimestamp;
+    }
+
+    public function getCommitTimestamp() {
+        return $this->commitTimestamp;
+    }
 }

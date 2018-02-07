@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_ToolResults_PublishXunitXmlFilesRequest extends Google_Collection
-{
-  protected $collection_key = 'xunitXmlFiles';
-  protected $xunitXmlFilesType = 'Google_Service_ToolResults_FileReference';
-  protected $xunitXmlFilesDataType = 'array';
+class Google_Service_ToolResults_PublishXunitXmlFilesRequest extends Google_Collection {
+    protected $collection_key        = 'xunitXmlFiles';
+    protected $xunitXmlFilesType     = 'Google_Service_ToolResults_FileReference';
+    protected $xunitXmlFilesDataType = 'array';
 
-  /**
-   * @param Google_Service_ToolResults_FileReference
-   */
-  public function setXunitXmlFiles($xunitXmlFiles)
-  {
-    $this->xunitXmlFiles = $xunitXmlFiles;
-  }
-  /**
-   * @return Google_Service_ToolResults_FileReference
-   */
-  public function getXunitXmlFiles()
-  {
-    return $this->xunitXmlFiles;
-  }
+    /**
+     * @param Google_Service_ToolResults_FileReference
+     */
+    public function setXunitXmlFiles($xunitXmlFiles) {
+        $this->xunitXmlFiles = $xunitXmlFiles;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_FileReference
+     */
+    public function getXunitXmlFiles() {
+        return $this->xunitXmlFiles;
+    }
 }

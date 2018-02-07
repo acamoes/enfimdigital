@@ -9,8 +9,7 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_UnregisterObject
-{
+class Smarty_Internal_Method_UnregisterObject {
     /**
      * Valid for Smarty and template object
      *
@@ -29,11 +28,10 @@ class Smarty_Internal_Method_UnregisterObject
      *
      * @return \Smarty|\Smarty_Internal_Template
      */
-    public function unregisterObject(Smarty_Internal_TemplateBase $obj, $object_name)
-    {
+    public function unregisterObject(Smarty_Internal_TemplateBase $obj, $object_name) {
         $smarty = $obj->_getSmartyObj();
-        if (isset($smarty->registered_objects[ $object_name ])) {
-            unset($smarty->registered_objects[ $object_name ]);
+        if (isset($smarty->registered_objects[$object_name])) {
+            unset($smarty->registered_objects[$object_name]);
         }
         return $obj;
     }

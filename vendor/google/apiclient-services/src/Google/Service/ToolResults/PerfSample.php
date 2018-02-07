@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_ToolResults_PerfSample extends Google_Model
-{
-  protected $sampleTimeType = 'Google_Service_ToolResults_Timestamp';
-  protected $sampleTimeDataType = '';
-  public $value;
+class Google_Service_ToolResults_PerfSample extends Google_Model {
+    protected $sampleTimeType     = 'Google_Service_ToolResults_Timestamp';
+    protected $sampleTimeDataType = '';
+    public $value;
 
-  /**
-   * @param Google_Service_ToolResults_Timestamp
-   */
-  public function setSampleTime(Google_Service_ToolResults_Timestamp $sampleTime)
-  {
-    $this->sampleTime = $sampleTime;
-  }
-  /**
-   * @return Google_Service_ToolResults_Timestamp
-   */
-  public function getSampleTime()
-  {
-    return $this->sampleTime;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    /**
+     * @param Google_Service_ToolResults_Timestamp
+     */
+    public function setSampleTime(Google_Service_ToolResults_Timestamp $sampleTime) {
+        $this->sampleTime = $sampleTime;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_Timestamp
+     */
+    public function getSampleTime() {
+        return $this->sampleTime;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

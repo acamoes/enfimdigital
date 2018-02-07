@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Dataflow_ComponentTransform extends Google_Model
-{
-  public $name;
-  public $originalTransform;
-  public $userName;
+class Google_Service_Dataflow_ComponentTransform extends Google_Model {
+    public $name;
+    public $originalTransform;
+    public $userName;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setOriginalTransform($originalTransform)
-  {
-    $this->originalTransform = $originalTransform;
-  }
-  public function getOriginalTransform()
-  {
-    return $this->originalTransform;
-  }
-  public function setUserName($userName)
-  {
-    $this->userName = $userName;
-  }
-  public function getUserName()
-  {
-    return $this->userName;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setOriginalTransform($originalTransform) {
+        $this->originalTransform = $originalTransform;
+    }
+
+    public function getOriginalTransform() {
+        return $this->originalTransform;
+    }
+
+    public function setUserName($userName) {
+        $this->userName = $userName;
+    }
+
+    public function getUserName() {
+        return $this->userName;
+    }
 }

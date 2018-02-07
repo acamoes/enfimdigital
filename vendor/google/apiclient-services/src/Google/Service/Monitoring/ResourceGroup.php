@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Monitoring_ResourceGroup extends Google_Model
-{
-  public $groupId;
-  public $resourceType;
+class Google_Service_Monitoring_ResourceGroup extends Google_Model {
+    public $groupId;
+    public $resourceType;
 
-  public function setGroupId($groupId)
-  {
-    $this->groupId = $groupId;
-  }
-  public function getGroupId()
-  {
-    return $this->groupId;
-  }
-  public function setResourceType($resourceType)
-  {
-    $this->resourceType = $resourceType;
-  }
-  public function getResourceType()
-  {
-    return $this->resourceType;
-  }
+    public function setGroupId($groupId) {
+        $this->groupId = $groupId;
+    }
+
+    public function getGroupId() {
+        return $this->groupId;
+    }
+
+    public function setResourceType($resourceType) {
+        $this->resourceType = $resourceType;
+    }
+
+    public function getResourceType() {
+        return $this->resourceType;
+    }
 }

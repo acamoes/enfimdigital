@@ -11,7 +11,6 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
-
 namespace phpseclib\File\ASN1;
 
 /**
@@ -23,8 +22,7 @@ namespace phpseclib\File\ASN1;
  * @author  Jim Wigginton <terrafrost@php.net>
  * @access  public
  */
-class Element
-{
+class Element {
     /**
      * Raw element value
      *
@@ -40,8 +38,7 @@ class Element
      * @return \phpseclib\File\ASN1\Element
      * @access public
      */
-    function __construct($encoded)
-    {
+    function __construct($encoded) {
         $this->element = $encoded;
     }
 }

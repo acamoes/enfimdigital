@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Spanner_RollbackRequest extends Google_Model
-{
-  public $transactionId;
+class Google_Service_Spanner_RollbackRequest extends Google_Model {
+    public $transactionId;
 
-  public function setTransactionId($transactionId)
-  {
-    $this->transactionId = $transactionId;
-  }
-  public function getTransactionId()
-  {
-    return $this->transactionId;
-  }
+    public function setTransactionId($transactionId) {
+        $this->transactionId = $transactionId;
+    }
+
+    public function getTransactionId() {
+        return $this->transactionId;
+    }
 }

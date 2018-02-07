@@ -15,12 +15,11 @@
  * limitations under the License.
  */
 namespace Google\Auth\HttpHandler;
-
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 
-class HttpHandlerFactory
-{
+class HttpHandlerFactory {
+
     /**
      * Builds out a default http handler for the installed version of guzzle.
      *
@@ -30,10 +29,9 @@ class HttpHandlerFactory
      *
      * @throws \Exception
      */
-    public static function build(ClientInterface $client = null)
-    {
+    public static function build(ClientInterface $client = null) {
         $version = ClientInterface::VERSION;
-        $client = $client ?: new Client();
+        $client  = $client ?: new Client();
 
         switch ($version[0]) {
             case '5':

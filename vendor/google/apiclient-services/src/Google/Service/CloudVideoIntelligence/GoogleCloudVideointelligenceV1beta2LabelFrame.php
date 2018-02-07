@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta2LabelFrame extends Google_Model
-{
-  public $confidence;
-  public $timeOffset;
+class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1beta2LabelFrame extends Google_Model {
+    public $confidence;
+    public $timeOffset;
 
-  public function setConfidence($confidence)
-  {
-    $this->confidence = $confidence;
-  }
-  public function getConfidence()
-  {
-    return $this->confidence;
-  }
-  public function setTimeOffset($timeOffset)
-  {
-    $this->timeOffset = $timeOffset;
-  }
-  public function getTimeOffset()
-  {
-    return $this->timeOffset;
-  }
+    public function setConfidence($confidence) {
+        $this->confidence = $confidence;
+    }
+
+    public function getConfidence() {
+        return $this->confidence;
+    }
+
+    public function setTimeOffset($timeOffset) {
+        $this->timeOffset = $timeOffset;
+    }
+
+    public function getTimeOffset() {
+        return $this->timeOffset;
+    }
 }

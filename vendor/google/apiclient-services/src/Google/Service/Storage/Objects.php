@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Storage_Objects extends Google_Collection
-{
-  protected $collection_key = 'prefixes';
-  protected $itemsType = 'Google_Service_Storage_StorageObject';
-  protected $itemsDataType = 'array';
-  public $kind;
-  public $nextPageToken;
-  public $prefixes;
+class Google_Service_Storage_Objects extends Google_Collection {
+    protected $collection_key = 'prefixes';
+    protected $itemsType      = 'Google_Service_Storage_StorageObject';
+    protected $itemsDataType  = 'array';
+    public $kind;
+    public $nextPageToken;
+    public $prefixes;
 
-  /**
-   * @param Google_Service_Storage_StorageObject
-   */
-  public function setItems($items)
-  {
-    $this->items = $items;
-  }
-  /**
-   * @return Google_Service_Storage_StorageObject
-   */
-  public function getItems()
-  {
-    return $this->items;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setPrefixes($prefixes)
-  {
-    $this->prefixes = $prefixes;
-  }
-  public function getPrefixes()
-  {
-    return $this->prefixes;
-  }
+    /**
+     * @param Google_Service_Storage_StorageObject
+     */
+    public function setItems($items) {
+        $this->items = $items;
+    }
+
+    /**
+     * @return Google_Service_Storage_StorageObject
+     */
+    public function getItems() {
+        return $this->items;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    public function setPrefixes($prefixes) {
+        $this->prefixes = $prefixes;
+    }
+
+    public function getPrefixes() {
+        return $this->prefixes;
+    }
 }

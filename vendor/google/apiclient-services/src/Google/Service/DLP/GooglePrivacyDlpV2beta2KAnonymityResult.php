@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2KAnonymityResult extends Google_Collection
-{
-  protected $collection_key = 'equivalenceClassHistogramBuckets';
-  protected $equivalenceClassHistogramBucketsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2KAnonymityHistogramBucket';
-  protected $equivalenceClassHistogramBucketsDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2KAnonymityResult extends Google_Collection {
+    protected $collection_key                           = 'equivalenceClassHistogramBuckets';
+    protected $equivalenceClassHistogramBucketsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2KAnonymityHistogramBucket';
+    protected $equivalenceClassHistogramBucketsDataType = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2KAnonymityHistogramBucket
-   */
-  public function setEquivalenceClassHistogramBuckets($equivalenceClassHistogramBuckets)
-  {
-    $this->equivalenceClassHistogramBuckets = $equivalenceClassHistogramBuckets;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2KAnonymityHistogramBucket
-   */
-  public function getEquivalenceClassHistogramBuckets()
-  {
-    return $this->equivalenceClassHistogramBuckets;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2KAnonymityHistogramBucket
+     */
+    public function setEquivalenceClassHistogramBuckets($equivalenceClassHistogramBuckets) {
+        $this->equivalenceClassHistogramBuckets = $equivalenceClassHistogramBuckets;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2KAnonymityHistogramBucket
+     */
+    public function getEquivalenceClassHistogramBuckets() {
+        return $this->equivalenceClassHistogramBuckets;
+    }
 }

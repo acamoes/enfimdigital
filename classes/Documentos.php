@@ -143,7 +143,7 @@ class Documentos {
                 "WHERE idDocuments=" . $_SESSION['ficheiros']['idDocuments'];
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];
@@ -156,14 +156,14 @@ class Documentos {
                 ",dateExecutiva,idExecutiva " :
                 " ") .
                 ")" .
-                "VALUES " . "(0,0,'" . $data['type'] . "','" . $data['file'] . "','" . $data['content'] . "','" . date("Y-m-d H:i:s") . "'," . $_SESSION['users']->id . " " .
+                "VALUES " . "(0,0,'" . $data['type'] . "','" . $data['file'] . "','" . $data['content'] . "','" . date("Y-m-d H:i:s") . "'," . $_SESSION['users']->idUsers . " " .
                 (($data['action'] == 'equipaExecutiva') ?
                 ",'" . date("Y-m-d H:i:s") . "'," . $_SESSION ['users']->id . " " :
                 " ") .
                 ")";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o ficheiro.'];
         }
         $_SESSION ['ficheiros']['idDocuments']                          = $con->connection->insert_id;
@@ -183,7 +183,7 @@ class Documentos {
                 . " WHERE idDocuments=" . $data['idDocuments'];
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o ficheiro.'];
         }
         $_SESSION ['ficheiros']['type']                                 = $data['type'];
@@ -200,7 +200,7 @@ class Documentos {
                 . " WHERE idDocuments=" . $data['idDocuments'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'O registo não foi alterado.'];
         }
         return ['success' => true, 'message' => 'Registo alterado.'];

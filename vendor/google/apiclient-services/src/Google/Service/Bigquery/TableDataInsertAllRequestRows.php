@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Bigquery_TableDataInsertAllRequestRows extends Google_Model
-{
-  public $insertId;
-  public $json;
+class Google_Service_Bigquery_TableDataInsertAllRequestRows extends Google_Model {
+    public $insertId;
+    public $json;
 
-  public function setInsertId($insertId)
-  {
-    $this->insertId = $insertId;
-  }
-  public function getInsertId()
-  {
-    return $this->insertId;
-  }
-  public function setJson($json)
-  {
-    $this->json = $json;
-  }
-  public function getJson()
-  {
-    return $this->json;
-  }
+    public function setInsertId($insertId) {
+        $this->insertId = $insertId;
+    }
+
+    public function getInsertId() {
+        return $this->insertId;
+    }
+
+    public function setJson($json) {
+        $this->json = $json;
+    }
+
+    public function getJson() {
+        return $this->json;
+    }
 }

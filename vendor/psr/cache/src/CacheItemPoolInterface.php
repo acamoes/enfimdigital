@@ -1,5 +1,4 @@
 <?php
-
 namespace Psr\Cache;
 
 /**
@@ -11,8 +10,8 @@ namespace Psr\Cache;
  * All configuration and initialization of the Pool is left up to an
  * Implementing Library.
  */
-interface CacheItemPoolInterface
-{
+interface CacheItemPoolInterface {
+
     /**
      * Returns a Cache Item representing the specified key.
      *

@@ -30,43 +30,36 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_Webfonts extends Google_Service
-{
+class Google_Service_Webfonts extends Google_Service {
+    public $webfonts;
 
+    /**
+     * Constructs the internal representation of the Webfonts service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://www.googleapis.com/';
+        $this->servicePath = 'webfonts/v1/';
+        $this->version     = 'v1';
+        $this->serviceName = 'webfonts';
 
-  public $webfonts;
-  
-  /**
-   * Constructs the internal representation of the Webfonts service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'webfonts/v1/';
-    $this->version = 'v1';
-    $this->serviceName = 'webfonts';
-
-    $this->webfonts = new Google_Service_Webfonts_Resource_Webfonts(
-        $this,
-        $this->serviceName,
-        'webfonts',
-        array(
-          'methods' => array(
-            'list' => array(
-              'path' => 'webfonts',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'sort' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+        $this->webfonts = new Google_Service_Webfonts_Resource_Webfonts(
+                $this, $this->serviceName, 'webfonts', array(
+            'methods' => array(
+                'list' => array(
+                    'path'       => 'webfonts',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'sort' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

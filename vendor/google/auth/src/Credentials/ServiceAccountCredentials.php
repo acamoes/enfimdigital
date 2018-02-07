@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Credentials;
-
 use Google\Auth\CredentialsLoader;
 use Google\Auth\OAuth2;
 
@@ -53,8 +51,7 @@ use Google\Auth\OAuth2;
  *
  *   $res = $client->get('myproject/taskqueues/myqueue');
  */
-class ServiceAccountCredentials extends CredentialsLoader
-{
+class ServiceAccountCredentials extends CredentialsLoader {
     /**
      * The OAuth2 instance used to conduct authorization.
      *
@@ -73,34 +70,32 @@ class ServiceAccountCredentials extends CredentialsLoader
      *   the service account has been delegated domain wide access.
      */
     public function __construct(
-        $scope,
-        $jsonKey,
-        $sub = null
+    $scope, $jsonKey, $sub = null
     ) {
         if (is_string($jsonKey)) {
             if (!file_exists($jsonKey)) {
                 throw new \InvalidArgumentException('file does not exist');
             }
             $jsonKeyStream = file_get_contents($jsonKey);
-            if (!$jsonKey = json_decode($jsonKeyStream, true)) {
+            if (!$jsonKey       = json_decode($jsonKeyStream, true)) {
                 throw new \LogicException('invalid json for auth config');
             }
         }
         if (!array_key_exists('client_email', $jsonKey)) {
             throw new \InvalidArgumentException(
-                'json key is missing the client_email field');
+            'json key is missing the client_email field');
         }
         if (!array_key_exists('private_key', $jsonKey)) {
             throw new \InvalidArgumentException(
-                'json key is missing the private_key field');
+            'json key is missing the private_key field');
         }
         $this->auth = new OAuth2([
-            'audience' => self::TOKEN_CREDENTIAL_URI,
-            'issuer' => $jsonKey['client_email'],
-            'scope' => $scope,
-            'signingAlgorithm' => 'RS256',
-            'signingKey' => $jsonKey['private_key'],
-            'sub' => $sub,
+            'audience'           => self::TOKEN_CREDENTIAL_URI,
+            'issuer'             => $jsonKey['client_email'],
+            'scope'              => $scope,
+            'signingAlgorithm'   => 'RS256',
+            'signingKey'         => $jsonKey['private_key'],
+            'sub'                => $sub,
             'tokenCredentialUri' => self::TOKEN_CREDENTIAL_URI,
         ]);
     }
@@ -110,16 +105,14 @@ class ServiceAccountCredentials extends CredentialsLoader
      *
      * @return array
      */
-    public function fetchAuthToken(callable $httpHandler = null)
-    {
+    public function fetchAuthToken(callable $httpHandler = null) {
         return $this->auth->fetchAuthToken($httpHandler);
     }
 
     /**
      * @return string
      */
-    public function getCacheKey()
-    {
+    public function getCacheKey() {
         $key = $this->auth->getIssuer() . ':' . $this->auth->getCacheKey();
         if ($sub = $this->auth->getSub()) {
             $key .= ':' . $sub;
@@ -131,8 +124,7 @@ class ServiceAccountCredentials extends CredentialsLoader
     /**
      * @return array
      */
-    public function getLastReceivedToken()
-    {
+    public function getLastReceivedToken() {
         return $this->auth->getLastReceivedToken();
     }
 
@@ -146,9 +138,7 @@ class ServiceAccountCredentials extends CredentialsLoader
      * @return array updated metadata hashmap
      */
     public function updateMetadata(
-        $metadata,
-        $authUri = null,
-        callable $httpHandler = null
+    $metadata, $authUri = null, callable $httpHandler = null
     ) {
         // scope exists. use oauth implementation
         $scope = $this->auth->getScope();
@@ -158,7 +148,7 @@ class ServiceAccountCredentials extends CredentialsLoader
 
         // no scope found. create jwt with the auth uri
         $credJson = array(
-            'private_key' => $this->auth->getSigningKey(),
+            'private_key'  => $this->auth->getSigningKey(),
             'client_email' => $this->auth->getIssuer(),
         );
         $jwtCreds = new ServiceAccountJwtAccessCredentials($credJson);
@@ -170,8 +160,7 @@ class ServiceAccountCredentials extends CredentialsLoader
      * @param string $sub an email address account to impersonate, in situations when
      *   the service account has been delegated domain wide access.
      */
-    public function setSub($sub)
-    {
+    public function setSub($sub) {
         $this->auth->setSub($sub);
     }
 }

@@ -15,52 +15,50 @@
  * the License.
  */
 
-class Google_Service_Monitoring_InternalChecker extends Google_Model
-{
-  public $checkerId;
-  public $displayName;
-  public $gcpZone;
-  public $network;
-  public $projectId;
+class Google_Service_Monitoring_InternalChecker extends Google_Model {
+    public $checkerId;
+    public $displayName;
+    public $gcpZone;
+    public $network;
+    public $projectId;
 
-  public function setCheckerId($checkerId)
-  {
-    $this->checkerId = $checkerId;
-  }
-  public function getCheckerId()
-  {
-    return $this->checkerId;
-  }
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
-  public function setGcpZone($gcpZone)
-  {
-    $this->gcpZone = $gcpZone;
-  }
-  public function getGcpZone()
-  {
-    return $this->gcpZone;
-  }
-  public function setNetwork($network)
-  {
-    $this->network = $network;
-  }
-  public function getNetwork()
-  {
-    return $this->network;
-  }
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
-  }
+    public function setCheckerId($checkerId) {
+        $this->checkerId = $checkerId;
+    }
+
+    public function getCheckerId() {
+        return $this->checkerId;
+    }
+
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
+
+    public function setGcpZone($gcpZone) {
+        $this->gcpZone = $gcpZone;
+    }
+
+    public function getGcpZone() {
+        return $this->gcpZone;
+    }
+
+    public function setNetwork($network) {
+        $this->network = $network;
+    }
+
+    public function getNetwork() {
+        return $this->network;
+    }
+
+    public function setProjectId($projectId) {
+        $this->projectId = $projectId;
+    }
+
+    public function getProjectId() {
+        return $this->projectId;
+    }
 }

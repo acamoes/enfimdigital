@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey extends Google_Model
-{
-  public $filePath;
-  public $startOffset;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageKey extends Google_Model {
+    public $filePath;
+    public $startOffset;
 
-  public function setFilePath($filePath)
-  {
-    $this->filePath = $filePath;
-  }
-  public function getFilePath()
-  {
-    return $this->filePath;
-  }
-  public function setStartOffset($startOffset)
-  {
-    $this->startOffset = $startOffset;
-  }
-  public function getStartOffset()
-  {
-    return $this->startOffset;
-  }
+    public function setFilePath($filePath) {
+        $this->filePath = $filePath;
+    }
+
+    public function getFilePath() {
+        return $this->filePath;
+    }
+
+    public function setStartOffset($startOffset) {
+        $this->startOffset = $startOffset;
+    }
+
+    public function getStartOffset() {
+        return $this->startOffset;
+    }
 }

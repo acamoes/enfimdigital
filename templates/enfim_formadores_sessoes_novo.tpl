@@ -10,15 +10,15 @@
                             datastring.push({ldelim}name: 'action', value: '{$action}'});
                                     datastring.push({ldelim}name: 'task', value: 'inserir'});
                                             datastring.push({ldelim}name: 'tab', value: '{$currentTab}'});
-                                                            datastring.push({ldelim}name: 'idCourses', value: '{$idCourses}'});
-                                                                    $.ajax({
-                                                                        url: '{$SCRIPT_NAME}',
-                                                                        data: datastring,
-                                                                        success: function (result) {
-                                                                            $('#formMsg').html(result);
-                                                                        }
-                                                                    });
+                                                    datastring.push({ldelim}name: 'idCourses', value: '{$idCourses}'});
+                                                            $.ajax({
+                                                                url: '{$SCRIPT_NAME}',
+                                                                data: datastring,
+                                                                success: function (result) {
+                                                                    $('#formMsg').html(result);
                                                                 }
+                                                            });
+                                                        }
 
                     </script>
                     <form id="{$currentTab}Novo" name="{$currentTab}Novo"
@@ -27,7 +27,7 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');request('action={$action}&task=search&idCourses={$idCourses}&tab={$currentTab}&search='+document.getElementById('{$currentTab}search').value,'ST{$currentTab}');">X
+                                       onclick="$('#form').html('');request('action={$action}&task=search&idCourses={$idCourses}&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
                                     Close</label>
                             </div>
                         </div>

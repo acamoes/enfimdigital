@@ -15,40 +15,38 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig extends Google_Collection
-{
-  protected $collection_key = 'quasiIds';
-  protected $quasiIdsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId';
-  protected $quasiIdsDataType = 'array';
-  protected $sensitiveAttributeType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId';
-  protected $sensitiveAttributeDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1LDiversityConfig extends Google_Collection {
+    protected $collection_key             = 'quasiIds';
+    protected $quasiIdsType               = 'Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId';
+    protected $quasiIdsDataType           = 'array';
+    protected $sensitiveAttributeType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId';
+    protected $sensitiveAttributeDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
-   */
-  public function setQuasiIds($quasiIds)
-  {
-    $this->quasiIds = $quasiIds;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
-   */
-  public function getQuasiIds()
-  {
-    return $this->quasiIds;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
-   */
-  public function setSensitiveAttribute(Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId $sensitiveAttribute)
-  {
-    $this->sensitiveAttribute = $sensitiveAttribute;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
-   */
-  public function getSensitiveAttribute()
-  {
-    return $this->sensitiveAttribute;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
+     */
+    public function setQuasiIds($quasiIds) {
+        $this->quasiIds = $quasiIds;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
+     */
+    public function getQuasiIds() {
+        return $this->quasiIds;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
+     */
+    public function setSensitiveAttribute(Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId $sensitiveAttribute) {
+        $this->sensitiveAttribute = $sensitiveAttribute;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
+     */
+    public function getSensitiveAttribute() {
+        return $this->sensitiveAttribute;
+    }
 }

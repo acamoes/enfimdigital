@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyerII_VideoContent extends Google_Model
-{
-  public $videoUrl;
+class Google_Service_AdExchangeBuyerII_VideoContent extends Google_Model {
+    public $videoUrl;
 
-  public function setVideoUrl($videoUrl)
-  {
-    $this->videoUrl = $videoUrl;
-  }
-  public function getVideoUrl()
-  {
-    return $this->videoUrl;
-  }
+    public function setVideoUrl($videoUrl) {
+        $this->videoUrl = $videoUrl;
+    }
+
+    public function getVideoUrl() {
+        return $this->videoUrl;
+    }
 }

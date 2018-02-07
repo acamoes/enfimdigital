@@ -9,8 +9,7 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_UnregisterCacheResource
-{
+class Smarty_Internal_Method_UnregisterCacheResource {
     /**
      * Valid for Smarty and template object
      *
@@ -29,11 +28,10 @@ class Smarty_Internal_Method_UnregisterCacheResource
      *
      * @return \Smarty|\Smarty_Internal_Template
      */
-    public function unregisterCacheResource(Smarty_Internal_TemplateBase $obj, $name)
-    {
+    public function unregisterCacheResource(Smarty_Internal_TemplateBase $obj, $name) {
         $smarty = $obj->_getSmartyObj();
-        if (isset($smarty->registered_cache_resources[ $name ])) {
-            unset($smarty->registered_cache_resources[ $name ]);
+        if (isset($smarty->registered_cache_resources[$name])) {
+            unset($smarty->registered_cache_resources[$name]);
         }
         return $obj;
     }

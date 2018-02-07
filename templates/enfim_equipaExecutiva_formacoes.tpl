@@ -7,7 +7,7 @@
                     <input name="{$action}{$currentTab}" id="{$action}{$currentTab}" type="hidden" value="" />
                     <select name="{$action}{$currentTab}IdCourse"
                             id="{$action}{$currentTab}IdCourse" style="width: 250px" 
-                            onChange="request('action={$action}&task=contexto&tab={$currentTab}&{$action}{$currentTab|ucfirst}IdCourses='+this.options[this.selectedIndex].value,'subSubForm');">
+                            onChange="request('action={$action}&task=contexto&tab={$currentTab}&{$action}{$currentTab|ucfirst}IdCourses=' + this.options[this.selectedIndex].value, 'subSubForm');">
                         <option value="" selected></option>
                         {foreach $equipaExecutiva->calendarios as $calendarios}
                             <option 
@@ -21,7 +21,7 @@
         </div>
         <section id="subSubForm" style="width: 100%;">
             {if isset($equipaExecutivaFormacoesIdCourse)}
-            {include file="enfim_equipaExecutiva_formacoes_contexto.tpl"}
+                {include file="enfim_equipaExecutiva_formacoes_contexto.tpl"}
             {/if}
         </section>
     </div>	

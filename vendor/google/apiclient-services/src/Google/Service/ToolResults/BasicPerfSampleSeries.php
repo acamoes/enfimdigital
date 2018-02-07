@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_ToolResults_BasicPerfSampleSeries extends Google_Model
-{
-  public $perfMetricType;
-  public $perfUnit;
-  public $sampleSeriesLabel;
+class Google_Service_ToolResults_BasicPerfSampleSeries extends Google_Model {
+    public $perfMetricType;
+    public $perfUnit;
+    public $sampleSeriesLabel;
 
-  public function setPerfMetricType($perfMetricType)
-  {
-    $this->perfMetricType = $perfMetricType;
-  }
-  public function getPerfMetricType()
-  {
-    return $this->perfMetricType;
-  }
-  public function setPerfUnit($perfUnit)
-  {
-    $this->perfUnit = $perfUnit;
-  }
-  public function getPerfUnit()
-  {
-    return $this->perfUnit;
-  }
-  public function setSampleSeriesLabel($sampleSeriesLabel)
-  {
-    $this->sampleSeriesLabel = $sampleSeriesLabel;
-  }
-  public function getSampleSeriesLabel()
-  {
-    return $this->sampleSeriesLabel;
-  }
+    public function setPerfMetricType($perfMetricType) {
+        $this->perfMetricType = $perfMetricType;
+    }
+
+    public function getPerfMetricType() {
+        return $this->perfMetricType;
+    }
+
+    public function setPerfUnit($perfUnit) {
+        $this->perfUnit = $perfUnit;
+    }
+
+    public function getPerfUnit() {
+        return $this->perfUnit;
+    }
+
+    public function setSampleSeriesLabel($sampleSeriesLabel) {
+        $this->sampleSeriesLabel = $sampleSeriesLabel;
+    }
+
+    public function getSampleSeriesLabel() {
+        return $this->sampleSeriesLabel;
+    }
 }

@@ -4,11 +4,9 @@ namespace GuzzleHttp\Cookie;
 /**
  * Persists non-session cookies using a JSON formatted file
  */
-class FileCookieJar extends CookieJar
-{
+class FileCookieJar extends CookieJar {
     /** @var string filename */
     private $filename;
-
     /** @var bool Control whether to persist session cookies or not. */
     private $storeSessionCookies;
 
@@ -21,9 +19,8 @@ class FileCookieJar extends CookieJar
      *
      * @throws \RuntimeException if the file cannot be found or created
      */
-    public function __construct($cookieFile, $storeSessionCookies = false)
-    {
-        $this->filename = $cookieFile;
+    public function __construct($cookieFile, $storeSessionCookies = false) {
+        $this->filename            = $cookieFile;
         $this->storeSessionCookies = $storeSessionCookies;
 
         if (file_exists($cookieFile)) {
@@ -34,8 +31,7 @@ class FileCookieJar extends CookieJar
     /**
      * Saves the file when shutting down
      */
-    public function __destruct()
-    {
+    public function __destruct() {
         $this->save($this->filename);
     }
 
@@ -45,8 +41,7 @@ class FileCookieJar extends CookieJar
      * @param string $filename File to save
      * @throws \RuntimeException if the file cannot be found or created
      */
-    public function save($filename)
-    {
+    public function save($filename) {
         $json = [];
         foreach ($this as $cookie) {
             /** @var SetCookie $cookie */
@@ -69,12 +64,12 @@ class FileCookieJar extends CookieJar
      * @param string $filename Cookie file to load.
      * @throws \RuntimeException if the file cannot be loaded.
      */
-    public function load($filename)
-    {
+    public function load($filename) {
         $json = file_get_contents($filename);
         if (false === $json) {
             throw new \RuntimeException("Unable to load file {$filename}");
-        } elseif ($json === '') {
+        }
+        elseif ($json === '') {
             return;
         }
 
@@ -83,7 +78,8 @@ class FileCookieJar extends CookieJar
             foreach (json_decode($json, true) as $cookie) {
                 $this->setCookie(new SetCookie($cookie));
             }
-        } elseif (strlen($data)) {
+        }
+        elseif (strlen($data)) {
             throw new \RuntimeException("Invalid cookie file: {$filename}");
         }
     }

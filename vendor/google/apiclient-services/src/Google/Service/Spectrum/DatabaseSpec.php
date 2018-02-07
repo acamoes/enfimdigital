@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Spectrum_DatabaseSpec extends Google_Model
-{
-  public $name;
-  public $uri;
+class Google_Service_Spectrum_DatabaseSpec extends Google_Model {
+    public $name;
+    public $uri;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setUri($uri)
-  {
-    $this->uri = $uri;
-  }
-  public function getUri()
-  {
-    return $this->uri;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setUri($uri) {
+        $this->uri = $uri;
+    }
+
+    public function getUri() {
+        return $this->uri;
+    }
 }

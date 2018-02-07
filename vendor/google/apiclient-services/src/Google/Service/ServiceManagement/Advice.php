@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_Advice extends Google_Model
-{
-  public $description;
+class Google_Service_ServiceManagement_Advice extends Google_Model {
+    public $description;
 
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
 }

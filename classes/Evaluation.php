@@ -165,30 +165,30 @@ class Evaluation {
         return $html;
     }
 
-    function radio($id, $nome, $intervalo, $selecionado): string {
-        $tag   = "<div class='row uniform'><div><label for='" . ENFIM::cleanString($id) . "'>$nome</label>";
+    function radio($idInput, $nome, $intervalo, $selecionado): string {
+        $tag   = "<div class='row uniform'><div><label for='" . ENFIM::cleanString($idInput) . "'>$nome</label>";
         $range = explode('-', $intervalo);
         for ($i = $range[0]; $i <= $range[1]; $i++) {
-            $tag .= "<input type='radio' id='" . ENFIM::cleanString($id) . "-$i' name='" . ENFIM::cleanString($id) . "' value='$i' " . ($selecionado == $i ? "checked=''" : "") . ">"
-                    . "<label for='" . ENFIM::cleanString($id) . "-$i'>$i</label>";
+            $tag .= "<input type='radio' id='" . ENFIM::cleanString($idInput) . "-$i' name='" . ENFIM::cleanString($idInput) . "' value='$i' " . ($selecionado == $i ? "checked=''" : "") . ">"
+                    . "<label for='" . ENFIM::cleanString($idInput) . "-$i'>$i</label>";
         }
         $tag .= "</div></div>";
         return $tag;
     }
 
-    function textArea($id, $nome, $intervalo, $selecionado): string {
-        if (strpos($id, 'pontos_positivos') !== false) {
+    function textArea($idInput, $nome, $intervalo, $selecionado): string {
+        if (strpos($idInput, 'pontos_positivos') !== false) {
             $nome = "Pontos positivos";
         }
-        elseif (strpos($id, 'pontos_a_melhorar') !== false) {
+        elseif (strpos($idInput, 'pontos_a_melhorar') !== false) {
             $nome = "Pontos a melhorar";
         }
         else {
             $nome = "Recomendações";
         }
-        $tag   = "<div class='row uniform'><div><label for='" . ENFIM::cleanString($id) . "'>$nome</label>";
+        $tag   = "<div class='row uniform'><div><label for='" . ENFIM::cleanString($idInput) . "'>$nome</label>";
         $range = explode('-', $intervalo);
-        $tag   .= "<textarea cols = '$range[1]' rows = '$range[0]' name = '" . ENFIM::cleanString($id) . "' id = '" . ENFIM::cleanString($id) . "' style = 'width: 630px'>$selecionado</textarea>";
+        $tag   .= "<textarea cols = '$range[1]' rows = '$range[0]' name = '" . ENFIM::cleanString($idInput) . "' id = '" . ENFIM::cleanString($idInput) . "' style = 'width: 630px'>$selecionado</textarea>";
         $tag   .= "</div></div>";
         return $tag;
     }
@@ -309,7 +309,36 @@ class Evaluation {
         return $this->template;
     }
 
-    function evaluationReport($data) {
-        //TODO
+    static function evaluationReport(/* $data */) {
+        $query      = "SELECT * FROM
+(SELECT
+	ce.idEvaluations,
+    ce.idCourses,
+    ce.idCourse,
+    ce.date,
+    e.target,
+    ce.evaluation,
+    cs.year,
+    cs.course,
+    c.name,
+    (SELECT count(*) FROM courses_evaluations ce1 WHERE ce1.evaluation IS NULL) as incompleto,
+    (SELECT count(*) FROM courses_evaluations ce1 WHERE ce1.evaluation IS NOT NULL) as completo,
+    (SELECT count(*) FROM courses_evaluations ce1) as total
+FROM courses_evaluations ce
+INNER JOIN evaluations e ON ce.idEvaluations=e.idEvaluations AND e.status='Ativo'
+INNER JOIN courses cs ON ce.idCourses=cs.idCourses
+INNER JOIN course c ON c.idCourse=cs.idCourse) t
+WHERE
+idEvaluations=89 AND
+idCourses=1 AND
+idCourse=1 AND
+target='Formando' AND
+year='2018' AND
+course='CPF 00/2018' AND
+name='Curso Preliminar de Formação' ";
+        $con        = new Database ();
+        $result     = $con->get($query);
+        $evaluation = json_decode($result[0]['evaluation']);
+        return $evaluation;
     }
 }

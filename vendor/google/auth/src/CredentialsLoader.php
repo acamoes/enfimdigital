@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth;
-
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
 
@@ -24,20 +22,18 @@ use Google\Auth\Credentials\UserRefreshCredentials;
  * CredentialsLoader contains the behaviour used to locate and find default
  * credentials files on the file system.
  */
-abstract class CredentialsLoader implements FetchAuthTokenInterface
-{
-    const TOKEN_CREDENTIAL_URI = 'https://www.googleapis.com/oauth2/v4/token';
-    const ENV_VAR = 'GOOGLE_APPLICATION_CREDENTIALS';
-    const WELL_KNOWN_PATH = 'gcloud/application_default_credentials.json';
+abstract class CredentialsLoader implements FetchAuthTokenInterface {
+    const TOKEN_CREDENTIAL_URI             = 'https://www.googleapis.com/oauth2/v4/token';
+    const ENV_VAR                          = 'GOOGLE_APPLICATION_CREDENTIALS';
+    const WELL_KNOWN_PATH                  = 'gcloud/application_default_credentials.json';
     const NON_WINDOWS_WELL_KNOWN_PATH_BASE = '.config';
-    const AUTH_METADATA_KEY = 'authorization';
+    const AUTH_METADATA_KEY                = 'authorization';
 
     /**
      * @param string $cause
      * @return string
      */
-    private static function unableToReadEnv($cause)
-    {
+    private static function unableToReadEnv($cause) {
         $msg = 'Unable to read the credential file specified by ';
         $msg .= ' GOOGLE_APPLICATION_CREDENTIALS: ';
         $msg .= $cause;
@@ -48,8 +44,7 @@ abstract class CredentialsLoader implements FetchAuthTokenInterface
     /**
      * @return bool
      */
-    private static function isOnWindows()
-    {
+    private static function isOnWindows() {
         return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
     }
 
@@ -62,8 +57,7 @@ abstract class CredentialsLoader implements FetchAuthTokenInterface
      *
      * @return array JSON key | null
      */
-    public static function fromEnv()
-    {
+    public static function fromEnv() {
         $path = getenv(self::ENV_VAR);
         if (empty($path)) {
             return;
@@ -87,15 +81,14 @@ abstract class CredentialsLoader implements FetchAuthTokenInterface
      *
      * @return array JSON key | null
      */
-    public static function fromWellKnownFile()
-    {
+    public static function fromWellKnownFile() {
         $rootEnv = self::isOnWindows() ? 'APPDATA' : 'HOME';
-        $path = [getenv($rootEnv)];
+        $path    = [getenv($rootEnv)];
         if (!self::isOnWindows()) {
             $path[] = self::NON_WINDOWS_WELL_KNOWN_PATH_BASE;
         }
         $path[] = self::WELL_KNOWN_PATH;
-        $path = implode(DIRECTORY_SEPARATOR, $path);
+        $path   = implode(DIRECTORY_SEPARATOR, $path);
         if (!file_exists($path)) {
             return;
         }
@@ -112,17 +105,18 @@ abstract class CredentialsLoader implements FetchAuthTokenInterface
      *
      * @return ServiceAccountCredentials|UserRefreshCredentials
      */
-    public static function makeCredentials($scope, array $jsonKey)
-    {
+    public static function makeCredentials($scope, array $jsonKey) {
         if (!array_key_exists('type', $jsonKey)) {
             throw new \InvalidArgumentException('json key is missing the type field');
         }
 
         if ($jsonKey['type'] == 'service_account') {
             return new ServiceAccountCredentials($scope, $jsonKey);
-        } elseif ($jsonKey['type'] == 'authorized_user') {
+        }
+        elseif ($jsonKey['type'] == 'authorized_user') {
             return new UserRefreshCredentials($scope, $jsonKey);
-        } else {
+        }
+        else {
             throw new \InvalidArgumentException('invalid value in the type field');
         }
     }
@@ -138,37 +132,30 @@ abstract class CredentialsLoader implements FetchAuthTokenInterface
      * @return \GuzzleHttp\Client
      */
     public static function makeHttpClient(
-        FetchAuthTokenInterface $fetcher,
-        array $httpClientOptions = [],
-        callable $httpHandler = null,
-        callable $tokenCallback = null
+    FetchAuthTokenInterface $fetcher, array $httpClientOptions = [], callable $httpHandler = null, callable $tokenCallback = null
     ) {
         $version = \GuzzleHttp\ClientInterface::VERSION;
 
         switch ($version[0]) {
             case '5':
-                $client = new \GuzzleHttp\Client($httpClientOptions);
+                $client     = new \GuzzleHttp\Client($httpClientOptions);
                 $client->setDefaultOption('auth', 'google_auth');
                 $subscriber = new Subscriber\AuthTokenSubscriber(
-                    $fetcher,
-                    $httpHandler,
-                    $tokenCallback
+                        $fetcher, $httpHandler, $tokenCallback
                 );
                 $client->getEmitter()->attach($subscriber);
                 return $client;
             case '6':
                 $middleware = new Middleware\AuthTokenMiddleware(
-                    $fetcher,
-                    $httpHandler,
-                    $tokenCallback
+                        $fetcher, $httpHandler, $tokenCallback
                 );
-                $stack = \GuzzleHttp\HandlerStack::create();
+                $stack      = \GuzzleHttp\HandlerStack::create();
                 $stack->push($middleware);
 
                 return new \GuzzleHttp\Client([
-                   'handler' => $stack,
-                   'auth' => 'google_auth',
-                ] + $httpClientOptions);
+                    'handler' => $stack,
+                    'auth'    => 'google_auth',
+                        ] + $httpClientOptions);
             default:
                 throw new \Exception('Version not supported');
         }
@@ -179,8 +166,7 @@ abstract class CredentialsLoader implements FetchAuthTokenInterface
      *
      * @return array updateMetadata function
      */
-    public function getUpdateMetadataFunc()
-    {
+    public function getUpdateMetadataFunc() {
         return array($this, 'updateMetadata');
     }
 
@@ -194,15 +180,13 @@ abstract class CredentialsLoader implements FetchAuthTokenInterface
      * @return array updated metadata hashmap
      */
     public function updateMetadata(
-        $metadata,
-        $authUri = null,
-        callable $httpHandler = null
+    $metadata, $authUri = null, callable $httpHandler = null
     ) {
         $result = $this->fetchAuthToken($httpHandler);
         if (!isset($result['access_token'])) {
             return $metadata;
         }
-        $metadata_copy = $metadata;
+        $metadata_copy                          = $metadata;
         $metadata_copy[self::AUTH_METADATA_KEY] = array('Bearer ' . $result['access_token']);
 
         return $metadata_copy;

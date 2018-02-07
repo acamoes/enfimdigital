@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Chromewebstore_InAppProductPrices extends Google_Model
-{
-  public $currencyCode;
-  public $regionCode;
-  public $valueMicros;
+class Google_Service_Chromewebstore_InAppProductPrices extends Google_Model {
+    public $currencyCode;
+    public $regionCode;
+    public $valueMicros;
 
-  public function setCurrencyCode($currencyCode)
-  {
-    $this->currencyCode = $currencyCode;
-  }
-  public function getCurrencyCode()
-  {
-    return $this->currencyCode;
-  }
-  public function setRegionCode($regionCode)
-  {
-    $this->regionCode = $regionCode;
-  }
-  public function getRegionCode()
-  {
-    return $this->regionCode;
-  }
-  public function setValueMicros($valueMicros)
-  {
-    $this->valueMicros = $valueMicros;
-  }
-  public function getValueMicros()
-  {
-    return $this->valueMicros;
-  }
+    public function setCurrencyCode($currencyCode) {
+        $this->currencyCode = $currencyCode;
+    }
+
+    public function getCurrencyCode() {
+        return $this->currencyCode;
+    }
+
+    public function setRegionCode($regionCode) {
+        $this->regionCode = $regionCode;
+    }
+
+    public function getRegionCode() {
+        return $this->regionCode;
+    }
+
+    public function setValueMicros($valueMicros) {
+        $this->valueMicros = $valueMicros;
+    }
+
+    public function getValueMicros() {
+        return $this->valueMicros;
+    }
 }

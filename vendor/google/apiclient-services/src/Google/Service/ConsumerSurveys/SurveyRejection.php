@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ConsumerSurveys_SurveyRejection extends Google_Model
-{
-  public $explanation;
-  public $type;
+class Google_Service_ConsumerSurveys_SurveyRejection extends Google_Model {
+    public $explanation;
+    public $type;
 
-  public function setExplanation($explanation)
-  {
-    $this->explanation = $explanation;
-  }
-  public function getExplanation()
-  {
-    return $this->explanation;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setExplanation($explanation) {
+        $this->explanation = $explanation;
+    }
+
+    public function getExplanation() {
+        return $this->explanation;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

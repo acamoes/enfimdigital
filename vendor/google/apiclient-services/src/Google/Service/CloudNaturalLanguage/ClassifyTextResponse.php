@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_CloudNaturalLanguage_ClassifyTextResponse extends Google_Collection
-{
-  protected $collection_key = 'categories';
-  protected $categoriesType = 'Google_Service_CloudNaturalLanguage_ClassificationCategory';
-  protected $categoriesDataType = 'array';
+class Google_Service_CloudNaturalLanguage_ClassifyTextResponse extends Google_Collection {
+    protected $collection_key     = 'categories';
+    protected $categoriesType     = 'Google_Service_CloudNaturalLanguage_ClassificationCategory';
+    protected $categoriesDataType = 'array';
 
-  /**
-   * @param Google_Service_CloudNaturalLanguage_ClassificationCategory
-   */
-  public function setCategories($categories)
-  {
-    $this->categories = $categories;
-  }
-  /**
-   * @return Google_Service_CloudNaturalLanguage_ClassificationCategory
-   */
-  public function getCategories()
-  {
-    return $this->categories;
-  }
+    /**
+     * @param Google_Service_CloudNaturalLanguage_ClassificationCategory
+     */
+    public function setCategories($categories) {
+        $this->categories = $categories;
+    }
+
+    /**
+     * @return Google_Service_CloudNaturalLanguage_ClassificationCategory
+     */
+    public function getCategories() {
+        return $this->categories;
+    }
 }

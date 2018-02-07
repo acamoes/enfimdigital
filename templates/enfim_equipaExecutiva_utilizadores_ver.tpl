@@ -7,7 +7,8 @@
                     <div class="row uniform" style="padding-top: 1.75em">
                         <div style="float: right">
                             <label style="float: right; cursor: pointer"
-                                   onclick="getElementById('form').innerHTML = '';request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
+                                   onclick="getElementById('form').innerHTML = '';
+                                           request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
                                 Close</label>
                         </div>
                     </div>

@@ -1,53 +1,43 @@
 <?php
 namespace GuzzleHttp\Psr7;
-
 use Psr\Http\Message\StreamInterface;
 
 /**
  * Trait implementing functionality common to requests and responses.
  */
-trait MessageTrait
-{
+trait MessageTrait {
     /** @var array Map of all registered headers, as original name => array of values */
-    private $headers = [];
-
+    private $headers     = [];
     /** @var array Map of lowercase header name => original name at registration */
-    private $headerNames  = [];
-
+    private $headerNames = [];
     /** @var string */
-    private $protocol = '1.1';
-
+    private $protocol    = '1.1';
     /** @var StreamInterface */
     private $stream;
 
-    public function getProtocolVersion()
-    {
+    public function getProtocolVersion() {
         return $this->protocol;
     }
 
-    public function withProtocolVersion($version)
-    {
+    public function withProtocolVersion($version) {
         if ($this->protocol === $version) {
             return $this;
         }
 
-        $new = clone $this;
+        $new           = clone $this;
         $new->protocol = $version;
         return $new;
     }
 
-    public function getHeaders()
-    {
+    public function getHeaders() {
         return $this->headers;
     }
 
-    public function hasHeader($header)
-    {
+    public function hasHeader($header) {
         return isset($this->headerNames[strtolower($header)]);
     }
 
-    public function getHeader($header)
-    {
+    public function getHeader($header) {
         $header = strtolower($header);
 
         if (!isset($this->headerNames[$header])) {
@@ -59,18 +49,16 @@ trait MessageTrait
         return $this->headers[$header];
     }
 
-    public function getHeaderLine($header)
-    {
+    public function getHeaderLine($header) {
         return implode(', ', $this->getHeader($header));
     }
 
-    public function withHeader($header, $value)
-    {
+    public function withHeader($header, $value) {
         if (!is_array($value)) {
             $value = [$value];
         }
 
-        $value = $this->trimHeaderValues($value);
+        $value      = $this->trimHeaderValues($value);
         $normalized = strtolower($header);
 
         $new = clone $this;
@@ -78,34 +66,33 @@ trait MessageTrait
             unset($new->headers[$new->headerNames[$normalized]]);
         }
         $new->headerNames[$normalized] = $header;
-        $new->headers[$header] = $value;
+        $new->headers[$header]         = $value;
 
         return $new;
     }
 
-    public function withAddedHeader($header, $value)
-    {
+    public function withAddedHeader($header, $value) {
         if (!is_array($value)) {
             $value = [$value];
         }
 
-        $value = $this->trimHeaderValues($value);
+        $value      = $this->trimHeaderValues($value);
         $normalized = strtolower($header);
 
         $new = clone $this;
         if (isset($new->headerNames[$normalized])) {
-            $header = $this->headerNames[$normalized];
+            $header                = $this->headerNames[$normalized];
             $new->headers[$header] = array_merge($this->headers[$header], $value);
-        } else {
+        }
+        else {
             $new->headerNames[$normalized] = $header;
-            $new->headers[$header] = $value;
+            $new->headers[$header]         = $value;
         }
 
         return $new;
     }
 
-    public function withoutHeader($header)
-    {
+    public function withoutHeader($header) {
         $normalized = strtolower($header);
 
         if (!isset($this->headerNames[$normalized])) {
@@ -120,8 +107,7 @@ trait MessageTrait
         return $new;
     }
 
-    public function getBody()
-    {
+    public function getBody() {
         if (!$this->stream) {
             $this->stream = stream_for('');
         }
@@ -129,33 +115,32 @@ trait MessageTrait
         return $this->stream;
     }
 
-    public function withBody(StreamInterface $body)
-    {
+    public function withBody(StreamInterface $body) {
         if ($body === $this->stream) {
             return $this;
         }
 
-        $new = clone $this;
+        $new         = clone $this;
         $new->stream = $body;
         return $new;
     }
 
-    private function setHeaders(array $headers)
-    {
-        $this->headerNames = $this->headers = [];
+    private function setHeaders(array $headers) {
+        $this->headerNames = $this->headers     = [];
         foreach ($headers as $header => $value) {
             if (!is_array($value)) {
                 $value = [$value];
             }
 
-            $value = $this->trimHeaderValues($value);
+            $value      = $this->trimHeaderValues($value);
             $normalized = strtolower($header);
             if (isset($this->headerNames[$normalized])) {
-                $header = $this->headerNames[$normalized];
+                $header                 = $this->headerNames[$normalized];
                 $this->headers[$header] = array_merge($this->headers[$header], $value);
-            } else {
+            }
+            else {
                 $this->headerNames[$normalized] = $header;
-                $this->headers[$header] = $value;
+                $this->headers[$header]         = $value;
             }
         }
     }
@@ -174,8 +159,7 @@ trait MessageTrait
      *
      * @see https://tools.ietf.org/html/rfc7230#section-3.2.4
      */
-    private function trimHeaderValues(array $values)
-    {
+    private function trimHeaderValues(array $values) {
         return array_map(function ($value) {
             return trim($value, " \t");
         }, $values);

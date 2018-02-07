@@ -14,67 +14,58 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Tests;
-
 use google\appengine\api\app_identity\AppIdentityService;
 // included from tests\mocks\AppIdentityService.php
 use Google\Auth\Credentials\AppIdentityCredentials;
 use PHPUnit\Framework\TestCase;
 
-class AppIdentityCredentialsOnAppEngineTest extends TestCase
-{
-    public function testIsFalseByDefault()
-    {
+class AppIdentityCredentialsOnAppEngineTest extends TestCase {
+
+    public function testIsFalseByDefault() {
         $this->assertFalse(AppIdentityCredentials::onAppEngine());
     }
 
-    public function testIsTrueWhenServerSoftwareIsGoogleAppEngine()
-    {
+    public function testIsTrueWhenServerSoftwareIsGoogleAppEngine() {
         $_SERVER['SERVER_SOFTWARE'] = 'Google App Engine';
         $this->assertTrue(AppIdentityCredentials::onAppEngine());
     }
 
-    public function testIsTrueWhenAppEngineRuntimeIsPhp()
-    {
+    public function testIsTrueWhenAppEngineRuntimeIsPhp() {
         $_SERVER['APPENGINE_RUNTIME'] = 'php';
         $this->assertTrue(AppIdentityCredentials::onAppEngine());
     }
 }
 
-class AppIdentityCredentialsGetCacheKeyTest extends TestCase
-{
-    public function testShouldBeEmpty()
-    {
+class AppIdentityCredentialsGetCacheKeyTest extends TestCase {
+
+    public function testShouldBeEmpty() {
         $g = new AppIdentityCredentials();
         $this->assertEmpty($g->getCacheKey());
     }
 }
 
-class AppIdentityCredentialsFetchAuthTokenTest extends TestCase
-{
-    public function testShouldBeEmptyIfNotOnAppEngine()
-    {
+class AppIdentityCredentialsFetchAuthTokenTest extends TestCase {
+
+    public function testShouldBeEmptyIfNotOnAppEngine() {
         $g = new AppIdentityCredentials();
         $this->assertEquals(array(), $g->fetchAuthToken());
     }
-
     /* @expectedException */
-    public function testThrowsExceptionIfClassDoesntExist()
-    {
+
+    public function testThrowsExceptionIfClassDoesntExist() {
         $_SERVER['SERVER_SOFTWARE'] = 'Google App Engine';
-        $g = new AppIdentityCredentials();
+        $g                          = new AppIdentityCredentials();
     }
 
-    public function testReturnsExpectedToken()
-    {
+    public function testReturnsExpectedToken() {
         // include the mock AppIdentityService class
         require_once __DIR__ . '/../mocks/AppIdentityService.php';
 
         $wantedToken = [
             'access_token' => '1/abdef1234567890',
-            'expires_in' => '57',
-            'token_type' => 'Bearer',
+            'expires_in'   => '57',
+            'token_type'   => 'Bearer',
         ];
 
         AppIdentityService::$accessToken = $wantedToken;
@@ -85,8 +76,7 @@ class AppIdentityCredentialsFetchAuthTokenTest extends TestCase
         $this->assertEquals($wantedToken, $g->fetchAuthToken());
     }
 
-    public function testScopeIsAlwaysArray()
-    {
+    public function testScopeIsAlwaysArray() {
         // include the mock AppIdentityService class
         require_once __DIR__ . '/../mocks/AppIdentityService.php';
 

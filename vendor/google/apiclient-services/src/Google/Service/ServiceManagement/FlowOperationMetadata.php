@@ -15,71 +15,69 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_FlowOperationMetadata extends Google_Collection
-{
-  protected $collection_key = 'resourceNames';
-  public $cancelState;
-  public $deadline;
-  public $flowName;
-  public $operationType;
-  public $resourceNames;
-  public $startTime;
-  public $surface;
+class Google_Service_ServiceManagement_FlowOperationMetadata extends Google_Collection {
+    protected $collection_key = 'resourceNames';
+    public $cancelState;
+    public $deadline;
+    public $flowName;
+    public $operationType;
+    public $resourceNames;
+    public $startTime;
+    public $surface;
 
-  public function setCancelState($cancelState)
-  {
-    $this->cancelState = $cancelState;
-  }
-  public function getCancelState()
-  {
-    return $this->cancelState;
-  }
-  public function setDeadline($deadline)
-  {
-    $this->deadline = $deadline;
-  }
-  public function getDeadline()
-  {
-    return $this->deadline;
-  }
-  public function setFlowName($flowName)
-  {
-    $this->flowName = $flowName;
-  }
-  public function getFlowName()
-  {
-    return $this->flowName;
-  }
-  public function setOperationType($operationType)
-  {
-    $this->operationType = $operationType;
-  }
-  public function getOperationType()
-  {
-    return $this->operationType;
-  }
-  public function setResourceNames($resourceNames)
-  {
-    $this->resourceNames = $resourceNames;
-  }
-  public function getResourceNames()
-  {
-    return $this->resourceNames;
-  }
-  public function setStartTime($startTime)
-  {
-    $this->startTime = $startTime;
-  }
-  public function getStartTime()
-  {
-    return $this->startTime;
-  }
-  public function setSurface($surface)
-  {
-    $this->surface = $surface;
-  }
-  public function getSurface()
-  {
-    return $this->surface;
-  }
+    public function setCancelState($cancelState) {
+        $this->cancelState = $cancelState;
+    }
+
+    public function getCancelState() {
+        return $this->cancelState;
+    }
+
+    public function setDeadline($deadline) {
+        $this->deadline = $deadline;
+    }
+
+    public function getDeadline() {
+        return $this->deadline;
+    }
+
+    public function setFlowName($flowName) {
+        $this->flowName = $flowName;
+    }
+
+    public function getFlowName() {
+        return $this->flowName;
+    }
+
+    public function setOperationType($operationType) {
+        $this->operationType = $operationType;
+    }
+
+    public function getOperationType() {
+        return $this->operationType;
+    }
+
+    public function setResourceNames($resourceNames) {
+        $this->resourceNames = $resourceNames;
+    }
+
+    public function getResourceNames() {
+        return $this->resourceNames;
+    }
+
+    public function setStartTime($startTime) {
+        $this->startTime = $startTime;
+    }
+
+    public function getStartTime() {
+        return $this->startTime;
+    }
+
+    public function setSurface($surface) {
+        $this->surface = $surface;
+    }
+
+    public function getSurface() {
+        return $this->surface;
+    }
 }

@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Bigquery_TableRow extends Google_Collection
-{
-  protected $collection_key = 'f';
-  protected $fType = 'Google_Service_Bigquery_TableCell';
-  protected $fDataType = 'array';
+class Google_Service_Bigquery_TableRow extends Google_Collection {
+    protected $collection_key = 'f';
+    protected $fType          = 'Google_Service_Bigquery_TableCell';
+    protected $fDataType      = 'array';
 
-  /**
-   * @param Google_Service_Bigquery_TableCell
-   */
-  public function setF($f)
-  {
-    $this->f = $f;
-  }
-  /**
-   * @return Google_Service_Bigquery_TableCell
-   */
-  public function getF()
-  {
-    return $this->f;
-  }
+    /**
+     * @param Google_Service_Bigquery_TableCell
+     */
+    public function setF($f) {
+        $this->f = $f;
+    }
+
+    /**
+     * @return Google_Service_Bigquery_TableCell
+     */
+    public function getF() {
+        return $this->f;
+    }
 }

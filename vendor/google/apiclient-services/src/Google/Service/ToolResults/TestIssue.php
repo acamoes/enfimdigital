@@ -15,66 +15,64 @@
  * the License.
  */
 
-class Google_Service_ToolResults_TestIssue extends Google_Model
-{
-  public $errorMessage;
-  public $severity;
-  protected $stackTraceType = 'Google_Service_ToolResults_StackTrace';
-  protected $stackTraceDataType = '';
-  public $type;
-  protected $warningType = 'Google_Service_ToolResults_Any';
-  protected $warningDataType = '';
+class Google_Service_ToolResults_TestIssue extends Google_Model {
+    public $errorMessage;
+    public $severity;
+    protected $stackTraceType     = 'Google_Service_ToolResults_StackTrace';
+    protected $stackTraceDataType = '';
+    public $type;
+    protected $warningType        = 'Google_Service_ToolResults_Any';
+    protected $warningDataType    = '';
 
-  public function setErrorMessage($errorMessage)
-  {
-    $this->errorMessage = $errorMessage;
-  }
-  public function getErrorMessage()
-  {
-    return $this->errorMessage;
-  }
-  public function setSeverity($severity)
-  {
-    $this->severity = $severity;
-  }
-  public function getSeverity()
-  {
-    return $this->severity;
-  }
-  /**
-   * @param Google_Service_ToolResults_StackTrace
-   */
-  public function setStackTrace(Google_Service_ToolResults_StackTrace $stackTrace)
-  {
-    $this->stackTrace = $stackTrace;
-  }
-  /**
-   * @return Google_Service_ToolResults_StackTrace
-   */
-  public function getStackTrace()
-  {
-    return $this->stackTrace;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
-  /**
-   * @param Google_Service_ToolResults_Any
-   */
-  public function setWarning(Google_Service_ToolResults_Any $warning)
-  {
-    $this->warning = $warning;
-  }
-  /**
-   * @return Google_Service_ToolResults_Any
-   */
-  public function getWarning()
-  {
-    return $this->warning;
-  }
+    public function setErrorMessage($errorMessage) {
+        $this->errorMessage = $errorMessage;
+    }
+
+    public function getErrorMessage() {
+        return $this->errorMessage;
+    }
+
+    public function setSeverity($severity) {
+        $this->severity = $severity;
+    }
+
+    public function getSeverity() {
+        return $this->severity;
+    }
+
+    /**
+     * @param Google_Service_ToolResults_StackTrace
+     */
+    public function setStackTrace(Google_Service_ToolResults_StackTrace $stackTrace) {
+        $this->stackTrace = $stackTrace;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_StackTrace
+     */
+    public function getStackTrace() {
+        return $this->stackTrace;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    /**
+     * @param Google_Service_ToolResults_Any
+     */
+    public function setWarning(Google_Service_ToolResults_Any $warning) {
+        $this->warning = $warning;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_Any
+     */
+    public function getWarning() {
+        return $this->warning;
+    }
 }

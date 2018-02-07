@@ -17,7 +17,6 @@
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
-
 namespace PHPMailer\PHPMailer;
 
 /**
@@ -25,15 +24,14 @@ namespace PHPMailer\PHPMailer;
  *
  * @author  Marcus Bointon <phpmailer@synchromedia.co.uk>
  */
-class Exception extends \Exception
-{
+class Exception extends \Exception {
+
     /**
      * Prettify error message output.
      *
      * @return string
      */
-    public function errorMessage()
-    {
+    public function errorMessage() {
         return '<strong>' . htmlspecialchars($this->getMessage()) . "</strong><br />\n";
     }
 }

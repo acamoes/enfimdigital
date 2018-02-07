@@ -29,198 +29,184 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_ServiceConsumerManagement extends Google_Service
-{
-  /** View and manage your data across Google Cloud Platform services. */
-  const CLOUD_PLATFORM =
-      "https://www.googleapis.com/auth/cloud-platform";
-  /** Manage your Google API service configuration. */
-  const SERVICE_MANAGEMENT =
-      "https://www.googleapis.com/auth/service.management";
+class Google_Service_ServiceConsumerManagement extends Google_Service {
+    /** View and manage your data across Google Cloud Platform services. */
+    const CLOUD_PLATFORM     = "https://www.googleapis.com/auth/cloud-platform";
+    /** Manage your Google API service configuration. */
+    const SERVICE_MANAGEMENT = "https://www.googleapis.com/auth/service.management";
+    public $operations;
+    public $services;
+    public $services_tenancyUnits;
 
-  public $operations;
-  public $services;
-  public $services_tenancyUnits;
-  
-  /**
-   * Constructs the internal representation of the ServiceConsumerManagement
-   * service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://serviceconsumermanagement.googleapis.com/';
-    $this->servicePath = '';
-    $this->version = 'v1';
-    $this->serviceName = 'serviceconsumermanagement';
+    /**
+     * Constructs the internal representation of the ServiceConsumerManagement
+     * service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://serviceconsumermanagement.googleapis.com/';
+        $this->servicePath = '';
+        $this->version     = 'v1';
+        $this->serviceName = 'serviceconsumermanagement';
 
-    $this->operations = new Google_Service_ServiceConsumerManagement_Resource_Operations(
-        $this,
-        $this->serviceName,
-        'operations',
-        array(
-          'methods' => array(
-            'cancel' => array(
-              'path' => 'v1/{+name}:cancel',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        $this->operations            = new Google_Service_ServiceConsumerManagement_Resource_Operations(
+                $this, $this->serviceName, 'operations', array(
+            'methods' => array(
+                'cancel' => array(
+                    'path'       => 'v1/{+name}:cancel',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'delete' => array(
+                    'path'       => 'v1/{+name}',
+                    'httpMethod' => 'DELETE',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'get'    => array(
+                    'path'       => 'v1/{+name}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'list'   => array(
+                    'path'       => 'v1/{+name}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'name'      => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'filter'    => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageToken' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageSize'  => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                    ),
                 ),
-              ),
-            ),'delete' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+            )
+                )
+        );
+        $this->services              = new Google_Service_ServiceConsumerManagement_Resource_Services(
+                $this, $this->serviceName, 'services', array(
+            'methods' => array(
+                'search' => array(
+                    'path'       => 'v1/{+parent}:search',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'parent'    => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'pageToken' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageSize'  => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'query'     => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-              ),
-            ),'get' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+            )
+                )
+        );
+        $this->services_tenancyUnits = new Google_Service_ServiceConsumerManagement_Resource_ServicesTenancyUnits(
+                $this, $this->serviceName, 'tenancyUnits', array(
+            'methods' => array(
+                'addProject'    => array(
+                    'path'       => 'v1/{+parent}:addProject',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'parent' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'create'        => array(
+                    'path'       => 'v1/{+parent}/tenancyUnits',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'parent' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'delete'        => array(
+                    'path'       => 'v1/{+name}',
+                    'httpMethod' => 'DELETE',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'list'          => array(
+                    'path'       => 'v1/{+parent}/tenancyUnits',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'parent'    => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'pageToken' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageSize'  => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'filter'    => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
+                ), 'removeProject' => array(
+                    'path'       => 'v1/{+name}:removeProject',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-              ),
-            ),'list' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'filter' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->services = new Google_Service_ServiceConsumerManagement_Resource_Services(
-        $this,
-        $this->serviceName,
-        'services',
-        array(
-          'methods' => array(
-            'search' => array(
-              'path' => 'v1/{+parent}:search',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'query' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->services_tenancyUnits = new Google_Service_ServiceConsumerManagement_Resource_ServicesTenancyUnits(
-        $this,
-        $this->serviceName,
-        'tenancyUnits',
-        array(
-          'methods' => array(
-            'addProject' => array(
-              'path' => 'v1/{+parent}:addProject',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'create' => array(
-              'path' => 'v1/{+parent}/tenancyUnits',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'delete' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'v1/{+parent}/tenancyUnits',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'filter' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'removeProject' => array(
-              'path' => 'v1/{+name}:removeProject',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

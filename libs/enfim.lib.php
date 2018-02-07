@@ -2,18 +2,18 @@
 
 class Enfim {
     // database object
-    var $db    = null;
+    var $database = null;
     // smarty template object
-    var $tpl   = null;
+    var $tpl      = null;
     // error messages
-    var $error = null;
+    var $error    = null;
 
     /**
      * class constructor
      */
     function __construct() {
-        $this->db  = new Database();
-        $this->tpl = new Enfim_Smarty;
+        $this->database = new Database();
+        $this->tpl      = new Enfim_Smarty;
     }
 
     function login($error = '') {
@@ -70,7 +70,7 @@ class Enfim {
             $mail->Password    = MAIL_PASSWORD;
             $mail->SetFrom(MAIL_USERNAME);
             $mail->Subject     = 'ENFIM DIGITAL - RECUPERACAO de PASSWORD';
-            $mail->Body        = 'ENFIM DIGITAL<br/><br/>Nova password: <strong>' . $password . '</strong><br/>';
+            $mail->Body        = 'ENFIM DIGITAL<br/><br/>Username: <strong>' . $data['username'] . '</strong><br/>Nova password: <strong>' . $password . '</strong><br/><br/><a href="https://enfimdigital.escoteiros.pt" target="_blank">clique aqui</a><br/><br/>';
             $mail->AddAddress($email);
             $mail->Send();
         }
@@ -95,7 +95,7 @@ class Enfim {
         $data = $this->safePost($request);
         if (!$_SESSION['users']->isFormando($request['idCourses'])) {
             $this->login('Acesso negado');
-            exit;
+            return;
         }
         $formandos = new Formandos($data);
         if (empty($formandos->course)) {
@@ -133,7 +133,7 @@ class Enfim {
 
         if ($_SESSION['users']->permission != 'Equipa Executiva') {
             $this->login('Acesso negado');
-            exit;
+            return;
         }
         $data              = $this->safePost($request);
         !isset($data['search']) && $data['search']    = '';
@@ -286,6 +286,9 @@ class Enfim {
             case "getEAEP":
                 echo $_SESSION['equipaExecutiva']->getUtilizadoresEAEP($data);
                 break;
+            case "relatorioAvaliacoes":
+                $_SESSION['equipaExecutiva']->getRelatorioAvaliacoes($data);
+                break;
             default:
                 $this->clearAllAssign();
                 $this->home();
@@ -297,12 +300,12 @@ class Enfim {
         $data = $this->safePost($request);
         if (!$_SESSION['users']->isFormador($data['idCourses']) && !$_SESSION['users']->isDiretor($data['idCourses'])) {
             $this->login('Acesso negado');
-            exit;
+            return;
         }
         $_SESSION['formadores'] = new Formadores($data);
         if (empty($_SESSION['formadores']->idCourse)) {
             $this->login('Acesso negado');
-            exit;
+            return;
         }
         $data['idCourse'] = $_SESSION['formadores']->idCourse;
         !isset($data['search']) && $data['search']   = '';
@@ -465,7 +468,7 @@ class Enfim {
             return;
         }
         $query     = "INSERT INTO log (idUser,session,data,trace,date) VALUES (" .
-                $_SESSION['users']->id . ",'" . session_id() . "','" .
+                $_SESSION['users']->idUsers . ",'" . session_id() . "','" .
                 json_encode($data) . "','" .
                 json_encode(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 0)) . "','" .
                 date("Y-m-d H:i:s") . "')";
@@ -476,7 +479,7 @@ class Enfim {
 
     function safePost($data) {
         foreach ($data as $k => $v) {
-            $data[$k] = stripslashes($this->db->connection->real_escape_string(strip_tags($v)));
+            $data[$k] = stripslashes($this->database->connection->real_escape_string(strip_tags($v)));
         }
         return $data;
     }
@@ -489,8 +492,7 @@ class Enfim {
     function clearAllAssign() {
         $this->tpl->clearAllAssign();
     }
-
-    static function s($texto, $tamanho) {
-        return "<span title='" . $texto . "' style='cursor:pointer'>" . substr($texto, 0, $tamanho) . "</span>";
-    }
+    /* static function s($texto, $tamanho) {
+      return "<span title='" . $texto . "' style='cursor:pointer'>" . substr($texto, 0, $tamanho) . "</span>";
+      } */
 }

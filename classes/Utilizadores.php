@@ -21,7 +21,7 @@ class Utilizadores {
         $query     = "UPDATE users SET status=IF(status='Ativo','Inativo','Ativo') WHERE idUsers=" . $data['idUsers'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'O registo não foi alterado.'];
         }
         return ['success' => true, 'message' => 'Registo alterado.'];
@@ -50,7 +50,7 @@ class Utilizadores {
                 "WHERE idUsers=" . $data ['idUsers'];
         $con              = new Database ();
         $resultado        = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
         return ['success' => true, 'message' => 'Registo atualizado.'];
@@ -110,7 +110,7 @@ class Utilizadores {
                 $data ['aepId'] . "')";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];

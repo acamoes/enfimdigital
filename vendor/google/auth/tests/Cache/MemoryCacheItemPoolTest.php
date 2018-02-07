@@ -14,24 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Tests;
-
 use Google\Auth\Cache\MemoryCacheItemPool;
 use PHPUnit\Framework\TestCase;
 use Psr\Cache\InvalidArgumentException;
 
-class MemoryCacheItemPoolTest extends TestCase
-{
+class MemoryCacheItemPoolTest extends TestCase {
     private $pool;
 
-    public function setUp()
-    {
+    public function setUp() {
         $this->pool = new MemoryCacheItemPool();
     }
 
-    public function saveItem($key, $value)
-    {
+    public function saveItem($key, $value) {
         $item = $this->pool->getItem($key);
         $item->set($value);
         $this->assertTrue($this->pool->save($item));
@@ -39,8 +34,7 @@ class MemoryCacheItemPoolTest extends TestCase
         return $item;
     }
 
-    public function testGetsFreshItem()
-    {
+    public function testGetsFreshItem() {
         $item = $this->pool->getItem('item');
 
         $this->assertInstanceOf('Google\Auth\Cache\Item', $item);
@@ -48,29 +42,26 @@ class MemoryCacheItemPoolTest extends TestCase
         $this->assertFalse($item->isHit());
     }
 
-    public function testGetsExistingItem()
-    {
-        $key = 'item';
+    public function testGetsExistingItem() {
+        $key   = 'item';
         $value = 'value';
         $this->saveItem($key, $value);
-        $item = $this->pool->getItem($key);
+        $item  = $this->pool->getItem($key);
 
         $this->assertInstanceOf('Google\Auth\Cache\Item', $item);
         $this->assertEquals($value, $item->get());
         $this->assertTrue($item->isHit());
     }
 
-    public function testGetsMultipleItems()
-    {
-        $keys = ['item1', 'item2'];
+    public function testGetsMultipleItems() {
+        $keys  = ['item1', 'item2'];
         $items = $this->pool->getItems($keys);
 
         $this->assertEquals($keys, array_keys($items));
         $this->assertContainsOnlyInstancesOf('Google\Auth\Cache\Item', $items);
     }
 
-    public function testHasItem()
-    {
+    public function testHasItem() {
         $existsKey = 'does-exist';
         $this->saveItem($existsKey, 'value');
 
@@ -78,8 +69,7 @@ class MemoryCacheItemPoolTest extends TestCase
         $this->assertFalse($this->pool->hasItem('does-not-exist'));
     }
 
-    public function testClear()
-    {
+    public function testClear() {
         $key = 'item';
         $this->saveItem($key, 'value');
 
@@ -88,8 +78,7 @@ class MemoryCacheItemPoolTest extends TestCase
         $this->assertFalse($this->pool->hasItem($key));
     }
 
-    public function testDeletesItem()
-    {
+    public function testDeletesItem() {
         $key = 'item';
         $this->saveItem($key, 'value');
 
@@ -97,8 +86,7 @@ class MemoryCacheItemPoolTest extends TestCase
         $this->assertFalse($this->pool->hasItem($key));
     }
 
-    public function testDeletesItems()
-    {
+    public function testDeletesItems() {
         $keys = ['item1', 'item2'];
 
         foreach ($keys as $key) {
@@ -110,16 +98,16 @@ class MemoryCacheItemPoolTest extends TestCase
         $this->assertFalse($this->pool->hasItem($keys[1]));
     }
 
-    public function testDoesNotDeleteItemsWithInvalidKey()
-    {
-        $keys = ['item1', '{item2}', 'item3'];
+    public function testDoesNotDeleteItemsWithInvalidKey() {
+        $keys  = ['item1', '{item2}', 'item3'];
         $value = 'value';
         $this->saveItem($keys[0], $value);
         $this->saveItem($keys[2], $value);
 
         try {
             $this->pool->deleteItems($keys);
-        } catch (InvalidArgumentException $ex) {
+        }
+        catch (InvalidArgumentException $ex) {
             // continue execution
         }
 
@@ -127,22 +115,19 @@ class MemoryCacheItemPoolTest extends TestCase
         $this->assertTrue($this->pool->hasItem($keys[2]));
     }
 
-    public function testSavesItem()
-    {
+    public function testSavesItem() {
         $key = 'item';
         $this->saveItem($key, 'value');
 
         $this->assertTrue($this->pool->hasItem($key));
     }
 
-    public function testSavesDeferredItem()
-    {
+    public function testSavesDeferredItem() {
         $item = $this->pool->getItem('item');
         $this->assertTrue($this->pool->saveDeferred($item));
     }
 
-    public function testCommitsDeferredItems()
-    {
+    public function testCommitsDeferredItems() {
         $keys = ['item1', 'item2'];
 
         foreach ($keys as $key) {
@@ -160,8 +145,7 @@ class MemoryCacheItemPoolTest extends TestCase
      * @expectedException \Psr\Cache\InvalidArgumentException
      * @dataProvider invalidKeys
      */
-    public function testCheckInvalidKeysOnGetItem($key)
-    {
+    public function testCheckInvalidKeysOnGetItem($key) {
         $this->pool->getItem($key);
     }
 
@@ -169,8 +153,7 @@ class MemoryCacheItemPoolTest extends TestCase
      * @expectedException \Psr\Cache\InvalidArgumentException
      * @dataProvider invalidKeys
      */
-    public function testCheckInvalidKeysOnGetItems($key)
-    {
+    public function testCheckInvalidKeysOnGetItems($key) {
         $this->pool->getItems([$key]);
     }
 
@@ -178,8 +161,7 @@ class MemoryCacheItemPoolTest extends TestCase
      * @expectedException \Psr\Cache\InvalidArgumentException
      * @dataProvider invalidKeys
      */
-    public function testCheckInvalidKeysOnHasItem($key)
-    {
+    public function testCheckInvalidKeysOnHasItem($key) {
         $this->pool->hasItem($key);
     }
 
@@ -187,8 +169,7 @@ class MemoryCacheItemPoolTest extends TestCase
      * @expectedException \Psr\Cache\InvalidArgumentException
      * @dataProvider invalidKeys
      */
-    public function testCheckInvalidKeysOnDeleteItem($key)
-    {
+    public function testCheckInvalidKeysOnDeleteItem($key) {
         $this->pool->deleteItem($key);
     }
 
@@ -196,13 +177,11 @@ class MemoryCacheItemPoolTest extends TestCase
      * @expectedException \Psr\Cache\InvalidArgumentException
      * @dataProvider invalidKeys
      */
-    public function testCheckInvalidKeysOnDeleteItems($key)
-    {
+    public function testCheckInvalidKeysOnDeleteItems($key) {
         $this->pool->deleteItems([$key]);
     }
 
-    public function invalidKeys()
-    {
+    public function invalidKeys() {
         return [
             [1],
             [true],

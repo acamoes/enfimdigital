@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2ListInfoTypesResponse extends Google_Collection
-{
-  protected $collection_key = 'infoTypes';
-  protected $infoTypesType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeDescription';
-  protected $infoTypesDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2ListInfoTypesResponse extends Google_Collection {
+    protected $collection_key    = 'infoTypes';
+    protected $infoTypesType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeDescription';
+    protected $infoTypesDataType = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeDescription
-   */
-  public function setInfoTypes($infoTypes)
-  {
-    $this->infoTypes = $infoTypes;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeDescription
-   */
-  public function getInfoTypes()
-  {
-    return $this->infoTypes;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeDescription
+     */
+    public function setInfoTypes($infoTypes) {
+        $this->infoTypes = $infoTypes;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeDescription
+     */
+    public function getInfoTypes() {
+        return $this->infoTypes;
+    }
 }

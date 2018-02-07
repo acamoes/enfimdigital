@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Storage_BucketRetentionPolicy extends Google_Model
-{
-  public $effectiveTime;
-  public $isLocked;
-  public $retentionPeriod;
+class Google_Service_Storage_BucketRetentionPolicy extends Google_Model {
+    public $effectiveTime;
+    public $isLocked;
+    public $retentionPeriod;
 
-  public function setEffectiveTime($effectiveTime)
-  {
-    $this->effectiveTime = $effectiveTime;
-  }
-  public function getEffectiveTime()
-  {
-    return $this->effectiveTime;
-  }
-  public function setIsLocked($isLocked)
-  {
-    $this->isLocked = $isLocked;
-  }
-  public function getIsLocked()
-  {
-    return $this->isLocked;
-  }
-  public function setRetentionPeriod($retentionPeriod)
-  {
-    $this->retentionPeriod = $retentionPeriod;
-  }
-  public function getRetentionPeriod()
-  {
-    return $this->retentionPeriod;
-  }
+    public function setEffectiveTime($effectiveTime) {
+        $this->effectiveTime = $effectiveTime;
+    }
+
+    public function getEffectiveTime() {
+        return $this->effectiveTime;
+    }
+
+    public function setIsLocked($isLocked) {
+        $this->isLocked = $isLocked;
+    }
+
+    public function getIsLocked() {
+        return $this->isLocked;
+    }
+
+    public function setRetentionPeriod($retentionPeriod) {
+        $this->retentionPeriod = $retentionPeriod;
+    }
+
+    public function getRetentionPeriod() {
+        return $this->retentionPeriod;
+    }
 }

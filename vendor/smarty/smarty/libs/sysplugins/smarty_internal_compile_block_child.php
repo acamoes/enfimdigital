@@ -13,8 +13,7 @@
  *
  * @author Uwe Tews <uwe.tews@googlemail.com>
  */
-class Smarty_Internal_Compile_Block_Child extends Smarty_Internal_CompileBase
-{
+class Smarty_Internal_Compile_Block_Child extends Smarty_Internal_CompileBase {
     /**
      * Attribute definition: Overwrites base class.
      *
@@ -22,13 +21,12 @@ class Smarty_Internal_Compile_Block_Child extends Smarty_Internal_CompileBase
      * @see Smarty_Internal_CompileBase
      */
     public $option_flags = array();
-
     /**
      * Saved compiler object
      *
      * @var Smarty_Internal_TemplateCompilerBase
      */
-    public $compiler = null;
+    public $compiler     = null;
 
     /**
      * Compiles code for the {block_parent} tag
@@ -39,16 +37,14 @@ class Smarty_Internal_Compile_Block_Child extends Smarty_Internal_CompileBase
      *
      * @return bool true
      */
-    public function compile($args, Smarty_Internal_TemplateCompilerBase $compiler, $parameter)
-    {
-        if (!isset($compiler->_cache[ 'blockNesting' ])) {
-            $compiler->trigger_template_error(' tag {$smarty.block.child} used outside {block} tags ',
-                                              $compiler->parser->lex->taglineno);
+    public function compile($args, Smarty_Internal_TemplateCompilerBase $compiler, $parameter) {
+        if (!isset($compiler->_cache['blockNesting'])) {
+            $compiler->trigger_template_error(' tag {$smarty.block.child} used outside {block} tags ', $compiler->parser->lex->taglineno);
         }
-        $compiler->has_code = true;
-        $compiler->suppressNocacheProcessing = true;
-        $compiler->_cache[ 'blockParams' ][ $compiler->_cache[ 'blockNesting' ] ][ 'callsChild' ] = 'true';
-        $output = "<?php \n\$_smarty_tpl->inheritance->callChild(\$_smarty_tpl, \$this);\n?>\n";
+        $compiler->has_code                                                               = true;
+        $compiler->suppressNocacheProcessing                                              = true;
+        $compiler->_cache['blockParams'][$compiler->_cache['blockNesting']]['callsChild'] = 'true';
+        $output                                                                           = "<?php \n\$_smarty_tpl->inheritance->callChild(\$_smarty_tpl, \$this);\n?>\n";
         return $output;
     }
 }

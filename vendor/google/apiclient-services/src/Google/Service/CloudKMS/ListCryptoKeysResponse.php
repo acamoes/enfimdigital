@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_CloudKMS_ListCryptoKeysResponse extends Google_Collection
-{
-  protected $collection_key = 'cryptoKeys';
-  protected $cryptoKeysType = 'Google_Service_CloudKMS_CryptoKey';
-  protected $cryptoKeysDataType = 'array';
-  public $nextPageToken;
-  public $totalSize;
+class Google_Service_CloudKMS_ListCryptoKeysResponse extends Google_Collection {
+    protected $collection_key     = 'cryptoKeys';
+    protected $cryptoKeysType     = 'Google_Service_CloudKMS_CryptoKey';
+    protected $cryptoKeysDataType = 'array';
+    public $nextPageToken;
+    public $totalSize;
 
-  /**
-   * @param Google_Service_CloudKMS_CryptoKey
-   */
-  public function setCryptoKeys($cryptoKeys)
-  {
-    $this->cryptoKeys = $cryptoKeys;
-  }
-  /**
-   * @return Google_Service_CloudKMS_CryptoKey
-   */
-  public function getCryptoKeys()
-  {
-    return $this->cryptoKeys;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setTotalSize($totalSize)
-  {
-    $this->totalSize = $totalSize;
-  }
-  public function getTotalSize()
-  {
-    return $this->totalSize;
-  }
+    /**
+     * @param Google_Service_CloudKMS_CryptoKey
+     */
+    public function setCryptoKeys($cryptoKeys) {
+        $this->cryptoKeys = $cryptoKeys;
+    }
+
+    /**
+     * @return Google_Service_CloudKMS_CryptoKey
+     */
+    public function getCryptoKeys() {
+        return $this->cryptoKeys;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    public function setTotalSize($totalSize) {
+        $this->totalSize = $totalSize;
+    }
+
+    public function getTotalSize() {
+        return $this->totalSize;
+    }
 }

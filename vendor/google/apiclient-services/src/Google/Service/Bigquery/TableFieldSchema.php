@@ -15,60 +15,58 @@
  * the License.
  */
 
-class Google_Service_Bigquery_TableFieldSchema extends Google_Collection
-{
-  protected $collection_key = 'fields';
-  public $description;
-  protected $fieldsType = 'Google_Service_Bigquery_TableFieldSchema';
-  protected $fieldsDataType = 'array';
-  public $mode;
-  public $name;
-  public $type;
+class Google_Service_Bigquery_TableFieldSchema extends Google_Collection {
+    protected $collection_key = 'fields';
+    public $description;
+    protected $fieldsType     = 'Google_Service_Bigquery_TableFieldSchema';
+    protected $fieldsDataType = 'array';
+    public $mode;
+    public $name;
+    public $type;
 
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  /**
-   * @param Google_Service_Bigquery_TableFieldSchema
-   */
-  public function setFields($fields)
-  {
-    $this->fields = $fields;
-  }
-  /**
-   * @return Google_Service_Bigquery_TableFieldSchema
-   */
-  public function getFields()
-  {
-    return $this->fields;
-  }
-  public function setMode($mode)
-  {
-    $this->mode = $mode;
-  }
-  public function getMode()
-  {
-    return $this->mode;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    /**
+     * @param Google_Service_Bigquery_TableFieldSchema
+     */
+    public function setFields($fields) {
+        $this->fields = $fields;
+    }
+
+    /**
+     * @return Google_Service_Bigquery_TableFieldSchema
+     */
+    public function getFields() {
+        return $this->fields;
+    }
+
+    public function setMode($mode) {
+        $this->mode = $mode;
+    }
+
+    public function getMode() {
+        return $this->mode;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

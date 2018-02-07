@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Fusiontables_StyleFunctionGradientColors extends Google_Model
-{
-  public $color;
-  public $opacity;
+class Google_Service_Fusiontables_StyleFunctionGradientColors extends Google_Model {
+    public $color;
+    public $opacity;
 
-  public function setColor($color)
-  {
-    $this->color = $color;
-  }
-  public function getColor()
-  {
-    return $this->color;
-  }
-  public function setOpacity($opacity)
-  {
-    $this->opacity = $opacity;
-  }
-  public function getOpacity()
-  {
-    return $this->opacity;
-  }
+    public function setColor($color) {
+        $this->color = $color;
+    }
+
+    public function getColor() {
+        return $this->color;
+    }
+
+    public function setOpacity($opacity) {
+        $this->opacity = $opacity;
+    }
+
+    public function getOpacity() {
+        return $this->opacity;
+    }
 }

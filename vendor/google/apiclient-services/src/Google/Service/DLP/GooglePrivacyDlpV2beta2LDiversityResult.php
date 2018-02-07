@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2LDiversityResult extends Google_Collection
-{
-  protected $collection_key = 'sensitiveValueFrequencyHistogramBuckets';
-  protected $sensitiveValueFrequencyHistogramBucketsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2LDiversityHistogramBucket';
-  protected $sensitiveValueFrequencyHistogramBucketsDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2LDiversityResult extends Google_Collection {
+    protected $collection_key                                  = 'sensitiveValueFrequencyHistogramBuckets';
+    protected $sensitiveValueFrequencyHistogramBucketsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2LDiversityHistogramBucket';
+    protected $sensitiveValueFrequencyHistogramBucketsDataType = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2LDiversityHistogramBucket
-   */
-  public function setSensitiveValueFrequencyHistogramBuckets($sensitiveValueFrequencyHistogramBuckets)
-  {
-    $this->sensitiveValueFrequencyHistogramBuckets = $sensitiveValueFrequencyHistogramBuckets;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2LDiversityHistogramBucket
-   */
-  public function getSensitiveValueFrequencyHistogramBuckets()
-  {
-    return $this->sensitiveValueFrequencyHistogramBuckets;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2LDiversityHistogramBucket
+     */
+    public function setSensitiveValueFrequencyHistogramBuckets($sensitiveValueFrequencyHistogramBuckets) {
+        $this->sensitiveValueFrequencyHistogramBuckets = $sensitiveValueFrequencyHistogramBuckets;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2LDiversityHistogramBucket
+     */
+    public function getSensitiveValueFrequencyHistogramBuckets() {
+        return $this->sensitiveValueFrequencyHistogramBuckets;
+    }
 }

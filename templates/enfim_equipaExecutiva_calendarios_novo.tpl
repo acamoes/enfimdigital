@@ -27,7 +27,8 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
+                                       onclick="$('#form').html('');
+                                               request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
                                     Close</label>
                             </div>
                         </div>
@@ -39,7 +40,7 @@
                                 <label for="name">Curso</label> 
                                 <select required name="idCourse"
                                         id="idCourse" style="width: 350px" onChange="document.getElementById('completeName').value = this.options[this.selectedIndex].text;
-                                                                                document.getElementById('course').value = this.options[this.selectedIndex].getAttribute('data-sigla');">
+                                                document.getElementById('course').value = this.options[this.selectedIndex].getAttribute('data-sigla');">
                                     <option value="" selected></option>
                                     {foreach $equipaExecutiva->cursos as $curso}
                                         <option 
@@ -52,23 +53,23 @@
                             <div style="float: right">
                                 <label for="course">Sigla</label>
                                 <input required type="text" name="course" id="course" style="width: 200px" 
-                                                                        {literal} pattern="[A-Z]{2,3}\s([A-Z]{3}\s|[0-9]{2}\/)*[0-9]{4}$" {/literal} />
+                                       {literal} pattern="[A-Z]{2,3}\s([A-Z]{3}\s|[0-9]{2}\/)*[0-9]{4}$" {/literal} />
                             </div>
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
                                 <label for="startDate">Data de Início</label>
                                 <input required type="text"
-                                                                                    name="startDate" id="startDate" maxlength="10"
-                                                                                    style="width: 150px" 
-                                                                                  {literal}  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
+                                       name="startDate" id="startDate" maxlength="10"
+                                       style="width: 150px" 
+                                       {literal}  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
                             </div>
                             <div style="float: right">
                                 <label for="endDate">Data de Fim</label>
                                 <input required type="text"
-                                                                               name="endDate" id="endDate" maxlength="10"
-                                                                               style="width: 150px" 
-                                                                               {literal}pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
+                                       name="endDate" id="endDate" maxlength="10"
+                                       style="width: 150px" 
+                                       {literal}pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
                             </div>
                         </div>
                         <div class="row uniform">
@@ -90,13 +91,15 @@
                                 <label for="internshipSim">Sim</label> 
                                 <input type="radio" name="internship" value="Não" id="internshipNao" checked 
                                        onclick="document.getElementById('status').options[3].text = 'Estágio (opção inválida)';
-                                                document.getElementById('status').selectedIndex = 0;">
+                                               document.getElementById('status').selectedIndex = 0;">
                                 <label for="internshipNao">Não</label>
                             </div>
                             <div style="float: right">
                                 <label for="status">Estado</label>
                                 <select required name="status" id="status" style="width: 350px" 
-                                        {literal} onChange="if (document.getElementById('internshipNao').checked && this.options[this.selectedIndex].value == 'Estágio'){this.selectedIndex=0;}"> {/literal}
+                                        {literal} onChange="if (document.getElementById('internshipNao').checked && this.options[this.selectedIndex].value == 'Estágio') {
+                                                    this.selectedIndex = 0;
+                                                }"> {/literal}
                                     <option value="Aberto" selected>Aberto</option>
                                     <option value="A decorrer">A decorrer</option>
                                     <option value="Terminado">Terminado</option>

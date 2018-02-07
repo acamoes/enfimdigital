@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits extends Google_Collection
-{
-  protected $collection_key = 'maxFindingsPerInfoType';
-  protected $maxFindingsPerInfoTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeLimit';
-  protected $maxFindingsPerInfoTypeDataType = 'array';
-  public $maxFindingsPerItem;
-  public $maxFindingsPerRequest;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2FindingLimits extends Google_Collection {
+    protected $collection_key                 = 'maxFindingsPerInfoType';
+    protected $maxFindingsPerInfoTypeType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeLimit';
+    protected $maxFindingsPerInfoTypeDataType = 'array';
+    public $maxFindingsPerItem;
+    public $maxFindingsPerRequest;
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeLimit
-   */
-  public function setMaxFindingsPerInfoType($maxFindingsPerInfoType)
-  {
-    $this->maxFindingsPerInfoType = $maxFindingsPerInfoType;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeLimit
-   */
-  public function getMaxFindingsPerInfoType()
-  {
-    return $this->maxFindingsPerInfoType;
-  }
-  public function setMaxFindingsPerItem($maxFindingsPerItem)
-  {
-    $this->maxFindingsPerItem = $maxFindingsPerItem;
-  }
-  public function getMaxFindingsPerItem()
-  {
-    return $this->maxFindingsPerItem;
-  }
-  public function setMaxFindingsPerRequest($maxFindingsPerRequest)
-  {
-    $this->maxFindingsPerRequest = $maxFindingsPerRequest;
-  }
-  public function getMaxFindingsPerRequest()
-  {
-    return $this->maxFindingsPerRequest;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeLimit
+     */
+    public function setMaxFindingsPerInfoType($maxFindingsPerInfoType) {
+        $this->maxFindingsPerInfoType = $maxFindingsPerInfoType;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeLimit
+     */
+    public function getMaxFindingsPerInfoType() {
+        return $this->maxFindingsPerInfoType;
+    }
+
+    public function setMaxFindingsPerItem($maxFindingsPerItem) {
+        $this->maxFindingsPerItem = $maxFindingsPerItem;
+    }
+
+    public function getMaxFindingsPerItem() {
+        return $this->maxFindingsPerItem;
+    }
+
+    public function setMaxFindingsPerRequest($maxFindingsPerRequest) {
+        $this->maxFindingsPerRequest = $maxFindingsPerRequest;
+    }
+
+    public function getMaxFindingsPerRequest() {
+        return $this->maxFindingsPerRequest;
+    }
 }

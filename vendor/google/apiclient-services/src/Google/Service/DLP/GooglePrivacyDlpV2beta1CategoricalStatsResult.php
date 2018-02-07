@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsResult extends Google_Collection
-{
-  protected $collection_key = 'valueFrequencyHistogramBuckets';
-  protected $valueFrequencyHistogramBucketsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsHistogramBucket';
-  protected $valueFrequencyHistogramBucketsDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsResult extends Google_Collection {
+    protected $collection_key                         = 'valueFrequencyHistogramBuckets';
+    protected $valueFrequencyHistogramBucketsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsHistogramBucket';
+    protected $valueFrequencyHistogramBucketsDataType = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsHistogramBucket
-   */
-  public function setValueFrequencyHistogramBuckets($valueFrequencyHistogramBuckets)
-  {
-    $this->valueFrequencyHistogramBuckets = $valueFrequencyHistogramBuckets;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsHistogramBucket
-   */
-  public function getValueFrequencyHistogramBuckets()
-  {
-    return $this->valueFrequencyHistogramBuckets;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsHistogramBucket
+     */
+    public function setValueFrequencyHistogramBuckets($valueFrequencyHistogramBuckets) {
+        $this->valueFrequencyHistogramBuckets = $valueFrequencyHistogramBuckets;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsHistogramBucket
+     */
+    public function getValueFrequencyHistogramBuckets() {
+        return $this->valueFrequencyHistogramBuckets;
+    }
 }

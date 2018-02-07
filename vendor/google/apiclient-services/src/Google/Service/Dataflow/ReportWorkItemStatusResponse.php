@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Dataflow_ReportWorkItemStatusResponse extends Google_Collection
-{
-  protected $collection_key = 'workItemServiceStates';
-  protected $workItemServiceStatesType = 'Google_Service_Dataflow_WorkItemServiceState';
-  protected $workItemServiceStatesDataType = 'array';
+class Google_Service_Dataflow_ReportWorkItemStatusResponse extends Google_Collection {
+    protected $collection_key                = 'workItemServiceStates';
+    protected $workItemServiceStatesType     = 'Google_Service_Dataflow_WorkItemServiceState';
+    protected $workItemServiceStatesDataType = 'array';
 
-  /**
-   * @param Google_Service_Dataflow_WorkItemServiceState
-   */
-  public function setWorkItemServiceStates($workItemServiceStates)
-  {
-    $this->workItemServiceStates = $workItemServiceStates;
-  }
-  /**
-   * @return Google_Service_Dataflow_WorkItemServiceState
-   */
-  public function getWorkItemServiceStates()
-  {
-    return $this->workItemServiceStates;
-  }
+    /**
+     * @param Google_Service_Dataflow_WorkItemServiceState
+     */
+    public function setWorkItemServiceStates($workItemServiceStates) {
+        $this->workItemServiceStates = $workItemServiceStates;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_WorkItemServiceState
+     */
+    public function getWorkItemServiceStates() {
+        return $this->workItemServiceStates;
+    }
 }

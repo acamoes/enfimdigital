@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyerII_LocationContext extends Google_Collection
-{
-  protected $collection_key = 'geoCriteriaIds';
-  public $geoCriteriaIds;
+class Google_Service_AdExchangeBuyerII_LocationContext extends Google_Collection {
+    protected $collection_key = 'geoCriteriaIds';
+    public $geoCriteriaIds;
 
-  public function setGeoCriteriaIds($geoCriteriaIds)
-  {
-    $this->geoCriteriaIds = $geoCriteriaIds;
-  }
-  public function getGeoCriteriaIds()
-  {
-    return $this->geoCriteriaIds;
-  }
+    public function setGeoCriteriaIds($geoCriteriaIds) {
+        $this->geoCriteriaIds = $geoCriteriaIds;
+    }
+
+    public function getGeoCriteriaIds() {
+        return $this->geoCriteriaIds;
+    }
 }

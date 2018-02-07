@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Spectrum_DbUpdateSpec extends Google_Collection
-{
-  protected $collection_key = 'databases';
-  protected $databasesType = 'Google_Service_Spectrum_DatabaseSpec';
-  protected $databasesDataType = 'array';
+class Google_Service_Spectrum_DbUpdateSpec extends Google_Collection {
+    protected $collection_key    = 'databases';
+    protected $databasesType     = 'Google_Service_Spectrum_DatabaseSpec';
+    protected $databasesDataType = 'array';
 
-  /**
-   * @param Google_Service_Spectrum_DatabaseSpec
-   */
-  public function setDatabases($databases)
-  {
-    $this->databases = $databases;
-  }
-  /**
-   * @return Google_Service_Spectrum_DatabaseSpec
-   */
-  public function getDatabases()
-  {
-    return $this->databases;
-  }
+    /**
+     * @param Google_Service_Spectrum_DatabaseSpec
+     */
+    public function setDatabases($databases) {
+        $this->databases = $databases;
+    }
+
+    /**
+     * @return Google_Service_Spectrum_DatabaseSpec
+     */
+    public function getDatabases() {
+        return $this->databases;
+    }
 }

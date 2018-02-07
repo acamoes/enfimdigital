@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationQuasiIdValues extends Google_Collection
-{
-  protected $collection_key = 'quasiIdsValues';
-  public $estimatedAnonymity;
-  protected $quasiIdsValuesType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Value';
-  protected $quasiIdsValuesDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationQuasiIdValues extends Google_Collection {
+    protected $collection_key         = 'quasiIdsValues';
+    public $estimatedAnonymity;
+    protected $quasiIdsValuesType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Value';
+    protected $quasiIdsValuesDataType = 'array';
 
-  public function setEstimatedAnonymity($estimatedAnonymity)
-  {
-    $this->estimatedAnonymity = $estimatedAnonymity;
-  }
-  public function getEstimatedAnonymity()
-  {
-    return $this->estimatedAnonymity;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Value
-   */
-  public function setQuasiIdsValues($quasiIdsValues)
-  {
-    $this->quasiIdsValues = $quasiIdsValues;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Value
-   */
-  public function getQuasiIdsValues()
-  {
-    return $this->quasiIdsValues;
-  }
+    public function setEstimatedAnonymity($estimatedAnonymity) {
+        $this->estimatedAnonymity = $estimatedAnonymity;
+    }
+
+    public function getEstimatedAnonymity() {
+        return $this->estimatedAnonymity;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Value
+     */
+    public function setQuasiIdsValues($quasiIdsValues) {
+        $this->quasiIdsValues = $quasiIdsValues;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Value
+     */
+    public function getQuasiIdsValues() {
+        return $this->quasiIdsValues;
+    }
 }

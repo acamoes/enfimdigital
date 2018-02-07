@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Replicapool_ReplicaPoolAutoHealingPolicy extends Google_Model
-{
-  public $actionType;
-  public $healthCheck;
+class Google_Service_Replicapool_ReplicaPoolAutoHealingPolicy extends Google_Model {
+    public $actionType;
+    public $healthCheck;
 
-  public function setActionType($actionType)
-  {
-    $this->actionType = $actionType;
-  }
-  public function getActionType()
-  {
-    return $this->actionType;
-  }
-  public function setHealthCheck($healthCheck)
-  {
-    $this->healthCheck = $healthCheck;
-  }
-  public function getHealthCheck()
-  {
-    return $this->healthCheck;
-  }
+    public function setActionType($actionType) {
+        $this->actionType = $actionType;
+    }
+
+    public function getActionType() {
+        return $this->actionType;
+    }
+
+    public function setHealthCheck($healthCheck) {
+        $this->healthCheck = $healthCheck;
+    }
+
+    public function getHealthCheck() {
+        return $this->healthCheck;
+    }
 }

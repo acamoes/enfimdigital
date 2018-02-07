@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,14 +7,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\TestCase;
 use Monolog\Logger;
 
-class BufferHandlerTest extends TestCase
-{
+class BufferHandlerTest extends TestCase {
     private $shutdownCheckHandler;
 
     /**
@@ -23,9 +19,8 @@ class BufferHandlerTest extends TestCase
      * @covers Monolog\Handler\BufferHandler::handle
      * @covers Monolog\Handler\BufferHandler::close
      */
-    public function testHandleBuffers()
-    {
-        $test = new TestHandler();
+    public function testHandleBuffers() {
+        $test    = new TestHandler();
         $handler = new BufferHandler($test);
         $handler->handle($this->getRecord(Logger::DEBUG));
         $handler->handle($this->getRecord(Logger::INFO));
@@ -40,18 +35,16 @@ class BufferHandlerTest extends TestCase
      * @covers Monolog\Handler\BufferHandler::close
      * @covers Monolog\Handler\BufferHandler::flush
      */
-    public function testPropagatesRecordsAtEndOfRequest()
-    {
-        $test = new TestHandler();
-        $handler = new BufferHandler($test);
+    public function testPropagatesRecordsAtEndOfRequest() {
+        $test                       = new TestHandler();
+        $handler                    = new BufferHandler($test);
         $handler->handle($this->getRecord(Logger::WARNING));
         $handler->handle($this->getRecord(Logger::DEBUG));
         $this->shutdownCheckHandler = $test;
         register_shutdown_function(array($this, 'checkPropagation'));
     }
 
-    public function checkPropagation()
-    {
+    public function checkPropagation() {
         if (!$this->shutdownCheckHandler->hasWarningRecords() || !$this->shutdownCheckHandler->hasDebugRecords()) {
             echo '!!! BufferHandlerTest::testPropagatesRecordsAtEndOfRequest failed to verify that the messages have been propagated' . PHP_EOL;
             exit(1);
@@ -61,9 +54,8 @@ class BufferHandlerTest extends TestCase
     /**
      * @covers Monolog\Handler\BufferHandler::handle
      */
-    public function testHandleBufferLimit()
-    {
-        $test = new TestHandler();
+    public function testHandleBufferLimit() {
+        $test    = new TestHandler();
         $handler = new BufferHandler($test, 2);
         $handler->handle($this->getRecord(Logger::DEBUG));
         $handler->handle($this->getRecord(Logger::DEBUG));
@@ -78,9 +70,8 @@ class BufferHandlerTest extends TestCase
     /**
      * @covers Monolog\Handler\BufferHandler::handle
      */
-    public function testHandleBufferLimitWithFlushOnOverflow()
-    {
-        $test = new TestHandler();
+    public function testHandleBufferLimitWithFlushOnOverflow() {
+        $test    = new TestHandler();
         $handler = new BufferHandler($test, 3, Logger::DEBUG, true, true);
 
         // send two records
@@ -108,9 +99,8 @@ class BufferHandlerTest extends TestCase
     /**
      * @covers Monolog\Handler\BufferHandler::handle
      */
-    public function testHandleLevel()
-    {
-        $test = new TestHandler();
+    public function testHandleLevel() {
+        $test    = new TestHandler();
         $handler = new BufferHandler($test, 0, Logger::INFO);
         $handler->handle($this->getRecord(Logger::DEBUG));
         $handler->handle($this->getRecord(Logger::INFO));
@@ -125,9 +115,8 @@ class BufferHandlerTest extends TestCase
     /**
      * @covers Monolog\Handler\BufferHandler::flush
      */
-    public function testFlush()
-    {
-        $test = new TestHandler();
+    public function testFlush() {
+        $test    = new TestHandler();
         $handler = new BufferHandler($test, 0);
         $handler->handle($this->getRecord(Logger::DEBUG));
         $handler->handle($this->getRecord(Logger::INFO));
@@ -140,9 +129,8 @@ class BufferHandlerTest extends TestCase
     /**
      * @covers Monolog\Handler\BufferHandler::handle
      */
-    public function testHandleUsesProcessors()
-    {
-        $test = new TestHandler();
+    public function testHandleUsesProcessors() {
+        $test    = new TestHandler();
         $handler = new BufferHandler($test);
         $handler->pushProcessor(function ($record) {
             $record['extra']['foo'] = true;

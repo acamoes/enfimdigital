@@ -29,278 +29,258 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_Reports extends Google_Service
-{
-  /** View audit reports for your G Suite domain. */
-  const ADMIN_REPORTS_AUDIT_READONLY =
-      "https://www.googleapis.com/auth/admin.reports.audit.readonly";
-  /** View usage reports for your G Suite domain. */
-  const ADMIN_REPORTS_USAGE_READONLY =
-      "https://www.googleapis.com/auth/admin.reports.usage.readonly";
+class Google_Service_Reports extends Google_Service {
+    /** View audit reports for your G Suite domain. */
+    const ADMIN_REPORTS_AUDIT_READONLY = "https://www.googleapis.com/auth/admin.reports.audit.readonly";
+    /** View usage reports for your G Suite domain. */
+    const ADMIN_REPORTS_USAGE_READONLY = "https://www.googleapis.com/auth/admin.reports.usage.readonly";
+    public $activities;
+    public $channels;
+    public $customerUsageReports;
+    public $entityUsageReports;
+    public $userUsageReport;
 
-  public $activities;
-  public $channels;
-  public $customerUsageReports;
-  public $entityUsageReports;
-  public $userUsageReport;
-  
-  /**
-   * Constructs the internal representation of the Reports service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'admin/reports/v1/';
-    $this->version = 'reports_v1';
-    $this->serviceName = 'admin';
+    /**
+     * Constructs the internal representation of the Reports service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://www.googleapis.com/';
+        $this->servicePath = 'admin/reports/v1/';
+        $this->version     = 'reports_v1';
+        $this->serviceName = 'admin';
 
-    $this->activities = new Google_Service_Reports_Resource_Activities(
-        $this,
-        $this->serviceName,
-        'activities',
-        array(
-          'methods' => array(
-            'list' => array(
-              'path' => 'activity/users/{userKey}/applications/{applicationName}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'userKey' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        $this->activities           = new Google_Service_Reports_Resource_Activities(
+                $this, $this->serviceName, 'activities', array(
+            'methods' => array(
+                'list'  => array(
+                    'path'       => 'activity/users/{userKey}/applications/{applicationName}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'userKey'         => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'applicationName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'actorIpAddress'  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'customerId'      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'endTime'         => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'eventName'       => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'filters'         => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'maxResults'      => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'pageToken'       => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'startTime'       => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
+                ), 'watch' => array(
+                    'path'       => 'activity/users/{userKey}/applications/{applicationName}/watch',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'userKey'         => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'applicationName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'actorIpAddress'  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'customerId'      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'endTime'         => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'eventName'       => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'filters'         => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'maxResults'      => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'pageToken'       => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'startTime'       => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-                'applicationName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+            )
+                )
+        );
+        $this->channels             = new Google_Service_Reports_Resource_Channels(
+                $this, $this->serviceName, 'channels', array(
+            'methods' => array(
+                'stop' => array(
+                    'path'       => '/admin/reports_v1/channels/stop',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(),
                 ),
-                'actorIpAddress' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+            )
+                )
+        );
+        $this->customerUsageReports = new Google_Service_Reports_Resource_CustomerUsageReports(
+                $this, $this->serviceName, 'customerUsageReports', array(
+            'methods' => array(
+                'get' => array(
+                    'path'       => 'usage/dates/{date}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'date'       => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'customerId' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageToken'  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'parameters' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-                'customerId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+            )
+                )
+        );
+        $this->entityUsageReports   = new Google_Service_Reports_Resource_EntityUsageReports(
+                $this, $this->serviceName, 'entityUsageReports', array(
+            'methods' => array(
+                'get' => array(
+                    'path'       => 'usage/{entityType}/{entityKey}/dates/{date}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'entityType' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'entityKey'  => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'date'       => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'customerId' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'filters'    => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'maxResults' => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'pageToken'  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'parameters' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-                'endTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+            )
+                )
+        );
+        $this->userUsageReport      = new Google_Service_Reports_Resource_UserUsageReport(
+                $this, $this->serviceName, 'userUsageReport', array(
+            'methods' => array(
+                'get' => array(
+                    'path'       => 'usage/users/{userKey}/dates/{date}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'userKey'    => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'date'       => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'customerId' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'filters'    => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'maxResults' => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'pageToken'  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'parameters' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-                'eventName' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'filters' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'startTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'watch' => array(
-              'path' => 'activity/users/{userKey}/applications/{applicationName}/watch',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'userKey' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'applicationName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'actorIpAddress' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'customerId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'endTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'eventName' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'filters' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'startTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->channels = new Google_Service_Reports_Resource_Channels(
-        $this,
-        $this->serviceName,
-        'channels',
-        array(
-          'methods' => array(
-            'stop' => array(
-              'path' => '/admin/reports_v1/channels/stop',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),
-          )
-        )
-    );
-    $this->customerUsageReports = new Google_Service_Reports_Resource_CustomerUsageReports(
-        $this,
-        $this->serviceName,
-        'customerUsageReports',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'usage/dates/{date}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'date' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'customerId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'parameters' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->entityUsageReports = new Google_Service_Reports_Resource_EntityUsageReports(
-        $this,
-        $this->serviceName,
-        'entityUsageReports',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'usage/{entityType}/{entityKey}/dates/{date}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'entityType' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'entityKey' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'date' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'customerId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'filters' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'parameters' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->userUsageReport = new Google_Service_Reports_Resource_UserUsageReport(
-        $this,
-        $this->serviceName,
-        'userUsageReport',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'usage/users/{userKey}/dates/{date}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'userKey' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'date' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'customerId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'filters' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'parameters' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

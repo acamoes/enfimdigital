@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1WordList extends Google_Collection
-{
-  protected $collection_key = 'words';
-  public $words;
+class Google_Service_DLP_GooglePrivacyDlpV2beta1WordList extends Google_Collection {
+    protected $collection_key = 'words';
+    public $words;
 
-  public function setWords($words)
-  {
-    $this->words = $words;
-  }
-  public function getWords()
-  {
-    return $this->words;
-  }
+    public function setWords($words) {
+        $this->words = $words;
+    }
+
+    public function getWords() {
+        return $this->words;
+    }
 }

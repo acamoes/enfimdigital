@@ -15,50 +15,48 @@
  * the License.
  */
 
-class Google_Service_Dataflow_StreamingSetupTask extends Google_Model
-{
-  public $drain;
-  public $receiveWorkPort;
-  protected $streamingComputationTopologyType = 'Google_Service_Dataflow_TopologyConfig';
-  protected $streamingComputationTopologyDataType = '';
-  public $workerHarnessPort;
+class Google_Service_Dataflow_StreamingSetupTask extends Google_Model {
+    public $drain;
+    public $receiveWorkPort;
+    protected $streamingComputationTopologyType     = 'Google_Service_Dataflow_TopologyConfig';
+    protected $streamingComputationTopologyDataType = '';
+    public $workerHarnessPort;
 
-  public function setDrain($drain)
-  {
-    $this->drain = $drain;
-  }
-  public function getDrain()
-  {
-    return $this->drain;
-  }
-  public function setReceiveWorkPort($receiveWorkPort)
-  {
-    $this->receiveWorkPort = $receiveWorkPort;
-  }
-  public function getReceiveWorkPort()
-  {
-    return $this->receiveWorkPort;
-  }
-  /**
-   * @param Google_Service_Dataflow_TopologyConfig
-   */
-  public function setStreamingComputationTopology(Google_Service_Dataflow_TopologyConfig $streamingComputationTopology)
-  {
-    $this->streamingComputationTopology = $streamingComputationTopology;
-  }
-  /**
-   * @return Google_Service_Dataflow_TopologyConfig
-   */
-  public function getStreamingComputationTopology()
-  {
-    return $this->streamingComputationTopology;
-  }
-  public function setWorkerHarnessPort($workerHarnessPort)
-  {
-    $this->workerHarnessPort = $workerHarnessPort;
-  }
-  public function getWorkerHarnessPort()
-  {
-    return $this->workerHarnessPort;
-  }
+    public function setDrain($drain) {
+        $this->drain = $drain;
+    }
+
+    public function getDrain() {
+        return $this->drain;
+    }
+
+    public function setReceiveWorkPort($receiveWorkPort) {
+        $this->receiveWorkPort = $receiveWorkPort;
+    }
+
+    public function getReceiveWorkPort() {
+        return $this->receiveWorkPort;
+    }
+
+    /**
+     * @param Google_Service_Dataflow_TopologyConfig
+     */
+    public function setStreamingComputationTopology(Google_Service_Dataflow_TopologyConfig $streamingComputationTopology) {
+        $this->streamingComputationTopology = $streamingComputationTopology;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_TopologyConfig
+     */
+    public function getStreamingComputationTopology() {
+        return $this->streamingComputationTopology;
+    }
+
+    public function setWorkerHarnessPort($workerHarnessPort) {
+        $this->workerHarnessPort = $workerHarnessPort;
+    }
+
+    public function getWorkerHarnessPort() {
+        return $this->workerHarnessPort;
+    }
 }

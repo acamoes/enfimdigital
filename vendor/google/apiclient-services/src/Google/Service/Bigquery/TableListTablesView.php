@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Bigquery_TableListTablesView extends Google_Model
-{
-  public $useLegacySql;
+class Google_Service_Bigquery_TableListTablesView extends Google_Model {
+    public $useLegacySql;
 
-  public function setUseLegacySql($useLegacySql)
-  {
-    $this->useLegacySql = $useLegacySql;
-  }
-  public function getUseLegacySql()
-  {
-    return $this->useLegacySql;
-  }
+    public function setUseLegacySql($useLegacySql) {
+        $this->useLegacySql = $useLegacySql;
+    }
+
+    public function getUseLegacySql() {
+        return $this->useLegacySql;
+    }
 }

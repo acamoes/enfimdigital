@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Credentials;
-
 use Google\Auth\CredentialsLoader;
 use Google\Auth\OAuth2;
 
@@ -31,8 +29,7 @@ use Google\Auth\OAuth2;
  *
  * @see [Application Default Credentials](http://goo.gl/mkAHpZ)
  */
-class UserRefreshCredentials extends CredentialsLoader
-{
+class UserRefreshCredentials extends CredentialsLoader {
     /**
      * The OAuth2 instance used to conduct authorization.
      *
@@ -49,35 +46,34 @@ class UserRefreshCredentials extends CredentialsLoader
      *   as an associative array
      */
     public function __construct(
-        $scope,
-        $jsonKey
+    $scope, $jsonKey
     ) {
         if (is_string($jsonKey)) {
             if (!file_exists($jsonKey)) {
                 throw new \InvalidArgumentException('file does not exist');
             }
             $jsonKeyStream = file_get_contents($jsonKey);
-            if (!$jsonKey = json_decode($jsonKeyStream, true)) {
+            if (!$jsonKey       = json_decode($jsonKeyStream, true)) {
                 throw new \LogicException('invalid json for auth config');
             }
         }
         if (!array_key_exists('client_id', $jsonKey)) {
             throw new \InvalidArgumentException(
-                'json key is missing the client_id field');
+            'json key is missing the client_id field');
         }
         if (!array_key_exists('client_secret', $jsonKey)) {
             throw new \InvalidArgumentException(
-                'json key is missing the client_secret field');
+            'json key is missing the client_secret field');
         }
         if (!array_key_exists('refresh_token', $jsonKey)) {
             throw new \InvalidArgumentException(
-                'json key is missing the refresh_token field');
+            'json key is missing the refresh_token field');
         }
         $this->auth = new OAuth2([
-            'clientId' => $jsonKey['client_id'],
-            'clientSecret' => $jsonKey['client_secret'],
-            'refresh_token' => $jsonKey['refresh_token'],
-            'scope' => $scope,
+            'clientId'           => $jsonKey['client_id'],
+            'clientSecret'       => $jsonKey['client_secret'],
+            'refresh_token'      => $jsonKey['refresh_token'],
+            'scope'              => $scope,
             'tokenCredentialUri' => self::TOKEN_CREDENTIAL_URI,
         ]);
     }
@@ -87,24 +83,21 @@ class UserRefreshCredentials extends CredentialsLoader
      *
      * @return array
      */
-    public function fetchAuthToken(callable $httpHandler = null)
-    {
+    public function fetchAuthToken(callable $httpHandler = null) {
         return $this->auth->fetchAuthToken($httpHandler);
     }
 
     /**
      * @return string
      */
-    public function getCacheKey()
-    {
+    public function getCacheKey() {
         return $this->auth->getClientId() . ':' . $this->auth->getCacheKey();
     }
 
     /**
      * @return array
      */
-    public function getLastReceivedToken()
-    {
+    public function getLastReceivedToken() {
         return $this->auth->getLastReceivedToken();
     }
 }

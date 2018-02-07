@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Drive_RevisionList extends Google_Collection
-{
-  protected $collection_key = 'revisions';
-  public $kind;
-  public $nextPageToken;
-  protected $revisionsType = 'Google_Service_Drive_Revision';
-  protected $revisionsDataType = 'array';
+class Google_Service_Drive_RevisionList extends Google_Collection {
+    protected $collection_key    = 'revisions';
+    public $kind;
+    public $nextPageToken;
+    protected $revisionsType     = 'Google_Service_Drive_Revision';
+    protected $revisionsDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Drive_Revision
-   */
-  public function setRevisions($revisions)
-  {
-    $this->revisions = $revisions;
-  }
-  /**
-   * @return Google_Service_Drive_Revision
-   */
-  public function getRevisions()
-  {
-    return $this->revisions;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Drive_Revision
+     */
+    public function setRevisions($revisions) {
+        $this->revisions = $revisions;
+    }
+
+    /**
+     * @return Google_Service_Drive_Revision
+     */
+    public function getRevisions() {
+        return $this->revisions;
+    }
 }

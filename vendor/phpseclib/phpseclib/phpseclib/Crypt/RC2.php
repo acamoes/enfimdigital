@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Pure-PHP implementation of RC2.
  *
@@ -32,7 +31,6 @@
  * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link     http://phpseclib.sourceforge.net
  */
-
 namespace phpseclib\Crypt;
 
 /**
@@ -41,8 +39,7 @@ namespace phpseclib\Crypt;
  * @package RC2
  * @access  public
  */
-class RC2 extends Base
-{
+class RC2 extends Base {
     /**
      * Block Length of the cipher
      *
@@ -50,8 +47,7 @@ class RC2 extends Base
      * @var int
      * @access private
      */
-    var $block_size = 8;
-
+    var $block_size          = 8;
     /**
      * The Key
      *
@@ -61,7 +57,6 @@ class RC2 extends Base
      * @access private
      */
     var $key;
-
     /**
      * The Original (unpadded) Key
      *
@@ -73,7 +68,6 @@ class RC2 extends Base
      * @access private
      */
     var $orig_key;
-
     /**
      * Don't truncate / null pad key
      *
@@ -82,7 +76,6 @@ class RC2 extends Base
      * @access private
      */
     var $skip_key_adjustment = true;
-
     /**
      * Key Length (in bytes)
      *
@@ -90,8 +83,7 @@ class RC2 extends Base
      * @var int
      * @access private
      */
-    var $key_length = 16; // = 128 bits
-
+    var $key_length          = 16; // = 128 bits
     /**
      * The mcrypt specific name of the cipher
      *
@@ -99,8 +91,7 @@ class RC2 extends Base
      * @var string
      * @access private
      */
-    var $cipher_name_mcrypt = 'rc2';
-
+    var $cipher_name_mcrypt  = 'rc2';
     /**
      * Optimizing value while CFB-encrypting
      *
@@ -108,8 +99,7 @@ class RC2 extends Base
      * @var int
      * @access private
      */
-    var $cfb_init_len = 500;
-
+    var $cfb_init_len        = 500;
     /**
      * The key length in bits.
      *
@@ -120,8 +110,7 @@ class RC2 extends Base
      * @internal Should be in range [1..1024].
      * @internal Changing this value after setting the key has no effect.
      */
-    var $default_key_length = 1024;
-
+    var $default_key_length  = 1024;
     /**
      * The key length in bits.
      *
@@ -132,7 +121,6 @@ class RC2 extends Base
      * @internal Should be in range [1..1024].
      */
     var $current_key_length;
-
     /**
      * The Key Schedule
      *
@@ -141,7 +129,6 @@ class RC2 extends Base
      * @access private
      */
     var $keys;
-
     /**
      * Key expansion randomization table.
      * Twice the same 256-value sequence to save a modulus in key expansion.
@@ -150,7 +137,7 @@ class RC2 extends Base
      * @var array
      * @access private
      */
-    var $pitable = array(
+    var $pitable             = array(
         0xD9, 0x78, 0xF9, 0xC4, 0x19, 0xDD, 0xB5, 0xED,
         0x28, 0xE9, 0xFD, 0x79, 0x4A, 0xA0, 0xD8, 0x9D,
         0xC6, 0x7E, 0x37, 0x83, 0x2B, 0x76, 0x53, 0x8E,
@@ -216,7 +203,6 @@ class RC2 extends Base
         0xC5, 0xF3, 0xDB, 0x47, 0xE5, 0xA5, 0x9C, 0x77,
         0x0A, 0xA6, 0x20, 0x68, 0xFE, 0x7F, 0xC1, 0xAD
     );
-
     /**
      * Inverse key expansion randomization table.
      *
@@ -224,7 +210,7 @@ class RC2 extends Base
      * @var array
      * @access private
      */
-    var $invpitable = array(
+    var $invpitable          = array(
         0xD1, 0xDA, 0xB9, 0x6F, 0x9C, 0xC8, 0x78, 0x66,
         0x80, 0x2C, 0xF8, 0x37, 0xEA, 0xE0, 0x62, 0xA4,
         0xCB, 0x71, 0x50, 0x27, 0x4B, 0x95, 0xD9, 0x20,
@@ -269,15 +255,14 @@ class RC2 extends Base
      * @access public
      * @return bool
      */
-    function isValidEngine($engine)
-    {
+    function isValidEngine($engine) {
         switch ($engine) {
             case self::ENGINE_OPENSSL:
                 if ($this->current_key_length != 128 || strlen($this->orig_key) < 16) {
                     return false;
                 }
                 $this->cipher_name_openssl_ecb = 'rc2-ecb';
-                $this->cipher_name_openssl = 'rc2-' . $this->_openssl_translate_mode();
+                $this->cipher_name_openssl     = 'rc2-' . $this->_openssl_translate_mode();
         }
 
         return parent::isValidEngine($engine);
@@ -293,13 +278,14 @@ class RC2 extends Base
      * @access public
      * @param int $length in bits
      */
-    function setKeyLength($length)
-    {
+    function setKeyLength($length) {
         if ($length < 8) {
             $this->default_key_length = 8;
-        } elseif ($length > 1024) {
+        }
+        elseif ($length > 1024) {
             $this->default_key_length = 128;
-        } else {
+        }
+        else {
             $this->default_key_length = $length;
         }
         $this->current_key_length = $this->default_key_length;
@@ -313,8 +299,7 @@ class RC2 extends Base
      * @access public
      * @return int
      */
-    function getKeyLength()
-    {
+    function getKeyLength() {
         return $this->current_key_length;
     }
 
@@ -334,28 +319,27 @@ class RC2 extends Base
      * @param string $key
      * @param int $t1 optional Effective key length in bits.
      */
-    function setKey($key, $t1 = 0)
-    {
+    function setKey($key, $t1 = 0) {
         $this->orig_key = $key;
 
         if ($t1 <= 0) {
             $t1 = $this->default_key_length;
-        } elseif ($t1 > 1024) {
+        }
+        elseif ($t1 > 1024) {
             $t1 = 1024;
         }
         $this->current_key_length = $t1;
         // Key byte count should be 1..128.
-        $key = strlen($key) ? substr($key, 0, 128) : "\x00";
-        $t = strlen($key);
+        $key                      = strlen($key) ? substr($key, 0, 128) : "\x00";
+        $t                        = strlen($key);
 
         // The mcrypt RC2 implementation only supports effective key length
         // of 1024 bits. It is however possible to handle effective key
         // lengths in range 1..1024 by expanding the key and applying
         // inverse pitable mapping to the first byte before submitting it
         // to mcrypt.
-
         // Key expansion.
-        $l = array_values(unpack('C*', $key));
+        $l  = array_values(unpack('C*', $key));
         $t8 = ($t1 + 7) >> 3;
         $tm = 0xFF >> (8 * $t8 - $t1);
 
@@ -364,7 +348,7 @@ class RC2 extends Base
         for ($i = $t; $i < 128; $i++) {
             $l[$i] = $pitable[$l[$i - 1] + $l[$i - $t]];
         }
-        $i = 128 - $t8;
+        $i     = 128 - $t8;
         $l[$i] = $pitable[$l[$i] & $tm];
         while ($i--) {
             $l[$i] = $pitable[$l[$i + 1] ^ $l[$i + $t8]];
@@ -387,12 +371,11 @@ class RC2 extends Base
      * @param string $plaintext
      * @return string $ciphertext
      */
-    function encrypt($plaintext)
-    {
+    function encrypt($plaintext) {
         if ($this->engine == self::ENGINE_OPENSSL) {
-            $temp = $this->key;
+            $temp      = $this->key;
             $this->key = $this->orig_key;
-            $result = parent::encrypt($plaintext);
+            $result    = parent::encrypt($plaintext);
             $this->key = $temp;
             return $result;
         }
@@ -410,12 +393,11 @@ class RC2 extends Base
      * @param string $ciphertext
      * @return string $plaintext
      */
-    function decrypt($ciphertext)
-    {
+    function decrypt($ciphertext) {
         if ($this->engine == self::ENGINE_OPENSSL) {
-            $temp = $this->key;
+            $temp      = $this->key;
             $this->key = $this->orig_key;
-            $result = parent::decrypt($ciphertext);
+            $result    = parent::decrypt($ciphertext);
             $this->key = $temp;
             return $result;
         }
@@ -432,13 +414,12 @@ class RC2 extends Base
      * @param string $in
      * @return string
      */
-    function _encryptBlock($in)
-    {
+    function _encryptBlock($in) {
         list($r0, $r1, $r2, $r3) = array_values(unpack('v*', $in));
-        $keys = $this->keys;
-        $limit = 20;
+        $keys    = $this->keys;
+        $limit   = 20;
         $actions = array($limit => 44, 44 => 64);
-        $j = 0;
+        $j       = 0;
 
         for (;;) {
             // Mixing round.
@@ -457,10 +438,10 @@ class RC2 extends Base
                 }
 
                 // Mashing round.
-                $r0 += $keys[$r3 & 0x3F];
-                $r1 += $keys[$r0 & 0x3F];
-                $r2 += $keys[$r1 & 0x3F];
-                $r3 += $keys[$r2 & 0x3F];
+                $r0    += $keys[$r3 & 0x3F];
+                $r1    += $keys[$r0 & 0x3F];
+                $r2    += $keys[$r1 & 0x3F];
+                $r3    += $keys[$r2 & 0x3F];
                 $limit = $actions[$limit];
             }
         }
@@ -477,13 +458,12 @@ class RC2 extends Base
      * @param string $in
      * @return string
      */
-    function _decryptBlock($in)
-    {
+    function _decryptBlock($in) {
         list($r0, $r1, $r2, $r3) = array_values(unpack('v*', $in));
-        $keys = $this->keys;
-        $limit = 44;
+        $keys    = $this->keys;
+        $limit   = 44;
         $actions = array($limit => 20, 20 => 0);
-        $j = 64;
+        $j       = 64;
 
         for (;;) {
             // R-mixing round.
@@ -502,10 +482,10 @@ class RC2 extends Base
                 }
 
                 // R-mashing round.
-                $r3 = ($r3 - $keys[$r2 & 0x3F]) & 0xFFFF;
-                $r2 = ($r2 - $keys[$r1 & 0x3F]) & 0xFFFF;
-                $r1 = ($r1 - $keys[$r0 & 0x3F]) & 0xFFFF;
-                $r0 = ($r0 - $keys[$r3 & 0x3F]) & 0xFFFF;
+                $r3    = ($r3 - $keys[$r2 & 0x3F]) & 0xFFFF;
+                $r2    = ($r2 - $keys[$r1 & 0x3F]) & 0xFFFF;
+                $r1    = ($r1 - $keys[$r0 & 0x3F]) & 0xFFFF;
+                $r0    = ($r0 - $keys[$r3 & 0x3F]) & 0xFFFF;
                 $limit = $actions[$limit];
             }
         }
@@ -519,8 +499,7 @@ class RC2 extends Base
      * @see \phpseclib\Crypt\Base::_setupMcrypt()
      * @access private
      */
-    function _setupMcrypt()
-    {
+    function _setupMcrypt() {
         if (!isset($this->key)) {
             $this->setKey('');
         }
@@ -534,15 +513,14 @@ class RC2 extends Base
      * @see \phpseclib\Crypt\Base::_setupKey()
      * @access private
      */
-    function _setupKey()
-    {
+    function _setupKey() {
         if (!isset($this->key)) {
             $this->setKey('');
         }
 
         // Key has already been expanded in \phpseclib\Crypt\RC2::setKey():
         // Only the first value must be altered.
-        $l = unpack('Ca/Cb/v*', $this->key);
+        $l          = unpack('Ca/Cb/v*', $this->key);
         array_unshift($l, $this->pitable[$l['a']] | ($l['b'] << 8));
         unset($l['a']);
         unset($l['b']);
@@ -555,15 +533,14 @@ class RC2 extends Base
      * @see \phpseclib\Crypt\Base::_setupInlineCrypt()
      * @access private
      */
-    function _setupInlineCrypt()
-    {
-        $lambda_functions =& self::_getLambdaFunctions();
+    function _setupInlineCrypt() {
+        $lambda_functions = & self::_getLambdaFunctions();
 
         // The first 10 generated $lambda_functions will use the $keys hardcoded as integers
         // for the mixing rounds, for better inline crypt performance [~20% faster].
         // But for memory reason we have to limit those ultra-optimized $lambda_functions to an amount of 10.
         // (Currently, for Crypt_RC2, one generated $lambda_function cost on php5.5@32bit ~60kb unfreeable mem and ~100kb on php5.5@64bit)
-        $gen_hi_opt_code = (bool)(count($lambda_functions) < 10);
+        $gen_hi_opt_code = (bool) (count($lambda_functions) < 10);
 
         // Generation of a unique hash for our generated code
         $code_hash = "Crypt_RC2, {$this->mode}";
@@ -597,9 +574,9 @@ class RC2 extends Base
             ';
 
             // Create code for encryption.
-            $limit = 20;
+            $limit   = 20;
             $actions = array($limit => 44, 44 => 64);
-            $j = 0;
+            $j       = 0;
 
             for (;;) {
                 // Mixing round.
@@ -628,16 +605,16 @@ class RC2 extends Base
                         $r1 += $keys[$r0 & 0x3F];
                         $r2 += $keys[$r1 & 0x3F];
                         $r3 += $keys[$r2 & 0x3F];';
-                    $limit = $actions[$limit];
+                    $limit         = $actions[$limit];
                 }
             }
 
             $encrypt_block .= '$in = pack("v4", $r0, $r1, $r2, $r3);';
 
             // Create code for decryption.
-            $limit = 44;
+            $limit   = 44;
             $actions = array($limit => 20, 20 => 0);
-            $j = 64;
+            $j       = 64;
 
             for (;;) {
                 // R-mixing round.
@@ -666,7 +643,7 @@ class RC2 extends Base
                         $r2 = ($r2 - $keys[$r1 & 0x3F]) & 0xFFFF;
                         $r1 = ($r1 - $keys[$r0 & 0x3F]) & 0xFFFF;
                         $r0 = ($r0 - $keys[$r3 & 0x3F]) & 0xFFFF;';
-                    $limit = $actions[$limit];
+                    $limit         = $actions[$limit];
                 }
             }
 
@@ -674,11 +651,11 @@ class RC2 extends Base
 
             // Creates the inline-crypt function
             $lambda_functions[$code_hash] = $this->_createInlineCryptFunction(
-                array(
-                   'init_crypt'    => $init_crypt,
-                   'encrypt_block' => $encrypt_block,
-                   'decrypt_block' => $decrypt_block
-                )
+                    array(
+                        'init_crypt'    => $init_crypt,
+                        'encrypt_block' => $encrypt_block,
+                        'decrypt_block' => $decrypt_block
+                    )
             );
         }
 

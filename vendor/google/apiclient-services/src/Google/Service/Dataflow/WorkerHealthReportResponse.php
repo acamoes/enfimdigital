@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Dataflow_WorkerHealthReportResponse extends Google_Model
-{
-  public $reportInterval;
+class Google_Service_Dataflow_WorkerHealthReportResponse extends Google_Model {
+    public $reportInterval;
 
-  public function setReportInterval($reportInterval)
-  {
-    $this->reportInterval = $reportInterval;
-  }
-  public function getReportInterval()
-  {
-    return $this->reportInterval;
-  }
+    public function setReportInterval($reportInterval) {
+        $this->reportInterval = $reportInterval;
+    }
+
+    public function getReportInterval() {
+        return $this->reportInterval;
+    }
 }

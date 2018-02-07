@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Formatter;
-
 use Monolog\Logger;
 
 /**
@@ -20,10 +17,8 @@ use Monolog\Logger;
  * @author Christophe Coevoet <stof@notk.org>
  * @author Kirill chEbba Chebunin <iam@chebba.org>
  */
-class WildfireFormatter extends NormalizerFormatter
-{
-    const TABLE = 'table';
-
+class WildfireFormatter extends NormalizerFormatter {
+    const TABLE              = 'table';
     /**
      * Translates Monolog log levels to Wildfire levels.
      */
@@ -41,8 +36,7 @@ class WildfireFormatter extends NormalizerFormatter
     /**
      * {@inheritdoc}
      */
-    public function format(array $record)
-    {
+    public function format(array $record) {
         // Retrieve the line and file if set and remove them from the formatted extra
         $file = $line = '';
         if (isset($record['extra']['file'])) {
@@ -54,26 +48,27 @@ class WildfireFormatter extends NormalizerFormatter
             unset($record['extra']['line']);
         }
 
-        $record = $this->normalize($record);
-        $message = array('message' => $record['message']);
+        $record      = $this->normalize($record);
+        $message     = array('message' => $record['message']);
         $handleError = false;
         if ($record['context']) {
             $message['context'] = $record['context'];
-            $handleError = true;
+            $handleError        = true;
         }
         if ($record['extra']) {
             $message['extra'] = $record['extra'];
-            $handleError = true;
+            $handleError      = true;
         }
         if (count($message) === 1) {
             $message = reset($message);
         }
 
         if (isset($record['context'][self::TABLE])) {
-            $type  = 'TABLE';
-            $label = $record['channel'] .': '. $record['message'];
+            $type    = 'TABLE';
+            $label   = $record['channel'] . ': ' . $record['message'];
             $message = $record['context'][self::TABLE];
-        } else {
+        }
+        else {
             $type  = $this->logLevels[$record['level']];
             $label = $record['channel'];
         }
@@ -87,23 +82,19 @@ class WildfireFormatter extends NormalizerFormatter
                 'Label' => $label,
             ),
             $message,
-        ), $handleError);
+                ), $handleError);
 
         // The message itself is a serialization of the above JSON object + it's length
         return sprintf(
-            '%s|%s|',
-            strlen($json),
-            $json
+                '%s|%s|', strlen($json), $json
         );
     }
 
-    public function formatBatch(array $records)
-    {
+    public function formatBatch(array $records) {
         throw new \BadMethodCallException('Batch formatting does not make sense for the WildfireFormatter');
     }
 
-    protected function normalize($data)
-    {
+    protected function normalize($data) {
         if (is_object($data) && !$data instanceof \DateTime) {
             return $data;
         }

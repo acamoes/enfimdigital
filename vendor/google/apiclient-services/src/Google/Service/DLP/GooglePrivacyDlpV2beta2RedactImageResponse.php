@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageResponse extends Google_Model
-{
-  public $extractedText;
-  public $redactedImage;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageResponse extends Google_Model {
+    public $extractedText;
+    public $redactedImage;
 
-  public function setExtractedText($extractedText)
-  {
-    $this->extractedText = $extractedText;
-  }
-  public function getExtractedText()
-  {
-    return $this->extractedText;
-  }
-  public function setRedactedImage($redactedImage)
-  {
-    $this->redactedImage = $redactedImage;
-  }
-  public function getRedactedImage()
-  {
-    return $this->redactedImage;
-  }
+    public function setExtractedText($extractedText) {
+        $this->extractedText = $extractedText;
+    }
+
+    public function getExtractedText() {
+        return $this->extractedText;
+    }
+
+    public function setRedactedImage($redactedImage) {
+        $this->redactedImage = $redactedImage;
+    }
+
+    public function getRedactedImage() {
+        return $this->redactedImage;
+    }
 }

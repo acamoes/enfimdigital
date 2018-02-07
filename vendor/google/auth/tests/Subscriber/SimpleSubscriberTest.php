@@ -14,55 +14,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Tests;
-
 use Google\Auth\Subscriber\SimpleSubscriber;
 use GuzzleHttp\Client;
 use GuzzleHttp\Event\BeforeEvent;
 use GuzzleHttp\Transaction;
 
-class SimpleSubscriberTest extends BaseTest
-{
-    protected function setUp()
-    {
+class SimpleSubscriberTest extends BaseTest {
+
+    protected function setUp() {
         $this->onlyGuzzle5();
     }
 
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testRequiresADeveloperKey()
-    {
+    public function testRequiresADeveloperKey() {
         new SimpleSubscriber(['not_key' => 'a test key']);
     }
 
-    public function testSubscribesToEvents()
-    {
+    public function testSubscribesToEvents() {
         $events = (new SimpleSubscriber(['key' => 'a test key']))->getEvents();
         $this->assertArrayHasKey('before', $events);
     }
 
-    public function testAddsTheKeyToTheQuery()
-    {
-        $s = new SimpleSubscriber(['key' => 'test_key']);
-        $client = new Client();
-        $request = $client->createRequest('GET', 'http://testing.org',
-            ['auth' => 'simple']);
-        $before = new BeforeEvent(new Transaction($client, $request));
+    public function testAddsTheKeyToTheQuery() {
+        $s       = new SimpleSubscriber(['key' => 'test_key']);
+        $client  = new Client();
+        $request = $client->createRequest('GET', 'http://testing.org', ['auth' => 'simple']);
+        $before  = new BeforeEvent(new Transaction($client, $request));
         $s->onBefore($before);
         $this->assertCount(1, $request->getQuery());
         $this->assertTrue($request->getQuery()->hasKey('key'));
         $this->assertSame($request->getQuery()->get('key'), 'test_key');
     }
 
-    public function testOnlyTouchesWhenAuthConfigIsSimple()
-    {
-        $s = new SimpleSubscriber(['key' => 'test_key']);
-        $client = new Client();
-        $request = $client->createRequest('GET', 'http://testing.org',
-            ['auth' => 'notsimple']);
-        $before = new BeforeEvent(new Transaction($client, $request));
+    public function testOnlyTouchesWhenAuthConfigIsSimple() {
+        $s       = new SimpleSubscriber(['key' => 'test_key']);
+        $client  = new Client();
+        $request = $client->createRequest('GET', 'http://testing.org', ['auth' => 'notsimple']);
+        $before  = new BeforeEvent(new Transaction($client, $request));
         $s->onBefore($before);
         $this->assertCount(0, $request->getQuery());
     }

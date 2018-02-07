@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Monitoring_TcpCheck extends Google_Model
-{
-  public $port;
+class Google_Service_Monitoring_TcpCheck extends Google_Model {
+    public $port;
 
-  public function setPort($port)
-  {
-    $this->port = $port;
-  }
-  public function getPort()
-  {
-    return $this->port;
-  }
+    public function setPort($port) {
+        $this->port = $port;
+    }
+
+    public function getPort() {
+        return $this->port;
+    }
 }

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Pure-PHP implementation of Twofish.
  *
@@ -34,7 +33,6 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
-
 namespace phpseclib\Crypt;
 
 /**
@@ -45,8 +43,7 @@ namespace phpseclib\Crypt;
  * @author  Hans-Juergen Petrich <petrich@tronic-media.com>
  * @access  public
  */
-class Twofish extends Base
-{
+class Twofish extends Base {
     /**
      * The mcrypt specific name of the cipher
      *
@@ -55,7 +52,6 @@ class Twofish extends Base
      * @access private
      */
     var $cipher_name_mcrypt = 'twofish';
-
     /**
      * Optimizing value while CFB-encrypting
      *
@@ -63,15 +59,14 @@ class Twofish extends Base
      * @var int
      * @access private
      */
-    var $cfb_init_len = 800;
-
+    var $cfb_init_len       = 800;
     /**
      * Q-Table
      *
      * @var array
      * @access private
      */
-    var $q0 = array(
+    var $q0                 = array(
         0xA9, 0x67, 0xB3, 0xE8, 0x04, 0xFD, 0xA3, 0x76,
         0x9A, 0x92, 0x80, 0x78, 0xE4, 0xDD, 0xD1, 0x38,
         0x0D, 0xC6, 0x35, 0x98, 0x18, 0xF7, 0xEC, 0x6C,
@@ -105,14 +100,13 @@ class Twofish extends Base
         0xCA, 0x10, 0x21, 0xF0, 0xD3, 0x5D, 0x0F, 0x00,
         0x6F, 0x9D, 0x36, 0x42, 0x4A, 0x5E, 0xC1, 0xE0
     );
-
     /**
      * Q-Table
      *
      * @var array
      * @access private
      */
-    var $q1 = array(
+    var $q1                 = array(
         0x75, 0xF3, 0xC6, 0xF4, 0xDB, 0x7B, 0xFB, 0xC8,
         0x4A, 0xD3, 0xE6, 0x6B, 0x45, 0x7D, 0xE8, 0x4B,
         0xD6, 0x32, 0xD8, 0xFD, 0x37, 0x71, 0xF1, 0xE1,
@@ -146,14 +140,13 @@ class Twofish extends Base
         0xD7, 0x61, 0x1E, 0xB4, 0x50, 0x04, 0xF6, 0xC2,
         0x16, 0x25, 0x86, 0x56, 0x55, 0x09, 0xBE, 0x91
     );
-
     /**
      * M-Table
      *
      * @var array
      * @access private
      */
-    var $m0 = array(
+    var $m0                 = array(
         0xBCBC3275, 0xECEC21F3, 0x202043C6, 0xB3B3C9F4, 0xDADA03DB, 0x02028B7B, 0xE2E22BFB, 0x9E9EFAC8,
         0xC9C9EC4A, 0xD4D409D3, 0x18186BE6, 0x1E1E9F6B, 0x98980E45, 0xB2B2387D, 0xA6A6D2E8, 0x2626B74B,
         0x3C3C57D6, 0x93938A32, 0x8282EED8, 0x525298FD, 0x7B7BD437, 0xBBBB3771, 0x5B5B97F1, 0x474783E1,
@@ -187,14 +180,13 @@ class Twofish extends Base
         0xD3D30CD7, 0xA7A72361, 0xA2A2AD1E, 0xC3C399B4, 0x6C6C4450, 0x07070504, 0x04047FF6, 0x272746C2,
         0xACACA716, 0xD0D07625, 0x50501386, 0xDCDCF756, 0x84841A55, 0xE1E15109, 0x7A7A25BE, 0x1313EF91
     );
-
     /**
      * M-Table
      *
      * @var array
      * @access private
      */
-    var $m1 = array(
+    var $m1                 = array(
         0xA9D93939, 0x67901717, 0xB3719C9C, 0xE8D2A6A6, 0x04050707, 0xFD985252, 0xA3658080, 0x76DFE4E4,
         0x9A084545, 0x92024B4B, 0x80A0E0E0, 0x78665A5A, 0xE4DDAFAF, 0xDDB06A6A, 0xD1BF6363, 0x38362A2A,
         0x0D54E6E6, 0xC6432020, 0x3562CCCC, 0x98BEF2F2, 0x181E1212, 0xF724EBEB, 0xECD7A1A1, 0x6C774141,
@@ -228,14 +220,13 @@ class Twofish extends Base
         0xCA4C2929, 0x10141C1C, 0x2173D7D7, 0xF0CCB4B4, 0xD309D4D4, 0x5D108A8A, 0x0FE25151, 0x00000000,
         0x6F9A1919, 0x9DE01A1A, 0x368F9494, 0x42E6C7C7, 0x4AECC9C9, 0x5EFDD2D2, 0xC1AB7F7F, 0xE0D8A8A8
     );
-
     /**
      * M-Table
      *
      * @var array
      * @access private
      */
-    var $m2 = array(
+    var $m2                 = array(
         0xBC75BC32, 0xECF3EC21, 0x20C62043, 0xB3F4B3C9, 0xDADBDA03, 0x027B028B, 0xE2FBE22B, 0x9EC89EFA,
         0xC94AC9EC, 0xD4D3D409, 0x18E6186B, 0x1E6B1E9F, 0x9845980E, 0xB27DB238, 0xA6E8A6D2, 0x264B26B7,
         0x3CD63C57, 0x9332938A, 0x82D882EE, 0x52FD5298, 0x7B377BD4, 0xBB71BB37, 0x5BF15B97, 0x47E14783,
@@ -269,14 +260,13 @@ class Twofish extends Base
         0xD3D7D30C, 0xA761A723, 0xA21EA2AD, 0xC3B4C399, 0x6C506C44, 0x07040705, 0x04F6047F, 0x27C22746,
         0xAC16ACA7, 0xD025D076, 0x50865013, 0xDC56DCF7, 0x8455841A, 0xE109E151, 0x7ABE7A25, 0x139113EF
     );
-
     /**
      * M-Table
      *
      * @var array
      * @access private
      */
-    var $m3 = array(
+    var $m3                 = array(
         0xD939A9D9, 0x90176790, 0x719CB371, 0xD2A6E8D2, 0x05070405, 0x9852FD98, 0x6580A365, 0xDFE476DF,
         0x08459A08, 0x024B9202, 0xA0E080A0, 0x665A7866, 0xDDAFE4DD, 0xB06ADDB0, 0xBF63D1BF, 0x362A3836,
         0x54E60D54, 0x4320C643, 0x62CC3562, 0xBEF298BE, 0x1E12181E, 0x24EBF724, 0xD7A1ECD7, 0x77416C77,
@@ -310,47 +300,41 @@ class Twofish extends Base
         0x4C29CA4C, 0x141C1014, 0x73D72173, 0xCCB4F0CC, 0x09D4D309, 0x108A5D10, 0xE2510FE2, 0x00000000,
         0x9A196F9A, 0xE01A9DE0, 0x8F94368F, 0xE6C742E6, 0xECC94AEC, 0xFDD25EFD, 0xAB7FC1AB, 0xD8A8E0D8
     );
-
     /**
      * The Key Schedule Array
      *
      * @var array
      * @access private
      */
-    var $K = array();
-
+    var $K                  = array();
     /**
      * The Key depended S-Table 0
      *
      * @var array
      * @access private
      */
-    var $S0 = array();
-
+    var $S0                 = array();
     /**
      * The Key depended S-Table 1
      *
      * @var array
      * @access private
      */
-    var $S1 = array();
-
+    var $S1                 = array();
     /**
      * The Key depended S-Table 2
      *
      * @var array
      * @access private
      */
-    var $S2 = array();
-
+    var $S2                 = array();
     /**
      * The Key depended S-Table 3
      *
      * @var array
      * @access private
      */
-    var $S3 = array();
-
+    var $S3                 = array();
     /**
      * Holds the last used key
      *
@@ -358,7 +342,6 @@ class Twofish extends Base
      * @access private
      */
     var $kl;
-
     /**
      * The Key Length (in bytes)
      *
@@ -366,7 +349,7 @@ class Twofish extends Base
      * @var int
      * @access private
      */
-    var $key_length = 16;
+    var $key_length         = 16;
 
     /**
      * Sets the key length.
@@ -376,8 +359,7 @@ class Twofish extends Base
      * @access public
      * @param int $length
      */
-    function setKeyLength($length)
-    {
+    function setKeyLength($length) {
         switch (true) {
             case $length <= 128:
                 $this->key_length = 16;
@@ -398,8 +380,7 @@ class Twofish extends Base
      * @see \phpseclib\Crypt\Base::_setupKey()
      * @access private
      */
-    function _setupKey()
-    {
+    function _setupKey() {
         if (isset($this->kl['key']) && $this->key === $this->kl['key']) {
             // already expanded
             return;
@@ -408,32 +389,32 @@ class Twofish extends Base
 
         /* Key expanding and generating the key-depended s-boxes */
         $le_longs = unpack('V*', $this->key);
-        $key = unpack('C*', $this->key);
-        $m0 = $this->m0;
-        $m1 = $this->m1;
-        $m2 = $this->m2;
-        $m3 = $this->m3;
-        $q0 = $this->q0;
-        $q1 = $this->q1;
+        $key      = unpack('C*', $this->key);
+        $m0       = $this->m0;
+        $m1       = $this->m1;
+        $m2       = $this->m2;
+        $m3       = $this->m3;
+        $q0       = $this->q0;
+        $q1       = $this->q1;
 
-        $K = $S0 = $S1 = $S2 = $S3 = array();
+        $K  = $S0 = $S1 = $S2 = $S3 = array();
 
         switch (strlen($this->key)) {
             case 16:
                 list($s7, $s6, $s5, $s4) = $this->_mdsrem($le_longs[1], $le_longs[2]);
                 list($s3, $s2, $s1, $s0) = $this->_mdsrem($le_longs[3], $le_longs[4]);
-                for ($i = 0, $j = 1; $i < 40; $i+= 2, $j+= 2) {
-                    $A = $m0[$q0[$q0[$i] ^ $key[ 9]] ^ $key[1]] ^
-                         $m1[$q0[$q1[$i] ^ $key[10]] ^ $key[2]] ^
-                         $m2[$q1[$q0[$i] ^ $key[11]] ^ $key[3]] ^
-                         $m3[$q1[$q1[$i] ^ $key[12]] ^ $key[4]];
-                    $B = $m0[$q0[$q0[$j] ^ $key[13]] ^ $key[5]] ^
-                         $m1[$q0[$q1[$j] ^ $key[14]] ^ $key[6]] ^
-                         $m2[$q1[$q0[$j] ^ $key[15]] ^ $key[7]] ^
-                         $m3[$q1[$q1[$j] ^ $key[16]] ^ $key[8]];
-                    $B = ($B << 8) | ($B >> 24 & 0xff);
-                    $K[] = $A+= $B;
-                    $K[] = (($A+= $B) << 9 | $A >> 23 & 0x1ff);
+                for ($i = 0, $j = 1; $i < 40; $i += 2, $j += 2) {
+                    $A   = $m0[$q0[$q0[$i] ^ $key[9]] ^ $key[1]] ^
+                            $m1[$q0[$q1[$i] ^ $key[10]] ^ $key[2]] ^
+                            $m2[$q1[$q0[$i] ^ $key[11]] ^ $key[3]] ^
+                            $m3[$q1[$q1[$i] ^ $key[12]] ^ $key[4]];
+                    $B   = $m0[$q0[$q0[$j] ^ $key[13]] ^ $key[5]] ^
+                            $m1[$q0[$q1[$j] ^ $key[14]] ^ $key[6]] ^
+                            $m2[$q1[$q0[$j] ^ $key[15]] ^ $key[7]] ^
+                            $m3[$q1[$q1[$j] ^ $key[16]] ^ $key[8]];
+                    $B   = ($B << 8) | ($B >> 24 & 0xff);
+                    $K[] = $A   += $B;
+                    $K[] = (($A   += $B) << 9 | $A >> 23 & 0x1ff);
                 }
                 for ($i = 0; $i < 256; ++$i) {
                     $S0[$i] = $m0[$q0[$q0[$i] ^ $s4] ^ $s0];
@@ -446,18 +427,18 @@ class Twofish extends Base
                 list($sb, $sa, $s9, $s8) = $this->_mdsrem($le_longs[1], $le_longs[2]);
                 list($s7, $s6, $s5, $s4) = $this->_mdsrem($le_longs[3], $le_longs[4]);
                 list($s3, $s2, $s1, $s0) = $this->_mdsrem($le_longs[5], $le_longs[6]);
-                for ($i = 0, $j = 1; $i < 40; $i+= 2, $j+= 2) {
-                    $A = $m0[$q0[$q0[$q1[$i] ^ $key[17]] ^ $key[ 9]] ^ $key[1]] ^
-                         $m1[$q0[$q1[$q1[$i] ^ $key[18]] ^ $key[10]] ^ $key[2]] ^
-                         $m2[$q1[$q0[$q0[$i] ^ $key[19]] ^ $key[11]] ^ $key[3]] ^
-                         $m3[$q1[$q1[$q0[$i] ^ $key[20]] ^ $key[12]] ^ $key[4]];
-                    $B = $m0[$q0[$q0[$q1[$j] ^ $key[21]] ^ $key[13]] ^ $key[5]] ^
-                         $m1[$q0[$q1[$q1[$j] ^ $key[22]] ^ $key[14]] ^ $key[6]] ^
-                         $m2[$q1[$q0[$q0[$j] ^ $key[23]] ^ $key[15]] ^ $key[7]] ^
-                         $m3[$q1[$q1[$q0[$j] ^ $key[24]] ^ $key[16]] ^ $key[8]];
-                    $B = ($B << 8) | ($B >> 24 & 0xff);
-                    $K[] = $A+= $B;
-                    $K[] = (($A+= $B) << 9 | $A >> 23 & 0x1ff);
+                for ($i = 0, $j = 1; $i < 40; $i += 2, $j += 2) {
+                    $A   = $m0[$q0[$q0[$q1[$i] ^ $key[17]] ^ $key[9]] ^ $key[1]] ^
+                            $m1[$q0[$q1[$q1[$i] ^ $key[18]] ^ $key[10]] ^ $key[2]] ^
+                            $m2[$q1[$q0[$q0[$i] ^ $key[19]] ^ $key[11]] ^ $key[3]] ^
+                            $m3[$q1[$q1[$q0[$i] ^ $key[20]] ^ $key[12]] ^ $key[4]];
+                    $B   = $m0[$q0[$q0[$q1[$j] ^ $key[21]] ^ $key[13]] ^ $key[5]] ^
+                            $m1[$q0[$q1[$q1[$j] ^ $key[22]] ^ $key[14]] ^ $key[6]] ^
+                            $m2[$q1[$q0[$q0[$j] ^ $key[23]] ^ $key[15]] ^ $key[7]] ^
+                            $m3[$q1[$q1[$q0[$j] ^ $key[24]] ^ $key[16]] ^ $key[8]];
+                    $B   = ($B << 8) | ($B >> 24 & 0xff);
+                    $K[] = $A   += $B;
+                    $K[] = (($A   += $B) << 9 | $A >> 23 & 0x1ff);
                 }
                 for ($i = 0; $i < 256; ++$i) {
                     $S0[$i] = $m0[$q0[$q0[$q1[$i] ^ $s8] ^ $s4] ^ $s0];
@@ -471,18 +452,18 @@ class Twofish extends Base
                 list($sb, $sa, $s9, $s8) = $this->_mdsrem($le_longs[3], $le_longs[4]);
                 list($s7, $s6, $s5, $s4) = $this->_mdsrem($le_longs[5], $le_longs[6]);
                 list($s3, $s2, $s1, $s0) = $this->_mdsrem($le_longs[7], $le_longs[8]);
-                for ($i = 0, $j = 1; $i < 40; $i+= 2, $j+= 2) {
-                    $A = $m0[$q0[$q0[$q1[$q1[$i] ^ $key[25]] ^ $key[17]] ^ $key[ 9]] ^ $key[1]] ^
-                         $m1[$q0[$q1[$q1[$q0[$i] ^ $key[26]] ^ $key[18]] ^ $key[10]] ^ $key[2]] ^
-                         $m2[$q1[$q0[$q0[$q0[$i] ^ $key[27]] ^ $key[19]] ^ $key[11]] ^ $key[3]] ^
-                         $m3[$q1[$q1[$q0[$q1[$i] ^ $key[28]] ^ $key[20]] ^ $key[12]] ^ $key[4]];
-                    $B = $m0[$q0[$q0[$q1[$q1[$j] ^ $key[29]] ^ $key[21]] ^ $key[13]] ^ $key[5]] ^
-                         $m1[$q0[$q1[$q1[$q0[$j] ^ $key[30]] ^ $key[22]] ^ $key[14]] ^ $key[6]] ^
-                         $m2[$q1[$q0[$q0[$q0[$j] ^ $key[31]] ^ $key[23]] ^ $key[15]] ^ $key[7]] ^
-                         $m3[$q1[$q1[$q0[$q1[$j] ^ $key[32]] ^ $key[24]] ^ $key[16]] ^ $key[8]];
-                    $B = ($B << 8) | ($B >> 24 & 0xff);
-                    $K[] = $A+= $B;
-                    $K[] = (($A+= $B) << 9 | $A >> 23 & 0x1ff);
+                for ($i = 0, $j = 1; $i < 40; $i += 2, $j += 2) {
+                    $A   = $m0[$q0[$q0[$q1[$q1[$i] ^ $key[25]] ^ $key[17]] ^ $key[9]] ^ $key[1]] ^
+                            $m1[$q0[$q1[$q1[$q0[$i] ^ $key[26]] ^ $key[18]] ^ $key[10]] ^ $key[2]] ^
+                            $m2[$q1[$q0[$q0[$q0[$i] ^ $key[27]] ^ $key[19]] ^ $key[11]] ^ $key[3]] ^
+                            $m3[$q1[$q1[$q0[$q1[$i] ^ $key[28]] ^ $key[20]] ^ $key[12]] ^ $key[4]];
+                    $B   = $m0[$q0[$q0[$q1[$q1[$j] ^ $key[29]] ^ $key[21]] ^ $key[13]] ^ $key[5]] ^
+                            $m1[$q0[$q1[$q1[$q0[$j] ^ $key[30]] ^ $key[22]] ^ $key[14]] ^ $key[6]] ^
+                            $m2[$q1[$q0[$q0[$q0[$j] ^ $key[31]] ^ $key[23]] ^ $key[15]] ^ $key[7]] ^
+                            $m3[$q1[$q1[$q0[$q1[$j] ^ $key[32]] ^ $key[24]] ^ $key[16]] ^ $key[8]];
+                    $B   = ($B << 8) | ($B >> 24 & 0xff);
+                    $K[] = $A   += $B;
+                    $K[] = (($A   += $B) << 9 | $A >> 23 & 0x1ff);
                 }
                 for ($i = 0; $i < 256; ++$i) {
                     $S0[$i] = $m0[$q0[$q0[$q1[$q1[$i] ^ $sc] ^ $s8] ^ $s4] ^ $s0];
@@ -507,8 +488,7 @@ class Twofish extends Base
      * @param string $B
      * @return array
      */
-    function _mdsrem($A, $B)
-    {
+    function _mdsrem($A, $B) {
         // No gain by unrolling this loop.
         for ($i = 0; $i < 8; ++$i) {
             // Get most significant coefficient.
@@ -516,34 +496,34 @@ class Twofish extends Base
 
             // Shift the others up.
             $B = ($B << 8) | (0xff & ($A >> 24));
-            $A<<= 8;
+            $A <<= 8;
 
             $u = $t << 1;
 
             // Subtract the modular polynomial on overflow.
             if ($t & 0x80) {
-                $u^= 0x14d;
+                $u ^= 0x14d;
             }
 
             // Remove t * (a * x^2 + 1).
             $B ^= $t ^ ($u << 16);
 
             // Form u = a*t + t/a = t*(a + 1/a).
-            $u^= 0x7fffffff & ($t >> 1);
+            $u ^= 0x7fffffff & ($t >> 1);
 
             // Add the modular polynomial on underflow.
             if ($t & 0x01) {
-                $u^= 0xa6 ;
+                $u ^= 0xa6;
             }
 
             // Remove t * (a + 1/a) * (x^3 + x).
-            $B^= ($u << 24) | ($u << 8);
+            $B ^= ($u << 24) | ($u << 8);
         }
 
         return array(
             0xff & $B >> 24,
             0xff & $B >> 16,
-            0xff & $B >>  8,
+            0xff & $B >> 8,
             0xff & $B);
     }
 
@@ -554,8 +534,7 @@ class Twofish extends Base
      * @param string $in
      * @return string
      */
-    function _encryptBlock($in)
-    {
+    function _encryptBlock($in) {
         $S0 = $this->S0;
         $S1 = $this->S1;
         $S2 = $this->S2;
@@ -570,36 +549,33 @@ class Twofish extends Base
 
         $ki = 7;
         while ($ki < 39) {
-            $t0 = $S0[ $R0        & 0xff] ^
-                  $S1[($R0 >>  8) & 0xff] ^
-                  $S2[($R0 >> 16) & 0xff] ^
-                  $S3[($R0 >> 24) & 0xff];
+            $t0 = $S0[$R0 & 0xff] ^
+                    $S1[($R0 >> 8) & 0xff] ^
+                    $S2[($R0 >> 16) & 0xff] ^
+                    $S3[($R0 >> 24) & 0xff];
             $t1 = $S0[($R1 >> 24) & 0xff] ^
-                  $S1[ $R1        & 0xff] ^
-                  $S2[($R1 >>  8) & 0xff] ^
-                  $S3[($R1 >> 16) & 0xff];
-            $R2^= $t0 + $t1 + $K[++$ki];
+                    $S1[$R1 & 0xff] ^
+                    $S2[($R1 >> 8) & 0xff] ^
+                    $S3[($R1 >> 16) & 0xff];
+            $R2 ^= $t0 + $t1 + $K[++$ki];
             $R2 = ($R2 >> 1 & 0x7fffffff) | ($R2 << 31);
             $R3 = ((($R3 >> 31) & 1) | ($R3 << 1)) ^ ($t0 + ($t1 << 1) + $K[++$ki]);
 
-            $t0 = $S0[ $R2        & 0xff] ^
-                  $S1[($R2 >>  8) & 0xff] ^
-                  $S2[($R2 >> 16) & 0xff] ^
-                  $S3[($R2 >> 24) & 0xff];
+            $t0 = $S0[$R2 & 0xff] ^
+                    $S1[($R2 >> 8) & 0xff] ^
+                    $S2[($R2 >> 16) & 0xff] ^
+                    $S3[($R2 >> 24) & 0xff];
             $t1 = $S0[($R3 >> 24) & 0xff] ^
-                  $S1[ $R3        & 0xff] ^
-                  $S2[($R3 >>  8) & 0xff] ^
-                  $S3[($R3 >> 16) & 0xff];
-            $R0^= ($t0 + $t1 + $K[++$ki]);
+                    $S1[$R3 & 0xff] ^
+                    $S2[($R3 >> 8) & 0xff] ^
+                    $S3[($R3 >> 16) & 0xff];
+            $R0 ^= ($t0 + $t1 + $K[++$ki]);
             $R0 = ($R0 >> 1 & 0x7fffffff) | ($R0 << 31);
             $R1 = ((($R1 >> 31) & 1) | ($R1 << 1)) ^ ($t0 + ($t1 << 1) + $K[++$ki]);
         }
 
         // @codingStandardsIgnoreStart
-        return pack("V4", $K[4] ^ $R2,
-                          $K[5] ^ $R3,
-                          $K[6] ^ $R0,
-                          $K[7] ^ $R1);
+        return pack("V4", $K[4] ^ $R2, $K[5] ^ $R3, $K[6] ^ $R0, $K[7] ^ $R1);
         // @codingStandardsIgnoreEnd
     }
 
@@ -610,8 +586,7 @@ class Twofish extends Base
      * @param string $in
      * @return string
      */
-    function _decryptBlock($in)
-    {
+    function _decryptBlock($in) {
         $S0 = $this->S0;
         $S1 = $this->S1;
         $S2 = $this->S2;
@@ -626,36 +601,33 @@ class Twofish extends Base
 
         $ki = 40;
         while ($ki > 8) {
-            $t0 = $S0[$R0       & 0xff] ^
-                  $S1[$R0 >>  8 & 0xff] ^
-                  $S2[$R0 >> 16 & 0xff] ^
-                  $S3[$R0 >> 24 & 0xff];
+            $t0 = $S0[$R0 & 0xff] ^
+                    $S1[$R0 >> 8 & 0xff] ^
+                    $S2[$R0 >> 16 & 0xff] ^
+                    $S3[$R0 >> 24 & 0xff];
             $t1 = $S0[$R1 >> 24 & 0xff] ^
-                  $S1[$R1       & 0xff] ^
-                  $S2[$R1 >>  8 & 0xff] ^
-                  $S3[$R1 >> 16 & 0xff];
-            $R3^= $t0 + ($t1 << 1) + $K[--$ki];
+                    $S1[$R1 & 0xff] ^
+                    $S2[$R1 >> 8 & 0xff] ^
+                    $S3[$R1 >> 16 & 0xff];
+            $R3 ^= $t0 + ($t1 << 1) + $K[--$ki];
             $R3 = $R3 >> 1 & 0x7fffffff | $R3 << 31;
             $R2 = ($R2 >> 31 & 0x1 | $R2 << 1) ^ ($t0 + $t1 + $K[--$ki]);
 
-            $t0 = $S0[$R2       & 0xff] ^
-                  $S1[$R2 >>  8 & 0xff] ^
-                  $S2[$R2 >> 16 & 0xff] ^
-                  $S3[$R2 >> 24 & 0xff];
+            $t0 = $S0[$R2 & 0xff] ^
+                    $S1[$R2 >> 8 & 0xff] ^
+                    $S2[$R2 >> 16 & 0xff] ^
+                    $S3[$R2 >> 24 & 0xff];
             $t1 = $S0[$R3 >> 24 & 0xff] ^
-                  $S1[$R3       & 0xff] ^
-                  $S2[$R3 >>  8 & 0xff] ^
-                  $S3[$R3 >> 16 & 0xff];
-            $R1^= $t0 + ($t1 << 1) + $K[--$ki];
+                    $S1[$R3 & 0xff] ^
+                    $S2[$R3 >> 8 & 0xff] ^
+                    $S3[$R3 >> 16 & 0xff];
+            $R1 ^= $t0 + ($t1 << 1) + $K[--$ki];
             $R1 = $R1 >> 1 & 0x7fffffff | $R1 << 31;
             $R0 = ($R0 >> 31 & 0x1 | $R0 << 1) ^ ($t0 + $t1 + $K[--$ki]);
         }
 
         // @codingStandardsIgnoreStart
-        return pack("V4", $K[0] ^ $R2,
-                          $K[1] ^ $R3,
-                          $K[2] ^ $R0,
-                          $K[3] ^ $R1);
+        return pack("V4", $K[0] ^ $R2, $K[1] ^ $R3, $K[2] ^ $R0, $K[3] ^ $R1);
         // @codingStandardsIgnoreEnd
     }
 
@@ -665,13 +637,12 @@ class Twofish extends Base
      * @see \phpseclib\Crypt\Base::_setupInlineCrypt()
      * @access private
      */
-    function _setupInlineCrypt()
-    {
-        $lambda_functions =& self::_getLambdaFunctions();
+    function _setupInlineCrypt() {
+        $lambda_functions = & self::_getLambdaFunctions();
 
         // Max. 10 Ultra-Hi-optimized inline-crypt functions. After that, we'll (still) create very fast code, but not the ultimate fast one.
         // (Currently, for Crypt_Twofish, one generated $lambda_function cost on php5.5@32bit ~140kb unfreeable mem and ~240kb on php5.5@64bit)
-        $gen_hi_opt_code = (bool)(count($lambda_functions) < 10);
+        $gen_hi_opt_code = (bool) (count($lambda_functions) < 10);
 
         // Generation of a unique hash for our generated code
         $code_hash = "Crypt_Twofish, {$this->mode}";
@@ -682,7 +653,7 @@ class Twofish extends Base
         if (!isset($lambda_functions[$code_hash])) {
             switch (true) {
                 case $gen_hi_opt_code:
-                    $K = $this->K;
+                    $K          = $this->K;
                     $init_crypt = '
                         static $S0, $S1, $S2, $S3;
                         if (!$S0) {
@@ -696,7 +667,7 @@ class Twofish extends Base
                     ';
                     break;
                 default:
-                    $K   = array();
+                    $K          = array();
                     for ($i = 0; $i < 40; ++$i) {
                         $K[] = '$K_' . $i;
                     }
@@ -712,13 +683,13 @@ class Twofish extends Base
             // Generating encrypt code:
             $encrypt_block = '
                 $in = unpack("V4", $in);
-                $R0 = '.$K[0].' ^ $in[1];
-                $R1 = '.$K[1].' ^ $in[2];
-                $R2 = '.$K[2].' ^ $in[3];
-                $R3 = '.$K[3].' ^ $in[4];
+                $R0 = ' . $K[0] . ' ^ $in[1];
+                $R1 = ' . $K[1] . ' ^ $in[2];
+                $R2 = ' . $K[2] . ' ^ $in[3];
+                $R3 = ' . $K[3] . ' ^ $in[4];
             ';
             for ($ki = 7, $i = 0; $i < 8; ++$i) {
-                $encrypt_block.= '
+                $encrypt_block .= '
                     $t0 = $S0[ $R0        & 0xff] ^
                           $S1[($R0 >>  8) & 0xff] ^
                           $S2[($R0 >> 16) & 0xff] ^
@@ -727,9 +698,9 @@ class Twofish extends Base
                           $S1[ $R1        & 0xff] ^
                           $S2[($R1 >>  8) & 0xff] ^
                           $S3[($R1 >> 16) & 0xff];
-                    $R2^= ($t0 + $t1 + '.$K[++$ki].');
+                    $R2^= ($t0 + $t1 + ' . $K[++$ki] . ');
                     $R2 = ($R2 >> 1 & 0x7fffffff) | ($R2 << 31);
-                    $R3 = ((($R3 >> 31) & 1) | ($R3 << 1)) ^ ($t0 + ($t1 << 1) + '.$K[++$ki].');
+                    $R3 = ((($R3 >> 31) & 1) | ($R3 << 1)) ^ ($t0 + ($t1 << 1) + ' . $K[++$ki] . ');
 
                     $t0 = $S0[ $R2        & 0xff] ^
                           $S1[($R2 >>  8) & 0xff] ^
@@ -739,28 +710,28 @@ class Twofish extends Base
                           $S1[ $R3        & 0xff] ^
                           $S2[($R3 >>  8) & 0xff] ^
                           $S3[($R3 >> 16) & 0xff];
-                    $R0^= ($t0 + $t1 + '.$K[++$ki].');
+                    $R0^= ($t0 + $t1 + ' . $K[++$ki] . ');
                     $R0 = ($R0 >> 1 & 0x7fffffff) | ($R0 << 31);
-                    $R1 = ((($R1 >> 31) & 1) | ($R1 << 1)) ^ ($t0 + ($t1 << 1) + '.$K[++$ki].');
+                    $R1 = ((($R1 >> 31) & 1) | ($R1 << 1)) ^ ($t0 + ($t1 << 1) + ' . $K[++$ki] . ');
                 ';
             }
-            $encrypt_block.= '
-                $in = pack("V4", '.$K[4].' ^ $R2,
-                                 '.$K[5].' ^ $R3,
-                                 '.$K[6].' ^ $R0,
-                                 '.$K[7].' ^ $R1);
+            $encrypt_block .= '
+                $in = pack("V4", ' . $K[4] . ' ^ $R2,
+                                 ' . $K[5] . ' ^ $R3,
+                                 ' . $K[6] . ' ^ $R0,
+                                 ' . $K[7] . ' ^ $R1);
             ';
 
             // Generating decrypt code:
             $decrypt_block = '
                 $in = unpack("V4", $in);
-                $R0 = '.$K[4].' ^ $in[1];
-                $R1 = '.$K[5].' ^ $in[2];
-                $R2 = '.$K[6].' ^ $in[3];
-                $R3 = '.$K[7].' ^ $in[4];
+                $R0 = ' . $K[4] . ' ^ $in[1];
+                $R1 = ' . $K[5] . ' ^ $in[2];
+                $R2 = ' . $K[6] . ' ^ $in[3];
+                $R3 = ' . $K[7] . ' ^ $in[4];
             ';
             for ($ki = 40, $i = 0; $i < 8; ++$i) {
-                $decrypt_block.= '
+                $decrypt_block .= '
                     $t0 = $S0[$R0       & 0xff] ^
                           $S1[$R0 >>  8 & 0xff] ^
                           $S2[$R0 >> 16 & 0xff] ^
@@ -769,9 +740,9 @@ class Twofish extends Base
                           $S1[$R1       & 0xff] ^
                           $S2[$R1 >>  8 & 0xff] ^
                           $S3[$R1 >> 16 & 0xff];
-                    $R3^= $t0 + ($t1 << 1) + '.$K[--$ki].';
+                    $R3^= $t0 + ($t1 << 1) + ' . $K[--$ki] . ';
                     $R3 = $R3 >> 1 & 0x7fffffff | $R3 << 31;
-                    $R2 = ($R2 >> 31 & 0x1 | $R2 << 1) ^ ($t0 + $t1 + '.$K[--$ki].');
+                    $R2 = ($R2 >> 31 & 0x1 | $R2 << 1) ^ ($t0 + $t1 + ' . $K[--$ki] . ');
 
                     $t0 = $S0[$R2       & 0xff] ^
                           $S1[$R2 >>  8 & 0xff] ^
@@ -781,26 +752,26 @@ class Twofish extends Base
                           $S1[$R3       & 0xff] ^
                           $S2[$R3 >>  8 & 0xff] ^
                           $S3[$R3 >> 16 & 0xff];
-                    $R1^= $t0 + ($t1 << 1) + '.$K[--$ki].';
+                    $R1^= $t0 + ($t1 << 1) + ' . $K[--$ki] . ';
                     $R1 = $R1 >> 1 & 0x7fffffff | $R1 << 31;
-                    $R0 = ($R0 >> 31 & 0x1 | $R0 << 1) ^ ($t0 + $t1 + '.$K[--$ki].');
+                    $R0 = ($R0 >> 31 & 0x1 | $R0 << 1) ^ ($t0 + $t1 + ' . $K[--$ki] . ');
                 ';
             }
-            $decrypt_block.= '
-                $in = pack("V4", '.$K[0].' ^ $R2,
-                                 '.$K[1].' ^ $R3,
-                                 '.$K[2].' ^ $R0,
-                                 '.$K[3].' ^ $R1);
+            $decrypt_block .= '
+                $in = pack("V4", ' . $K[0] . ' ^ $R2,
+                                 ' . $K[1] . ' ^ $R3,
+                                 ' . $K[2] . ' ^ $R0,
+                                 ' . $K[3] . ' ^ $R1);
             ';
 
             $lambda_functions[$code_hash] = $this->_createInlineCryptFunction(
-                array(
-                   'init_crypt'    => $init_crypt,
-                   'init_encrypt'  => '',
-                   'init_decrypt'  => '',
-                   'encrypt_block' => $encrypt_block,
-                   'decrypt_block' => $decrypt_block
-                )
+                    array(
+                        'init_crypt'    => $init_crypt,
+                        'init_encrypt'  => '',
+                        'init_decrypt'  => '',
+                        'encrypt_block' => $encrypt_block,
+                        'decrypt_block' => $decrypt_block
+                    )
             );
         }
         $this->inline_crypt = $lambda_functions[$code_hash];

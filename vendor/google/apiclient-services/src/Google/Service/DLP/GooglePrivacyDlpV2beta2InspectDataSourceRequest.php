@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2InspectDataSourceRequest extends Google_Model
-{
-  protected $jobConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InspectJobConfig';
-  protected $jobConfigDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2InspectDataSourceRequest extends Google_Model {
+    protected $jobConfigType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InspectJobConfig';
+    protected $jobConfigDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InspectJobConfig
-   */
-  public function setJobConfig(Google_Service_DLP_GooglePrivacyDlpV2beta2InspectJobConfig $jobConfig)
-  {
-    $this->jobConfig = $jobConfig;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InspectJobConfig
-   */
-  public function getJobConfig()
-  {
-    return $this->jobConfig;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InspectJobConfig
+     */
+    public function setJobConfig(Google_Service_DLP_GooglePrivacyDlpV2beta2InspectJobConfig $jobConfig) {
+        $this->jobConfig = $jobConfig;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InspectJobConfig
+     */
+    public function getJobConfig() {
+        return $this->jobConfig;
+    }
 }

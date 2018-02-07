@@ -15,133 +15,131 @@
  * the License.
  */
 
-class Google_Service_Drive_TeamDriveCapabilities extends Google_Model
-{
-  public $canAddChildren;
-  public $canChangeTeamDriveBackground;
-  public $canComment;
-  public $canCopy;
-  public $canDeleteTeamDrive;
-  public $canDownload;
-  public $canEdit;
-  public $canListChildren;
-  public $canManageMembers;
-  public $canReadRevisions;
-  public $canRemoveChildren;
-  public $canRename;
-  public $canRenameTeamDrive;
-  public $canShare;
+class Google_Service_Drive_TeamDriveCapabilities extends Google_Model {
+    public $canAddChildren;
+    public $canChangeTeamDriveBackground;
+    public $canComment;
+    public $canCopy;
+    public $canDeleteTeamDrive;
+    public $canDownload;
+    public $canEdit;
+    public $canListChildren;
+    public $canManageMembers;
+    public $canReadRevisions;
+    public $canRemoveChildren;
+    public $canRename;
+    public $canRenameTeamDrive;
+    public $canShare;
 
-  public function setCanAddChildren($canAddChildren)
-  {
-    $this->canAddChildren = $canAddChildren;
-  }
-  public function getCanAddChildren()
-  {
-    return $this->canAddChildren;
-  }
-  public function setCanChangeTeamDriveBackground($canChangeTeamDriveBackground)
-  {
-    $this->canChangeTeamDriveBackground = $canChangeTeamDriveBackground;
-  }
-  public function getCanChangeTeamDriveBackground()
-  {
-    return $this->canChangeTeamDriveBackground;
-  }
-  public function setCanComment($canComment)
-  {
-    $this->canComment = $canComment;
-  }
-  public function getCanComment()
-  {
-    return $this->canComment;
-  }
-  public function setCanCopy($canCopy)
-  {
-    $this->canCopy = $canCopy;
-  }
-  public function getCanCopy()
-  {
-    return $this->canCopy;
-  }
-  public function setCanDeleteTeamDrive($canDeleteTeamDrive)
-  {
-    $this->canDeleteTeamDrive = $canDeleteTeamDrive;
-  }
-  public function getCanDeleteTeamDrive()
-  {
-    return $this->canDeleteTeamDrive;
-  }
-  public function setCanDownload($canDownload)
-  {
-    $this->canDownload = $canDownload;
-  }
-  public function getCanDownload()
-  {
-    return $this->canDownload;
-  }
-  public function setCanEdit($canEdit)
-  {
-    $this->canEdit = $canEdit;
-  }
-  public function getCanEdit()
-  {
-    return $this->canEdit;
-  }
-  public function setCanListChildren($canListChildren)
-  {
-    $this->canListChildren = $canListChildren;
-  }
-  public function getCanListChildren()
-  {
-    return $this->canListChildren;
-  }
-  public function setCanManageMembers($canManageMembers)
-  {
-    $this->canManageMembers = $canManageMembers;
-  }
-  public function getCanManageMembers()
-  {
-    return $this->canManageMembers;
-  }
-  public function setCanReadRevisions($canReadRevisions)
-  {
-    $this->canReadRevisions = $canReadRevisions;
-  }
-  public function getCanReadRevisions()
-  {
-    return $this->canReadRevisions;
-  }
-  public function setCanRemoveChildren($canRemoveChildren)
-  {
-    $this->canRemoveChildren = $canRemoveChildren;
-  }
-  public function getCanRemoveChildren()
-  {
-    return $this->canRemoveChildren;
-  }
-  public function setCanRename($canRename)
-  {
-    $this->canRename = $canRename;
-  }
-  public function getCanRename()
-  {
-    return $this->canRename;
-  }
-  public function setCanRenameTeamDrive($canRenameTeamDrive)
-  {
-    $this->canRenameTeamDrive = $canRenameTeamDrive;
-  }
-  public function getCanRenameTeamDrive()
-  {
-    return $this->canRenameTeamDrive;
-  }
-  public function setCanShare($canShare)
-  {
-    $this->canShare = $canShare;
-  }
-  public function getCanShare()
-  {
-    return $this->canShare;
-  }
+    public function setCanAddChildren($canAddChildren) {
+        $this->canAddChildren = $canAddChildren;
+    }
+
+    public function getCanAddChildren() {
+        return $this->canAddChildren;
+    }
+
+    public function setCanChangeTeamDriveBackground($canChangeTeamDriveBackground) {
+        $this->canChangeTeamDriveBackground = $canChangeTeamDriveBackground;
+    }
+
+    public function getCanChangeTeamDriveBackground() {
+        return $this->canChangeTeamDriveBackground;
+    }
+
+    public function setCanComment($canComment) {
+        $this->canComment = $canComment;
+    }
+
+    public function getCanComment() {
+        return $this->canComment;
+    }
+
+    public function setCanCopy($canCopy) {
+        $this->canCopy = $canCopy;
+    }
+
+    public function getCanCopy() {
+        return $this->canCopy;
+    }
+
+    public function setCanDeleteTeamDrive($canDeleteTeamDrive) {
+        $this->canDeleteTeamDrive = $canDeleteTeamDrive;
+    }
+
+    public function getCanDeleteTeamDrive() {
+        return $this->canDeleteTeamDrive;
+    }
+
+    public function setCanDownload($canDownload) {
+        $this->canDownload = $canDownload;
+    }
+
+    public function getCanDownload() {
+        return $this->canDownload;
+    }
+
+    public function setCanEdit($canEdit) {
+        $this->canEdit = $canEdit;
+    }
+
+    public function getCanEdit() {
+        return $this->canEdit;
+    }
+
+    public function setCanListChildren($canListChildren) {
+        $this->canListChildren = $canListChildren;
+    }
+
+    public function getCanListChildren() {
+        return $this->canListChildren;
+    }
+
+    public function setCanManageMembers($canManageMembers) {
+        $this->canManageMembers = $canManageMembers;
+    }
+
+    public function getCanManageMembers() {
+        return $this->canManageMembers;
+    }
+
+    public function setCanReadRevisions($canReadRevisions) {
+        $this->canReadRevisions = $canReadRevisions;
+    }
+
+    public function getCanReadRevisions() {
+        return $this->canReadRevisions;
+    }
+
+    public function setCanRemoveChildren($canRemoveChildren) {
+        $this->canRemoveChildren = $canRemoveChildren;
+    }
+
+    public function getCanRemoveChildren() {
+        return $this->canRemoveChildren;
+    }
+
+    public function setCanRename($canRename) {
+        $this->canRename = $canRename;
+    }
+
+    public function getCanRename() {
+        return $this->canRename;
+    }
+
+    public function setCanRenameTeamDrive($canRenameTeamDrive) {
+        $this->canRenameTeamDrive = $canRenameTeamDrive;
+    }
+
+    public function getCanRenameTeamDrive() {
+        return $this->canRenameTeamDrive;
+    }
+
+    public function setCanShare($canShare) {
+        $this->canShare = $canShare;
+    }
+
+    public function getCanShare() {
+        return $this->canShare;
+    }
 }

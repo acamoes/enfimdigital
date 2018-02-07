@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataflow_MetricShortId extends Google_Model
-{
-  public $metricIndex;
-  public $shortId;
+class Google_Service_Dataflow_MetricShortId extends Google_Model {
+    public $metricIndex;
+    public $shortId;
 
-  public function setMetricIndex($metricIndex)
-  {
-    $this->metricIndex = $metricIndex;
-  }
-  public function getMetricIndex()
-  {
-    return $this->metricIndex;
-  }
-  public function setShortId($shortId)
-  {
-    $this->shortId = $shortId;
-  }
-  public function getShortId()
-  {
-    return $this->shortId;
-  }
+    public function setMetricIndex($metricIndex) {
+        $this->metricIndex = $metricIndex;
+    }
+
+    public function getMetricIndex() {
+        return $this->metricIndex;
+    }
+
+    public function setShortId($shortId) {
+        $this->shortId = $shortId;
+    }
+
+    public function getShortId() {
+        return $this->shortId;
+    }
 }

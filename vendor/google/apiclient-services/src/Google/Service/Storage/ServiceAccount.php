@@ -15,28 +15,26 @@
  * the License.
  */
 
-class Google_Service_Storage_ServiceAccount extends Google_Model
-{
-  protected $internal_gapi_mappings = array(
+class Google_Service_Storage_ServiceAccount extends Google_Model {
+    protected $internal_gapi_mappings = array(
         "emailAddress" => "email_address",
-  );
-  public $emailAddress;
-  public $kind;
+    );
+    public $emailAddress;
+    public $kind;
 
-  public function setEmailAddress($emailAddress)
-  {
-    $this->emailAddress = $emailAddress;
-  }
-  public function getEmailAddress()
-  {
-    return $this->emailAddress;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
+    public function setEmailAddress($emailAddress) {
+        $this->emailAddress = $emailAddress;
+    }
+
+    public function getEmailAddress() {
+        return $this->emailAddress;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
 }

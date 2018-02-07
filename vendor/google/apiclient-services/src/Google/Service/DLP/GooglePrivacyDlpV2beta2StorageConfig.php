@@ -15,55 +15,53 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2StorageConfig extends Google_Model
-{
-  protected $bigQueryOptionsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions';
-  protected $bigQueryOptionsDataType = '';
-  protected $cloudStorageOptionsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions';
-  protected $cloudStorageOptionsDataType = '';
-  protected $datastoreOptionsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions';
-  protected $datastoreOptionsDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2StorageConfig extends Google_Model {
+    protected $bigQueryOptionsType         = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions';
+    protected $bigQueryOptionsDataType     = '';
+    protected $cloudStorageOptionsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions';
+    protected $cloudStorageOptionsDataType = '';
+    protected $datastoreOptionsType        = 'Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions';
+    protected $datastoreOptionsDataType    = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions
-   */
-  public function setBigQueryOptions(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions $bigQueryOptions)
-  {
-    $this->bigQueryOptions = $bigQueryOptions;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions
-   */
-  public function getBigQueryOptions()
-  {
-    return $this->bigQueryOptions;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions
-   */
-  public function setCloudStorageOptions(Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions $cloudStorageOptions)
-  {
-    $this->cloudStorageOptions = $cloudStorageOptions;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions
-   */
-  public function getCloudStorageOptions()
-  {
-    return $this->cloudStorageOptions;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions
-   */
-  public function setDatastoreOptions(Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions $datastoreOptions)
-  {
-    $this->datastoreOptions = $datastoreOptions;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions
-   */
-  public function getDatastoreOptions()
-  {
-    return $this->datastoreOptions;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions
+     */
+    public function setBigQueryOptions(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions $bigQueryOptions) {
+        $this->bigQueryOptions = $bigQueryOptions;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions
+     */
+    public function getBigQueryOptions() {
+        return $this->bigQueryOptions;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions
+     */
+    public function setCloudStorageOptions(Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions $cloudStorageOptions) {
+        $this->cloudStorageOptions = $cloudStorageOptions;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions
+     */
+    public function getCloudStorageOptions() {
+        return $this->cloudStorageOptions;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions
+     */
+    public function setDatastoreOptions(Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions $datastoreOptions) {
+        $this->datastoreOptions = $datastoreOptions;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions
+     */
+    public function getDatastoreOptions() {
+        return $this->datastoreOptions;
+    }
 }

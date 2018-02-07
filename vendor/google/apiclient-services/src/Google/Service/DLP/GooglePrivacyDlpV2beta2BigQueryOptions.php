@@ -15,40 +15,38 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions extends Google_Collection
-{
-  protected $collection_key = 'identifyingFields';
-  protected $identifyingFieldsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId';
-  protected $identifyingFieldsDataType = 'array';
-  protected $tableReferenceType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable';
-  protected $tableReferenceDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryOptions extends Google_Collection {
+    protected $collection_key            = 'identifyingFields';
+    protected $identifyingFieldsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId';
+    protected $identifyingFieldsDataType = 'array';
+    protected $tableReferenceType        = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable';
+    protected $tableReferenceDataType    = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
-   */
-  public function setIdentifyingFields($identifyingFields)
-  {
-    $this->identifyingFields = $identifyingFields;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
-   */
-  public function getIdentifyingFields()
-  {
-    return $this->identifyingFields;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
-   */
-  public function setTableReference(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable $tableReference)
-  {
-    $this->tableReference = $tableReference;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
-   */
-  public function getTableReference()
-  {
-    return $this->tableReference;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
+     */
+    public function setIdentifyingFields($identifyingFields) {
+        $this->identifyingFields = $identifyingFields;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
+     */
+    public function getIdentifyingFields() {
+        return $this->identifyingFields;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
+     */
+    public function setTableReference(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable $tableReference) {
+        $this->tableReference = $tableReference;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
+     */
+    public function getTableReference() {
+        return $this->tableReference;
+    }
 }

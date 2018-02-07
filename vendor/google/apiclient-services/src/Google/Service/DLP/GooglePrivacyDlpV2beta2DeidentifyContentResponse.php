@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyContentResponse extends Google_Model
-{
-  protected $itemType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem';
-  protected $itemDataType = '';
-  protected $overviewType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2TransformationOverview';
-  protected $overviewDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyContentResponse extends Google_Model {
+    protected $itemType         = 'Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem';
+    protected $itemDataType     = '';
+    protected $overviewType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2TransformationOverview';
+    protected $overviewDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem
-   */
-  public function setItem(Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem $item)
-  {
-    $this->item = $item;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem
-   */
-  public function getItem()
-  {
-    return $this->item;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2TransformationOverview
-   */
-  public function setOverview(Google_Service_DLP_GooglePrivacyDlpV2beta2TransformationOverview $overview)
-  {
-    $this->overview = $overview;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2TransformationOverview
-   */
-  public function getOverview()
-  {
-    return $this->overview;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem
+     */
+    public function setItem(Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem $item) {
+        $this->item = $item;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem
+     */
+    public function getItem() {
+        return $this->item;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2TransformationOverview
+     */
+    public function setOverview(Google_Service_DLP_GooglePrivacyDlpV2beta2TransformationOverview $overview) {
+        $this->overview = $overview;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2TransformationOverview
+     */
+    public function getOverview() {
+        return $this->overview;
+    }
 }

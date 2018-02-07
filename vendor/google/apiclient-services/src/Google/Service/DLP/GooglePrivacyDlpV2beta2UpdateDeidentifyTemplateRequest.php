@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2UpdateDeidentifyTemplateRequest extends Google_Model
-{
-  protected $deidentifyTemplateType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyTemplate';
-  protected $deidentifyTemplateDataType = '';
-  public $updateMask;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2UpdateDeidentifyTemplateRequest extends Google_Model {
+    protected $deidentifyTemplateType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyTemplate';
+    protected $deidentifyTemplateDataType = '';
+    public $updateMask;
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyTemplate
-   */
-  public function setDeidentifyTemplate(Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyTemplate $deidentifyTemplate)
-  {
-    $this->deidentifyTemplate = $deidentifyTemplate;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyTemplate
-   */
-  public function getDeidentifyTemplate()
-  {
-    return $this->deidentifyTemplate;
-  }
-  public function setUpdateMask($updateMask)
-  {
-    $this->updateMask = $updateMask;
-  }
-  public function getUpdateMask()
-  {
-    return $this->updateMask;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyTemplate
+     */
+    public function setDeidentifyTemplate(Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyTemplate $deidentifyTemplate) {
+        $this->deidentifyTemplate = $deidentifyTemplate;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2DeidentifyTemplate
+     */
+    public function getDeidentifyTemplate() {
+        return $this->deidentifyTemplate;
+    }
+
+    public function setUpdateMask($updateMask) {
+        $this->updateMask = $updateMask;
+    }
+
+    public function getUpdateMask() {
+        return $this->updateMask;
+    }
 }

@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_Dataflow_StreamingConfigTask extends Google_Collection
-{
-  protected $collection_key = 'streamingComputationConfigs';
-  protected $streamingComputationConfigsType = 'Google_Service_Dataflow_StreamingComputationConfig';
-  protected $streamingComputationConfigsDataType = 'array';
-  public $userStepToStateFamilyNameMap;
-  public $windmillServiceEndpoint;
-  public $windmillServicePort;
+class Google_Service_Dataflow_StreamingConfigTask extends Google_Collection {
+    protected $collection_key                      = 'streamingComputationConfigs';
+    protected $streamingComputationConfigsType     = 'Google_Service_Dataflow_StreamingComputationConfig';
+    protected $streamingComputationConfigsDataType = 'array';
+    public $userStepToStateFamilyNameMap;
+    public $windmillServiceEndpoint;
+    public $windmillServicePort;
 
-  /**
-   * @param Google_Service_Dataflow_StreamingComputationConfig
-   */
-  public function setStreamingComputationConfigs($streamingComputationConfigs)
-  {
-    $this->streamingComputationConfigs = $streamingComputationConfigs;
-  }
-  /**
-   * @return Google_Service_Dataflow_StreamingComputationConfig
-   */
-  public function getStreamingComputationConfigs()
-  {
-    return $this->streamingComputationConfigs;
-  }
-  public function setUserStepToStateFamilyNameMap($userStepToStateFamilyNameMap)
-  {
-    $this->userStepToStateFamilyNameMap = $userStepToStateFamilyNameMap;
-  }
-  public function getUserStepToStateFamilyNameMap()
-  {
-    return $this->userStepToStateFamilyNameMap;
-  }
-  public function setWindmillServiceEndpoint($windmillServiceEndpoint)
-  {
-    $this->windmillServiceEndpoint = $windmillServiceEndpoint;
-  }
-  public function getWindmillServiceEndpoint()
-  {
-    return $this->windmillServiceEndpoint;
-  }
-  public function setWindmillServicePort($windmillServicePort)
-  {
-    $this->windmillServicePort = $windmillServicePort;
-  }
-  public function getWindmillServicePort()
-  {
-    return $this->windmillServicePort;
-  }
+    /**
+     * @param Google_Service_Dataflow_StreamingComputationConfig
+     */
+    public function setStreamingComputationConfigs($streamingComputationConfigs) {
+        $this->streamingComputationConfigs = $streamingComputationConfigs;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_StreamingComputationConfig
+     */
+    public function getStreamingComputationConfigs() {
+        return $this->streamingComputationConfigs;
+    }
+
+    public function setUserStepToStateFamilyNameMap($userStepToStateFamilyNameMap) {
+        $this->userStepToStateFamilyNameMap = $userStepToStateFamilyNameMap;
+    }
+
+    public function getUserStepToStateFamilyNameMap() {
+        return $this->userStepToStateFamilyNameMap;
+    }
+
+    public function setWindmillServiceEndpoint($windmillServiceEndpoint) {
+        $this->windmillServiceEndpoint = $windmillServiceEndpoint;
+    }
+
+    public function getWindmillServiceEndpoint() {
+        return $this->windmillServiceEndpoint;
+    }
+
+    public function setWindmillServicePort($windmillServicePort) {
+        $this->windmillServicePort = $windmillServicePort;
+    }
+
+    public function getWindmillServicePort() {
+        return $this->windmillServicePort;
+    }
 }

@@ -22,8 +22,7 @@
  *
  * @return string escaped input string
  */
-function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $double_encode = true)
-{
+function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $double_encode = true) {
     static $_double_encode = null;
     if ($_double_encode === null) {
         $_double_encode = version_compare(PHP_VERSION, '5.2.3', '>=');
@@ -38,11 +37,13 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
             if ($_double_encode) {
                 // php >=5.3.2 - go native
                 return htmlspecialchars($string, ENT_QUOTES, $char_set, $double_encode);
-            } else {
+            }
+            else {
                 if ($double_encode) {
                     // php <5.2.3 - only handle double encoding
                     return htmlspecialchars($string, ENT_QUOTES, $char_set);
-                } else {
+                }
+                else {
                     // php <5.2.3 - prevent double encoding
                     $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
                     $string = htmlspecialchars($string, ENT_QUOTES, $char_set);
@@ -58,16 +59,17 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
                 if ($_double_encode) {
                     // php >=5.3.2 - go native
                     $string = htmlspecialchars($string, ENT_QUOTES, $char_set, $double_encode);
-                } else {
+                }
+                else {
                     if ($double_encode) {
                         // php <5.2.3 - only handle double encoding
                         $string = htmlspecialchars($string, ENT_QUOTES, $char_set);
-                    } else {
+                    }
+                    else {
                         // php <5.2.3 - prevent double encoding
                         $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
                         $string = htmlspecialchars($string, ENT_QUOTES, $char_set);
-                        $string =
-                            str_replace(array('%%%SMARTY_START%%%', '%%%SMARTY_END%%%'), array('&', ';'), $string);
+                        $string = str_replace(array('%%%SMARTY_START%%%', '%%%SMARTY_END%%%'), array('&', ';'), $string);
 
                         return $string;
                     }
@@ -80,10 +82,12 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
             // no MBString fallback
             if ($_double_encode) {
                 return htmlentities($string, ENT_QUOTES, $char_set, $double_encode);
-            } else {
+            }
+            else {
                 if ($double_encode) {
                     return htmlentities($string, ENT_QUOTES, $char_set);
-                } else {
+                }
+                else {
                     $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
                     $string = htmlentities($string, ENT_QUOTES, $char_set);
                     $string = str_replace(array('%%%SMARTY_START%%%', '%%%SMARTY_END%%%'), array('&', ';'), $string);
@@ -105,10 +109,10 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
         case 'hex':
             // escape every byte into hex
             // Note that the UTF-8 encoded character ä will be represented as %c3%a4
-            $return = '';
+            $return  = '';
             $_length = strlen($string);
             for ($x = 0; $x < $_length; $x ++) {
-                $return .= '%' . bin2hex($string[ $x ]);
+                $return .= '%' . bin2hex($string[$x]);
             }
 
             return $return;
@@ -129,7 +133,7 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
             // no MBString fallback
             $_length = strlen($string);
             for ($x = 0; $x < $_length; $x ++) {
-                $return .= '&#x' . bin2hex($string[ $x ]) . ';';
+                $return .= '&#x' . bin2hex($string[$x]) . ';';
             }
 
             return $return;
@@ -150,15 +154,15 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
             // no MBString fallback
             $_length = strlen($string);
             for ($x = 0; $x < $_length; $x ++) {
-                $return .= '&#' . ord($string[ $x ]) . ';';
+                $return .= '&#' . ord($string[$x]) . ';';
             }
 
             return $return;
 
         case 'javascript':
             // escape quotes and backslashes, newlines, etc.
-            return strtr($string, array('\\' => '\\\\', "'" => "\\'", '"' => '\\"', "\r" => '\\r', "\n" => '\\n',
-                                        '</' => '<\/'));
+            return strtr($string, array('\\' => '\\\\', "'"  => "\\'", '"'  => '\\"', "\r" => '\\r', "\n" => '\\n',
+                '</' => '<\/'));
 
         case 'mail':
             if (Smarty::$_MBSTRING) {
@@ -180,7 +184,8 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
                 foreach (smarty_mb_to_unicode($string, Smarty::$_CHARSET) as $unicode) {
                     if ($unicode >= 126) {
                         $return .= '&#' . $unicode . ';';
-                    } else {
+                    }
+                    else {
                         $return .= chr($unicode);
                     }
                 }
@@ -194,7 +199,8 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
                 // non-standard char, escape it
                 if ($_ord >= 126) {
                     $return .= '&#' . $_ord . ';';
-                } else {
+                }
+                else {
                     $return .= substr($string, $_i, 1);
                 }
             }

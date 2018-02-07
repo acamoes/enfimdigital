@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Spanner_UpdateDatabaseDdlMetadata extends Google_Collection
-{
-  protected $collection_key = 'statements';
-  public $commitTimestamps;
-  public $database;
-  public $statements;
+class Google_Service_Spanner_UpdateDatabaseDdlMetadata extends Google_Collection {
+    protected $collection_key = 'statements';
+    public $commitTimestamps;
+    public $database;
+    public $statements;
 
-  public function setCommitTimestamps($commitTimestamps)
-  {
-    $this->commitTimestamps = $commitTimestamps;
-  }
-  public function getCommitTimestamps()
-  {
-    return $this->commitTimestamps;
-  }
-  public function setDatabase($database)
-  {
-    $this->database = $database;
-  }
-  public function getDatabase()
-  {
-    return $this->database;
-  }
-  public function setStatements($statements)
-  {
-    $this->statements = $statements;
-  }
-  public function getStatements()
-  {
-    return $this->statements;
-  }
+    public function setCommitTimestamps($commitTimestamps) {
+        $this->commitTimestamps = $commitTimestamps;
+    }
+
+    public function getCommitTimestamps() {
+        return $this->commitTimestamps;
+    }
+
+    public function setDatabase($database) {
+        $this->database = $database;
+    }
+
+    public function getDatabase() {
+        return $this->database;
+    }
+
+    public function setStatements($statements) {
+        $this->statements = $statements;
+    }
+
+    public function getStatements() {
+        return $this->statements;
+    }
 }

@@ -15,15 +15,14 @@
  * 	 http://www.php-fig.org/psr/psr-2/
  * 	 http://cs.sensiolabs.org
  */
-
 if (PHP_SAPI !== 'cli') {
     die('This script supports command line usage only. Please check your command.');
 }
 // Define in which folders to search and which folders to exclude
 // Exclude some directories that are excluded by Git anyways to speed up the sniffing
 $finder = Symfony\CS\Finder\DefaultFinder::create()
-    ->exclude('vendor')
-    ->in(__DIR__);
+        ->exclude('vendor')
+        ->in(__DIR__);
 
 // Return a Code Sniffing configuration using
 // all sniffers needed for PSR-2
@@ -35,20 +34,20 @@ $finder = Symfony\CS\Finder\DefaultFinder::create()
 //  - Ensure Concatenation to have at least one whitespace around
 //  - Remove trailing whitespace at the end of blank lines.
 return Symfony\CS\Config\Config::create()
-    ->level(Symfony\CS\FixerInterface::PSR2_LEVEL)
-    ->fixers([
-        'remove_leading_slash_use',
-        'single_array_no_trailing_comma',
-        'spaces_before_semicolon',
-        'unused_use',
-        'concat_with_spaces',
-        'whitespacy_lines',
-        'ordered_use',
-        'single_quote',
-        'duplicate_semicolon',
-        'extra_empty_lines',
-        'phpdoc_no_package',
-        'phpdoc_scalar',
-        'no_empty_lines_after_phpdocs'
-    ])
-    ->finder($finder);
+                ->level(Symfony\CS\FixerInterface::PSR2_LEVEL)
+                ->fixers([
+                    'remove_leading_slash_use',
+                    'single_array_no_trailing_comma',
+                    'spaces_before_semicolon',
+                    'unused_use',
+                    'concat_with_spaces',
+                    'whitespacy_lines',
+                    'ordered_use',
+                    'single_quote',
+                    'duplicate_semicolon',
+                    'extra_empty_lines',
+                    'phpdoc_no_package',
+                    'phpdoc_scalar',
+                    'no_empty_lines_after_phpdocs'
+                ])
+                ->finder($finder);

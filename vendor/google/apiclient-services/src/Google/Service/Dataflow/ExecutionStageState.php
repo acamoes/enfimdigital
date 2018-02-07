@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Dataflow_ExecutionStageState extends Google_Model
-{
-  public $currentStateTime;
-  public $executionStageName;
-  public $executionStageState;
+class Google_Service_Dataflow_ExecutionStageState extends Google_Model {
+    public $currentStateTime;
+    public $executionStageName;
+    public $executionStageState;
 
-  public function setCurrentStateTime($currentStateTime)
-  {
-    $this->currentStateTime = $currentStateTime;
-  }
-  public function getCurrentStateTime()
-  {
-    return $this->currentStateTime;
-  }
-  public function setExecutionStageName($executionStageName)
-  {
-    $this->executionStageName = $executionStageName;
-  }
-  public function getExecutionStageName()
-  {
-    return $this->executionStageName;
-  }
-  public function setExecutionStageState($executionStageState)
-  {
-    $this->executionStageState = $executionStageState;
-  }
-  public function getExecutionStageState()
-  {
-    return $this->executionStageState;
-  }
+    public function setCurrentStateTime($currentStateTime) {
+        $this->currentStateTime = $currentStateTime;
+    }
+
+    public function getCurrentStateTime() {
+        return $this->currentStateTime;
+    }
+
+    public function setExecutionStageName($executionStageName) {
+        $this->executionStageName = $executionStageName;
+    }
+
+    public function getExecutionStageName() {
+        return $this->executionStageName;
+    }
+
+    public function setExecutionStageState($executionStageState) {
+        $this->executionStageState = $executionStageState;
+    }
+
+    public function getExecutionStageState() {
+        return $this->executionStageState;
+    }
 }

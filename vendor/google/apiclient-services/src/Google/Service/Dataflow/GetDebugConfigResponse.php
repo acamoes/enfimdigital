@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Dataflow_GetDebugConfigResponse extends Google_Model
-{
-  public $config;
+class Google_Service_Dataflow_GetDebugConfigResponse extends Google_Model {
+    public $config;
 
-  public function setConfig($config)
-  {
-    $this->config = $config;
-  }
-  public function getConfig()
-  {
-    return $this->config;
-  }
+    public function setConfig($config) {
+        $this->config = $config;
+    }
+
+    public function getConfig() {
+        return $this->config;
+    }
 }

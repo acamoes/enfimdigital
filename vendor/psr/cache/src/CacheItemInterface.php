@@ -1,5 +1,4 @@
 <?php
-
 namespace Psr\Cache;
 
 /**
@@ -21,8 +20,8 @@ namespace Psr\Cache;
  * SHOULD NOT assume that an Item created by one Implementing Library is
  * compatible with a Pool from another Implementing Library.
  */
-interface CacheItemInterface
-{
+interface CacheItemInterface {
+
     /**
      * Returns the key for the current cache item.
      *

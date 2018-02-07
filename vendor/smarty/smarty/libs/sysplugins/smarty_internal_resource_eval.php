@@ -16,8 +16,8 @@
  * @package    Smarty
  * @subpackage TemplateResources
  */
-class Smarty_Internal_Resource_Eval extends Smarty_Resource_Recompiled
-{
+class Smarty_Internal_Resource_Eval extends Smarty_Resource_Recompiled {
+
     /**
      * populate Source Object with meta data from Resource
      *
@@ -26,10 +26,9 @@ class Smarty_Internal_Resource_Eval extends Smarty_Resource_Recompiled
      *
      * @return void
      */
-    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template = null)
-    {
-        $source->uid = $source->filepath = sha1($source->name);
-        $source->timestamp = $source->exists = true;
+    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template = null) {
+        $source->uid       = $source->filepath  = sha1($source->name);
+        $source->timestamp = $source->exists    = true;
     }
 
     /**
@@ -41,8 +40,7 @@ class Smarty_Internal_Resource_Eval extends Smarty_Resource_Recompiled
      *
      * @return string                 template source
      */
-    public function getContent(Smarty_Template_Source $source)
-    {
+    public function getContent(Smarty_Template_Source $source) {
         return $this->decode($source->name);
     }
 
@@ -53,13 +51,13 @@ class Smarty_Internal_Resource_Eval extends Smarty_Resource_Recompiled
      *
      * @return string decoded template_resource
      */
-    protected function decode($string)
-    {
+    protected function decode($string) {
         // decode if specified
         if (($pos = strpos($string, ':')) !== false) {
             if (!strncmp($string, 'base64', 6)) {
                 return base64_decode(substr($string, 7));
-            } elseif (!strncmp($string, 'urlencode', 9)) {
+            }
+            elseif (!strncmp($string, 'urlencode', 9)) {
                 return urldecode(substr($string, 10));
             }
         }
@@ -76,8 +74,7 @@ class Smarty_Internal_Resource_Eval extends Smarty_Resource_Recompiled
      *
      * @return string unique resource name
      */
-    public function buildUniqueResourceName(Smarty $smarty, $resource_name, $isConfig = false)
-    {
+    public function buildUniqueResourceName(Smarty $smarty, $resource_name, $isConfig = false) {
         return get_class($this) . '#' . $this->decode($resource_name);
     }
 
@@ -88,8 +85,7 @@ class Smarty_Internal_Resource_Eval extends Smarty_Resource_Recompiled
      *
      * @return string                 resource's basename
      */
-    public function getBasename(Smarty_Template_Source $source)
-    {
+    public function getBasename(Smarty_Template_Source $source) {
         return '';
     }
 }

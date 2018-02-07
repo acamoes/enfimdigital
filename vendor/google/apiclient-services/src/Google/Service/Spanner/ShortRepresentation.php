@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Spanner_ShortRepresentation extends Google_Model
-{
-  public $description;
-  public $subqueries;
+class Google_Service_Spanner_ShortRepresentation extends Google_Model {
+    public $description;
+    public $subqueries;
 
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setSubqueries($subqueries)
-  {
-    $this->subqueries = $subqueries;
-  }
-  public function getSubqueries()
-  {
-    return $this->subqueries;
-  }
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setSubqueries($subqueries) {
+        $this->subqueries = $subqueries;
+    }
+
+    public function getSubqueries() {
+        return $this->subqueries;
+    }
 }

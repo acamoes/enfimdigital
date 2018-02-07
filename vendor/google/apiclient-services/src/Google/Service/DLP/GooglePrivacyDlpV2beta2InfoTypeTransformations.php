@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformations extends Google_Collection
-{
-  protected $collection_key = 'transformations';
-  protected $transformationsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformation';
-  protected $transformationsDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformations extends Google_Collection {
+    protected $collection_key          = 'transformations';
+    protected $transformationsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformation';
+    protected $transformationsDataType = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformation
-   */
-  public function setTransformations($transformations)
-  {
-    $this->transformations = $transformations;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformation
-   */
-  public function getTransformations()
-  {
-    return $this->transformations;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformation
+     */
+    public function setTransformations($transformations) {
+        $this->transformations = $transformations;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformation
+     */
+    public function getTransformations() {
+        return $this->transformations;
+    }
 }

@@ -9,8 +9,7 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_ClearAllAssign
-{
+class Smarty_Internal_Method_ClearAllAssign {
     /**
      * Valid for all objects
      *
@@ -28,8 +27,7 @@ class Smarty_Internal_Method_ClearAllAssign
      *
      * @return \Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty
      */
-    public function clearAllAssign(Smarty_Internal_Data $data)
-    {
+    public function clearAllAssign(Smarty_Internal_Data $data) {
         $data->tpl_vars = array();
 
         return $data;

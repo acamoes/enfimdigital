@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_AnalyticsReporting_ReportRow extends Google_Collection
-{
-  protected $collection_key = 'metrics';
-  public $dimensions;
-  protected $metricsType = 'Google_Service_AnalyticsReporting_DateRangeValues';
-  protected $metricsDataType = 'array';
+class Google_Service_AnalyticsReporting_ReportRow extends Google_Collection {
+    protected $collection_key  = 'metrics';
+    public $dimensions;
+    protected $metricsType     = 'Google_Service_AnalyticsReporting_DateRangeValues';
+    protected $metricsDataType = 'array';
 
-  public function setDimensions($dimensions)
-  {
-    $this->dimensions = $dimensions;
-  }
-  public function getDimensions()
-  {
-    return $this->dimensions;
-  }
-  /**
-   * @param Google_Service_AnalyticsReporting_DateRangeValues
-   */
-  public function setMetrics($metrics)
-  {
-    $this->metrics = $metrics;
-  }
-  /**
-   * @return Google_Service_AnalyticsReporting_DateRangeValues
-   */
-  public function getMetrics()
-  {
-    return $this->metrics;
-  }
+    public function setDimensions($dimensions) {
+        $this->dimensions = $dimensions;
+    }
+
+    public function getDimensions() {
+        return $this->dimensions;
+    }
+
+    /**
+     * @param Google_Service_AnalyticsReporting_DateRangeValues
+     */
+    public function setMetrics($metrics) {
+        $this->metrics = $metrics;
+    }
+
+    /**
+     * @return Google_Service_AnalyticsReporting_DateRangeValues
+     */
+    public function getMetrics() {
+        return $this->metrics;
+    }
 }

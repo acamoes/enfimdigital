@@ -15,7 +15,6 @@
  * @author   Uwe Tews
  * @return string with compiled code
  */
-function smarty_modifiercompiler_noprint()
-{
+function smarty_modifiercompiler_noprint() {
     return "''";
 }

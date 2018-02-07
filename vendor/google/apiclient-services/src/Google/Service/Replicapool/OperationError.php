@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Replicapool_OperationError extends Google_Collection
-{
-  protected $collection_key = 'errors';
-  protected $errorsType = 'Google_Service_Replicapool_OperationErrorErrors';
-  protected $errorsDataType = 'array';
+class Google_Service_Replicapool_OperationError extends Google_Collection {
+    protected $collection_key = 'errors';
+    protected $errorsType     = 'Google_Service_Replicapool_OperationErrorErrors';
+    protected $errorsDataType = 'array';
 
-  /**
-   * @param Google_Service_Replicapool_OperationErrorErrors
-   */
-  public function setErrors($errors)
-  {
-    $this->errors = $errors;
-  }
-  /**
-   * @return Google_Service_Replicapool_OperationErrorErrors
-   */
-  public function getErrors()
-  {
-    return $this->errors;
-  }
+    /**
+     * @param Google_Service_Replicapool_OperationErrorErrors
+     */
+    public function setErrors($errors) {
+        $this->errors = $errors;
+    }
+
+    /**
+     * @return Google_Service_Replicapool_OperationErrorErrors
+     */
+    public function getErrors() {
+        return $this->errors;
+    }
 }

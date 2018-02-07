@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Fusiontables_Polygon extends Google_Collection
-{
-  protected $collection_key = 'coordinates';
-  public $coordinates;
-  public $type;
+class Google_Service_Fusiontables_Polygon extends Google_Collection {
+    protected $collection_key = 'coordinates';
+    public $coordinates;
+    public $type;
 
-  public function setCoordinates($coordinates)
-  {
-    $this->coordinates = $coordinates;
-  }
-  public function getCoordinates()
-  {
-    return $this->coordinates;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    public function setCoordinates($coordinates) {
+        $this->coordinates = $coordinates;
+    }
+
+    public function getCoordinates() {
+        return $this->coordinates;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

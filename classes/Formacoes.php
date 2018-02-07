@@ -23,7 +23,7 @@ class Formacoes {
         $this->tabs = json_decode('{"tabs":[{"text":"Inscritos","tab":"inscritos"},{"text":"Equipa","tab":"equipa"},{"text":"Sessões","tab":"sessoes"},{"text":"Ficheiros","tab":"ficheiros"},{"text":"Avaliações","tab":"avaliacoes"},{"text":"Informações","tab":"informacoes"}]}');
     }
 
-    static function getFormacoes($data) {
+    static function getFormacoes(/* $data */) {
         $query     = "SELECT " . "c.* "
                 /* .",ct.idUsers, "
                   ."ct.type, "
@@ -136,7 +136,7 @@ class Formacoes {
                 "VALUES (" . $data['idUsers'] . "," . $data['idCourses'] . ") ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi adicionado o registo.'];
         }
         return ['success' => true, 'message' => 'Registo adicionado.'];
@@ -146,7 +146,7 @@ class Formacoes {
         $query     = "DELETE FROM users_courses WHERE idUsers=" . $data['idUsers'] . " AND idCourses=" . $data['idCourses'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi apagar o registo.'];
         }
         return ['success' => true, 'message' => 'Registo apagado.'];
@@ -175,7 +175,7 @@ class Formacoes {
                 "WHERE idUsers=" . $data ['idUsers'];
         $con                           = new Database ();
         $resultado                     = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
         $query                         = "UPDATE users_courses SET " .
@@ -197,7 +197,7 @@ class Formacoes {
                 "WHERE idUsers=" . $data ['idUsers'] . " AND idCourses=" . $data ['idCourses'];
         $con                           = new Database ();
         $resultado                     = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
         return ['success' => true, 'message' => 'Registo atualizado.'];
@@ -209,7 +209,7 @@ class Formacoes {
                 ") ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi adicionado o registo.'];
         }
         return ['success' => true, 'message' => 'Registo adicionado.'];
@@ -242,14 +242,14 @@ class Formacoes {
                 " WHERE idUsers=" . $data ['idUsers'];
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
         $query     = "UPDATE courses_team SET " . "type='" . $data ['type'] . "' " . "WHERE idUsers=" . $data ['idUsers'] .
                 " AND idCourses=" . $data ['idCourses'];
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
         return ['success' => true, 'message' => 'Registo atualizado.'];
@@ -310,7 +310,7 @@ class Formacoes {
         $query     = "DELETE FROM courses_team WHERE idUsers=" . $data ['idUsers'] . " AND idCourses=" . $data ['idCourses'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi apagar o registo.'];
         }
         return ['success' => true, 'message' => 'Registo apagado.'];
@@ -412,7 +412,7 @@ class Formacoes {
                 " VALUES (" . $data['idModules'] . "," . $row['idCourse'] . "," . $data['idCourses'] . "," . $row['ordem'] .
                 ",'" . $data['name'] . "'," . $data['duration'] . ",'Proposto','Pendente','" . $data['observations'] . "') ";
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             $resultado = $con->set('ROLLBACK');
             return ['success' => false, 'message' => 'Não foi adicionado o registo.'];
         }
@@ -434,7 +434,7 @@ class Formacoes {
                 " FROM modules m " . "INNER JOIN course c ON m.idCourse=c.idCourse " .
                 "AND m.status='Fechado' AND m.idCourse=(SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'] . ") ";
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             $resultado = $con->set('ROLLBACK');
             return ['success' => false, 'message' => 'Não foi restaurado.'];
         }
@@ -446,7 +446,7 @@ class Formacoes {
         $query     = "DELETE FROM courses_modules WHERE idCourses=" . $data['idCourses'] . " AND idCourse=" . $data['idCourse'] . " AND idModules= " . $data['idModules'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi apagar o registo.'];
         }
         return ['success' => true, 'message' => 'Registo apagado.'];
@@ -469,7 +469,7 @@ class Formacoes {
                 " WHERE idCourses=" . $data['idCourses'] . " AND idCourse=" . $data['idCourse'] . " AND idModules=" . $data['idModules'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi adicionado o registo.'];
         }
         return ['success' => true, 'message' => 'Registo adicionado.'];
@@ -529,7 +529,7 @@ class Formacoes {
                 (key_exists("idCourses", $data) ? " AND uc.idCourses=" . $data ['idCourses'] . " " : " ") .
                 "LEFT JOIN courses_evaluations ce ON u.idUsers=ce.idUsers " .
                 "LEFT JOIN evaluations e ON ce.idEvaluations=e.idEvaluations " .
-                "WHERE u.idUsers=" . $_SESSION['users']->id . " " .
+                "WHERE u.idUsers=" . $_SESSION['users']->idUsers . " " .
                 "ORDER BY target) " .
                 "UNION " .
                 "(SELECT (SELECT course FROM courses WHERE idCourses = ce.idCourses) AS curso, " .
@@ -539,7 +539,7 @@ class Formacoes {
                 (key_exists("idCourses", $data) ? " AND uc.idCourses<>" . $data ['idCourses'] . " " : " ") .
                 "LEFT JOIN courses_evaluations ce ON u.idUsers = ce.idUsers " .
                 "LEFT JOIN evaluations e ON ce.idEvaluations = e.idEvaluations " .
-                "WHERE u.idUsers =" . $_SESSION['users']->id . " " .
+                "WHERE u.idUsers =" . $_SESSION['users']->idUsers . " " .
                 "AND target = 'Curso' ORDER BY date DESC LIMIT 2,6) ";
         $con       = new Database ();
         $resultado = $con->get($query);
@@ -566,7 +566,7 @@ class Formacoes {
         $query     = "UPDATE courses_evaluations SET status='" . $resultado['status'] . "' WHERE idCourses=" . $data ['idCourses'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'O estado das avaliações não foi alterado.'];
         }
         return ['success' => true, 'message' => 'O estado das avaliações foi alterado.'];
@@ -689,7 +689,7 @@ class Formacoes {
                 . " FROM documents d INNER JOIN courses_modules cm ON d.idCourse=cm.idCourse AND d.idModules=cm.idModules "
                 . " AND d.idCourse IN (SELECT idCourse FROM courses WHERE idCourses=" . $data['idCourses'] . ") AND d.status='Fechado' GROUP BY d.idDocuments";
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             $resultado = $con->set('ROLLBACK');
             return ['success' => false, 'message' => 'Não foi restaurado.'];
         }
@@ -853,7 +853,7 @@ class Formacoes {
                 " AND idDocuments=" . $_SESSION ['ficheiros']['idDocuments'];
 
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
         }
         return ['success' => true, 'message' => 'Registo atualizado.'];
@@ -863,7 +863,7 @@ class Formacoes {
 
         $query     = "UPDATE courses_documents SET " .
                 "idModules=" . $data['idModules'] . ",name='" . $data['name'] . "',public='" . $data['public'] . "',status='Pendente',observations='" . $data['observations'] . "', " .
-                "type='" . $_SESSION ['ficheiros']['type'] . "',idAutor=" . $_SESSION['users']->id . ",dateAutor='" . date("Y-m-d H:i:s") . "', " .
+                "type='" . $_SESSION ['ficheiros']['type'] . "',idAutor=" . $_SESSION['users']->idUsers . ",dateAutor='" . date("Y-m-d H:i:s") . "', " .
                 "dateDiretor=NULL, idDiretor=NULL, " .
                 "datePedagogico=NULL, idPedagogico=NULL, " .
                 "dateExecutiva=NULL, idExecutiva=NULL " .
@@ -871,7 +871,7 @@ class Formacoes {
                 " AND idDocuments=" . $_SESSION ['ficheiros']['idDocuments'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi inserido o registo.'];
         }
         return ['success' => true, 'message' => 'Registo inserido.'];
@@ -882,7 +882,7 @@ class Formacoes {
                 " idDocuments=" . $data['idDocuments'];
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'O registo não foi apagado.'];
         }
         return ['success' => true, 'message' => 'Registo apagado.'];
@@ -891,7 +891,7 @@ class Formacoes {
     static function aprovarFormacoesFicheiros($data) {//<?=$docs[$i]['idCourse']."_".$docs[$i]['idCourses']."_".$docs[$i]['idModules']."_".$docs[$i]['idDocuments']
         $con       = new Database ();
         $result    = $con->set('START TRANSACTION');
-        $query     = "SELECT count(*) as equipa,`type` FROM courses_team WHERE idUsers=" . $_SESSION['users']->id . " AND idCourses=" . $data['idCourses'] . " ";
+        $query     = "SELECT count(*) as equipa,`type` FROM courses_team WHERE idUsers=" . $_SESSION['users']->idUsers . " AND idCourses=" . $data['idCourses'] . " ";
         $resultado = $con->get($query);
         if (!$resultado) {
             $result = $con->set('ROLLBACK');
@@ -926,7 +926,7 @@ class Formacoes {
                     return ['success' => false, 'message' => 'Não ficou aprovado.'];
                 }
             }
-            $query  = "UPDATE courses_documents SET status='Fechado', dateExecutiva='" . date("Y-m-d H:i:s") . "' ,idExecutiva=" . $_SESSION['users']->id .
+            $query  = "UPDATE courses_documents SET status='Fechado', dateExecutiva='" . date("Y-m-d H:i:s") . "' ,idExecutiva=" . $_SESSION['users']->idUsers .
                     " WHERE idCourses=" . $data['idCourses'] . " AND idDocuments=" . $data['idDocuments'] . " AND idModules=" . $idModules . " AND idCourse=" . $idCourse . " ";
             $result = $con->set($query);
             if (!$result) {
@@ -1010,7 +1010,7 @@ class Formacoes {
             }
         }
         else if ($resultado['type'] == 'Diretor') {
-            $query  = "UPDATE courses_documents SET status='Pendente', dateDiretor='" . date("Y-m-d H:i:s") . "' ,idDiretor=" . $_SESSION['users']->id .
+            $query  = "UPDATE courses_documents SET status='Pendente', dateDiretor='" . date("Y-m-d H:i:s") . "' ,idDiretor=" . $_SESSION['users']->idUsers .
                     " WHERE idCourses=" . $data['idCourses'] . " AND idDocuments=" . $data['idDocuments'] . " ";
             $result = $result = $con->set($query);
             if (!$result) {

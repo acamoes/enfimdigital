@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_ManagedService extends Google_Model
-{
-  public $producerProjectId;
-  public $serviceName;
+class Google_Service_ServiceManagement_ManagedService extends Google_Model {
+    public $producerProjectId;
+    public $serviceName;
 
-  public function setProducerProjectId($producerProjectId)
-  {
-    $this->producerProjectId = $producerProjectId;
-  }
-  public function getProducerProjectId()
-  {
-    return $this->producerProjectId;
-  }
-  public function setServiceName($serviceName)
-  {
-    $this->serviceName = $serviceName;
-  }
-  public function getServiceName()
-  {
-    return $this->serviceName;
-  }
+    public function setProducerProjectId($producerProjectId) {
+        $this->producerProjectId = $producerProjectId;
+    }
+
+    public function getProducerProjectId() {
+        return $this->producerProjectId;
+    }
+
+    public function setServiceName($serviceName) {
+        $this->serviceName = $serviceName;
+    }
+
+    public function getServiceName() {
+        return $this->serviceName;
+    }
 }

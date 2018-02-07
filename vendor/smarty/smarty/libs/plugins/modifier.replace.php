@@ -22,8 +22,7 @@
  *
  * @return string
  */
-function smarty_modifier_replace($string, $search, $replace)
-{
+function smarty_modifier_replace($string, $search, $replace) {
     if (Smarty::$_MBSTRING) {
         if (!is_callable('smarty_mb_str_replace')) {
             require_once(SMARTY_PLUGINS_DIR . 'shared.mb_str_replace.php');

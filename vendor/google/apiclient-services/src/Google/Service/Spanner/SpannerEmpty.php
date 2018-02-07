@@ -15,6 +15,6 @@
  * the License.
  */
 
-class Google_Service_Spanner_SpannerEmpty extends Google_Model
-{
+class Google_Service_Spanner_SpannerEmpty extends Google_Model {
+
 }

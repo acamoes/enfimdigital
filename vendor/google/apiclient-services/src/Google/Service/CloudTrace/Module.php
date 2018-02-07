@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_CloudTrace_Module extends Google_Model
-{
-  protected $buildIdType = 'Google_Service_CloudTrace_TruncatableString';
-  protected $buildIdDataType = '';
-  protected $moduleType = 'Google_Service_CloudTrace_TruncatableString';
-  protected $moduleDataType = '';
+class Google_Service_CloudTrace_Module extends Google_Model {
+    protected $buildIdType     = 'Google_Service_CloudTrace_TruncatableString';
+    protected $buildIdDataType = '';
+    protected $moduleType      = 'Google_Service_CloudTrace_TruncatableString';
+    protected $moduleDataType  = '';
 
-  /**
-   * @param Google_Service_CloudTrace_TruncatableString
-   */
-  public function setBuildId(Google_Service_CloudTrace_TruncatableString $buildId)
-  {
-    $this->buildId = $buildId;
-  }
-  /**
-   * @return Google_Service_CloudTrace_TruncatableString
-   */
-  public function getBuildId()
-  {
-    return $this->buildId;
-  }
-  /**
-   * @param Google_Service_CloudTrace_TruncatableString
-   */
-  public function setModule(Google_Service_CloudTrace_TruncatableString $module)
-  {
-    $this->module = $module;
-  }
-  /**
-   * @return Google_Service_CloudTrace_TruncatableString
-   */
-  public function getModule()
-  {
-    return $this->module;
-  }
+    /**
+     * @param Google_Service_CloudTrace_TruncatableString
+     */
+    public function setBuildId(Google_Service_CloudTrace_TruncatableString $buildId) {
+        $this->buildId = $buildId;
+    }
+
+    /**
+     * @return Google_Service_CloudTrace_TruncatableString
+     */
+    public function getBuildId() {
+        return $this->buildId;
+    }
+
+    /**
+     * @param Google_Service_CloudTrace_TruncatableString
+     */
+    public function setModule(Google_Service_CloudTrace_TruncatableString $module) {
+        $this->module = $module;
+    }
+
+    /**
+     * @return Google_Service_CloudTrace_TruncatableString
+     */
+    public function getModule() {
+        return $this->module;
+    }
 }

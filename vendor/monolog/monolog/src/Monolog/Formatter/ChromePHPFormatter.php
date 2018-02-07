@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Formatter;
-
 use Monolog\Logger;
 
 /**
@@ -18,8 +15,7 @@ use Monolog\Logger;
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-class ChromePHPFormatter implements FormatterInterface
-{
+class ChromePHPFormatter implements FormatterInterface {
     /**
      * Translates Monolog log levels to Wildfire levels.
      */
@@ -37,12 +33,11 @@ class ChromePHPFormatter implements FormatterInterface
     /**
      * {@inheritdoc}
      */
-    public function format(array $record)
-    {
+    public function format(array $record) {
         // Retrieve the line and file if set and remove them from the formatted extra
         $backtrace = 'unknown';
         if (isset($record['extra']['file'], $record['extra']['line'])) {
-            $backtrace = $record['extra']['file'].' : '.$record['extra']['line'];
+            $backtrace = $record['extra']['file'] . ' : ' . $record['extra']['line'];
             unset($record['extra']['file'], $record['extra']['line']);
         }
 
@@ -65,8 +60,7 @@ class ChromePHPFormatter implements FormatterInterface
         );
     }
 
-    public function formatBatch(array $records)
-    {
+    public function formatBatch(array $records) {
         $formatted = array();
 
         foreach ($records as $record) {

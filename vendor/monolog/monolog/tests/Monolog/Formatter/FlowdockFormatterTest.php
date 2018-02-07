@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,29 +7,26 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Formatter;
-
 use Monolog\Logger;
 use Monolog\TestCase;
 
-class FlowdockFormatterTest extends TestCase
-{
+class FlowdockFormatterTest extends TestCase {
+
     /**
      * @covers Monolog\Formatter\FlowdockFormatter::format
      */
-    public function testFormat()
-    {
+    public function testFormat() {
         $formatter = new FlowdockFormatter('test_source', 'source@test.com');
-        $record = $this->getRecord();
+        $record    = $this->getRecord();
 
-        $expected = array(
-            'source' => 'test_source',
+        $expected  = array(
+            'source'       => 'test_source',
             'from_address' => 'source@test.com',
-            'subject' => 'in test_source: WARNING - test',
-            'content' => 'test',
-            'tags' => array('#logs', '#warning', '#test'),
-            'project' => 'test_source',
+            'subject'      => 'in test_source: WARNING - test',
+            'content'      => 'test',
+            'tags'         => array('#logs', '#warning', '#test'),
+            'project'      => 'test_source',
         );
         $formatted = $formatter->format($record);
 
@@ -40,10 +36,9 @@ class FlowdockFormatterTest extends TestCase
     /**
      * @ covers Monolog\Formatter\FlowdockFormatter::formatBatch
      */
-    public function testFormatBatch()
-    {
+    public function testFormatBatch() {
         $formatter = new FlowdockFormatter('test_source', 'source@test.com');
-        $records = array(
+        $records   = array(
             $this->getRecord(Logger::WARNING),
             $this->getRecord(Logger::DEBUG),
         );

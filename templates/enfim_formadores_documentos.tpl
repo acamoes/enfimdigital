@@ -90,6 +90,6 @@
                          src="images/star{if $documentos['idExecutiva']==''}_vazio{/if}.svg" 
                          title="Carregado: {$documentos['dateExecutiva']}&#013;EE: {$documentos['executiva']}"/>
                 </td>
-        {/foreach}
+            {/foreach}
     </tbody>
 </table>

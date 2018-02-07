@@ -1,16 +1,13 @@
 <?php
 namespace GuzzleHttp\Psr7;
-
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 /**
  * PSR-7 response implementation.
  */
-class Response implements ResponseInterface
-{
+class Response implements ResponseInterface {
     use MessageTrait;
-
     /** @var array Map of standard HTTP status code/reason phrases */
     private static $phrases = [
         100 => 'Continue',
@@ -72,12 +69,10 @@ class Response implements ResponseInterface
         508 => 'Loop Detected',
         511 => 'Network Authentication Required',
     ];
-
     /** @var string */
-    private $reasonPhrase = '';
-
+    private $reasonPhrase   = '';
     /** @var int */
-    private $statusCode = 200;
+    private $statusCode     = 200;
 
     /**
      * @param int                                  $status  Status code
@@ -87,11 +82,7 @@ class Response implements ResponseInterface
      * @param string|null                          $reason  Reason phrase (when empty a default will be used based on the status code)
      */
     public function __construct(
-        $status = 200,
-        array $headers = [],
-        $body = null,
-        $version = '1.1',
-        $reason = null
+    $status = 200, array $headers = [], $body = null, $version = '1.1', $reason = null
     ) {
         $this->statusCode = (int) $status;
 
@@ -102,26 +93,24 @@ class Response implements ResponseInterface
         $this->setHeaders($headers);
         if ($reason == '' && isset(self::$phrases[$this->statusCode])) {
             $this->reasonPhrase = self::$phrases[$this->statusCode];
-        } else {
+        }
+        else {
             $this->reasonPhrase = (string) $reason;
         }
 
         $this->protocol = $version;
     }
 
-    public function getStatusCode()
-    {
+    public function getStatusCode() {
         return $this->statusCode;
     }
 
-    public function getReasonPhrase()
-    {
+    public function getReasonPhrase() {
         return $this->reasonPhrase;
     }
 
-    public function withStatus($code, $reasonPhrase = '')
-    {
-        $new = clone $this;
+    public function withStatus($code, $reasonPhrase = '') {
+        $new             = clone $this;
         $new->statusCode = (int) $code;
         if ($reasonPhrase == '' && isset(self::$phrases[$new->statusCode])) {
             $reasonPhrase = self::$phrases[$new->statusCode];

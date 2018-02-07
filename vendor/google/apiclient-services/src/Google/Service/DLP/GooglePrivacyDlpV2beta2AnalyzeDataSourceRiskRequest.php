@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2AnalyzeDataSourceRiskRequest extends Google_Model
-{
-  protected $jobConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig';
-  protected $jobConfigDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2AnalyzeDataSourceRiskRequest extends Google_Model {
+    protected $jobConfigType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig';
+    protected $jobConfigDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig
-   */
-  public function setJobConfig(Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig $jobConfig)
-  {
-    $this->jobConfig = $jobConfig;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig
-   */
-  public function getJobConfig()
-  {
-    return $this->jobConfig;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig
+     */
+    public function setJobConfig(Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig $jobConfig) {
+        $this->jobConfig = $jobConfig;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig
+     */
+    public function getJobConfig() {
+        return $this->jobConfig;
+    }
 }

@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1AnnotateVideoProgress extends Google_Collection
-{
-  protected $collection_key = 'annotationProgress';
-  protected $annotationProgressType = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoAnnotationProgress';
-  protected $annotationProgressDataType = 'array';
+class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1AnnotateVideoProgress extends Google_Collection {
+    protected $collection_key             = 'annotationProgress';
+    protected $annotationProgressType     = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoAnnotationProgress';
+    protected $annotationProgressDataType = 'array';
 
-  /**
-   * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoAnnotationProgress
-   */
-  public function setAnnotationProgress($annotationProgress)
-  {
-    $this->annotationProgress = $annotationProgress;
-  }
-  /**
-   * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoAnnotationProgress
-   */
-  public function getAnnotationProgress()
-  {
-    return $this->annotationProgress;
-  }
+    /**
+     * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoAnnotationProgress
+     */
+    public function setAnnotationProgress($annotationProgress) {
+        $this->annotationProgress = $annotationProgress;
+    }
+
+    /**
+     * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoAnnotationProgress
+     */
+    public function getAnnotationProgress() {
+        return $this->annotationProgress;
+    }
 }

@@ -29,65 +29,58 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_Pagespeedonline extends Google_Service
-{
+class Google_Service_Pagespeedonline extends Google_Service {
+    public $pagespeedapi;
 
+    /**
+     * Constructs the internal representation of the Pagespeedonline service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://www.googleapis.com/';
+        $this->servicePath = 'pagespeedonline/v2/';
+        $this->version     = 'v2';
+        $this->serviceName = 'pagespeedonline';
 
-  public $pagespeedapi;
-  
-  /**
-   * Constructs the internal representation of the Pagespeedonline service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'pagespeedonline/v2/';
-    $this->version = 'v2';
-    $this->serviceName = 'pagespeedonline';
-
-    $this->pagespeedapi = new Google_Service_Pagespeedonline_Resource_Pagespeedapi(
-        $this,
-        $this->serviceName,
-        'pagespeedapi',
-        array(
-          'methods' => array(
-            'runpagespeed' => array(
-              'path' => 'runPagespeed',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'url' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
+        $this->pagespeedapi = new Google_Service_Pagespeedonline_Resource_Pagespeedapi(
+                $this, $this->serviceName, 'pagespeedapi', array(
+            'methods' => array(
+                'runpagespeed' => array(
+                    'path'       => 'runPagespeed',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'url'                          => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'filter_third_party_resources' => array(
+                            'location' => 'query',
+                            'type'     => 'boolean',
+                        ),
+                        'locale'                       => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'rule'                         => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                            'repeated' => true,
+                        ),
+                        'screenshot'                   => array(
+                            'location' => 'query',
+                            'type'     => 'boolean',
+                        ),
+                        'strategy'                     => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-                'filter_third_party_resources' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'locale' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'rule' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'screenshot' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'strategy' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

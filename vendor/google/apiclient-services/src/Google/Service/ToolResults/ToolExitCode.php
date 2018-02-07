@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ToolResults_ToolExitCode extends Google_Model
-{
-  public $number;
+class Google_Service_ToolResults_ToolExitCode extends Google_Model {
+    public $number;
 
-  public function setNumber($number)
-  {
-    $this->number = $number;
-  }
-  public function getNumber()
-  {
-    return $this->number;
-  }
+    public function setNumber($number) {
+        $this->number = $number;
+    }
+
+    public function getNumber() {
+        return $this->number;
+    }
 }

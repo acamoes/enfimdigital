@@ -14,22 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Cache;
-
 use Psr\Cache\CacheItemInterface;
 use Psr\Cache\CacheItemPoolInterface;
 
 /**
  * Simple in-memory cache implementation.
  */
-final class MemoryCacheItemPool implements CacheItemPoolInterface
-{
+final class MemoryCacheItemPool implements CacheItemPoolInterface {
     /**
      * @var CacheItemInterface[]
      */
     private $items;
-
     /**
      * @var CacheItemInterface[]
      */
@@ -38,16 +34,14 @@ final class MemoryCacheItemPool implements CacheItemPoolInterface
     /**
      * {@inheritdoc}
      */
-    public function getItem($key)
-    {
+    public function getItem($key) {
         return current($this->getItems([$key]));
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getItems(array $keys = [])
-    {
+    public function getItems(array $keys = []) {
         $items = [];
 
         foreach ($keys as $key) {
@@ -60,8 +54,7 @@ final class MemoryCacheItemPool implements CacheItemPoolInterface
     /**
      * {@inheritdoc}
      */
-    public function hasItem($key)
-    {
+    public function hasItem($key) {
         $this->isValidKey($key);
 
         return isset($this->items[$key]) && $this->items[$key]->isHit();
@@ -70,9 +63,8 @@ final class MemoryCacheItemPool implements CacheItemPoolInterface
     /**
      * {@inheritdoc}
      */
-    public function clear()
-    {
-        $this->items = [];
+    public function clear() {
+        $this->items         = [];
         $this->deferredItems = [];
 
         return true;
@@ -81,16 +73,14 @@ final class MemoryCacheItemPool implements CacheItemPoolInterface
     /**
      * {@inheritdoc}
      */
-    public function deleteItem($key)
-    {
+    public function deleteItem($key) {
         return $this->deleteItems([$key]);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function deleteItems(array $keys)
-    {
+    public function deleteItems(array $keys) {
         array_walk($keys, [$this, 'isValidKey']);
 
         foreach ($keys as $key) {
@@ -103,8 +93,7 @@ final class MemoryCacheItemPool implements CacheItemPoolInterface
     /**
      * {@inheritdoc}
      */
-    public function save(CacheItemInterface $item)
-    {
+    public function save(CacheItemInterface $item) {
         $this->items[$item->getKey()] = $item;
 
         return true;
@@ -113,8 +102,7 @@ final class MemoryCacheItemPool implements CacheItemPoolInterface
     /**
      * {@inheritdoc}
      */
-    public function saveDeferred(CacheItemInterface $item)
-    {
+    public function saveDeferred(CacheItemInterface $item) {
         $this->deferredItems[$item->getKey()] = $item;
 
         return true;
@@ -123,8 +111,7 @@ final class MemoryCacheItemPool implements CacheItemPoolInterface
     /**
      * {@inheritdoc}
      */
-    public function commit()
-    {
+    public function commit() {
         foreach ($this->deferredItems as $item) {
             $this->save($item);
         }
@@ -141,8 +128,7 @@ final class MemoryCacheItemPool implements CacheItemPoolInterface
      * @return bool
      * @throws InvalidArgumentException
      */
-    private function isValidKey($key)
-    {
+    private function isValidKey($key) {
         $invalidCharacters = '{}()/\\\\@:';
 
         if (!is_string($key) || preg_match("#[$invalidCharacters]#", $key)) {

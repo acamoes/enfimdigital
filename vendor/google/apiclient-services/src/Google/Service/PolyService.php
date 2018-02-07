@@ -28,159 +28,146 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_PolyService extends Google_Service
-{
+class Google_Service_PolyService extends Google_Service {
+    public $assets;
+    public $users_assets;
+    public $users_likedassets;
 
+    /**
+     * Constructs the internal representation of the PolyService service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://poly.googleapis.com/';
+        $this->servicePath = '';
+        $this->version     = 'v1';
+        $this->serviceName = 'poly';
 
-  public $assets;
-  public $users_assets;
-  public $users_likedassets;
-  
-  /**
-   * Constructs the internal representation of the PolyService service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://poly.googleapis.com/';
-    $this->servicePath = '';
-    $this->version = 'v1';
-    $this->serviceName = 'poly';
-
-    $this->assets = new Google_Service_PolyService_Resource_Assets(
-        $this,
-        $this->serviceName,
-        'assets',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        $this->assets            = new Google_Service_PolyService_Resource_Assets(
+                $this, $this->serviceName, 'assets', array(
+            'methods' => array(
+                'get'  => array(
+                    'path'       => 'v1/{+name}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'list' => array(
+                    'path'       => 'v1/assets',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'maxComplexity' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageToken'     => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageSize'      => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'keywords'      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'orderBy'       => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'format'        => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'curated'       => array(
+                            'location' => 'query',
+                            'type'     => 'boolean',
+                        ),
+                        'category'      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-              ),
-            ),'list' => array(
-              'path' => 'v1/assets',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'maxComplexity' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+            )
+                )
+        );
+        $this->users_assets      = new Google_Service_PolyService_Resource_UsersAssets(
+                $this, $this->serviceName, 'assets', array(
+            'methods' => array(
+                'list' => array(
+                    'path'       => 'v1/{+name}/assets',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'name'       => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'pageSize'   => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'visibility' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'orderBy'    => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'format'     => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageToken'  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+            )
+                )
+        );
+        $this->users_likedassets = new Google_Service_PolyService_Resource_UsersLikedassets(
+                $this, $this->serviceName, 'likedassets', array(
+            'methods' => array(
+                'list' => array(
+                    'path'       => 'v1/{+name}/likedassets',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'name'      => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'pageSize'  => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'format'    => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'orderBy'   => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageToken' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'keywords' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'orderBy' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'format' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'curated' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'category' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->users_assets = new Google_Service_PolyService_Resource_UsersAssets(
-        $this,
-        $this->serviceName,
-        'assets',
-        array(
-          'methods' => array(
-            'list' => array(
-              'path' => 'v1/{+name}/assets',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'visibility' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'orderBy' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'format' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->users_likedassets = new Google_Service_PolyService_Resource_UsersLikedassets(
-        $this,
-        $this->serviceName,
-        'likedassets',
-        array(
-          'methods' => array(
-            'list' => array(
-              'path' => 'v1/{+name}/likedassets',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'format' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'orderBy' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

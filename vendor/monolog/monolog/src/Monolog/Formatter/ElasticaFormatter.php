@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Formatter;
-
 use Elastica\Document;
 
 /**
@@ -18,13 +15,11 @@ use Elastica\Document;
  *
  * @author Jelle Vink <jelle.vink@gmail.com>
  */
-class ElasticaFormatter extends NormalizerFormatter
-{
+class ElasticaFormatter extends NormalizerFormatter {
     /**
      * @var string Elastic search index name
      */
     protected $index;
-
     /**
      * @var string Elastic search document type
      */
@@ -34,20 +29,18 @@ class ElasticaFormatter extends NormalizerFormatter
      * @param string $index Elastic Search index name
      * @param string $type  Elastic Search document type
      */
-    public function __construct($index, $type)
-    {
+    public function __construct($index, $type) {
         // elasticsearch requires a ISO 8601 format date with optional millisecond precision.
         parent::__construct('Y-m-d\TH:i:s.uP');
 
         $this->index = $index;
-        $this->type = $type;
+        $this->type  = $type;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function format(array $record)
-    {
+    public function format(array $record) {
         $record = parent::format($record);
 
         return $this->getDocument($record);
@@ -57,8 +50,7 @@ class ElasticaFormatter extends NormalizerFormatter
      * Getter index
      * @return string
      */
-    public function getIndex()
-    {
+    public function getIndex() {
         return $this->index;
     }
 
@@ -66,8 +58,7 @@ class ElasticaFormatter extends NormalizerFormatter
      * Getter type
      * @return string
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -77,8 +68,7 @@ class ElasticaFormatter extends NormalizerFormatter
      * @param  array    $record Log message
      * @return Document
      */
-    protected function getDocument($record)
-    {
+    protected function getDocument($record) {
         $document = new Document();
         $document->setData($record);
         $document->setType($this->type);

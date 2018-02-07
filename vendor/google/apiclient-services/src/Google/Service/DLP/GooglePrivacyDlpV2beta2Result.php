@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2Result extends Google_Collection
-{
-  protected $collection_key = 'infoTypeStats';
-  protected $infoTypeStatsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeStatistics';
-  protected $infoTypeStatsDataType = 'array';
-  public $processedBytes;
-  public $totalEstimatedBytes;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2Result extends Google_Collection {
+    protected $collection_key        = 'infoTypeStats';
+    protected $infoTypeStatsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeStatistics';
+    protected $infoTypeStatsDataType = 'array';
+    public $processedBytes;
+    public $totalEstimatedBytes;
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeStatistics
-   */
-  public function setInfoTypeStats($infoTypeStats)
-  {
-    $this->infoTypeStats = $infoTypeStats;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeStatistics
-   */
-  public function getInfoTypeStats()
-  {
-    return $this->infoTypeStats;
-  }
-  public function setProcessedBytes($processedBytes)
-  {
-    $this->processedBytes = $processedBytes;
-  }
-  public function getProcessedBytes()
-  {
-    return $this->processedBytes;
-  }
-  public function setTotalEstimatedBytes($totalEstimatedBytes)
-  {
-    $this->totalEstimatedBytes = $totalEstimatedBytes;
-  }
-  public function getTotalEstimatedBytes()
-  {
-    return $this->totalEstimatedBytes;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeStatistics
+     */
+    public function setInfoTypeStats($infoTypeStats) {
+        $this->infoTypeStats = $infoTypeStats;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeStatistics
+     */
+    public function getInfoTypeStats() {
+        return $this->infoTypeStats;
+    }
+
+    public function setProcessedBytes($processedBytes) {
+        $this->processedBytes = $processedBytes;
+    }
+
+    public function getProcessedBytes() {
+        return $this->processedBytes;
+    }
+
+    public function setTotalEstimatedBytes($totalEstimatedBytes) {
+        $this->totalEstimatedBytes = $totalEstimatedBytes;
+    }
+
+    public function getTotalEstimatedBytes() {
+        return $this->totalEstimatedBytes;
+    }
 }

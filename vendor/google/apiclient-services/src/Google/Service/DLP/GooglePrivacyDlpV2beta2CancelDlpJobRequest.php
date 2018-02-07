@@ -15,6 +15,6 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2CancelDlpJobRequest extends Google_Model
-{
+class Google_Service_DLP_GooglePrivacyDlpV2beta2CancelDlpJobRequest extends Google_Model {
+
 }

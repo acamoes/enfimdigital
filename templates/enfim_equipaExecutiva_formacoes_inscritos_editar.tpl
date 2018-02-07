@@ -30,7 +30,8 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search='+document.getElementById('{$currentTab}{$currentSubTab}search').value+'&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value,'SST{$currentTab}{$currentSubTab}');">X
+                                       onclick="$('#form').html('');
+                                               request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}');">X
                                     Close</label>
                             </div>
                         </div>
@@ -92,16 +93,17 @@
                             <div style="float: right">
                                 <label for="aepId">NrAssoc</label>
                                 <ul class="actions" onclick="
-                        if(isPositiveInteger(document.getElementById('aepId').value))
-                                            {ldelim}requestAPI('action={$action}&task=getEAEP&tab={$currentTab}&tab={$currentSubTab}&aepId='+document.getElementById('aepId').value, 'formMsg');}"
+                                        if (isPositiveInteger(document.getElementById('aepId').value))
+                                    {ldelim}
+        requestAPI('action={$action}&task=getEAEP&tab={$currentTab}&tab={$currentSubTab}&aepId=' + document.getElementById('aepId').value, 'formMsg');}"
                                     style="float: right">
                                     <li class="button small"
                                         style="cursor: pointer; padding: 0 10pt 0 10pt; line-height: 3em; height: 3em;background-color: darkgreen;">e-aep</li>
                                 </ul>
                                 <input required type="text"
-                                                                         name="aepId" id="aepId" maxlength="6" style="width: 150px"
-                                                                         value="{$utilizador['aepId']}"
-                                                                         {literal}pattern="[0-9]{5,}$" />{/literal}
+                                       name="aepId" id="aepId" maxlength="6" style="width: 150px"
+                                       value="{$utilizador['aepId']}"
+                                       {literal}pattern="[0-9]{5,}$" />{/literal}
                             </div>
                         </div>
                         <div class="row uniform">
@@ -137,7 +139,8 @@
                                 <label for="unitType">Nível</label> 
                                 <select name="unitType"
                                         id="unitType" style="width: 200px"
-                                        onChange="changeField1(this.options[this.selectedIndex].value, '{$utilizador['unitType']}', 'unitDiv'); changeField2(this.options[this.selectedIndex].value, '{$utilizador['unit']}', 'rankDiv');">
+                                        onChange="changeField1(this.options[this.selectedIndex].value, '{$utilizador['unitType']}', 'unitDiv');
+                                                changeField2(this.options[this.selectedIndex].value, '{$utilizador['unit']}', 'rankDiv');">
                                     <option selected></option>
                                     <option value="Nacional"
                                             {if $utilizador['unitType'] eq "Nacional"}selected='selected'{/if}>Nacional</option>

@@ -38,7 +38,7 @@ class Formadores {
         $query        = "SELECT c.*,ct.*,cs.completeName,cs.course,cs.status as csStatus FROM courses c " .
                 "INNER JOIN courses_team ct ON c.idCourses=ct.idCourses " .
                 "INNER JOIN courses cs ON cs.idCourses=ct.idCourses " .
-                "WHERE ct.idCourses=" . $data['idCourses'] . " AND ct.idUsers=" . $_SESSION['users']->id . " ";
+                "WHERE ct.idCourses=" . $data['idCourses'] . " AND ct.idUsers=" . $_SESSION['users']->idUsers . " ";
         $con          = new Database ();
         $this->course = $con->get($query);
         if (!$this->course) {
@@ -237,7 +237,7 @@ class Formadores {
     function buildEvaluation($data) {
         $query            = "SELECT e.idEvaluations,e.idCourse,e.target,ce.idCourses,e.template,ce.evaluation,ce.status "
                 . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
-                . "WHERE ce.idUsers=" . $_SESSION['users']->id
+                . "WHERE ce.idUsers=" . $_SESSION['users']->idUsers
                 . " AND e.idEvaluations=" . $data['idEvaluations']
                 . " AND e.idCourse=" . $this->idCourse
                 . " AND ce.idCourses=" . $this->idCourses
@@ -257,7 +257,7 @@ class Formadores {
     function saveEvaluation($data) {
         $query            = "SELECT e.idEvaluations,e.idCourse,e.target,ce.idCourses,e.template,ce.evaluation,ce.status "
                 . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
-                . "WHERE ce.idUsers=" . $_SESSION['users']->id
+                . "WHERE ce.idUsers=" . $_SESSION['users']->idUsers
                 . " AND e.idEvaluations=" . $data['idEvaluations']
                 . " AND e.idCourse=" . $this->idCourse
                 . " AND ce.idCourses=" . $this->idCourses
@@ -271,9 +271,13 @@ class Formadores {
                 . "evaluation = '" . $responsesJson . "', "
                 . "date = '" . date('Y-m-d H:i:s') . "' "
                 . "WHERE idEvaluations = " . $data['idEvaluations']
-                . " AND idUsers=" . $_SESSION['users']->id
+                . " AND idUsers=" . $_SESSION['users']->idUsers
                 . " AND idCourses=" . $this->idCourses
                 . " AND idCourse=" . $this->idCourse . " AND status<>'Fechado' ";
-        $result           = $con->set($query);
+        $resultado        = $con->set($query);
+        if (!$resultado) {
+            return ['success' => false, 'message' => 'Não foi guardado.'];
+        }
+        return ['success' => true, 'message' => 'Foi guardado com sucesso.'];
     }
 }

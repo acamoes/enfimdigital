@@ -15,37 +15,35 @@
  * the License.
  */
 
-class Google_Service_Customsearch_ContextFacets extends Google_Model
-{
-  protected $internal_gapi_mappings = array(
+class Google_Service_Customsearch_ContextFacets extends Google_Model {
+    protected $internal_gapi_mappings = array(
         "labelWithOp" => "label_with_op",
-  );
-  public $anchor;
-  public $label;
-  public $labelWithOp;
+    );
+    public $anchor;
+    public $label;
+    public $labelWithOp;
 
-  public function setAnchor($anchor)
-  {
-    $this->anchor = $anchor;
-  }
-  public function getAnchor()
-  {
-    return $this->anchor;
-  }
-  public function setLabel($label)
-  {
-    $this->label = $label;
-  }
-  public function getLabel()
-  {
-    return $this->label;
-  }
-  public function setLabelWithOp($labelWithOp)
-  {
-    $this->labelWithOp = $labelWithOp;
-  }
-  public function getLabelWithOp()
-  {
-    return $this->labelWithOp;
-  }
+    public function setAnchor($anchor) {
+        $this->anchor = $anchor;
+    }
+
+    public function getAnchor() {
+        return $this->anchor;
+    }
+
+    public function setLabel($label) {
+        $this->label = $label;
+    }
+
+    public function getLabel() {
+        return $this->label;
+    }
+
+    public function setLabelWithOp($labelWithOp) {
+        $this->labelWithOp = $labelWithOp;
+    }
+
+    public function getLabelWithOp() {
+        return $this->labelWithOp;
+    }
 }

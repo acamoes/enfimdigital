@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_AnalyticsReporting_SimpleSegment extends Google_Collection
-{
-  protected $collection_key = 'orFiltersForSegment';
-  protected $orFiltersForSegmentType = 'Google_Service_AnalyticsReporting_OrFiltersForSegment';
-  protected $orFiltersForSegmentDataType = 'array';
+class Google_Service_AnalyticsReporting_SimpleSegment extends Google_Collection {
+    protected $collection_key              = 'orFiltersForSegment';
+    protected $orFiltersForSegmentType     = 'Google_Service_AnalyticsReporting_OrFiltersForSegment';
+    protected $orFiltersForSegmentDataType = 'array';
 
-  /**
-   * @param Google_Service_AnalyticsReporting_OrFiltersForSegment
-   */
-  public function setOrFiltersForSegment($orFiltersForSegment)
-  {
-    $this->orFiltersForSegment = $orFiltersForSegment;
-  }
-  /**
-   * @return Google_Service_AnalyticsReporting_OrFiltersForSegment
-   */
-  public function getOrFiltersForSegment()
-  {
-    return $this->orFiltersForSegment;
-  }
+    /**
+     * @param Google_Service_AnalyticsReporting_OrFiltersForSegment
+     */
+    public function setOrFiltersForSegment($orFiltersForSegment) {
+        $this->orFiltersForSegment = $orFiltersForSegment;
+    }
+
+    /**
+     * @return Google_Service_AnalyticsReporting_OrFiltersForSegment
+     */
+    public function getOrFiltersForSegment() {
+        return $this->orFiltersForSegment;
+    }
 }

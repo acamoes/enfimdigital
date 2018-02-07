@@ -351,4 +351,8 @@ class EquipaExecutiva {
         $eaep = new Users();
         return $eaep->getEAEP($data);
     }
+
+    function getRelatorioAvaliacoes($data) {
+        return Evaluation::evaluationReport($data);
+    }
 }

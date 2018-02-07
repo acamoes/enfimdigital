@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_GenerateConfigReportRequest extends Google_Model
-{
-  public $newConfig;
-  public $oldConfig;
+class Google_Service_ServiceManagement_GenerateConfigReportRequest extends Google_Model {
+    public $newConfig;
+    public $oldConfig;
 
-  public function setNewConfig($newConfig)
-  {
-    $this->newConfig = $newConfig;
-  }
-  public function getNewConfig()
-  {
-    return $this->newConfig;
-  }
-  public function setOldConfig($oldConfig)
-  {
-    $this->oldConfig = $oldConfig;
-  }
-  public function getOldConfig()
-  {
-    return $this->oldConfig;
-  }
+    public function setNewConfig($newConfig) {
+        $this->newConfig = $newConfig;
+    }
+
+    public function getNewConfig() {
+        return $this->newConfig;
+    }
+
+    public function setOldConfig($oldConfig) {
+        $this->oldConfig = $oldConfig;
+    }
+
+    public function getOldConfig() {
+        return $this->oldConfig;
+    }
 }

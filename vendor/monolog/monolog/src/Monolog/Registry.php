@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog;
-
 use InvalidArgumentException;
 
 /**
@@ -35,8 +32,7 @@ use InvalidArgumentException;
  *
  * @author Tomas Tatarko <tomas@tatarko.sk>
  */
-class Registry
-{
+class Registry {
     /**
      * List of all loggers in the registry (by named indexes)
      *
@@ -52,8 +48,7 @@ class Registry
      * @param  bool                      $overwrite Overwrite instance in the registry if the given name already exists?
      * @throws \InvalidArgumentException If $overwrite set to false and named Logger instance already exists
      */
-    public static function addLogger(Logger $logger, $name = null, $overwrite = false)
-    {
+    public static function addLogger(Logger $logger, $name = null, $overwrite = false) {
         $name = $name ?: $logger->getName();
 
         if (isset(self::$loggers[$name]) && !$overwrite) {
@@ -68,13 +63,13 @@ class Registry
      *
      * @param string|Logger $logger Name or logger instance
      */
-    public static function hasLogger($logger)
-    {
+    public static function hasLogger($logger) {
         if ($logger instanceof Logger) {
             $index = array_search($logger, self::$loggers, true);
 
             return false !== $index;
-        } else {
+        }
+        else {
             return isset(self::$loggers[$logger]);
         }
     }
@@ -84,13 +79,13 @@ class Registry
      *
      * @param string|Logger $logger Name or logger instance
      */
-    public static function removeLogger($logger)
-    {
+    public static function removeLogger($logger) {
         if ($logger instanceof Logger) {
             if (false !== ($idx = array_search($logger, self::$loggers, true))) {
                 unset(self::$loggers[$idx]);
             }
-        } else {
+        }
+        else {
             unset(self::$loggers[$logger]);
         }
     }
@@ -98,8 +93,7 @@ class Registry
     /**
      * Clears the registry
      */
-    public static function clear()
-    {
+    public static function clear() {
         self::$loggers = array();
     }
 
@@ -110,8 +104,7 @@ class Registry
      * @throws \InvalidArgumentException If named Logger instance is not in the registry
      * @return Logger                    Requested instance of Logger
      */
-    public static function getInstance($name)
-    {
+    public static function getInstance($name) {
         if (!isset(self::$loggers[$name])) {
             throw new InvalidArgumentException(sprintf('Requested "%s" logger instance is not in the registry', $name));
         }
@@ -127,8 +120,7 @@ class Registry
      * @throws \InvalidArgumentException If named Logger instance is not in the registry
      * @return Logger                    Requested instance of Logger
      */
-    public static function __callStatic($name, $arguments)
-    {
+    public static function __callStatic($name, $arguments) {
         return self::getInstance($name);
     }
 }

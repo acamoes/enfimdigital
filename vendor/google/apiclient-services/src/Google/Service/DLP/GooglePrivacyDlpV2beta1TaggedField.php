@@ -15,64 +15,62 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1TaggedField extends Google_Model
-{
-  public $customTag;
-  protected $fieldType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId';
-  protected $fieldDataType = '';
-  protected $inferredType = 'Google_Service_DLP_GoogleProtobufEmpty';
-  protected $inferredDataType = '';
-  protected $infoTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType';
-  protected $infoTypeDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1TaggedField extends Google_Model {
+    public $customTag;
+    protected $fieldType        = 'Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId';
+    protected $fieldDataType    = '';
+    protected $inferredType     = 'Google_Service_DLP_GoogleProtobufEmpty';
+    protected $inferredDataType = '';
+    protected $infoTypeType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType';
+    protected $infoTypeDataType = '';
 
-  public function setCustomTag($customTag)
-  {
-    $this->customTag = $customTag;
-  }
-  public function getCustomTag()
-  {
-    return $this->customTag;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
-   */
-  public function setField(Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId $field)
-  {
-    $this->field = $field;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
-   */
-  public function getField()
-  {
-    return $this->field;
-  }
-  /**
-   * @param Google_Service_DLP_GoogleProtobufEmpty
-   */
-  public function setInferred(Google_Service_DLP_GoogleProtobufEmpty $inferred)
-  {
-    $this->inferred = $inferred;
-  }
-  /**
-   * @return Google_Service_DLP_GoogleProtobufEmpty
-   */
-  public function getInferred()
-  {
-    return $this->inferred;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType
-   */
-  public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType $infoType)
-  {
-    $this->infoType = $infoType;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType
-   */
-  public function getInfoType()
-  {
-    return $this->infoType;
-  }
+    public function setCustomTag($customTag) {
+        $this->customTag = $customTag;
+    }
+
+    public function getCustomTag() {
+        return $this->customTag;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
+     */
+    public function setField(Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId $field) {
+        $this->field = $field;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId
+     */
+    public function getField() {
+        return $this->field;
+    }
+
+    /**
+     * @param Google_Service_DLP_GoogleProtobufEmpty
+     */
+    public function setInferred(Google_Service_DLP_GoogleProtobufEmpty $inferred) {
+        $this->inferred = $inferred;
+    }
+
+    /**
+     * @return Google_Service_DLP_GoogleProtobufEmpty
+     */
+    public function getInferred() {
+        return $this->inferred;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType
+     */
+    public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType $infoType) {
+        $this->infoType = $infoType;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType
+     */
+    public function getInfoType() {
+        return $this->infoType;
+    }
 }

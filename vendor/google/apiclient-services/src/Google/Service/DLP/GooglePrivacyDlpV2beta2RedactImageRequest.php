@@ -15,58 +15,56 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageRequest extends Google_Collection
-{
-  protected $collection_key = 'imageRedactionConfigs';
-  public $imageData;
-  protected $imageRedactionConfigsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2ImageRedactionConfig';
-  protected $imageRedactionConfigsDataType = 'array';
-  public $imageType;
-  protected $inspectConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig';
-  protected $inspectConfigDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2RedactImageRequest extends Google_Collection {
+    protected $collection_key                = 'imageRedactionConfigs';
+    public $imageData;
+    protected $imageRedactionConfigsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2ImageRedactionConfig';
+    protected $imageRedactionConfigsDataType = 'array';
+    public $imageType;
+    protected $inspectConfigType             = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig';
+    protected $inspectConfigDataType         = '';
 
-  public function setImageData($imageData)
-  {
-    $this->imageData = $imageData;
-  }
-  public function getImageData()
-  {
-    return $this->imageData;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2ImageRedactionConfig
-   */
-  public function setImageRedactionConfigs($imageRedactionConfigs)
-  {
-    $this->imageRedactionConfigs = $imageRedactionConfigs;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2ImageRedactionConfig
-   */
-  public function getImageRedactionConfigs()
-  {
-    return $this->imageRedactionConfigs;
-  }
-  public function setImageType($imageType)
-  {
-    $this->imageType = $imageType;
-  }
-  public function getImageType()
-  {
-    return $this->imageType;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig
-   */
-  public function setInspectConfig(Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig $inspectConfig)
-  {
-    $this->inspectConfig = $inspectConfig;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig
-   */
-  public function getInspectConfig()
-  {
-    return $this->inspectConfig;
-  }
+    public function setImageData($imageData) {
+        $this->imageData = $imageData;
+    }
+
+    public function getImageData() {
+        return $this->imageData;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2ImageRedactionConfig
+     */
+    public function setImageRedactionConfigs($imageRedactionConfigs) {
+        $this->imageRedactionConfigs = $imageRedactionConfigs;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2ImageRedactionConfig
+     */
+    public function getImageRedactionConfigs() {
+        return $this->imageRedactionConfigs;
+    }
+
+    public function setImageType($imageType) {
+        $this->imageType = $imageType;
+    }
+
+    public function getImageType() {
+        return $this->imageType;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig
+     */
+    public function setInspectConfig(Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig $inspectConfig) {
+        $this->inspectConfig = $inspectConfig;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InspectConfig
+     */
+    public function getInspectConfig() {
+        return $this->inspectConfig;
+    }
 }

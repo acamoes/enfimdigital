@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,26 +7,23 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Formatter;
 
-class ScalarFormatterTest extends \PHPUnit_Framework_TestCase
-{
+class ScalarFormatterTest extends \PHPUnit_Framework_TestCase {
     private $formatter;
 
-    public function setUp()
-    {
+    public function setUp() {
         $this->formatter = new ScalarFormatter();
     }
 
-    public function buildTrace(\Exception $e)
-    {
-        $data = array();
+    public function buildTrace(\Exception $e) {
+        $data  = array();
         $trace = $e->getTrace();
         foreach ($trace as $frame) {
             if (isset($frame['file'])) {
-                $data[] = $frame['file'].':'.$frame['line'];
-            } else {
+                $data[] = $frame['file'] . ':' . $frame['line'];
+            }
+            else {
                 $data[] = json_encode($frame);
             }
         }
@@ -35,8 +31,7 @@ class ScalarFormatterTest extends \PHPUnit_Framework_TestCase
         return $data;
     }
 
-    public function encodeJson($data)
-    {
+    public function encodeJson($data) {
         if (version_compare(PHP_VERSION, '5.4.0', '>=')) {
             return json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         }
@@ -44,8 +39,7 @@ class ScalarFormatterTest extends \PHPUnit_Framework_TestCase
         return json_encode($data);
     }
 
-    public function testFormat()
-    {
+    public function testFormat() {
         $exception = new \Exception('foo');
         $formatted = $this->formatter->format(array(
             'foo' => 'string',
@@ -71,23 +65,21 @@ class ScalarFormatterTest extends \PHPUnit_Framework_TestCase
                 'file'    => $exception->getFile() . ':' . $exception->getLine(),
                 'trace'   => $this->buildTrace($exception),
             )),
-        ), $formatted);
+                ), $formatted);
     }
 
-    public function testFormatWithErrorContext()
-    {
-        $context = array('file' => 'foo', 'line' => 1);
+    public function testFormatWithErrorContext() {
+        $context   = array('file' => 'foo', 'line' => 1);
         $formatted = $this->formatter->format(array(
             'context' => $context,
         ));
 
         $this->assertSame(array(
             'context' => $this->encodeJson($context),
-        ), $formatted);
+                ), $formatted);
     }
 
-    public function testFormatWithExceptionContext()
-    {
+    public function testFormatWithExceptionContext() {
         $exception = new \Exception('foo');
         $formatted = $this->formatter->format(array(
             'context' => array(
@@ -105,6 +97,6 @@ class ScalarFormatterTest extends \PHPUnit_Framework_TestCase
                     'trace'   => $this->buildTrace($exception),
                 ),
             )),
-        ), $formatted);
+                ), $formatted);
     }
 }

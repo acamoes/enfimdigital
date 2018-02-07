@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Dataflow_Step extends Google_Model
-{
-  public $kind;
-  public $name;
-  public $properties;
+class Google_Service_Dataflow_Step extends Google_Model {
+    public $kind;
+    public $name;
+    public $properties;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setProperties($properties)
-  {
-    $this->properties = $properties;
-  }
-  public function getProperties()
-  {
-    return $this->properties;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setProperties($properties) {
+        $this->properties = $properties;
+    }
+
+    public function getProperties() {
+        return $this->properties;
+    }
 }

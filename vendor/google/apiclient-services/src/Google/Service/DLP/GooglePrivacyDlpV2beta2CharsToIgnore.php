@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2CharsToIgnore extends Google_Model
-{
-  public $charactersToSkip;
-  public $commonCharactersToIgnore;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2CharsToIgnore extends Google_Model {
+    public $charactersToSkip;
+    public $commonCharactersToIgnore;
 
-  public function setCharactersToSkip($charactersToSkip)
-  {
-    $this->charactersToSkip = $charactersToSkip;
-  }
-  public function getCharactersToSkip()
-  {
-    return $this->charactersToSkip;
-  }
-  public function setCommonCharactersToIgnore($commonCharactersToIgnore)
-  {
-    $this->commonCharactersToIgnore = $commonCharactersToIgnore;
-  }
-  public function getCommonCharactersToIgnore()
-  {
-    return $this->commonCharactersToIgnore;
-  }
+    public function setCharactersToSkip($charactersToSkip) {
+        $this->charactersToSkip = $charactersToSkip;
+    }
+
+    public function getCharactersToSkip() {
+        return $this->charactersToSkip;
+    }
+
+    public function setCommonCharactersToIgnore($commonCharactersToIgnore) {
+        $this->commonCharactersToIgnore = $commonCharactersToIgnore;
+    }
+
+    public function getCommonCharactersToIgnore() {
+        return $this->commonCharactersToIgnore;
+    }
 }

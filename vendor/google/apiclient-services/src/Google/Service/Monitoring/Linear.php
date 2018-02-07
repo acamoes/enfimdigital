@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Monitoring_Linear extends Google_Model
-{
-  public $numFiniteBuckets;
-  public $offset;
-  public $width;
+class Google_Service_Monitoring_Linear extends Google_Model {
+    public $numFiniteBuckets;
+    public $offset;
+    public $width;
 
-  public function setNumFiniteBuckets($numFiniteBuckets)
-  {
-    $this->numFiniteBuckets = $numFiniteBuckets;
-  }
-  public function getNumFiniteBuckets()
-  {
-    return $this->numFiniteBuckets;
-  }
-  public function setOffset($offset)
-  {
-    $this->offset = $offset;
-  }
-  public function getOffset()
-  {
-    return $this->offset;
-  }
-  public function setWidth($width)
-  {
-    $this->width = $width;
-  }
-  public function getWidth()
-  {
-    return $this->width;
-  }
+    public function setNumFiniteBuckets($numFiniteBuckets) {
+        $this->numFiniteBuckets = $numFiniteBuckets;
+    }
+
+    public function getNumFiniteBuckets() {
+        return $this->numFiniteBuckets;
+    }
+
+    public function setOffset($offset) {
+        $this->offset = $offset;
+    }
+
+    public function getOffset() {
+        return $this->offset;
+    }
+
+    public function setWidth($width) {
+        $this->width = $width;
+    }
+
+    public function getWidth() {
+        return $this->width;
+    }
 }

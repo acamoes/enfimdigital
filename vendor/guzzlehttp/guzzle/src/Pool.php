@@ -1,6 +1,5 @@
 <?php
 namespace GuzzleHttp;
-
 use GuzzleHttp\Promise\PromisorInterface;
 use Psr\Http\Message\RequestInterface;
 use GuzzleHttp\Promise\EachPromise;
@@ -16,8 +15,7 @@ use GuzzleHttp\Promise\EachPromise;
  * "request_options" array that should be merged on top of any existing
  * options, and the function MUST then return a wait-able promise.
  */
-class Pool implements PromisorInterface
-{
+class Pool implements PromisorInterface {
     /** @var EachPromise */
     private $each;
 
@@ -32,21 +30,21 @@ class Pool implements PromisorInterface
      *     - rejected: (callable) Function to invoke when a request is rejected.
      */
     public function __construct(
-        ClientInterface $client,
-        $requests,
-        array $config = []
+    ClientInterface $client, $requests, array $config = []
     ) {
         // Backwards compatibility.
         if (isset($config['pool_size'])) {
             $config['concurrency'] = $config['pool_size'];
-        } elseif (!isset($config['concurrency'])) {
+        }
+        elseif (!isset($config['concurrency'])) {
             $config['concurrency'] = 25;
         }
 
         if (isset($config['options'])) {
             $opts = $config['options'];
             unset($config['options']);
-        } else {
+        }
+        else {
             $opts = [];
         }
 
@@ -55,13 +53,15 @@ class Pool implements PromisorInterface
             foreach ($iterable as $key => $rfn) {
                 if ($rfn instanceof RequestInterface) {
                     yield $key => $client->sendAsync($rfn, $opts);
-                } elseif (is_callable($rfn)) {
+                }
+                elseif (is_callable($rfn)) {
                     yield $key => $rfn($opts);
-                } else {
+                }
+                else {
                     throw new \InvalidArgumentException('Each value yielded by '
-                        . 'the iterator must be a Psr7\Http\Message\RequestInterface '
-                        . 'or a callable that returns a promise that fulfills '
-                        . 'with a Psr7\Message\Http\ResponseInterface object.');
+                    . 'the iterator must be a Psr7\Http\Message\RequestInterface '
+                    . 'or a callable that returns a promise that fulfills '
+                    . 'with a Psr7\Message\Http\ResponseInterface object.');
                 }
             }
         };
@@ -69,8 +69,7 @@ class Pool implements PromisorInterface
         $this->each = new EachPromise($requests(), $config);
     }
 
-    public function promise()
-    {
+    public function promise() {
         return $this->each->promise();
     }
 
@@ -92,11 +91,9 @@ class Pool implements PromisorInterface
      * @throws \InvalidArgumentException if the event format is incorrect.
      */
     public static function batch(
-        ClientInterface $client,
-        $requests,
-        array $options = []
+    ClientInterface $client, $requests, array $options = []
     ) {
-        $res = [];
+        $res  = [];
         self::cmpCallback($options, 'fulfilled', $res);
         self::cmpCallback($options, 'rejected', $res);
         $pool = new static($client, $requests, $options);
@@ -106,14 +103,14 @@ class Pool implements PromisorInterface
         return $res;
     }
 
-    private static function cmpCallback(array &$options, $name, array &$results)
-    {
+    private static function cmpCallback(array &$options, $name, array &$results) {
         if (!isset($options[$name])) {
             $options[$name] = function ($v, $k) use (&$results) {
                 $results[$k] = $v;
             };
-        } else {
-            $currentFn = $options[$name];
+        }
+        else {
+            $currentFn      = $options[$name];
             $options[$name] = function ($v, $k) use (&$results, $currentFn) {
                 $currentFn($v, $k);
                 $results[$k] = $v;

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1FileSet extends Google_Model
-{
-  public $url;
+class Google_Service_DLP_GooglePrivacyDlpV2beta1FileSet extends Google_Model {
+    public $url;
 
-  public function setUrl($url)
-  {
-    $this->url = $url;
-  }
-  public function getUrl()
-  {
-    return $this->url;
-  }
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+
+    public function getUrl() {
+        return $this->url;
+    }
 }

@@ -20,21 +20,21 @@ class Formandos {
         $this->tabs = json_decode('{"tabs":[{"text":"Informações","tab":"informacoes"},{"text":"Arquivo","tab":"arquivo"},{"text":"Avaliação","tab":"avaliacao"} ]}');
     }
 
-    function getCourse($id) {
-        $query        = "SELECT * FROM courses c INNER JOIN users_courses uc ON c.idCourses=uc.idCourses WHERE uc.idCourses=" . $id . " AND uc.idUsers=" . $_SESSION['users']->id . " ";
+    function getCourse($idCourses) {
+        $query        = "SELECT * FROM courses c INNER JOIN users_courses uc ON c.idCourses=uc.idCourses WHERE uc.idCourses=" . $idCourses . " AND uc.idUsers=" . $_SESSION['users']->idUsers . " ";
         $con          = new Database ();
         $this->course = $con->get($query);
         if (!$this->course) {
             return false;
         }
         $this->idCourse  = $this->course[0]['idCourse'];
-        $query           = "SELECT * FROM courses_documents WHERE idCourses=" . $id . " AND status='Fechado' AND public='Sim' ";
+        $query           = "SELECT * FROM courses_documents WHERE idCourses=" . $idCourses . " AND status='Fechado' AND public='Sim' ";
         $this->documents = $con->get($query);
 
-        $query              = "SELECT * FROM courses_informations WHERE idCourses=" . $id . " AND status='Ativo' ORDER BY date DESC";
+        $query              = "SELECT * FROM courses_informations WHERE idCourses=" . $idCourses . " AND status='Ativo' ORDER BY date DESC";
         $this->informations = $con->get($query);
 
-        $query             = "SELECT * FROM courses_evaluations WHERE idCourses=" . $id . " AND idUsers=" . $_SESSION['users']->id . " AND status IN ('Aberto','Fechado') ";
+        $query             = "SELECT * FROM courses_evaluations WHERE idCourses=" . $idCourses . " AND idUsers=" . $_SESSION['users']->idUsers . " AND status IN ('Aberto','Fechado') ";
         $this->evaluations = $con->get($query);
         return true;
     }
@@ -42,7 +42,7 @@ class Formandos {
     function buildEvaluation($data) {
         $query            = "SELECT e.idEvaluations,e.idCourse,e.target,ce.idCourses,e.template,ce.evaluation,ce.status "
                 . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
-                . "WHERE ce.idUsers=" . $_SESSION['users']->id
+                . "WHERE ce.idUsers=" . $_SESSION['users']->idUsers
                 . " AND e.idEvaluations=" . $data['idEvaluations']
                 . " AND e.idCourse=" . $this->idCourse
                 . " AND ce.idCourses=" . $this->idCourses
@@ -62,7 +62,7 @@ class Formandos {
     function saveEvaluation($data) {
         $query            = "SELECT e.idEvaluations,e.idCourse,e.target,ce.idCourses,e.template,ce.evaluation,ce.status "
                 . "FROM evaluations e INNER JOIN courses_evaluations ce ON e.idCourse=ce.idCourse AND e.status='Ativo' "
-                . "WHERE ce.idUsers=" . $_SESSION['users']->id
+                . "WHERE ce.idUsers=" . $_SESSION['users']->idUsers
                 . " AND ce.status='Aberto' "
                 . " AND e.idEvaluations=" . $data['idEvaluations']
                 . " AND e.idCourse=" . $this->idCourse
@@ -77,9 +77,13 @@ class Formandos {
                 . "evaluation = '" . $responsesJson . "', "
                 . "date = '" . date('Y-m-d H:i:s') . "' "
                 . "WHERE idEvaluations = " . $data['idEvaluations']
-                . " AND idUsers=" . $_SESSION['users']->id
+                . " AND idUsers=" . $_SESSION['users']->idUsers
                 . " AND idCourses=" . $this->idCourses
                 . " AND idCourse=" . $this->idCourse . " AND status<>'Fechado' ";
-        $result           = $con->set($query);
+        $resultado        = $con->set($query);
+        if (!$resultado) {
+            return ['success' => false, 'message' => 'Não foi guardado.'];
+        }
+        return ['success' => true, 'message' => 'Foi guardado com sucesso.'];
     }
 }

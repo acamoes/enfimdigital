@@ -14,23 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Tests;
-
 use Google\Auth\HttpHandler\HttpHandlerFactory;
 
-class HttpHandlerFactoryTest extends BaseTest
-{
-    public function testBuildsGuzzle5Handler()
-    {
+class HttpHandlerFactoryTest extends BaseTest {
+
+    public function testBuildsGuzzle5Handler() {
         $this->onlyGuzzle5();
 
         $handler = HttpHandlerFactory::build();
         $this->assertInstanceOf('Google\Auth\HttpHandler\Guzzle5HttpHandler', $handler);
     }
 
-    public function testBuildsGuzzle6Handler()
-    {
+    public function testBuildsGuzzle6Handler() {
         $this->onlyGuzzle6();
 
         $handler = HttpHandlerFactory::build();

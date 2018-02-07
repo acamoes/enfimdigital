@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Credentials;
-
 use Google\Auth\CredentialsLoader;
 use Google\Auth\OAuth2;
 
@@ -29,8 +27,7 @@ use Google\Auth\OAuth2;
  * console (via 'Generate new Json Key').  It is not part of any OAuth2
  * flow, rather it creates a JWT and sends that as a credential.
  */
-class ServiceAccountJwtAccessCredentials extends CredentialsLoader
-{
+class ServiceAccountJwtAccessCredentials extends CredentialsLoader {
     /**
      * The OAuth2 instance used to conduct authorization.
      *
@@ -44,30 +41,29 @@ class ServiceAccountJwtAccessCredentials extends CredentialsLoader
      * @param string|array $jsonKey JSON credential file path or JSON credentials
      *   as an associative array
      */
-    public function __construct($jsonKey)
-    {
+    public function __construct($jsonKey) {
         if (is_string($jsonKey)) {
             if (!file_exists($jsonKey)) {
                 throw new \InvalidArgumentException('file does not exist');
             }
             $jsonKeyStream = file_get_contents($jsonKey);
-            if (!$jsonKey = json_decode($jsonKeyStream, true)) {
+            if (!$jsonKey       = json_decode($jsonKeyStream, true)) {
                 throw new \LogicException('invalid json for auth config');
             }
         }
         if (!array_key_exists('client_email', $jsonKey)) {
             throw new \InvalidArgumentException(
-                'json key is missing the client_email field');
+            'json key is missing the client_email field');
         }
         if (!array_key_exists('private_key', $jsonKey)) {
             throw new \InvalidArgumentException(
-                'json key is missing the private_key field');
+            'json key is missing the private_key field');
         }
         $this->auth = new OAuth2([
-            'issuer' => $jsonKey['client_email'],
-            'sub' => $jsonKey['client_email'],
+            'issuer'           => $jsonKey['client_email'],
+            'sub'              => $jsonKey['client_email'],
             'signingAlgorithm' => 'RS256',
-            'signingKey' => $jsonKey['private_key'],
+            'signingKey'       => $jsonKey['private_key'],
         ]);
     }
 
@@ -81,9 +77,7 @@ class ServiceAccountJwtAccessCredentials extends CredentialsLoader
      * @return array updated metadata hashmap
      */
     public function updateMetadata(
-        $metadata,
-        $authUri = null,
-        callable $httpHandler = null
+    $metadata, $authUri = null, callable $httpHandler = null
     ) {
         if (empty($authUri)) {
             return $metadata;
@@ -101,8 +95,7 @@ class ServiceAccountJwtAccessCredentials extends CredentialsLoader
      *
      * @return array|void
      */
-    public function fetchAuthToken(callable $httpHandler = null)
-    {
+    public function fetchAuthToken(callable $httpHandler = null) {
         $audience = $this->auth->getAudience();
         if (empty($audience)) {
             return null;
@@ -116,16 +109,14 @@ class ServiceAccountJwtAccessCredentials extends CredentialsLoader
     /**
      * @return string
      */
-    public function getCacheKey()
-    {
+    public function getCacheKey() {
         return $this->auth->getCacheKey();
     }
 
     /**
      * @return array
      */
-    public function getLastReceivedToken()
-    {
+    public function getLastReceivedToken() {
         return $this->auth->getLastReceivedToken();
     }
 }

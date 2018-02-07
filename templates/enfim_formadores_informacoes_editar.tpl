@@ -10,15 +10,15 @@
                             datastring.push({ldelim}name: 'action', value: '{$action}'});
                                     datastring.push({ldelim}name: 'task', value: 'atualizar'});
                                             datastring.push({ldelim}name: 'tab', value: '{$currentTab}'});
-                                                            datastring.push({ldelim}name: 'idCourses', value: '{$idCourses}'});
-                                                                    $.ajax({
-                                                                        url: '{$SCRIPT_NAME}',
-                                                                        data: datastring,
-                                                                        success: function (result) {
-                                                                            $('#formMsg').html(result);
-                                                                        }
-                                                                    });
+                                                    datastring.push({ldelim}name: 'idCourses', value: '{$idCourses}'});
+                                                            $.ajax({
+                                                                url: '{$SCRIPT_NAME}',
+                                                                data: datastring,
+                                                                success: function (result) {
+                                                                    $('#formMsg').html(result);
                                                                 }
+                                                            });
+                                                        }
 
                     </script>
                     {assign var="current_dir" value=$SCRIPT_NAME|replace:'index.php':''} 

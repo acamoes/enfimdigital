@@ -15,61 +15,59 @@
  * the License.
  */
 
-class Google_Service_Bigquery_QueryTimelineSample extends Google_Model
-{
-  public $activeInputs;
-  public $completedInputs;
-  public $completedInputsForActiveStages;
-  public $elapsedMs;
-  public $pendingInputs;
-  public $totalSlotMs;
+class Google_Service_Bigquery_QueryTimelineSample extends Google_Model {
+    public $activeInputs;
+    public $completedInputs;
+    public $completedInputsForActiveStages;
+    public $elapsedMs;
+    public $pendingInputs;
+    public $totalSlotMs;
 
-  public function setActiveInputs($activeInputs)
-  {
-    $this->activeInputs = $activeInputs;
-  }
-  public function getActiveInputs()
-  {
-    return $this->activeInputs;
-  }
-  public function setCompletedInputs($completedInputs)
-  {
-    $this->completedInputs = $completedInputs;
-  }
-  public function getCompletedInputs()
-  {
-    return $this->completedInputs;
-  }
-  public function setCompletedInputsForActiveStages($completedInputsForActiveStages)
-  {
-    $this->completedInputsForActiveStages = $completedInputsForActiveStages;
-  }
-  public function getCompletedInputsForActiveStages()
-  {
-    return $this->completedInputsForActiveStages;
-  }
-  public function setElapsedMs($elapsedMs)
-  {
-    $this->elapsedMs = $elapsedMs;
-  }
-  public function getElapsedMs()
-  {
-    return $this->elapsedMs;
-  }
-  public function setPendingInputs($pendingInputs)
-  {
-    $this->pendingInputs = $pendingInputs;
-  }
-  public function getPendingInputs()
-  {
-    return $this->pendingInputs;
-  }
-  public function setTotalSlotMs($totalSlotMs)
-  {
-    $this->totalSlotMs = $totalSlotMs;
-  }
-  public function getTotalSlotMs()
-  {
-    return $this->totalSlotMs;
-  }
+    public function setActiveInputs($activeInputs) {
+        $this->activeInputs = $activeInputs;
+    }
+
+    public function getActiveInputs() {
+        return $this->activeInputs;
+    }
+
+    public function setCompletedInputs($completedInputs) {
+        $this->completedInputs = $completedInputs;
+    }
+
+    public function getCompletedInputs() {
+        return $this->completedInputs;
+    }
+
+    public function setCompletedInputsForActiveStages($completedInputsForActiveStages) {
+        $this->completedInputsForActiveStages = $completedInputsForActiveStages;
+    }
+
+    public function getCompletedInputsForActiveStages() {
+        return $this->completedInputsForActiveStages;
+    }
+
+    public function setElapsedMs($elapsedMs) {
+        $this->elapsedMs = $elapsedMs;
+    }
+
+    public function getElapsedMs() {
+        return $this->elapsedMs;
+    }
+
+    public function setPendingInputs($pendingInputs) {
+        $this->pendingInputs = $pendingInputs;
+    }
+
+    public function getPendingInputs() {
+        return $this->pendingInputs;
+    }
+
+    public function setTotalSlotMs($totalSlotMs) {
+        $this->totalSlotMs = $totalSlotMs;
+    }
+
+    public function getTotalSlotMs() {
+        return $this->totalSlotMs;
+    }
 }

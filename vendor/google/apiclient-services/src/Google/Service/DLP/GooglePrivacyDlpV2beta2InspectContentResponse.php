@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2InspectContentResponse extends Google_Model
-{
-  protected $resultType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InspectResult';
-  protected $resultDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2InspectContentResponse extends Google_Model {
+    protected $resultType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InspectResult';
+    protected $resultDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InspectResult
-   */
-  public function setResult(Google_Service_DLP_GooglePrivacyDlpV2beta2InspectResult $result)
-  {
-    $this->result = $result;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InspectResult
-   */
-  public function getResult()
-  {
-    return $this->result;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InspectResult
+     */
+    public function setResult(Google_Service_DLP_GooglePrivacyDlpV2beta2InspectResult $result) {
+        $this->result = $result;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InspectResult
+     */
+    public function getResult() {
+        return $this->result;
+    }
 }

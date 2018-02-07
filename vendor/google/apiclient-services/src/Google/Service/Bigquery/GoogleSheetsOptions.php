@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Bigquery_GoogleSheetsOptions extends Google_Model
-{
-  public $skipLeadingRows;
+class Google_Service_Bigquery_GoogleSheetsOptions extends Google_Model {
+    public $skipLeadingRows;
 
-  public function setSkipLeadingRows($skipLeadingRows)
-  {
-    $this->skipLeadingRows = $skipLeadingRows;
-  }
-  public function getSkipLeadingRows()
-  {
-    return $this->skipLeadingRows;
-  }
+    public function setSkipLeadingRows($skipLeadingRows) {
+        $this->skipLeadingRows = $skipLeadingRows;
+    }
+
+    public function getSkipLeadingRows() {
+        return $this->skipLeadingRows;
+    }
 }

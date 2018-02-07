@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Monitoring_ListTimeSeriesResponse extends Google_Collection
-{
-  protected $collection_key = 'timeSeries';
-  public $nextPageToken;
-  protected $timeSeriesType = 'Google_Service_Monitoring_TimeSeries';
-  protected $timeSeriesDataType = 'array';
+class Google_Service_Monitoring_ListTimeSeriesResponse extends Google_Collection {
+    protected $collection_key     = 'timeSeries';
+    public $nextPageToken;
+    protected $timeSeriesType     = 'Google_Service_Monitoring_TimeSeries';
+    protected $timeSeriesDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Monitoring_TimeSeries
-   */
-  public function setTimeSeries($timeSeries)
-  {
-    $this->timeSeries = $timeSeries;
-  }
-  /**
-   * @return Google_Service_Monitoring_TimeSeries
-   */
-  public function getTimeSeries()
-  {
-    return $this->timeSeries;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Monitoring_TimeSeries
+     */
+    public function setTimeSeries($timeSeries) {
+        $this->timeSeries = $timeSeries;
+    }
+
+    /**
+     * @return Google_Service_Monitoring_TimeSeries
+     */
+    public function getTimeSeries() {
+        return $this->timeSeries;
+    }
 }

@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_ToolResults_AndroidAppInfo extends Google_Model
-{
-  public $name;
-  public $packageName;
-  public $versionCode;
-  public $versionName;
+class Google_Service_ToolResults_AndroidAppInfo extends Google_Model {
+    public $name;
+    public $packageName;
+    public $versionCode;
+    public $versionName;
 
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setPackageName($packageName)
-  {
-    $this->packageName = $packageName;
-  }
-  public function getPackageName()
-  {
-    return $this->packageName;
-  }
-  public function setVersionCode($versionCode)
-  {
-    $this->versionCode = $versionCode;
-  }
-  public function getVersionCode()
-  {
-    return $this->versionCode;
-  }
-  public function setVersionName($versionName)
-  {
-    $this->versionName = $versionName;
-  }
-  public function getVersionName()
-  {
-    return $this->versionName;
-  }
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setPackageName($packageName) {
+        $this->packageName = $packageName;
+    }
+
+    public function getPackageName() {
+        return $this->packageName;
+    }
+
+    public function setVersionCode($versionCode) {
+        $this->versionCode = $versionCode;
+    }
+
+    public function getVersionCode() {
+        return $this->versionCode;
+    }
+
+    public function setVersionName($versionName) {
+        $this->versionName = $versionName;
+    }
+
+    public function getVersionName() {
+        return $this->versionName;
+    }
 }

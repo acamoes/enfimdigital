@@ -9,8 +9,7 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_ClearCompiledTemplate
-{
+class Smarty_Internal_Method_ClearCompiledTemplate {
     /**
      * Valid for Smarty object
      *
@@ -31,8 +30,7 @@ class Smarty_Internal_Method_ClearCompiledTemplate
      *
      * @return integer number of template files deleted
      */
-    public function clearCompiledTemplate(Smarty $smarty, $resource_name = null, $compile_id = null, $exp_time = null)
-    {
+    public function clearCompiledTemplate(Smarty $smarty, $resource_name = null, $compile_id = null, $exp_time = null) {
         // clear template objects cache
         $smarty->_clearTemplateCache();
 
@@ -41,20 +39,21 @@ class Smarty_Internal_Method_ClearCompiledTemplate
             return 0;
         }
         $_compile_id = isset($compile_id) ? preg_replace('![^\w]+!', '_', $compile_id) : null;
-        $_dir_sep = $smarty->use_sub_dirs ? $smarty->ds : '^';
+        $_dir_sep    = $smarty->use_sub_dirs ? $smarty->ds : '^';
         if (isset($resource_name)) {
-            $_save_stat = $smarty->caching;
+            $_save_stat      = $smarty->caching;
             $smarty->caching = false;
             /* @var Smarty_Internal_Template $tpl */
-            $tpl = $smarty->createTemplate($resource_name);
+            $tpl             = $smarty->createTemplate($resource_name);
             $smarty->caching = $_save_stat;
             if (!$tpl->source->handler->uncompiled && !$tpl->source->handler->recompiled && $tpl->source->exists) {
-                $_resource_part_1 = basename(str_replace('^', $smarty->ds, $tpl->compiled->filepath));
+                $_resource_part_1        = basename(str_replace('^', $smarty->ds, $tpl->compiled->filepath));
                 $_resource_part_1_length = strlen($_resource_part_1);
-            } else {
+            }
+            else {
                 return 0;
             }
-            $_resource_part_2 = str_replace('.php', '.cache.php', $_resource_part_1);
+            $_resource_part_2        = str_replace('.php', '.cache.php', $_resource_part_1);
             $_resource_part_2_length = strlen($_resource_part_2);
         }
         $_dir = $_compile_dir;
@@ -62,7 +61,7 @@ class Smarty_Internal_Method_ClearCompiledTemplate
             $_dir .= $_compile_id . $_dir_sep;
         }
         if (isset($_compile_id)) {
-            $_compile_id_part = $_compile_dir . $_compile_id . $_dir_sep;
+            $_compile_id_part        = $_compile_dir . $_compile_id . $_dir_sep;
             $_compile_id_part_length = strlen($_compile_id_part);
         }
         $_count = 0;
@@ -75,7 +74,7 @@ class Smarty_Internal_Method_ClearCompiledTemplate
         }
         $_compile = new RecursiveIteratorIterator($_compileDirs, RecursiveIteratorIterator::CHILD_FIRST);
         foreach ($_compile as $_file) {
-             if (substr(basename($_file->getPathname()), 0, 1) == '.') {
+            if (substr(basename($_file->getPathname()), 0, 1) == '.') {
                 continue;
             }
             $_filepath = (string) $_file;
@@ -84,27 +83,24 @@ class Smarty_Internal_Method_ClearCompiledTemplate
                     // delete folder if empty
                     @rmdir($_file->getPathname());
                 }
-            } else {
+            }
+            else {
                 // delete only php files
                 if (substr($_filepath, -4) !== '.php') {
                     continue;
                 }
                 $unlink = false;
-                if ((!isset($_compile_id) || (isset($_filepath[ $_compile_id_part_length ]) && $a =
-                                !strncmp($_filepath, $_compile_id_part, $_compile_id_part_length))) &&
-                    (!isset($resource_name) || (isset($_filepath[ $_resource_part_1_length ]) &&
-                                                substr_compare($_filepath, $_resource_part_1,
-                                                               - $_resource_part_1_length, $_resource_part_1_length) ==
-                                                0) || (isset($_filepath[ $_resource_part_2_length ]) &&
-                                                       substr_compare($_filepath, $_resource_part_2,
-                                                                      - $_resource_part_2_length,
-                                                                      $_resource_part_2_length) == 0))
+                if ((!isset($_compile_id) || (isset($_filepath[$_compile_id_part_length]) && $a      = !strncmp($_filepath, $_compile_id_part, $_compile_id_part_length))) &&
+                        (!isset($resource_name) || (isset($_filepath[$_resource_part_1_length]) &&
+                        substr_compare($_filepath, $_resource_part_1, - $_resource_part_1_length, $_resource_part_1_length) == 0) || (isset($_filepath[$_resource_part_2_length]) &&
+                        substr_compare($_filepath, $_resource_part_2, - $_resource_part_2_length, $_resource_part_2_length) == 0))
                 ) {
                     if (isset($exp_time)) {
                         if (time() - @filemtime($_filepath) >= $exp_time) {
                             $unlink = true;
                         }
-                    } else {
+                    }
+                    else {
                         $unlink = true;
                     }
                 }

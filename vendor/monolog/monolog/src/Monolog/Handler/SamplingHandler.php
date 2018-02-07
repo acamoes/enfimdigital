@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
 
 /**
@@ -25,13 +23,11 @@ namespace Monolog\Handler;
  * @author Bryan Davis <bd808@wikimedia.org>
  * @author Kunal Mehta <legoktm@gmail.com>
  */
-class SamplingHandler extends AbstractHandler
-{
+class SamplingHandler extends AbstractHandler {
     /**
      * @var callable|HandlerInterface $handler
      */
     protected $handler;
-
     /**
      * @var int $factor
      */
@@ -41,24 +37,21 @@ class SamplingHandler extends AbstractHandler
      * @param callable|HandlerInterface $handler Handler or factory callable($record, $fingersCrossedHandler).
      * @param int                       $factor  Sample factor
      */
-    public function __construct($handler, $factor)
-    {
+    public function __construct($handler, $factor) {
         parent::__construct();
         $this->handler = $handler;
-        $this->factor = $factor;
+        $this->factor  = $factor;
 
         if (!$this->handler instanceof HandlerInterface && !is_callable($this->handler)) {
-            throw new \RuntimeException("The given handler (".json_encode($this->handler).") is not a callable nor a Monolog\Handler\HandlerInterface object");
+            throw new \RuntimeException("The given handler (" . json_encode($this->handler) . ") is not a callable nor a Monolog\Handler\HandlerInterface object");
         }
     }
 
-    public function isHandling(array $record)
-    {
+    public function isHandling(array $record) {
         return $this->handler->isHandling($record);
     }
 
-    public function handle(array $record)
-    {
+    public function handle(array $record) {
         if ($this->isHandling($record) && mt_rand(1, $this->factor) === 1) {
             // The same logic as in FingersCrossedHandler
             if (!$this->handler instanceof HandlerInterface) {

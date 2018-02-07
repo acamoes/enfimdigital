@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_CloudTrace_TruncatableString extends Google_Model
-{
-  public $truncatedByteCount;
-  public $value;
+class Google_Service_CloudTrace_TruncatableString extends Google_Model {
+    public $truncatedByteCount;
+    public $value;
 
-  public function setTruncatedByteCount($truncatedByteCount)
-  {
-    $this->truncatedByteCount = $truncatedByteCount;
-  }
-  public function getTruncatedByteCount()
-  {
-    return $this->truncatedByteCount;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setTruncatedByteCount($truncatedByteCount) {
+        $this->truncatedByteCount = $truncatedByteCount;
+    }
+
+    public function getTruncatedByteCount() {
+        return $this->truncatedByteCount;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

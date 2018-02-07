@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1InfoTypeStatistics extends Google_Model
-{
-  public $count;
-  protected $infoTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType';
-  protected $infoTypeDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1InfoTypeStatistics extends Google_Model {
+    public $count;
+    protected $infoTypeType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType';
+    protected $infoTypeDataType = '';
 
-  public function setCount($count)
-  {
-    $this->count = $count;
-  }
-  public function getCount()
-  {
-    return $this->count;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType
-   */
-  public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType $infoType)
-  {
-    $this->infoType = $infoType;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType
-   */
-  public function getInfoType()
-  {
-    return $this->infoType;
-  }
+    public function setCount($count) {
+        $this->count = $count;
+    }
+
+    public function getCount() {
+        return $this->count;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType
+     */
+    public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType $infoType) {
+        $this->infoType = $infoType;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1InfoType
+     */
+    public function getInfoType() {
+        return $this->infoType;
+    }
 }

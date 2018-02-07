@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_ServiceUser_LoggingDestination extends Google_Collection
-{
-  protected $collection_key = 'logs';
-  public $logs;
-  public $monitoredResource;
+class Google_Service_ServiceUser_LoggingDestination extends Google_Collection {
+    protected $collection_key = 'logs';
+    public $logs;
+    public $monitoredResource;
 
-  public function setLogs($logs)
-  {
-    $this->logs = $logs;
-  }
-  public function getLogs()
-  {
-    return $this->logs;
-  }
-  public function setMonitoredResource($monitoredResource)
-  {
-    $this->monitoredResource = $monitoredResource;
-  }
-  public function getMonitoredResource()
-  {
-    return $this->monitoredResource;
-  }
+    public function setLogs($logs) {
+        $this->logs = $logs;
+    }
+
+    public function getLogs() {
+        return $this->logs;
+    }
+
+    public function setMonitoredResource($monitoredResource) {
+        $this->monitoredResource = $monitoredResource;
+    }
+
+    public function getMonitoredResource() {
+        return $this->monitoredResource;
+    }
 }

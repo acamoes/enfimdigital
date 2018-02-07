@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Logger;
 use Monolog\Formatter\LineFormatter;
 use Swift;
@@ -20,8 +17,7 @@ use Swift;
  *
  * @author Gyula Sallai
  */
-class SwiftMailerHandler extends MailHandler
-{
+class SwiftMailerHandler extends MailHandler {
     protected $mailer;
     private $messageTemplate;
 
@@ -31,19 +27,17 @@ class SwiftMailerHandler extends MailHandler
      * @param int                     $level   The minimum logging level at which this handler will be triggered
      * @param Boolean                 $bubble  Whether the messages that are handled can bubble up the stack or not
      */
-    public function __construct(\Swift_Mailer $mailer, $message, $level = Logger::ERROR, $bubble = true)
-    {
+    public function __construct(\Swift_Mailer $mailer, $message, $level = Logger::ERROR, $bubble = true) {
         parent::__construct($level, $bubble);
 
-        $this->mailer = $mailer;
+        $this->mailer          = $mailer;
         $this->messageTemplate = $message;
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function send($content, array $records)
-    {
+    protected function send($content, array $records) {
         $this->mailer->send($this->buildMessage($content, $records));
     }
 
@@ -54,13 +48,13 @@ class SwiftMailerHandler extends MailHandler
      * @param  array          $records Log records that formed the content
      * @return \Swift_Message
      */
-    protected function buildMessage($content, array $records)
-    {
+    protected function buildMessage($content, array $records) {
         $message = null;
         if ($this->messageTemplate instanceof \Swift_Message) {
             $message = clone $this->messageTemplate;
             $message->generateId();
-        } elseif (is_callable($this->messageTemplate)) {
+        }
+        elseif (is_callable($this->messageTemplate)) {
             $message = call_user_func($this->messageTemplate, $content, $records);
         }
 
@@ -76,7 +70,8 @@ class SwiftMailerHandler extends MailHandler
         $message->setBody($content);
         if (version_compare(Swift::VERSION, '6.0.0', '>=')) {
             $message->setDate(new \DateTimeImmutable());
-        } else {
+        }
+        else {
             $message->setDate(time());
         }
 
@@ -86,14 +81,13 @@ class SwiftMailerHandler extends MailHandler
     /**
      * BC getter, to be removed in 2.0
      */
-    public function __get($name)
-    {
+    public function __get($name) {
         if ($name === 'message') {
             trigger_error('SwiftMailerHandler->message is deprecated, use ->buildMessage() instead to retrieve the message', E_USER_DEPRECATED);
 
             return $this->buildMessage(null, array());
         }
 
-        throw new \InvalidArgumentException('Invalid property '.$name);
+        throw new \InvalidArgumentException('Invalid property ' . $name);
     }
 }

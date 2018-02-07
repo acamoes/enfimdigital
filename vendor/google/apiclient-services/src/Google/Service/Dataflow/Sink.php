@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataflow_Sink extends Google_Model
-{
-  public $codec;
-  public $spec;
+class Google_Service_Dataflow_Sink extends Google_Model {
+    public $codec;
+    public $spec;
 
-  public function setCodec($codec)
-  {
-    $this->codec = $codec;
-  }
-  public function getCodec()
-  {
-    return $this->codec;
-  }
-  public function setSpec($spec)
-  {
-    $this->spec = $spec;
-  }
-  public function getSpec()
-  {
-    return $this->spec;
-  }
+    public function setCodec($codec) {
+        $this->codec = $codec;
+    }
+
+    public function getCodec() {
+        return $this->codec;
+    }
+
+    public function setSpec($spec) {
+        $this->spec = $spec;
+    }
+
+    public function getSpec() {
+        return $this->spec;
+    }
 }

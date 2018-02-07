@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,16 +7,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Logger;
 
 /**
  * @author Robert Kaufmann III <rok3@rok3.me>
  */
-class LogEntriesHandler extends SocketHandler
-{
+class LogEntriesHandler extends SocketHandler {
     /**
      * @var string
      */
@@ -31,13 +27,12 @@ class LogEntriesHandler extends SocketHandler
      *
      * @throws MissingExtensionException If SSL encryption is set to true and OpenSSL is missing
      */
-    public function __construct($token, $useSSL = true, $level = Logger::DEBUG, $bubble = true)
-    {
+    public function __construct($token, $useSSL = true, $level = Logger::DEBUG, $bubble = true) {
         if ($useSSL && !extension_loaded('openssl')) {
             throw new MissingExtensionException('The OpenSSL PHP plugin is required to use SSL encrypted connection for LogEntriesHandler');
         }
 
-        $endpoint = $useSSL ? 'ssl://data.logentries.com:443' : 'data.logentries.com:80';
+        $endpoint       = $useSSL ? 'ssl://data.logentries.com:443' : 'data.logentries.com:80';
         parent::__construct($endpoint, $level, $bubble);
         $this->logToken = $token;
     }
@@ -48,8 +43,7 @@ class LogEntriesHandler extends SocketHandler
      * @param  array  $record
      * @return string
      */
-    protected function generateDataStream($record)
-    {
+    protected function generateDataStream($record) {
         return $this->logToken . ' ' . $record['formatted'];
     }
 }

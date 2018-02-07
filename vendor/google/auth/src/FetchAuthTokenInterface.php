@@ -14,14 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth;
 
 /**
  * An interface implemented by objects that can fetch auth tokens.
  */
-interface FetchAuthTokenInterface
-{
+interface FetchAuthTokenInterface {
+
     /**
      * Fetches the auth tokens based on the current state.
      *

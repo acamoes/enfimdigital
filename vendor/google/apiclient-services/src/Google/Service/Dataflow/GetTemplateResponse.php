@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_Dataflow_GetTemplateResponse extends Google_Model
-{
-  protected $metadataType = 'Google_Service_Dataflow_TemplateMetadata';
-  protected $metadataDataType = '';
-  protected $statusType = 'Google_Service_Dataflow_Status';
-  protected $statusDataType = '';
+class Google_Service_Dataflow_GetTemplateResponse extends Google_Model {
+    protected $metadataType     = 'Google_Service_Dataflow_TemplateMetadata';
+    protected $metadataDataType = '';
+    protected $statusType       = 'Google_Service_Dataflow_Status';
+    protected $statusDataType   = '';
 
-  /**
-   * @param Google_Service_Dataflow_TemplateMetadata
-   */
-  public function setMetadata(Google_Service_Dataflow_TemplateMetadata $metadata)
-  {
-    $this->metadata = $metadata;
-  }
-  /**
-   * @return Google_Service_Dataflow_TemplateMetadata
-   */
-  public function getMetadata()
-  {
-    return $this->metadata;
-  }
-  /**
-   * @param Google_Service_Dataflow_Status
-   */
-  public function setStatus(Google_Service_Dataflow_Status $status)
-  {
-    $this->status = $status;
-  }
-  /**
-   * @return Google_Service_Dataflow_Status
-   */
-  public function getStatus()
-  {
-    return $this->status;
-  }
+    /**
+     * @param Google_Service_Dataflow_TemplateMetadata
+     */
+    public function setMetadata(Google_Service_Dataflow_TemplateMetadata $metadata) {
+        $this->metadata = $metadata;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_TemplateMetadata
+     */
+    public function getMetadata() {
+        return $this->metadata;
+    }
+
+    /**
+     * @param Google_Service_Dataflow_Status
+     */
+    public function setStatus(Google_Service_Dataflow_Status $status) {
+        $this->status = $status;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_Status
+     */
+    public function getStatus() {
+        return $this->status;
+    }
 }

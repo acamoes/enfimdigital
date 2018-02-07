@@ -59,7 +59,7 @@ class Modulos {
                 $data ['status'] . "')";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];
@@ -76,7 +76,7 @@ class Modulos {
                 "WHERE idModules=" . $data ['idModules'];
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];
@@ -86,7 +86,7 @@ class Modulos {
         $query     = "UPDATE modules SET status='Inativo' WHERE idModules=" . $data['idModules'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'O registo não foi alterado.'];
         }
         return ['success' => true, 'message' => 'Registo alterado.'];

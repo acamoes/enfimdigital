@@ -9,8 +9,7 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_GetGlobal
-{
+class Smarty_Internal_Method_GetGlobal {
     /**
      * Valid for all objects
      *
@@ -28,18 +27,19 @@ class Smarty_Internal_Method_GetGlobal
      *
      * @return string variable value or or array of variables
      */
-    public function getGlobal(Smarty_Internal_Data $data, $varName = null)
-    {
+    public function getGlobal(Smarty_Internal_Data $data, $varName = null) {
         if (isset($varName)) {
-            if (isset(Smarty::$global_tpl_vars[ $varName ])) {
-                return Smarty::$global_tpl_vars[ $varName ]->value;
-            } else {
+            if (isset(Smarty::$global_tpl_vars[$varName])) {
+                return Smarty::$global_tpl_vars[$varName]->value;
+            }
+            else {
                 return '';
             }
-        } else {
+        }
+        else {
             $_result = array();
             foreach (Smarty::$global_tpl_vars AS $key => $var) {
-                $_result[ $key ] = $var->value;
+                $_result[$key] = $var->value;
             }
             return $_result;
         }

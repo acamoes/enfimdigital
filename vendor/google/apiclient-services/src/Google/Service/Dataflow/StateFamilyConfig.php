@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataflow_StateFamilyConfig extends Google_Model
-{
-  public $isRead;
-  public $stateFamily;
+class Google_Service_Dataflow_StateFamilyConfig extends Google_Model {
+    public $isRead;
+    public $stateFamily;
 
-  public function setIsRead($isRead)
-  {
-    $this->isRead = $isRead;
-  }
-  public function getIsRead()
-  {
-    return $this->isRead;
-  }
-  public function setStateFamily($stateFamily)
-  {
-    $this->stateFamily = $stateFamily;
-  }
-  public function getStateFamily()
-  {
-    return $this->stateFamily;
-  }
+    public function setIsRead($isRead) {
+        $this->isRead = $isRead;
+    }
+
+    public function getIsRead() {
+        return $this->isRead;
+    }
+
+    public function setStateFamily($stateFamily) {
+        $this->stateFamily = $stateFamily;
+    }
+
+    public function getStateFamily() {
+        return $this->stateFamily;
+    }
 }

@@ -15,17 +15,15 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyerII_AppContext extends Google_Collection
-{
-  protected $collection_key = 'appTypes';
-  public $appTypes;
+class Google_Service_AdExchangeBuyerII_AppContext extends Google_Collection {
+    protected $collection_key = 'appTypes';
+    public $appTypes;
 
-  public function setAppTypes($appTypes)
-  {
-    $this->appTypes = $appTypes;
-  }
-  public function getAppTypes()
-  {
-    return $this->appTypes;
-  }
+    public function setAppTypes($appTypes) {
+        $this->appTypes = $appTypes;
+    }
+
+    public function getAppTypes() {
+        return $this->appTypes;
+    }
 }

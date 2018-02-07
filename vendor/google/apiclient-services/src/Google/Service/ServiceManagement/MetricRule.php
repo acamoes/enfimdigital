@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_MetricRule extends Google_Model
-{
-  public $metricCosts;
-  public $selector;
+class Google_Service_ServiceManagement_MetricRule extends Google_Model {
+    public $metricCosts;
+    public $selector;
 
-  public function setMetricCosts($metricCosts)
-  {
-    $this->metricCosts = $metricCosts;
-  }
-  public function getMetricCosts()
-  {
-    return $this->metricCosts;
-  }
-  public function setSelector($selector)
-  {
-    $this->selector = $selector;
-  }
-  public function getSelector()
-  {
-    return $this->selector;
-  }
+    public function setMetricCosts($metricCosts) {
+        $this->metricCosts = $metricCosts;
+    }
+
+    public function getMetricCosts() {
+        return $this->metricCosts;
+    }
+
+    public function setSelector($selector) {
+        $this->selector = $selector;
+    }
+
+    public function getSelector() {
+        return $this->selector;
+    }
 }

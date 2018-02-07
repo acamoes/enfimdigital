@@ -15,55 +15,53 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2Bucket extends Google_Model
-{
-  protected $maxType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
-  protected $maxDataType = '';
-  protected $minType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
-  protected $minDataType = '';
-  protected $replacementValueType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
-  protected $replacementValueDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2Bucket extends Google_Model {
+    protected $maxType                  = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
+    protected $maxDataType              = '';
+    protected $minType                  = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
+    protected $minDataType              = '';
+    protected $replacementValueType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
+    protected $replacementValueDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function setMax(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $max)
-  {
-    $this->max = $max;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function getMax()
-  {
-    return $this->max;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function setMin(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $min)
-  {
-    $this->min = $min;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function getMin()
-  {
-    return $this->min;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function setReplacementValue(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $replacementValue)
-  {
-    $this->replacementValue = $replacementValue;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function getReplacementValue()
-  {
-    return $this->replacementValue;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function setMax(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $max) {
+        $this->max = $max;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function getMax() {
+        return $this->max;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function setMin(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $min) {
+        $this->min = $min;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function getMin() {
+        return $this->min;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function setReplacementValue(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $replacementValue) {
+        $this->replacementValue = $replacementValue;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function getReplacementValue() {
+        return $this->replacementValue;
+    }
 }

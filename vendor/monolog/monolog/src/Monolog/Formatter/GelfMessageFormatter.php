@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Formatter;
-
 use Monolog\Logger;
 use Gelf\Message;
 
@@ -20,30 +17,24 @@ use Gelf\Message;
  *
  * @author Matt Lehner <mlehner@gmail.com>
  */
-class GelfMessageFormatter extends NormalizerFormatter
-{
+class GelfMessageFormatter extends NormalizerFormatter {
     const DEFAULT_MAX_LENGTH = 32766;
-
     /**
      * @var string the name of the system for the Gelf log message
      */
     protected $systemName;
-
     /**
      * @var string a prefix for 'extra' fields from the Monolog record (optional)
      */
     protected $extraPrefix;
-
     /**
      * @var string a prefix for 'context' fields from the Monolog record (optional)
      */
     protected $contextPrefix;
-
     /**
      * @var int max length per field
      */
     protected $maxLength;
-
     /**
      * Translates Monolog log levels to Graylog2 log priorities.
      */
@@ -58,36 +49,34 @@ class GelfMessageFormatter extends NormalizerFormatter
         Logger::EMERGENCY => 0,
     );
 
-    public function __construct($systemName = null, $extraPrefix = null, $contextPrefix = 'ctxt_', $maxLength = null)
-    {
+    public function __construct($systemName = null, $extraPrefix = null, $contextPrefix = 'ctxt_', $maxLength = null) {
         parent::__construct('U.u');
 
         $this->systemName = $systemName ?: gethostname();
 
-        $this->extraPrefix = $extraPrefix;
+        $this->extraPrefix   = $extraPrefix;
         $this->contextPrefix = $contextPrefix;
-        $this->maxLength = is_null($maxLength) ? self::DEFAULT_MAX_LENGTH : $maxLength;
+        $this->maxLength     = is_null($maxLength) ? self::DEFAULT_MAX_LENGTH : $maxLength;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function format(array $record)
-    {
+    public function format(array $record) {
         $record = parent::format($record);
 
         if (!isset($record['datetime'], $record['message'], $record['level'])) {
-            throw new \InvalidArgumentException('The record should at least contain datetime, message and level keys, '.var_export($record, true).' given');
+            throw new \InvalidArgumentException('The record should at least contain datetime, message and level keys, ' . var_export($record, true) . ' given');
         }
 
         $message = new Message();
         $message
-            ->setTimestamp($record['datetime'])
-            ->setShortMessage((string) $record['message'])
-            ->setHost($this->systemName)
-            ->setLevel($this->logLevels[$record['level']]);
+                ->setTimestamp($record['datetime'])
+                ->setShortMessage((string) $record['message'])
+                ->setHost($this->systemName)
+                ->setLevel($this->logLevels[$record['level']]);
 
-        // message length + system name length + 200 for padding / metadata 
+        // message length + system name length + 200 for padding / metadata
         $len = 200 + strlen((string) $record['message']) + strlen($this->systemName);
 
         if ($len > $this->maxLength) {

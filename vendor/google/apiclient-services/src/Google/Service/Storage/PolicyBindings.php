@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_Storage_PolicyBindings extends Google_Collection
-{
-  protected $collection_key = 'members';
-  public $condition;
-  public $members;
-  public $role;
+class Google_Service_Storage_PolicyBindings extends Google_Collection {
+    protected $collection_key = 'members';
+    public $condition;
+    public $members;
+    public $role;
 
-  public function setCondition($condition)
-  {
-    $this->condition = $condition;
-  }
-  public function getCondition()
-  {
-    return $this->condition;
-  }
-  public function setMembers($members)
-  {
-    $this->members = $members;
-  }
-  public function getMembers()
-  {
-    return $this->members;
-  }
-  public function setRole($role)
-  {
-    $this->role = $role;
-  }
-  public function getRole()
-  {
-    return $this->role;
-  }
+    public function setCondition($condition) {
+        $this->condition = $condition;
+    }
+
+    public function getCondition() {
+        return $this->condition;
+    }
+
+    public function setMembers($members) {
+        $this->members = $members;
+    }
+
+    public function getMembers() {
+        return $this->members;
+    }
+
+    public function setRole($role) {
+        $this->role = $role;
+    }
+
+    public function getRole() {
+        return $this->role;
+    }
 }

@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Dataflow_LeaseWorkItemResponse extends Google_Collection
-{
-  protected $collection_key = 'workItems';
-  protected $workItemsType = 'Google_Service_Dataflow_WorkItem';
-  protected $workItemsDataType = 'array';
+class Google_Service_Dataflow_LeaseWorkItemResponse extends Google_Collection {
+    protected $collection_key    = 'workItems';
+    protected $workItemsType     = 'Google_Service_Dataflow_WorkItem';
+    protected $workItemsDataType = 'array';
 
-  /**
-   * @param Google_Service_Dataflow_WorkItem
-   */
-  public function setWorkItems($workItems)
-  {
-    $this->workItems = $workItems;
-  }
-  /**
-   * @return Google_Service_Dataflow_WorkItem
-   */
-  public function getWorkItems()
-  {
-    return $this->workItems;
-  }
+    /**
+     * @param Google_Service_Dataflow_WorkItem
+     */
+    public function setWorkItems($workItems) {
+        $this->workItems = $workItems;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_WorkItem
+     */
+    public function getWorkItems() {
+        return $this->workItems;
+    }
 }

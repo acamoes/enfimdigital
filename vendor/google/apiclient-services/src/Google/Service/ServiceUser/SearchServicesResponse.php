@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_ServiceUser_SearchServicesResponse extends Google_Collection
-{
-  protected $collection_key = 'services';
-  public $nextPageToken;
-  protected $servicesType = 'Google_Service_ServiceUser_PublishedService';
-  protected $servicesDataType = 'array';
+class Google_Service_ServiceUser_SearchServicesResponse extends Google_Collection {
+    protected $collection_key   = 'services';
+    public $nextPageToken;
+    protected $servicesType     = 'Google_Service_ServiceUser_PublishedService';
+    protected $servicesDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_ServiceUser_PublishedService
-   */
-  public function setServices($services)
-  {
-    $this->services = $services;
-  }
-  /**
-   * @return Google_Service_ServiceUser_PublishedService
-   */
-  public function getServices()
-  {
-    return $this->services;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_ServiceUser_PublishedService
+     */
+    public function setServices($services) {
+        $this->services = $services;
+    }
+
+    /**
+     * @return Google_Service_ServiceUser_PublishedService
+     */
+    public function getServices() {
+        return $this->services;
+    }
 }

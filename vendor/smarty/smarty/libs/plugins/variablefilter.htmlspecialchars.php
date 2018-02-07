@@ -13,7 +13,6 @@
  *
  * @return string filtered output
  */
-function smarty_variablefilter_htmlspecialchars($source)
-{
+function smarty_variablefilter_htmlspecialchars($source) {
     return htmlspecialchars($source, ENT_QUOTES, Smarty::$_CHARSET);
 }

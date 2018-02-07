@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Gelf\IMessagePublisher;
 use Gelf\PublisherInterface;
 use Gelf\Publisher;
@@ -24,8 +21,7 @@ use Monolog\Formatter\GelfMessageFormatter;
  * @author Matt Lehner <mlehner@gmail.com>
  * @author Benjamin Zikarsky <benjamin@zikarsky.de>
  */
-class GelfHandler extends AbstractProcessingHandler
-{
+class GelfHandler extends AbstractProcessingHandler {
     /**
      * @var Publisher the publisher object that sends the message to the server
      */
@@ -36,8 +32,7 @@ class GelfHandler extends AbstractProcessingHandler
      * @param int                                            $level     The minimum logging level at which this handler will be triggered
      * @param bool                                           $bubble    Whether the messages that are handled can bubble up the stack or not
      */
-    public function __construct($publisher, $level = Logger::DEBUG, $bubble = true)
-    {
+    public function __construct($publisher, $level = Logger::DEBUG, $bubble = true) {
         parent::__construct($level, $bubble);
 
         if (!$publisher instanceof Publisher && !$publisher instanceof IMessagePublisher && !$publisher instanceof PublisherInterface) {
@@ -50,24 +45,21 @@ class GelfHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    public function close()
-    {
+    public function close() {
         $this->publisher = null;
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function write(array $record)
-    {
+    protected function write(array $record) {
         $this->publisher->publish($record['formatted']);
     }
 
     /**
      * {@inheritDoc}
      */
-    protected function getDefaultFormatter()
-    {
+    protected function getDefaultFormatter() {
         return new GelfMessageFormatter();
     }
 }

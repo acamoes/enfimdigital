@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_ToolResults_ListStepsResponse extends Google_Collection
-{
-  protected $collection_key = 'steps';
-  public $nextPageToken;
-  protected $stepsType = 'Google_Service_ToolResults_Step';
-  protected $stepsDataType = 'array';
+class Google_Service_ToolResults_ListStepsResponse extends Google_Collection {
+    protected $collection_key = 'steps';
+    public $nextPageToken;
+    protected $stepsType      = 'Google_Service_ToolResults_Step';
+    protected $stepsDataType  = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_ToolResults_Step
-   */
-  public function setSteps($steps)
-  {
-    $this->steps = $steps;
-  }
-  /**
-   * @return Google_Service_ToolResults_Step
-   */
-  public function getSteps()
-  {
-    return $this->steps;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_ToolResults_Step
+     */
+    public function setSteps($steps) {
+        $this->steps = $steps;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_Step
+     */
+    public function getSteps() {
+        return $this->steps;
+    }
 }

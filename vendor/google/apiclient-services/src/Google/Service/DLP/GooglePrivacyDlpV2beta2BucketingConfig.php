@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2BucketingConfig extends Google_Collection
-{
-  protected $collection_key = 'buckets';
-  protected $bucketsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Bucket';
-  protected $bucketsDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2BucketingConfig extends Google_Collection {
+    protected $collection_key  = 'buckets';
+    protected $bucketsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Bucket';
+    protected $bucketsDataType = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Bucket
-   */
-  public function setBuckets($buckets)
-  {
-    $this->buckets = $buckets;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Bucket
-   */
-  public function getBuckets()
-  {
-    return $this->buckets;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Bucket
+     */
+    public function setBuckets($buckets) {
+        $this->buckets = $buckets;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Bucket
+     */
+    public function getBuckets() {
+        return $this->buckets;
+    }
 }

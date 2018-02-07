@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Pure-PHP implementation of RC4.
  *
@@ -41,7 +40,6 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
-
 namespace phpseclib\Crypt;
 
 /**
@@ -51,16 +49,14 @@ namespace phpseclib\Crypt;
  * @author  Jim Wigginton <terrafrost@php.net>
  * @access  public
  */
-class RC4 extends Base
-{
-    /**#@+
+class RC4 extends Base {
+    /*     * #@+
      * @access private
      * @see \phpseclib\Crypt\RC4::_crypt()
-    */
-    const ENCRYPT = 0;
-    const DECRYPT = 1;
-    /**#@-*/
-
+     */
+    const ENCRYPT                    = 0;
+    const DECRYPT                    = 1;
+    /*     * #@- */
     /**
      * Block Length of the cipher
      *
@@ -71,8 +67,7 @@ class RC4 extends Base
      * @var int
      * @access private
      */
-    var $block_size = 0;
-
+    var $block_size         = 0;
     /**
      * Key Length (in bytes)
      *
@@ -80,8 +75,7 @@ class RC4 extends Base
      * @var int
      * @access private
      */
-    var $key_length = 128; // = 1024 bits
-
+    var $key_length         = 128; // = 1024 bits
     /**
      * The mcrypt specific name of the cipher
      *
@@ -90,7 +84,6 @@ class RC4 extends Base
      * @access private
      */
     var $cipher_name_mcrypt = 'arcfour';
-
     /**
      * Holds whether performance-optimized $inline_crypt() can/should be used.
      *
@@ -98,8 +91,7 @@ class RC4 extends Base
      * @var mixed
      * @access private
      */
-    var $use_inline_crypt = false; // currently not available
-
+    var $use_inline_crypt   = false; // currently not available
     /**
      * The Key
      *
@@ -108,7 +100,6 @@ class RC4 extends Base
      * @access private
      */
     var $key;
-
     /**
      * The Key Stream for decryption and encryption
      *
@@ -127,8 +118,7 @@ class RC4 extends Base
      * @return \phpseclib\Crypt\RC4
      * @access public
      */
-    function __construct()
-    {
+    function __construct() {
         parent::__construct(Base::MODE_STREAM);
     }
 
@@ -142,12 +132,12 @@ class RC4 extends Base
      * @access public
      * @return bool
      */
-    function isValidEngine($engine)
-    {
+    function isValidEngine($engine) {
         if ($engine == Base::ENGINE_OPENSSL) {
             if (version_compare(PHP_VERSION, '5.3.7') >= 0) {
                 $this->cipher_name_openssl = 'rc4-40';
-            } else {
+            }
+            else {
                 switch (strlen($this->key)) {
                     case 5:
                         $this->cipher_name_openssl = 'rc4-40';
@@ -186,8 +176,8 @@ class RC4 extends Base
      * @see self::setKey()
      * @access public
      */
-    function setIV($iv)
-    {
+    function setIV($iv) {
+
     }
 
     /**
@@ -198,13 +188,14 @@ class RC4 extends Base
      * @access public
      * @param int $length
      */
-    function setKeyLength($length)
-    {
+    function setKeyLength($length) {
         if ($length < 8) {
             $this->key_length = 1;
-        } elseif ($length > 2048) {
+        }
+        elseif ($length > 2048) {
             $this->key_length = 256;
-        } else {
+        }
+        else {
             $this->key_length = $length >> 3;
         }
 
@@ -220,8 +211,7 @@ class RC4 extends Base
      * @param string $plaintext
      * @return string $ciphertext
      */
-    function encrypt($plaintext)
-    {
+    function encrypt($plaintext) {
         if ($this->engine != Base::ENGINE_INTERNAL) {
             return parent::encrypt($plaintext);
         }
@@ -240,8 +230,7 @@ class RC4 extends Base
      * @param string $ciphertext
      * @return string $plaintext
      */
-    function decrypt($ciphertext)
-    {
+    function decrypt($ciphertext) {
         if ($this->engine != Base::ENGINE_INTERNAL) {
             return parent::decrypt($ciphertext);
         }
@@ -254,8 +243,7 @@ class RC4 extends Base
      * @access private
      * @param string $in
      */
-    function _encryptBlock($in)
-    {
+    function _encryptBlock($in) {
         // RC4 does not utilize this method
     }
 
@@ -265,8 +253,7 @@ class RC4 extends Base
      * @access private
      * @param string $in
      */
-    function _decryptBlock($in)
-    {
+    function _decryptBlock($in) {
         // RC4 does not utilize this method
     }
 
@@ -276,20 +263,19 @@ class RC4 extends Base
      * @see \phpseclib\Crypt\Base::_setupKey()
      * @access private
      */
-    function _setupKey()
-    {
-        $key = $this->key;
+    function _setupKey() {
+        $key       = $this->key;
         $keyLength = strlen($key);
         $keyStream = range(0, 255);
-        $j = 0;
+        $j         = 0;
         for ($i = 0; $i < 256; $i++) {
-            $j = ($j + $keyStream[$i] + ord($key[$i % $keyLength])) & 255;
-            $temp = $keyStream[$i];
+            $j             = ($j + $keyStream[$i] + ord($key[$i % $keyLength])) & 255;
+            $temp          = $keyStream[$i];
             $keyStream[$i] = $keyStream[$j];
             $keyStream[$j] = $temp;
         }
 
-        $this->stream = array();
+        $this->stream                = array();
         $this->stream[self::DECRYPT] = $this->stream[self::ENCRYPT] = array(
             0, // index $i
             0, // index $j
@@ -307,8 +293,7 @@ class RC4 extends Base
      * @param int $mode
      * @return string $text
      */
-    function _crypt($text, $mode)
-    {
+    function _crypt($text, $mode) {
         if ($this->changed) {
             $this->_setup();
             $this->changed = false;
@@ -316,25 +301,26 @@ class RC4 extends Base
 
         $stream = &$this->stream[$mode];
         if ($this->continuousBuffer) {
-            $i = &$stream[0];
-            $j = &$stream[1];
+            $i         = &$stream[0];
+            $j         = &$stream[1];
             $keyStream = &$stream[2];
-        } else {
-            $i = $stream[0];
-            $j = $stream[1];
+        }
+        else {
+            $i         = $stream[0];
+            $j         = $stream[1];
             $keyStream = $stream[2];
         }
 
         $len = strlen($text);
         for ($k = 0; $k < $len; ++$k) {
-            $i = ($i + 1) & 255;
+            $i   = ($i + 1) & 255;
             $ksi = $keyStream[$i];
-            $j = ($j + $ksi) & 255;
+            $j   = ($j + $ksi) & 255;
             $ksj = $keyStream[$j];
 
             $keyStream[$i] = $ksj;
             $keyStream[$j] = $ksi;
-            $text[$k] = $text[$k] ^ chr($keyStream[($ksj + $ksi) & 255]);
+            $text[$k]      = $text[$k] ^ chr($keyStream[($ksj + $ksi) & 255]);
         }
 
         return $text;

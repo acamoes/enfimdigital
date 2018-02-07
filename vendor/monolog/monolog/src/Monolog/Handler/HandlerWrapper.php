@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Formatter\FormatterInterface;
 
 /**
@@ -30,8 +27,7 @@ use Monolog\Formatter\FormatterInterface;
  *
  * @author Alexey Karapetov <alexey@karapetov.com>
  */
-class HandlerWrapper implements HandlerInterface
-{
+class HandlerWrapper implements HandlerInterface {
     /**
      * @var HandlerInterface
      */
@@ -41,40 +37,35 @@ class HandlerWrapper implements HandlerInterface
      * HandlerWrapper constructor.
      * @param HandlerInterface $handler
      */
-    public function __construct(HandlerInterface $handler)
-    {
+    public function __construct(HandlerInterface $handler) {
         $this->handler = $handler;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function isHandling(array $record)
-    {
+    public function isHandling(array $record) {
         return $this->handler->isHandling($record);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function handle(array $record)
-    {
+    public function handle(array $record) {
         return $this->handler->handle($record);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function handleBatch(array $records)
-    {
+    public function handleBatch(array $records) {
         return $this->handler->handleBatch($records);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function pushProcessor($callback)
-    {
+    public function pushProcessor($callback) {
         $this->handler->pushProcessor($callback);
 
         return $this;
@@ -83,16 +74,14 @@ class HandlerWrapper implements HandlerInterface
     /**
      * {@inheritdoc}
      */
-    public function popProcessor()
-    {
+    public function popProcessor() {
         return $this->handler->popProcessor();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setFormatter(FormatterInterface $formatter)
-    {
+    public function setFormatter(FormatterInterface $formatter) {
         $this->handler->setFormatter($formatter);
 
         return $this;
@@ -101,8 +90,7 @@ class HandlerWrapper implements HandlerInterface
     /**
      * {@inheritdoc}
      */
-    public function getFormatter()
-    {
+    public function getFormatter() {
         return $this->handler->getFormatter();
     }
 }

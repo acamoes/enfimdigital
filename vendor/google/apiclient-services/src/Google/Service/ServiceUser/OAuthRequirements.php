@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ServiceUser_OAuthRequirements extends Google_Model
-{
-  public $canonicalScopes;
+class Google_Service_ServiceUser_OAuthRequirements extends Google_Model {
+    public $canonicalScopes;
 
-  public function setCanonicalScopes($canonicalScopes)
-  {
-    $this->canonicalScopes = $canonicalScopes;
-  }
-  public function getCanonicalScopes()
-  {
-    return $this->canonicalScopes;
-  }
+    public function setCanonicalScopes($canonicalScopes) {
+        $this->canonicalScopes = $canonicalScopes;
+    }
+
+    public function getCanonicalScopes() {
+        return $this->canonicalScopes;
+    }
 }

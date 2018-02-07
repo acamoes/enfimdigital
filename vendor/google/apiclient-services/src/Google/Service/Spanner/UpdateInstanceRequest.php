@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Spanner_UpdateInstanceRequest extends Google_Model
-{
-  public $fieldMask;
-  protected $instanceType = 'Google_Service_Spanner_Instance';
-  protected $instanceDataType = '';
+class Google_Service_Spanner_UpdateInstanceRequest extends Google_Model {
+    public $fieldMask;
+    protected $instanceType     = 'Google_Service_Spanner_Instance';
+    protected $instanceDataType = '';
 
-  public function setFieldMask($fieldMask)
-  {
-    $this->fieldMask = $fieldMask;
-  }
-  public function getFieldMask()
-  {
-    return $this->fieldMask;
-  }
-  /**
-   * @param Google_Service_Spanner_Instance
-   */
-  public function setInstance(Google_Service_Spanner_Instance $instance)
-  {
-    $this->instance = $instance;
-  }
-  /**
-   * @return Google_Service_Spanner_Instance
-   */
-  public function getInstance()
-  {
-    return $this->instance;
-  }
+    public function setFieldMask($fieldMask) {
+        $this->fieldMask = $fieldMask;
+    }
+
+    public function getFieldMask() {
+        return $this->fieldMask;
+    }
+
+    /**
+     * @param Google_Service_Spanner_Instance
+     */
+    public function setInstance(Google_Service_Spanner_Instance $instance) {
+        $this->instance = $instance;
+    }
+
+    /**
+     * @return Google_Service_Spanner_Instance
+     */
+    public function getInstance() {
+        return $this->instance;
+    }
 }

@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoHashConfig extends Google_Model
-{
-  protected $cryptoKeyType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey';
-  protected $cryptoKeyDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoHashConfig extends Google_Model {
+    protected $cryptoKeyType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey';
+    protected $cryptoKeyDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey
-   */
-  public function setCryptoKey(Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey $cryptoKey)
-  {
-    $this->cryptoKey = $cryptoKey;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey
-   */
-  public function getCryptoKey()
-  {
-    return $this->cryptoKey;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey
+     */
+    public function setCryptoKey(Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey $cryptoKey) {
+        $this->cryptoKey = $cryptoKey;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey
+     */
+    public function getCryptoKey() {
+        return $this->cryptoKey;
+    }
 }

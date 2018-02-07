@@ -15,35 +15,33 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeDescription extends Google_Collection
-{
-  protected $collection_key = 'supportedBy';
-  public $displayName;
-  public $name;
-  public $supportedBy;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeDescription extends Google_Collection {
+    protected $collection_key = 'supportedBy';
+    public $displayName;
+    public $name;
+    public $supportedBy;
 
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setSupportedBy($supportedBy)
-  {
-    $this->supportedBy = $supportedBy;
-  }
-  public function getSupportedBy()
-  {
-    return $this->supportedBy;
-  }
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setSupportedBy($supportedBy) {
+        $this->supportedBy = $supportedBy;
+    }
+
+    public function getSupportedBy() {
+        return $this->supportedBy;
+    }
 }

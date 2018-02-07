@@ -1,19 +1,14 @@
 <?php
 namespace GuzzleHttp\Psr7;
-
 use Psr\Http\Message\StreamInterface;
-
 
 /**
  * Decorator used to return only a subset of a stream
  */
-class LimitStream implements StreamInterface
-{
+class LimitStream implements StreamInterface {
     use StreamDecoratorTrait;
-
     /** @var int Offset to start reading from */
     private $offset;
-
     /** @var int Limit the number of bytes that can be read */
     private $limit;
 
@@ -25,17 +20,14 @@ class LimitStream implements StreamInterface
      *                                works on seekable streams).
      */
     public function __construct(
-        StreamInterface $stream,
-        $limit = -1,
-        $offset = 0
+    StreamInterface $stream, $limit = -1, $offset = 0
     ) {
         $this->stream = $stream;
         $this->setLimit($limit);
         $this->setOffset($offset);
     }
 
-    public function eof()
-    {
+    public function eof() {
         // Always return true if the underlying stream is EOF
         if ($this->stream->eof()) {
             return true;
@@ -53,13 +45,14 @@ class LimitStream implements StreamInterface
      * Returns the size of the limited subset of data
      * {@inheritdoc}
      */
-    public function getSize()
-    {
+    public function getSize() {
         if (null === ($length = $this->stream->getSize())) {
             return null;
-        } elseif ($this->limit == -1) {
+        }
+        elseif ($this->limit == -1) {
             return $length - $this->offset;
-        } else {
+        }
+        else {
             return min($this->limit, $length - $this->offset);
         }
     }
@@ -68,13 +61,10 @@ class LimitStream implements StreamInterface
      * Allow for a bounded seek on the read limited stream
      * {@inheritdoc}
      */
-    public function seek($offset, $whence = SEEK_SET)
-    {
+    public function seek($offset, $whence = SEEK_SET) {
         if ($whence !== SEEK_SET || $offset < 0) {
             throw new \RuntimeException(sprintf(
-                'Cannot seek to offset % with whence %s',
-                $offset,
-                $whence
+                    'Cannot seek to offset % with whence %s', $offset, $whence
             ));
         }
 
@@ -93,8 +83,7 @@ class LimitStream implements StreamInterface
      * Give a relative tell()
      * {@inheritdoc}
      */
-    public function tell()
-    {
+    public function tell() {
         return $this->stream->tell() - $this->offset;
     }
 
@@ -105,17 +94,18 @@ class LimitStream implements StreamInterface
      *
      * @throws \RuntimeException if the stream cannot be seeked.
      */
-    public function setOffset($offset)
-    {
+    public function setOffset($offset) {
         $current = $this->stream->tell();
 
         if ($current !== $offset) {
             // If the stream cannot seek to the offset position, then read to it
             if ($this->stream->isSeekable()) {
                 $this->stream->seek($offset);
-            } elseif ($current > $offset) {
+            }
+            elseif ($current > $offset) {
                 throw new \RuntimeException("Could not seek to stream offset $offset");
-            } else {
+            }
+            else {
                 $this->stream->read($offset - $current);
             }
         }
@@ -130,13 +120,11 @@ class LimitStream implements StreamInterface
      * @param int $limit Number of bytes to allow to be read from the stream.
      *                   Use -1 for no limit.
      */
-    public function setLimit($limit)
-    {
+    public function setLimit($limit) {
         $this->limit = $limit;
     }
 
-    public function read($length)
-    {
+    public function read($length) {
         if ($this->limit == -1) {
             return $this->stream->read($length);
         }

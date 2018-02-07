@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Dataflow_InstructionInput extends Google_Model
-{
-  public $outputNum;
-  public $producerInstructionIndex;
+class Google_Service_Dataflow_InstructionInput extends Google_Model {
+    public $outputNum;
+    public $producerInstructionIndex;
 
-  public function setOutputNum($outputNum)
-  {
-    $this->outputNum = $outputNum;
-  }
-  public function getOutputNum()
-  {
-    return $this->outputNum;
-  }
-  public function setProducerInstructionIndex($producerInstructionIndex)
-  {
-    $this->producerInstructionIndex = $producerInstructionIndex;
-  }
-  public function getProducerInstructionIndex()
-  {
-    return $this->producerInstructionIndex;
-  }
+    public function setOutputNum($outputNum) {
+        $this->outputNum = $outputNum;
+    }
+
+    public function getOutputNum() {
+        return $this->outputNum;
+    }
+
+    public function setProducerInstructionIndex($producerInstructionIndex) {
+        $this->producerInstructionIndex = $producerInstructionIndex;
+    }
+
+    public function getProducerInstructionIndex() {
+        return $this->producerInstructionIndex;
+    }
 }

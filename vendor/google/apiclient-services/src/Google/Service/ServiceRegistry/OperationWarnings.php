@@ -15,36 +15,34 @@
  * the License.
  */
 
-class Google_Service_ServiceRegistry_OperationWarnings extends Google_Collection
-{
-  protected $collection_key = 'data';
-  public $code;
-  protected $dataType = 'Google_Service_ServiceRegistry_OperationWarningsData';
-  protected $dataDataType = 'array';
-  public $message;
+class Google_Service_ServiceRegistry_OperationWarnings extends Google_Collection {
+    protected $collection_key = 'data';
+    public $code;
+    protected $dataType       = 'Google_Service_ServiceRegistry_OperationWarningsData';
+    protected $dataDataType   = 'array';
+    public $message;
 
-  public function setCode($code)
-  {
-    $this->code = $code;
-  }
-  public function getCode()
-  {
-    return $this->code;
-  }
-  public function setData($data)
-  {
-    $this->data = $data;
-  }
-  public function getData()
-  {
-    return $this->data;
-  }
-  public function setMessage($message)
-  {
-    $this->message = $message;
-  }
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    public function setCode($code) {
+        $this->code = $code;
+    }
+
+    public function getCode() {
+        return $this->code;
+    }
+
+    public function setData($data) {
+        $this->data = $data;
+    }
+
+    public function getData() {
+        return $this->data;
+    }
+
+    public function setMessage($message) {
+        $this->message = $message;
+    }
+
+    public function getMessage() {
+        return $this->message;
+    }
 }

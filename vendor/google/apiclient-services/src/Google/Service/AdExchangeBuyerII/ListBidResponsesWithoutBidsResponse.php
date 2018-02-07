@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyerII_ListBidResponsesWithoutBidsResponse extends Google_Collection
-{
-  protected $collection_key = 'bidResponseWithoutBidsStatusRows';
-  protected $bidResponseWithoutBidsStatusRowsType = 'Google_Service_AdExchangeBuyerII_BidResponseWithoutBidsStatusRow';
-  protected $bidResponseWithoutBidsStatusRowsDataType = 'array';
-  public $nextPageToken;
+class Google_Service_AdExchangeBuyerII_ListBidResponsesWithoutBidsResponse extends Google_Collection {
+    protected $collection_key                           = 'bidResponseWithoutBidsStatusRows';
+    protected $bidResponseWithoutBidsStatusRowsType     = 'Google_Service_AdExchangeBuyerII_BidResponseWithoutBidsStatusRow';
+    protected $bidResponseWithoutBidsStatusRowsDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_AdExchangeBuyerII_BidResponseWithoutBidsStatusRow
-   */
-  public function setBidResponseWithoutBidsStatusRows($bidResponseWithoutBidsStatusRows)
-  {
-    $this->bidResponseWithoutBidsStatusRows = $bidResponseWithoutBidsStatusRows;
-  }
-  /**
-   * @return Google_Service_AdExchangeBuyerII_BidResponseWithoutBidsStatusRow
-   */
-  public function getBidResponseWithoutBidsStatusRows()
-  {
-    return $this->bidResponseWithoutBidsStatusRows;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_AdExchangeBuyerII_BidResponseWithoutBidsStatusRow
+     */
+    public function setBidResponseWithoutBidsStatusRows($bidResponseWithoutBidsStatusRows) {
+        $this->bidResponseWithoutBidsStatusRows = $bidResponseWithoutBidsStatusRows;
+    }
+
+    /**
+     * @return Google_Service_AdExchangeBuyerII_BidResponseWithoutBidsStatusRow
+     */
+    public function getBidResponseWithoutBidsStatusRows() {
+        return $this->bidResponseWithoutBidsStatusRows;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

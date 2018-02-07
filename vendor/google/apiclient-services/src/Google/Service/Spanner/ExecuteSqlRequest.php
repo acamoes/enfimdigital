@@ -15,75 +15,73 @@
  * the License.
  */
 
-class Google_Service_Spanner_ExecuteSqlRequest extends Google_Model
-{
-  protected $paramTypesType = 'Google_Service_Spanner_Type';
-  protected $paramTypesDataType = 'map';
-  public $params;
-  public $queryMode;
-  public $resumeToken;
-  public $sql;
-  protected $transactionType = 'Google_Service_Spanner_TransactionSelector';
-  protected $transactionDataType = '';
+class Google_Service_Spanner_ExecuteSqlRequest extends Google_Model {
+    protected $paramTypesType      = 'Google_Service_Spanner_Type';
+    protected $paramTypesDataType  = 'map';
+    public $params;
+    public $queryMode;
+    public $resumeToken;
+    public $sql;
+    protected $transactionType     = 'Google_Service_Spanner_TransactionSelector';
+    protected $transactionDataType = '';
 
-  /**
-   * @param Google_Service_Spanner_Type
-   */
-  public function setParamTypes($paramTypes)
-  {
-    $this->paramTypes = $paramTypes;
-  }
-  /**
-   * @return Google_Service_Spanner_Type
-   */
-  public function getParamTypes()
-  {
-    return $this->paramTypes;
-  }
-  public function setParams($params)
-  {
-    $this->params = $params;
-  }
-  public function getParams()
-  {
-    return $this->params;
-  }
-  public function setQueryMode($queryMode)
-  {
-    $this->queryMode = $queryMode;
-  }
-  public function getQueryMode()
-  {
-    return $this->queryMode;
-  }
-  public function setResumeToken($resumeToken)
-  {
-    $this->resumeToken = $resumeToken;
-  }
-  public function getResumeToken()
-  {
-    return $this->resumeToken;
-  }
-  public function setSql($sql)
-  {
-    $this->sql = $sql;
-  }
-  public function getSql()
-  {
-    return $this->sql;
-  }
-  /**
-   * @param Google_Service_Spanner_TransactionSelector
-   */
-  public function setTransaction(Google_Service_Spanner_TransactionSelector $transaction)
-  {
-    $this->transaction = $transaction;
-  }
-  /**
-   * @return Google_Service_Spanner_TransactionSelector
-   */
-  public function getTransaction()
-  {
-    return $this->transaction;
-  }
+    /**
+     * @param Google_Service_Spanner_Type
+     */
+    public function setParamTypes($paramTypes) {
+        $this->paramTypes = $paramTypes;
+    }
+
+    /**
+     * @return Google_Service_Spanner_Type
+     */
+    public function getParamTypes() {
+        return $this->paramTypes;
+    }
+
+    public function setParams($params) {
+        $this->params = $params;
+    }
+
+    public function getParams() {
+        return $this->params;
+    }
+
+    public function setQueryMode($queryMode) {
+        $this->queryMode = $queryMode;
+    }
+
+    public function getQueryMode() {
+        return $this->queryMode;
+    }
+
+    public function setResumeToken($resumeToken) {
+        $this->resumeToken = $resumeToken;
+    }
+
+    public function getResumeToken() {
+        return $this->resumeToken;
+    }
+
+    public function setSql($sql) {
+        $this->sql = $sql;
+    }
+
+    public function getSql() {
+        return $this->sql;
+    }
+
+    /**
+     * @param Google_Service_Spanner_TransactionSelector
+     */
+    public function setTransaction(Google_Service_Spanner_TransactionSelector $transaction) {
+        $this->transaction = $transaction;
+    }
+
+    /**
+     * @return Google_Service_Spanner_TransactionSelector
+     */
+    public function getTransaction() {
+        return $this->transaction;
+    }
 }

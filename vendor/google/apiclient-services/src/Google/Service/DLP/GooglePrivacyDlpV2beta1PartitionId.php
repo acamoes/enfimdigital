@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId extends Google_Model
-{
-  public $namespaceId;
-  public $projectId;
+class Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId extends Google_Model {
+    public $namespaceId;
+    public $projectId;
 
-  public function setNamespaceId($namespaceId)
-  {
-    $this->namespaceId = $namespaceId;
-  }
-  public function getNamespaceId()
-  {
-    return $this->namespaceId;
-  }
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
-  }
+    public function setNamespaceId($namespaceId) {
+        $this->namespaceId = $namespaceId;
+    }
+
+    public function getNamespaceId() {
+        return $this->namespaceId;
+    }
+
+    public function setProjectId($projectId) {
+        $this->projectId = $projectId;
+    }
+
+    public function getProjectId() {
+        return $this->projectId;
+    }
 }

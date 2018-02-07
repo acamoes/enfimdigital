@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Monitoring_MonitoredResourceMetadata extends Google_Model
-{
-  public $systemLabels;
-  public $userLabels;
+class Google_Service_Monitoring_MonitoredResourceMetadata extends Google_Model {
+    public $systemLabels;
+    public $userLabels;
 
-  public function setSystemLabels($systemLabels)
-  {
-    $this->systemLabels = $systemLabels;
-  }
-  public function getSystemLabels()
-  {
-    return $this->systemLabels;
-  }
-  public function setUserLabels($userLabels)
-  {
-    $this->userLabels = $userLabels;
-  }
-  public function getUserLabels()
-  {
-    return $this->userLabels;
-  }
+    public function setSystemLabels($systemLabels) {
+        $this->systemLabels = $systemLabels;
+    }
+
+    public function getSystemLabels() {
+        return $this->systemLabels;
+    }
+
+    public function setUserLabels($userLabels) {
+        $this->userLabels = $userLabels;
+    }
+
+    public function getUserLabels() {
+        return $this->userLabels;
+    }
 }

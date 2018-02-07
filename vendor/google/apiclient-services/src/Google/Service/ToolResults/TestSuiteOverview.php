@@ -15,68 +15,66 @@
  * the License.
  */
 
-class Google_Service_ToolResults_TestSuiteOverview extends Google_Model
-{
-  public $errorCount;
-  public $failureCount;
-  public $name;
-  public $skippedCount;
-  public $totalCount;
-  protected $xmlSourceType = 'Google_Service_ToolResults_FileReference';
-  protected $xmlSourceDataType = '';
+class Google_Service_ToolResults_TestSuiteOverview extends Google_Model {
+    public $errorCount;
+    public $failureCount;
+    public $name;
+    public $skippedCount;
+    public $totalCount;
+    protected $xmlSourceType     = 'Google_Service_ToolResults_FileReference';
+    protected $xmlSourceDataType = '';
 
-  public function setErrorCount($errorCount)
-  {
-    $this->errorCount = $errorCount;
-  }
-  public function getErrorCount()
-  {
-    return $this->errorCount;
-  }
-  public function setFailureCount($failureCount)
-  {
-    $this->failureCount = $failureCount;
-  }
-  public function getFailureCount()
-  {
-    return $this->failureCount;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setSkippedCount($skippedCount)
-  {
-    $this->skippedCount = $skippedCount;
-  }
-  public function getSkippedCount()
-  {
-    return $this->skippedCount;
-  }
-  public function setTotalCount($totalCount)
-  {
-    $this->totalCount = $totalCount;
-  }
-  public function getTotalCount()
-  {
-    return $this->totalCount;
-  }
-  /**
-   * @param Google_Service_ToolResults_FileReference
-   */
-  public function setXmlSource(Google_Service_ToolResults_FileReference $xmlSource)
-  {
-    $this->xmlSource = $xmlSource;
-  }
-  /**
-   * @return Google_Service_ToolResults_FileReference
-   */
-  public function getXmlSource()
-  {
-    return $this->xmlSource;
-  }
+    public function setErrorCount($errorCount) {
+        $this->errorCount = $errorCount;
+    }
+
+    public function getErrorCount() {
+        return $this->errorCount;
+    }
+
+    public function setFailureCount($failureCount) {
+        $this->failureCount = $failureCount;
+    }
+
+    public function getFailureCount() {
+        return $this->failureCount;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setSkippedCount($skippedCount) {
+        $this->skippedCount = $skippedCount;
+    }
+
+    public function getSkippedCount() {
+        return $this->skippedCount;
+    }
+
+    public function setTotalCount($totalCount) {
+        $this->totalCount = $totalCount;
+    }
+
+    public function getTotalCount() {
+        return $this->totalCount;
+    }
+
+    /**
+     * @param Google_Service_ToolResults_FileReference
+     */
+    public function setXmlSource(Google_Service_ToolResults_FileReference $xmlSource) {
+        $this->xmlSource = $xmlSource;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_FileReference
+     */
+    public function getXmlSource() {
+        return $this->xmlSource;
+    }
 }

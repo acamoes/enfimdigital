@@ -1,11 +1,11 @@
 <section id="footer">
-	<div class="inner">
-		<ul class="copyright">
-			<li>&copy; ENFIM - Escola Nacional de Insígnia de Madeira. All rights
-				reserved.</li>
-			<li>Developed by: João Madeira</li>
-		</ul>
-	</div>
+    <div class="inner">
+        <ul class="copyright">
+            <li>&copy; ENFIM - Escola Nacional de Insígnia de Madeira. All rights
+                reserved.</li>
+            <li>Developed by: João Madeira</li>
+        </ul>
+    </div>
 </section>
 
 </div>

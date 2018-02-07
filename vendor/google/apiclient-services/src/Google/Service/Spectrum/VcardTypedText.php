@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Spectrum_VcardTypedText extends Google_Model
-{
-  public $text;
+class Google_Service_Spectrum_VcardTypedText extends Google_Model {
+    public $text;
 
-  public function setText($text)
-  {
-    $this->text = $text;
-  }
-  public function getText()
-  {
-    return $this->text;
-  }
+    public function setText($text) {
+        $this->text = $text;
+    }
+
+    public function getText() {
+        return $this->text;
+    }
 }

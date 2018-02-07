@@ -14,141 +14,126 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\tests;
-
 use Google\Auth\FetchAuthTokenCache;
 
-class FetchAuthTokenCacheTest extends BaseTest
-{
-    protected function setUp()
-    {
-        $this->mockFetcher =
-            $this
+class FetchAuthTokenCacheTest extends BaseTest {
+
+    protected function setUp() {
+        $this->mockFetcher   = $this
                 ->getMockBuilder('Google\Auth\FetchAuthTokenInterface')
                 ->getMock();
-        $this->mockCacheItem =
-            $this
+        $this->mockCacheItem = $this
                 ->getMockBuilder('Psr\Cache\CacheItemInterface')
                 ->getMock();
-        $this->mockCache =
-            $this
+        $this->mockCache     = $this
                 ->getMockBuilder('Psr\Cache\CacheItemPoolInterface')
                 ->getMock();
     }
 
-    public function testUsesCachedAuthToken()
-    {
-        $cacheKey = 'myKey';
+    public function testUsesCachedAuthToken() {
+        $cacheKey    = 'myKey';
         $cachedValue = '2/abcdef1234567890';
         $this->mockCacheItem
-            ->expects($this->once())
-            ->method('isHit')
-            ->will($this->returnValue(true));
+                ->expects($this->once())
+                ->method('isHit')
+                ->will($this->returnValue(true));
         $this->mockCacheItem
-            ->expects($this->once())
-            ->method('get')
-            ->will($this->returnValue($cachedValue));
+                ->expects($this->once())
+                ->method('get')
+                ->will($this->returnValue($cachedValue));
         $this->mockCache
-            ->expects($this->once())
-            ->method('getItem')
-            ->with($this->equalTo($cacheKey))
-            ->will($this->returnValue($this->mockCacheItem));
+                ->expects($this->once())
+                ->method('getItem')
+                ->with($this->equalTo($cacheKey))
+                ->will($this->returnValue($this->mockCacheItem));
         $this->mockFetcher
-            ->expects($this->never())
-            ->method('fetchAuthToken');
+                ->expects($this->never())
+                ->method('fetchAuthToken');
         $this->mockFetcher
-            ->expects($this->any())
-            ->method('getCacheKey')
-            ->will($this->returnValue($cacheKey));
+                ->expects($this->any())
+                ->method('getCacheKey')
+                ->will($this->returnValue($cacheKey));
 
         // Run the test.
         $cachedFetcher = new FetchAuthTokenCache(
-            $this->mockFetcher,
-            null,
-            $this->mockCache
+                $this->mockFetcher, null, $this->mockCache
         );
-        $accessToken = $cachedFetcher->fetchAuthToken();
+        $accessToken   = $cachedFetcher->fetchAuthToken();
         $this->assertEquals($accessToken, ['access_token' => $cachedValue]);
     }
 
-    public function testGetsCachedAuthTokenUsingCachePrefix()
-    {
-        $prefix = 'test_prefix_';
-        $cacheKey = 'myKey';
+    public function testGetsCachedAuthTokenUsingCachePrefix() {
+        $prefix      = 'test_prefix_';
+        $cacheKey    = 'myKey';
         $cachedValue = '2/abcdef1234567890';
         $this->mockCacheItem
-            ->expects($this->once())
-            ->method('isHit')
-            ->will($this->returnValue(true));
+                ->expects($this->once())
+                ->method('isHit')
+                ->will($this->returnValue(true));
         $this->mockCacheItem
-            ->expects($this->once())
-            ->method('get')
-            ->will($this->returnValue($cachedValue));
+                ->expects($this->once())
+                ->method('get')
+                ->will($this->returnValue($cachedValue));
         $this->mockCache
-            ->expects($this->once())
-            ->method('getItem')
-            ->with($this->equalTo($prefix . $cacheKey))
-            ->will($this->returnValue($this->mockCacheItem));
+                ->expects($this->once())
+                ->method('getItem')
+                ->with($this->equalTo($prefix . $cacheKey))
+                ->will($this->returnValue($this->mockCacheItem));
         $this->mockFetcher
-            ->expects($this->never())
-            ->method('fetchAuthToken');
+                ->expects($this->never())
+                ->method('fetchAuthToken');
         $this->mockFetcher
-            ->expects($this->any())
-            ->method('getCacheKey')
-            ->will($this->returnValue($cacheKey));
+                ->expects($this->any())
+                ->method('getCacheKey')
+                ->will($this->returnValue($cacheKey));
 
         // Run the test
         $cachedFetcher = new FetchAuthTokenCache(
-            $this->mockFetcher,
-            ['prefix' => $prefix],
-            $this->mockCache
+                $this->mockFetcher, ['prefix' => $prefix], $this->mockCache
         );
-        $accessToken = $cachedFetcher->fetchAuthToken();
+        $accessToken   = $cachedFetcher->fetchAuthToken();
         $this->assertEquals($accessToken, ['access_token' => $cachedValue]);
     }
 
-    public function testShouldSaveValueInCacheWithCacheOptions()
-    {
-        $prefix = 'test_prefix_';
-        $lifetime = '70707';
-        $cacheKey = 'myKey';
-        $token = '1/abcdef1234567890';
+    public function testShouldSaveValueInCacheWithCacheOptions() {
+        $prefix     = 'test_prefix_';
+        $lifetime   = '70707';
+        $cacheKey   = 'myKey';
+        $token      = '1/abcdef1234567890';
         $authResult = ['access_token' => $token];
         $this->mockCacheItem
-            ->expects($this->any())
-            ->method('get')
-            ->will($this->returnValue(null));
+                ->expects($this->any())
+                ->method('get')
+                ->will($this->returnValue(null));
         $this->mockCacheItem
-            ->expects($this->once())
-            ->method('set')
-            ->with($this->equalTo($token))
-            ->will($this->returnValue(false));
+                ->expects($this->once())
+                ->method('set')
+                ->with($this->equalTo($token))
+                ->will($this->returnValue(false));
         $this->mockCacheItem
-            ->expects($this->once())
-            ->method('expiresAfter')
-            ->with($this->equalTo($lifetime));
+                ->expects($this->once())
+                ->method('expiresAfter')
+                ->with($this->equalTo($lifetime));
         $this->mockCache
-            ->expects($this->exactly(2))
-            ->method('getItem')
-            ->with($this->equalTo($prefix . $cacheKey))
-            ->will($this->returnValue($this->mockCacheItem));
+                ->expects($this->exactly(2))
+                ->method('getItem')
+                ->with($this->equalTo($prefix . $cacheKey))
+                ->will($this->returnValue($this->mockCacheItem));
         $this->mockFetcher
-            ->expects($this->any())
-            ->method('getCacheKey')
-            ->will($this->returnValue($cacheKey));
+                ->expects($this->any())
+                ->method('getCacheKey')
+                ->will($this->returnValue($cacheKey));
         $this->mockFetcher
-            ->expects($this->once())
-            ->method('fetchAuthToken')
-            ->will($this->returnValue($authResult));
+                ->expects($this->once())
+                ->method('fetchAuthToken')
+                ->will($this->returnValue($authResult));
 
         // Run the test
         $cachedFetcher = new FetchAuthTokenCache(
-            $this->mockFetcher,
-            ['prefix' => $prefix, 'lifetime' => $lifetime],
-            $this->mockCache
+                $this->mockFetcher, ['prefix' => $prefix, 'lifetime' => $lifetime], $this->mockCache
         );
-        $accessToken = $cachedFetcher->fetchAuthToken();
+        $accessToken   = $cachedFetcher->fetchAuthToken();
         $this->assertEquals($accessToken, ['access_token' => $token]);
     }
 }

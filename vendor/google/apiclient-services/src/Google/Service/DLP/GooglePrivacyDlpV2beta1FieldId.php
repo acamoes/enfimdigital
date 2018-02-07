@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId extends Google_Model
-{
-  public $columnName;
+class Google_Service_DLP_GooglePrivacyDlpV2beta1FieldId extends Google_Model {
+    public $columnName;
 
-  public function setColumnName($columnName)
-  {
-    $this->columnName = $columnName;
-  }
-  public function getColumnName()
-  {
-    return $this->columnName;
-  }
+    public function setColumnName($columnName) {
+        $this->columnName = $columnName;
+    }
+
+    public function getColumnName() {
+        return $this->columnName;
+    }
 }

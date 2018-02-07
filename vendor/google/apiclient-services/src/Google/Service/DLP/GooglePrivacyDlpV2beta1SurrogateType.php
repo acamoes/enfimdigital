@@ -15,6 +15,6 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1SurrogateType extends Google_Model
-{
+class Google_Service_DLP_GooglePrivacyDlpV2beta1SurrogateType extends Google_Model {
+
 }

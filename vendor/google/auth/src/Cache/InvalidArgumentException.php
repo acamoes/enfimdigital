@@ -14,11 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Cache;
-
 use Psr\Cache\InvalidArgumentException as PsrInvalidArgumentException;
 
-class InvalidArgumentException extends \InvalidArgumentException implements PsrInvalidArgumentException
-{
+class InvalidArgumentException extends \InvalidArgumentException implements PsrInvalidArgumentException {
+
 }

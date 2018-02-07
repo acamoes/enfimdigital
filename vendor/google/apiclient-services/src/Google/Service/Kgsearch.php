@@ -28,70 +28,63 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_Kgsearch extends Google_Service
-{
+class Google_Service_Kgsearch extends Google_Service {
+    public $entities;
 
+    /**
+     * Constructs the internal representation of the Kgsearch service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://kgsearch.googleapis.com/';
+        $this->servicePath = '';
+        $this->version     = 'v1';
+        $this->serviceName = 'kgsearch';
 
-  public $entities;
-  
-  /**
-   * Constructs the internal representation of the Kgsearch service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://kgsearch.googleapis.com/';
-    $this->servicePath = '';
-    $this->version = 'v1';
-    $this->serviceName = 'kgsearch';
-
-    $this->entities = new Google_Service_Kgsearch_Resource_Entities(
-        $this,
-        $this->serviceName,
-        'entities',
-        array(
-          'methods' => array(
-            'search' => array(
-              'path' => 'v1/entities:search',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'prefix' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
+        $this->entities = new Google_Service_Kgsearch_Resource_Entities(
+                $this, $this->serviceName, 'entities', array(
+            'methods' => array(
+                'search' => array(
+                    'path'       => 'v1/entities:search',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'prefix'    => array(
+                            'location' => 'query',
+                            'type'     => 'boolean',
+                        ),
+                        'query'     => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'types'     => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                            'repeated' => true,
+                        ),
+                        'indent'    => array(
+                            'location' => 'query',
+                            'type'     => 'boolean',
+                        ),
+                        'languages' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                            'repeated' => true,
+                        ),
+                        'ids'       => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                            'repeated' => true,
+                        ),
+                        'limit'     => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                    ),
                 ),
-                'query' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'types' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'indent' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'languages' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'ids' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'limit' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

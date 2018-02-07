@@ -57,7 +57,8 @@
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
                                    $.when(request('action={$action}&task=apagar&tab={$currentTab}&idCourses={$idCourses}&idInformations={$informacoes['idInformations']}', '{$action}Msg')).
-                                           then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"> </a>                   
+                                           then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                               }"> </a>                   
                 </td>
             </tr>
         {/foreach}

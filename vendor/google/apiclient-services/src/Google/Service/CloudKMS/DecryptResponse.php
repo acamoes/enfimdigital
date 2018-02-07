@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudKMS_DecryptResponse extends Google_Model
-{
-  public $plaintext;
+class Google_Service_CloudKMS_DecryptResponse extends Google_Model {
+    public $plaintext;
 
-  public function setPlaintext($plaintext)
-  {
-    $this->plaintext = $plaintext;
-  }
-  public function getPlaintext()
-  {
-    return $this->plaintext;
-  }
+    public function setPlaintext($plaintext) {
+        $this->plaintext = $plaintext;
+    }
+
+    public function getPlaintext() {
+        return $this->plaintext;
+    }
 }

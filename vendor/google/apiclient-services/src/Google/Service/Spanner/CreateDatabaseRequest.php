@@ -15,26 +15,24 @@
  * the License.
  */
 
-class Google_Service_Spanner_CreateDatabaseRequest extends Google_Collection
-{
-  protected $collection_key = 'extraStatements';
-  public $createStatement;
-  public $extraStatements;
+class Google_Service_Spanner_CreateDatabaseRequest extends Google_Collection {
+    protected $collection_key = 'extraStatements';
+    public $createStatement;
+    public $extraStatements;
 
-  public function setCreateStatement($createStatement)
-  {
-    $this->createStatement = $createStatement;
-  }
-  public function getCreateStatement()
-  {
-    return $this->createStatement;
-  }
-  public function setExtraStatements($extraStatements)
-  {
-    $this->extraStatements = $extraStatements;
-  }
-  public function getExtraStatements()
-  {
-    return $this->extraStatements;
-  }
+    public function setCreateStatement($createStatement) {
+        $this->createStatement = $createStatement;
+    }
+
+    public function getCreateStatement() {
+        return $this->createStatement;
+    }
+
+    public function setExtraStatements($extraStatements) {
+        $this->extraStatements = $extraStatements;
+    }
+
+    public function getExtraStatements() {
+        return $this->extraStatements;
+    }
 }

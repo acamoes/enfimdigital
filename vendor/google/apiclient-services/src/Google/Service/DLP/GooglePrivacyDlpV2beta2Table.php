@@ -15,40 +15,38 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2Table extends Google_Collection
-{
-  protected $collection_key = 'rows';
-  protected $headersType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId';
-  protected $headersDataType = 'array';
-  protected $rowsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Row';
-  protected $rowsDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2Table extends Google_Collection {
+    protected $collection_key  = 'rows';
+    protected $headersType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId';
+    protected $headersDataType = 'array';
+    protected $rowsType        = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Row';
+    protected $rowsDataType    = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
-   */
-  public function setHeaders($headers)
-  {
-    $this->headers = $headers;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
-   */
-  public function getHeaders()
-  {
-    return $this->headers;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Row
-   */
-  public function setRows($rows)
-  {
-    $this->rows = $rows;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Row
-   */
-  public function getRows()
-  {
-    return $this->rows;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
+     */
+    public function setHeaders($headers) {
+        $this->headers = $headers;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
+     */
+    public function getHeaders() {
+        return $this->headers;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Row
+     */
+    public function setRows($rows) {
+        $this->rows = $rows;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Row
+     */
+    public function getRows() {
+        return $this->rows;
+    }
 }

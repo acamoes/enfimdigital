@@ -22,18 +22,18 @@
                             </tr>
                         </thead>
                         {foreach from=$myAgenda item=agenda}
-                        <tbody>
-                            <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formadores&task=getCourse&idCourses={$agenda.ctIdCourses}'">
-                                <td>{$agenda.ctType}</td>
-                                <td>{$agenda.csCourse}</td>
-                                <td>{$agenda.csCompleteName}</td>
-                                <td>{$agenda.limitDate|date_format:"Y-m-d"}</td>
-                                <td>{$agenda.csStartDate}</td>
-                                <td>{$agenda.csLocal}</td>
-                                <td>{$agenda.csVacancy}</td>
-                                <td>{$agenda.csStatus}</td>
-                            </tr>
-                        </tbody>
+                            <tbody>
+                                <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formadores&task=getCourse&idCourses={$agenda.ctIdCourses}'">
+                                    <td>{$agenda.ctType}</td>
+                                    <td>{$agenda.csCourse}</td>
+                                    <td>{$agenda.csCompleteName}</td>
+                                    <td>{$agenda.limitDate|date_format:"Y-m-d"}</td>
+                                    <td>{$agenda.csStartDate}</td>
+                                    <td>{$agenda.csLocal}</td>
+                                    <td>{$agenda.csVacancy}</td>
+                                    <td>{$agenda.csStatus}</td>
+                                </tr>
+                            </tbody>
                         {/foreach}
                         <tfoot>
                             <tr>
@@ -61,18 +61,18 @@
                             </tr>
                         </thead>
                         {foreach from=$myCourses item=course}
-                        <tbody>
-                            <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formandos&task=getCourse&idCourses={$course.csIdCourses}'">
-                                <td>{$course.csStartDate}</td>
-                                <td>{$course.csCompleteName}</td>
-                                <td>{$course.csStatus}</td>
-                                <td>{$course.ucAttended}</td>
-                                <td>{$course.ucPassedCourse}</td>
-                                <td>{$course.ucPassedInternship}</td>
-                                <td>{$course.ucPassed}</td>
-                                <td>{$course.ucBoCourse}</td>
-                            </tr>
-                        </tbody>
+                            <tbody>
+                                <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formandos&task=getCourse&idCourses={$course.csIdCourses}'">
+                                    <td>{$course.csStartDate}</td>
+                                    <td>{$course.csCompleteName}</td>
+                                    <td>{$course.csStatus}</td>
+                                    <td>{$course.ucAttended}</td>
+                                    <td>{$course.ucPassedCourse}</td>
+                                    <td>{$course.ucPassedInternship}</td>
+                                    <td>{$course.ucPassed}</td>
+                                    <td>{$course.ucBoCourse}</td>
+                                </tr>
+                            </tbody>
                         {/foreach}
                         <tfoot>
                             <tr>

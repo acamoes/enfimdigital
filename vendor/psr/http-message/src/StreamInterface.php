@@ -1,5 +1,4 @@
 <?php
-
 namespace Psr\Http\Message;
 
 /**
@@ -9,8 +8,8 @@ namespace Psr\Http\Message;
  * a wrapper around the most common operations, including serialization of
  * the entire stream to a string.
  */
-interface StreamInterface
-{
+interface StreamInterface {
+
     /**
      * Reads all data from the stream into a string, from the beginning to end.
      *

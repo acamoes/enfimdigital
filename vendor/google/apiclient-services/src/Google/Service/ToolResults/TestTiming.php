@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_ToolResults_TestTiming extends Google_Model
-{
-  protected $testProcessDurationType = 'Google_Service_ToolResults_Duration';
-  protected $testProcessDurationDataType = '';
+class Google_Service_ToolResults_TestTiming extends Google_Model {
+    protected $testProcessDurationType     = 'Google_Service_ToolResults_Duration';
+    protected $testProcessDurationDataType = '';
 
-  /**
-   * @param Google_Service_ToolResults_Duration
-   */
-  public function setTestProcessDuration(Google_Service_ToolResults_Duration $testProcessDuration)
-  {
-    $this->testProcessDuration = $testProcessDuration;
-  }
-  /**
-   * @return Google_Service_ToolResults_Duration
-   */
-  public function getTestProcessDuration()
-  {
-    return $this->testProcessDuration;
-  }
+    /**
+     * @param Google_Service_ToolResults_Duration
+     */
+    public function setTestProcessDuration(Google_Service_ToolResults_Duration $testProcessDuration) {
+        $this->testProcessDuration = $testProcessDuration;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_Duration
+     */
+    public function getTestProcessDuration() {
+        return $this->testProcessDuration;
+    }
 }

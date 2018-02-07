@@ -66,7 +66,7 @@
                         } else {
                             $('#username').val([obj.username]);
                             $('#name').val(obj.name);
-                            $('#email').val(obj.email);                            
+                            $('#email').val(obj.email);
                             $('#birthDate').val(obj.birthDate);
                             $('#address').val(obj.address);
                             $('#zipCode').val(obj.zipCode);

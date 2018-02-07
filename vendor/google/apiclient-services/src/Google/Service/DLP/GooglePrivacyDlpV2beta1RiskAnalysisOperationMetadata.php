@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1RiskAnalysisOperationMetadata extends Google_Model
-{
-  public $createTime;
-  protected $requestedPrivacyMetricType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric';
-  protected $requestedPrivacyMetricDataType = '';
-  protected $requestedSourceTableType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1BigQueryTable';
-  protected $requestedSourceTableDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1RiskAnalysisOperationMetadata extends Google_Model {
+    public $createTime;
+    protected $requestedPrivacyMetricType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric';
+    protected $requestedPrivacyMetricDataType = '';
+    protected $requestedSourceTableType       = 'Google_Service_DLP_GooglePrivacyDlpV2beta1BigQueryTable';
+    protected $requestedSourceTableDataType   = '';
 
-  public function setCreateTime($createTime)
-  {
-    $this->createTime = $createTime;
-  }
-  public function getCreateTime()
-  {
-    return $this->createTime;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric
-   */
-  public function setRequestedPrivacyMetric(Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric $requestedPrivacyMetric)
-  {
-    $this->requestedPrivacyMetric = $requestedPrivacyMetric;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric
-   */
-  public function getRequestedPrivacyMetric()
-  {
-    return $this->requestedPrivacyMetric;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1BigQueryTable
-   */
-  public function setRequestedSourceTable(Google_Service_DLP_GooglePrivacyDlpV2beta1BigQueryTable $requestedSourceTable)
-  {
-    $this->requestedSourceTable = $requestedSourceTable;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1BigQueryTable
-   */
-  public function getRequestedSourceTable()
-  {
-    return $this->requestedSourceTable;
-  }
+    public function setCreateTime($createTime) {
+        $this->createTime = $createTime;
+    }
+
+    public function getCreateTime() {
+        return $this->createTime;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric
+     */
+    public function setRequestedPrivacyMetric(Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric $requestedPrivacyMetric) {
+        $this->requestedPrivacyMetric = $requestedPrivacyMetric;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1PrivacyMetric
+     */
+    public function getRequestedPrivacyMetric() {
+        return $this->requestedPrivacyMetric;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1BigQueryTable
+     */
+    public function setRequestedSourceTable(Google_Service_DLP_GooglePrivacyDlpV2beta1BigQueryTable $requestedSourceTable) {
+        $this->requestedSourceTable = $requestedSourceTable;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1BigQueryTable
+     */
+    public function getRequestedSourceTable() {
+        return $this->requestedSourceTable;
+    }
 }

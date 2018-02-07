@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2RecordCondition extends Google_Model
-{
-  protected $expressionsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Expressions';
-  protected $expressionsDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2RecordCondition extends Google_Model {
+    protected $expressionsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Expressions';
+    protected $expressionsDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Expressions
-   */
-  public function setExpressions(Google_Service_DLP_GooglePrivacyDlpV2beta2Expressions $expressions)
-  {
-    $this->expressions = $expressions;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Expressions
-   */
-  public function getExpressions()
-  {
-    return $this->expressions;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Expressions
+     */
+    public function setExpressions(Google_Service_DLP_GooglePrivacyDlpV2beta2Expressions $expressions) {
+        $this->expressions = $expressions;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Expressions
+     */
+    public function getExpressions() {
+        return $this->expressions;
+    }
 }

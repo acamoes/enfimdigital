@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_Spanner_BeginTransactionRequest extends Google_Model
-{
-  protected $optionsType = 'Google_Service_Spanner_TransactionOptions';
-  protected $optionsDataType = '';
+class Google_Service_Spanner_BeginTransactionRequest extends Google_Model {
+    protected $optionsType     = 'Google_Service_Spanner_TransactionOptions';
+    protected $optionsDataType = '';
 
-  /**
-   * @param Google_Service_Spanner_TransactionOptions
-   */
-  public function setOptions(Google_Service_Spanner_TransactionOptions $options)
-  {
-    $this->options = $options;
-  }
-  /**
-   * @return Google_Service_Spanner_TransactionOptions
-   */
-  public function getOptions()
-  {
-    return $this->options;
-  }
+    /**
+     * @param Google_Service_Spanner_TransactionOptions
+     */
+    public function setOptions(Google_Service_Spanner_TransactionOptions $options) {
+        $this->options = $options;
+    }
+
+    /**
+     * @return Google_Service_Spanner_TransactionOptions
+     */
+    public function getOptions() {
+        return $this->options;
+    }
 }

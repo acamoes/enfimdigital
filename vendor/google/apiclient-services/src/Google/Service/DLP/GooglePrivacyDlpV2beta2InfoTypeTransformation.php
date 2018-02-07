@@ -15,40 +15,38 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformation extends Google_Collection
-{
-  protected $collection_key = 'infoTypes';
-  protected $infoTypesType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
-  protected $infoTypesDataType = 'array';
-  protected $primitiveTransformationType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2PrimitiveTransformation';
-  protected $primitiveTransformationDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeTransformation extends Google_Collection {
+    protected $collection_key                  = 'infoTypes';
+    protected $infoTypesType                   = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
+    protected $infoTypesDataType               = 'array';
+    protected $primitiveTransformationType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2PrimitiveTransformation';
+    protected $primitiveTransformationDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function setInfoTypes($infoTypes)
-  {
-    $this->infoTypes = $infoTypes;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function getInfoTypes()
-  {
-    return $this->infoTypes;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2PrimitiveTransformation
-   */
-  public function setPrimitiveTransformation(Google_Service_DLP_GooglePrivacyDlpV2beta2PrimitiveTransformation $primitiveTransformation)
-  {
-    $this->primitiveTransformation = $primitiveTransformation;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2PrimitiveTransformation
-   */
-  public function getPrimitiveTransformation()
-  {
-    return $this->primitiveTransformation;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function setInfoTypes($infoTypes) {
+        $this->infoTypes = $infoTypes;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function getInfoTypes() {
+        return $this->infoTypes;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2PrimitiveTransformation
+     */
+    public function setPrimitiveTransformation(Google_Service_DLP_GooglePrivacyDlpV2beta2PrimitiveTransformation $primitiveTransformation) {
+        $this->primitiveTransformation = $primitiveTransformation;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2PrimitiveTransformation
+     */
+    public function getPrimitiveTransformation() {
+        return $this->primitiveTransformation;
+    }
 }

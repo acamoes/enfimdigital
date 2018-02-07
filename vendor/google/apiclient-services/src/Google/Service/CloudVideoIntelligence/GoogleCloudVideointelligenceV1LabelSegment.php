@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1LabelSegment extends Google_Model
-{
-  public $confidence;
-  protected $segmentType = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoSegment';
-  protected $segmentDataType = '';
+class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1LabelSegment extends Google_Model {
+    public $confidence;
+    protected $segmentType     = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoSegment';
+    protected $segmentDataType = '';
 
-  public function setConfidence($confidence)
-  {
-    $this->confidence = $confidence;
-  }
-  public function getConfidence()
-  {
-    return $this->confidence;
-  }
-  /**
-   * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoSegment
-   */
-  public function setSegment(Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoSegment $segment)
-  {
-    $this->segment = $segment;
-  }
-  /**
-   * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoSegment
-   */
-  public function getSegment()
-  {
-    return $this->segment;
-  }
+    public function setConfidence($confidence) {
+        $this->confidence = $confidence;
+    }
+
+    public function getConfidence() {
+        return $this->confidence;
+    }
+
+    /**
+     * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoSegment
+     */
+    public function setSegment(Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoSegment $segment) {
+        $this->segment = $segment;
+    }
+
+    /**
+     * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1VideoSegment
+     */
+    public function getSegment() {
+        return $this->segment;
+    }
 }

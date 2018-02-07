@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Middleware;
-
 use Google\Auth\FetchAuthTokenInterface;
 use Psr\Http\Message\RequestInterface;
 
@@ -31,18 +29,15 @@ use Psr\Http\Message\RequestInterface;
  *
  * 'authorization' 'Bearer <value of auth_token>'
  */
-class AuthTokenMiddleware
-{
+class AuthTokenMiddleware {
     /**
      * @var callback
      */
     private $httpHandler;
-
     /**
      * @var FetchAuthTokenInterface
      */
     private $fetcher;
-
     /**
      * @var callable
      */
@@ -56,12 +51,10 @@ class AuthTokenMiddleware
      * @param callable $tokenCallback (optional) function to be called when a new token is fetched.
      */
     public function __construct(
-        FetchAuthTokenInterface $fetcher,
-        callable $httpHandler = null,
-        callable $tokenCallback = null
+    FetchAuthTokenInterface $fetcher, callable $httpHandler = null, callable $tokenCallback = null
     ) {
-        $this->fetcher = $fetcher;
-        $this->httpHandler = $httpHandler;
+        $this->fetcher       = $fetcher;
+        $this->httpHandler   = $httpHandler;
         $this->tokenCallback = $tokenCallback;
     }
 
@@ -91,8 +84,7 @@ class AuthTokenMiddleware
      *
      * @return \Closure
      */
-    public function __invoke(callable $handler)
-    {
+    public function __invoke(callable $handler) {
         return function (RequestInterface $request, array $options) use ($handler) {
             // Requests using "auth"="google_auth" will be authorized.
             if (!isset($options['auth']) || $options['auth'] !== 'google_auth') {
@@ -110,8 +102,7 @@ class AuthTokenMiddleware
      *
      * @return string
      */
-    private function fetchToken()
-    {
+    private function fetchToken() {
         $auth_tokens = $this->fetcher->fetchAuthToken($this->httpHandler);
 
         if (array_key_exists('access_token', $auth_tokens)) {

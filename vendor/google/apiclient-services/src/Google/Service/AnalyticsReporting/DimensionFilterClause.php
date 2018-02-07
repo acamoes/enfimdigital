@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_AnalyticsReporting_DimensionFilterClause extends Google_Collection
-{
-  protected $collection_key = 'filters';
-  protected $filtersType = 'Google_Service_AnalyticsReporting_DimensionFilter';
-  protected $filtersDataType = 'array';
-  public $operator;
+class Google_Service_AnalyticsReporting_DimensionFilterClause extends Google_Collection {
+    protected $collection_key  = 'filters';
+    protected $filtersType     = 'Google_Service_AnalyticsReporting_DimensionFilter';
+    protected $filtersDataType = 'array';
+    public $operator;
 
-  /**
-   * @param Google_Service_AnalyticsReporting_DimensionFilter
-   */
-  public function setFilters($filters)
-  {
-    $this->filters = $filters;
-  }
-  /**
-   * @return Google_Service_AnalyticsReporting_DimensionFilter
-   */
-  public function getFilters()
-  {
-    return $this->filters;
-  }
-  public function setOperator($operator)
-  {
-    $this->operator = $operator;
-  }
-  public function getOperator()
-  {
-    return $this->operator;
-  }
+    /**
+     * @param Google_Service_AnalyticsReporting_DimensionFilter
+     */
+    public function setFilters($filters) {
+        $this->filters = $filters;
+    }
+
+    /**
+     * @return Google_Service_AnalyticsReporting_DimensionFilter
+     */
+    public function getFilters() {
+        return $this->filters;
+    }
+
+    public function setOperator($operator) {
+        $this->operator = $operator;
+    }
+
+    public function getOperator() {
+        return $this->operator;
+    }
 }

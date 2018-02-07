@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_Experimental extends Google_Model
-{
-  protected $authorizationType = 'Google_Service_ServiceManagement_AuthorizationConfig';
-  protected $authorizationDataType = '';
+class Google_Service_ServiceManagement_Experimental extends Google_Model {
+    protected $authorizationType     = 'Google_Service_ServiceManagement_AuthorizationConfig';
+    protected $authorizationDataType = '';
 
-  /**
-   * @param Google_Service_ServiceManagement_AuthorizationConfig
-   */
-  public function setAuthorization(Google_Service_ServiceManagement_AuthorizationConfig $authorization)
-  {
-    $this->authorization = $authorization;
-  }
-  /**
-   * @return Google_Service_ServiceManagement_AuthorizationConfig
-   */
-  public function getAuthorization()
-  {
-    return $this->authorization;
-  }
+    /**
+     * @param Google_Service_ServiceManagement_AuthorizationConfig
+     */
+    public function setAuthorization(Google_Service_ServiceManagement_AuthorizationConfig $authorization) {
+        $this->authorization = $authorization;
+    }
+
+    /**
+     * @return Google_Service_ServiceManagement_AuthorizationConfig
+     */
+    public function getAuthorization() {
+        return $this->authorization;
+    }
 }

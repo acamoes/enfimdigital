@@ -15,56 +15,54 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsResult extends Google_Collection
-{
-  protected $collection_key = 'quantileValues';
-  protected $maxValueType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Value';
-  protected $maxValueDataType = '';
-  protected $minValueType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Value';
-  protected $minValueDataType = '';
-  protected $quantileValuesType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Value';
-  protected $quantileValuesDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1NumericalStatsResult extends Google_Collection {
+    protected $collection_key         = 'quantileValues';
+    protected $maxValueType           = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Value';
+    protected $maxValueDataType       = '';
+    protected $minValueType           = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Value';
+    protected $minValueDataType       = '';
+    protected $quantileValuesType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Value';
+    protected $quantileValuesDataType = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Value
-   */
-  public function setMaxValue(Google_Service_DLP_GooglePrivacyDlpV2beta1Value $maxValue)
-  {
-    $this->maxValue = $maxValue;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Value
-   */
-  public function getMaxValue()
-  {
-    return $this->maxValue;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Value
-   */
-  public function setMinValue(Google_Service_DLP_GooglePrivacyDlpV2beta1Value $minValue)
-  {
-    $this->minValue = $minValue;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Value
-   */
-  public function getMinValue()
-  {
-    return $this->minValue;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Value
-   */
-  public function setQuantileValues($quantileValues)
-  {
-    $this->quantileValues = $quantileValues;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Value
-   */
-  public function getQuantileValues()
-  {
-    return $this->quantileValues;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Value
+     */
+    public function setMaxValue(Google_Service_DLP_GooglePrivacyDlpV2beta1Value $maxValue) {
+        $this->maxValue = $maxValue;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Value
+     */
+    public function getMaxValue() {
+        return $this->maxValue;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Value
+     */
+    public function setMinValue(Google_Service_DLP_GooglePrivacyDlpV2beta1Value $minValue) {
+        $this->minValue = $minValue;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Value
+     */
+    public function getMinValue() {
+        return $this->minValue;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Value
+     */
+    public function setQuantileValues($quantileValues) {
+        $this->quantileValues = $quantileValues;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Value
+     */
+    public function getQuantileValues() {
+        return $this->quantileValues;
+    }
 }

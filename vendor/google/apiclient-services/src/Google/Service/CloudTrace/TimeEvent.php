@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_CloudTrace_TimeEvent extends Google_Model
-{
-  protected $annotationType = 'Google_Service_CloudTrace_Annotation';
-  protected $annotationDataType = '';
-  protected $messageEventType = 'Google_Service_CloudTrace_MessageEvent';
-  protected $messageEventDataType = '';
-  public $time;
+class Google_Service_CloudTrace_TimeEvent extends Google_Model {
+    protected $annotationType       = 'Google_Service_CloudTrace_Annotation';
+    protected $annotationDataType   = '';
+    protected $messageEventType     = 'Google_Service_CloudTrace_MessageEvent';
+    protected $messageEventDataType = '';
+    public $time;
 
-  /**
-   * @param Google_Service_CloudTrace_Annotation
-   */
-  public function setAnnotation(Google_Service_CloudTrace_Annotation $annotation)
-  {
-    $this->annotation = $annotation;
-  }
-  /**
-   * @return Google_Service_CloudTrace_Annotation
-   */
-  public function getAnnotation()
-  {
-    return $this->annotation;
-  }
-  /**
-   * @param Google_Service_CloudTrace_MessageEvent
-   */
-  public function setMessageEvent(Google_Service_CloudTrace_MessageEvent $messageEvent)
-  {
-    $this->messageEvent = $messageEvent;
-  }
-  /**
-   * @return Google_Service_CloudTrace_MessageEvent
-   */
-  public function getMessageEvent()
-  {
-    return $this->messageEvent;
-  }
-  public function setTime($time)
-  {
-    $this->time = $time;
-  }
-  public function getTime()
-  {
-    return $this->time;
-  }
+    /**
+     * @param Google_Service_CloudTrace_Annotation
+     */
+    public function setAnnotation(Google_Service_CloudTrace_Annotation $annotation) {
+        $this->annotation = $annotation;
+    }
+
+    /**
+     * @return Google_Service_CloudTrace_Annotation
+     */
+    public function getAnnotation() {
+        return $this->annotation;
+    }
+
+    /**
+     * @param Google_Service_CloudTrace_MessageEvent
+     */
+    public function setMessageEvent(Google_Service_CloudTrace_MessageEvent $messageEvent) {
+        $this->messageEvent = $messageEvent;
+    }
+
+    /**
+     * @return Google_Service_CloudTrace_MessageEvent
+     */
+    public function getMessageEvent() {
+        return $this->messageEvent;
+    }
+
+    public function setTime($time) {
+        $this->time = $time;
+    }
+
+    public function getTime() {
+        return $this->time;
+    }
 }

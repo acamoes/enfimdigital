@@ -75,7 +75,7 @@ class Calendarios {
                 "','" . $data ['observations'] . "')";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];
@@ -92,7 +92,7 @@ class Calendarios {
                 "' " . "WHERE idCourses=" . $data ['idCourses'];
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];
@@ -102,7 +102,7 @@ class Calendarios {
         $query     = "UPDATE courses SET status=IF(status='Ativo','Inativo','Ativo') WHERE idCourses=" . $data['idCourses'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'O registo não foi alterado.'];
         }
         return ['success' => true, 'message' => 'Registo alterado.'];

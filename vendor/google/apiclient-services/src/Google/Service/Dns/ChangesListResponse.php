@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Dns_ChangesListResponse extends Google_Collection
-{
-  protected $collection_key = 'changes';
-  protected $changesType = 'Google_Service_Dns_Change';
-  protected $changesDataType = 'array';
-  public $kind;
-  public $nextPageToken;
+class Google_Service_Dns_ChangesListResponse extends Google_Collection {
+    protected $collection_key  = 'changes';
+    protected $changesType     = 'Google_Service_Dns_Change';
+    protected $changesDataType = 'array';
+    public $kind;
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_Dns_Change
-   */
-  public function setChanges($changes)
-  {
-    $this->changes = $changes;
-  }
-  /**
-   * @return Google_Service_Dns_Change
-   */
-  public function getChanges()
-  {
-    return $this->changes;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_Dns_Change
+     */
+    public function setChanges($changes) {
+        $this->changes = $changes;
+    }
+
+    /**
+     * @return Google_Service_Dns_Change
+     */
+    public function getChanges() {
+        return $this->changes;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

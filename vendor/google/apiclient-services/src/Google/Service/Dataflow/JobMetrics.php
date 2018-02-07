@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Dataflow_JobMetrics extends Google_Collection
-{
-  protected $collection_key = 'metrics';
-  public $metricTime;
-  protected $metricsType = 'Google_Service_Dataflow_MetricUpdate';
-  protected $metricsDataType = 'array';
+class Google_Service_Dataflow_JobMetrics extends Google_Collection {
+    protected $collection_key  = 'metrics';
+    public $metricTime;
+    protected $metricsType     = 'Google_Service_Dataflow_MetricUpdate';
+    protected $metricsDataType = 'array';
 
-  public function setMetricTime($metricTime)
-  {
-    $this->metricTime = $metricTime;
-  }
-  public function getMetricTime()
-  {
-    return $this->metricTime;
-  }
-  /**
-   * @param Google_Service_Dataflow_MetricUpdate
-   */
-  public function setMetrics($metrics)
-  {
-    $this->metrics = $metrics;
-  }
-  /**
-   * @return Google_Service_Dataflow_MetricUpdate
-   */
-  public function getMetrics()
-  {
-    return $this->metrics;
-  }
+    public function setMetricTime($metricTime) {
+        $this->metricTime = $metricTime;
+    }
+
+    public function getMetricTime() {
+        return $this->metricTime;
+    }
+
+    /**
+     * @param Google_Service_Dataflow_MetricUpdate
+     */
+    public function setMetrics($metrics) {
+        $this->metrics = $metrics;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_MetricUpdate
+     */
+    public function getMetrics() {
+        return $this->metrics;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Bigquery_EncryptionConfiguration extends Google_Model
-{
-  public $kmsKeyName;
+class Google_Service_Bigquery_EncryptionConfiguration extends Google_Model {
+    public $kmsKeyName;
 
-  public function setKmsKeyName($kmsKeyName)
-  {
-    $this->kmsKeyName = $kmsKeyName;
-  }
-  public function getKmsKeyName()
-  {
-    return $this->kmsKeyName;
-  }
+    public function setKmsKeyName($kmsKeyName) {
+        $this->kmsKeyName = $kmsKeyName;
+    }
+
+    public function getKmsKeyName() {
+        return $this->kmsKeyName;
+    }
 }

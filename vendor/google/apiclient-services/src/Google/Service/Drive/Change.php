@@ -15,93 +15,91 @@
  * the License.
  */
 
-class Google_Service_Drive_Change extends Google_Model
-{
-  protected $fileType = 'Google_Service_Drive_DriveFile';
-  protected $fileDataType = '';
-  public $fileId;
-  public $kind;
-  public $removed;
-  protected $teamDriveType = 'Google_Service_Drive_TeamDrive';
-  protected $teamDriveDataType = '';
-  public $teamDriveId;
-  public $time;
-  public $type;
+class Google_Service_Drive_Change extends Google_Model {
+    protected $fileType          = 'Google_Service_Drive_DriveFile';
+    protected $fileDataType      = '';
+    public $fileId;
+    public $kind;
+    public $removed;
+    protected $teamDriveType     = 'Google_Service_Drive_TeamDrive';
+    protected $teamDriveDataType = '';
+    public $teamDriveId;
+    public $time;
+    public $type;
 
-  /**
-   * @param Google_Service_Drive_DriveFile
-   */
-  public function setFile(Google_Service_Drive_DriveFile $file)
-  {
-    $this->file = $file;
-  }
-  /**
-   * @return Google_Service_Drive_DriveFile
-   */
-  public function getFile()
-  {
-    return $this->file;
-  }
-  public function setFileId($fileId)
-  {
-    $this->fileId = $fileId;
-  }
-  public function getFileId()
-  {
-    return $this->fileId;
-  }
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setRemoved($removed)
-  {
-    $this->removed = $removed;
-  }
-  public function getRemoved()
-  {
-    return $this->removed;
-  }
-  /**
-   * @param Google_Service_Drive_TeamDrive
-   */
-  public function setTeamDrive(Google_Service_Drive_TeamDrive $teamDrive)
-  {
-    $this->teamDrive = $teamDrive;
-  }
-  /**
-   * @return Google_Service_Drive_TeamDrive
-   */
-  public function getTeamDrive()
-  {
-    return $this->teamDrive;
-  }
-  public function setTeamDriveId($teamDriveId)
-  {
-    $this->teamDriveId = $teamDriveId;
-  }
-  public function getTeamDriveId()
-  {
-    return $this->teamDriveId;
-  }
-  public function setTime($time)
-  {
-    $this->time = $time;
-  }
-  public function getTime()
-  {
-    return $this->time;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
+    /**
+     * @param Google_Service_Drive_DriveFile
+     */
+    public function setFile(Google_Service_Drive_DriveFile $file) {
+        $this->file = $file;
+    }
+
+    /**
+     * @return Google_Service_Drive_DriveFile
+     */
+    public function getFile() {
+        return $this->file;
+    }
+
+    public function setFileId($fileId) {
+        $this->fileId = $fileId;
+    }
+
+    public function getFileId() {
+        return $this->fileId;
+    }
+
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setRemoved($removed) {
+        $this->removed = $removed;
+    }
+
+    public function getRemoved() {
+        return $this->removed;
+    }
+
+    /**
+     * @param Google_Service_Drive_TeamDrive
+     */
+    public function setTeamDrive(Google_Service_Drive_TeamDrive $teamDrive) {
+        $this->teamDrive = $teamDrive;
+    }
+
+    /**
+     * @return Google_Service_Drive_TeamDrive
+     */
+    public function getTeamDrive() {
+        return $this->teamDrive;
+    }
+
+    public function setTeamDriveId($teamDriveId) {
+        $this->teamDriveId = $teamDriveId;
+    }
+
+    public function getTeamDriveId() {
+        return $this->teamDriveId;
+    }
+
+    public function setTime($time) {
+        $this->time = $time;
+    }
+
+    public function getTime() {
+        return $this->time;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
 }

@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Dataflow_ResourceUtilizationReport extends Google_Collection
-{
-  protected $collection_key = 'cpuTime';
-  protected $cpuTimeType = 'Google_Service_Dataflow_CPUTime';
-  protected $cpuTimeDataType = 'array';
+class Google_Service_Dataflow_ResourceUtilizationReport extends Google_Collection {
+    protected $collection_key  = 'cpuTime';
+    protected $cpuTimeType     = 'Google_Service_Dataflow_CPUTime';
+    protected $cpuTimeDataType = 'array';
 
-  /**
-   * @param Google_Service_Dataflow_CPUTime
-   */
-  public function setCpuTime($cpuTime)
-  {
-    $this->cpuTime = $cpuTime;
-  }
-  /**
-   * @return Google_Service_Dataflow_CPUTime
-   */
-  public function getCpuTime()
-  {
-    return $this->cpuTime;
-  }
+    /**
+     * @param Google_Service_Dataflow_CPUTime
+     */
+    public function setCpuTime($cpuTime) {
+        $this->cpuTime = $cpuTime;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_CPUTime
+     */
+    public function getCpuTime() {
+        return $this->cpuTime;
+    }
 }

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Formatter;
 
 /**
@@ -19,31 +17,25 @@ namespace Monolog\Formatter;
  *
  * @author Tim Mower <timothy.mower@gmail.com>
  */
-class LogstashFormatter extends NormalizerFormatter
-{
+class LogstashFormatter extends NormalizerFormatter {
     const V0 = 0;
     const V1 = 1;
-
     /**
      * @var string the name of the system for the Logstash log message, used to fill the @source field
      */
     protected $systemName;
-
     /**
      * @var string an application name for the Logstash log message, used to fill the @type field
      */
     protected $applicationName;
-
     /**
      * @var string a prefix for 'extra' fields from the Monolog record (optional)
      */
     protected $extraPrefix;
-
     /**
      * @var string a prefix for 'context' fields from the Monolog record (optional)
      */
     protected $contextPrefix;
-
     /**
      * @var int logstash format version to use
      */
@@ -56,49 +48,47 @@ class LogstashFormatter extends NormalizerFormatter
      * @param string $contextPrefix   prefix for context keys inside logstash "fields", defaults to ctxt_
      * @param int    $version         the logstash format version to use, defaults to 0
      */
-    public function __construct($applicationName, $systemName = null, $extraPrefix = null, $contextPrefix = 'ctxt_', $version = self::V0)
-    {
+    public function __construct($applicationName, $systemName = null, $extraPrefix = null, $contextPrefix = 'ctxt_', $version = self::V0) {
         // logstash requires a ISO 8601 format date with optional millisecond precision.
         parent::__construct('Y-m-d\TH:i:s.uP');
 
-        $this->systemName = $systemName ?: gethostname();
+        $this->systemName      = $systemName ?: gethostname();
         $this->applicationName = $applicationName;
-        $this->extraPrefix = $extraPrefix;
-        $this->contextPrefix = $contextPrefix;
-        $this->version = $version;
+        $this->extraPrefix     = $extraPrefix;
+        $this->contextPrefix   = $contextPrefix;
+        $this->version         = $version;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function format(array $record)
-    {
+    public function format(array $record) {
         $record = parent::format($record);
 
         if ($this->version === self::V1) {
             $message = $this->formatV1($record);
-        } else {
+        }
+        else {
             $message = $this->formatV0($record);
         }
 
         return $this->toJson($message) . "\n";
     }
 
-    protected function formatV0(array $record)
-    {
+    protected function formatV0(array $record) {
         if (empty($record['datetime'])) {
             $record['datetime'] = gmdate('c');
         }
         $message = array(
             '@timestamp' => $record['datetime'],
-            '@source' => $this->systemName,
-            '@fields' => array(),
+            '@source'    => $this->systemName,
+            '@fields'    => array(),
         );
         if (isset($record['message'])) {
             $message['@message'] = $record['message'];
         }
         if (isset($record['channel'])) {
-            $message['@tags'] = array($record['channel']);
+            $message['@tags']              = array($record['channel']);
             $message['@fields']['channel'] = $record['channel'];
         }
         if (isset($record['level'])) {
@@ -127,21 +117,20 @@ class LogstashFormatter extends NormalizerFormatter
         return $message;
     }
 
-    protected function formatV1(array $record)
-    {
+    protected function formatV1(array $record) {
         if (empty($record['datetime'])) {
             $record['datetime'] = gmdate('c');
         }
         $message = array(
             '@timestamp' => $record['datetime'],
-            '@version' => 1,
-            'host' => $this->systemName,
+            '@version'   => 1,
+            'host'       => $this->systemName,
         );
         if (isset($record['message'])) {
             $message['message'] = $record['message'];
         }
         if (isset($record['channel'])) {
-            $message['type'] = $record['channel'];
+            $message['type']    = $record['channel'];
             $message['channel'] = $record['channel'];
         }
         if (isset($record['level_name'])) {

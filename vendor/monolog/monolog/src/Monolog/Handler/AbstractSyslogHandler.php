@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,23 +7,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Logger;
 use Monolog\Formatter\LineFormatter;
 
 /**
  * Common syslog functionality
  */
-abstract class AbstractSyslogHandler extends AbstractProcessingHandler
-{
+abstract class AbstractSyslogHandler extends AbstractProcessingHandler {
     protected $facility;
-
     /**
      * Translates Monolog log levels to syslog log priorities.
      */
-    protected $logLevels = array(
+    protected $logLevels  = array(
         Logger::DEBUG     => LOG_DEBUG,
         Logger::INFO      => LOG_INFO,
         Logger::NOTICE    => LOG_NOTICE,
@@ -34,7 +29,6 @@ abstract class AbstractSyslogHandler extends AbstractProcessingHandler
         Logger::ALERT     => LOG_ALERT,
         Logger::EMERGENCY => LOG_EMERG,
     );
-
     /**
      * List of valid log facility names.
      */
@@ -57,8 +51,7 @@ abstract class AbstractSyslogHandler extends AbstractProcessingHandler
      * @param int     $level    The minimum logging level at which this handler will be triggered
      * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
      */
-    public function __construct($facility = LOG_USER, $level = Logger::DEBUG, $bubble = true)
-    {
+    public function __construct($facility = LOG_USER, $level = Logger::DEBUG, $bubble = true) {
         parent::__construct($level, $bubble);
 
         if (!defined('PHP_WINDOWS_VERSION_BUILD')) {
@@ -70,7 +63,8 @@ abstract class AbstractSyslogHandler extends AbstractProcessingHandler
             $this->facilities['local5'] = LOG_LOCAL5;
             $this->facilities['local6'] = LOG_LOCAL6;
             $this->facilities['local7'] = LOG_LOCAL7;
-        } else {
+        }
+        else {
             $this->facilities['local0'] = 128; // LOG_LOCAL0
             $this->facilities['local1'] = 136; // LOG_LOCAL1
             $this->facilities['local2'] = 144; // LOG_LOCAL2
@@ -84,8 +78,9 @@ abstract class AbstractSyslogHandler extends AbstractProcessingHandler
         // convert textual description of facility to syslog constant
         if (array_key_exists(strtolower($facility), $this->facilities)) {
             $facility = $this->facilities[strtolower($facility)];
-        } elseif (!in_array($facility, array_values($this->facilities), true)) {
-            throw new \UnexpectedValueException('Unknown facility value "'.$facility.'" given');
+        }
+        elseif (!in_array($facility, array_values($this->facilities), true)) {
+            throw new \UnexpectedValueException('Unknown facility value "' . $facility . '" given');
         }
 
         $this->facility = $facility;
@@ -94,8 +89,7 @@ abstract class AbstractSyslogHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    protected function getDefaultFormatter()
-    {
+    protected function getDefaultFormatter() {
         return new LineFormatter('%channel%.%level_name%: %message% %context% %extra%');
     }
 }

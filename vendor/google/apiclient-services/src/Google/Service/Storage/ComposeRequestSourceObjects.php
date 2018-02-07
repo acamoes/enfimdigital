@@ -15,41 +15,39 @@
  * the License.
  */
 
-class Google_Service_Storage_ComposeRequestSourceObjects extends Google_Model
-{
-  public $generation;
-  public $name;
-  protected $objectPreconditionsType = 'Google_Service_Storage_ComposeRequestSourceObjectsObjectPreconditions';
-  protected $objectPreconditionsDataType = '';
+class Google_Service_Storage_ComposeRequestSourceObjects extends Google_Model {
+    public $generation;
+    public $name;
+    protected $objectPreconditionsType     = 'Google_Service_Storage_ComposeRequestSourceObjectsObjectPreconditions';
+    protected $objectPreconditionsDataType = '';
 
-  public function setGeneration($generation)
-  {
-    $this->generation = $generation;
-  }
-  public function getGeneration()
-  {
-    return $this->generation;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  /**
-   * @param Google_Service_Storage_ComposeRequestSourceObjectsObjectPreconditions
-   */
-  public function setObjectPreconditions(Google_Service_Storage_ComposeRequestSourceObjectsObjectPreconditions $objectPreconditions)
-  {
-    $this->objectPreconditions = $objectPreconditions;
-  }
-  /**
-   * @return Google_Service_Storage_ComposeRequestSourceObjectsObjectPreconditions
-   */
-  public function getObjectPreconditions()
-  {
-    return $this->objectPreconditions;
-  }
+    public function setGeneration($generation) {
+        $this->generation = $generation;
+    }
+
+    public function getGeneration() {
+        return $this->generation;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * @param Google_Service_Storage_ComposeRequestSourceObjectsObjectPreconditions
+     */
+    public function setObjectPreconditions(Google_Service_Storage_ComposeRequestSourceObjectsObjectPreconditions $objectPreconditions) {
+        $this->objectPreconditions = $objectPreconditions;
+    }
+
+    /**
+     * @return Google_Service_Storage_ComposeRequestSourceObjectsObjectPreconditions
+     */
+    public function getObjectPreconditions() {
+        return $this->objectPreconditions;
+    }
 }

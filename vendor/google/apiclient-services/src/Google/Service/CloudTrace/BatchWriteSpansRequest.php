@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_CloudTrace_BatchWriteSpansRequest extends Google_Collection
-{
-  protected $collection_key = 'spans';
-  protected $spansType = 'Google_Service_CloudTrace_Span';
-  protected $spansDataType = 'array';
+class Google_Service_CloudTrace_BatchWriteSpansRequest extends Google_Collection {
+    protected $collection_key = 'spans';
+    protected $spansType      = 'Google_Service_CloudTrace_Span';
+    protected $spansDataType  = 'array';
 
-  /**
-   * @param Google_Service_CloudTrace_Span
-   */
-  public function setSpans($spans)
-  {
-    $this->spans = $spans;
-  }
-  /**
-   * @return Google_Service_CloudTrace_Span
-   */
-  public function getSpans()
-  {
-    return $this->spans;
-  }
+    /**
+     * @param Google_Service_CloudTrace_Span
+     */
+    public function setSpans($spans) {
+        $this->spans = $spans;
+    }
+
+    /**
+     * @return Google_Service_CloudTrace_Span
+     */
+    public function getSpans() {
+        return $this->spans;
+    }
 }

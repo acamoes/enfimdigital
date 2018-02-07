@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Storage_BucketBilling extends Google_Model
-{
-  public $requesterPays;
+class Google_Service_Storage_BucketBilling extends Google_Model {
+    public $requesterPays;
 
-  public function setRequesterPays($requesterPays)
-  {
-    $this->requesterPays = $requesterPays;
-  }
-  public function getRequesterPays()
-  {
-    return $this->requesterPays;
-  }
+    public function setRequesterPays($requesterPays) {
+        $this->requesterPays = $requesterPays;
+    }
+
+    public function getRequesterPays() {
+        return $this->requesterPays;
+    }
 }

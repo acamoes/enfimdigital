@@ -11,16 +11,16 @@
                             datastring.push({ldelim}name: 'action', value: '{$action}'});
                                     datastring.push({ldelim}name: 'task', value: 'atualizar'});
                                             datastring.push({ldelim}name: 'tab', value: '{$currentTab}'});
-                                                          datastring.push({ldelim}name: 'idUsers', value: '{$utilizador['idUsers']}'});
-                                                                    datastring.push({ldelim}name: 'idCourses', value: '{$idCourses}'});
-                                                                            $.ajax({
-                                                                                url: '{$SCRIPT_NAME}',
-                                                                                data: datastring,
-                                                                                success: function (result) {
-                                                                                    $('#formMsg').html(result);
-                                                                                }
-                                                                            });
+                                                    datastring.push({ldelim}name: 'idUsers', value: '{$utilizador['idUsers']}'});
+                                                            datastring.push({ldelim}name: 'idCourses', value: '{$idCourses}'});
+                                                                    $.ajax({
+                                                                        url: '{$SCRIPT_NAME}',
+                                                                        data: datastring,
+                                                                        success: function (result) {
+                                                                            $('#formMsg').html(result);
                                                                         }
+                                                                    });
+                                                                }
 
                     </script>
                     <form id="{$currentTab}Atualizar" name="{$currentTab}Atualizar"
@@ -29,7 +29,7 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');request('action={$action}&task=search&tab={$currentTab}&search='+document.getElementById('{$currentTab}search').value+'&idCourses={$idCourses}','ST{$currentTab}');">X
+                                       onclick="$('#form').html('');request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value + '&idCourses={$idCourses}', 'ST{$currentTab}');">X
                                     Close</label>
                             </div>
                         </div>
@@ -77,8 +77,8 @@
                                 <label for="status">Estado</label> <input type="radio" readonly
                                                                           id="ativo" name="status" value="Ativo" {if $utilizador['status'] eq "Ativo"}checked="checked"{/if}><label
                                                                           for="ativo">Ativo</label> 
-                                                                          <input type="radio" id="inativo" readonly
-                                                                          name="status" value="Inativo"{if $utilizador['status'] eq "Inativo"}checked="checked"{/if}><label for="inativo">Inativo</label>
+                                <input type="radio" id="inativo" readonly
+                                       name="status" value="Inativo"{if $utilizador['status'] eq "Inativo"}checked="checked"{/if}><label for="inativo">Inativo</label>
                             </div>
                         </div>
                         <div class="row uniform">

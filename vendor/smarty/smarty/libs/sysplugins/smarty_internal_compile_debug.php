@@ -15,8 +15,8 @@
  * @package    Smarty
  * @subpackage Compiler
  */
-class Smarty_Internal_Compile_Debug extends Smarty_Internal_CompileBase
-{
+class Smarty_Internal_Compile_Debug extends Smarty_Internal_CompileBase {
+
     /**
      * Compiles code for the {debug} tag
      *
@@ -25,8 +25,7 @@ class Smarty_Internal_Compile_Debug extends Smarty_Internal_CompileBase
      *
      * @return string compiled code
      */
-    public function compile($args, $compiler)
-    {
+    public function compile($args, $compiler) {
         // check and get attributes
         $_attr = $this->getAttributes($compiler, $args);
 
@@ -34,8 +33,7 @@ class Smarty_Internal_Compile_Debug extends Smarty_Internal_CompileBase
         $compiler->tag_nocache = true;
 
         // display debug template
-        $_output =
-            "<?php \$_smarty_debug = new Smarty_Internal_Debug;\n \$_smarty_debug->display_debug(\$_smarty_tpl);\n";
+        $_output = "<?php \$_smarty_debug = new Smarty_Internal_Debug;\n \$_smarty_debug->display_debug(\$_smarty_tpl);\n";
         $_output .= "unset(\$_smarty_debug);\n?>";
         return $_output;
     }

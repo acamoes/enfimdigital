@@ -1,10 +1,9 @@
 <?php
 namespace GuzzleHttp\Handler;
-
 use Psr\Http\Message\RequestInterface;
 
-interface CurlFactoryInterface
-{
+interface CurlFactoryInterface {
+
     /**
      * Creates a cURL handle resource.
      *

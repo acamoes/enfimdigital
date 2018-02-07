@@ -10,13 +10,11 @@ namespace GuzzleHttp\Promise;
  *
  *     GuzzleHttp\Promise\queue()->run();
  */
-class TaskQueue implements TaskQueueInterface
-{
+class TaskQueue implements TaskQueueInterface {
     private $enableShutdown = true;
-    private $queue = [];
+    private $queue          = [];
 
-    public function __construct($withShutdown = true)
-    {
+    public function __construct($withShutdown = true) {
         if ($withShutdown) {
             register_shutdown_function(function () {
                 if ($this->enableShutdown) {
@@ -30,18 +28,15 @@ class TaskQueue implements TaskQueueInterface
         }
     }
 
-    public function isEmpty()
-    {
+    public function isEmpty() {
         return !$this->queue;
     }
 
-    public function add(callable $task)
-    {
+    public function add(callable $task) {
         $this->queue[] = $task;
     }
 
-    public function run()
-    {
+    public function run() {
         /** @var callable $task */
         while ($task = array_shift($this->queue)) {
             $task();
@@ -59,8 +54,7 @@ class TaskQueue implements TaskQueueInterface
      *
      * Note: This shutdown will occur before any destructors are triggered.
      */
-    public function disableShutdown()
-    {
+    public function disableShutdown() {
         $this->enableShutdown = false;
     }
 }

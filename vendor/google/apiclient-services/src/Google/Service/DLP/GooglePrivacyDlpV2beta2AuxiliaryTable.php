@@ -15,56 +15,54 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2AuxiliaryTable extends Google_Collection
-{
-  protected $collection_key = 'quasiIds';
-  protected $quasiIdsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2QuasiIdField';
-  protected $quasiIdsDataType = 'array';
-  protected $relativeFrequencyType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId';
-  protected $relativeFrequencyDataType = '';
-  protected $tableType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable';
-  protected $tableDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2AuxiliaryTable extends Google_Collection {
+    protected $collection_key            = 'quasiIds';
+    protected $quasiIdsType              = 'Google_Service_DLP_GooglePrivacyDlpV2beta2QuasiIdField';
+    protected $quasiIdsDataType          = 'array';
+    protected $relativeFrequencyType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId';
+    protected $relativeFrequencyDataType = '';
+    protected $tableType                 = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable';
+    protected $tableDataType             = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2QuasiIdField
-   */
-  public function setQuasiIds($quasiIds)
-  {
-    $this->quasiIds = $quasiIds;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2QuasiIdField
-   */
-  public function getQuasiIds()
-  {
-    return $this->quasiIds;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
-   */
-  public function setRelativeFrequency(Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId $relativeFrequency)
-  {
-    $this->relativeFrequency = $relativeFrequency;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
-   */
-  public function getRelativeFrequency()
-  {
-    return $this->relativeFrequency;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
-   */
-  public function setTable(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable $table)
-  {
-    $this->table = $table;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
-   */
-  public function getTable()
-  {
-    return $this->table;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2QuasiIdField
+     */
+    public function setQuasiIds($quasiIds) {
+        $this->quasiIds = $quasiIds;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2QuasiIdField
+     */
+    public function getQuasiIds() {
+        return $this->quasiIds;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
+     */
+    public function setRelativeFrequency(Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId $relativeFrequency) {
+        $this->relativeFrequency = $relativeFrequency;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FieldId
+     */
+    public function getRelativeFrequency() {
+        return $this->relativeFrequency;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
+     */
+    public function setTable(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable $table) {
+        $this->table = $table;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
+     */
+    public function getTable() {
+        return $this->table;
+    }
 }

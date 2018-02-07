@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_Diagnostic extends Google_Model
-{
-  public $kind;
-  public $location;
-  public $message;
+class Google_Service_ServiceManagement_Diagnostic extends Google_Model {
+    public $kind;
+    public $location;
+    public $message;
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setLocation($location)
-  {
-    $this->location = $location;
-  }
-  public function getLocation()
-  {
-    return $this->location;
-  }
-  public function setMessage($message)
-  {
-    $this->message = $message;
-  }
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setLocation($location) {
+        $this->location = $location;
+    }
+
+    public function getLocation() {
+        return $this->location;
+    }
+
+    public function setMessage($message) {
+        $this->message = $message;
+    }
+
+    public function getMessage() {
+        return $this->message;
+    }
 }

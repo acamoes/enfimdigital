@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Spanner_Transaction extends Google_Model
-{
-  public $id;
-  public $readTimestamp;
+class Google_Service_Spanner_Transaction extends Google_Model {
+    public $id;
+    public $readTimestamp;
 
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
-  public function setReadTimestamp($readTimestamp)
-  {
-    $this->readTimestamp = $readTimestamp;
-  }
-  public function getReadTimestamp()
-  {
-    return $this->readTimestamp;
-  }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setReadTimestamp($readTimestamp) {
+        $this->readTimestamp = $readTimestamp;
+    }
+
+    public function getReadTimestamp() {
+        return $this->readTimestamp;
+    }
 }

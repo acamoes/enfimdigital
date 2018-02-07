@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Datastore_RollbackRequest extends Google_Model
-{
-  public $transaction;
+class Google_Service_Datastore_RollbackRequest extends Google_Model {
+    public $transaction;
 
-  public function setTransaction($transaction)
-  {
-    $this->transaction = $transaction;
-  }
-  public function getTransaction()
-  {
-    return $this->transaction;
-  }
+    public function setTransaction($transaction) {
+        $this->transaction = $transaction;
+    }
+
+    public function getTransaction() {
+        return $this->transaction;
+    }
 }

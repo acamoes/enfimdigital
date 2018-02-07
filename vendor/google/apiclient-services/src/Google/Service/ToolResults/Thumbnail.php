@@ -15,43 +15,41 @@
  * the License.
  */
 
-class Google_Service_ToolResults_Thumbnail extends Google_Model
-{
-  public $contentType;
-  public $data;
-  public $heightPx;
-  public $widthPx;
+class Google_Service_ToolResults_Thumbnail extends Google_Model {
+    public $contentType;
+    public $data;
+    public $heightPx;
+    public $widthPx;
 
-  public function setContentType($contentType)
-  {
-    $this->contentType = $contentType;
-  }
-  public function getContentType()
-  {
-    return $this->contentType;
-  }
-  public function setData($data)
-  {
-    $this->data = $data;
-  }
-  public function getData()
-  {
-    return $this->data;
-  }
-  public function setHeightPx($heightPx)
-  {
-    $this->heightPx = $heightPx;
-  }
-  public function getHeightPx()
-  {
-    return $this->heightPx;
-  }
-  public function setWidthPx($widthPx)
-  {
-    $this->widthPx = $widthPx;
-  }
-  public function getWidthPx()
-  {
-    return $this->widthPx;
-  }
+    public function setContentType($contentType) {
+        $this->contentType = $contentType;
+    }
+
+    public function getContentType() {
+        return $this->contentType;
+    }
+
+    public function setData($data) {
+        $this->data = $data;
+    }
+
+    public function getData() {
+        return $this->data;
+    }
+
+    public function setHeightPx($heightPx) {
+        $this->heightPx = $heightPx;
+    }
+
+    public function getHeightPx() {
+        return $this->heightPx;
+    }
+
+    public function setWidthPx($widthPx) {
+        $this->widthPx = $widthPx;
+    }
+
+    public function getWidthPx() {
+        return $this->widthPx;
+    }
 }

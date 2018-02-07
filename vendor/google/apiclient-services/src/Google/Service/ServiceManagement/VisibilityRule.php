@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_VisibilityRule extends Google_Model
-{
-  public $restriction;
-  public $selector;
+class Google_Service_ServiceManagement_VisibilityRule extends Google_Model {
+    public $restriction;
+    public $selector;
 
-  public function setRestriction($restriction)
-  {
-    $this->restriction = $restriction;
-  }
-  public function getRestriction()
-  {
-    return $this->restriction;
-  }
-  public function setSelector($selector)
-  {
-    $this->selector = $selector;
-  }
-  public function getSelector()
-  {
-    return $this->selector;
-  }
+    public function setRestriction($restriction) {
+        $this->restriction = $restriction;
+    }
+
+    public function getRestriction() {
+        return $this->restriction;
+    }
+
+    public function setSelector($selector) {
+        $this->selector = $selector;
+    }
+
+    public function getSelector() {
+        return $this->selector;
+    }
 }

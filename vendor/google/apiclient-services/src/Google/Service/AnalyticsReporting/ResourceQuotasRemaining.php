@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_AnalyticsReporting_ResourceQuotasRemaining extends Google_Model
-{
-  public $dailyQuotaTokensRemaining;
-  public $hourlyQuotaTokensRemaining;
+class Google_Service_AnalyticsReporting_ResourceQuotasRemaining extends Google_Model {
+    public $dailyQuotaTokensRemaining;
+    public $hourlyQuotaTokensRemaining;
 
-  public function setDailyQuotaTokensRemaining($dailyQuotaTokensRemaining)
-  {
-    $this->dailyQuotaTokensRemaining = $dailyQuotaTokensRemaining;
-  }
-  public function getDailyQuotaTokensRemaining()
-  {
-    return $this->dailyQuotaTokensRemaining;
-  }
-  public function setHourlyQuotaTokensRemaining($hourlyQuotaTokensRemaining)
-  {
-    $this->hourlyQuotaTokensRemaining = $hourlyQuotaTokensRemaining;
-  }
-  public function getHourlyQuotaTokensRemaining()
-  {
-    return $this->hourlyQuotaTokensRemaining;
-  }
+    public function setDailyQuotaTokensRemaining($dailyQuotaTokensRemaining) {
+        $this->dailyQuotaTokensRemaining = $dailyQuotaTokensRemaining;
+    }
+
+    public function getDailyQuotaTokensRemaining() {
+        return $this->dailyQuotaTokensRemaining;
+    }
+
+    public function setHourlyQuotaTokensRemaining($hourlyQuotaTokensRemaining) {
+        $this->hourlyQuotaTokensRemaining = $hourlyQuotaTokensRemaining;
+    }
+
+    public function getHourlyQuotaTokensRemaining() {
+        return $this->hourlyQuotaTokensRemaining;
+    }
 }

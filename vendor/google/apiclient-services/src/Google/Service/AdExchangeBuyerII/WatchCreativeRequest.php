@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyerII_WatchCreativeRequest extends Google_Model
-{
-  public $topic;
+class Google_Service_AdExchangeBuyerII_WatchCreativeRequest extends Google_Model {
+    public $topic;
 
-  public function setTopic($topic)
-  {
-    $this->topic = $topic;
-  }
-  public function getTopic()
-  {
-    return $this->topic;
-  }
+    public function setTopic($topic) {
+        $this->topic = $topic;
+    }
+
+    public function getTopic() {
+        return $this->topic;
+    }
 }

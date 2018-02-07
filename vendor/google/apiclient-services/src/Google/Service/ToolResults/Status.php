@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_ToolResults_Status extends Google_Collection
-{
-  protected $collection_key = 'details';
-  public $code;
-  protected $detailsType = 'Google_Service_ToolResults_Any';
-  protected $detailsDataType = 'array';
-  public $message;
+class Google_Service_ToolResults_Status extends Google_Collection {
+    protected $collection_key  = 'details';
+    public $code;
+    protected $detailsType     = 'Google_Service_ToolResults_Any';
+    protected $detailsDataType = 'array';
+    public $message;
 
-  public function setCode($code)
-  {
-    $this->code = $code;
-  }
-  public function getCode()
-  {
-    return $this->code;
-  }
-  /**
-   * @param Google_Service_ToolResults_Any
-   */
-  public function setDetails($details)
-  {
-    $this->details = $details;
-  }
-  /**
-   * @return Google_Service_ToolResults_Any
-   */
-  public function getDetails()
-  {
-    return $this->details;
-  }
-  public function setMessage($message)
-  {
-    $this->message = $message;
-  }
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    public function setCode($code) {
+        $this->code = $code;
+    }
+
+    public function getCode() {
+        return $this->code;
+    }
+
+    /**
+     * @param Google_Service_ToolResults_Any
+     */
+    public function setDetails($details) {
+        $this->details = $details;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_Any
+     */
+    public function getDetails() {
+        return $this->details;
+    }
+
+    public function setMessage($message) {
+        $this->message = $message;
+    }
+
+    public function getMessage() {
+        return $this->message;
+    }
 }

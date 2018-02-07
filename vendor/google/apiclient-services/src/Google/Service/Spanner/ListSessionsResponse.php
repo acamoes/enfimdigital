@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Spanner_ListSessionsResponse extends Google_Collection
-{
-  protected $collection_key = 'sessions';
-  public $nextPageToken;
-  protected $sessionsType = 'Google_Service_Spanner_Session';
-  protected $sessionsDataType = 'array';
+class Google_Service_Spanner_ListSessionsResponse extends Google_Collection {
+    protected $collection_key   = 'sessions';
+    public $nextPageToken;
+    protected $sessionsType     = 'Google_Service_Spanner_Session';
+    protected $sessionsDataType = 'array';
 
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Spanner_Session
-   */
-  public function setSessions($sessions)
-  {
-    $this->sessions = $sessions;
-  }
-  /**
-   * @return Google_Service_Spanner_Session
-   */
-  public function getSessions()
-  {
-    return $this->sessions;
-  }
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Spanner_Session
+     */
+    public function setSessions($sessions) {
+        $this->sessions = $sessions;
+    }
+
+    /**
+     * @return Google_Service_Spanner_Session
+     */
+    public function getSessions() {
+        return $this->sessions;
+    }
 }

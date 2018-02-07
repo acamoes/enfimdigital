@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions extends Google_Model
-{
-  protected $fileSetType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FileSet';
-  protected $fileSetDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2CloudStorageOptions extends Google_Model {
+    protected $fileSetType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2FileSet';
+    protected $fileSetDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FileSet
-   */
-  public function setFileSet(Google_Service_DLP_GooglePrivacyDlpV2beta2FileSet $fileSet)
-  {
-    $this->fileSet = $fileSet;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FileSet
-   */
-  public function getFileSet()
-  {
-    return $this->fileSet;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2FileSet
+     */
+    public function setFileSet(Google_Service_DLP_GooglePrivacyDlpV2beta2FileSet $fileSet) {
+        $this->fileSet = $fileSet;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2FileSet
+     */
+    public function getFileSet() {
+        return $this->fileSet;
+    }
 }

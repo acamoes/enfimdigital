@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_CloudKMS_UpdateCryptoKeyPrimaryVersionRequest extends Google_Model
-{
-  public $cryptoKeyVersionId;
+class Google_Service_CloudKMS_UpdateCryptoKeyPrimaryVersionRequest extends Google_Model {
+    public $cryptoKeyVersionId;
 
-  public function setCryptoKeyVersionId($cryptoKeyVersionId)
-  {
-    $this->cryptoKeyVersionId = $cryptoKeyVersionId;
-  }
-  public function getCryptoKeyVersionId()
-  {
-    return $this->cryptoKeyVersionId;
-  }
+    public function setCryptoKeyVersionId($cryptoKeyVersionId) {
+        $this->cryptoKeyVersionId = $cryptoKeyVersionId;
+    }
+
+    public function getCryptoKeyVersionId() {
+        return $this->cryptoKeyVersionId;
+    }
 }

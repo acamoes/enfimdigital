@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,19 +7,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Logger;
 use Monolog\TestCase;
 
-class FilterHandlerTest extends TestCase
-{
+class FilterHandlerTest extends TestCase {
+
     /**
      * @covers Monolog\Handler\FilterHandler::isHandling
      */
-    public function testIsHandling()
-    {
+    public function testIsHandling() {
         $test    = new TestHandler();
         $handler = new FilterHandler($test, Logger::INFO, Logger::NOTICE);
         $this->assertFalse($handler->isHandling($this->getRecord(Logger::DEBUG)));
@@ -38,8 +34,7 @@ class FilterHandlerTest extends TestCase
      * @covers Monolog\Handler\FilterHandler::setAcceptedLevels
      * @covers Monolog\Handler\FilterHandler::isHandling
      */
-    public function testHandleProcessOnlyNeededLevels()
-    {
+    public function testHandleProcessOnlyNeededLevels() {
         $test    = new TestHandler();
         $handler = new FilterHandler($test, Logger::INFO, Logger::NOTICE);
 
@@ -81,8 +76,7 @@ class FilterHandlerTest extends TestCase
      * @covers Monolog\Handler\FilterHandler::setAcceptedLevels
      * @covers Monolog\Handler\FilterHandler::getAcceptedLevels
      */
-    public function testAcceptedLevelApi()
-    {
+    public function testAcceptedLevelApi() {
         $test    = new TestHandler();
         $handler = new FilterHandler($test);
 
@@ -104,16 +98,15 @@ class FilterHandlerTest extends TestCase
     /**
      * @covers Monolog\Handler\FilterHandler::handle
      */
-    public function testHandleUsesProcessors()
-    {
+    public function testHandleUsesProcessors() {
         $test    = new TestHandler();
         $handler = new FilterHandler($test, Logger::DEBUG, Logger::EMERGENCY);
         $handler->pushProcessor(
-            function ($record) {
-                $record['extra']['foo'] = true;
+                function ($record) {
+            $record['extra']['foo'] = true;
 
-                return $record;
-            }
+            return $record;
+        }
         );
         $handler->handle($this->getRecord(Logger::WARNING));
         $this->assertTrue($test->hasWarningRecords());
@@ -124,8 +117,7 @@ class FilterHandlerTest extends TestCase
     /**
      * @covers Monolog\Handler\FilterHandler::handle
      */
-    public function testHandleRespectsBubble()
-    {
+    public function testHandleRespectsBubble() {
         $test = new TestHandler();
 
         $handler = new FilterHandler($test, Logger::INFO, Logger::NOTICE, false);
@@ -140,13 +132,12 @@ class FilterHandlerTest extends TestCase
     /**
      * @covers Monolog\Handler\FilterHandler::handle
      */
-    public function testHandleWithCallback()
-    {
+    public function testHandleWithCallback() {
         $test    = new TestHandler();
         $handler = new FilterHandler(
-            function ($record, $handler) use ($test) {
-                return $test;
-            }, Logger::INFO, Logger::NOTICE, false
+                function ($record, $handler) use ($test) {
+            return $test;
+        }, Logger::INFO, Logger::NOTICE, false
         );
         $handler->handle($this->getRecord(Logger::DEBUG));
         $handler->handle($this->getRecord(Logger::INFO));
@@ -158,12 +149,11 @@ class FilterHandlerTest extends TestCase
      * @covers Monolog\Handler\FilterHandler::handle
      * @expectedException \RuntimeException
      */
-    public function testHandleWithBadCallbackThrowsException()
-    {
+    public function testHandleWithBadCallbackThrowsException() {
         $handler = new FilterHandler(
-            function ($record, $handler) {
-                return 'foo';
-            }
+                function ($record, $handler) {
+            return 'foo';
+        }
         );
         $handler->handle($this->getRecord(Logger::WARNING));
     }

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,25 +7,21 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\TestCase;
 use Monolog\Logger;
 
 /**
  * @covers Monolog\Handler\FirePHPHandler
  */
-class FirePHPHandlerTest extends TestCase
-{
-    public function setUp()
-    {
+class FirePHPHandlerTest extends TestCase {
+
+    public function setUp() {
         TestFirePHPHandler::reset();
         $_SERVER['HTTP_USER_AGENT'] = 'Monolog Test; FirePHP/1.0';
     }
 
-    public function testHeaders()
-    {
+    public function testHeaders() {
         $handler = new TestFirePHPHandler;
         $handler->setFormatter($this->getIdentityFormatter());
         $handler->handle($this->getRecord(Logger::DEBUG));
@@ -43,8 +38,7 @@ class FirePHPHandlerTest extends TestCase
         $this->assertEquals($expected, $handler->getHeaders());
     }
 
-    public function testConcurrentHandlers()
-    {
+    public function testConcurrentHandlers() {
         $handler = new TestFirePHPHandler;
         $handler->setFormatter($this->getIdentityFormatter());
         $handler->handle($this->getRecord(Logger::DEBUG));
@@ -64,8 +58,8 @@ class FirePHPHandlerTest extends TestCase
         );
 
         $expected2 = array(
-            'X-Wf-1-1-1-3'       => 'test',
-            'X-Wf-1-1-1-4'       => 'test',
+            'X-Wf-1-1-1-3' => 'test',
+            'X-Wf-1-1-1-4' => 'test',
         );
 
         $this->assertEquals($expected, $handler->getHeaders());
@@ -73,24 +67,20 @@ class FirePHPHandlerTest extends TestCase
     }
 }
 
-class TestFirePHPHandler extends FirePHPHandler
-{
+class TestFirePHPHandler extends FirePHPHandler {
     protected $headers = array();
 
-    public static function reset()
-    {
-        self::$initialized = false;
-        self::$sendHeaders = true;
+    public static function reset() {
+        self::$initialized  = false;
+        self::$sendHeaders  = true;
         self::$messageIndex = 1;
     }
 
-    protected function sendHeader($header, $content)
-    {
+    protected function sendHeader($header, $content) {
         $this->headers[$header] = $content;
     }
 
-    public function getHeaders()
-    {
+    public function getHeaders() {
         return $this->headers;
     }
 }

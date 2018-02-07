@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_Billing extends Google_Collection
-{
-  protected $collection_key = 'consumerDestinations';
-  protected $consumerDestinationsType = 'Google_Service_ServiceManagement_BillingDestination';
-  protected $consumerDestinationsDataType = 'array';
+class Google_Service_ServiceManagement_Billing extends Google_Collection {
+    protected $collection_key               = 'consumerDestinations';
+    protected $consumerDestinationsType     = 'Google_Service_ServiceManagement_BillingDestination';
+    protected $consumerDestinationsDataType = 'array';
 
-  /**
-   * @param Google_Service_ServiceManagement_BillingDestination
-   */
-  public function setConsumerDestinations($consumerDestinations)
-  {
-    $this->consumerDestinations = $consumerDestinations;
-  }
-  /**
-   * @return Google_Service_ServiceManagement_BillingDestination
-   */
-  public function getConsumerDestinations()
-  {
-    return $this->consumerDestinations;
-  }
+    /**
+     * @param Google_Service_ServiceManagement_BillingDestination
+     */
+    public function setConsumerDestinations($consumerDestinations) {
+        $this->consumerDestinations = $consumerDestinations;
+    }
+
+    /**
+     * @return Google_Service_ServiceManagement_BillingDestination
+     */
+    public function getConsumerDestinations() {
+        return $this->consumerDestinations;
+    }
 }

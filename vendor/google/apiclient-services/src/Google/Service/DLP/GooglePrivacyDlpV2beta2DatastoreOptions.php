@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions extends Google_Model
-{
-  protected $kindType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2KindExpression';
-  protected $kindDataType = '';
-  protected $partitionIdType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2PartitionId';
-  protected $partitionIdDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2DatastoreOptions extends Google_Model {
+    protected $kindType            = 'Google_Service_DLP_GooglePrivacyDlpV2beta2KindExpression';
+    protected $kindDataType        = '';
+    protected $partitionIdType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2PartitionId';
+    protected $partitionIdDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2KindExpression
-   */
-  public function setKind(Google_Service_DLP_GooglePrivacyDlpV2beta2KindExpression $kind)
-  {
-    $this->kind = $kind;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2KindExpression
-   */
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2PartitionId
-   */
-  public function setPartitionId(Google_Service_DLP_GooglePrivacyDlpV2beta2PartitionId $partitionId)
-  {
-    $this->partitionId = $partitionId;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2PartitionId
-   */
-  public function getPartitionId()
-  {
-    return $this->partitionId;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2KindExpression
+     */
+    public function setKind(Google_Service_DLP_GooglePrivacyDlpV2beta2KindExpression $kind) {
+        $this->kind = $kind;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2KindExpression
+     */
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2PartitionId
+     */
+    public function setPartitionId(Google_Service_DLP_GooglePrivacyDlpV2beta2PartitionId $partitionId) {
+        $this->partitionId = $partitionId;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2PartitionId
+     */
+    public function getPartitionId() {
+        return $this->partitionId;
+    }
 }

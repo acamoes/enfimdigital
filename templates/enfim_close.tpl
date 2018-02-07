@@ -12,5 +12,5 @@
     </head>
     <script>window.close();</script>
     <body>
-            {include file="enfim_footer.tpl"}
+        {include file="enfim_footer.tpl"}
 

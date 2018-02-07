@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Subscriber;
-
 use Google\Auth\CacheTrait;
 use GuzzleHttp\Event\BeforeEvent;
 use GuzzleHttp\Event\RequestEvents;
@@ -35,27 +33,21 @@ use Psr\Cache\CacheItemPoolInterface;
  *
  * 'authorization' 'Bearer <access token obtained from the closure>'
  */
-class ScopedAccessTokenSubscriber implements SubscriberInterface
-{
+class ScopedAccessTokenSubscriber implements SubscriberInterface {
     use CacheTrait;
-
     const DEFAULT_CACHE_LIFETIME = 1500;
-
     /**
      * @var CacheItemPoolInterface
      */
     private $cache;
-
     /**
      * @var callable The access token generator function
      */
     private $tokenFunc;
-
     /**
      * @var array|string The scopes used to generate the token
      */
     private $scopes;
-
     /**
      * @var array
      */
@@ -70,32 +62,28 @@ class ScopedAccessTokenSubscriber implements SubscriberInterface
      * @param CacheItemPoolInterface $cache an implementation of CacheItemPoolInterface
      */
     public function __construct(
-        callable $tokenFunc,
-        $scopes,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
+    callable $tokenFunc, $scopes, array $cacheConfig = null, CacheItemPoolInterface $cache = null
     ) {
         $this->tokenFunc = $tokenFunc;
         if (!(is_string($scopes) || is_array($scopes))) {
             throw new \InvalidArgumentException(
-                'wants scope should be string or array');
+            'wants scope should be string or array');
         }
         $this->scopes = $scopes;
 
         if (!is_null($cache)) {
-            $this->cache = $cache;
+            $this->cache       = $cache;
             $this->cacheConfig = array_merge([
                 'lifetime' => self::DEFAULT_CACHE_LIFETIME,
-                'prefix' => '',
-            ], $cacheConfig);
+                'prefix'   => '',
+                    ], $cacheConfig);
         }
     }
 
     /**
      * @return array
      */
-    public function getEvents()
-    {
+    public function getEvents() {
         return ['before' => ['onBefore', RequestEvents::SIGN_REQUEST]];
     }
 
@@ -127,8 +115,7 @@ class ScopedAccessTokenSubscriber implements SubscriberInterface
      *
      * @param BeforeEvent $event
      */
-    public function onBefore(BeforeEvent $event)
-    {
+    public function onBefore(BeforeEvent $event) {
         // Requests using "auth"="scoped" will be authorized.
         $request = $event->getRequest();
         if ($request->getConfig()['auth'] != 'scoped') {
@@ -141,13 +128,13 @@ class ScopedAccessTokenSubscriber implements SubscriberInterface
     /**
      * @return string
      */
-    private function getCacheKey()
-    {
+    private function getCacheKey() {
         $key = null;
 
         if (is_string($this->scopes)) {
             $key .= $this->scopes;
-        } elseif (is_array($this->scopes)) {
+        }
+        elseif (is_array($this->scopes)) {
             $key .= implode(':', $this->scopes);
         }
 
@@ -160,10 +147,9 @@ class ScopedAccessTokenSubscriber implements SubscriberInterface
      *
      * @return string
      */
-    private function fetchToken()
-    {
+    private function fetchToken() {
         $cacheKey = $this->getCacheKey();
-        $cached = $this->getCachedValue($cacheKey);
+        $cached   = $this->getCachedValue($cacheKey);
 
         if (!empty($cached)) {
             return $cached;

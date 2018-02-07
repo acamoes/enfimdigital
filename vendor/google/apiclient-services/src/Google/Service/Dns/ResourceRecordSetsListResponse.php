@@ -15,42 +15,40 @@
  * the License.
  */
 
-class Google_Service_Dns_ResourceRecordSetsListResponse extends Google_Collection
-{
-  protected $collection_key = 'rrsets';
-  public $kind;
-  public $nextPageToken;
-  protected $rrsetsType = 'Google_Service_Dns_ResourceRecordSet';
-  protected $rrsetsDataType = 'array';
+class Google_Service_Dns_ResourceRecordSetsListResponse extends Google_Collection {
+    protected $collection_key = 'rrsets';
+    public $kind;
+    public $nextPageToken;
+    protected $rrsetsType     = 'Google_Service_Dns_ResourceRecordSet';
+    protected $rrsetsDataType = 'array';
 
-  public function setKind($kind)
-  {
-    $this->kind = $kind;
-  }
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param Google_Service_Dns_ResourceRecordSet
-   */
-  public function setRrsets($rrsets)
-  {
-    $this->rrsets = $rrsets;
-  }
-  /**
-   * @return Google_Service_Dns_ResourceRecordSet
-   */
-  public function getRrsets()
-  {
-    return $this->rrsets;
-  }
+    public function setKind($kind) {
+        $this->kind = $kind;
+    }
+
+    public function getKind() {
+        return $this->kind;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
+
+    /**
+     * @param Google_Service_Dns_ResourceRecordSet
+     */
+    public function setRrsets($rrsets) {
+        $this->rrsets = $rrsets;
+    }
+
+    /**
+     * @return Google_Service_Dns_ResourceRecordSet
+     */
+    public function getRrsets() {
+        return $this->rrsets;
+    }
 }

@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_Calendar_FreeBusyGroup extends Google_Collection
-{
-  protected $collection_key = 'errors';
-  public $calendars;
-  protected $errorsType = 'Google_Service_Calendar_Error';
-  protected $errorsDataType = 'array';
+class Google_Service_Calendar_FreeBusyGroup extends Google_Collection {
+    protected $collection_key = 'errors';
+    public $calendars;
+    protected $errorsType     = 'Google_Service_Calendar_Error';
+    protected $errorsDataType = 'array';
 
-  public function setCalendars($calendars)
-  {
-    $this->calendars = $calendars;
-  }
-  public function getCalendars()
-  {
-    return $this->calendars;
-  }
-  /**
-   * @param Google_Service_Calendar_Error
-   */
-  public function setErrors($errors)
-  {
-    $this->errors = $errors;
-  }
-  /**
-   * @return Google_Service_Calendar_Error
-   */
-  public function getErrors()
-  {
-    return $this->errors;
-  }
+    public function setCalendars($calendars) {
+        $this->calendars = $calendars;
+    }
+
+    public function getCalendars() {
+        return $this->calendars;
+    }
+
+    /**
+     * @param Google_Service_Calendar_Error
+     */
+    public function setErrors($errors) {
+        $this->errors = $errors;
+    }
+
+    /**
+     * @return Google_Service_Calendar_Error
+     */
+    public function getErrors() {
+        return $this->errors;
+    }
 }

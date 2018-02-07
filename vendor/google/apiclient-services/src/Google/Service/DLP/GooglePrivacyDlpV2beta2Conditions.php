@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2Conditions extends Google_Collection
-{
-  protected $collection_key = 'conditions';
-  protected $conditionsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Condition';
-  protected $conditionsDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2Conditions extends Google_Collection {
+    protected $collection_key     = 'conditions';
+    protected $conditionsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Condition';
+    protected $conditionsDataType = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Condition
-   */
-  public function setConditions($conditions)
-  {
-    $this->conditions = $conditions;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Condition
-   */
-  public function getConditions()
-  {
-    return $this->conditions;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Condition
+     */
+    public function setConditions($conditions) {
+        $this->conditions = $conditions;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Condition
+     */
+    public function getConditions() {
+        return $this->conditions;
+    }
 }

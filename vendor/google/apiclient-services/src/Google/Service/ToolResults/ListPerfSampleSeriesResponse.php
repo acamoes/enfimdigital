@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_ToolResults_ListPerfSampleSeriesResponse extends Google_Collection
-{
-  protected $collection_key = 'perfSampleSeries';
-  protected $perfSampleSeriesType = 'Google_Service_ToolResults_PerfSampleSeries';
-  protected $perfSampleSeriesDataType = 'array';
+class Google_Service_ToolResults_ListPerfSampleSeriesResponse extends Google_Collection {
+    protected $collection_key           = 'perfSampleSeries';
+    protected $perfSampleSeriesType     = 'Google_Service_ToolResults_PerfSampleSeries';
+    protected $perfSampleSeriesDataType = 'array';
 
-  /**
-   * @param Google_Service_ToolResults_PerfSampleSeries
-   */
-  public function setPerfSampleSeries($perfSampleSeries)
-  {
-    $this->perfSampleSeries = $perfSampleSeries;
-  }
-  /**
-   * @return Google_Service_ToolResults_PerfSampleSeries
-   */
-  public function getPerfSampleSeries()
-  {
-    return $this->perfSampleSeries;
-  }
+    /**
+     * @param Google_Service_ToolResults_PerfSampleSeries
+     */
+    public function setPerfSampleSeries($perfSampleSeries) {
+        $this->perfSampleSeries = $perfSampleSeries;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_PerfSampleSeries
+     */
+    public function getPerfSampleSeries() {
+        return $this->perfSampleSeries;
+    }
 }

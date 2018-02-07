@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_PlusDomains_PersonCoverCoverInfo extends Google_Model
-{
-  public $leftImageOffset;
-  public $topImageOffset;
+class Google_Service_PlusDomains_PersonCoverCoverInfo extends Google_Model {
+    public $leftImageOffset;
+    public $topImageOffset;
 
-  public function setLeftImageOffset($leftImageOffset)
-  {
-    $this->leftImageOffset = $leftImageOffset;
-  }
-  public function getLeftImageOffset()
-  {
-    return $this->leftImageOffset;
-  }
-  public function setTopImageOffset($topImageOffset)
-  {
-    $this->topImageOffset = $topImageOffset;
-  }
-  public function getTopImageOffset()
-  {
-    return $this->topImageOffset;
-  }
+    public function setLeftImageOffset($leftImageOffset) {
+        $this->leftImageOffset = $leftImageOffset;
+    }
+
+    public function getLeftImageOffset() {
+        return $this->leftImageOffset;
+    }
+
+    public function setTopImageOffset($topImageOffset) {
+        $this->topImageOffset = $topImageOffset;
+    }
+
+    public function getTopImageOffset() {
+        return $this->topImageOffset;
+    }
 }

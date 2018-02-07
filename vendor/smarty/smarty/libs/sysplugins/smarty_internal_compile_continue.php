@@ -14,8 +14,7 @@
  * @package    Smarty
  * @subpackage Compiler
  */
-class Smarty_Internal_Compile_Continue extends Smarty_Internal_Compile_Break
-{
+class Smarty_Internal_Compile_Continue extends Smarty_Internal_Compile_Break {
 
     /**
      * Compiles code for the {continue} tag
@@ -27,14 +26,13 @@ class Smarty_Internal_Compile_Continue extends Smarty_Internal_Compile_Break
      * @return string compiled code
      * @throws \SmartyCompilerException
      */
-    public function compile($args, Smarty_Internal_TemplateCompilerBase $compiler, $parameter)
-    {
+    public function compile($args, Smarty_Internal_TemplateCompilerBase $compiler, $parameter) {
         list($levels, $foreachLevels) = $this->checkLevels($args, $compiler, 'continue');
         $output = "<?php\n";
         if ($foreachLevels > 1) {
             /* @var Smarty_Internal_Compile_Foreach $foreachCompiler */
             $foreachCompiler = $compiler->getTagCompiler('foreach');
-            $output .= $foreachCompiler->compileRestore($foreachLevels - 1);
+            $output          .= $foreachCompiler->compileRestore($foreachLevels - 1);
         }
         $output .= "continue {$levels};?>";
         return $output;

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Logger;
 
 /**
@@ -24,8 +21,7 @@ use Monolog\Logger;
  *
  * @author Nehal Patel <nehal@nehalpatel.me>
  */
-class IFTTTHandler extends AbstractProcessingHandler
-{
+class IFTTTHandler extends AbstractProcessingHandler {
     private $eventName;
     private $secretKey;
 
@@ -35,8 +31,7 @@ class IFTTTHandler extends AbstractProcessingHandler
      * @param int     $level     The minimum logging level at which this handler will be triggered
      * @param Boolean $bubble    Whether the messages that are handled can bubble up the stack or not
      */
-    public function __construct($eventName, $secretKey, $level = Logger::ERROR, $bubble = true)
-    {
+    public function __construct($eventName, $secretKey, $level = Logger::ERROR, $bubble = true) {
         $this->eventName = $eventName;
         $this->secretKey = $secretKey;
 
@@ -46,9 +41,8 @@ class IFTTTHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    public function write(array $record)
-    {
-        $postData = array(
+    public function write(array $record) {
+        $postData   = array(
             "value1" => $record["channel"],
             "value2" => $record["level_name"],
             "value3" => $record["message"],

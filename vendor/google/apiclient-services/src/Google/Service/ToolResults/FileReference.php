@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ToolResults_FileReference extends Google_Model
-{
-  public $fileUri;
+class Google_Service_ToolResults_FileReference extends Google_Model {
+    public $fileUri;
 
-  public function setFileUri($fileUri)
-  {
-    $this->fileUri = $fileUri;
-  }
-  public function getFileUri()
-  {
-    return $this->fileUri;
-  }
+    public function setFileUri($fileUri) {
+        $this->fileUri = $fileUri;
+    }
+
+    public function getFileUri() {
+        return $this->fileUri;
+    }
 }

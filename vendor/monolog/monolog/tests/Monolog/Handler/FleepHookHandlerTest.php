@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;
 use Monolog\TestCase;
@@ -18,20 +15,17 @@ use Monolog\TestCase;
 /**
  * @coversDefaultClass \Monolog\Handler\FleepHookHandler
  */
-class FleepHookHandlerTest extends TestCase
-{
+class FleepHookHandlerTest extends TestCase {
     /**
      * Default token to use in tests
      */
     const TOKEN = '123abc';
-
     /**
      * @var FleepHookHandler
      */
     private $handler;
 
-    public function setUp()
-    {
+    public function setUp() {
         parent::setUp();
 
         if (!extension_loaded('openssl')) {
@@ -45,8 +39,7 @@ class FleepHookHandlerTest extends TestCase
     /**
      * @covers ::__construct
      */
-    public function testConstructorSetsExpectedDefaults()
-    {
+    public function testConstructorSetsExpectedDefaults() {
         $this->assertEquals(Logger::DEBUG, $this->handler->getLevel());
         $this->assertEquals(true, $this->handler->getBubble());
     }
@@ -54,23 +47,22 @@ class FleepHookHandlerTest extends TestCase
     /**
      * @covers ::getDefaultFormatter
      */
-    public function testHandlerUsesLineFormatterWhichIgnoresEmptyArrays()
-    {
+    public function testHandlerUsesLineFormatterWhichIgnoresEmptyArrays() {
         $record = array(
-            'message' => 'msg',
-            'context' => array(),
-            'level' => Logger::DEBUG,
+            'message'    => 'msg',
+            'context'    => array(),
+            'level'      => Logger::DEBUG,
             'level_name' => Logger::getLevelName(Logger::DEBUG),
-            'channel' => 'channel',
-            'datetime' => new \DateTime(),
-            'extra' => array(),
+            'channel'    => 'channel',
+            'datetime'   => new \DateTime(),
+            'extra'      => array(),
         );
 
         $expectedFormatter = new LineFormatter(null, null, true, true);
-        $expected = $expectedFormatter->format($record);
+        $expected          = $expectedFormatter->format($record);
 
         $handlerFormatter = $this->handler->getFormatter();
-        $actual = $handlerFormatter->format($record);
+        $actual           = $handlerFormatter->format($record);
 
         $this->assertEquals($expected, $actual, 'Empty context and extra arrays should not be rendered');
     }
@@ -78,8 +70,7 @@ class FleepHookHandlerTest extends TestCase
     /**
      * @covers ::__construct
      */
-    public function testConnectionStringisConstructedCorrectly()
-    {
+    public function testConnectionStringisConstructedCorrectly() {
         $this->assertEquals('ssl://' . FleepHookHandler::FLEEP_HOST . ':443', $this->handler->getConnectionString());
     }
 }

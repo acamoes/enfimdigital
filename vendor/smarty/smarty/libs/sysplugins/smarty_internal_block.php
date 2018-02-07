@@ -7,63 +7,55 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Block
-{
+class Smarty_Internal_Block {
     /**
      * Block name
      *
      * @var string
      */
-    public $name = '';
-
+    public $name       = '';
     /**
      * Hide attribute
      *
      * @var bool
      */
-    public $hide = false;
-
+    public $hide       = false;
     /**
      * Append attribute
      *
      * @var bool
      */
-    public $append = false;
-
+    public $append     = false;
     /**
      * prepend attribute
      *
      * @var bool
      */
-    public $prepend = false;
-
+    public $prepend    = false;
     /**
      * Block calls {$smarty.block.child}
      *
      * @var bool
      */
     public $callsChild = false;
-
     /**
      * Inheritance child block
      *
      * @var Smarty_Internal_Block|null
      */
-    public $child = null;
-
+    public $child      = null;
     /**
      * Inheritance calling parent block
      *
      * @var Smarty_Internal_Block|null
      */
-    public $parent = null;
-
+    public $parent     = null;
     /**
      * Inheritance Template index
      *
      * @var int
      */
-    public $tplIndex = 0;
+    public $tplIndex   = 0;
 
     /**
      * Smarty_Internal_Block constructor.
@@ -73,9 +65,8 @@ class Smarty_Internal_Block
      * @param string   $name     block name
      * @param int|null $tplIndex index of outer level {block} if nested
      */
-    public function __construct($name, $tplIndex)
-    {
-        $this->name = $name;
+    public function __construct($name, $tplIndex) {
+        $this->name     = $name;
         $this->tplIndex = $tplIndex;
     }
 
@@ -84,7 +75,7 @@ class Smarty_Internal_Block
      *
      * @param \Smarty_Internal_Template $tpl
      */
-    public function callBlock(Smarty_Internal_Template $tpl)
-    {
+    public function callBlock(Smarty_Internal_Template $tpl) {
+
     }
 }

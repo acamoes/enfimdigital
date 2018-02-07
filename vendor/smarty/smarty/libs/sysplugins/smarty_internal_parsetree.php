@@ -14,16 +14,13 @@
  * @subpackage Compiler
  * @ignore
  */
-abstract class Smarty_Internal_ParseTree
-{
-
+abstract class Smarty_Internal_ParseTree {
     /**
      * Buffer content
      *
      * @var mixed
      */
     public $data;
-
     /**
      * Subtree array
      *
@@ -43,12 +40,8 @@ abstract class Smarty_Internal_ParseTree
     /**
      * Template data object destructor
      */
-    public function __destruct()
-    {
-        $this->data = null;
+    public function __destruct() {
+        $this->data     = null;
         $this->subtrees = null;
     }
-
 }
-
-

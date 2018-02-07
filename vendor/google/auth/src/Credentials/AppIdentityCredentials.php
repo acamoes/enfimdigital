@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Credentials;
-
 /*
  * The AppIdentityService class is automatically defined on App Engine,
  * so including this dependency is not necessary, and will result in a
@@ -49,22 +47,19 @@ use Google\Auth\CredentialsLoader;
  *
  *   $res = $client->get('volumes?q=Henry+David+Thoreau&country=US');
  */
-class AppIdentityCredentials extends CredentialsLoader
-{
+class AppIdentityCredentials extends CredentialsLoader {
     /**
      * Result of fetchAuthToken.
      *
      * @array
      */
     protected $lastReceivedToken;
-
     /**
      * Array of OAuth2 scopes to be requested.
      */
     private $scope;
 
-    public function __construct($scope = array())
-    {
+    public function __construct($scope = array()) {
         $this->scope = $scope;
     }
 
@@ -75,15 +70,14 @@ class AppIdentityCredentials extends CredentialsLoader
      *
      * @return true if this an App Engine Instance, false otherwise
      */
-    public static function onAppEngine()
-    {
+    public static function onAppEngine() {
         $appEngineProduction = isset($_SERVER['SERVER_SOFTWARE']) &&
-            0 === strpos($_SERVER['SERVER_SOFTWARE'], 'Google App Engine');
+                0 === strpos($_SERVER['SERVER_SOFTWARE'], 'Google App Engine');
         if ($appEngineProduction) {
             return true;
         }
         $appEngineDevAppServer = isset($_SERVER['APPENGINE_RUNTIME']) &&
-            $_SERVER['APPENGINE_RUNTIME'] == 'php';
+                $_SERVER['APPENGINE_RUNTIME'] == 'php';
         if ($appEngineDevAppServer) {
             return true;
         }
@@ -109,23 +103,22 @@ class AppIdentityCredentials extends CredentialsLoader
      *
      * @throws \Exception
      */
-    public function fetchAuthToken(callable $httpHandler = null)
-    {
+    public function fetchAuthToken(callable $httpHandler = null) {
         if (!self::onAppEngine()) {
             return array();
         }
 
         if (!class_exists('google\appengine\api\app_identity\AppIdentityService')) {
             throw new \Exception(
-                'This class must be run in App Engine, or you must include the AppIdentityService '
-                . 'mock class defined in tests/mocks/AppIdentityService.php'
+            'This class must be run in App Engine, or you must include the AppIdentityService '
+            . 'mock class defined in tests/mocks/AppIdentityService.php'
             );
         }
 
         // AppIdentityService expects an array when multiple scopes are supplied
         $scope = is_array($this->scope) ? $this->scope : explode(' ', $this->scope);
 
-        $token = AppIdentityService::getAccessToken($scope);
+        $token                   = AppIdentityService::getAccessToken($scope);
         $this->lastReceivedToken = $token;
 
         return $token;
@@ -134,12 +127,11 @@ class AppIdentityCredentials extends CredentialsLoader
     /**
      * @return array|null
      */
-    public function getLastReceivedToken()
-    {
+    public function getLastReceivedToken() {
         if ($this->lastReceivedToken) {
             return [
                 'access_token' => $this->lastReceivedToken['access_token'],
-                'expires_at' => $this->lastReceivedToken['expiration_time'],
+                'expires_at'   => $this->lastReceivedToken['expiration_time'],
             ];
         }
 
@@ -152,8 +144,7 @@ class AppIdentityCredentials extends CredentialsLoader
      *
      * @return string
      */
-    public function getCacheKey()
-    {
+    public function getCacheKey() {
         return '';
     }
 }

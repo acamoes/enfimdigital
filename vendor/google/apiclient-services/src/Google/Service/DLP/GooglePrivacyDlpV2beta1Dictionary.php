@@ -15,23 +15,21 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1Dictionary extends Google_Model
-{
-  protected $wordListType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1WordList';
-  protected $wordListDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1Dictionary extends Google_Model {
+    protected $wordListType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1WordList';
+    protected $wordListDataType = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1WordList
-   */
-  public function setWordList(Google_Service_DLP_GooglePrivacyDlpV2beta1WordList $wordList)
-  {
-    $this->wordList = $wordList;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1WordList
-   */
-  public function getWordList()
-  {
-    return $this->wordList;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1WordList
+     */
+    public function setWordList(Google_Service_DLP_GooglePrivacyDlpV2beta1WordList $wordList) {
+        $this->wordList = $wordList;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1WordList
+     */
+    public function getWordList() {
+        return $this->wordList;
+    }
 }

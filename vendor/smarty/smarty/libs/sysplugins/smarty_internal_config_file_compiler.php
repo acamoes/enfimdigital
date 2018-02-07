@@ -15,57 +15,49 @@
  * @package    Smarty
  * @subpackage Config
  */
-class Smarty_Internal_Config_File_Compiler
-{
+class Smarty_Internal_Config_File_Compiler {
     /**
      * Lexer class name
      *
      * @var string
      */
     public $lexer_class;
-
     /**
      * Parser class name
      *
      * @var string
      */
     public $parser_class;
-
     /**
      * Lexer object
      *
      * @var object
      */
     public $lex;
-
     /**
      * Parser object
      *
      * @var object
      */
     public $parser;
-
     /**
      * Smarty object
      *
      * @var Smarty object
      */
     public $smarty;
-
     /**
      * Smarty object
      *
      * @var Smarty_Internal_Template object
      */
     public $template;
-
     /**
      * Compiled config data sections and variables
      *
      * @var array
      */
-    public $config_data = array();
-
+    public $config_data         = array();
     /**
      * compiled config data must always be written
      *
@@ -80,15 +72,14 @@ class Smarty_Internal_Config_File_Compiler
      * @param string $parser_class class name
      * @param Smarty $smarty       global instance
      */
-    public function __construct($lexer_class, $parser_class, Smarty $smarty)
-    {
-        $this->smarty = $smarty;
+    public function __construct($lexer_class, $parser_class, Smarty $smarty) {
+        $this->smarty                  = $smarty;
         // get required plugins
-        $this->lexer_class = $lexer_class;
-        $this->parser_class = $parser_class;
-        $this->smarty = $smarty;
-        $this->config_data[ 'sections' ] = array();
-        $this->config_data[ 'vars' ] = array();
+        $this->lexer_class             = $lexer_class;
+        $this->parser_class            = $parser_class;
+        $this->smarty                  = $smarty;
+        $this->config_data['sections'] = array();
+        $this->config_data['vars']     = array();
     }
 
     /**
@@ -98,29 +89,27 @@ class Smarty_Internal_Config_File_Compiler
      *
      * @return bool true if compiling succeeded, false if it failed
      */
-    public function compileTemplate(Smarty_Internal_Template $template)
-    {
-        $this->template = $template;
-        $this->template->compiled->file_dependency[ $this->template->source->uid ] =
-            array($this->template->source->filepath, $this->template->source->getTimeStamp(),
-                  $this->template->source->type);
+    public function compileTemplate(Smarty_Internal_Template $template) {
+        $this->template                                                          = $template;
+        $this->template->compiled->file_dependency[$this->template->source->uid] = array($this->template->source->filepath, $this->template->source->getTimeStamp(),
+            $this->template->source->type);
         if ($this->smarty->debugging) {
-            if (!isset( $this->smarty->_debug)) {
-                $this->smarty->_debug  = new Smarty_Internal_Debug();
+            if (!isset($this->smarty->_debug)) {
+                $this->smarty->_debug = new Smarty_Internal_Debug();
             }
             $this->smarty->_debug->start_compile($this->template);
         }
         // init the lexer/parser to compile the config file
         /* @var Smarty_Internal_ConfigFileLexer $this->lex */
-        $this->lex = new $this->lexer_class(str_replace(array("\r\n", "\r"), "\n", $template->source->getContent()) . "\n",
-                                      $this);
+        $this->lex    = new $this->lexer_class(str_replace(array("\r\n", "\r"), "\n", $template->source->getContent()) . "\n", $this);
         /* @var Smarty_Internal_ConfigFileParser $this->parser */
         $this->parser = new $this->parser_class($this->lex, $this);
 
         if (function_exists('mb_internal_encoding') && ((int) ini_get('mbstring.func_overload')) & 2) {
             $mbEncoding = mb_internal_encoding();
             mb_internal_encoding('ASCII');
-        } else {
+        }
+        else {
             $mbEncoding = null;
         }
 
@@ -144,9 +133,8 @@ class Smarty_Internal_Config_File_Compiler
             $this->smarty->_debug->end_compile($this->template);
         }
         // template header code
-        $template_header =
-            "<?php /* Smarty version " . Smarty::SMARTY_VERSION . ", created on " . strftime("%Y-%m-%d %H:%M:%S") .
-            "\n";
+        $template_header = "<?php /* Smarty version " . Smarty::SMARTY_VERSION . ", created on " . strftime("%Y-%m-%d %H:%M:%S") .
+                "\n";
         $template_header .= "         compiled from \"" . $this->template->source->filepath . "\" */ ?>\n";
 
         $code = '<?php $_smarty_tpl->smarty->ext->configLoad->_loadConfigVars($_smarty_tpl, ' .
@@ -164,29 +152,29 @@ class Smarty_Internal_Config_File_Compiler
      *
      * @throws SmartyCompilerException
      */
-    public function trigger_config_file_error($args = null)
-    {
+    public function trigger_config_file_error($args = null) {
         // get config source line which has error
         $line = $this->lex->line;
         if (isset($args)) {
             // $line--;
         }
-        $match = preg_split("/\n/", $this->lex->data);
-        $error_text =
-            "Syntax error in config file '{$this->template->source->filepath}' on line {$line} '{$match[$line - 1]}' ";
+        $match      = preg_split("/\n/", $this->lex->data);
+        $error_text = "Syntax error in config file '{$this->template->source->filepath}' on line {$line} '{$match[$line - 1]}' ";
         if (isset($args)) {
             // individual error message
             $error_text .= $args;
-        } else {
+        }
+        else {
             // expected token from parser
             foreach ($this->parser->yy_get_expected_tokens($this->parser->yymajor) as $token) {
-                $exp_token = $this->parser->yyTokenName[ $token ];
-                if (isset($this->lex->smarty_token_names[ $exp_token ])) {
+                $exp_token = $this->parser->yyTokenName[$token];
+                if (isset($this->lex->smarty_token_names[$exp_token])) {
                     // token type from lexer
-                    $expect[] = '"' . $this->lex->smarty_token_names[ $exp_token ] . '"';
-                } else {
+                    $expect[] = '"' . $this->lex->smarty_token_names[$exp_token] . '"';
+                }
+                else {
                     // otherwise internal token name
-                    $expect[] = $this->parser->yyTokenName[ $token ];
+                    $expect[] = $this->parser->yyTokenName[$token];
                 }
             }
             // output parser error message

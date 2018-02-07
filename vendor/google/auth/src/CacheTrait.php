@@ -14,19 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth;
 
-trait CacheTrait
-{
+trait CacheTrait {
     private $maxKeyLength = 64;
 
     /**
      * Gets the cached value if it is present in the cache when that is
      * available.
      */
-    private function getCachedValue($k)
-    {
+    private function getCachedValue($k) {
         if (is_null($this->cache)) {
             return;
         }
@@ -45,8 +42,7 @@ trait CacheTrait
     /**
      * Saves the value in the cache when that is available.
      */
-    private function setCachedValue($k, $v)
-    {
+    private function setCachedValue($k, $v) {
         if (is_null($this->cache)) {
             return;
         }
@@ -62,8 +58,7 @@ trait CacheTrait
         return $this->cache->save($cacheItem);
     }
 
-    private function getFullCacheKey($key)
-    {
+    private function getFullCacheKey($key) {
         if (is_null($key)) {
             return;
         }

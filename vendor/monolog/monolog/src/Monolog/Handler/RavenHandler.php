@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Formatter\LineFormatter;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Logger;
@@ -22,8 +19,7 @@ use Raven_Client;
  *
  * @author Marc Abramowitz <marc@marc-abramowitz.com>
  */
-class RavenHandler extends AbstractProcessingHandler
-{
+class RavenHandler extends AbstractProcessingHandler {
     /**
      * Translates Monolog log levels to Raven log levels.
      */
@@ -37,18 +33,15 @@ class RavenHandler extends AbstractProcessingHandler
         Logger::ALERT     => Raven_Client::FATAL,
         Logger::EMERGENCY => Raven_Client::FATAL,
     );
-
     /**
      * @var string should represent the current version of the calling
      *             software. Can be any string (git commit, version number)
      */
     private $release;
-
     /**
      * @var Raven_Client the client object that sends the message to the server
      */
     protected $ravenClient;
-
     /**
      * @var LineFormatter The formatter to use for the logs generated via handleBatch()
      */
@@ -59,8 +52,7 @@ class RavenHandler extends AbstractProcessingHandler
      * @param int          $level       The minimum logging level at which this handler will be triggered
      * @param Boolean      $bubble      Whether the messages that are handled can bubble up the stack or not
      */
-    public function __construct(Raven_Client $ravenClient, $level = Logger::DEBUG, $bubble = true)
-    {
+    public function __construct(Raven_Client $ravenClient, $level = Logger::DEBUG, $bubble = true) {
         parent::__construct($level, $bubble);
 
         $this->ravenClient = $ravenClient;
@@ -69,8 +61,7 @@ class RavenHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    public function handleBatch(array $records)
-    {
+    public function handleBatch(array $records) {
         $level = $this->level;
 
         // filter records based on their level
@@ -109,8 +100,7 @@ class RavenHandler extends AbstractProcessingHandler
      *
      * @param FormatterInterface $formatter
      */
-    public function setBatchFormatter(FormatterInterface $formatter)
-    {
+    public function setBatchFormatter(FormatterInterface $formatter) {
         $this->batchFormatter = $formatter;
     }
 
@@ -119,8 +109,7 @@ class RavenHandler extends AbstractProcessingHandler
      *
      * @return FormatterInterface
      */
-    public function getBatchFormatter()
-    {
+    public function getBatchFormatter() {
         if (!$this->batchFormatter) {
             $this->batchFormatter = $this->getDefaultBatchFormatter();
         }
@@ -131,12 +120,11 @@ class RavenHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    protected function write(array $record)
-    {
+    protected function write(array $record) {
         $previousUserContext = false;
-        $options = array();
-        $options['level'] = $this->logLevels[$record['level']];
-        $options['tags'] = array();
+        $options             = array();
+        $options['level']    = $this->logLevels[$record['level']];
+        $options['tags']     = array();
         if (!empty($record['extra']['tags'])) {
             $options['tags'] = array_merge($options['tags'], $record['extra']['tags']);
             unset($record['extra']['tags']);
@@ -152,7 +140,8 @@ class RavenHandler extends AbstractProcessingHandler
         if (!empty($record['context']['logger'])) {
             $options['logger'] = $record['context']['logger'];
             unset($record['context']['logger']);
-        } else {
+        }
+        else {
             $options['logger'] = $record['channel'];
         }
         foreach ($this->getExtraParameters() as $key) {
@@ -182,7 +171,8 @@ class RavenHandler extends AbstractProcessingHandler
         if (isset($record['context']['exception']) && ($record['context']['exception'] instanceof \Exception || (PHP_VERSION_ID >= 70000 && $record['context']['exception'] instanceof \Throwable))) {
             $options['extra']['message'] = $record['formatted'];
             $this->ravenClient->captureException($record['context']['exception'], $options);
-        } else {
+        }
+        else {
             $this->ravenClient->captureMessage($record['formatted'], array(), $options);
         }
 
@@ -194,8 +184,7 @@ class RavenHandler extends AbstractProcessingHandler
     /**
      * {@inheritDoc}
      */
-    protected function getDefaultFormatter()
-    {
+    protected function getDefaultFormatter() {
         return new LineFormatter('[%channel%] %message%');
     }
 
@@ -204,8 +193,7 @@ class RavenHandler extends AbstractProcessingHandler
      *
      * @return FormatterInterface
      */
-    protected function getDefaultBatchFormatter()
-    {
+    protected function getDefaultBatchFormatter() {
         return new LineFormatter();
     }
 
@@ -214,8 +202,7 @@ class RavenHandler extends AbstractProcessingHandler
      *
      * @return array
      */
-    protected function getExtraParameters()
-    {
+    protected function getExtraParameters() {
         return array('checksum', 'release', 'event_id');
     }
 
@@ -223,8 +210,7 @@ class RavenHandler extends AbstractProcessingHandler
      * @param string $value
      * @return self
      */
-    public function setRelease($value)
-    {
+    public function setRelease($value) {
         $this->release = $value;
 
         return $this;

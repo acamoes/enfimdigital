@@ -15,50 +15,48 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem extends Google_Model
-{
-  public $data;
-  protected $tableType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Table';
-  protected $tableDataType = '';
-  public $type;
-  public $value;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2ContentItem extends Google_Model {
+    public $data;
+    protected $tableType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Table';
+    protected $tableDataType = '';
+    public $type;
+    public $value;
 
-  public function setData($data)
-  {
-    $this->data = $data;
-  }
-  public function getData()
-  {
-    return $this->data;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Table
-   */
-  public function setTable(Google_Service_DLP_GooglePrivacyDlpV2beta2Table $table)
-  {
-    $this->table = $table;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Table
-   */
-  public function getTable()
-  {
-    return $this->table;
-  }
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  public function getType()
-  {
-    return $this->type;
-  }
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  public function getValue()
-  {
-    return $this->value;
-  }
+    public function setData($data) {
+        $this->data = $data;
+    }
+
+    public function getData() {
+        return $this->data;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Table
+     */
+    public function setTable(Google_Service_DLP_GooglePrivacyDlpV2beta2Table $table) {
+        $this->table = $table;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Table
+     */
+    public function getTable() {
+        return $this->table;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setValue($value) {
+        $this->value = $value;
+    }
+
+    public function getValue() {
+        return $this->value;
+    }
 }

@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_ToolResults_Duration extends Google_Model
-{
-  public $nanos;
-  public $seconds;
+class Google_Service_ToolResults_Duration extends Google_Model {
+    public $nanos;
+    public $seconds;
 
-  public function setNanos($nanos)
-  {
-    $this->nanos = $nanos;
-  }
-  public function getNanos()
-  {
-    return $this->nanos;
-  }
-  public function setSeconds($seconds)
-  {
-    $this->seconds = $seconds;
-  }
-  public function getSeconds()
-  {
-    return $this->seconds;
-  }
+    public function setNanos($nanos) {
+        $this->nanos = $nanos;
+    }
+
+    public function getNanos() {
+        return $this->nanos;
+    }
+
+    public function setSeconds($seconds) {
+        $this->seconds = $seconds;
+    }
+
+    public function getSeconds() {
+        return $this->seconds;
+    }
 }

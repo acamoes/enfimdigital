@@ -15,55 +15,53 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey extends Google_Model
-{
-  protected $kmsWrappedType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2KmsWrappedCryptoKey';
-  protected $kmsWrappedDataType = '';
-  protected $transientType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2TransientCryptoKey';
-  protected $transientDataType = '';
-  protected $unwrappedType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2UnwrappedCryptoKey';
-  protected $unwrappedDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2CryptoKey extends Google_Model {
+    protected $kmsWrappedType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2KmsWrappedCryptoKey';
+    protected $kmsWrappedDataType = '';
+    protected $transientType      = 'Google_Service_DLP_GooglePrivacyDlpV2beta2TransientCryptoKey';
+    protected $transientDataType  = '';
+    protected $unwrappedType      = 'Google_Service_DLP_GooglePrivacyDlpV2beta2UnwrappedCryptoKey';
+    protected $unwrappedDataType  = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2KmsWrappedCryptoKey
-   */
-  public function setKmsWrapped(Google_Service_DLP_GooglePrivacyDlpV2beta2KmsWrappedCryptoKey $kmsWrapped)
-  {
-    $this->kmsWrapped = $kmsWrapped;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2KmsWrappedCryptoKey
-   */
-  public function getKmsWrapped()
-  {
-    return $this->kmsWrapped;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2TransientCryptoKey
-   */
-  public function setTransient(Google_Service_DLP_GooglePrivacyDlpV2beta2TransientCryptoKey $transient)
-  {
-    $this->transient = $transient;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2TransientCryptoKey
-   */
-  public function getTransient()
-  {
-    return $this->transient;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2UnwrappedCryptoKey
-   */
-  public function setUnwrapped(Google_Service_DLP_GooglePrivacyDlpV2beta2UnwrappedCryptoKey $unwrapped)
-  {
-    $this->unwrapped = $unwrapped;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2UnwrappedCryptoKey
-   */
-  public function getUnwrapped()
-  {
-    return $this->unwrapped;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2KmsWrappedCryptoKey
+     */
+    public function setKmsWrapped(Google_Service_DLP_GooglePrivacyDlpV2beta2KmsWrappedCryptoKey $kmsWrapped) {
+        $this->kmsWrapped = $kmsWrapped;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2KmsWrappedCryptoKey
+     */
+    public function getKmsWrapped() {
+        return $this->kmsWrapped;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2TransientCryptoKey
+     */
+    public function setTransient(Google_Service_DLP_GooglePrivacyDlpV2beta2TransientCryptoKey $transient) {
+        $this->transient = $transient;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2TransientCryptoKey
+     */
+    public function getTransient() {
+        return $this->transient;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2UnwrappedCryptoKey
+     */
+    public function setUnwrapped(Google_Service_DLP_GooglePrivacyDlpV2beta2UnwrappedCryptoKey $unwrapped) {
+        $this->unwrapped = $unwrapped;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2UnwrappedCryptoKey
+     */
+    public function getUnwrapped() {
+        return $this->unwrapped;
+    }
 }

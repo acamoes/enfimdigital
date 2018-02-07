@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Calendar_EventExtendedProperties extends Google_Model
-{
-  public $private;
-  public $shared;
+class Google_Service_Calendar_EventExtendedProperties extends Google_Model {
+    public $private;
+    public $shared;
 
-  public function setPrivate($private)
-  {
-    $this->private = $private;
-  }
-  public function getPrivate()
-  {
-    return $this->private;
-  }
-  public function setShared($shared)
-  {
-    $this->shared = $shared;
-  }
-  public function getShared()
-  {
-    return $this->shared;
-  }
+    public function setPrivate($private) {
+        $this->private = $private;
+    }
+
+    public function getPrivate() {
+        return $this->private;
+    }
+
+    public function setShared($shared) {
+        $this->shared = $shared;
+    }
+
+    public function getShared() {
+        return $this->shared;
+    }
 }

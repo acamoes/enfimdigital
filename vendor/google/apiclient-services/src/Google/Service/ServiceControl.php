@@ -29,99 +29,91 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_ServiceControl extends Google_Service
-{
-  /** View and manage your data across Google Cloud Platform services. */
-  const CLOUD_PLATFORM =
-      "https://www.googleapis.com/auth/cloud-platform";
-  /** Manage your Google Service Control data. */
-  const SERVICECONTROL =
-      "https://www.googleapis.com/auth/servicecontrol";
+class Google_Service_ServiceControl extends Google_Service {
+    /** View and manage your data across Google Cloud Platform services. */
+    const CLOUD_PLATFORM = "https://www.googleapis.com/auth/cloud-platform";
+    /** Manage your Google Service Control data. */
+    const SERVICECONTROL = "https://www.googleapis.com/auth/servicecontrol";
+    public $services;
 
-  public $services;
-  
-  /**
-   * Constructs the internal representation of the ServiceControl service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://servicecontrol.googleapis.com/';
-    $this->servicePath = '';
-    $this->version = 'v1';
-    $this->serviceName = 'servicecontrol';
+    /**
+     * Constructs the internal representation of the ServiceControl service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://servicecontrol.googleapis.com/';
+        $this->servicePath = '';
+        $this->version     = 'v1';
+        $this->serviceName = 'servicecontrol';
 
-    $this->services = new Google_Service_ServiceControl_Resource_Services(
-        $this,
-        $this->serviceName,
-        'services',
-        array(
-          'methods' => array(
-            'allocateQuota' => array(
-              'path' => 'v1/services/{serviceName}:allocateQuota',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'serviceName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        $this->services = new Google_Service_ServiceControl_Resource_Services(
+                $this, $this->serviceName, 'services', array(
+            'methods' => array(
+                'allocateQuota'       => array(
+                    'path'       => 'v1/services/{serviceName}:allocateQuota',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'serviceName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'check'               => array(
+                    'path'       => 'v1/services/{serviceName}:check',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'serviceName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'endReconciliation'   => array(
+                    'path'       => 'v1/services/{serviceName}:endReconciliation',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'serviceName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'releaseQuota'        => array(
+                    'path'       => 'v1/services/{serviceName}:releaseQuota',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'serviceName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'report'              => array(
+                    'path'       => 'v1/services/{serviceName}:report',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'serviceName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'startReconciliation' => array(
+                    'path'       => 'v1/services/{serviceName}:startReconciliation',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'serviceName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-              ),
-            ),'check' => array(
-              'path' => 'v1/services/{serviceName}:check',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'serviceName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'endReconciliation' => array(
-              'path' => 'v1/services/{serviceName}:endReconciliation',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'serviceName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'releaseQuota' => array(
-              'path' => 'v1/services/{serviceName}:releaseQuota',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'serviceName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'report' => array(
-              'path' => 'v1/services/{serviceName}:report',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'serviceName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'startReconciliation' => array(
-              'path' => 'v1/services/{serviceName}:startReconciliation',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'serviceName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

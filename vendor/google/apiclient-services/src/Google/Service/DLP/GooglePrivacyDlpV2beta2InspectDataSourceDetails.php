@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2InspectDataSourceDetails extends Google_Model
-{
-  protected $requestedOptionsType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2RequestedOptions';
-  protected $requestedOptionsDataType = '';
-  protected $resultType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Result';
-  protected $resultDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2InspectDataSourceDetails extends Google_Model {
+    protected $requestedOptionsType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2RequestedOptions';
+    protected $requestedOptionsDataType = '';
+    protected $resultType               = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Result';
+    protected $resultDataType           = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2RequestedOptions
-   */
-  public function setRequestedOptions(Google_Service_DLP_GooglePrivacyDlpV2beta2RequestedOptions $requestedOptions)
-  {
-    $this->requestedOptions = $requestedOptions;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2RequestedOptions
-   */
-  public function getRequestedOptions()
-  {
-    return $this->requestedOptions;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Result
-   */
-  public function setResult(Google_Service_DLP_GooglePrivacyDlpV2beta2Result $result)
-  {
-    $this->result = $result;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Result
-   */
-  public function getResult()
-  {
-    return $this->result;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2RequestedOptions
+     */
+    public function setRequestedOptions(Google_Service_DLP_GooglePrivacyDlpV2beta2RequestedOptions $requestedOptions) {
+        $this->requestedOptions = $requestedOptions;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2RequestedOptions
+     */
+    public function getRequestedOptions() {
+        return $this->requestedOptions;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Result
+     */
+    public function setResult(Google_Service_DLP_GooglePrivacyDlpV2beta2Result $result) {
+        $this->result = $result;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Result
+     */
+    public function getResult() {
+        return $this->result;
+    }
 }

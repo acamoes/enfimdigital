@@ -10,11 +10,10 @@ namespace GuzzleHttp\Promise;
  *
  * @link https://promisesaplus.com/
  */
-interface PromiseInterface
-{
-    const PENDING = 'pending';
+interface PromiseInterface {
+    const PENDING   = 'pending';
     const FULFILLED = 'fulfilled';
-    const REJECTED = 'rejected';
+    const REJECTED  = 'rejected';
 
     /**
      * Appends fulfillment and rejection handlers to the promise, and returns
@@ -26,8 +25,7 @@ interface PromiseInterface
      * @return PromiseInterface
      */
     public function then(
-        callable $onFulfilled = null,
-        callable $onRejected = null
+    callable $onFulfilled = null, callable $onRejected = null
     );
 
     /**

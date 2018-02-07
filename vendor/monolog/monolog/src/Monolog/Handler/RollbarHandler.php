@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use RollbarNotifier;
 use Exception;
 use Monolog\Logger;
@@ -31,16 +28,14 @@ use Monolog\Logger;
  *
  * @author Paul Statezny <paulstatezny@gmail.com>
  */
-class RollbarHandler extends AbstractProcessingHandler
-{
+class RollbarHandler extends AbstractProcessingHandler {
     /**
      * Rollbar notifier
      *
      * @var RollbarNotifier
      */
     protected $rollbarNotifier;
-
-    protected $levelMap = array(
+    protected $levelMap    = array(
         Logger::DEBUG     => 'debug',
         Logger::INFO      => 'info',
         Logger::NOTICE    => 'info',
@@ -50,14 +45,12 @@ class RollbarHandler extends AbstractProcessingHandler
         Logger::ALERT     => 'critical',
         Logger::EMERGENCY => 'critical',
     );
-
     /**
      * Records whether any log records have been added since the last flush of the rollbar notifier
      *
      * @var bool
      */
-    private $hasRecords = false;
-
+    private $hasRecords    = false;
     protected $initialized = false;
 
     /**
@@ -65,8 +58,7 @@ class RollbarHandler extends AbstractProcessingHandler
      * @param int             $level           The minimum logging level at which this handler will be triggered
      * @param bool            $bubble          Whether the messages that are handled can bubble up the stack or not
      */
-    public function __construct(RollbarNotifier $rollbarNotifier, $level = Logger::ERROR, $bubble = true)
-    {
+    public function __construct(RollbarNotifier $rollbarNotifier, $level = Logger::ERROR, $bubble = true) {
         $this->rollbarNotifier = $rollbarNotifier;
 
         parent::__construct($level, $bubble);
@@ -75,8 +67,7 @@ class RollbarHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    protected function write(array $record)
-    {
+    protected function write(array $record) {
         if (!$this->initialized) {
             // __destructor() doesn't get called on Fatal errors
             register_shutdown_function(array($this, 'close'));
@@ -90,32 +81,29 @@ class RollbarHandler extends AbstractProcessingHandler
             unset($context['payload']);
         }
         $context = array_merge($context, $record['extra'], array(
-            'level' => $this->levelMap[$record['level']],
+            'level'         => $this->levelMap[$record['level']],
             'monolog_level' => $record['level_name'],
-            'channel' => $record['channel'],
-            'datetime' => $record['datetime']->format('U'),
+            'channel'       => $record['channel'],
+            'datetime'      => $record['datetime']->format('U'),
         ));
 
         if (isset($context['exception']) && $context['exception'] instanceof Exception) {
             $payload['level'] = $context['level'];
-            $exception = $context['exception'];
+            $exception        = $context['exception'];
             unset($context['exception']);
 
             $this->rollbarNotifier->report_exception($exception, $context, $payload);
-        } else {
+        }
+        else {
             $this->rollbarNotifier->report_message(
-                $record['message'],
-                $context['level'],
-                $context,
-                $payload
+                    $record['message'], $context['level'], $context, $payload
             );
         }
 
         $this->hasRecords = true;
     }
 
-    public function flush()
-    {
+    public function flush() {
         if ($this->hasRecords) {
             $this->rollbarNotifier->flush();
             $this->hasRecords = false;
@@ -125,8 +113,7 @@ class RollbarHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    public function close()
-    {
+    public function close() {
         $this->flush();
     }
 }

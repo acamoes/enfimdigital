@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Monolog package.
  *
@@ -8,9 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Monolog\Handler;
-
 use Monolog\Logger;
 
 /**
@@ -33,23 +30,19 @@ use Monolog\Logger;
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
-class DeduplicationHandler extends BufferHandler
-{
+class DeduplicationHandler extends BufferHandler {
     /**
      * @var string
      */
     protected $deduplicationStore;
-
     /**
      * @var int
      */
     protected $deduplicationLevel;
-
     /**
      * @var int
      */
     protected $time;
-
     /**
      * @var bool
      */
@@ -62,17 +55,15 @@ class DeduplicationHandler extends BufferHandler
      * @param int              $time               The period (in seconds) during which duplicate entries should be suppressed after a given log is sent through
      * @param Boolean          $bubble             Whether the messages that are handled can bubble up the stack or not
      */
-    public function __construct(HandlerInterface $handler, $deduplicationStore = null, $deduplicationLevel = Logger::ERROR, $time = 60, $bubble = true)
-    {
+    public function __construct(HandlerInterface $handler, $deduplicationStore = null, $deduplicationLevel = Logger::ERROR, $time = 60, $bubble = true) {
         parent::__construct($handler, 0, Logger::DEBUG, $bubble, false);
 
-        $this->deduplicationStore = $deduplicationStore === null ? sys_get_temp_dir() . '/monolog-dedup-' . substr(md5(__FILE__), 0, 20) .'.log' : $deduplicationStore;
+        $this->deduplicationStore = $deduplicationStore === null ? sys_get_temp_dir() . '/monolog-dedup-' . substr(md5(__FILE__), 0, 20) . '.log' : $deduplicationStore;
         $this->deduplicationLevel = Logger::toMonologLevel($deduplicationLevel);
-        $this->time = $time;
+        $this->time               = $time;
     }
 
-    public function flush()
-    {
+    public function flush() {
         if ($this->bufferSize === 0) {
             return;
         }
@@ -101,8 +92,7 @@ class DeduplicationHandler extends BufferHandler
         }
     }
 
-    private function isDuplicate(array $record)
-    {
+    private function isDuplicate(array $record) {
         if (!file_exists($this->deduplicationStore)) {
             return false;
         }
@@ -112,9 +102,9 @@ class DeduplicationHandler extends BufferHandler
             return false;
         }
 
-        $yesterday = time() - 86400;
+        $yesterday         = time() - 86400;
         $timestampValidity = $record['datetime']->getTimestamp() - $this->time;
-        $expectedMessage = preg_replace('{[\r\n].*}', '', $record['message']);
+        $expectedMessage   = preg_replace('{[\r\n].*}', '', $record['message']);
 
         for ($i = count($store) - 1; $i >= 0; $i--) {
             list($timestamp, $level, $message) = explode(':', $store[$i], 3);
@@ -131,13 +121,12 @@ class DeduplicationHandler extends BufferHandler
         return false;
     }
 
-    private function collectLogs()
-    {
+    private function collectLogs() {
         if (!file_exists($this->deduplicationStore)) {
             return false;
         }
 
-        $handle = fopen($this->deduplicationStore, 'rw+');
+        $handle    = fopen($this->deduplicationStore, 'rw+');
         flock($handle, LOCK_EX);
         $validLogs = array();
 
@@ -162,8 +151,7 @@ class DeduplicationHandler extends BufferHandler
         $this->gc = false;
     }
 
-    private function appendRecord(array $record)
-    {
+    private function appendRecord(array $record) {
         file_put_contents($this->deduplicationStore, $record['datetime']->getTimestamp() . ':' . $record['level_name'] . ':' . preg_replace('{[\r\n].*}', '', $record['message']) . "\n", FILE_APPEND);
     }
 }

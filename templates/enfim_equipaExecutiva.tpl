@@ -10,7 +10,7 @@
                     <div class="row uniform" style="width: 100%">
                         <div style="float: left; margin-left: -1em">
                             <label for="name">Dashboard</label> <input required name="{$action}"
-                                                                   id="{$action}" type="hidden" value="" />
+                                                                       id="{$action}" type="hidden" value="" />
                         </div>
                         <div style="float: right; margin-left: -1em; cursor: pointer" id="{$action}Msg" onclick="this.innerHTML = '';"></div>
                     </div>

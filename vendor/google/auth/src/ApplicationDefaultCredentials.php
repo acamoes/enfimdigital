@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth;
-
 use DomainException;
 use Google\Auth\Credentials\AppIdentityCredentials;
 use Google\Auth\Credentials\GCECredentials;
@@ -59,8 +57,8 @@ use Psr\Cache\CacheItemPoolInterface;
  *
  *   $res = $client->get('myproject/taskqueues/myqueue');
  */
-class ApplicationDefaultCredentials
-{
+class ApplicationDefaultCredentials {
+
     /**
      * Obtains an AuthTokenSubscriber that uses the default FetchAuthTokenInterface
      * implementation to use in this environment.
@@ -79,10 +77,7 @@ class ApplicationDefaultCredentials
      * @throws DomainException if no implementation can be obtained.
      */
     public static function getSubscriber(
-        $scope = null,
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
+    $scope = null, callable $httpHandler = null, array $cacheConfig = null, CacheItemPoolInterface $cache = null
     ) {
         $creds = self::getCredentials($scope, $httpHandler, $cacheConfig, $cache);
 
@@ -107,10 +102,7 @@ class ApplicationDefaultCredentials
      * @throws DomainException if no implementation can be obtained.
      */
     public static function getMiddleware(
-        $scope = null,
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
+    $scope = null, callable $httpHandler = null, array $cacheConfig = null, CacheItemPoolInterface $cache = null
     ) {
         $creds = self::getCredentials($scope, $httpHandler, $cacheConfig, $cache);
 
@@ -135,20 +127,18 @@ class ApplicationDefaultCredentials
      * @throws DomainException if no implementation can be obtained.
      */
     public static function getCredentials(
-        $scope = null,
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
+    $scope = null, callable $httpHandler = null, array $cacheConfig = null, CacheItemPoolInterface $cache = null
     ) {
-        $creds = null;
-        $jsonKey = CredentialsLoader::fromEnv()
-            ?: CredentialsLoader::fromWellKnownFile();
+        $creds   = null;
+        $jsonKey = CredentialsLoader::fromEnv() ?: CredentialsLoader::fromWellKnownFile();
 
         if (!is_null($jsonKey)) {
             $creds = CredentialsLoader::makeCredentials($scope, $jsonKey);
-        } elseif (AppIdentityCredentials::onAppEngine() && !GCECredentials::onAppEngineFlexible()) {
+        }
+        elseif (AppIdentityCredentials::onAppEngine() && !GCECredentials::onAppEngineFlexible()) {
             $creds = new AppIdentityCredentials($scope);
-        } elseif (GCECredentials::onGce($httpHandler)) {
+        }
+        elseif (GCECredentials::onGce($httpHandler)) {
             $creds = new GCECredentials();
         }
 
@@ -161,8 +151,7 @@ class ApplicationDefaultCredentials
         return $creds;
     }
 
-    private static function notFound()
-    {
+    private static function notFound() {
         $msg = 'Could not load the default credentials. Browse to ';
         $msg .= 'https://developers.google.com';
         $msg .= '/accounts/docs/application-default-credentials';

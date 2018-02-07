@@ -15,33 +15,31 @@
  * the License.
  */
 
-class Google_Service_ToolResults_ListHistoriesResponse extends Google_Collection
-{
-  protected $collection_key = 'histories';
-  protected $historiesType = 'Google_Service_ToolResults_History';
-  protected $historiesDataType = 'array';
-  public $nextPageToken;
+class Google_Service_ToolResults_ListHistoriesResponse extends Google_Collection {
+    protected $collection_key    = 'histories';
+    protected $historiesType     = 'Google_Service_ToolResults_History';
+    protected $historiesDataType = 'array';
+    public $nextPageToken;
 
-  /**
-   * @param Google_Service_ToolResults_History
-   */
-  public function setHistories($histories)
-  {
-    $this->histories = $histories;
-  }
-  /**
-   * @return Google_Service_ToolResults_History
-   */
-  public function getHistories()
-  {
-    return $this->histories;
-  }
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    /**
+     * @param Google_Service_ToolResults_History
+     */
+    public function setHistories($histories) {
+        $this->histories = $histories;
+    }
+
+    /**
+     * @return Google_Service_ToolResults_History
+     */
+    public function getHistories() {
+        return $this->histories;
+    }
+
+    public function setNextPageToken($nextPageToken) {
+        $this->nextPageToken = $nextPageToken;
+    }
+
+    public function getNextPageToken() {
+        return $this->nextPageToken;
+    }
 }

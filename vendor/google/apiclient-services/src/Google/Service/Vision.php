@@ -30,43 +30,35 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_Vision extends Google_Service
-{
-  /** View and manage your data across Google Cloud Platform services. */
-  const CLOUD_PLATFORM =
-      "https://www.googleapis.com/auth/cloud-platform";
-  /** Apply machine learning models to understand and label images. */
-  const CLOUD_VISION =
-      "https://www.googleapis.com/auth/cloud-vision";
+class Google_Service_Vision extends Google_Service {
+    /** View and manage your data across Google Cloud Platform services. */
+    const CLOUD_PLATFORM = "https://www.googleapis.com/auth/cloud-platform";
+    /** Apply machine learning models to understand and label images. */
+    const CLOUD_VISION   = "https://www.googleapis.com/auth/cloud-vision";
+    public $images;
 
-  public $images;
-  
-  /**
-   * Constructs the internal representation of the Vision service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://vision.googleapis.com/';
-    $this->servicePath = '';
-    $this->version = 'v1';
-    $this->serviceName = 'vision';
+    /**
+     * Constructs the internal representation of the Vision service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://vision.googleapis.com/';
+        $this->servicePath = '';
+        $this->version     = 'v1';
+        $this->serviceName = 'vision';
 
-    $this->images = new Google_Service_Vision_Resource_Images(
-        $this,
-        $this->serviceName,
-        'images',
-        array(
-          'methods' => array(
-            'annotate' => array(
-              'path' => 'v1/images:annotate',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),
-          )
-        )
-    );
-  }
+        $this->images = new Google_Service_Vision_Resource_Images(
+                $this, $this->serviceName, 'images', array(
+            'methods' => array(
+                'annotate' => array(
+                    'path'       => 'v1/images:annotate',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(),
+                ),
+            )
+                )
+        );
+    }
 }

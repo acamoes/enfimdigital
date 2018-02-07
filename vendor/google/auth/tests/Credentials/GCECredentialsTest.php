@@ -14,42 +14,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Tests;
-
 use Google\Auth\Credentials\GCECredentials;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
-class GCECredentialsOnGCETest extends TestCase
-{
-    public function testIsFalseOnClientErrorStatus()
-    {
+class GCECredentialsOnGCETest extends TestCase {
+
+    public function testIsFalseOnClientErrorStatus() {
         $httpHandler = getHandler([
             buildResponse(400),
         ]);
         $this->assertFalse(GCECredentials::onGCE($httpHandler));
     }
 
-    public function testIsFalseOnServerErrorStatus()
-    {
+    public function testIsFalseOnServerErrorStatus() {
         $httpHandler = getHandler([
             buildResponse(500),
         ]);
         $this->assertFalse(GCECredentials::onGCE($httpHandler));
     }
 
-    public function testIsFalseOnOkStatusWithoutExpectedHeader()
-    {
+    public function testIsFalseOnOkStatusWithoutExpectedHeader() {
         $httpHandler = getHandler([
             buildResponse(200),
         ]);
         $this->assertFalse(GCECredentials::onGCE($httpHandler));
     }
 
-    public function testIsOkIfGoogleIsTheFlavor()
-    {
+    public function testIsOkIfGoogleIsTheFlavor() {
         $httpHandler = getHandler([
             buildResponse(200, [GCECredentials::FLAVOR_HEADER => 'Google']),
         ]);
@@ -57,37 +51,33 @@ class GCECredentialsOnGCETest extends TestCase
     }
 }
 
-class GCECredentialsOnAppEngineFlexibleTest extends TestCase
-{
-    public function testIsFalseByDefault()
-    {
+class GCECredentialsOnAppEngineFlexibleTest extends TestCase {
+
+    public function testIsFalseByDefault() {
         $this->assertFalse(GCECredentials::onAppEngineFlexible());
     }
 
-    public function testIsTrueWhenGaeVmIsTrue()
-    {
+    public function testIsTrueWhenGaeVmIsTrue() {
         $_SERVER['GAE_VM'] = 'true';
         $this->assertTrue(GCECredentials::onAppEngineFlexible());
     }
 }
 
-class GCECredentialsGetCacheKeyTest extends TestCase
-{
-    public function testShouldNotBeEmpty()
-    {
+class GCECredentialsGetCacheKeyTest extends TestCase {
+
+    public function testShouldNotBeEmpty() {
         $g = new GCECredentials();
         $this->assertNotEmpty($g->getCacheKey());
     }
 }
 
-class GCECredentialsFetchAuthTokenTest extends TestCase
-{
-    public function testShouldBeEmptyIfNotOnGCE()
-    {
+class GCECredentialsFetchAuthTokenTest extends TestCase {
+
+    public function testShouldBeEmptyIfNotOnGCE() {
         $httpHandler = getHandler([
             buildResponse(500),
         ]);
-        $g = new GCECredentials();
+        $g           = new GCECredentials();
         $this->assertEquals(array(), $g->fetchAuthToken($httpHandler));
     }
 
@@ -95,30 +85,28 @@ class GCECredentialsFetchAuthTokenTest extends TestCase
      * @expectedException Exception
      * @expectedExceptionMessage Invalid JSON response
      */
-    public function testShouldFailIfResponseIsNotJson()
-    {
-        $notJson = '{"foo": , this is cannot be passed as json" "bar"}';
+    public function testShouldFailIfResponseIsNotJson() {
+        $notJson     = '{"foo": , this is cannot be passed as json" "bar"}';
         $httpHandler = getHandler([
             buildResponse(200, [GCECredentials::FLAVOR_HEADER => 'Google']),
             buildResponse(200, [], $notJson),
         ]);
-        $g = new GCECredentials();
+        $g           = new GCECredentials();
         $g->fetchAuthToken($httpHandler);
     }
 
-    public function testShouldReturnTokenInfo()
-    {
+    public function testShouldReturnTokenInfo() {
         $wantedTokens = [
             'access_token' => '1/abdef1234567890',
-            'expires_in' => '57',
-            'token_type' => 'Bearer',
+            'expires_in'   => '57',
+            'token_type'   => 'Bearer',
         ];
-        $jsonTokens = json_encode($wantedTokens);
-        $httpHandler = getHandler([
+        $jsonTokens   = json_encode($wantedTokens);
+        $httpHandler  = getHandler([
             buildResponse(200, [GCECredentials::FLAVOR_HEADER => 'Google']),
             buildResponse(200, [], Psr7\stream_for($jsonTokens)),
         ]);
-        $g = new GCECredentials();
+        $g            = new GCECredentials();
         $this->assertEquals($wantedTokens, $g->fetchAuthToken($httpHandler));
         $this->assertEquals(time() + 57, $g->getLastReceivedToken()['expires_at']);
     }

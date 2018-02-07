@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsHistogramBucket extends Google_Collection
-{
-  protected $collection_key = 'bucketValues';
-  public $bucketSize;
-  protected $bucketValuesType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1ValueFrequency';
-  protected $bucketValuesDataType = 'array';
-  public $valueFrequencyLowerBound;
-  public $valueFrequencyUpperBound;
+class Google_Service_DLP_GooglePrivacyDlpV2beta1CategoricalStatsHistogramBucket extends Google_Collection {
+    protected $collection_key       = 'bucketValues';
+    public $bucketSize;
+    protected $bucketValuesType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1ValueFrequency';
+    protected $bucketValuesDataType = 'array';
+    public $valueFrequencyLowerBound;
+    public $valueFrequencyUpperBound;
 
-  public function setBucketSize($bucketSize)
-  {
-    $this->bucketSize = $bucketSize;
-  }
-  public function getBucketSize()
-  {
-    return $this->bucketSize;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1ValueFrequency
-   */
-  public function setBucketValues($bucketValues)
-  {
-    $this->bucketValues = $bucketValues;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1ValueFrequency
-   */
-  public function getBucketValues()
-  {
-    return $this->bucketValues;
-  }
-  public function setValueFrequencyLowerBound($valueFrequencyLowerBound)
-  {
-    $this->valueFrequencyLowerBound = $valueFrequencyLowerBound;
-  }
-  public function getValueFrequencyLowerBound()
-  {
-    return $this->valueFrequencyLowerBound;
-  }
-  public function setValueFrequencyUpperBound($valueFrequencyUpperBound)
-  {
-    $this->valueFrequencyUpperBound = $valueFrequencyUpperBound;
-  }
-  public function getValueFrequencyUpperBound()
-  {
-    return $this->valueFrequencyUpperBound;
-  }
+    public function setBucketSize($bucketSize) {
+        $this->bucketSize = $bucketSize;
+    }
+
+    public function getBucketSize() {
+        return $this->bucketSize;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1ValueFrequency
+     */
+    public function setBucketValues($bucketValues) {
+        $this->bucketValues = $bucketValues;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1ValueFrequency
+     */
+    public function getBucketValues() {
+        return $this->bucketValues;
+    }
+
+    public function setValueFrequencyLowerBound($valueFrequencyLowerBound) {
+        $this->valueFrequencyLowerBound = $valueFrequencyLowerBound;
+    }
+
+    public function getValueFrequencyLowerBound() {
+        return $this->valueFrequencyLowerBound;
+    }
+
+    public function setValueFrequencyUpperBound($valueFrequencyUpperBound) {
+        $this->valueFrequencyUpperBound = $valueFrequencyUpperBound;
+    }
+
+    public function getValueFrequencyUpperBound() {
+        return $this->valueFrequencyUpperBound;
+    }
 }

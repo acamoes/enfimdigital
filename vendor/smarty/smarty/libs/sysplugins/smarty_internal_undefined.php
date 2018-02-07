@@ -9,9 +9,7 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Undefined
-{
-
+class Smarty_Internal_Undefined {
     /**
      * Name of undefined extension class
      *
@@ -24,8 +22,7 @@ class Smarty_Internal_Undefined
      *
      * @param null|string $class name of undefined extension class
      */
-    public function __construct($class = null)
-    {
+    public function __construct($class = null) {
         $this->class = $class;
     }
 
@@ -38,11 +35,11 @@ class Smarty_Internal_Undefined
      *
      * @return bool false
      */
-    public function decodeProperties(Smarty_Internal_Template $tpl, $properties, $cache = false)
-    {
+    public function decodeProperties(Smarty_Internal_Template $tpl, $properties, $cache = false) {
         if ($cache) {
             $tpl->cached->valid = false;
-        } else {
+        }
+        else {
             $tpl->mustCompile = true;
         }
         return false;
@@ -57,12 +54,12 @@ class Smarty_Internal_Undefined
      * @return mixed
      * @throws SmartyException
      */
-    public function __call($name, $args)
-    {
+    public function __call($name, $args) {
         if (isset($this->class)) {
             throw new SmartyException("undefined extension class '{$this->class}'");
-        } else {
-            throw new SmartyException(get_class($args[ 0 ]) . "->{$name}() undefined method");
+        }
+        else {
+            throw new SmartyException(get_class($args[0]) . "->{$name}() undefined method");
         }
     }
 }

@@ -63,7 +63,7 @@ class Cursos {
                 "','" . $data ['status'] . "')";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];
@@ -79,7 +79,7 @@ class Cursos {
                 "' " . "WHERE idCourse=" . $data ['idCourse'];
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
         }
         return ['success' => true, 'message' => 'Registo aceite.'];
@@ -89,7 +89,7 @@ class Cursos {
         $query     = "UPDATE course SET status=IF(status='Ativo','Inativo','Ativo') WHERE idCourse=" . $data['idCourse'] . " ";
         $con       = new Database ();
         $resultado = $con->set($query);
-        if ($con->connection->error != '') {
+        if (!$resultado) {
             return ['success' => false, 'message' => 'O registo não foi alterado.'];
         }
         return ['success' => true, 'message' => 'Registo alterado.'];

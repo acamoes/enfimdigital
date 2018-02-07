@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ServiceManagement_SourceContext extends Google_Model
-{
-  public $fileName;
+class Google_Service_ServiceManagement_SourceContext extends Google_Model {
+    public $fileName;
 
-  public function setFileName($fileName)
-  {
-    $this->fileName = $fileName;
-  }
-  public function getFileName()
-  {
-    return $this->fileName;
-  }
+    public function setFileName($fileName) {
+        $this->fileName = $fileName;
+    }
+
+    public function getFileName() {
+        return $this->fileName;
+    }
 }

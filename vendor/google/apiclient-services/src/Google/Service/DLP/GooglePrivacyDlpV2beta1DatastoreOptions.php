@@ -15,56 +15,54 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1DatastoreOptions extends Google_Collection
-{
-  protected $collection_key = 'projection';
-  protected $kindType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1KindExpression';
-  protected $kindDataType = '';
-  protected $partitionIdType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId';
-  protected $partitionIdDataType = '';
-  protected $projectionType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Projection';
-  protected $projectionDataType = 'array';
+class Google_Service_DLP_GooglePrivacyDlpV2beta1DatastoreOptions extends Google_Collection {
+    protected $collection_key      = 'projection';
+    protected $kindType            = 'Google_Service_DLP_GooglePrivacyDlpV2beta1KindExpression';
+    protected $kindDataType        = '';
+    protected $partitionIdType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId';
+    protected $partitionIdDataType = '';
+    protected $projectionType      = 'Google_Service_DLP_GooglePrivacyDlpV2beta1Projection';
+    protected $projectionDataType  = 'array';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1KindExpression
-   */
-  public function setKind(Google_Service_DLP_GooglePrivacyDlpV2beta1KindExpression $kind)
-  {
-    $this->kind = $kind;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1KindExpression
-   */
-  public function getKind()
-  {
-    return $this->kind;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId
-   */
-  public function setPartitionId(Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId $partitionId)
-  {
-    $this->partitionId = $partitionId;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId
-   */
-  public function getPartitionId()
-  {
-    return $this->partitionId;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Projection
-   */
-  public function setProjection($projection)
-  {
-    $this->projection = $projection;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Projection
-   */
-  public function getProjection()
-  {
-    return $this->projection;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1KindExpression
+     */
+    public function setKind(Google_Service_DLP_GooglePrivacyDlpV2beta1KindExpression $kind) {
+        $this->kind = $kind;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1KindExpression
+     */
+    public function getKind() {
+        return $this->kind;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId
+     */
+    public function setPartitionId(Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId $partitionId) {
+        $this->partitionId = $partitionId;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1PartitionId
+     */
+    public function getPartitionId() {
+        return $this->partitionId;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1Projection
+     */
+    public function setProjection($projection) {
+        $this->projection = $projection;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1Projection
+     */
+    public function getProjection() {
+        return $this->projection;
+    }
 }

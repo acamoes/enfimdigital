@@ -28,286 +28,272 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_Reseller extends Google_Service
-{
-  /** Manage users on your domain. */
-  const APPS_ORDER =
-      "https://www.googleapis.com/auth/apps.order";
-  /** Manage users on your domain. */
-  const APPS_ORDER_READONLY =
-      "https://www.googleapis.com/auth/apps.order.readonly";
+class Google_Service_Reseller extends Google_Service {
+    /** Manage users on your domain. */
+    const APPS_ORDER          = "https://www.googleapis.com/auth/apps.order";
+    /** Manage users on your domain. */
+    const APPS_ORDER_READONLY = "https://www.googleapis.com/auth/apps.order.readonly";
+    public $customers;
+    public $resellernotify;
+    public $subscriptions;
 
-  public $customers;
-  public $resellernotify;
-  public $subscriptions;
-  
-  /**
-   * Constructs the internal representation of the Reseller service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'apps/reseller/v1/';
-    $this->version = 'v1';
-    $this->serviceName = 'reseller';
+    /**
+     * Constructs the internal representation of the Reseller service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://www.googleapis.com/';
+        $this->servicePath = 'apps/reseller/v1/';
+        $this->version     = 'v1';
+        $this->serviceName = 'reseller';
 
-    $this->customers = new Google_Service_Reseller_Resource_Customers(
-        $this,
-        $this->serviceName,
-        'customers',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'customers/{customerId}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        $this->customers      = new Google_Service_Reseller_Resource_Customers(
+                $this, $this->serviceName, 'customers', array(
+            'methods' => array(
+                'get'    => array(
+                    'path'       => 'customers/{customerId}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'customerId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'insert' => array(
+                    'path'       => 'customers',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'customerAuthToken' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
+                ), 'patch'  => array(
+                    'path'       => 'customers/{customerId}',
+                    'httpMethod' => 'PATCH',
+                    'parameters' => array(
+                        'customerId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'update' => array(
+                    'path'       => 'customers/{customerId}',
+                    'httpMethod' => 'PUT',
+                    'parameters' => array(
+                        'customerId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-              ),
-            ),'insert' => array(
-              'path' => 'customers',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'customerAuthToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+            )
+                )
+        );
+        $this->resellernotify = new Google_Service_Reseller_Resource_Resellernotify(
+                $this, $this->serviceName, 'resellernotify', array(
+            'methods' => array(
+                'getwatchdetails' => array(
+                    'path'       => 'resellernotify/getwatchdetails',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(),
+                ), 'register'        => array(
+                    'path'       => 'resellernotify/register',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'serviceAccountEmailAddress' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
+                ), 'unregister'      => array(
+                    'path'       => 'resellernotify/unregister',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'serviceAccountEmailAddress' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-              ),
-            ),'patch' => array(
-              'path' => 'customers/{customerId}',
-              'httpMethod' => 'PATCH',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+            )
+                )
+        );
+        $this->subscriptions  = new Google_Service_Reseller_Resource_Subscriptions(
+                $this, $this->serviceName, 'subscriptions', array(
+            'methods' => array(
+                'activate'              => array(
+                    'path'       => 'customers/{customerId}/subscriptions/{subscriptionId}/activate',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'customerId'     => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'subscriptionId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'changePlan'            => array(
+                    'path'       => 'customers/{customerId}/subscriptions/{subscriptionId}/changePlan',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'customerId'     => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'subscriptionId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'changeRenewalSettings' => array(
+                    'path'       => 'customers/{customerId}/subscriptions/{subscriptionId}/changeRenewalSettings',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'customerId'     => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'subscriptionId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'changeSeats'           => array(
+                    'path'       => 'customers/{customerId}/subscriptions/{subscriptionId}/changeSeats',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'customerId'     => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'subscriptionId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'delete'                => array(
+                    'path'       => 'customers/{customerId}/subscriptions/{subscriptionId}',
+                    'httpMethod' => 'DELETE',
+                    'parameters' => array(
+                        'customerId'     => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'subscriptionId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'deletionType'   => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'get'                   => array(
+                    'path'       => 'customers/{customerId}/subscriptions/{subscriptionId}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'customerId'     => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'subscriptionId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'insert'                => array(
+                    'path'       => 'customers/{customerId}/subscriptions',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'customerId'        => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'customerAuthToken' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
+                ), 'list'                  => array(
+                    'path'       => 'subscriptions',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'customerAuthToken'  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'customerId'         => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'customerNamePrefix' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'maxResults'         => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'pageToken'          => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
+                ), 'startPaidService'      => array(
+                    'path'       => 'customers/{customerId}/subscriptions/{subscriptionId}/startPaidService',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'customerId'     => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'subscriptionId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'suspend'               => array(
+                    'path'       => 'customers/{customerId}/subscriptions/{subscriptionId}/suspend',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'customerId'     => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'subscriptionId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-              ),
-            ),'update' => array(
-              'path' => 'customers/{customerId}',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->resellernotify = new Google_Service_Reseller_Resource_Resellernotify(
-        $this,
-        $this->serviceName,
-        'resellernotify',
-        array(
-          'methods' => array(
-            'getwatchdetails' => array(
-              'path' => 'resellernotify/getwatchdetails',
-              'httpMethod' => 'GET',
-              'parameters' => array(),
-            ),'register' => array(
-              'path' => 'resellernotify/register',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'serviceAccountEmailAddress' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'unregister' => array(
-              'path' => 'resellernotify/unregister',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'serviceAccountEmailAddress' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->subscriptions = new Google_Service_Reseller_Resource_Subscriptions(
-        $this,
-        $this->serviceName,
-        'subscriptions',
-        array(
-          'methods' => array(
-            'activate' => array(
-              'path' => 'customers/{customerId}/subscriptions/{subscriptionId}/activate',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'subscriptionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'changePlan' => array(
-              'path' => 'customers/{customerId}/subscriptions/{subscriptionId}/changePlan',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'subscriptionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'changeRenewalSettings' => array(
-              'path' => 'customers/{customerId}/subscriptions/{subscriptionId}/changeRenewalSettings',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'subscriptionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'changeSeats' => array(
-              'path' => 'customers/{customerId}/subscriptions/{subscriptionId}/changeSeats',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'subscriptionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'delete' => array(
-              'path' => 'customers/{customerId}/subscriptions/{subscriptionId}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'subscriptionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'deletionType' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'get' => array(
-              'path' => 'customers/{customerId}/subscriptions/{subscriptionId}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'subscriptionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'insert' => array(
-              'path' => 'customers/{customerId}/subscriptions',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'customerAuthToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'subscriptions',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'customerAuthToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'customerId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'customerNamePrefix' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'startPaidService' => array(
-              'path' => 'customers/{customerId}/subscriptions/{subscriptionId}/startPaidService',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'subscriptionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'suspend' => array(
-              'path' => 'customers/{customerId}/subscriptions/{subscriptionId}/suspend',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'customerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'subscriptionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

@@ -15,66 +15,64 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2Finding extends Google_Model
-{
-  public $createTime;
-  protected $infoTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
-  protected $infoTypeDataType = '';
-  public $likelihood;
-  protected $locationType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Location';
-  protected $locationDataType = '';
-  public $quote;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2Finding extends Google_Model {
+    public $createTime;
+    protected $infoTypeType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
+    protected $infoTypeDataType = '';
+    public $likelihood;
+    protected $locationType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Location';
+    protected $locationDataType = '';
+    public $quote;
 
-  public function setCreateTime($createTime)
-  {
-    $this->createTime = $createTime;
-  }
-  public function getCreateTime()
-  {
-    return $this->createTime;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType $infoType)
-  {
-    $this->infoType = $infoType;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function getInfoType()
-  {
-    return $this->infoType;
-  }
-  public function setLikelihood($likelihood)
-  {
-    $this->likelihood = $likelihood;
-  }
-  public function getLikelihood()
-  {
-    return $this->likelihood;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Location
-   */
-  public function setLocation(Google_Service_DLP_GooglePrivacyDlpV2beta2Location $location)
-  {
-    $this->location = $location;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Location
-   */
-  public function getLocation()
-  {
-    return $this->location;
-  }
-  public function setQuote($quote)
-  {
-    $this->quote = $quote;
-  }
-  public function getQuote()
-  {
-    return $this->quote;
-  }
+    public function setCreateTime($createTime) {
+        $this->createTime = $createTime;
+    }
+
+    public function getCreateTime() {
+        return $this->createTime;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType $infoType) {
+        $this->infoType = $infoType;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function getInfoType() {
+        return $this->infoType;
+    }
+
+    public function setLikelihood($likelihood) {
+        $this->likelihood = $likelihood;
+    }
+
+    public function getLikelihood() {
+        return $this->likelihood;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Location
+     */
+    public function setLocation(Google_Service_DLP_GooglePrivacyDlpV2beta2Location $location) {
+        $this->location = $location;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Location
+     */
+    public function getLocation() {
+        return $this->location;
+    }
+
+    public function setQuote($quote) {
+        $this->quote = $quote;
+    }
+
+    public function getQuote() {
+        return $this->quote;
+    }
 }

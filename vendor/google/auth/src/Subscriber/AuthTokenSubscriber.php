@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Subscriber;
-
 use Google\Auth\FetchAuthTokenInterface;
 use GuzzleHttp\Event\BeforeEvent;
 use GuzzleHttp\Event\RequestEvents;
@@ -33,18 +31,15 @@ use GuzzleHttp\Event\SubscriberInterface;
  *
  * 'authorization' 'Bearer <value of auth_token>'
  */
-class AuthTokenSubscriber implements SubscriberInterface
-{
+class AuthTokenSubscriber implements SubscriberInterface {
     /**
      * @var callable
      */
     private $httpHandler;
-
     /**
      * @var FetchAuthTokenInterface
      */
     private $fetcher;
-
     /**
      * @var callable
      */
@@ -58,20 +53,17 @@ class AuthTokenSubscriber implements SubscriberInterface
      * @param callable $tokenCallback (optional) function to be called when a new token is fetched.
      */
     public function __construct(
-        FetchAuthTokenInterface $fetcher,
-        callable $httpHandler = null,
-        callable $tokenCallback = null
+    FetchAuthTokenInterface $fetcher, callable $httpHandler = null, callable $tokenCallback = null
     ) {
-        $this->fetcher = $fetcher;
-        $this->httpHandler = $httpHandler;
+        $this->fetcher       = $fetcher;
+        $this->httpHandler   = $httpHandler;
         $this->tokenCallback = $tokenCallback;
     }
 
     /**
      * @return array
      */
-    public function getEvents()
-    {
+    public function getEvents() {
         return ['before' => ['onBefore', RequestEvents::SIGN_REQUEST]];
     }
 
@@ -96,8 +88,7 @@ class AuthTokenSubscriber implements SubscriberInterface
      *
      * @param BeforeEvent $event
      */
-    public function onBefore(BeforeEvent $event)
-    {
+    public function onBefore(BeforeEvent $event) {
         // Requests using "auth"="google_auth" will be authorized.
         $request = $event->getRequest();
         if ($request->getConfig()['auth'] != 'google_auth') {

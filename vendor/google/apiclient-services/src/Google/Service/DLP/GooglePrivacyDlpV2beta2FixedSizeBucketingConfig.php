@@ -15,48 +15,46 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2FixedSizeBucketingConfig extends Google_Model
-{
-  public $bucketSize;
-  protected $lowerBoundType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
-  protected $lowerBoundDataType = '';
-  protected $upperBoundType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
-  protected $upperBoundDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2FixedSizeBucketingConfig extends Google_Model {
+    public $bucketSize;
+    protected $lowerBoundType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
+    protected $lowerBoundDataType = '';
+    protected $upperBoundType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2Value';
+    protected $upperBoundDataType = '';
 
-  public function setBucketSize($bucketSize)
-  {
-    $this->bucketSize = $bucketSize;
-  }
-  public function getBucketSize()
-  {
-    return $this->bucketSize;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function setLowerBound(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $lowerBound)
-  {
-    $this->lowerBound = $lowerBound;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function getLowerBound()
-  {
-    return $this->lowerBound;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function setUpperBound(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $upperBound)
-  {
-    $this->upperBound = $upperBound;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
-   */
-  public function getUpperBound()
-  {
-    return $this->upperBound;
-  }
+    public function setBucketSize($bucketSize) {
+        $this->bucketSize = $bucketSize;
+    }
+
+    public function getBucketSize() {
+        return $this->bucketSize;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function setLowerBound(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $lowerBound) {
+        $this->lowerBound = $lowerBound;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function getLowerBound() {
+        return $this->lowerBound;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function setUpperBound(Google_Service_DLP_GooglePrivacyDlpV2beta2Value $upperBound) {
+        $this->upperBound = $upperBound;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2Value
+     */
+    public function getUpperBound() {
+        return $this->upperBound;
+    }
 }

@@ -14,8 +14,7 @@ class Database {
             $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
         }
         catch (mysqli_sql_exception $e) {
-            print "Error!: " . $e->getMessage();
-            die();
+            return ['success' => false, 'message' => 'Acesso negado à base de dados.'];
         }
         $this->connection->select_db(DB_NAME);
     }

@@ -66,7 +66,8 @@
                                 <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Participou?" 
                                    onclick="if (confirm('Participou?')) {ldelim}
                                                $.when(request('action={$action}&task=participou&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"></a>
+                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                           }"></a>
                             {elseif $inscritos['passedCourse'] neq 'on'}
                                 <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Passou no Curso?" 
                                    onclick="if (confirm('Passou no Curso?')) {ldelim}

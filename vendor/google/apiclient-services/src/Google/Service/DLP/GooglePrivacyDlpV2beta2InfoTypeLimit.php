@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeLimit extends Google_Model
-{
-  protected $infoTypeType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
-  protected $infoTypeDataType = '';
-  public $maxFindings;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2InfoTypeLimit extends Google_Model {
+    protected $infoTypeType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType';
+    protected $infoTypeDataType = '';
+    public $maxFindings;
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType $infoType)
-  {
-    $this->infoType = $infoType;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
-   */
-  public function getInfoType()
-  {
-    return $this->infoType;
-  }
-  public function setMaxFindings($maxFindings)
-  {
-    $this->maxFindings = $maxFindings;
-  }
-  public function getMaxFindings()
-  {
-    return $this->maxFindings;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function setInfoType(Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType $infoType) {
+        $this->infoType = $infoType;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2InfoType
+     */
+    public function getInfoType() {
+        return $this->infoType;
+    }
+
+    public function setMaxFindings($maxFindings) {
+        $this->maxFindings = $maxFindings;
+    }
+
+    public function getMaxFindings() {
+        return $this->maxFindings;
+    }
 }

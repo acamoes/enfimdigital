@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1CloudStoragePath extends Google_Model
-{
-  public $path;
+class Google_Service_DLP_GooglePrivacyDlpV2beta1CloudStoragePath extends Google_Model {
+    public $path;
 
-  public function setPath($path)
-  {
-    $this->path = $path;
-  }
-  public function getPath()
-  {
-    return $this->path;
-  }
+    public function setPath($path) {
+        $this->path = $path;
+    }
+
+    public function getPath() {
+        return $this->path;
+    }
 }

@@ -28,124 +28,114 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_CloudSourceRepositories extends Google_Service
-{
-  /** View and manage your data across Google Cloud Platform services. */
-  const CLOUD_PLATFORM =
-      "https://www.googleapis.com/auth/cloud-platform";
-  /** Manage your source code repositories. */
-  const SOURCE_FULL_CONTROL =
-      "https://www.googleapis.com/auth/source.full_control";
-  /** View the contents of your source code repositories. */
-  const SOURCE_READ_ONLY =
-      "https://www.googleapis.com/auth/source.read_only";
-  /** Manage the contents of your source code repositories. */
-  const SOURCE_READ_WRITE =
-      "https://www.googleapis.com/auth/source.read_write";
+class Google_Service_CloudSourceRepositories extends Google_Service {
+    /** View and manage your data across Google Cloud Platform services. */
+    const CLOUD_PLATFORM      = "https://www.googleapis.com/auth/cloud-platform";
+    /** Manage your source code repositories. */
+    const SOURCE_FULL_CONTROL = "https://www.googleapis.com/auth/source.full_control";
+    /** View the contents of your source code repositories. */
+    const SOURCE_READ_ONLY    = "https://www.googleapis.com/auth/source.read_only";
+    /** Manage the contents of your source code repositories. */
+    const SOURCE_READ_WRITE   = "https://www.googleapis.com/auth/source.read_write";
+    public $projects_repos;
 
-  public $projects_repos;
-  
-  /**
-   * Constructs the internal representation of the CloudSourceRepositories
-   * service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://sourcerepo.googleapis.com/';
-    $this->servicePath = '';
-    $this->version = 'v1';
-    $this->serviceName = 'sourcerepo';
+    /**
+     * Constructs the internal representation of the CloudSourceRepositories
+     * service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://sourcerepo.googleapis.com/';
+        $this->servicePath = '';
+        $this->version     = 'v1';
+        $this->serviceName = 'sourcerepo';
 
-    $this->projects_repos = new Google_Service_CloudSourceRepositories_Resource_ProjectsRepos(
-        $this,
-        $this->serviceName,
-        'repos',
-        array(
-          'methods' => array(
-            'create' => array(
-              'path' => 'v1/{+parent}/repos',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        $this->projects_repos = new Google_Service_CloudSourceRepositories_Resource_ProjectsRepos(
+                $this, $this->serviceName, 'repos', array(
+            'methods' => array(
+                'create'             => array(
+                    'path'       => 'v1/{+parent}/repos',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'parent' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'delete'             => array(
+                    'path'       => 'v1/{+name}',
+                    'httpMethod' => 'DELETE',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'get'                => array(
+                    'path'       => 'v1/{+name}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'getIamPolicy'       => array(
+                    'path'       => 'v1/{+resource}:getIamPolicy',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'resource' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'list'               => array(
+                    'path'       => 'v1/{+name}/repos',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'name'      => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'pageToken' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageSize'  => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                    ),
+                ), 'setIamPolicy'       => array(
+                    'path'       => 'v1/{+resource}:setIamPolicy',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'resource' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'testIamPermissions' => array(
+                    'path'       => 'v1/{+resource}:testIamPermissions',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'resource' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-              ),
-            ),'delete' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'get' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getIamPolicy' => array(
-              'path' => 'v1/{+resource}:getIamPolicy',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'v1/{+name}/repos',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-              ),
-            ),'setIamPolicy' => array(
-              'path' => 'v1/{+resource}:setIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'testIamPermissions' => array(
-              'path' => 'v1/{+resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

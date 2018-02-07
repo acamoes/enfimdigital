@@ -15,61 +15,59 @@
  * the License.
  */
 
-class Google_Service_Dataflow_RuntimeEnvironment extends Google_Model
-{
-  public $bypassTempDirValidation;
-  public $machineType;
-  public $maxWorkers;
-  public $serviceAccountEmail;
-  public $tempLocation;
-  public $zone;
+class Google_Service_Dataflow_RuntimeEnvironment extends Google_Model {
+    public $bypassTempDirValidation;
+    public $machineType;
+    public $maxWorkers;
+    public $serviceAccountEmail;
+    public $tempLocation;
+    public $zone;
 
-  public function setBypassTempDirValidation($bypassTempDirValidation)
-  {
-    $this->bypassTempDirValidation = $bypassTempDirValidation;
-  }
-  public function getBypassTempDirValidation()
-  {
-    return $this->bypassTempDirValidation;
-  }
-  public function setMachineType($machineType)
-  {
-    $this->machineType = $machineType;
-  }
-  public function getMachineType()
-  {
-    return $this->machineType;
-  }
-  public function setMaxWorkers($maxWorkers)
-  {
-    $this->maxWorkers = $maxWorkers;
-  }
-  public function getMaxWorkers()
-  {
-    return $this->maxWorkers;
-  }
-  public function setServiceAccountEmail($serviceAccountEmail)
-  {
-    $this->serviceAccountEmail = $serviceAccountEmail;
-  }
-  public function getServiceAccountEmail()
-  {
-    return $this->serviceAccountEmail;
-  }
-  public function setTempLocation($tempLocation)
-  {
-    $this->tempLocation = $tempLocation;
-  }
-  public function getTempLocation()
-  {
-    return $this->tempLocation;
-  }
-  public function setZone($zone)
-  {
-    $this->zone = $zone;
-  }
-  public function getZone()
-  {
-    return $this->zone;
-  }
+    public function setBypassTempDirValidation($bypassTempDirValidation) {
+        $this->bypassTempDirValidation = $bypassTempDirValidation;
+    }
+
+    public function getBypassTempDirValidation() {
+        return $this->bypassTempDirValidation;
+    }
+
+    public function setMachineType($machineType) {
+        $this->machineType = $machineType;
+    }
+
+    public function getMachineType() {
+        return $this->machineType;
+    }
+
+    public function setMaxWorkers($maxWorkers) {
+        $this->maxWorkers = $maxWorkers;
+    }
+
+    public function getMaxWorkers() {
+        return $this->maxWorkers;
+    }
+
+    public function setServiceAccountEmail($serviceAccountEmail) {
+        $this->serviceAccountEmail = $serviceAccountEmail;
+    }
+
+    public function getServiceAccountEmail() {
+        return $this->serviceAccountEmail;
+    }
+
+    public function setTempLocation($tempLocation) {
+        $this->tempLocation = $tempLocation;
+    }
+
+    public function getTempLocation() {
+        return $this->tempLocation;
+    }
+
+    public function setZone($zone) {
+        $this->zone = $zone;
+    }
+
+    public function getZone() {
+        return $this->zone;
+    }
 }

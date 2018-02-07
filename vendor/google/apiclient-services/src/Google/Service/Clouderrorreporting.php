@@ -30,202 +30,186 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_Clouderrorreporting extends Google_Service
-{
-  /** View and manage your data across Google Cloud Platform services. */
-  const CLOUD_PLATFORM =
-      "https://www.googleapis.com/auth/cloud-platform";
+class Google_Service_Clouderrorreporting extends Google_Service {
+    /** View and manage your data across Google Cloud Platform services. */
+    const CLOUD_PLATFORM = "https://www.googleapis.com/auth/cloud-platform";
+    public $projects;
+    public $projects_events;
+    public $projects_groupStats;
+    public $projects_groups;
 
-  public $projects;
-  public $projects_events;
-  public $projects_groupStats;
-  public $projects_groups;
-  
-  /**
-   * Constructs the internal representation of the Clouderrorreporting service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://clouderrorreporting.googleapis.com/';
-    $this->servicePath = '';
-    $this->version = 'v1beta1';
-    $this->serviceName = 'clouderrorreporting';
+    /**
+     * Constructs the internal representation of the Clouderrorreporting service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://clouderrorreporting.googleapis.com/';
+        $this->servicePath = '';
+        $this->version     = 'v1beta1';
+        $this->serviceName = 'clouderrorreporting';
 
-    $this->projects = new Google_Service_Clouderrorreporting_Resource_Projects(
-        $this,
-        $this->serviceName,
-        'projects',
-        array(
-          'methods' => array(
-            'deleteEvents' => array(
-              'path' => 'v1beta1/{+projectName}/events',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'projectName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        $this->projects            = new Google_Service_Clouderrorreporting_Resource_Projects(
+                $this, $this->serviceName, 'projects', array(
+            'methods' => array(
+                'deleteEvents' => array(
+                    'path'       => 'v1beta1/{+projectName}/events',
+                    'httpMethod' => 'DELETE',
+                    'parameters' => array(
+                        'projectName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->projects_events = new Google_Service_Clouderrorreporting_Resource_ProjectsEvents(
-        $this,
-        $this->serviceName,
-        'events',
-        array(
-          'methods' => array(
-            'list' => array(
-              'path' => 'v1beta1/{+projectName}/events',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'projectName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+            )
+                )
+        );
+        $this->projects_events     = new Google_Service_Clouderrorreporting_Resource_ProjectsEvents(
+                $this, $this->serviceName, 'events', array(
+            'methods' => array(
+                'list'   => array(
+                    'path'       => 'v1beta1/{+projectName}/events',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'projectName'                => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'pageToken'                  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'serviceFilter.service'      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageSize'                   => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'serviceFilter.version'      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'serviceFilter.resourceType' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'timeRange.period'           => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'groupId'                    => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
+                ), 'report' => array(
+                    'path'       => 'v1beta1/{+projectName}/events:report',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'projectName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+            )
+                )
+        );
+        $this->projects_groupStats = new Google_Service_Clouderrorreporting_Resource_ProjectsGroupStats(
+                $this, $this->serviceName, 'groupStats', array(
+            'methods' => array(
+                'list' => array(
+                    'path'       => 'v1beta1/{+projectName}/groupStats',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'projectName'                => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'timeRange.period'           => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'alignment'                  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'groupId'                    => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                            'repeated' => true,
+                        ),
+                        'serviceFilter.service'      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageSize'                   => array(
+                            'location' => 'query',
+                            'type'     => 'integer',
+                        ),
+                        'serviceFilter.version'      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'order'                      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'serviceFilter.resourceType' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'alignmentTime'              => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'timedCountDuration'         => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'pageToken'                  => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-                'serviceFilter.service' => array(
-                  'location' => 'query',
-                  'type' => 'string',
+            )
+                )
+        );
+        $this->projects_groups     = new Google_Service_Clouderrorreporting_Resource_ProjectsGroups(
+                $this, $this->serviceName, 'groups', array(
+            'methods' => array(
+                'get'    => array(
+                    'path'       => 'v1beta1/{+groupName}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'groupName' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'update' => array(
+                    'path'       => 'v1beta1/{+name}',
+                    'httpMethod' => 'PUT',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'serviceFilter.version' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'serviceFilter.resourceType' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'timeRange.period' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'groupId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'report' => array(
-              'path' => 'v1beta1/{+projectName}/events:report',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'projectName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->projects_groupStats = new Google_Service_Clouderrorreporting_Resource_ProjectsGroupStats(
-        $this,
-        $this->serviceName,
-        'groupStats',
-        array(
-          'methods' => array(
-            'list' => array(
-              'path' => 'v1beta1/{+projectName}/groupStats',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'projectName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'timeRange.period' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'alignment' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'groupId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'serviceFilter.service' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'serviceFilter.version' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'order' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'serviceFilter.resourceType' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'alignmentTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'timedCountDuration' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->projects_groups = new Google_Service_Clouderrorreporting_Resource_ProjectsGroups(
-        $this,
-        $this->serviceName,
-        'groups',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'v1beta1/{+groupName}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'groupName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'update' => array(
-              'path' => 'v1beta1/{+name}',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

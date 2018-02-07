@@ -28,127 +28,111 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_Slides extends Google_Service
-{
-  /** View and manage the files in your Google Drive. */
-  const DRIVE =
-      "https://www.googleapis.com/auth/drive";
-  /** View and manage Google Drive files and folders that you have opened or created with this app. */
-  const DRIVE_FILE =
-      "https://www.googleapis.com/auth/drive.file";
-  /** View the files in your Google Drive. */
-  const DRIVE_READONLY =
-      "https://www.googleapis.com/auth/drive.readonly";
-  /** View and manage your Google Slides presentations. */
-  const PRESENTATIONS =
-      "https://www.googleapis.com/auth/presentations";
-  /** View your Google Slides presentations. */
-  const PRESENTATIONS_READONLY =
-      "https://www.googleapis.com/auth/presentations.readonly";
-  /** View and manage your spreadsheets in Google Drive. */
-  const SPREADSHEETS =
-      "https://www.googleapis.com/auth/spreadsheets";
-  /** View your Google Spreadsheets. */
-  const SPREADSHEETS_READONLY =
-      "https://www.googleapis.com/auth/spreadsheets.readonly";
+class Google_Service_Slides extends Google_Service {
+    /** View and manage the files in your Google Drive. */
+    const DRIVE                  = "https://www.googleapis.com/auth/drive";
+    /** View and manage Google Drive files and folders that you have opened or created with this app. */
+    const DRIVE_FILE             = "https://www.googleapis.com/auth/drive.file";
+    /** View the files in your Google Drive. */
+    const DRIVE_READONLY         = "https://www.googleapis.com/auth/drive.readonly";
+    /** View and manage your Google Slides presentations. */
+    const PRESENTATIONS          = "https://www.googleapis.com/auth/presentations";
+    /** View your Google Slides presentations. */
+    const PRESENTATIONS_READONLY = "https://www.googleapis.com/auth/presentations.readonly";
+    /** View and manage your spreadsheets in Google Drive. */
+    const SPREADSHEETS           = "https://www.googleapis.com/auth/spreadsheets";
+    /** View your Google Spreadsheets. */
+    const SPREADSHEETS_READONLY  = "https://www.googleapis.com/auth/spreadsheets.readonly";
+    public $presentations;
+    public $presentations_pages;
 
-  public $presentations;
-  public $presentations_pages;
-  
-  /**
-   * Constructs the internal representation of the Slides service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://slides.googleapis.com/';
-    $this->servicePath = '';
-    $this->version = 'v1';
-    $this->serviceName = 'slides';
+    /**
+     * Constructs the internal representation of the Slides service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://slides.googleapis.com/';
+        $this->servicePath = '';
+        $this->version     = 'v1';
+        $this->serviceName = 'slides';
 
-    $this->presentations = new Google_Service_Slides_Resource_Presentations(
-        $this,
-        $this->serviceName,
-        'presentations',
-        array(
-          'methods' => array(
-            'batchUpdate' => array(
-              'path' => 'v1/presentations/{presentationId}:batchUpdate',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'presentationId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        $this->presentations       = new Google_Service_Slides_Resource_Presentations(
+                $this, $this->serviceName, 'presentations', array(
+            'methods' => array(
+                'batchUpdate' => array(
+                    'path'       => 'v1/presentations/{presentationId}:batchUpdate',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(
+                        'presentationId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'create'      => array(
+                    'path'       => 'v1/presentations',
+                    'httpMethod' => 'POST',
+                    'parameters' => array(),
+                ), 'get'         => array(
+                    'path'       => 'v1/presentations/{+presentationId}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'presentationId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-              ),
-            ),'create' => array(
-              'path' => 'v1/presentations',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'get' => array(
-              'path' => 'v1/presentations/{+presentationId}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'presentationId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+            )
+                )
+        );
+        $this->presentations_pages = new Google_Service_Slides_Resource_PresentationsPages(
+                $this, $this->serviceName, 'pages', array(
+            'methods' => array(
+                'get'          => array(
+                    'path'       => 'v1/presentations/{presentationId}/pages/{pageObjectId}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'presentationId' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'pageObjectId'   => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
+                ), 'getThumbnail' => array(
+                    'path'       => 'v1/presentations/{presentationId}/pages/{pageObjectId}/thumbnail',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'presentationId'                    => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'pageObjectId'                      => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                        'thumbnailProperties.mimeType'      => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                        'thumbnailProperties.thumbnailSize' => array(
+                            'location' => 'query',
+                            'type'     => 'string',
+                        ),
+                    ),
                 ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->presentations_pages = new Google_Service_Slides_Resource_PresentationsPages(
-        $this,
-        $this->serviceName,
-        'pages',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'v1/presentations/{presentationId}/pages/{pageObjectId}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'presentationId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'pageObjectId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getThumbnail' => array(
-              'path' => 'v1/presentations/{presentationId}/pages/{pageObjectId}/thumbnail',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'presentationId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'pageObjectId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'thumbnailProperties.mimeType' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'thumbnailProperties.thumbnailSize' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+    }
 }

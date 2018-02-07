@@ -15,44 +15,42 @@
  * the License.
  */
 
-class Google_Service_Dataflow_WorkerHealthReport extends Google_Collection
-{
-  protected $collection_key = 'pods';
-  public $pods;
-  public $reportInterval;
-  public $vmIsHealthy;
-  public $vmStartupTime;
+class Google_Service_Dataflow_WorkerHealthReport extends Google_Collection {
+    protected $collection_key = 'pods';
+    public $pods;
+    public $reportInterval;
+    public $vmIsHealthy;
+    public $vmStartupTime;
 
-  public function setPods($pods)
-  {
-    $this->pods = $pods;
-  }
-  public function getPods()
-  {
-    return $this->pods;
-  }
-  public function setReportInterval($reportInterval)
-  {
-    $this->reportInterval = $reportInterval;
-  }
-  public function getReportInterval()
-  {
-    return $this->reportInterval;
-  }
-  public function setVmIsHealthy($vmIsHealthy)
-  {
-    $this->vmIsHealthy = $vmIsHealthy;
-  }
-  public function getVmIsHealthy()
-  {
-    return $this->vmIsHealthy;
-  }
-  public function setVmStartupTime($vmStartupTime)
-  {
-    $this->vmStartupTime = $vmStartupTime;
-  }
-  public function getVmStartupTime()
-  {
-    return $this->vmStartupTime;
-  }
+    public function setPods($pods) {
+        $this->pods = $pods;
+    }
+
+    public function getPods() {
+        return $this->pods;
+    }
+
+    public function setReportInterval($reportInterval) {
+        $this->reportInterval = $reportInterval;
+    }
+
+    public function getReportInterval() {
+        return $this->reportInterval;
+    }
+
+    public function setVmIsHealthy($vmIsHealthy) {
+        $this->vmIsHealthy = $vmIsHealthy;
+    }
+
+    public function getVmIsHealthy() {
+        return $this->vmIsHealthy;
+    }
+
+    public function setVmStartupTime($vmStartupTime) {
+        $this->vmStartupTime = $vmStartupTime;
+    }
+
+    public function getVmStartupTime() {
+        return $this->vmStartupTime;
+    }
 }

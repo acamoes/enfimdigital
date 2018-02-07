@@ -15,39 +15,37 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig extends Google_Model
-{
-  protected $privacyMetricType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2PrivacyMetric';
-  protected $privacyMetricDataType = '';
-  protected $sourceTableType = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable';
-  protected $sourceTableDataType = '';
+class Google_Service_DLP_GooglePrivacyDlpV2beta2RiskAnalysisJobConfig extends Google_Model {
+    protected $privacyMetricType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta2PrivacyMetric';
+    protected $privacyMetricDataType = '';
+    protected $sourceTableType       = 'Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable';
+    protected $sourceTableDataType   = '';
 
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2PrivacyMetric
-   */
-  public function setPrivacyMetric(Google_Service_DLP_GooglePrivacyDlpV2beta2PrivacyMetric $privacyMetric)
-  {
-    $this->privacyMetric = $privacyMetric;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2PrivacyMetric
-   */
-  public function getPrivacyMetric()
-  {
-    return $this->privacyMetric;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
-   */
-  public function setSourceTable(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable $sourceTable)
-  {
-    $this->sourceTable = $sourceTable;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
-   */
-  public function getSourceTable()
-  {
-    return $this->sourceTable;
-  }
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2PrivacyMetric
+     */
+    public function setPrivacyMetric(Google_Service_DLP_GooglePrivacyDlpV2beta2PrivacyMetric $privacyMetric) {
+        $this->privacyMetric = $privacyMetric;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2PrivacyMetric
+     */
+    public function getPrivacyMetric() {
+        return $this->privacyMetric;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
+     */
+    public function setSourceTable(Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable $sourceTable) {
+        $this->sourceTable = $sourceTable;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta2BigQueryTable
+     */
+    public function getSourceTable() {
+        return $this->sourceTable;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Chromewebstore_PaymentsDeleteResponse extends Google_Model
-{
-  public $status;
+class Google_Service_Chromewebstore_PaymentsDeleteResponse extends Google_Model {
+    public $status;
 
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
+    public function setStatus($status) {
+        $this->status = $status;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
 }

@@ -29,7 +29,8 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search='+document.getElementById('{$currentTab}{$currentSubTab}search').value+'&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value,'SST{$currentTab}{$currentSubTab}');">X
+                                       onclick="$('#form').html('');
+                                               request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}');">X
                                     Close</label>
                             </div>
                         </div>

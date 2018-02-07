@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Drive_DriveFileImageMediaMetadataLocation extends Google_Model
-{
-  public $altitude;
-  public $latitude;
-  public $longitude;
+class Google_Service_Drive_DriveFileImageMediaMetadataLocation extends Google_Model {
+    public $altitude;
+    public $latitude;
+    public $longitude;
 
-  public function setAltitude($altitude)
-  {
-    $this->altitude = $altitude;
-  }
-  public function getAltitude()
-  {
-    return $this->altitude;
-  }
-  public function setLatitude($latitude)
-  {
-    $this->latitude = $latitude;
-  }
-  public function getLatitude()
-  {
-    return $this->latitude;
-  }
-  public function setLongitude($longitude)
-  {
-    $this->longitude = $longitude;
-  }
-  public function getLongitude()
-  {
-    return $this->longitude;
-  }
+    public function setAltitude($altitude) {
+        $this->altitude = $altitude;
+    }
+
+    public function getAltitude() {
+        return $this->altitude;
+    }
+
+    public function setLatitude($latitude) {
+        $this->latitude = $latitude;
+    }
+
+    public function getLatitude() {
+        return $this->latitude;
+    }
+
+    public function setLongitude($longitude) {
+        $this->longitude = $longitude;
+    }
+
+    public function getLongitude() {
+        return $this->longitude;
+    }
 }

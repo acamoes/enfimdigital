@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Subscriber;
-
 use GuzzleHttp\Event\BeforeEvent;
 use GuzzleHttp\Event\RequestEvents;
 use GuzzleHttp\Event\SubscriberInterface;
@@ -27,8 +25,7 @@ use GuzzleHttp\Event\SubscriberInterface;
  *
  * Requests are accessed using the Simple API access developer key.
  */
-class SimpleSubscriber implements SubscriberInterface
-{
+class SimpleSubscriber implements SubscriberInterface {
     /**
      * @var array
      */
@@ -42,8 +39,7 @@ class SimpleSubscriber implements SubscriberInterface
      *
      * @param array $config Configuration array
      */
-    public function __construct(array $config)
-    {
+    public function __construct(array $config) {
         if (!isset($config['key'])) {
             throw new \InvalidArgumentException('requires a key to have been set');
         }
@@ -54,8 +50,7 @@ class SimpleSubscriber implements SubscriberInterface
     /**
      * @return array
      */
-    public function getEvents()
-    {
+    public function getEvents() {
         return ['before' => ['onBefore', RequestEvents::SIGN_REQUEST]];
     }
 
@@ -78,8 +73,7 @@ class SimpleSubscriber implements SubscriberInterface
      *
      * @param BeforeEvent $event
      */
-    public function onBefore(BeforeEvent $event)
-    {
+    public function onBefore(BeforeEvent $event) {
         // Requests using "auth"="simple" with the developer key.
         $request = $event->getRequest();
         if ($request->getConfig()['auth'] != 'simple') {

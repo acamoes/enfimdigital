@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_Spectrum_VcardTelephone extends Google_Model
-{
-  public $uri;
+class Google_Service_Spectrum_VcardTelephone extends Google_Model {
+    public $uri;
 
-  public function setUri($uri)
-  {
-    $this->uri = $uri;
-  }
-  public function getUri()
-  {
-    return $this->uri;
-  }
+    public function setUri($uri) {
+        $this->uri = $uri;
+    }
+
+    public function getUri() {
+        return $this->uri;
+    }
 }

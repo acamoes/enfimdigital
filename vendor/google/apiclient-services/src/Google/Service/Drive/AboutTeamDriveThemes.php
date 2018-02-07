@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_Drive_AboutTeamDriveThemes extends Google_Model
-{
-  public $backgroundImageLink;
-  public $colorRgb;
-  public $id;
+class Google_Service_Drive_AboutTeamDriveThemes extends Google_Model {
+    public $backgroundImageLink;
+    public $colorRgb;
+    public $id;
 
-  public function setBackgroundImageLink($backgroundImageLink)
-  {
-    $this->backgroundImageLink = $backgroundImageLink;
-  }
-  public function getBackgroundImageLink()
-  {
-    return $this->backgroundImageLink;
-  }
-  public function setColorRgb($colorRgb)
-  {
-    $this->colorRgb = $colorRgb;
-  }
-  public function getColorRgb()
-  {
-    return $this->colorRgb;
-  }
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  public function getId()
-  {
-    return $this->id;
-  }
+    public function setBackgroundImageLink($backgroundImageLink) {
+        $this->backgroundImageLink = $backgroundImageLink;
+    }
+
+    public function getBackgroundImageLink() {
+        return $this->backgroundImageLink;
+    }
+
+    public function setColorRgb($colorRgb) {
+        $this->colorRgb = $colorRgb;
+    }
+
+    public function getColorRgb() {
+        return $this->colorRgb;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
 }

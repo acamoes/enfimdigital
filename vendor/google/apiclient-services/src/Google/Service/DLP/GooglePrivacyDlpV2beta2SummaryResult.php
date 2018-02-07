@@ -15,34 +15,32 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta2SummaryResult extends Google_Model
-{
-  public $code;
-  public $count;
-  public $details;
+class Google_Service_DLP_GooglePrivacyDlpV2beta2SummaryResult extends Google_Model {
+    public $code;
+    public $count;
+    public $details;
 
-  public function setCode($code)
-  {
-    $this->code = $code;
-  }
-  public function getCode()
-  {
-    return $this->code;
-  }
-  public function setCount($count)
-  {
-    $this->count = $count;
-  }
-  public function getCount()
-  {
-    return $this->count;
-  }
-  public function setDetails($details)
-  {
-    $this->details = $details;
-  }
-  public function getDetails()
-  {
-    return $this->details;
-  }
+    public function setCode($code) {
+        $this->code = $code;
+    }
+
+    public function getCode() {
+        return $this->code;
+    }
+
+    public function setCount($count) {
+        $this->count = $count;
+    }
+
+    public function getCount() {
+        return $this->count;
+    }
+
+    public function setDetails($details) {
+        $this->details = $details;
+    }
+
+    public function getDetails() {
+        return $this->details;
+    }
 }

@@ -14,28 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 namespace Google\Auth\Tests;
 
-class SimpleMiddlewareTest extends BaseTest
-{
+class SimpleMiddlewareTest extends BaseTest {
     private $mockRequest;
 
     /**
      * @todo finish
      */
-    protected function setUp()
-    {
+    protected function setUp() {
         $this->onlyGuzzle6();
 
-        $this->mockRequest =
-            $this
+        $this->mockRequest = $this
                 ->getMockBuilder('GuzzleHttp\Psr7\Request')
                 ->disableOriginalConstructor()
                 ->getMock();
     }
 
-    public function testTest()
-    {
+    public function testTest() {
+
     }
 }

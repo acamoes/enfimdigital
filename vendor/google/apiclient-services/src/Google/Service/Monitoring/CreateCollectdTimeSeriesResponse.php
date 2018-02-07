@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_Monitoring_CreateCollectdTimeSeriesResponse extends Google_Collection
-{
-  protected $collection_key = 'payloadErrors';
-  protected $payloadErrorsType = 'Google_Service_Monitoring_CollectdPayloadError';
-  protected $payloadErrorsDataType = 'array';
+class Google_Service_Monitoring_CreateCollectdTimeSeriesResponse extends Google_Collection {
+    protected $collection_key        = 'payloadErrors';
+    protected $payloadErrorsType     = 'Google_Service_Monitoring_CollectdPayloadError';
+    protected $payloadErrorsDataType = 'array';
 
-  /**
-   * @param Google_Service_Monitoring_CollectdPayloadError
-   */
-  public function setPayloadErrors($payloadErrors)
-  {
-    $this->payloadErrors = $payloadErrors;
-  }
-  /**
-   * @return Google_Service_Monitoring_CollectdPayloadError
-   */
-  public function getPayloadErrors()
-  {
-    return $this->payloadErrors;
-  }
+    /**
+     * @param Google_Service_Monitoring_CollectdPayloadError
+     */
+    public function setPayloadErrors($payloadErrors) {
+        $this->payloadErrors = $payloadErrors;
+    }
+
+    /**
+     * @return Google_Service_Monitoring_CollectdPayloadError
+     */
+    public function getPayloadErrors() {
+        return $this->payloadErrors;
+    }
 }

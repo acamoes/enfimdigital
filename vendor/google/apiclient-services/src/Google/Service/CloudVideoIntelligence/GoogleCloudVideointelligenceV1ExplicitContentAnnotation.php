@@ -15,24 +15,22 @@
  * the License.
  */
 
-class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1ExplicitContentAnnotation extends Google_Collection
-{
-  protected $collection_key = 'frames';
-  protected $framesType = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1ExplicitContentFrame';
-  protected $framesDataType = 'array';
+class Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1ExplicitContentAnnotation extends Google_Collection {
+    protected $collection_key = 'frames';
+    protected $framesType     = 'Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1ExplicitContentFrame';
+    protected $framesDataType = 'array';
 
-  /**
-   * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1ExplicitContentFrame
-   */
-  public function setFrames($frames)
-  {
-    $this->frames = $frames;
-  }
-  /**
-   * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1ExplicitContentFrame
-   */
-  public function getFrames()
-  {
-    return $this->frames;
-  }
+    /**
+     * @param Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1ExplicitContentFrame
+     */
+    public function setFrames($frames) {
+        $this->frames = $frames;
+    }
+
+    /**
+     * @return Google_Service_CloudVideoIntelligence_GoogleCloudVideointelligenceV1ExplicitContentFrame
+     */
+    public function getFrames() {
+        return $this->frames;
+    }
 }

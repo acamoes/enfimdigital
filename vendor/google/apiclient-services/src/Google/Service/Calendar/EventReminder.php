@@ -15,25 +15,23 @@
  * the License.
  */
 
-class Google_Service_Calendar_EventReminder extends Google_Model
-{
-  public $method;
-  public $minutes;
+class Google_Service_Calendar_EventReminder extends Google_Model {
+    public $method;
+    public $minutes;
 
-  public function setMethod($method)
-  {
-    $this->method = $method;
-  }
-  public function getMethod()
-  {
-    return $this->method;
-  }
-  public function setMinutes($minutes)
-  {
-    $this->minutes = $minutes;
-  }
-  public function getMinutes()
-  {
-    return $this->minutes;
-  }
+    public function setMethod($method) {
+        $this->method = $method;
+    }
+
+    public function getMethod() {
+        return $this->method;
+    }
+
+    public function setMinutes($minutes) {
+        $this->minutes = $minutes;
+    }
+
+    public function getMinutes() {
+        return $this->minutes;
+    }
 }

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ConsumerSurveys_SurveysDeleteResponse extends Google_Model
-{
-  public $requestId;
+class Google_Service_ConsumerSurveys_SurveysDeleteResponse extends Google_Model {
+    public $requestId;
 
-  public function setRequestId($requestId)
-  {
-    $this->requestId = $requestId;
-  }
-  public function getRequestId()
-  {
-    return $this->requestId;
-  }
+    public function setRequestId($requestId) {
+        $this->requestId = $requestId;
+    }
+
+    public function getRequestId() {
+        return $this->requestId;
+    }
 }

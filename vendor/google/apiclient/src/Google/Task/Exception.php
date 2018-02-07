@@ -15,6 +15,6 @@
  * limitations under the License.
  */
 
-class Google_Task_Exception extends Google_Exception
-{
+class Google_Task_Exception extends Google_Exception {
+
 }

@@ -15,32 +15,30 @@
  * the License.
  */
 
-class Google_Service_Dataflow_ApproximateSplitRequest extends Google_Model
-{
-  public $fractionConsumed;
-  protected $positionType = 'Google_Service_Dataflow_Position';
-  protected $positionDataType = '';
+class Google_Service_Dataflow_ApproximateSplitRequest extends Google_Model {
+    public $fractionConsumed;
+    protected $positionType     = 'Google_Service_Dataflow_Position';
+    protected $positionDataType = '';
 
-  public function setFractionConsumed($fractionConsumed)
-  {
-    $this->fractionConsumed = $fractionConsumed;
-  }
-  public function getFractionConsumed()
-  {
-    return $this->fractionConsumed;
-  }
-  /**
-   * @param Google_Service_Dataflow_Position
-   */
-  public function setPosition(Google_Service_Dataflow_Position $position)
-  {
-    $this->position = $position;
-  }
-  /**
-   * @return Google_Service_Dataflow_Position
-   */
-  public function getPosition()
-  {
-    return $this->position;
-  }
+    public function setFractionConsumed($fractionConsumed) {
+        $this->fractionConsumed = $fractionConsumed;
+    }
+
+    public function getFractionConsumed() {
+        return $this->fractionConsumed;
+    }
+
+    /**
+     * @param Google_Service_Dataflow_Position
+     */
+    public function setPosition(Google_Service_Dataflow_Position $position) {
+        $this->position = $position;
+    }
+
+    /**
+     * @return Google_Service_Dataflow_Position
+     */
+    public function getPosition() {
+        return $this->position;
+    }
 }

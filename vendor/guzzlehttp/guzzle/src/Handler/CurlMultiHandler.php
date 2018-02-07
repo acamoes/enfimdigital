@@ -1,6 +1,5 @@
 <?php
 namespace GuzzleHttp\Handler;
-
 use GuzzleHttp\Promise as P;
 use GuzzleHttp\Promise\Promise;
 use GuzzleHttp\Psr7;
@@ -15,14 +14,13 @@ use Psr\Http\Message\RequestInterface;
  *
  * @property resource $_mh Internal use only. Lazy loaded multi-handle.
  */
-class CurlMultiHandler
-{
+class CurlMultiHandler {
     /** @var CurlFactoryInterface */
     private $factory;
     private $selectTimeout;
     private $active;
     private $handles = [];
-    private $delays = [];
+    private $delays  = [];
 
     /**
      * This handler accepts the following options:
@@ -33,16 +31,12 @@ class CurlMultiHandler
      *
      * @param array $options
      */
-    public function __construct(array $options = [])
-    {
-        $this->factory = isset($options['handle_factory'])
-            ? $options['handle_factory'] : new CurlFactory(50);
-        $this->selectTimeout = isset($options['select_timeout'])
-            ? $options['select_timeout'] : 1;
+    public function __construct(array $options = []) {
+        $this->factory       = isset($options['handle_factory']) ? $options['handle_factory'] : new CurlFactory(50);
+        $this->selectTimeout = isset($options['select_timeout']) ? $options['select_timeout'] : 1;
     }
 
-    public function __get($name)
-    {
+    public function __get($name) {
         if ($name === '_mh') {
             return $this->_mh = curl_multi_init();
         }
@@ -50,22 +44,21 @@ class CurlMultiHandler
         throw new \BadMethodCallException();
     }
 
-    public function __destruct()
-    {
+    public function __destruct() {
         if (isset($this->_mh)) {
             curl_multi_close($this->_mh);
             unset($this->_mh);
         }
     }
 
-    public function __invoke(RequestInterface $request, array $options)
-    {
+    public function __invoke(RequestInterface $request, array $options) {
         $easy = $this->factory->create($request, $options);
-        $id = (int) $easy->handle;
+        $id   = (int) $easy->handle;
 
         $promise = new Promise(
-            [$this, 'execute'],
-            function () use ($id) { return $this->cancel($id); }
+                [$this, 'execute'], function () use ($id) {
+            return $this->cancel($id);
+        }
         );
 
         $this->addRequest(['easy' => $easy, 'deferred' => $promise]);
@@ -76,8 +69,7 @@ class CurlMultiHandler
     /**
      * Ticks the curl event loop.
      */
-    public function tick()
-    {
+    public function tick() {
         // Add any delayed handles if needed.
         if ($this->delays) {
             $currentTime = microtime(true);
@@ -85,8 +77,7 @@ class CurlMultiHandler
                 if ($currentTime >= $delay) {
                     unset($this->delays[$id]);
                     curl_multi_add_handle(
-                        $this->_mh,
-                        $this->handles[$id]['easy']->handle
+                            $this->_mh, $this->handles[$id]['easy']->handle
                     );
                 }
             }
@@ -96,7 +87,7 @@ class CurlMultiHandler
         P\queue()->run();
 
         if ($this->active &&
-            curl_multi_select($this->_mh, $this->selectTimeout) === -1
+                curl_multi_select($this->_mh, $this->selectTimeout) === -1
         ) {
             // Perform a usleep if a select returns -1.
             // See: https://bugs.php.net/bug.php?id=61141
@@ -111,8 +102,7 @@ class CurlMultiHandler
     /**
      * Runs until all outstanding connections have completed.
      */
-    public function execute()
-    {
+    public function execute() {
         $queue = P\queue();
 
         while ($this->handles || !$queue->isEmpty()) {
@@ -124,14 +114,14 @@ class CurlMultiHandler
         }
     }
 
-    private function addRequest(array $entry)
-    {
-        $easy = $entry['easy'];
-        $id = (int) $easy->handle;
+    private function addRequest(array $entry) {
+        $easy               = $entry['easy'];
+        $id                 = (int) $easy->handle;
         $this->handles[$id] = $entry;
         if (empty($easy->options['delay'])) {
             curl_multi_add_handle($this->_mh, $easy->handle);
-        } else {
+        }
+        else {
             $this->delays[$id] = microtime(true) + ($easy->options['delay'] / 1000);
         }
     }
@@ -143,8 +133,7 @@ class CurlMultiHandler
      *
      * @return bool True on success, false on failure.
      */
-    private function cancel($id)
-    {
+    private function cancel($id) {
         // Cannot cancel if it has been processed.
         if (!isset($this->handles[$id])) {
             return false;
@@ -158,8 +147,7 @@ class CurlMultiHandler
         return true;
     }
 
-    private function processMessages()
-    {
+    private function processMessages() {
         while ($done = curl_multi_info_read($this->_mh)) {
             $id = (int) $done['handle'];
             curl_multi_remove_handle($this->_mh, $done['handle']);
@@ -169,23 +157,20 @@ class CurlMultiHandler
                 continue;
             }
 
-            $entry = $this->handles[$id];
+            $entry                = $this->handles[$id];
             unset($this->handles[$id], $this->delays[$id]);
             $entry['easy']->errno = $done['result'];
             $entry['deferred']->resolve(
-                CurlFactory::finish(
-                    $this,
-                    $entry['easy'],
-                    $this->factory
-                )
+                    CurlFactory::finish(
+                            $this, $entry['easy'], $this->factory
+                    )
             );
         }
     }
 
-    private function timeToNext()
-    {
+    private function timeToNext() {
         $currentTime = microtime(true);
-        $nextTime = PHP_INT_MAX;
+        $nextTime    = PHP_INT_MAX;
         foreach ($this->delays as $time) {
             if ($time < $nextTime) {
                 $nextTime = $time;

@@ -15,16 +15,14 @@
  * the License.
  */
 
-class Google_Service_ServiceUser_CustomAuthRequirements extends Google_Model
-{
-  public $provider;
+class Google_Service_ServiceUser_CustomAuthRequirements extends Google_Model {
+    public $provider;
 
-  public function setProvider($provider)
-  {
-    $this->provider = $provider;
-  }
-  public function getProvider()
-  {
-    return $this->provider;
-  }
+    public function setProvider($provider) {
+        $this->provider = $provider;
+    }
+
+    public function getProvider() {
+        return $this->provider;
+    }
 }

@@ -29,62 +29,52 @@
  *
  * @author Google, Inc.
  */
-class Google_Service_AbusiveExperienceReport extends Google_Service
-{
-  /** Test scope for access to the Zoo service. */
-  const XAPI_ZOO =
-      "https://www.googleapis.com/auth/xapi.zoo";
+class Google_Service_AbusiveExperienceReport extends Google_Service {
+    /** Test scope for access to the Zoo service. */
+    const XAPI_ZOO = "https://www.googleapis.com/auth/xapi.zoo";
+    public $sites;
+    public $violatingSites;
 
-  public $sites;
-  public $violatingSites;
-  
-  /**
-   * Constructs the internal representation of the AbusiveExperienceReport
-   * service.
-   *
-   * @param Google_Client $client
-   */
-  public function __construct(Google_Client $client)
-  {
-    parent::__construct($client);
-    $this->rootUrl = 'https://abusiveexperiencereport.googleapis.com/';
-    $this->servicePath = '';
-    $this->version = 'v1';
-    $this->serviceName = 'abusiveexperiencereport';
+    /**
+     * Constructs the internal representation of the AbusiveExperienceReport
+     * service.
+     *
+     * @param Google_Client $client
+     */
+    public function __construct(Google_Client $client) {
+        parent::__construct($client);
+        $this->rootUrl     = 'https://abusiveexperiencereport.googleapis.com/';
+        $this->servicePath = '';
+        $this->version     = 'v1';
+        $this->serviceName = 'abusiveexperiencereport';
 
-    $this->sites = new Google_Service_AbusiveExperienceReport_Resource_Sites(
-        $this,
-        $this->serviceName,
-        'sites',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+        $this->sites          = new Google_Service_AbusiveExperienceReport_Resource_Sites(
+                $this, $this->serviceName, 'sites', array(
+            'methods' => array(
+                'get' => array(
+                    'path'       => 'v1/{+name}',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'name' => array(
+                            'location' => 'path',
+                            'type'     => 'string',
+                            'required' => true,
+                        ),
+                    ),
                 ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->violatingSites = new Google_Service_AbusiveExperienceReport_Resource_ViolatingSites(
-        $this,
-        $this->serviceName,
-        'violatingSites',
-        array(
-          'methods' => array(
-            'list' => array(
-              'path' => 'v1/violatingSites',
-              'httpMethod' => 'GET',
-              'parameters' => array(),
-            ),
-          )
-        )
-    );
-  }
+            )
+                )
+        );
+        $this->violatingSites = new Google_Service_AbusiveExperienceReport_Resource_ViolatingSites(
+                $this, $this->serviceName, 'violatingSites', array(
+            'methods' => array(
+                'list' => array(
+                    'path'       => 'v1/violatingSites',
+                    'httpMethod' => 'GET',
+                    'parameters' => array(),
+                ),
+            )
+                )
+        );
+    }
 }

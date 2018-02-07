@@ -15,51 +15,49 @@
  * the License.
  */
 
-class Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationHistogramBucket extends Google_Collection
-{
-  protected $collection_key = 'bucketValues';
-  public $bucketSize;
-  protected $bucketValuesType = 'Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationQuasiIdValues';
-  protected $bucketValuesDataType = 'array';
-  public $maxAnonymity;
-  public $minAnonymity;
+class Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationHistogramBucket extends Google_Collection {
+    protected $collection_key       = 'bucketValues';
+    public $bucketSize;
+    protected $bucketValuesType     = 'Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationQuasiIdValues';
+    protected $bucketValuesDataType = 'array';
+    public $maxAnonymity;
+    public $minAnonymity;
 
-  public function setBucketSize($bucketSize)
-  {
-    $this->bucketSize = $bucketSize;
-  }
-  public function getBucketSize()
-  {
-    return $this->bucketSize;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationQuasiIdValues
-   */
-  public function setBucketValues($bucketValues)
-  {
-    $this->bucketValues = $bucketValues;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationQuasiIdValues
-   */
-  public function getBucketValues()
-  {
-    return $this->bucketValues;
-  }
-  public function setMaxAnonymity($maxAnonymity)
-  {
-    $this->maxAnonymity = $maxAnonymity;
-  }
-  public function getMaxAnonymity()
-  {
-    return $this->maxAnonymity;
-  }
-  public function setMinAnonymity($minAnonymity)
-  {
-    $this->minAnonymity = $minAnonymity;
-  }
-  public function getMinAnonymity()
-  {
-    return $this->minAnonymity;
-  }
+    public function setBucketSize($bucketSize) {
+        $this->bucketSize = $bucketSize;
+    }
+
+    public function getBucketSize() {
+        return $this->bucketSize;
+    }
+
+    /**
+     * @param Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationQuasiIdValues
+     */
+    public function setBucketValues($bucketValues) {
+        $this->bucketValues = $bucketValues;
+    }
+
+    /**
+     * @return Google_Service_DLP_GooglePrivacyDlpV2beta1KMapEstimationQuasiIdValues
+     */
+    public function getBucketValues() {
+        return $this->bucketValues;
+    }
+
+    public function setMaxAnonymity($maxAnonymity) {
+        $this->maxAnonymity = $maxAnonymity;
+    }
+
+    public function getMaxAnonymity() {
+        return $this->maxAnonymity;
+    }
+
+    public function setMinAnonymity($minAnonymity) {
+        $this->minAnonymity = $minAnonymity;
+    }
+
+    public function getMinAnonymity() {
+        return $this->minAnonymity;
+    }
 }
