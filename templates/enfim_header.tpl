@@ -45,23 +45,27 @@
 
             function request(query = 'action=&', target = 'form')
             {
+                $('#loader').prepend('<img id="ajaxLoader" src="images/loader.gif" style="width:100px;heigth:100px" />');
                 $.ajax({
                     url: '{$SCRIPT_NAME}',
                     data: query,
                     success: function (data) {
+                        $('#loader').html('');
                         $('#' + target).html(data);
                     }
                 });
             }
 
             function requestAPI(query = 'action=&', target = 'form')
-            {
+            {   
+                $('#loader').prepend('<img id="ajaxLoader" src="images/loader.gif" style="width:100px;heigth:100px" />');
                 $.ajax({
                     url: '{$SCRIPT_NAME}',
                     data: query,
                     success: function (data) {
                         obj = JSON.parse(data);
-                        if (typeof obj.success !== 'undefined') {
+                        $('#loader').html('');
+                        if (typeof obj.success !== 'undefined') {                            
                             $('#' + target).html("<div id='errorForThreeSecond'><h3 class='alert'>" + obj.message + "</h3></div>");
                         } else {
                             $('#username').val([obj.username]);
@@ -211,15 +215,15 @@
 
         <!-- Page Wrapper -->
         <div id="loader"
-             style="position: absolute; top: 30%; left: 40%; z-index: 50; cursor: auto;"></div>
+             style="position: absolute; top: 50%; left: 50%; z-index: 20000; cursor: auto;"></div>
         <div id="form"
-             style="position: fixed; top: 0; left: 2%; z-index: 2147483647; cursor: auto;"></div>
+             style="position: absolute; top: 100px; left: 2%; z-index: 9000; cursor: auto;"></div>
         <div id="smallForm"
-             style="position: fixed; top: 0; left: 2%; z-index: 2147483647; cursor: auto;"></div>
+             style="position: fixed; top: 0; left: 2%; z-index: 9000; cursor: auto;"></div>
         <div id="page-wrapper">
             <!-- Header -->
             <header id="header" style="height: 100px">
-                <h1>
+                <h1 style="height:100px">
                     <img class="logo icon svg" src="images/logo_2.svg" height="80px" style="cursor:pointer;margin: 10px" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=home'"/>
                 </h1>
                 <nav>
