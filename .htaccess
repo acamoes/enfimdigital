@@ -1,0 +1,4 @@
+DirectoryIndex index.php
+RewriteEngine on
+RewriteCond $1 !^(index\.php)
+RewriteRule ^(.*)$ /$1 [L,R=301]
