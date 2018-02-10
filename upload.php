@@ -6,7 +6,7 @@ define('ENFIM_DIR', "");
 // define smarty lib directory
 define('SMARTY_DIR', "vendor/smarty/smarty/libs/");
 // include the setup script
-include(ENFIM_DIR . "libs/enfim_setup.php");
+include(ENFIM_DIR."libs/enfim_setup.php");
 
 session_start();
 
@@ -21,12 +21,12 @@ $data = array();
 $data = $_REQUEST;
 if (!array_key_exists('action', $data)) {
     header('Location: index.php');
-}
-else {
+} else {
     if ($data['action'] == "equipaExecutiva" && $_SESSION['users']->permission != 'Equipa Executiva') {
         header('Location: index.php');
     }
-    if ($data['action'] == "formadores" && !($_SESSION['users']->isFormador($data['idCourses']) || $_SESSION['users']->isDiretor($data['idCourses']))) {
+    if ($data['action'] == "formadores" && !($_SESSION['users']->isFormador($data['idCourses'])
+        || $_SESSION['users']->isDiretor($data['idCourses']))) {
         header('Location: index.php');
     }
 }
@@ -66,19 +66,19 @@ if (isset($_FILES['ficheiro'])) {
         $set = true;
         if (!array_key_exists('ficheiros', $_SESSION)) {
             $set = false;
-        }
-        else {
-            if (!array_key_exists('idDocuments', $_SESSION['ficheiros']) && $data['type'] != 'Informações') {
+        } else {
+            if (!array_key_exists('idDocuments', $_SESSION['ficheiros']) && $data['type']
+                != 'Informações') {
                 $set = false;
-            }
-            elseif (array_key_exists('idDocuments', $_SESSION['ficheiros']) && $data['type'] != 'Informações') {
+            } elseif (array_key_exists('idDocuments', $_SESSION['ficheiros']) && $data['type']
+                != 'Informações') {
                 $set                 = true;
                 $data['idDocuments'] = $_SESSION['ficheiros']['idDocuments'];
-            }
-            elseif (!array_key_exists('idInformations', $_SESSION['ficheiros']) && $data['type'] == 'Informações') {
+            } elseif (!array_key_exists('idInformations', $_SESSION['ficheiros'])
+                && $data['type'] == 'Informações') {
                 $set = false;
-            }
-            elseif (array_key_exists('idInformations', $_SESSION['ficheiros']) && $data['type'] == 'Informações') {
+            } elseif (array_key_exists('idInformations', $_SESSION['ficheiros'])
+                && $data['type'] == 'Informações') {
                 $set                    = true;
                 $data['idInformations'] = $_SESSION['ficheiros']['idInformations'];
             }
@@ -88,44 +88,35 @@ if (isset($_FILES['ficheiro'])) {
             if ($data['action'] == 'equipaExecutiva') {
                 if ($data['tab'] != 'formacoes') {
                     $errors = $_SESSION['equipaExecutiva']->atualizarDocumentosFicheiro($data);
-                }
-                else {
+                } else {
                     if ($data['type'] != 'Informações') {
                         $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesFicheiro($data);
-                    }
-                    else {
+                    } else {
                         $errors = $_SESSION['equipaExecutiva']->atualizarFormacoesInformacao($data);
                     }
                 }
-            }
-            else {
+            } else {
                 if ($data['tab'] == 'ficheiros') {
                     $errors = $_SESSION['formadores']->atualizarFicheiro($data);
-                }
-                else {
+                } else {
                     $errors = $_SESSION['formadores']->atualizarInformacao($data);
                 }
             }
-        }
-        else {
+        } else {
             if ($data['action'] == 'equipaExecutiva') {
                 if ($data['tab'] != 'formacoes') {
                     $errors = $_SESSION['equipaExecutiva']->inserirDocumentoFicheiro($data);
-                }
-                else {
+                } else {
                     if ($data['type'] != 'Informações') {
                         $errors = $_SESSION['equipaExecutiva']->inserirFormacoesFicheiro($data);
-                    }
-                    else {
+                    } else {
                         $errors = $_SESSION['equipaExecutiva']->inserirFormacoesInformacao($data);
                     }
                 }
-            }
-            else {
+            } else {
                 if ($data['tab'] == 'ficheiros') {
                     $errors = $_SESSION['formadores']->inserirFicheiro($data);
-                }
-                else {
+                } else {
                     $errors = $_SESSION['formadores']->inserirInformacao($data);
                 }
             }
@@ -154,8 +145,7 @@ if (isset($_FILES['ficheiro'])) {
                 <div class="row uniform" id="texto"><div style="background-color:#45558d;float: left">
                         <label for="texto"><br><?= $errors['message'] ?></label></div></div>
                 <?php
-            }
-            else {
+            } else {
                 ?>
                 <?php if (key_exists('action', $data)) { ?>
                     <input type = "hidden" name="action" id="action" value="<?= $data['action'] ?>">

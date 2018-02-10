@@ -1,11 +1,11 @@
 <?php
-define('PROD', true);
+define('PROD', false);
 // define our application directory
 define('ENFIM_DIR', "");
 // define smarty lib directory
 define('SMARTY_DIR', "vendor/smarty/smarty/libs/");
 // include the setup script
-include(ENFIM_DIR . "libs/enfim_setup.php");
+include(ENFIM_DIR."libs/enfim_setup.php");
 
 session_start();
 
