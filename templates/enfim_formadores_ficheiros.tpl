@@ -131,7 +131,8 @@
                            style="cursor: pointer; padding: 0 0 0 5pt"
                            onclick="if (confirm('Tem a certeza que pretende aprovar')) {ldelim}
                                        $.when(request('action={$action}&task=aprovar&tab={$currentTab}&idCourses={$idCourses}&idDocuments={$ficheiros['idDocuments']}', '{$action}Msg')).
-                                               then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"></a>
+                                               then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                   }"></a>
                     {/if}
                 </td>
             </tr>

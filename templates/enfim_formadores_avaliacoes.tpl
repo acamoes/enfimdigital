@@ -23,7 +23,8 @@
     </ul>
     <ul class="actions" onclick="if (confirm('Pretende distribuir as avaliações para todos os formandos?')) {
                 $.when(request('action={$action}&task=distribuirAvaliacoes&tab={$currentTab}&idCourses={$idCourses}', 'formMsg')).
-                        then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"
+                        then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+            }"
         style="float: right">
         <li class="button small"
             style="cursor: pointer; padding: 0 10pt 0 10pt">Distribuir avaliações</li>

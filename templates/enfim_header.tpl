@@ -73,8 +73,13 @@
                             $('#mobile').val(obj.mobile);
                             $('#telephone').val(obj.telephone);
                             $('#observations').val(obj.observations);
-                            $('[name="status"]').val([obj.status]);
+                            $('[name="status"]').val([obj.status]);                            
                             $('#' + target).html("<div id='errorForThreeSecond'><h3 class='success'>" + obj.message + "</h3></div>");
+                            $('#unitType').val(obj.unitType);
+                            $('#rank').val(obj.rank);
+                            $('#boRank').val(obj.boRank);
+                            $('#unit').val(obj.unit);
+                            
                         }
                         //$('#' + target).html(data);
                     }

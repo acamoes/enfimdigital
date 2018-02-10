@@ -11,16 +11,19 @@ declare(strict_types = 1);
  *
  * @author João Madeira
  */
-class Avaliacoes {
+class Avaliacoes
+{
 
     //put your code here
-    function __construct() {
-
+    public function __construct()
+    {
+        //empty
     }
 
-    static function apagarAvaliacoes($data) {
-        $query     = "UPDATE evaluations SET status=IF(status='Ativo','Inativo','Ativo') WHERE idEvaluations=" . $data['idEvaluations'] . " ";
-        $con       = new Database ();
+    public static function apagarAvaliacoes($data)
+    {
+        $query     = "UPDATE evaluations SET status=IF(status='Ativo','Inativo','Ativo') WHERE idEvaluations=".$data['idEvaluations']." ";
+        $con       = new Database();
         $resultado = $con->set($query);
         if (!$resultado) {
             return ['success' => false, 'message' => 'O registo não foi alterado.'];
@@ -28,11 +31,12 @@ class Avaliacoes {
         return ['success' => true, 'message' => 'Registo alterado.'];
     }
 
-    static function atualizarAvaliacoes($data) {
-        $query     = "UPDATE evaluations SET idCourse=" . $data['idCourse'] . ", name='" . $data ['name'] . "', target='" . $data ['target'] . "'"
-                . ",template='" . $data ['template'] . "',status='" . $data ['status'] . "',dateExecutiva='" . date("Y-m-d H:i:s") . "',idExecutiva=" . $_SESSION['users']->idUsers
-                . " WHERE idEvaluations=" . $data ['idEvaluations'];
-        $con       = new Database ();
+    public static function atualizarAvaliacoes($data)
+    {
+        $query     = "UPDATE evaluations SET idCourse=".$data['idCourse'].", name='".$data ['name']."', target='".$data ['target']."'"
+            .",template='".$data ['template']."',status='".$data ['status']."',dateExecutiva='".date("Y-m-d H:i:s")."',idExecutiva=".$_SESSION['users']->idUsers
+            ." WHERE idEvaluations=".$data ['idEvaluations'];
+        $con       = new Database();
         $resultado = $con->set($query);
         if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];
@@ -40,9 +44,10 @@ class Avaliacoes {
         return ['success' => true, 'message' => 'Registo aceite.'];
     }
 
-    static function getAvaliacao($data) {
-        $query     = "SELECT e.*,(SELECT c.name FROM course c WHERE c.idCourse=e.idCourse ) as 'curso' FROM evaluations e WHERE e.idEvaluations = " . $data['idEvaluations'] . " ";
-        $con       = new Database ();
+    public static function getAvaliacao($data)
+    {
+        $query     = "SELECT e.*,(SELECT c.name FROM course c WHERE c.idCourse=e.idCourse ) as 'curso' FROM evaluations e WHERE e.idEvaluations = ".$data['idEvaluations']." ";
+        $con       = new Database();
         $resultado = $con->get($query);
         if (!$resultado) {
             return false;
@@ -50,13 +55,14 @@ class Avaliacoes {
         return $resultado[0];
     }
 
-    static function getAvaliacoes($data) {
-        $query     = "SELECT e.*, (SELECT c.name FROM course c WHERE c.idCourse=e.idCourse ) as 'curso' FROM evaluations e " .
-                " WHERE name LIKE '%" . $data['search'] . "%' " .
-                "OR target LIKE '%" . $data['search'] . "%' " .
-                "OR status LIKE '%" . $data['search'] . "%' " .
-                "OR 'curso' LIKE '%" . $data['search'] . "%' ";
-        $con       = new Database ();
+    public static function getAvaliacoes($data)
+    {
+        $query     = "SELECT e.*, (SELECT c.name FROM course c WHERE c.idCourse=e.idCourse ) as 'curso' FROM evaluations e ".
+            " WHERE name LIKE '%".$data['search']."%' ".
+            "OR target LIKE '%".$data['search']."%' ".
+            "OR status LIKE '%".$data['search']."%' ".
+            "OR 'curso' LIKE '%".$data['search']."%' ";
+        $con       = new Database();
         $resultado = $con->get($query);
         if (!$resultado) {
             return false;
@@ -64,18 +70,19 @@ class Avaliacoes {
         return $resultado;
     }
 
-    static function inserirAvaliacoes($data) {
-        $query     = "INSERT INTO evaluations " .
-                "(idCourse,name,target,status,template,dateExecutiva,idExecutiva) " .
-                "VALUES " .
-                "(" . $data ['idCourse'] .
-                ",'" . $data ['name'] .
-                "','" . $data ['target'] .
-                "','" . $data ['status'] .
-                "','" . $data ['template'] .
-                "','" . date("Y-m-d H:i:s") .
-                "'," . $_SESSION['users']->idUsers . ")";
-        $con       = new Database ();
+    public static function inserirAvaliacoes($data)
+    {
+        $query     = "INSERT INTO evaluations ".
+            "(idCourse,name,target,status,template,dateExecutiva,idExecutiva) ".
+            "VALUES ".
+            "(".$data ['idCourse'].
+            ",'".$data ['name'].
+            "','".$data ['target'].
+            "','".$data ['status'].
+            "','".$data ['template'].
+            "','".date("Y-m-d H:i:s").
+            "',".$_SESSION['users']->idUsers.")";
+        $con       = new Database();
         $resultado = $con->set($query);
         if (!$resultado) {
             return ['success' => false, 'message' => 'Não foi aceite o registo.'];

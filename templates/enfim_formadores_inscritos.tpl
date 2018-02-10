@@ -78,12 +78,14 @@
                                 <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Passou no Estágio?" 
                                    onclick="if (confirm('Passou no Estágio?')) {ldelim}
                                                $.when(request('action={$action}&task=passouEstagio&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"></a>
+                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                           }"></a>
                             {elseif $inscritos['passed'] neq 'on'}
                                 <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Passou na Etapa?" 
                                    onclick="if (confirm('Passou na Etapa?')) {ldelim}
                                                $.when(request('action={$action}&task=passouEtapa&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));}"></a>
+                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                           }"></a>
                             {else}
                                 <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Limpar avaliação?" 
                                    onclick="if (confirm('Limpar avaliação?')) {ldelim}
