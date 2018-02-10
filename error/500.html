@@ -188,7 +188,7 @@
         <style>
 
             .background-color {
-                background-color: #6355BC !important;
+                background-color: #4c5c96 !important;
             }
 
 
@@ -208,7 +208,7 @@
                 border-color: #FFFFFF !important;
             }
             .button {
-                background-color: #FFFFFF !important;                
+                background-color: #FFFFFF !important;
             }
 
 
@@ -218,23 +218,21 @@
     <body class="plain error-page-wrapper background-color background-image">
         <div class="content-container">
             <div class="head-line secondary-text-color">
-                Erro no sistema...
+                500
             </div>
             <div class="subheader primary-text-color">
                 ENFIM DIGITAL <br>
-                procuras alguma coisa?
+                em manutenção...
             </div>
             <hr>
             <div class="clearfix"></div>
             <div class="context primary-text-color">
-                <!-- doesn't use context_content because it's ALWAYS the same thing -->
+
                 <p>
-                    Se não consegues aceder.<br />
-                    Contacta a Equipa Executiva.
+                    <span style="cursor:pointer;" onclick="location = 'https://enfimdigital.escoteiros.pt/index.php';">voltar a tentar</span>
                 </p>
-            </div>
-            <div class="buttons-container">
-                <a class="border-button" href="https://enfimdigital.escoteiros.pt/index.php" target="_blank">Página principal</a>
+
+
             </div>
         </div>
 
@@ -342,7 +340,7 @@
                 });
 
             };
-            var ep = new ErrorPage('body', "404", "plain");
+            var ep = new ErrorPage('body', "503", "plain");
             ep.initialize();
 
             // hack to make sure content stays centered >_<
