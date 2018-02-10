@@ -45,7 +45,7 @@
 
             function request(query = 'action=&', target = 'form')
             {
-                $('#loader').prepend('<img id="ajaxLoader" src="images/loader.gif" style="width:100px;heigth:100px" />');
+                $('#loader').html('<img id="ajaxLoader" src="images/loader.gif" style="width:100px;heigth:100px" />');
                 $.ajax({
                     url: '{$SCRIPT_NAME}',
                     data: query,
@@ -58,7 +58,7 @@
 
             function requestAPI(query = 'action=&', target = 'form')
             {   
-                $('#loader').prepend('<img id="ajaxLoader" src="images/loader.gif" style="width:100px;heigth:100px" />');
+                $('#loader').html('<img id="ajaxLoader" src="images/loader.gif" style="width:100px;heigth:100px" />');
                 $.ajax({
                     url: '{$SCRIPT_NAME}',
                     data: query,
