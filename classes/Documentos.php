@@ -138,12 +138,12 @@ class Documentos
             "Fechado" :
             "Pendente"))."',".
             "dateAutor='".date("Y-m-d H:i:s")."',".
-            "idAutor=".$_SESSION ['users']->id." ".
+            "idAutor=".$_SESSION ['users']->idUsers." ".
             //"datePedagogico='" . date("Y-m-d H:i:s") . "'," .
-            //"idPedagogico=" . $_SESSION ['users']->id . ", " .
-            //",dateDiretor='" . date("Y-m-d H:i:s") . "',idDiretor=" . $_SESSION ['users']->id . " "
+            //"idPedagogico=" . $_SESSION ['users']->idUsers . ", " .
+            //",dateDiretor='" . date("Y-m-d H:i:s") . "',idDiretor=" . $_SESSION ['users']->idUsers . " "
             (($data['action'] == 'equipaExecutiva') ?
-            ",dateExecutiva='".date("Y-m-d H:i:s")."',idExecutiva=".$_SESSION ['users']->id." "
+            ",dateExecutiva='".date("Y-m-d H:i:s")."',idExecutiva=".$_SESSION ['users']->idUsers." "
                 :
             " ").
             "WHERE idDocuments=".$_SESSION['ficheiros']['idDocuments'];
@@ -165,7 +165,7 @@ class Documentos
             ")".
             "VALUES "."(0,0,'".$data['type']."','".$data['file']."','".$data['content']."','".date("Y-m-d H:i:s")."',".$_SESSION['users']->idUsers." ".
             (($data['action'] == 'equipaExecutiva') ?
-            ",'".date("Y-m-d H:i:s")."',".$_SESSION ['users']->id." " :
+            ",'".date("Y-m-d H:i:s")."',".$_SESSION ['users']->idUsers." " :
             " ").
             ")";
         $con       = new Database();
@@ -186,7 +186,7 @@ class Documentos
         $query     = "UPDATE documents "
             ." SET document".$data['filePos']."='".$data['file']."',"."document".$data['filePos']."Blob='".$data['content']."' "
             .(($data['action'] == 'equipaExecutiva') ?
-            ",dateExecutiva='".date("Y-m-d H:i:s")."',idExecutiva=".$_SESSION ['users']->id." "
+            ",dateExecutiva='".date("Y-m-d H:i:s")."',idExecutiva=".$_SESSION ['users']->idUsers." "
                 :
             " ")
             ." WHERE idDocuments=".$data['idDocuments'];
@@ -205,7 +205,7 @@ class Documentos
     {
         $query     = "UPDATE documents SET public='Não',status=IF(status='Ativo','Inativo','Ativo')".
             (($data['action'] == 'equipaExecutiva') ?
-            ",dateExecutiva='".date("Y-m-d H:i:s")."',idExecutiva=".$_SESSION ['users']->id." "
+            ",dateExecutiva='".date("Y-m-d H:i:s")."',idExecutiva=".$_SESSION ['users']->idUsers." "
                 :
             " ")
             ." WHERE idDocuments=".$data['idDocuments']." ";

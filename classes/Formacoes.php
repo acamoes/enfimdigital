@@ -29,15 +29,7 @@ class Formacoes
     public static function getFormacoes(/* $data */)
     {
         $query     = "SELECT "."c.* "
-            /* .",ct.idUsers, "
-              ."ct.type, "
-              ."u.name, "
-              ."u.sigla, "
-              ."u.email, "
-              ."u.permission "
-             */."FROM "."courses c ".
-// ."INNER JOIN courses_team ct ON c.idCourses=ct.idCourses "
-// ."INNER JOIN users u ON ct.idUsers=u.idUsers ".($id!=''?"AND ct.idUsers=".$id." ":" ")
+            ."FROM "."courses c ".
             "ORDER BY startDate";
         $con       = new Database();
         $resultado = $con->get($query);
@@ -900,7 +892,7 @@ class Formacoes
             "status, type, document".$data['filePos'].", document".$data['filePos']."Blob, idAutor, dateAutor)".
             "VALUES "."(".$data['idCourses'].",".$_SESSION ['ficheiros']['idDocuments'].",0,".$_SESSION ['ficheiros']['idCourse'].",'Pendente',".
             "'".$data['type']."','".$data['file']."','".$data['content']."',".
-            "dateAutor='".date("Y-m-d H:i:s")."', idAutor=".$_SESSION ['users']->id.") ";
+            "dateAutor='".date("Y-m-d H:i:s")."', idAutor=".$_SESSION ['users']->idUsers.") ";
         $resultado                                                      = $con->set($query);
         if (!$resultado) {
             $resultado = $con->set('ROLLBACK');
@@ -932,7 +924,7 @@ class Formacoes
                 : "")
             ."status='Pendente', "
             .(key_exists('public', $data) ? "public='".$data['public']."', " : "public='Não', ")
-            .(key_exists('file', $data) ? "dateAutor='".date("Y-m-d H:i:s")."', idAutor=".$_SESSION ['users']->id.", "
+            .(key_exists('file', $data) ? "dateAutor='".date("Y-m-d H:i:s")."', idAutor=".$_SESSION ['users']->idUsers.", "
                 : "")
             ."dateDiretor=NULL, idDiretor=NULL, "
             ."datePedagogico=NULL, idPedagogico=NULL, "
