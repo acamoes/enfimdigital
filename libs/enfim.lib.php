@@ -273,6 +273,15 @@ class Enfim
                         $this->tpl->display('enfim_equipaExecutiva_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'.tpl');
 
                 break;
+            case "participou":
+            case "passouCurso":
+            case "passouEstagio":
+            case "passouEtapa":
+            case "reset":
+                $this->tpl->assign('error',
+                    $_SESSION['equipaExecutiva']->{$data['task'].ucfirst($data['tab']).ucfirst($data['subTab'])}($data));
+                $this->tpl->display('enfim_error.tpl');
+                break;
             case "aprovar":
             case "inserir":
             case "atualizar":

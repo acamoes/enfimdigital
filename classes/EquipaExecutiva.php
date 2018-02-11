@@ -253,6 +253,31 @@ class EquipaExecutiva
     {
         return Formacoes::atualizarFormacoesInscritos($data);
     }
+    
+    function participouFormacoesInscritos($data)
+    {
+        return Formacoes::avaliacaoInscritos($data);
+    }
+
+    function passouCursoFormacoesInscritos($data)
+    {
+        return Formacoes::avaliacaoInscritos($data);
+    }
+
+    function passouEstagioFormacoesInscritos($data)
+    {
+        return Formacoes::avaliacaoInscritos($data);
+    }
+
+    function passouEtapaFormacoesInscritos($data)
+    {
+        return Formacoes::avaliacaoInscritos($data);
+    }
+
+    function resetFormacoesInscritos($data)
+    {
+        return Formacoes::avaliacaoInscritos($data);
+    }
 
     public function adicionarFormacoesEquipa($data)
     {

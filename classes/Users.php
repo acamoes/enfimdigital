@@ -69,6 +69,14 @@ class Users
         }
     }
 
+    function loadPermissions()
+    {
+        $this->permission = $this->getPermission($this->idUsers);
+        $this->diretor    = $this->getDiretor($this->idUsers);
+        $this->formador   = $this->getFormador($this->idUsers);
+        $this->formando   = $this->getFormando($this->idUsers);
+    }
+
     function lastLogin()
     {
         $query = "UPDATE users SET lastLogin='$this->lastLogin' WHERE idUsers='$this->idUsers'";
@@ -76,6 +84,17 @@ class Users
         $con->set($query);
     }
 
+    function getPermission($idUsers)
+    {
+        $query     = "SELECT permission FROM users WHERE idUsers=".$idUsers." AND status='Ativo'";
+        $con       = new Database();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return array();
+        }
+        return $resultado[0]['permission'];
+    }
+    
     function getDiretor($idUsers): array
     {
         $query     = "select idCourses from courses_team where idUsers=".$idUsers." and type='Diretor' ";
@@ -203,7 +222,7 @@ class Users
         $this->myCourses = $con->get($query);
         return true;
     }
-    
+
     function generatePassword($length = 8): string
     {
         $password = "";
