@@ -51,34 +51,12 @@ class Enfim
 
         $data  = $this->safePost($request);
         $users = new Users();
-        if ($users->userExists($data['username'])) {
-            $email             = $users->getEmailByUsername($data['username']);
-            $password          = $users->generatePassword();
-            $users->setPasswordByUsername($data['username'], $password);
-            $mail              = new PHPMailer\PHPMailer\PHPMailer(true);
-            $mail->isSMTP();
-            $mail->SMTPAuth    = true;
-            $mail->SMTPSecure  = 'ssl';
-            $mail->Host        = 'smtp.gmail.com';
-            $mail->Port        = '465';
-            $mail->SMTPOptions = array(
-                'ssl' => array(
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                    'allow_self_signed' => true
-                )
-            );
-            $mail->isHTML();
-            $mail->Username    = MAIL_USERNAME;
-            $mail->Password    = MAIL_PASSWORD;
-            $mail->SetFrom(MAIL_USERNAME);
-            $mail->Subject     = 'ENFIM DIGITAL - RECUPERACAO de PASSWORD';
-            $mail->Body        = 'ENFIM DIGITAL<br/><br/>Username: <strong>'.$data['username'].'</strong><br/>Nova password: <strong>'.$password.'</strong><br/><br/><a href="https://enfimdigital.escoteiros.pt" target="_blank">clique aqui</a><br/><br/>';
-            $mail->AddAddress($email);
-            $mail->Send();
+        if (!$users->recover($data)) {
+            $this->error = 'Contactar a Equipa Executiva da ENFIM.';
+        } else {
+            $this->error = 'Verifique o seu email.';
         }
         session_destroy();
-        $this->error = 'Verifique o seu email dos @escoteiros.pt';
         $this->tpl->assign('error', $this->error);
         $this->tpl->display('enfim_login.tpl');
     }
@@ -287,6 +265,7 @@ class Enfim
             case "atualizar":
             case "apagar":
             case "restaurar":
+            case "resetPassword":
                 if ($data['tab'] == 'formacoes') {
                     $this->tpl->assign('error',
                         $_SESSION['equipaExecutiva']->{$data['task'].ucfirst($data['tab']).ucfirst($data['subTab'])}($data));
@@ -443,6 +422,7 @@ class Enfim
             case "atualizar":
             case "apagar":
             case "restaurar":
+            case "resetPassword":
                 $this->tpl->assign('error',
                     $_SESSION['formadores']->{$data['task'].ucfirst($data['tab'])}($data));
                 $_SESSION['formadores']->{$data['tab']} = $_SESSION['formadores']->{'get'.ucfirst($data['tab'])}($data);

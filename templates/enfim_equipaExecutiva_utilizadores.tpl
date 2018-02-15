@@ -41,7 +41,12 @@
                 <td>M:{$utilizadores['mobile']}&nbsp;T:{$utilizadores['telephone']}</td>
                 <td>{$utilizadores['age']}</td>
                 <td>{$utilizadores['iban']}</td>
-                <td class="actions" align="right"><a
+                <td class="actions" align="right">
+                    <a
+                        class="button small icon fa-key" title="renovar password"
+                        style="cursor: pointer; padding: 0 0 0 5pt"
+                        onclick="request('action={$action}&task=resetPassword&tab={$currentTab}&idUsers={$utilizadores['idUsers']}', '{$action}Msg');"></a>
+                    <a
                         class="button small icon fa-file" title="ver"
                         style="cursor: pointer; padding: 0 0 0 5pt"
                         onclick="request('action={$action}&task=ver&tab={$currentTab}&idUsers={$utilizadores['idUsers']}', 'form');"></a>
@@ -53,7 +58,8 @@
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
                                    $.when(request('action={$action}&task=apagar&tab={$currentTab}&idUsers={$utilizadores['idUsers']}', '{$action}Msg')).
                                            then(request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
-                               }"> </a></td>
+                               }"> </a>
+                </td>
 
             </tr>
         {/foreach}

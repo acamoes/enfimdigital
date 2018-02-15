@@ -170,6 +170,14 @@ class Users
         $result = $con->get($query);
         return count($result) > 0 ? $result[0]['email'] : '';
     }
+    
+    function getUsernameByIdUsers($idUsers): string
+    {
+        $query  = "SELECT username FROM users WHERE idUsers='$idUsers' AND status='Ativo' ";
+        $con    = new Database();
+        $result = $con->get($query);
+        return count($result) > 0 ? $result[0]['username'] : '';
+    }
 
     function setPasswordByUsername($username, $password)
     {
@@ -322,5 +330,38 @@ class Users
         $escoteiro->status = ($utilizador->estado == 1 ? 'Ativo' : 'Inativo');
 
         return json_encode($escoteiro);
+    }
+    
+    function recover($data){
+        if ($this->userExists($data['username'])) {
+            $email             = $this->getEmailByUsername($data['username']);
+            $password          = $this->generatePassword();
+            $this->setPasswordByUsername($data['username'], $password);
+            $mail              = new PHPMailer\PHPMailer\PHPMailer(true);
+            $mail->isSMTP();
+            $mail->SMTPAuth    = true;
+            $mail->SMTPSecure  = 'ssl';
+            $mail->Host        = 'smtp.gmail.com';
+            $mail->Port        = '465';
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
+            $mail->isHTML();
+            $mail->Username    = MAIL_USERNAME;
+            $mail->Password    = MAIL_PASSWORD;
+            $mail->SetFrom(MAIL_USERNAME);
+            $mail->Subject     = 'ENFIM DIGITAL - RECUPERACAO de PASSWORD';
+            $mail->Body        = 'ENFIM DIGITAL<br/><br/>Username: <strong>'.$data['username'].'</strong><br/>Nova password: <strong>'.$password.'</strong><br/><br/><a href="https://enfimdigital.escoteiros.pt" target="_blank">clique aqui</a><br/><br/>';
+            $mail->AddAddress($email);
+            $mail->Send();
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

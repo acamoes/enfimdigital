@@ -278,6 +278,14 @@ class Formadores
     {
         return Formacoes::fecharAvaliacoesFormacoesAvaliacoes($data);
     }
+    
+    function resetPasswordInscritos($data){
+        $users=new Users();
+        $data['username']=$users->getUsernameByIdUsers($data['idUsers']);
+        return ($users->recover($data)?
+            ['success' => true, 'message' => 'Renovação com sucesso.']:
+            ['success' => false, 'message' => 'Não foi possível renovar.']);
+    }
 
     function buildEvaluation($data)
     {

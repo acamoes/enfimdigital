@@ -68,6 +68,10 @@
                 </td>
                 <td class="actions" align="right">
                     <a
+                        class="button small icon fa-key" title="renovar password"
+                        style="cursor: pointer; padding: 0 0 0 5pt"
+                        onclick="request('action={$action}&task=resetPassword&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg');"></a>
+                    <a
                         class="button small icon fa-file" title="ver"
                         style="cursor: pointer; padding: 0 0 0 5pt"
                         onclick="request('action={$action}&task=ver&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idUsers={$inscritos['idUsers']}', 'form');"></a>

@@ -451,12 +451,24 @@ class EquipaExecutiva
 
     public function getUtilizadoresEAEP($data)
     {
-        $eaep = new Users();
-        return $eaep->getEAEP($data);
+        $users = new Users();
+        return $users->getEAEP($data);
     }
 
     public function getRelatorioAvaliacoes($data)
     {
         return Evaluation::evaluationReport($data);
+    }
+    
+    public function resetPasswordFormacoesInscritos($data){
+        return $this->resetPasswordUtilizadores($data);
+    }
+    
+    public function resetPasswordUtilizadores($data){
+        $users=new Users();
+        $data['username']=$users->getUsernameByIdUsers($data['idUsers']);
+        return ($users->recover($data)?
+            ['success' => true, 'message' => 'Renovação com sucesso.']:
+            ['success' => false, 'message' => 'Não foi possível renovar.']);
     }
 }

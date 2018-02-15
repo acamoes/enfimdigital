@@ -62,6 +62,10 @@
                     </div>
                 </td>
                 <td class="actions" align="right">
+                    <a
+                        class="button small icon fa-key" title="renovar password"
+                        style="cursor: pointer; padding: 0 0 0 5pt"
+                        onclick="request('action={$action}&task=resetPassword&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg');"></a>
                     <a  class="button small icon fa-edit" title="editar"
                         style="cursor: pointer; padding: 0 0 0 5pt"
                         onclick="request('action={$action}&task=editar&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', 'form');"></a>
