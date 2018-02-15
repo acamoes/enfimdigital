@@ -1,4 +1,3 @@
-{* Smarty *}
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -6,9 +5,9 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="assets/css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="assets/css/ie8.css" /><![endif]-->
     </head>
     <body>
 
@@ -32,7 +31,7 @@
                     <div class="inner">
                         <div class="content">
                             <h2 class="major">Login</h2><h3 class="alert">{$error}</h3>
-                            <form method="post" action="{$SCRIPT_NAME}?action=submit" autocomplete="off">
+                            <form method="post" action="{$SCRIPT_NAME}?action=submit">
                                 <div class="field">
                                     <label for="username">Username</label> <input type="text"
                                                                                   name="username" id="username" value=""
