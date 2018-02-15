@@ -32,7 +32,7 @@
                     <div class="inner">
                         <div class="content">
                             <h2 class="major">Login</h2><h3 class="alert">{$error}</h3>
-                            <form method="post" action="{$SCRIPT_NAME}?action=submit">
+                            <form method="post" action="{$SCRIPT_NAME}?action=submit" autocomplete="off">
                                 <div class="field">
                                     <label for="username">Username</label> <input type="text"
                                                                                   name="username" id="username" value=""
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="field">
                                     <label for="password">Password</label> <input type="password"
-                                                                                  name="password" id="password" autocomplete="current-password" value="" style="width: 50%" />
+                                                                                  name="password" id="password" value="" style="width: 50%" />
                                 </div>
                                 <ul class="actions">
                                     <li><input type="submit" name="submit" value="Submit" /></li>
