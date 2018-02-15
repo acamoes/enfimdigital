@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="field">
                                     <label for="password">Password</label> <input type="password"
-                                                                                  name="password" id="password" value="" style="width: 50%" />
+                                                                                  name="password" id="password" autocomplete="current-password" value="" style="width: 50%" />
                                 </div>
                                 <ul class="actions">
                                     <li><input type="submit" name="submit" value="Submit" /></li>
