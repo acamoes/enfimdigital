@@ -54,7 +54,7 @@
                             <div style="float: right">
                                 <label for="course">Sigla</label>
                                 <input required type="text" name="course" id="course" style="width: 200px"  value="{$calendario['course']}"
-                                       {literal} pattern="[A-Z]{2,3}\s([A-Z]{3}\s|[0-9]{2}\/)*[0-9]{4}$" {/literal} />
+                                       {literal} pattern="[A-Z]{2,3}\s([A-Z]{3}\s|[0-9]{2}[ab]{0,1}\/)*[0-9]{4}$" {/literal} />
                             </div>
                         </div>
                         <div class="row uniform">
