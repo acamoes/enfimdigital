@@ -43,15 +43,13 @@ class Evaluation
             $html .= "<br/><br/>";
             $html .= "<h4 class='major'>".$this->template->avaliacao->itens[$i]->tema."</h4><div class='field'>";
             if (property_exists($this->template->avaliacao->itens[$i], 'itens')) {
-                for ($j = 0, $sc = count($this->template->avaliacao->itens[$i]->itens); $j
-                    < $sc; $j++) {
+                for ($j = 0, $sc = count($this->template->avaliacao->itens[$i]->itens); $j < $sc; $j++) {
+                    $html .="<div stlye='display: flex;flex-direction: row; width:1200px'>";
                     if ($this->template->avaliacao->itens[$i]->itens[$j]->tema != 'name') {
                         if (property_exists(
-                                $this->template->avaliacao->itens[$i]->itens[$j],
-                                'avaliacao'
+                                $this->template->avaliacao->itens[$i]->itens[$j],'avaliacao'
                             )) {
-                            if ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo
-                                == 'range') {
+                            if ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo== 'range') {
                                 $html .= $this->radio(
                                     $this->template->avaliacao->itens[$i]->itens[$j]->tema.'-avaliacao',
                                     $this->template->avaliacao->itens[$i]->itens[$j]->tema,
@@ -134,12 +132,11 @@ class Evaluation
                                 }
 
                                 foreach ($temas as $temas) {
+                                    $html .="<div stlye='display: flex;flex-direction: row; width:1200px'>";
                                     if (property_exists(
-                                            $this->template->avaliacao->itens[$i]->itens[$j],
-                                            'avaliacao'
+                                            $this->template->avaliacao->itens[$i]->itens[$j],'avaliacao'
                                         )) {
-                                        if ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo
-                                            == 'range') {
+                                        if ($this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->tipo == 'range') {
                                             $html .= $this->radio(
                                                 'formador-avaliacao-'.$temas.'-'.$formador['idUsers'],
                                                 $temas,
@@ -203,6 +200,7 @@ class Evaluation
                                             );
                                         }
                                     }
+                                $html .= "<br style='clear: left;' /></div>"; 
                                 }
                             }
                         }
@@ -211,9 +209,9 @@ class Evaluation
                             $listaModulos = Cursos::listaModulos($this->evaluation['idCourses']);
                             for ($k = 0, $f = count($listaModulos); $k < $f; $k++) {
                                 $modulo = $listaModulos[$k];
-                                $html   .= "<br/>";
                                 $html   .= "<h4 class='major'>".$modulo['name']."</h4><div class='field'>";
                                 $html   .= "<input type='hidden' name='modulo_".$modulo['idModules']."'/>";
+                                $html .="<div stlye='display: flex;flex-direction: row; width:1200px'>";
                                 if (property_exists(
                                         $this->template->avaliacao->itens[$i]->itens[$j],
                                         'avaliacao'
@@ -282,9 +280,12 @@ class Evaluation
                                         );
                                     }
                                 }
+                            $html .= "<br style='clear: left;' /></div>"; 
                             }
                         }
                     }
+                    
+                $html .= "<br style='clear: left;' /></div>";    
                 }
             }
             $html .= "</div>";
@@ -294,14 +295,18 @@ class Evaluation
 
     public function radio($idInput, $nome, $intervalo, $selecionado): string
     {
-        $tag   = "<div class='row uniform'><div><label for='".ENFIM::cleanString($idInput)."'>$nome</label>";
+        $tag   = null;
+        //$tag   = "<div class='row uniform'>";
+        $tag   .= "<div style='float: left; padding: 5px 5px 5px 5px; width:350px'>";
+        $tag   .= "<label for='".ENFIM::cleanString($idInput)."'>$nome</label>";
         $range = explode('-', $intervalo);
         for ($i = $range[0]; $i <= $range[1]; $i++) {
             $tag .= "<input type='radio' id='".ENFIM::cleanString($idInput)."-$i' name='".ENFIM::cleanString($idInput)."' value='$i' ".($selecionado
-                == $i ? "checked=''" : "").">"
-                ."<label for='".ENFIM::cleanString($idInput)."-$i'>$i</label>";
+                == $i ? "checked=''" : "")." style='padding-left: 2.0em;'>"
+                ."<label for='".ENFIM::cleanString($idInput)."-$i' style='padding-left: 2.0em;'>$i</label>";
         }
-        $tag .= "</div></div>";
+        $tag .= "</div>";
+        //$tag .= "</div>";
         return $tag;
     }
 
@@ -314,10 +319,14 @@ class Evaluation
         } else {
             $nome = "Recomendações";
         }
-        $tag   = "<div class='row uniform'><div><label for='".ENFIM::cleanString($idInput)."'>$nome</label>";
+        $tag   = null;
+        //$tag   = "<div class='row uniform'>";
+        $tag   .= "<div style='float: left; padding: 5px 5px 5px 5px; width:400px'>";
+        $tag   .= "<label for='".ENFIM::cleanString($idInput)."'>$nome</label>";
         $range = explode('-', $intervalo);
-        $tag   .= "<textarea cols = '$range[1]' rows = '$range[0]' name = '".ENFIM::cleanString($idInput)."' id = '".ENFIM::cleanString($idInput)."' style = 'width: 630px'>$selecionado</textarea>";
-        $tag   .= "</div></div>";
+        $tag   .= "<textarea cols = '$range[1]' rows = '$range[0]' name = '".ENFIM::cleanString($idInput)."' id = '".ENFIM::cleanString($idInput)."' style = 'width: 350px'>$selecionado</textarea>";
+        $tag .= "</div>";
+        //$tag .= "</div>";
         return $tag;
     }
 
@@ -331,7 +340,7 @@ class Evaluation
                     < $sc; $j++) {
                     if ($this->template->avaliacao->itens[$i]->itens[$j]->tema != 'name') {
                         if (property_exists(
-                            $this->template->avaliacao->itens[$i]->itens[$j],
+                                $this->template->avaliacao->itens[$i]->itens[$j],
                                 'avaliacao'
                             )) {
                             $this->template->avaliacao->itens[$i]->itens[$j]->avaliacao->response
