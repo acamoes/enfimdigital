@@ -182,18 +182,18 @@
                                     <label for="payment">Pago</label>
                                 </div>
                                 <div style="float: right">
-                                    <label for="value">Data de pagamento</label> <input
+                                    <label for="paymentDate">Data de pagamento</label> <input
                                         value="{$utilizador['paymentDate']}" type="text" name="paymentDate" id="paymentDate"
                                         style="width: 150px; display: inline-block;" 
                                        {literal}  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
                                 <a class="button small icon fa-calendar" title="selecionar data"
                                    {literal} style="cursor: pointer; padding: 0 0 0 5pt" 
-                                       onclick="displayCalendar(document.forms[0].birthDate, 'yyyy-mm-dd', this)" {/literal} ></a>
+                                       onclick="displayCalendar(document.forms[0].paymentDate, 'yyyy-mm-dd', this)" {/literal} ></a>
                                 </div>
                             </div>
                             <div class="row uniform">
                                 <div style="float: left">
-                                    <label for="value">Recibo</label> <input
+                                    <label for="receipt">Recibo</label> <input
                                         value="{$utilizador['receipt']}" type="text" name="receipt"
                                         id="receipt" style="width: 200px" />
                                 </div>
