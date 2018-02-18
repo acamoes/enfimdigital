@@ -248,6 +248,11 @@ class EquipaExecutiva
     {
         return Formacoes::apagarFormacoesInscritos($data);
     }
+    
+    public function selecionarFormacoesInscritos($data)
+    {
+        return Formacoes::selecionarFormacoesInscritos($data);
+    }
 
     public function atualizarFormacoesInscritos($data)
     {

@@ -25,6 +25,11 @@ class Formacoes
     {
         $this->tabs = json_decode('{"tabs":[{"text":"Inscritos","tab":"inscritos"},{"text":"Equipa","tab":"equipa"},{"text":"Sessões","tab":"sessoes"},{"text":"Ficheiros","tab":"ficheiros"},{"text":"Avaliações","tab":"avaliacoes"},{"text":"Informações","tab":"informacoes"}]}');
     }
+    
+    function getServicosCentraisTabs()
+    {
+        return json_decode('{"tabs":[{"text":"Inscritos","tab":"inscritos"},{"text":"Equipa","tab":"equipa"}]}');
+    }
 
     public static function getFormacoes(/* $data */)
     {
@@ -169,6 +174,17 @@ class Formacoes
         return ['success' => true, 'message' => 'Registo adicionado.'];
     }
 
+    public static function selecionarFormacoesInscritos($data)
+    {
+        $query     = "UPDATE users_courses SET selected=IF(selected='Selecionado','Não selecionado','Selecionado') WHERE idUsers=".$data['idUsers']." AND idCourses=".$data['idCourses']." ";
+        $con       = new Database();
+        $resultado = $con->set($query);
+        if (!$resultado) {
+            return ['success' => false, 'message' => 'Não foi atualizado o registo.'];
+        }
+        return ['success' => true, 'message' => 'Registo atualizado.'];
+    }
+    
     public static function apagarFormacoesInscritos($data)
     {
         $query     = "DELETE FROM users_courses WHERE idUsers=".$data['idUsers']." AND idCourses=".$data['idCourses']." ";
@@ -201,7 +217,7 @@ class Formacoes
             "local='".$data ['local']."', ".
             "mobile='".$data ['mobile']."', ".
             "telephone='".$data ['telephone']."', ".
-            "observations='".$data ['observations']."' ".
+            "observations='".urldecode(str_replace('rn','\r\n',$data ['observations']))."' ".
             "WHERE idUsers=".$data ['idUsers'];
         $con                           = new Database();
         $resultado                     = $con->set($query);
@@ -214,13 +230,15 @@ class Formacoes
             "unit='".$data ['unit']."', ".
             "unitType='".$data ['unitType']."', ".
             "rank='".$data ['rank']."', ".
-            "boRank='".$data ['boRank']."', ".
+            "boRank='".$data ['boRank']."', ".            
             "qa='".(key_exists('qa', $data) ? 'on' : '')."', ".
             "payment='".(key_exists('payment', $data) ? 'on' : '')."', ".
+            "paymentDate='".$data ['paymentDate']."', ".
+            "selected='".$data ['selected']."', ".
             "value=".($data ['value'] == '' ? 0 : $data ['value'])." , ".
             "receipt='".$data ['receipt']."', ".
             "boCourse='".$data ['boCourse']."', " : " ").
-            "observations='".$data ['observations']."', ".
+            "observations='".urldecode(str_replace('rn','\r\n',$data ['observations']))."',".
             "attended='".(key_exists('attended', $data) ? 'on' : '')."', ".
             "passedCourse='".(key_exists('passedCourse', $data) ? 'on' : '')."', ".
             "passedInternship='".(key_exists('passedInternship', $data) ? 'on' : '')."', ".
@@ -276,7 +294,7 @@ class Formacoes
 
         $query     .= "name='".$data ['name']."',".
             "sigla='".$data ['sigla']."',".
-            "observations='".$data ['observations']."',".
+            "observations='".urldecode(str_replace('rn','\r\n',$data ['observations']))."',".
             "iban='".$data ['iban']."' ".
             " WHERE idUsers=".$data ['idUsers'];
         $con       = new Database();
@@ -405,7 +423,7 @@ class Formacoes
                 "duration=".$data['duration'].", ".
                 "type='".$data['type']."', ".
                 "status='".$data['status']."', ".
-                "observations='".$data['observations']."' ".
+                "observations='".urldecode(str_replace('rn','\r\n',$data ['observations']))."' ".
                 "WHERE ".
                 "idModules=".$data['idModules']." AND idCourse=".$data['idCourse']." AND idCourses=".$data['idCourses'];
             $resultado = $con->set($query);
@@ -428,7 +446,7 @@ class Formacoes
             $query     = "UPDATE courses_modules SET ".
                 "name='".$data['name']."', ".
                 "duration=".$data['name'].", ".
-                "observations='".$data['observations']."' ".
+                "observations='".urldecode(str_replace('rn','\r\n',$data ['observations']))."' ".
                 "WHERE ".
                 "idModules=".$data['idModules']." AND idCourse=".$data['idCourse']." AND idCourses=".$data['idCourses'];
             $resultado = $con->set($query);
@@ -464,7 +482,7 @@ class Formacoes
 
         $query     = "INSERT INTO courses_modules (idModules,idCourse,idCourses,`order`,name,duration,type,status,observations) ".
             " VALUES (".$data['idModules'].",".$row['idCourse'].",".$data['idCourses'].",".$row['ordem'].
-            ",'".$data['name']."',".$data['duration'].",'Proposto','Pendente','".$data['observations']."') ";
+            ",'".$data['name']."',".$data['duration'].",'Proposto','Pendente','".urldecode(str_replace('rn','\r\n',$data ['observations']))."') ";
         $resultado = $con->set($query);
         if (!$resultado) {
             $resultado = $con->set('ROLLBACK');
@@ -793,7 +811,7 @@ class Formacoes
         $query     = "INSERT INTO courses_informations (idCourses,idCourse,name,observations,status,document,documentBlob,date) VALUES (".
             $data['idCourses'].",".$resultado[0]['idCourse'].",'".(key_exists('name',
                 $data) ? $data['name'] : '')."','".
-            (key_exists('observations', $data) ? $data['observations'] : '')."','Inativo','".$_SESSION ['ficheiros']['filePos'][$data['filePos']]['file']."',".
+            (key_exists('observations', $data) ? urldecode(str_replace('rn','\r\n',$data ['observations'])) : '')."','Inativo','".$_SESSION ['ficheiros']['filePos'][$data['filePos']]['file']."',".
             "'".$_SESSION ['ficheiros']['filePos'][$data['filePos']]['content']."','".date('Y-m-d H:i:s')."')";
         $resultado = $con->set($query);
         if (!$resultado) {
@@ -820,7 +838,7 @@ class Formacoes
 
         $query     = "UPDATE courses_informations SET idCourse=".$resultado[0]['idCourse'].",".
             (key_exists('name', $data) ? "name='".$data['name']."'," : "").
-            (key_exists('observations', $data) ? "observations='".$data['observations']."',"
+            (key_exists('observations', $data) ? "observations='".urldecode(str_replace('rn','\r\n',$data ['observations']))."',"
                 : "").
             (key_exists('status', $data) ? "status='".$data['status']."'," : "status='Inativo',").
             (key_exists('file', $data) ?
@@ -943,7 +961,7 @@ class Formacoes
     {
 
         $query     = "UPDATE courses_documents SET ".
-            "idModules=".$data['idModules'].",name='".$data['name']."',public='".$data['public']."',status='Pendente',observations='".$data['observations']."', ".
+            "idModules=".$data['idModules'].",name='".$data['name']."',public='".$data['public']."',status='Pendente',observations='".urldecode(str_replace('rn','\r\n',$data ['observations']))."', ".
             "type='".$_SESSION ['ficheiros']['type']."',idAutor=".$_SESSION['users']->idUsers.",dateAutor='".date("Y-m-d H:i:s")."', ".
             "dateDiretor=NULL, idDiretor=NULL, ".
             "datePedagogico=NULL, idPedagogico=NULL, ".
@@ -1139,11 +1157,11 @@ class Formacoes
                     $idCourse.",'".$name." - ".$target."','Aberto')";
                 $result = $con->set($query);
                 if (!$result) {
-                    return ['success' => false, 'message' => 'Não ficou aprovado.'];
+                    return ['success' => false, 'message' => 'Não foi distribuido.'];
                 }
             }
         }
-        return ['success' => true, 'message' => 'Aprovado.'];
+        return ['success' => true, 'message' => 'Distribuido com sucesso.'];
     }
 
     public static function getFormacoesInformacoes($data)

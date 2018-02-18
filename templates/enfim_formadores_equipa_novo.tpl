@@ -10,7 +10,7 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');
+                                       onclick="closeModal();
                                                request('action={$action}&task=search&idCourses={$idCourses}&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
                                     Close</label>
                             </div>

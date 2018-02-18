@@ -22,6 +22,7 @@
             <th>Cargo</th>
             <th>Órgão</th>
             <th>Contatos</th>
+            <th>Data de pagamentos</th>
             <th>Observações</th>
             <th>Progresso</th>
             <th
@@ -36,14 +37,15 @@
     </thead>		
     <tbody>
         {foreach $formadores->inscritos as $inscritos}
-            <tr>
+            <tr {if $inscritos['selected'] neq 'Selecionado'}style='color:orangered'{/if}>
                 <td>{$inscritos['aepId']}</td>
                 <td>{$inscritos['name']}</td>			
                 <td>{$inscritos['age']}</td>
                 <td>{$inscritos['rank']}</td>
                 <td>{$inscritos['unit']}</td>
                 <td>M:{$inscritos['mobile']}&nbsp;T:{$inscritos['telephone']}</td>
-                <td>{$inscritos['observations']}</td>
+                <td>{$inscritos['paymentDate']}</td>
+                <td>{$inscritos['observations']|urldecode}</td>
                 <td><div class="w3-progress-container w3-small w3-round">
                         <div class="w3-progressbar w3-green w3-round" 
                              {if $inscritos['cInternship'] eq 'Sim'}
@@ -69,12 +71,17 @@
                     <a  class="button small icon fa-edit" title="editar"
                         style="cursor: pointer; padding: 0 0 0 5pt"
                         onclick="request('action={$action}&task=editar&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', 'form');"></a>
+                    <a class="button small icon fa-check-square" title="selecionar"
+                       style="cursor: pointer; padding: 0 0 0 5pt"
+                       onclick="$.when(request('action={$action}&task=selecionar&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
+                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                "></a> 
                     {if $inscritos['attended'] neq 'on'}
                         <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Participou?" 
                            onclick="if (confirm('Participou?')) {ldelim}
                                                $.when(request('action={$action}&task=participou&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
                                                        then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
-                                           }"></a>
+                                           }"></a>                            
                     {elseif $inscritos['passedCourse'] neq 'on'}
                         <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Passou no Curso?" 
                            onclick="if (confirm('Passou no Curso?')) {ldelim}

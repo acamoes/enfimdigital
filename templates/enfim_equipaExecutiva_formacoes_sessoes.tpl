@@ -48,8 +48,8 @@
                     <a  class="button small icon fa-user" title="adicionar formador"
                         style="cursor: pointer; padding: 0 0 0 5pt"
                         onclick="
-                                document.getElementById('smallForm').style.top = event.screenY + 'px';
-                                document.getElementById('smallForm').style.left = (event.screenX - 150) + 'px';
+                                document.getElementById('smallForm').style.top = ((event.screenY - 100)<0?'0':(event.screenY - 100)) + 'px';
+                                document.getElementById('smallForm').style.left = ((event.screenX - 400)<0?'0':(event.screenX - 400))  + 'px';
                                 request('action={$action}&task=novo&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idModules={$sessoes['idModules']}&idCourse={$sessoes['idCourse']}&searchUtilizadores=1', 'smallForm');"></a>
                     {if $sessoes['name'] eq 'DIREÇÃO' || $users->permission eq 'Equipa Executiva'}
                         <a class="button small icon fa-edit" title="editar"

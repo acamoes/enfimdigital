@@ -27,7 +27,7 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');
+                                       onclick="closeModal();
                                                request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
                                     Close</label>
                             </div>
@@ -61,15 +61,21 @@
                                 <label for="startDate">Data de Início</label>
                                 <input required type="text"
                                        name="startDate" id="startDate" maxlength="10"
-                                       style="width: 150px" 
+                                       style="width: 150px; display: inline-block;" 
                                        {literal}  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
+                                <a class="button small icon fa-calendar" title="selecionar data"
+                                  {literal} style="cursor: pointer; padding: 0 0 0 5pt" 
+                                      onclick="displayCalendar(document.forms[0].startDate,'yyyy-mm-dd',this)" {/literal} ></a>
                             </div>
                             <div style="float: right">
                                 <label for="endDate">Data de Fim</label>
                                 <input required type="text"
                                        name="endDate" id="endDate" maxlength="10"
-                                       style="width: 150px" 
-                                       {literal}pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
+                                       style="width: 150px; display: inline-block;" 
+                                       {literal}  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
+                                <a class="button small icon fa-calendar" title="selecionar data"
+                                  {literal} style="cursor: pointer; padding: 0 0 0 5pt" 
+                                      onclick="displayCalendar(document.forms[0].endDate,'yyyy-mm-dd',this)" {/literal} ></a>
                             </div>
                         </div>
                         <div class="row uniform">

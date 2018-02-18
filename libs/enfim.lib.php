@@ -112,6 +112,167 @@ class Enfim
         }
     }
 
+    function servicosCentrais($request)
+    {
+        if ($_SESSION['users']->permission != 'Serviços Centrais') {
+            $this->login('Acesso negado');
+            return;
+        }
+        $data              = $this->safePost($request);
+        !isset($data['search']) && $data['search']    = '';
+        !isset($data['tab']) && $data['tab']       = 'utilizadores';
+        ($data['tab'] != 'formacoes') && $data['subTab']    = '';
+        (!isset($data['subTab']) && $data['tab'] == 'formacoes') && $data['subTab']
+            = 'inscritos';
+        isset($data['docType']) && $this->tpl->assign('docType',
+                $data['docType']);
+        isset($data['servicosCentraisFormacoesIdCourses']) && $this->tpl->assign('servicosCentraisFormacoesIdCourses',
+                $data['servicosCentraisFormacoesIdCourses']);
+        isset($data['servicosCentraisFormacoesIdCourses']) && $data['idCourses']
+            = $data['servicosCentraisFormacoesIdCourses'];
+
+        $this->log($data);
+
+        $_SESSION['servicosCentrais'] = new ServicosCentrais($data);
+        $this->tpl->assign('users', $_SESSION['users']);
+        $this->tpl->assign('servicosCentrais', $_SESSION['servicosCentrais']);
+        $this->tpl->assign('action', 'servicosCentrais');
+        $this->tpl->assign('objTabs', $_SESSION['servicosCentrais']->tabs);
+        $this->tpl->assign('tabActive', $data['tab']);
+        $this->tpl->assign('currentTab', $data['tab']);
+        $this->tpl->assign('objSubTabs',
+            (new Formacoes())->getServicosCentraisTabs());
+        $this->tpl->assign('subTabActive', $data['subTab']);
+        $this->tpl->assign('currentSubTab', $data['subTab']);
+        switch ($data['task']) {
+            case "dashboard":
+                $this->tpl->display('enfim_servicosCentrais.tpl');
+                break;
+            case "contexto":
+                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_contexto.tpl');
+                break;
+            case "search":
+                if ($data['tab'] != 'formacoes') {
+                    $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'.tpl');
+                } else {
+                    $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['subTab'].'.tpl');
+                }
+                break;
+            case "adicionar":
+                if ($data['tab'] == 'formacoes') {
+                    if (isset($data['searchUtilizadores'])) {
+                        $this->tpl->assign('error',
+                            $_SESSION['servicosCentrais']->{$data['task'].ucfirst($data['tab']).ucfirst($data['subTab'])}($data));
+                        $this->tpl->display('enfim_error.tpl');
+                    }
+                }
+                break;
+            case "novo":
+                unset($_SESSION ['ficheiros']);
+                if ($data['tab'] == 'formacoes') {
+                    if (isset($data['searchUtilizadores'])) {
+                        if ($data['subTab'] == 'inscritos') {
+                            $this->tpl->assign('resultado'.ucfirst($data['subTab']),
+                                $_SESSION['servicosCentrais']->getUtlizadoresNaoInscritos($data));
+                        } elseif ($data['subTab'] == 'equipa') {
+                            $this->tpl->assign('resultado'.ucfirst($data['subTab']),
+                                $_SESSION['servicosCentrais']->getUtlizadoresSemEquipa($data));
+                        } else {
+                            $this->tpl->assign('resultado'.ucfirst($data['subTab']),
+                                $_SESSION['servicosCentrais']->{'get'.ucfirst($data['subTab'])}($data));
+                        }
+                        $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'_resultado.tpl');
+                    } else {
+                        $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'.tpl');
+                    }
+                } else {
+                    $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['task'].'.tpl');
+                }
+                break;
+            case "ver":
+                unset($_SESSION ['ficheiros']);
+                switch ($data['tab']) {
+                    case "utilizadores":
+                        $this->tpl->assign('utilizador',
+                            $_SESSION['servicosCentrais']->getUtilizador($data));
+                        ($data['tab'] != 'formacoes') ?
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['task'].'.tpl')
+                                    :
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'.tpl');
+                        break;
+                    case "calendarios":
+                        $this->tpl->assign('calendario',
+                            $_SESSION['servicosCentrais']->getCalendario($data));
+                        ($data['tab'] != 'formacoes') ?
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['task'].'.tpl')
+                                    :
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'.tpl');
+                        break;
+                    case "formacoes":
+                        if ($data['subTab'] == 'inscritos' || $data['subTab'] == 'equipa') {
+                            $this->tpl->assign('utilizador',
+                                $_SESSION['servicosCentrais']->getInscrito($data));
+                        }
+                        ($data['tab'] != 'formacoes') ?
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['task'].'.tpl')
+                                    :
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'.tpl');
+                        break;
+                    default: break;
+                }
+                break;
+            case "editar":
+                unset($_SESSION ['ficheiros']);
+                switch ($data['tab']) {
+                    case "utilizadores":
+                        $this->tpl->assign('utilizador',
+                            $_SESSION['servicosCentrais']->getUtilizador($data));
+                        ($data['tab'] != 'formacoes') ?
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['task'].'.tpl')
+                                    :
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'.tpl');
+                        break;
+                    case "formacoes":
+                        if ($data['subTab'] == 'inscritos') {
+                            $this->tpl->assign('utilizador',
+                                $_SESSION['servicosCentrais']->getInscrito($data));
+                        }
+                        ($data['tab'] != 'formacoes') ?
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['task'].'.tpl')
+                                    :
+                                $this->tpl->display('enfim_servicosCentrais_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'.tpl');
+                        break;
+                    default: break;
+                }
+                break;
+            case "inserir":
+            case "atualizar":
+            case "apagar":
+            case "resetPassword":
+                if ($data['tab'] == 'formacoes') {
+                    $this->tpl->assign('error',
+                        $_SESSION['servicosCentrais']->{$data['task'].ucfirst($data['tab']).ucfirst($data['subTab'])}($data));
+                    $this->tpl->display('enfim_error.tpl');
+                } else {
+                    $this->tpl->assign('error',
+                        $_SESSION['servicosCentrais']->{$data['task'].ucfirst($data['tab'])}($data));
+                    $_SESSION['servicosCentrais']->{$data['tab']} = $_SESSION['servicosCentrais']->{'get'.ucfirst($data['tab'])}($data);
+                    $this->tpl->display('enfim_error.tpl');
+                }
+                break;
+            case "form":
+                echo $_SESSION['servicosCentrais']->{$data['func']}($data);
+                break;
+            case "getEAEP":
+                echo $_SESSION['servicosCentrais']->getUtilizadoresEAEP($data);
+                break;
+            default:
+                $this->clearAllAssign();
+                $this->home();
+                break;
+        }
+    }
+
     function equipaExecutiva($request)
     {
 
@@ -266,6 +427,7 @@ class Enfim
             case "apagar":
             case "restaurar":
             case "resetPassword":
+            case "selecionar":
                 if ($data['tab'] == 'formacoes') {
                     $this->tpl->assign('error',
                         $_SESSION['equipaExecutiva']->{$data['task'].ucfirst($data['tab']).ucfirst($data['subTab'])}($data));
@@ -423,6 +585,7 @@ class Enfim
             case "apagar":
             case "restaurar":
             case "resetPassword":
+            case "selecionar":
                 $this->tpl->assign('error',
                     $_SESSION['formadores']->{$data['task'].ucfirst($data['tab'])}($data));
                 $_SESSION['formadores']->{$data['tab']} = $_SESSION['formadores']->{'get'.ucfirst($data['tab'])}($data);

@@ -77,7 +77,7 @@ class Calendarios
             "',".$data ['idCourse'].
             ",'".$data ['internship'].
             "','".$data ['status'].
-            "','".$data ['observations']."')";
+            "','".urldecode(str_replace('rn','\r\n',$data ['observations']))."')";
         $con       = new Database();
         $resultado = $con->set($query);
         if (!$resultado) {
@@ -94,7 +94,7 @@ class Calendarios
             "',"."startDate='".$data ['startDate']."',"."endDate='".$data ['endDate'].
             "',"."local='".$data ['local']."',"."vacancy='".$data ['vacancy'].
             "',"."idCourse=".$data ['idCourse'].","."internship='".$data ['internship'].
-            "',"."status='".$data ['status']."',"."observations='".$data ['observations'].
+            "',"."status='".$data ['status']."',"."observations='".urldecode(str_replace('rn','\r\n',$data ['observations'])).
             "' "."WHERE idCourses=".$data ['idCourses'];
         $con       = new Database();
         $resultado = $con->set($query);

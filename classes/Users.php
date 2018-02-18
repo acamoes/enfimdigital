@@ -278,15 +278,15 @@ class Users
         $escoteiro->zipCode        = $utilizador->codigo_postal." ".$utilizador->localidade;
         $escoteiro->nivelEscotista = $utilizador->nivel_escotista;
         $escoteiro->observations   = "Contato de emergencia: ".$utilizador->nome_emergencia." - ".$utilizador->contacto_emergencia.
-            PHP_EOL."--- Restrições Alimentares ---".PHP_EOL.
+            PHP_EOL.PHP_EOL."--- Restrições Alimentares ---".PHP_EOL.
             strip_tags($utilizador->rest_alimentar).
-            PHP_EOL."--- Saúde ---".PHP_EOL.
+            PHP_EOL.PHP_EOL."--- Saúde ---".PHP_EOL.
             $utilizador->tipo_identificacao.": ".$utilizador->bi.PHP_EOL.
             "Número de utente: ".$utilizador->numero_utente."(".$utilizador->sistema_saude.")".PHP_EOL.
             strip_tags($utilizador->rest_saude).
-            PHP_EOL."--- Outras notas ---".PHP_EOL.
+            PHP_EOL.PHP_EOL."--- Outras notas ---".PHP_EOL.
             strip_tags($utilizador->notas).
-            PHP_EOL."--- Cargos ---".PHP_EOL;
+            PHP_EOL.PHP_EOL."--- Cargos ---".PHP_EOL;
         usort($utilizador->cargos,
             function ($a, $b) {
             return strcmp($a->unit_type, $b->unit_type);

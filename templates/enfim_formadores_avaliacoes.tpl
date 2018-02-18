@@ -14,7 +14,7 @@
 
     </ul>
     <ul class="actions" onclick="if (confirm('Tem a certeza que pretende alterar o estado das avaliações?')) {
-                $.when(request('action={$action}&task=fecharAvaliacoes&tab={$currentTab}&idCourses={$idCourses}', 'formMsg')).
+                $.when(request('action={$action}&task=fecharAvaliacoes&tab={$currentTab}&idCourses={$idCourses}', '{$action}Msg')).
                         then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
             }"
         style="float: right">
@@ -22,7 +22,7 @@
             style="cursor: pointer; padding: 0 10pt 0 10pt">Alterar estado das avaliações</li>&nbsp;
     </ul>
     <ul class="actions" onclick="if (confirm('Pretende distribuir as avaliações para todos os formandos?')) {
-                $.when(request('action={$action}&task=distribuirAvaliacoes&tab={$currentTab}&idCourses={$idCourses}', 'formMsg')).
+                $.when(request('action={$action}&task=distribuirAvaliacoes&tab={$currentTab}&idCourses={$idCourses}', '{$action}Msg')).
                         then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
             }"
         style="float: right">

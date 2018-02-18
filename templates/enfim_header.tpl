@@ -10,13 +10,29 @@
         <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="assets/css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="assets/css/ie8.css" /><![endif]-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="assets/css/dhtmlgoodies_calendar.css" media="screen"></LINK>
+	<SCRIPT type="text/javascript" src="assets/js/dhtmlgoodies_calendar.js"></script>
         <script type="text/javascript" language="javascript">
+
             $(document).on('keyup keypress', function (e) {
                 if (e.which == 13) {
                     e.preventDefault();
-                    return false;
+                    if (e.currentTarget.activeElement.localName == 'textarea')
+                    {
+                    } else if ($('button:visible').length > 0)
+                    {
+                        $('button:visible')[0].click();
+                    } else if ($('a.fa-search:visible').length > 0)
+                    {
+                        $('a.fa-search:visible')[0].click();
+                    } else
+                    {
+                        return false;
+                    }
+                    return true;
                 }
             });
+
             function openTab(tab, index)
             {
                 for (i = 0; i < document.getElementsByClassName("tabsBox").length; i++)
@@ -28,6 +44,16 @@
                 document.getElementById(tab).style.borderBottom = "6px solid #77f";
                 document.getElementById(tab).style.color = "#77f";
                 document.getElementById(index + tab).style.display = "block";
+            }
+
+            function closeModal()
+            {
+                $('#form').html('');
+                $('#calendarDiv').hide();
+                if ($('a.fa-search:visible').length > 0)
+                    {
+                        $('a.fa-search:visible')[0].click();
+                    }
             }
 
             function openSubTab(tab, index)
@@ -45,6 +71,10 @@
 
             function request(query = 'action=&', target = 'form')
             {
+                if (target == 'form') {
+                    $('#form').css('position', 'fixed');
+                    $('#form').css('top', 100);
+                }
                 $('#loader').html('<img id="ajaxLoader" src="images/loader.gif" style="width:100px;heigth:100px" />');
                 $.ajax({
                     url: '{$SCRIPT_NAME}',
@@ -52,12 +82,17 @@
                     success: function (data) {
                         $('#loader').html('');
                         $('#' + target).html(data);
+                        if (target == 'form') {
+                            topPos = $('#form').offset().top;
+                            $('#form').css('position', 'absolute');
+                            $('#form').css('top', topPos);
+                        }
                     }
                 });
             }
 
             function requestAPI(query = 'action=&', target = 'form')
-            {   
+            {
                 $('#loader').html('<img id="ajaxLoader" src="images/loader.gif" style="width:100px;heigth:100px" />');
                 $.ajax({
                     url: '{$SCRIPT_NAME}',
@@ -65,7 +100,7 @@
                     success: function (data) {
                         obj = JSON.parse(data);
                         $('#loader').html('');
-                        if (typeof obj.success !== 'undefined') {                            
+                        if (typeof obj.success !== 'undefined') {
                             $('#' + target).html("<div id='errorForThreeSecond'><h3 class='alert'>" + obj.message + "</h3></div>");
                         } else {
                             $('#username').val([obj.username]);
@@ -77,13 +112,13 @@
                             $('#mobile').val(obj.mobile);
                             $('#telephone').val(obj.telephone);
                             $('#observations').val(obj.observations);
-                            $('[name="status"]').val([obj.status]);                            
+                            $('[name="status"]').val([obj.status]);
                             $('#' + target).html("<div id='errorForThreeSecond'><h3 class='success'>" + obj.message + "</h3></div>");
                             $('#unitType').val(obj.unitType);
                             $('#rank').val(obj.rank);
                             $('#boRank').val(obj.boRank);
                             $('#unit').val(obj.unit);
-                            
+
                         }
                         //$('#' + target).html(data);
                     }
@@ -215,9 +250,9 @@
 
         <!-- Page Wrapper -->
         <div id="loader"
-             style="position: absolute; top: 50%; left: 50%; z-index: 20000; cursor: auto;"></div>
+             style="position: fixed; top: 50%; left: 50%; z-index: 20000; cursor: auto;"></div>
         <div id="form"
-             style="position: absolute; top: 100px; left: 2%; z-index: 9000; cursor: auto;"></div>
+             style="position: fixed; top: 100px; left: 2%; z-index: 9000; cursor: auto;"></div>
         <div id="smallForm"
              style="position: fixed; top: 0; left: 2%; z-index: 9000; cursor: auto;"></div>
         <div id="page-wrapper">

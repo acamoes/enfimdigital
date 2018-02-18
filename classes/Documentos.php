@@ -131,7 +131,7 @@ class Documentos
             "name='".$data ['name']."',".
             "type='".$data ['type']."',".
             "public='".$data ['public']."',".
-            "observations='".$data ['observations']."',".
+            "observations='".urldecode(str_replace('rn','\r\n',$data ['observations']))."',".
             "status='".(key_exists('status', $data) ?
             $data ['status'] :
             ($_SESSION['users']->permission == 'Equipa Executiva' ?

@@ -104,7 +104,12 @@ class Formadores
     {
         return Formacoes::atualizarFormacoesInscritos($data);
     }
-
+    
+    function selecionarInscritos($data)
+    {
+        return Formacoes::selecionarFormacoesInscritos($data);
+    }
+    
     function getSessao($data)
     {
         return Formacoes::getSessao($data);

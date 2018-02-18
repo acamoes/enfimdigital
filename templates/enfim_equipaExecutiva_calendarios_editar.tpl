@@ -27,7 +27,7 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');
+                                       onclick="closeModal();
                                                request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
                                     Close</label>
                             </div>
@@ -58,19 +58,26 @@
                             </div>
                         </div>
                         <div class="row uniform">
-                            <div style="float: left">
+                            <div style="align: left">                                
                                 <label for="startDate">Data de Início</label>
                                 <input required type="text"  value="{$calendario['startDate']}"
                                        name="startDate" id="startDate" maxlength="10"
-                                       style="width: 150px" 
+                                       style="width: 150px; display: inline-block;" 
                                        {literal}  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
+                                <a class="button small icon fa-calendar" title="selecionar data"
+                                  {literal} style="cursor: pointer; padding: 0 0 0 5pt" 
+                                      onclick="displayCalendar(document.forms[0].startDate,'yyyy-mm-dd',this)" {/literal} ></a>
+                                
                             </div>
                             <div style="float: right">
                                 <label for="endDate">Data de Fim</label>
                                 <input required type="text"  value="{$calendario['endDate']}"
                                        name="endDate" id="endDate" maxlength="10"
-                                       style="width: 150px" 
-                                       {literal}pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
+                                       style="width: 150px; display: inline-block;" 
+                                       {literal}  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
+                                <a class="button small icon fa-calendar" title="selecionar data"
+                                  {literal} style="cursor: pointer; padding: 0 0 0 5pt" 
+                                      onclick="displayCalendar(document.forms[0].endDate,'yyyy-mm-dd',this)" {/literal} ></a>
                             </div>
                         </div>
                         <div class="row uniform">
@@ -112,7 +119,7 @@
                             <div class="row uniform">
                                 <div style="float: left">
                                     <label for="observations">Observações</label>
-                                    <textarea cols="5" rows="3" name="observations" id="observations" style="width: 630px">{$calendario['observations']}</textarea>
+                                    <textarea cols="5" rows="3" name="observations" id="observations" style="width: 630px">{$calendario['observations']|urldecode}</textarea>
                                 </div>
                             </div>
                             <div class="row uniform">

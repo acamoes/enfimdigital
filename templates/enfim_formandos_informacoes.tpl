@@ -10,7 +10,7 @@
         {foreach $formandos->informations as $information}		
             <tr>
                 <td>{$information['name']}</td>
-                <td>{$information['observations']}</td>
+                <td>{$information['observations']|urldecode}</td>
                 <td><a
                         class="button small icon fa-file" title="Informações"
                         style="cursor: pointer; padding: 0 0 0 5pt"

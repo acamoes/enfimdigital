@@ -15,6 +15,7 @@ $loader->add('Users', ENFIM_DIR.'classes/');
 $loader->add('Evaluation', ENFIM_DIR.'classes/');
 $loader->add('Cursos', ENFIM_DIR.'classes/');
 $loader->add('EquipaExecutiva', ENFIM_DIR.'classes/');
+$loader->add('ServicosCentrais', ENFIM_DIR.'classes/');
 $loader->add('Utilizadores', ENFIM_DIR.'classes/');
 $loader->add('Modulos', ENFIM_DIR.'classes/');
 $loader->add('Documentos', ENFIM_DIR.'classes/');

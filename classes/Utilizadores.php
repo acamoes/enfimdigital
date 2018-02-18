@@ -41,14 +41,14 @@ class Utilizadores
             "name='".$data ['name']."',".
             "sigla='".$data ['sigla']."',".
             "status='".$data ['status']."',".
-            "permission='".$data ['permission']."',".
+            ($_SESSION['users']->permission=='Equipa Executiva'?"permission='".$data ['permission']."',":'').
             "birthDate='".$data ['birthDate']."',".
             "address='".$data ['address']."',".
             "zipCode='".$data ['zipCode']."',".
             "local='".$data ['local']."',".
             "mobile='".$data ['mobile']."',".
             "telephone='".$data ['telephone']."',".
-            "observations='".$data ['observations']."',".
+            "observations='".urldecode(str_replace('rn','\r\n',$data ['observations']))."',".
             "iban='".$data ['iban']."',".
             "aepId='".$data ['aepId']."' ".
             "WHERE idUsers=".$data ['idUsers'];
@@ -112,7 +112,7 @@ class Utilizadores
             $data ['local']."','".
             $data ['mobile']."','".
             $data ['telephone']."','".
-            $data ['observations']."',"."'".
+            urldecode(str_replace('rn','\r\n',$data ['observations']))."','".
             $data ['iban']."','".
             $data ['aepId']."')";
         $con       = new Database();

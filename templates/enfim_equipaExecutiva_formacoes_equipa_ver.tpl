@@ -9,7 +9,7 @@
                     <div class="row uniform" style="padding-top: 1.75em">
                         <div style="float: right">
                             <label style="float: right; cursor: pointer"
-                                   onclick="$('#form').html('');
+                                   onclick="closeModal();
                                            request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}');">X
                                 Close</label>
                         </div>
@@ -134,6 +134,19 @@
                                 <label for="payment">Pago</label>
                             </div>
                             <div style="float: right">
+                                <label for="value">Data de pagamento</label> <input
+                                    value="{$utilizador['paymentDate']}" readonly type="text" name="paymentDate" id="paymentDate"
+                                    style="width: 150px" 
+                                    {literal}pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$" />{/literal}
+                            </div>
+                        </div>
+                        <div class="row uniform">
+                            <div style="float: left">
+                                <label for="value">Recibo</label> <input
+                                    value="{$utilizador['receipt']}" readonly type="text" name="receipt"
+                                    id="receipt" style="width: 200px" />
+                            </div>
+                            <div style="float: right">
                                 <label for="value">Valor</label> <input
                                     value="{$utilizador['value']}" readonly type="text" name="value" id="value"
                                     style="width: 150px" 
@@ -142,9 +155,9 @@
                         </div>
                         <div class="row uniform">
                             <div style="float: left">
-                                <label for="value">Recibo</label> <input
-                                    value="{$utilizador['receipt']}" readonly type="text" name="receipt"
-                                    id="receipt" style="width: 200px" />
+                                <label for="value">Selecionado</label> <input
+                                    value="{$utilizador['selected']}" readonly type="text" name="selected" id="selected"
+                                    style="width: 200px" />
                             </div>
                             <div style="float: right">
                                 <label for="value">BO do curso</label> <input
@@ -189,7 +202,7 @@
                         <div style="float: left">
                             <label for="observations">Observações</label>
                             <textarea cols="5" rows="3" name="observations" readonly
-                                      id="observations" style="width: 630px">{$utilizador['observations']}</textarea>
+                                      id="observations" style="width: 630px">{$utilizador['observations']|urldecode}</textarea>
                         </div>
                     </div>
                 </section>

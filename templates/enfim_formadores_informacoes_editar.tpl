@@ -28,7 +28,7 @@
                         <div class="row uniform" style="padding-top: 1.75em">
                             <div style="float: right">
                                 <label style="float: right; cursor: pointer"
-                                       onclick="$('#form').html('');
+                                       onclick="closeModal();
                                                request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}');">X
                                     Close</label>
                             </div>
@@ -57,7 +57,7 @@
                         <div class="row uniform">
                             <div style="float: left">
                                 <label for="observations">Observações</label>
-                                <textarea cols="5" rows="3" name="observations" id="observations" style="width: 630px">{$informacoes['observations']}</textarea>
+                                <textarea cols="5" rows="3" name="observations" id="observations" style="width: 630px">{$informacoes['observations']|urldecode}</textarea>
                             </div>
                         </div>
                         {if $docType=='Informações'}  

@@ -69,77 +69,80 @@
                     </div>
                     <div class="row uniform">
                         <div style="float: left">
-                            <label for="birthDate">Nascimento</label><input type="text"
-                                                                            name="birthDate" 
-                                                                            id="birthDate" 
-                                                                            value="{$utilizador['birthDate']}" 
-                                                                            readonly="readonly"
-                                                                            maxlength="10" />
-                        </div>
-                        <div style="float: right">
-                            <label for="aepId">NrAssoc</label><input  type="text"
-                                                                      name="aepId" 
-                                                                      id="aepId" 
-                                                                      value="{$utilizador['aepId']}" 
-                                                                      readonly="readonly"
-                                                                      maxlength="6" style="width: 150px" />
-                        </div>
-                    </div>
-                    <div class="row uniform">
-                        <div style="float: left">
-                            <label for="address">Morada</label><input type="text"
-                                                                      name="address" 
-                                                                      id="address" 
-                                                                      value="{$utilizador['address']}" 
-                                                                      readonly="readonly"
-                                                                      style="width: 400px" />
-                        </div>
-                        <div style="float: right">
-                            <label for="mobile">Telemóvel</label><input type="text"
-                                                                        name="mobile" 
-                                                                        id="mobile"
-                                                                        value="{$utilizador['mobile']}" 
-                                                                        readonly="readonly"
-                                                                        maxlength="9" style="width: 150px" />
-                        </div>
-                    </div>
-                    <div class="row uniform">
-                        <div style="float: left">
-                            <label for="zipCode">Código Postal</label> <input type="text" 
-                                                                              name="zipCode" 
-                                                                              id="zipCode" 
-                                                                              value="{$utilizador['zipCode']} {$utilizador['local']}" 
-                                                                              readonly="readonly"
-                                                                              style="width: 300px" />
-                        </div>
-                        <div style="float: right">
-                            <label for="telephone">Telefone</label><input type="text"
-                                                                          name="telephone" 
-                                                                          id="telephone" 
-                                                                          value="{$utilizador['telephone']}" 
+                            <label for="birthDate">Nascimento</label>
+                            <input type="text"
+                                   name="birthDate" 
+                                   id="birthDate" 
+                                   value="{$utilizador['birthDate']}" 
+                                   readonly="readonly"
+                                   maxlength="10"
+                                   style="width:150px; display: inline-block;"                             
+                                   {literal}  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}$"{/literal} />
+                            </div>
+                            <div style="float: right">
+                                <label for="aepId">NrAssoc</label><input  type="text"
+                                                                          name="aepId" 
+                                                                          id="aepId" 
+                                                                          value="{$utilizador['aepId']}" 
                                                                           readonly="readonly"
-                                                                          maxlength="9" />
+                                                                          maxlength="6" style="width: 150px" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row uniform">
-                        <div style="float: left">
-                            <label for="iban">IBAN</label><input type="text" 
-                                                                 name="iban"
-                                                                 id="iban"
-                                                                 value="{$utilizador['iban']}" 
-                                                                 readonly="readonly"
-                                                                 maxlength="25" style="width: 630px" />
+                        <div class="row uniform">
+                            <div style="float: left">
+                                <label for="address">Morada</label><input type="text"
+                                                                          name="address" 
+                                                                          id="address" 
+                                                                          value="{$utilizador['address']}" 
+                                                                          readonly="readonly"
+                                                                          style="width: 400px" />
+                            </div>
+                            <div style="float: right">
+                                <label for="mobile">Telemóvel</label><input type="text"
+                                                                            name="mobile" 
+                                                                            id="mobile"
+                                                                            value="{$utilizador['mobile']}" 
+                                                                            readonly="readonly"
+                                                                            maxlength="9" style="width: 150px" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row uniform">
-                        <div style="float: left">
-                            <label for="observations">Observações</label>
-                            <textarea cols="5" rows="3" name="observations" readonly="readonly"
-                                      id="observations" style="width: 630px">{$utilizador['observations']}</textarea>
+                        <div class="row uniform">
+                            <div style="float: left">
+                                <label for="zipCode">Código Postal</label> <input type="text" 
+                                                                                  name="zipCode" 
+                                                                                  id="zipCode" 
+                                                                                  value="{$utilizador['zipCode']} {$utilizador['local']}" 
+                                                                                  readonly="readonly"
+                                                                                  style="width: 300px" />
+                            </div>
+                            <div style="float: right">
+                                <label for="telephone">Telefone</label><input type="text"
+                                                                              name="telephone" 
+                                                                              id="telephone" 
+                                                                              value="{$utilizador['telephone']}" 
+                                                                              readonly="readonly"
+                                                                              maxlength="9" />
+                            </div>
                         </div>
-                    </div>
-                </section>
+                        <div class="row uniform">
+                            <div style="float: left">
+                                <label for="iban">IBAN</label><input type="text" 
+                                                                     name="iban"
+                                                                     id="iban"
+                                                                     value="{$utilizador['iban']}" 
+                                                                     readonly="readonly"
+                                                                     maxlength="25" style="width: 630px" />
+                            </div>
+                        </div>
+                        <div class="row uniform">
+                            <div style="float: left">
+                                <label for="observations">Observações</label>
+                                <textarea cols="5" rows="3" name="observations" readonly="readonly"
+                                          id="observations" style="width: 630px">{$utilizador['observations']|urldecode}</textarea>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
-        </div>
+        </section>
     </section>
-</section>
