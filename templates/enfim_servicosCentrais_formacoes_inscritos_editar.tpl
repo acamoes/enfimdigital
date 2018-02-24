@@ -212,7 +212,7 @@
                                             id="selected" style="width: 200px">
                                         <option value="Selecionado"
                                                 {if $utilizador['selected'] eq "Selecionado"}selected='selected'{/if}>Selecionado</option>
-                                        <option value="Regional"
+                                        <option value="Não selecionado"
                                                 {if $utilizador['selected'] eq "Não selecionado"}selected='selected'{/if}>Não selecionado</option>
                                     </select>
                                 </div>
