@@ -65,7 +65,7 @@
                                     <option value="Equipa Executiva">Equipa Executiva</option>
                                     <option value="Serviços Centrais">Serviços Centrais</option>
                                     <option value="Formador">Formador</option>
-                                    <option value="Formando">Formando</option>
+                                    <option value="Formando" selected="selected">Formando</option>
                                 </select>
                             </div>
                             <div style="float: right">

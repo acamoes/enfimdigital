@@ -50,7 +50,7 @@
                 <td>{$inscritos['unit']}</td>
                 <td>M:{$inscritos['mobile']}&nbsp;T:{$inscritos['telephone']}</td>
                 <td>{$inscritos['paymentDate']}</td>
-                <td>{$inscritos['observations']|urldecode}</td>
+                <td class="observations" title="{$inscritos['observations']|urldecode}">{$inscritos['observations']|urldecode}</td>
                 <td><div class="w3-progress-container w3-small w3-round">
                         <div class="w3-progressbar w3-green w3-round" 
                              {if $inscritos['cInternship'] eq 'Sim'}

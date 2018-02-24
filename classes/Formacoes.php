@@ -233,7 +233,7 @@ class Formacoes
             "boRank='".$data ['boRank']."', ".            
             "qa='".(key_exists('qa', $data) ? 'on' : '')."', ".
             "payment='".(key_exists('payment', $data) ? 'on' : '')."', ".
-            "paymentDate='".$data ['paymentDate']."', ".
+            "paymentDate=".(empty($data['paymentDate']) ? 'null' : "'".$data['paymentDate']."'").", ".
             "selected='".$data ['selected']."', ".
             "value=".($data ['value'] == '' ? 0 : $data ['value'])." , ".
             "receipt='".$data ['receipt']."', ".
