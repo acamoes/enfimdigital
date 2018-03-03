@@ -33,6 +33,7 @@ class EquipaExecutiva
             $this->contexto['formacoes']['sessoes']     = $this->getSessoes($data);
             $this->contexto['formacoes']['ficheiros']   = $this->getFicheiros($data);
             $this->contexto['formacoes']['avaliacoes']  = $this->getFormacoesAvaliacoes($data);
+            $this->contexto['formacoes']['relatorios']  = $this->getRelatorioAvaliacoes($data);
             $this->contexto['formacoes']['informacoes'] = $this->getFormacoesInformacoes($data);
         } else {
             $this->contexto['formacoes']['inscritos']   = array();
@@ -40,6 +41,7 @@ class EquipaExecutiva
             $this->contexto['formacoes']['sessoes']     = array();
             $this->contexto['formacoes']['ficheiros']   = array();
             $this->contexto['formacoes']['avaliacoes']  = array();
+            $this->contexto['formacoes']['relatorios']  = array();
             $this->contexto['formacoes']['informacoes'] = array();
         }
     }
@@ -248,7 +250,7 @@ class EquipaExecutiva
     {
         return Formacoes::apagarFormacoesInscritos($data);
     }
-    
+
     public function selecionarFormacoesInscritos($data)
     {
         return Formacoes::selecionarFormacoesInscritos($data);
@@ -258,7 +260,7 @@ class EquipaExecutiva
     {
         return Formacoes::atualizarFormacoesInscritos($data);
     }
-    
+
     function participouFormacoesInscritos($data)
     {
         return Formacoes::avaliacaoInscritos($data);
@@ -464,16 +466,18 @@ class EquipaExecutiva
     {
         return Evaluation::evaluationReport($data);
     }
-    
-    public function resetPasswordFormacoesInscritos($data){
+
+    public function resetPasswordFormacoesInscritos($data)
+    {
         return $this->resetPasswordUtilizadores($data);
     }
-    
-    public function resetPasswordUtilizadores($data){
-        $users=new Users();
-        $data['username']=$users->getUsernameByIdUsers($data['idUsers']);
-        return ($users->recover($data)?
-            ['success' => true, 'message' => 'Renovação com sucesso.']:
+
+    public function resetPasswordUtilizadores($data)
+    {
+        $users            = new Users();
+        $data['username'] = $users->getUsernameByIdUsers($data['idUsers']);
+        return ($users->recover($data) ?
+            ['success' => true, 'message' => 'Renovação com sucesso.'] :
             ['success' => false, 'message' => 'Não foi possível renovar.']);
     }
 }

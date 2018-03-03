@@ -50,6 +50,19 @@ class Modulos
         }
         return $resultado[0];
     }
+    
+    public static function getModuloName($idModules)
+    {
+        $query     = "SELECT name ".
+            "FROM modules ".
+            "WHERE idModules=".$idModules;
+        $con       = new Database();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return '';
+        }
+        return $resultado[0]['name'];
+    }
 
     public static function inserirModulos($data)
     {

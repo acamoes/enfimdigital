@@ -65,11 +65,11 @@
                                 <tr style="cursor:pointer;" onclick="javascript:location.href = '{$SCRIPT_NAME}?action=formandos&task=getCourse&idCourses={$course.csIdCourses}'">
                                     <td>{$course.csStartDate}</td>
                                     <td>{$course.csCompleteName}</td>
-                                    <td>{$course.csStatus}</td>
-                                    <td>{$course.ucAttended}</td>
-                                    <td>{$course.ucPassedCourse}</td>
-                                    <td>{$course.ucPassedInternship}</td>
-                                    <td>{$course.ucPassed}</td>
+                                    <td>{$course.ucSelected}</td>
+                                    <td>{if $course.ucAttended eq 'on'}Sim{/if}</td>
+                                    <td>{if $course.ucPassedCourse eq 'on'}Sim{/if}</td>
+                                    <td>{if $course.ucPassedInternship eq 'on'}Sim{/if}</td>
+                                    <td>{if $course.ucPassed eq 'on'}Sim{/if}</td>
                                     <td>{$course.ucBoCourse}</td>
                                 </tr>
                             </tbody>

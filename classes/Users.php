@@ -115,6 +115,16 @@ class Users
         return in_array($idUsers, array_values($this->diretor));
     }
 
+    static function getName($idUsers){
+        $query     = "select name from users where idUsers=".$idUsers." ";
+        $con       = new Database();
+        $resultado = $con->get($query);
+        if (!$resultado) {
+            return '';
+        }        
+        return $resultado[0]['name'];
+    }
+    
     function getFormador($idUsers): array
     {
         $query     = "select idCourses from courses_team where idUsers=".$idUsers." and type='Formador' ";
@@ -137,7 +147,7 @@ class Users
 
     function getFormando($idUsers): array
     {
-        $query     = "select idCourses from users_courses where idUsers=".$idUsers." ";
+        $query     = "select idCourses from users_courses where idUsers=".$idUsers." AND selected='selecionado' ";
         $con       = new Database();
         $resultado = $con->get($query);
         if (!$resultado) {
@@ -218,7 +228,7 @@ class Users
     {
         $query           = "SELECT uc.idUsers as ucIdUsers, uc.idCourses as ucIdCourses, uc.unit as ucUnit, uc.unitType as ucUnitType, uc.rank as ucRank, uc.boRank as ucBoRank, uc.qa as ucQa, ".
             "uc.value as ucValue,uc.receipt as ucReceipt,uc.observations as ucObervations,uc.attended as ucAttended,uc.passedCourse as ucPassedCourse, ".
-            "uc.passedInternship as ucPassedInternship,uc.passed as ucPassed,uc.boCourse as ucBoCourse,".
+            "uc.passedInternship as ucPassedInternship,uc.passed as ucPassed,uc.boCourse as ucBoCourse,uc.selected as ucSelected,".
             "cs.idCourses as csIdCourses,cs.year as csYear,cs.course as csCourse,cs.completeName as csCompleteName,cs.startDate as csStartDate,cs.endDate as csEndDate,cs.local as csLocal,".
             "cs.vacancy as csVacancy,cs.idCourse as csIdCourse,cs.internship as csInternship,cs.status as csStatus,cs.observations as csObservations,".
             "c.idCourse as cIdCourse,c.name as cName,c.level as cLevel,c.internship as cInternship,c.status as cStatus ".

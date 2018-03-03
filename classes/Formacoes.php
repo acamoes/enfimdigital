@@ -23,7 +23,7 @@ class Formacoes
 
     function getTabs()
     {
-        $this->tabs = json_decode('{"tabs":[{"text":"Inscritos","tab":"inscritos"},{"text":"Equipa","tab":"equipa"},{"text":"Sessões","tab":"sessoes"},{"text":"Ficheiros","tab":"ficheiros"},{"text":"Avaliações","tab":"avaliacoes"},{"text":"Informações","tab":"informacoes"}]}');
+        $this->tabs = json_decode('{"tabs":[{"text":"Inscritos","tab":"inscritos"},{"text":"Equipa","tab":"equipa"},{"text":"Sessões","tab":"sessoes"},{"text":"Ficheiros","tab":"ficheiros"},{"text":"Avaliações","tab":"avaliacoes"},{"text":"Relatórios","tab":"relatorios"},{"text":"Informações","tab":"informacoes"}]}');
     }
     
     function getServicosCentraisTabs()

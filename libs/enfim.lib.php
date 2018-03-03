@@ -453,8 +453,8 @@ class Enfim
             case "getEAEP":
                 echo $_SESSION['equipaExecutiva']->getUtilizadoresEAEP($data);
                 break;
-            case "relatorioAvaliacoes":
-                $_SESSION['equipaExecutiva']->getRelatorioAvaliacoes($data);
+            case "relatoriosAvaliacoes":
+                $this->tpl->display('enfim_equipaExecutiva_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'.tpl');               
                 break;
             default:
                 $this->clearAllAssign();
