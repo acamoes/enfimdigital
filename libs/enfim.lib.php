@@ -622,6 +622,9 @@ class Enfim
                 $_SESSION['formadores']->saveEvaluation($data);
                 $this->tpl->display('enfim_close.tpl');
                 break;
+            case "relatoriosAvaliacoes":
+                $this->tpl->display('enfim_formadores_'.$data['tab'].'_'.$data['subTab'].'_'.$data['task'].'.tpl');               
+                break;
             default:
                 $this->clearAllAssign();
                 $this->home();

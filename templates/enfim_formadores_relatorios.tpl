@@ -1,6 +1,6 @@
 <div class="table-wrapper">
 </div>
-{foreach from=$equipaExecutiva->contexto['formacoes']['relatorios'] key=titulo item=relatorio}
+{foreach from=$formadores->relatorios key=titulo item=relatorio}
     <h5>{$titulo}</h5>    
     {foreach from=$relatorio key=itemTitulo item=$item}
         <h5 class='major'>::>{$itemTitulo}</h5><br/><br/>

@@ -14,6 +14,7 @@ class Formadores
     public $avaliacoes;
     public $avaliacoesFormandores;
     public $avaliacoesFormandoresStatus = 'Fechado';
+    public $relatorios;
     public $documentos;
 
     public function __construct($data)
@@ -33,6 +34,7 @@ class Formadores
             .'{"text":"Informações","tab":"informacoes"},'
             .'{"text":"Avaliações","tab":"avaliacoes"},'
             .'{"text":"Formadores","tab":"avaliacaoFormadores"},'
+            .'{"text":"Relatórios","tab":"relatorios"},'
             .'{"text":"Documentos","tab":"documentos"}'
             .' ]}');
     }
@@ -61,6 +63,7 @@ class Formadores
         $this->avaliacoes           = Formacoes::getFormacoesAvaliacoes($data);
         $this->avaliacoesFormadores = Formacoes::getFormacoesAvaliacoesFormadores($data);
         $this->documentos           = Documentos::getDocumentos($data);
+        $this->relatorios   = Evaluation::evaluationReport($data);
         return true;
     }
 
