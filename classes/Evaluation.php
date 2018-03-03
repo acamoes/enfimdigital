@@ -492,7 +492,7 @@ class Evaluation
                             $report[$eval['name']][$avaliacao->tema][$idModulo]['modulo']        = Modulos::getModuloName($idModulo);
                             $report[$eval['name']][$avaliacao->tema][$idModulo]['contador'] ++;
                             $report[$eval['name']][$avaliacao->tema][$idModulo]['idModulo']      = $idModulo;
-                            $report[$eval['name']][$avaliacao->tema][$idModulo]['respostas']     += $pontos->avaliacao->response->{$modulos};
+                            $report[$eval['name']][$avaliacao->tema][$idModulo]['respostas']     += (is_numeric($pontos->avaliacao->response->{$modulos})?$pontos->avaliacao->response->{$modulos}:0);
                             $report[$eval['name']][$avaliacao->tema][$idModulo]['positivos']     .= (!empty($pontos->pontos_positivos->response->{$pontospositivos})
                                     ? '\r\n#'.$pontos->pontos_positivos->response->{$pontospositivos} : '');
                             $report[$eval['name']][$avaliacao->tema][$idModulo]['melhorar']      .= (!empty($pontos->pontos_a_melhorar->response->{$pontosamelhorar})
