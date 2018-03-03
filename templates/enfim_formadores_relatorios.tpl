@@ -13,7 +13,7 @@
                             <div class="w3-progressbar w3-green w3-round" style="width:{($subItem['respostas']/$subItem['contador'])/5*100}%; coursor:pointer" title="{$subItem['respostas']/$subItem['contador']}">
                             </div>
                         </div>
-                        Média: {$subItem['respostas']/$subItem['contador']|string_format:"%.2f"}<br/><br/>
+                        Média: {{$subItem['respostas']/$subItem['contador']}|string_format:"%.2f"}<br/><br/>
                     </div>
                     <div style='float: left; padding: 5px 5px 5px 5px; width:400px'>
                         <h6>Pontos positivos</h6>
@@ -37,7 +37,7 @@
                             <div class="w3-progressbar w3-green w3-round" style="width:{($subSubItem['respostas']/$subSubItem['contador'])/5*100}%; coursor:pointer" title="{$subSubItem['respostas']/$subSubItem['contador']}">
                             </div>
                         </div>
-                        Média: {$subSubItem['respostas']/$subSubItem['contador']|string_format:"%.2f"}<br/><br/>
+                        Média: {{$subSubItem['respostas']/$subSubItem['contador']}|string_format:"%.2f"}<br/><br/>
                     </div>
                     <div style='float: left; padding: 5px 5px 5px 5px; width:400px'>
                         <h6>Pontos positivos</h6>
