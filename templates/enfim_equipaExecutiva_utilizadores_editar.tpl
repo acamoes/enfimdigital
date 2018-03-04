@@ -126,7 +126,7 @@
                                     <label for="zipCode">Código Postal</label> <input required
                                                                                       type="text" name="zipCode" id="zipCode" style="width: 300px"
                                                                                       value="{$utilizador['zipCode']} {$utilizador['local']}" 
-                                                                                      {literal}pattern="[0-9]{4}-[0-9]{3}\s[\W]+.+$" />{/literal}
+                                                                                      {literal}pattern="[0-9]{4}-[0-9]{3}\s[\w\W]+.+$" />{/literal}
                                 </div>
                                 <div style="float: right">
                                     <label for="telephone">Telefone</label><input type="text"
