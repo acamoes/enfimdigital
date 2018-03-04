@@ -452,7 +452,7 @@ class Evaluation
 
     public static function evaluationReport($data)
     {
-        $query  = "SELECT * FROM courses_evaluations WHERE idcourse=1 AND idCourses=1 AND evaluation IS NOT NULL ORDER BY name ";
+        $query  = "SELECT * FROM courses_evaluations WHERE idcourse=".$data['idCourse']." AND idCourses=".$data['idCourse']." AND evaluation IS NOT NULL ORDER BY name ";
         $con    = new Database();
         $result = $con->get($query);
         $report = array();
