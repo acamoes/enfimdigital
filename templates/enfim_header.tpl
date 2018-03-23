@@ -186,7 +186,7 @@
                 } else if (tipo == 'Local')
                 {
                     html = '<label for="unit">Unidade</label>';
-                    html += '<input type="text" required name="unit" id="unit" value="' + value + '" style="width: 200px" pattern="^[0-9]{ldelim}1,3}$"/>';
+                    html += '<input type="text" required name="unit" id="unit" value="' + value + '" style="width: 200px" pattern="^[0-9]{ldelim}1,3}|Projeto.+$"/>';
                 }
                 document.getElementById(id).innerHTML = html;
             }
