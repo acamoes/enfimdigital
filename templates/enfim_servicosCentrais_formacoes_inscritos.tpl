@@ -71,8 +71,11 @@
                 <td class="actions" align="right">
                     <a
                         class="button small icon fa-key" title="renovar password"
-                        style="cursor: pointer; padding: 0 0 0 5pt"
-                        onclick="request('action={$action}&task=resetPassword&tab={$currentTab}&subTab={$currentSubTab}&servicosCentraisFormacoesIdCourses={$servicosCentraisFormacoesIdCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg');"></a>
+                        style="cursor: pointer; padding: 0 0 0 5pt
+                        {if strpos($inscritos['lastLogin'], '0000-00-00 00:00:00') !== false}background-color: red{/if}
+                        "
+                        onclick="$.when(request('action={$action}&task=resetPassword&tab={$currentTab}&subTab={$currentSubTab}&servicosCentraisFormacoesIdCourses={$servicosCentraisFormacoesIdCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                    .done(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}'));"></a>
                     <a
                         class="button small icon fa-file" title="ver"
                         style="cursor: pointer; padding: 0 0 0 5pt"
@@ -82,14 +85,14 @@
                        onclick="request('action={$action}&task=editar&tab={$currentTab}&subTab={$currentSubTab}&servicosCentraisFormacoesIdCourses={$servicosCentraisFormacoesIdCourses}&idUsers={$inscritos['idUsers']}', 'form');"></a>
                     <a class="button small icon fa-check-square" title="selecionar"
                        style="cursor: pointer; padding: 0 0 0 5pt"
-                       onclick="$.when(request('action={$action}&task=selecionar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                       then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}'));
+                       onclick="$.when(request('action={$action}&task=selecionar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                       .done(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}'));
                                 "></a> 
                     <a class="button small icon fa-eraser" title="apagar"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
-                                   $.when(request('action={$action}&task=apagar&tab={$currentTab}&subTab={$currentSubTab}&servicosCentraisFormacoesIdCourses={$servicosCentraisFormacoesIdCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                           then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}'));
+                                   $.when(request('action={$action}&task=apagar&tab={$currentTab}&subTab={$currentSubTab}&servicosCentraisFormacoesIdCourses={$servicosCentraisFormacoesIdCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                           .done(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}'));
                                }"></a>
                 </td>
             </tr>

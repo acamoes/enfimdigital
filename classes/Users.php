@@ -11,7 +11,6 @@ class Users
     public $diretor;
     public $formador;
     public $status = "Inativo";
-    public $lastLogin;
     public $birthDate;
     public $address;
     public $zipCode;
@@ -50,8 +49,7 @@ class Users
             $this->formador     = $this->getFormador($rows ['idUsers']);
             $this->formando     = $this->getFormando($rows ['idUsers']);
             $this->status       = $rows ['status'];
-            $this->lastLogin    = date("Y-m-d H:i:s");
-            $this->lastLogin();
+            $this->lastLogin($this->idUsers ,date("Y-m-d H:i:s"));
             $this->birthDate    = $rows ['birthDate'];
             $this->address      = $rows ['address'];
             $this->zipCode      = $rows ['zipCode'];
@@ -77,9 +75,9 @@ class Users
         $this->formando   = $this->getFormando($this->idUsers);
     }
 
-    function lastLogin()
+    function lastLogin($idUsers,$lastLogin)
     {
-        $query = "UPDATE users SET lastLogin='$this->lastLogin' WHERE idUsers='$this->idUsers'";
+        $query = "UPDATE users SET lastLogin='$lastLogin' WHERE idUsers='$idUsers'";
         $con   = new Database();
         $con->set($query);
     }
@@ -187,6 +185,14 @@ class Users
         $con    = new Database();
         $result = $con->get($query);
         return count($result) > 0 ? $result[0]['username'] : '';
+    }
+    
+    function getIdUsersByUsername($username)
+    {
+        $query  = "SELECT idUsers FROM users WHERE username='$username' AND status='Ativo' ";
+        $con    = new Database();
+        $result = $con->get($query);
+        return count($result) > 0 ? $result[0]['idUsers'] : '';
     }
 
     function setPasswordByUsername($username, $password)
@@ -368,6 +374,8 @@ class Users
             $mail->Body        = 'ENFIM DIGITAL<br/><br/>Username: <strong>'.$data['username'].'</strong><br/>Nova password: <strong>'.$password.'</strong><br/><br/><a href="https://enfimdigital.escoteiros.pt" target="_blank">clique aqui</a><br/><br/>';
             $mail->AddAddress($email);
             $mail->Send();
+            $idUsers=$this->getIdUsersByUsername($data['username']);
+            $this->lastLogin($idUsers, date("Y-m-d ")."00:00:00");
             return true;
         }
         else{

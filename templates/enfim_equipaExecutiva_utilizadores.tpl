@@ -44,8 +44,11 @@
                 <td class="actions" align="right">
                     <a
                         class="button small icon fa-key" title="renovar password"
-                        style="cursor: pointer; padding: 0 0 0 5pt"
-                        onclick="request('action={$action}&task=resetPassword&tab={$currentTab}&idUsers={$utilizadores['idUsers']}', '{$action}Msg');"></a>
+                        style="cursor: pointer; padding: 0 0 0 5pt;
+                        {if strpos($utilizadores['lastLogin'], '0000-00-00 00:00:00') !== false}background-color: red{/if}
+                        "
+                        onclick="$.when(request('action={$action}&task=resetPassword&tab={$currentTab}&idUsers={$utilizadores['idUsers']}', '{$action}Msg'))
+                                    .done(request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));"></a>
                     <a
                         class="button small icon fa-file" title="ver"
                         style="cursor: pointer; padding: 0 0 0 5pt"
@@ -56,8 +59,8 @@
                     <a class="button small icon fa-eraser" title="apagar"
                        style="cursor: pointer; padding: 0 0 0 5pt"                       
                        onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
-                                   $.when(request('action={$action}&task=apagar&tab={$currentTab}&idUsers={$utilizadores['idUsers']}', '{$action}Msg')).
-                                           then(request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                   $.when(request('action={$action}&task=apagar&tab={$currentTab}&idUsers={$utilizadores['idUsers']}', '{$action}Msg'))
+                                           .done(request('action={$action}&task=search&tab={$currentTab}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
                                }"> </a>
                 </td>
 

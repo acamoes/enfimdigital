@@ -58,8 +58,8 @@
                         <a class="button small icon fa-eraser" title="apagar"
                            style="cursor: pointer; padding: 0 0 0 5pt"                       
                            onclick="if (confirm('Tem a certeza que pretende apagar o registo?')) {ldelim}
-                                       $.when(request('action={$action}&task=apagar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idModules={$sessoes['idModules']}&idCourse={$sessoes['idCourse']}', '{$action}Msg')).
-                                               then(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}'));
+                                       $.when(request('action={$action}&task=apagar&tab={$currentTab}&subTab={$currentSubTab}&equipaExecutivaFormacoesIdCourses={$equipaExecutivaFormacoesIdCourses}&idModules={$sessoes['idModules']}&idCourse={$sessoes['idCourse']}', '{$action}Msg'))
+                                               .done(request('action={$action}&task=search&tab={$currentTab}&subTab={$currentSubTab}&search=' + document.getElementById('{$currentTab}{$currentSubTab}search').value + '&{$action}{$currentTab|ucfirst}IdCourses=' + document.getElementById('{$action}{$currentTab}IdCourse').options[document.getElementById('{$action}{$currentTab}IdCourse').selectedIndex].value, 'SST{$currentTab}{$currentSubTab}'));
                                    }"></a>
                     {/if}
                 </td>

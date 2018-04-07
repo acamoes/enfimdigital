@@ -1,7 +1,14 @@
 <div class="table-wrapper">
 </div>
 {foreach from=$equipaExecutiva->contexto['formacoes']['relatorios'] key=titulo item=relatorio}
-    <h5>{$titulo}</h5>    
+    <div class="button special fit" onclick="if(document.getElementById('{$titulo|escape}').style.display=='none')
+            {ldelim}
+                document.getElementById('{$titulo|escape}').style.display='block';
+            {rdelim}
+            else {ldelim}
+                document.getElementById('{$titulo|escape}').style.display='none';
+            {rdelim}">{$titulo}</div>
+    <div id="{$titulo|escape}" style="display: none">
     {foreach from=$relatorio key=itemTitulo item=$item}
         <h5 class='major'>::>{$itemTitulo}</h5><br/><br/>
         {if {$itemTitulo}!='Formadores'}
@@ -53,5 +60,6 @@
             {/foreach}
         {/if}
     {/foreach}
+    </div>
 
 {/foreach}

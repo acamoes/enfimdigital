@@ -26,8 +26,8 @@
                 <td class="actions" align="right"><a
                         class="button small icon fa-plus-circle"
                         style="cursor: pointer; padding: 0 0 0 5pt"
-                        onclick="$.when(request('action={$action}&task=adicionar&tab={$currentTab}&idCourses={$idCourses}&idUsers={$equipa['idUsers']}&searchUtilizadores=' + document.getElementById('searchUtilizadores').value, 'formMsg')).
-                                        then(request('action={$action}&task=novo&tab={$currentTab}&idCourses={$idCourses}&searchUtilizadores=' + document.getElementById('searchUtilizadores').value, 'resultado{$currentTab|ucfirst}'));"></a>
+                        onclick="$.when(request('action={$action}&task=adicionar&tab={$currentTab}&idCourses={$idCourses}&idUsers={$equipa['idUsers']}&searchUtilizadores=' + document.getElementById('searchUtilizadores').value, 'formMsg'))
+                                        .done(request('action={$action}&task=novo&tab={$currentTab}&idCourses={$idCourses}&searchUtilizadores=' + document.getElementById('searchUtilizadores').value, 'resultado{$currentTab|ucfirst}'));"></a>
                 </td>
             </tr>
         {/foreach}

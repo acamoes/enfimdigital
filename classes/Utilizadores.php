@@ -73,7 +73,8 @@ class Utilizadores
 
     public static function getUtilizadores($data)
     {
-        $query     = "SELECT u.*,TIMESTAMPDIFF(YEAR, birthDate, NOW()) as age FROM users u WHERE ".
+        $query     = "SELECT u.*,IFNULL(lastLogin,'0000-00-00 00:00:00') as lastLogin,TIMESTAMPDIFF(YEAR, birthDate, NOW()) as age ".
+            "FROM users u WHERE ".
             "username like '%".$data['search']."%' OR ".
             "name like '%".$data['search']."%' OR ".
             "permission like '%".$data['search']."%' OR ".

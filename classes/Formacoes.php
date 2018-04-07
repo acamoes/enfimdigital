@@ -64,7 +64,7 @@ class Formacoes
             "TIMESTAMPDIFF(YEAR, u.birthDate, NOW()) as age, ".
             (key_exists("idCourses", $data) ? "(SELECT count(*) FROM users_courses WHERE idCourses = ".$data ['idCourses'].") as inscritos,"
                 : " ").
-            "u.aepId,u.name,u.birthDate,u.mobile,u.telephone,u.email,u.status as uStatus ".
+            "u.aepId,u.name,u.birthDate,u.mobile,u.telephone,u.email,u.status as uStatus,IFNULL(lastLogin,'0000-00-00 00:00:00') as lastLogin ".
             "FROM "."courses c INNER JOIN users_courses uc ON c.idCourses=uc.idCourses ".
             "INNER JOIN users u ON uc.idUsers=u.idUsers ".
             (key_exists("idCourses", $data) ? "AND uc.idCourses=".$data ['idCourses']." "

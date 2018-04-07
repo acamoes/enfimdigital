@@ -66,45 +66,49 @@
                 <td class="actions" align="right">
                     <a
                         class="button small icon fa-key" title="renovar password"
-                        style="cursor: pointer; padding: 0 0 0 5pt"
-                        onclick="request('action={$action}&task=resetPassword&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg');"></a>
+                        style="cursor: pointer; padding: 0 0 0 5pt;
+                        {if strpos($inscritos['lastLogin'], '0000-00-00 00:00:00') !== false}background-color: red{/if}
+                        "
+                        onclick="$.when(request('action={$action}&task=resetPassword&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                    .done(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));"></a>
+                                    
                     <a  class="button small icon fa-edit" title="editar"
                         style="cursor: pointer; padding: 0 0 0 5pt"
                         onclick="request('action={$action}&task=editar&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', 'form');"></a>
                     <a class="button small icon fa-check-square" title="selecionar"
                        style="cursor: pointer; padding: 0 0 0 5pt"
-                       onclick="$.when(request('action={$action}&task=selecionar&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                       onclick="$.when(request('action={$action}&task=selecionar&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                       .done(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
                                 "></a> 
                     {if $inscritos['attended'] neq 'on'}
                         <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Participou?" 
                            onclick="if (confirm('Participou?')) {ldelim}
-                                               $.when(request('action={$action}&task=participou&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                               $.when(request('action={$action}&task=participou&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                                       .done(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
                                            }"></a>                            
                     {elseif $inscritos['passedCourse'] neq 'on'}
                         <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Passou no Curso?" 
                            onclick="if (confirm('Passou no Curso?')) {ldelim}
-                                               $.when(request('action={$action}&task=passouCurso&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                               $.when(request('action={$action}&task=passouCurso&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                                       .done(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
                                            }"></a>
                     {elseif $inscritos['passedInternship'] neq 'on' && $inscritos['cInternship'] eq 'Sim'}
                         <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Passou no Estágio?" 
                            onclick="if (confirm('Passou no Estágio?')) {ldelim}
-                                               $.when(request('action={$action}&task=passouEstagio&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                               $.when(request('action={$action}&task=passouEstagio&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                                       .done(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
                                            }"></a>
                     {elseif $inscritos['passed'] neq 'on'}
                         <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Passou na Etapa?" 
                            onclick="if (confirm('Passou na Etapa?')) {ldelim}
-                                               $.when(request('action={$action}&task=passouEtapa&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                               $.when(request('action={$action}&task=passouEtapa&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                                       .done(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
                                            }"></a>
                     {else}
                         <a class="button small icon fa-check-circle-o" style="cursor: pointer; padding: 0 0 0 5pt" title="Limpar avaliação?" 
                            onclick="if (confirm('Limpar avaliação?')) {ldelim}
-                                               $.when(request('action={$action}&task=reset&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg')).
-                                                       then(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
+                                               $.when(request('action={$action}&task=reset&tab={$currentTab}&idCourses={$idCourses}&idUsers={$inscritos['idUsers']}', '{$action}Msg'))
+                                                       .done(request('action={$action}&task=search&tab={$currentTab}&idCourses={$idCourses}&search=' + document.getElementById('{$currentTab}search').value, 'ST{$currentTab}'));
                                            }"></a>
                     {/if}
                 </td>
