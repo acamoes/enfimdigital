@@ -8,7 +8,7 @@
 /**
  * Description of Evaluation
  *
- * @author João Madeira
+ * @author JoÃ£o Madeira
  */
 class Evaluation
 {
@@ -284,7 +284,7 @@ class Evaluation
         } elseif (strpos($idInput, 'pontos_a_melhorar') !== false) {
             $nome = "Pontos a melhorar";
         } else {
-            $nome = "Recomendações";
+            $nome = "RecomendaÃ§Ãµes";
         }
         $tag   = null;
         //$tag   = "<div class='row uniform'>";
@@ -456,9 +456,9 @@ class Evaluation
         $con    = new Database();
         $result = $con->get($query);
         $report = array();
-        foreach ($result as $eval) { // Todas avaliações
+        foreach ($result as $eval) { // Todas avaliaÃ§Ãµes
             $json = json_decode($eval['evaluation']);
-            //Não existe o tipo de avaliação Formador, Formando, Curso
+            //NÃ£o existe o tipo de avaliaÃ§Ã£o Formador, Formando, Curso
             if (!array_key_exists($eval['name'], $report)) {
                 $report[$eval['name']] = array();
             }

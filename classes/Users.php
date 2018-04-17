@@ -282,10 +282,11 @@ class Users
     {
         $escoteiro                 = (object) [];
         $escoteiro->message        = "Dados sincronizados com sucesso (".$utilizador->id_associativo.")";
-        $escoteiro->username       = str_replace('@escoteiros.pt', '',
-            $utilizador->email);
+       
         $escoteiro->aepId          = $utilizador->id_associativo;
-        $escoteiro->email          = $utilizador->email;
+        $escoteiro->email          = (empty($utilizador->email_oficial)?$utilizador->email:$utilizador->email_oficial);
+         $escoteiro->username       = str_replace('@escoteiros.pt', '',
+            $escoteiro->email);
         $escoteiro->name           = $utilizador->nome_completo;
         $escoteiro->birthDate      = $utilizador->data_nascimento;
         $escoteiro->mobile         = $utilizador->telemovel;
@@ -316,7 +317,7 @@ class Users
         $escoteiro->rankSigla = "";
         $escoteiro->unit      = "";
         $escoteiro->unitType  = "";
-        $escoteiro->boRank    = "";
+        $escoteiro->boRank    = "";       
         foreach ($utilizador->cargos as $cargo) {
             $escoteiro->observations .= $cargo->unit_type." - ".$cargo->orgao.": (".$cargo->cargo_abreviatura.") ".$cargo->cargo." / ".$cargo->bo.PHP_EOL;
             if ($formacoes) {
