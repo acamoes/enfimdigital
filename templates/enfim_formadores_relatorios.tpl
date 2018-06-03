@@ -17,10 +17,12 @@
                     <div style='float: left; padding: 5px 5px 5px 5px; width:200px'>
                         <h5>::::>{if isset($subItem['modulo'])}{$subItem['modulo']}{else}{$subItemTitulo}{/if}</h5>
                         <div class="w3-progress-container w3-small w3-round" style="width:100px">
-                            <div class="w3-progressbar w3-green w3-round" style="width:{($subItem['respostas']/$subItem['contador'])/5*100}%; coursor:pointer" title="{$subItem['respostas']/$subItem['contador']}">
+                            <div class="w3-progressbar w3-green w3-round" 
+                                 style="width:{if $subItem['contador']!=0}{($subItem['respostas']/$subItem['contador'])/5*100}{else}0{/if}%; coursor:pointer" 
+                                 title="{if $subItem['contador']!=0}{$subItem['respostas']/$subItem['contador']}{else}0{/if}">
                             </div>
                         </div>
-                        Média: {{$subItem['respostas']/$subItem['contador']}|string_format:"%.2f"}<br/><br/>
+                        Média: {if $subItem['contador']!=0}{{$subItem['respostas']/$subItem['contador']}|string_format:"%.2f"}{else}0{/if}<br/><br/>
                     </div>
                     <div style='float: left; padding: 5px 5px 5px 5px; width:400px'>
                         <h6>Pontos positivos</h6>
@@ -41,10 +43,12 @@
                     <div style='float: left; padding: 5px 5px 5px 5px; width:200px'>
                         <h5>::::>{$subSubItemTitulo}</h5>
                         <div class="w3-progress-container w3-small w3-round" style="width:100px">
-                            <div class="w3-progressbar w3-green w3-round" style="width:{($subSubItem['respostas']/$subSubItem['contador'])/5*100}%; coursor:pointer" title="{$subSubItem['respostas']/$subSubItem['contador']}">
+                            <div class="w3-progressbar w3-green w3-round" 
+                                 style="width:{if $subSubItem['contador']!=0}{($subSubItem['respostas']/$subSubItem['contador'])/5*100}{else}0{/if}%; coursor:pointer" 
+                                 title="{if $subSubItem['contador']!=0}{$subSubItem['respostas']/$subSubItem['contador']}{else}0{/if}">
                             </div>
                         </div>
-                        Média: {{$subSubItem['respostas']/$subSubItem['contador']}|string_format:"%.2f"}<br/><br/>
+                        Média: {if $subSubItem['contador']!=0}{{$subSubItem['respostas']/$subSubItem['contador']}|string_format:"%.2f"}{else}0{/if}<br/><br/>
                     </div>
                     <div style='float: left; padding: 5px 5px 5px 5px; width:400px'>
                         <h6>Pontos positivos</h6>

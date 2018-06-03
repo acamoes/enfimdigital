@@ -654,7 +654,7 @@ class Enfim
         }
         $query     = "INSERT INTO log (idUser,session,data,trace,date) VALUES (".
             $_SESSION['users']->idUsers.",'".session_id()."','".
-            json_encode($data)."','".
+            json_encode($data,JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_APOS |JSON_HEX_QUOT)."','".
             json_encode(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 0))."','".
             date("Y-m-d H:i:s")."')";
         $con       = new Database();

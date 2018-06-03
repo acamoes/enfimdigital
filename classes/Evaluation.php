@@ -291,7 +291,8 @@ class Evaluation
         $tag   .= "<div style='float: left; padding: 5px 5px 5px 5px; width:400px'>";
         $tag   .= "<label for='".ENFIM::cleanString($idInput)."'>$nome</label>";
         $range = explode('-', $intervalo);
-        $tag   .= "<textarea cols = '$range[1]' rows = '$range[0]' name = '".ENFIM::cleanString($idInput)."' id = '".ENFIM::cleanString($idInput)."' style = 'width: 350px'>$selecionado</textarea>";
+        $tag   .= "<textarea cols = '$range[1]' rows = '$range[0]' name = '".ENFIM::cleanString($idInput)."' id = '".ENFIM::cleanString($idInput)."' style = 'width: 350px'>".
+            str_replace('u0022','"',str_replace('u0027',"'",$selecionado))."</textarea>";
         $tag   .= "</div>";
         //$tag .= "</div>";
         return $tag;

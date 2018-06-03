@@ -329,7 +329,7 @@ class Formadores
         $evaluation       = new Evaluation($this->evaluation[0]);
         $responses        = $evaluation->saveEvaluation($this->evaluation[0]['template'],
             $data);
-        $responsesJson    = json_encode($responses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $responsesJson    = json_encode($responses, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_APOS |JSON_HEX_QUOT);
         $query            = "UPDATE courses_evaluations SET "
             ."evaluation = '".$responsesJson."', "
             ."date = '".date('Y-m-d H:i:s')."' "
