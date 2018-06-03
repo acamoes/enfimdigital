@@ -577,16 +577,16 @@ class Formacoes
     {
         $query     = "SELECT * FROM (SELECT u.name,IFNULL(target,'Formando') as target,if(length(evaluation)>10,'Respondido','Não respondido') as response,IFNULL(ce.status,'Aberto') as status ".
             "FROM users_courses uc INNER JOIN users u ON uc.idUsers=u.idUsers ".
-            (key_exists("idCourses", $data) ? " AND uc.idCourses=".$data ['idCourses']." "
-                : " ").
+            (key_exists("idCourses", $data) ? " AND uc.idCourses=".$data ['idCourses']." ": " ").
             "LEFT JOIN courses_evaluations ce ON u.idUsers=ce.idUsers ".
+            (key_exists("idCourses", $data) ? " AND ce.idCourses=".$data ['idCourses']." ": " ").
             "LEFT JOIN evaluations e ON ce.idEvaluations=e.idEvaluations ".
             "UNION ".
             "SELECT u.name,IFNULL(target,'Formador') as target,if(length(evaluation)>10,'Respondido','Não respondido') as response,IFNULL(ce.status,'Aberto') as status ".
             "FROM courses_team uc INNER JOIN users u ON uc.idUsers=u.idUsers ".
-            (key_exists("idCourses", $data) ? " AND uc.idCourses=".$data ['idCourses']." "
-                : " ").
+            (key_exists("idCourses", $data) ? " AND uc.idCourses=".$data ['idCourses']." " : " ").
             "LEFT JOIN courses_evaluations ce ON u.idUsers=ce.idUsers ".
+            (key_exists("idCourses", $data) ? " AND ce.idCourses=".$data ['idCourses']." ": " ").
             "LEFT JOIN evaluations e ON ce.idEvaluations=e.idEvaluations) as t ".
             (key_exists("search", $data) ? "WHERE name LIKE '%".$data['search']."%' ".
             "OR target LIKE '%".$data['search']."%' ".
