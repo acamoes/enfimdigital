@@ -97,6 +97,12 @@ class Formadores
     {
         return Formacoes::getFormacoesInscritos($data);
     }
+    
+    public function getUtilizadoresEAEP($data)
+    {
+        $users = new Users();
+        return $users->getEAEP($data);
+    }
 
     function getInscrito($data)
     {
@@ -147,10 +153,20 @@ class Formadores
     {
         return Formacoes::avaliacaoInscritos($data);
     }
+    
+    function getUtlizadoresNaoInscritos($data)
+    {
+        return Formacoes::getUtlizadoresNaoInscritos($data);
+    }
 
     function getUtilizadoresSemEquipa($data)
     {
         return Formacoes::getUtlizadoresSemEquipa($data);
+    }
+    
+    function adicionarInscritos($data)
+    {
+        return Formacoes::adicionarFormacoesInscritos($data);
     }
 
     function adicionarEquipa($data)

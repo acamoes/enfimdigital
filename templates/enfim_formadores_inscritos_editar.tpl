@@ -95,7 +95,17 @@
                                        onclick="displayCalendar(document.forms[0].birthDate, 'yyyy-mm-dd', this)" {/literal} ></a>
                                 </div>
                                 <div style="float: right">
-                                    <label for="aepId">NrAssoc</label><input required type="text" readonly
+                                    <label for="aepId">NrAssoc</label>
+                                    <ul class="actions" onclick="
+                                            if (isPositiveInteger(document.getElementById('aepId').value))
+                                        {ldelim}
+                                                    requestAPI('action={$action}&task=getEAEP&idCourses={$idCourses}&tab={$currentTab}&aepId=' + document.getElementById('aepId').value, 'formMsg');
+                                                }"
+                                        style="float: right">
+                                        <li class="button small"
+                                            style="cursor: pointer; padding: 0 10pt 0 10pt; line-height: 3em; height: 3em;background-color: darkgreen;">e-aep</li>
+                                    </ul>
+                                    <input required type="text" readonly
                                                                              name="aepId" id="aepId" maxlength="6" style="width: 150px"
                                                                              value="{$utilizador['aepId']}"
                                                                              {literal}pattern="[0-9]{5,}$" />{/literal}

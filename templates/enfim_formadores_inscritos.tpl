@@ -12,6 +12,11 @@
             </a>
         </form>
     </ul>
+            <ul class="actions" onclick="request('action={$action}&task=novo&tab={$currentTab}&idCourses={$idCourses}', 'form');"
+        style="float: right">
+        <li class="button small"
+            style="cursor: pointer; padding: 0 10pt 0 10pt">novo</li>
+    </ul>
 </div>
 <table>
     <thead>

@@ -264,7 +264,7 @@ class Users
 
     function getEAEP($data)
     {
-        if ($_SESSION['users']->permission == 'Equipa Executiva' || $_SESSION['users']->permission
+        if ($_SESSION['users']->permission == 'Equipa Executiva' || $_SESSION['users']->permission == 'Formador' || $_SESSION['users']->permission
             == 'Serviços Centrais') {
 
             $api    = new Api();
