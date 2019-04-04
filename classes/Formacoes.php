@@ -603,18 +603,18 @@ class Formacoes
 
     public static function getFormacoesAvaliacoesFormadores($data)
     {
-        $query     = "(SELECT (SELECT course FROM courses WHERE idCourses = ce.idCourses) AS curso, ".
+        $query     = "(SELECT (SELECT idCourses FROM courses WHERE idCourses = ce.idCourses) AS idCourses, ".
             "ce.idEvaluations,u.idUsers,u.name,target,if(length(evaluation)>10,'Respondido','Não respondido') as response,".
             "ce.status as status ".
-            "FROM courses_team uc INNER JOIN users u ON uc.idUsers=u.idUsers ".
-            (key_exists("idCourses", $data) ? " AND uc.idCourses=".$data ['idCourses']." "
-                : " ").
+            "FROM courses_team uc INNER JOIN users u ON uc.idUsers=u.idUsers ".            
             "LEFT JOIN courses_evaluations ce ON u.idUsers=ce.idUsers ".
-            "LEFT JOIN evaluations e ON ce.idEvaluations=e.idEvaluations ".
+            "LEFT JOIN evaluations e ON ce.idEvaluations=e.idEvaluations ".            
             "WHERE u.idUsers=".$_SESSION['users']->idUsers." ".
-            "ORDER BY target) ".
-            "UNION ".
-            "(SELECT (SELECT course FROM courses WHERE idCourses = ce.idCourses) AS curso, ".
+            (key_exists("idCourses", $data) ? " AND uc.idCourses=".$data ['idCourses']." AND ce.idCourses=".$data ['idCourses']." "
+                : " ").
+            "ORDER BY target) "; //.
+            /*"UNION ".
+            "(SELECT (SELECT idCourses FROM courses WHERE idCourses = ce.idCourses) AS idCourses, ".
             "ce.idEvaluations,u.idUsers,u.name,target,IF(LENGTH(evaluation) > 10,'Respondido','Não respondido') AS response,".
             "ce.status AS status ".
             "FROM courses_team uc INNER JOIN users u ON uc.idUsers = u.idUsers ".
@@ -623,7 +623,7 @@ class Formacoes
             "LEFT JOIN courses_evaluations ce ON u.idUsers = ce.idUsers ".
             "LEFT JOIN evaluations e ON ce.idEvaluations = e.idEvaluations ".
             "WHERE u.idUsers =".$_SESSION['users']->idUsers." ".
-            "AND target = 'Curso' ORDER BY date DESC LIMIT 2,6) ";
+            "AND target = 'Curso' ORDER BY date DESC LIMIT 2,6) ";*/
         $con       = new Database();
         $resultado = $con->get($query);
         if (!$resultado) {

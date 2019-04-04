@@ -504,6 +504,10 @@ class Evaluation
                     }
                 } elseif ($avaliacao->tema == 'Formadores') {
                     foreach ($avaliacao->itens as $pontos) {
+                        if(!property_exists($pontos->avaliacao,'response')) {
+                            continue;
+                            
+                        }
                         foreach ($pontos->avaliacao->response as $formadores => $detalhes) {
                             //echo $modulos.PHP_EOL;
                             $formador        = str_replace('formador-avaliacao-', '', $formadores);
